@@ -21,14 +21,14 @@ those who want to participate in real world development of projects in Java.
 
 1. Install java-tutorial:
 
-	$ git clone git://github.com/sacren/java-tutorial.git java-tutorial
-	$ cd java-tutoril
+        $ git clone git://github.com/sacren/java-tutorial.git java-tutorial
+        $ cd java-tutoril
 
 2. Build and test:
 
-	$ mvn clean package
-	$ java -cp target/java-tutorial-1.0-SNAPSHOT.jar PrintCheckerPattern
-	$ java -cp target/java-tutorial-1.0-SNAPSHOT.jar LeapYears
-	...
+        $ mvn clean package
+        $ java -cp target/java-tutorial-1.0-SNAPSHOT.jar PrintCheckerPattern
+        $ java -cp target/java-tutorial-1.0-SNAPSHOT.jar LeapYears
+        ...
 
 ### From now on you shall contribute to make it better...
