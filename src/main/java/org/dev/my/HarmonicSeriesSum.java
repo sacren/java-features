@@ -10,10 +10,9 @@ public class HarmonicSeriesSum {
     int upperBound = 1000;
     int lowerBound = 1;
     double sum = lowerBound;
-    double one = 1;
 
     for (int i = lowerBound + 1; i <= upperBound; i++) {
-      sum += one / i;
+      sum += (double)lowerBound / i;
     }
 
     System.out.println("Sum of harmonic series is " + sum + ".");

@@ -10,10 +10,9 @@ public class GeometricSeriesSum {
     int upperBound = 1000;
     int lowerBound = 1;
     double sum = lowerBound;
-    double one = 1;
 
     for (int i = lowerBound * 2; i <= upperBound; i *= 2) {
-      sum += one / i;
+      sum += (double)lowerBound / i;
     }
 
     System.out.println("Sum of geometric series is " + sum + ".");
