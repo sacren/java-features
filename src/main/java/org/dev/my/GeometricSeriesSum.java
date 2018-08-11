@@ -9,10 +9,10 @@ public class GeometricSeriesSum {
   private static void getGeometricSum() {
     int upperBound = 1000;
     int lowerBound = 1;
-    double sum = 0;
+    double sum = lowerBound;
     double one = 1;
 
-    for (int i = lowerBound; i <= upperBound; i *= 2) {
+    for (int i = lowerBound * 2; i <= upperBound; i *= 2) {
       sum += one / i;
     }
 

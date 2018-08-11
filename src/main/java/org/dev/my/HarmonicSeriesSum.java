@@ -9,10 +9,10 @@ public class HarmonicSeriesSum {
   private static void getHarmonicSum() {
     int upperBound = 1000;
     int lowerBound = 1;
-    double sum = 0;
+    double sum = lowerBound;
     double one = 1;
 
-    for (int i = lowerBound; i <= upperBound; i++) {
+    for (int i = lowerBound + 1; i <= upperBound; i++) {
       sum += one / i;
     }
 
