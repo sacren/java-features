@@ -13,6 +13,10 @@ public class PrintCheckerPattern {
    * Entry point.
    */
   public static void main(String[] args) {
+    printChecker();
+  }
+
+  private static void printChecker() {
     System.out.println();
 
     for (int i = 0; i < 2; i++) {
