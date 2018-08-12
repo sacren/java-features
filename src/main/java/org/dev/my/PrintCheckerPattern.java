@@ -16,13 +16,14 @@ public class PrintCheckerPattern {
     System.out.println();
 
     for (int i = 0; i < 2; i++) {
-      System.out.print("   ");
+      print3Spaces();
       printLine();
-      System.out.print("    ");
+      print3Spaces();
+      System.out.print(" ");
       printLine();
     }
 
-    System.out.print("   ");
+    print3Spaces();
     printLine();
   }
 
@@ -35,5 +36,11 @@ public class PrintCheckerPattern {
     }
 
     System.out.println("*");
+  }
+
+  private static void print3Spaces() {
+    for (int i = 0; i < 3; i++) {
+      System.out.print(" ");
+    }
   }
 }
