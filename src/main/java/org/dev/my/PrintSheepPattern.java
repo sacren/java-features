@@ -18,77 +18,56 @@ public class PrintSheepPattern {
 
   private static void printSheepPattern() {
     System.out.println();
-    printThreeSpaces();
-    printTenSpaces();
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 10);
     System.out.print("'");
-    printDouble("_");
+    printMultiChar("_", 2);
     System.out.println("'");
-    printThreeSpaces();
-    printTenSpaces();
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 10);
     System.out.print("(");
-    printDouble("o");
+    printMultiChar("o", 2);
     System.out.println(")");
-    printThreeSpaces();
-    printDouble(" ");
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 2);
     System.out.print("/");
-    printEightEqualSigns();
-    printDouble("/");
+    printMultiChar("=", 8);
+    printMultiChar("/", 2);
     System.out.println();
-    printThreeSpaces();
+    printMultiChar(" ", 3);
     System.out.print(" ");
     System.out.print("/");
     System.out.print(" ");
-    printDouble("|");
+    printMultiChar("|", 2);
     System.out.print(" ");
-    printDouble("X");
+    printMultiChar("X", 2);
     System.out.print(" ");
-    printDouble("|");
+    printMultiChar("|", 2);
     System.out.println();
-    printThreeSpaces();
+    printMultiChar(" ", 3);
     System.out.print("*");
-    printDouble(" ");
-    printDouble("|");
-    printDouble("-");
-    printDouble("-");
-    printDouble("|");
+    printMultiChar(" ", 2);
+    printMultiChar("|", 2);
+    printMultiChar("-", 4);
+    printMultiChar("|", 2);
     System.out.println();
-    printThreeSpaces();
-    printThreeSpaces();
-    printDouble("V");
-    printDouble(" ");
-    printDouble(" ");
-    printDouble("V");
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 3);
+    printMultiChar("V", 2);
+    printMultiChar(" ", 4);
+    printMultiChar("V", 2);
     System.out.println();
-    printThreeSpaces();
-    printThreeSpaces();
-    printDouble("'");
-    printDouble(" ");
-    printDouble(" ");
-    printDouble("'");
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 3);
+    printMultiChar("'", 2);
+    printMultiChar(" ", 4);
+    printMultiChar("'", 2);
     System.out.println();
   }
 
-  private static void printTenSpaces() {
-    for (int i = 0; i < 5; i++) {
-      printDouble(" ");
-    }
-  }
-
-  private static void printThreeSpaces() {
-    for (int i = 0; i < 3; i++) {
-      System.out.print(" ");
-    }
-  }
-
-  private static void printEightEqualSigns() {
-    for (int i = 0; i < 4; i++) {
-      printDouble("=");
-    }
-  }
-
-  private static void printDouble(String s) {
-    for (int i = 0; i < 2; i++) {
-      System.out.print(s);
+  private static void printMultiChar(String str, int count) {
+    for (int i = 0; i < count; i++) {
+      System.out.print(str);
     }
   }
 }

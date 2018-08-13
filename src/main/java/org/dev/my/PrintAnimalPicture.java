@@ -17,69 +17,49 @@ public class PrintAnimalPicture {
 
   private static void printAnimal() {
     System.out.println();
-    printTriple(" ");
-    printTenSpaces();
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 10);
     System.out.print("'");
-    printDouble("_");
+    printMultiChar("_", 2);
     System.out.println("'");
-    printTriple(" ");
-    printTenSpaces();
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 10);
     System.out.print("(");
-    printDouble("o");
+    printMultiChar("o", 2);
     System.out.println(")");
-    printTriple(" ");
-    printDouble(" ");
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 2);
     System.out.print("+");
-    printEightEqualSigns();
+    printMultiChar("=", 8);
     System.out.println("\\/");
-    printTriple(" ");
+    printMultiChar(" ", 3);
     System.out.print(" ");
     System.out.print("/");
     System.out.print(" ");
-    printDouble("|");
+    printMultiChar("|", 2);
     System.out.print(" ");
-    printTriple("%");
+    printMultiChar("%", 3);
     System.out.print(" ");
-    printDouble("|");
+    printMultiChar("|", 2);
     System.out.println();
-    printTriple(" ");
+    printMultiChar(" ", 3);
     System.out.print("*");
-    printDouble(" ");
-    printDouble("|");
-    printDouble("-");
-    printTriple("-");
-    printDouble("|");
+    printMultiChar(" ", 2);
+    printMultiChar("|", 2);
+    printMultiChar("-", 5);
+    printMultiChar("|", 2);
     System.out.println();
-    printTriple(" ");
-    printTriple(" ");
-    printDouble("\"");
-    printDouble(" ");
-    printTriple(" ");
-    printDouble("\"");
+    printMultiChar(" ", 3);
+    printMultiChar(" ", 3);
+    printMultiChar("\"", 2);
+    printMultiChar(" ", 5);
+    printMultiChar("\"", 2);
     System.out.println();
   }
 
-  private static void printTenSpaces() {
-    for (int i = 0; i < 5; i++) {
-      printDouble(" ");
-    }
-  }
-
-  private static void printEightEqualSigns() {
-    for (int i = 0; i < 4; i++) {
-      printDouble("=");
-    }
-  }
-
-  private static void printTriple(String s) {
-    for (int i = 0; i < 3; i++) {
-      System.out.print(s);
-    }
-  }
-
-  private static void printDouble(String s) {
-    for (int i = 0; i < 2; i++) {
-      System.out.print(s);
+  private static void printMultiChar(String str, int count) {
+    for (int i = 0; i < count; i++) {
+      System.out.print(str);
     }
   }
 }
