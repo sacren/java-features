@@ -14,8 +14,8 @@ public class CylinderComputation {
     double surfaceArea = baseArea * 2 + height * pi * radius * 2;
     double volume = baseArea * height;
 
-    System.out.println("The surface area is " + surfaceArea);
-    System.out.println("The base area is " + baseArea);
-    System.out.println("The volume is " + volume);
+    System.out.println("Surface area = " + surfaceArea + "\n"
+                       + "Base area = " + baseArea + "\n"
+                       + "Volume = " + volume);
   }
 }
