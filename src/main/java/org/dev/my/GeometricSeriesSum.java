@@ -15,6 +15,6 @@ public class GeometricSeriesSum {
       sum += (double)lowerBound / i;
     }
 
-    System.out.println("Sum of geometric series is " + sum + ".");
+    System.out.println("Sum of geometric series = " + sum);
   }
 }

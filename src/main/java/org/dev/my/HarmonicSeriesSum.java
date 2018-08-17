@@ -15,6 +15,6 @@ public class HarmonicSeriesSum {
       sum += (double)lowerBound / i;
     }
 
-    System.out.println("Sum of harmonic series is " + sum + ".");
+    System.out.println("Sum of harmonic series = " + sum);
   }
 }
