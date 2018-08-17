@@ -16,11 +16,11 @@ public class PrintTrianglePattern {
 
   private static void printTrianglePattern() {
     System.out.println();
-    printThreeSpaces();
+    printMultiChar(' ', 3);
     printLine();
 
     for (int i = 1; i < 4; i++) {
-      printThreeSpaces();
+      printMultiChar(' ', 3);
 
       for (int j = 0; j < i; j++) {
         System.out.print(" ");
@@ -35,8 +35,9 @@ public class PrintTrianglePattern {
       System.out.println("*");
     }
 
-    printThreeSpaces();
-    printMiddleStar();
+    /* Prepend with 3 + 4 = 7 spaces. */
+    printMultiChar(' ', 7);
+    System.out.println('*');
   }
 
   private static void printLine() {
@@ -47,17 +48,9 @@ public class PrintTrianglePattern {
     System.out.println("*");
   }
 
-  private static void printMiddleStar() {
-    for (int i = 0; i < 4; i++) {
-      System.out.print(" ");
-    }
-
-    System.out.println("*");
-  }
-
-  private static void printThreeSpaces() {
-    for (int i = 0; i < 3; i++) {
-      System.out.print(" ");
+  private static void printMultiChar(char character, int count) {
+    for (int i = 0; i < count; i++) {
+      System.out.print(character);
     }
   }
 }
