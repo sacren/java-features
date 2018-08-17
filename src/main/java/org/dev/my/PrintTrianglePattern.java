@@ -23,16 +23,16 @@ public class PrintTrianglePattern {
       printMultiChar(' ', 3);
 
       for (int j = 0; j < i; j++) {
-        System.out.print(" ");
+        System.out.print(' ');
       }
 
-      System.out.print("*");
+      System.out.print('*');
 
       for (int j = 0; j < 9 - (i + 1) * 2; j++) {
-        System.out.print(" ");
+        System.out.print(' ');
       }
 
-      System.out.println("*");
+      System.out.println('*');
     }
 
     /* Prepend with 3 + 4 = 7 spaces. */
@@ -45,7 +45,7 @@ public class PrintTrianglePattern {
       System.out.print("* ");
     }
 
-    System.out.println("*");
+    System.out.println('*');
   }
 
   private static void printMultiChar(char character, int count) {
