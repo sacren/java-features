@@ -21,17 +21,9 @@ public class PrintTrianglePattern {
 
     for (int i = 1; i < 4; i++) {
       printMultiChar(' ', 3);
-
-      for (int j = 0; j < i; j++) {
-        System.out.print(' ');
-      }
-
+      printMultiChar(' ', i);
       System.out.print('*');
-
-      for (int j = 0; j < 9 - (i + 1) * 2; j++) {
-        System.out.print(' ');
-      }
-
+      printMultiChar(' ', 9 - (i + 1) * 2);
       System.out.println('*');
     }
 
