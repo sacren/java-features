@@ -20,8 +20,7 @@ public class PrintTrianglePattern {
     printLine();
 
     for (int i = 1; i < 4; i++) {
-      printMultiChar(' ', 3);
-      printMultiChar(' ', i);
+      printMultiChar(' ', 3 + i);
       System.out.print('*');
       printMultiChar(' ', 9 - (i + 1) * 2);
       System.out.println('*');
