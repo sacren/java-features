@@ -27,6 +27,7 @@ public class StringConversion {
     String floatStr1 = Float.toString(euler);
     String boolStr1 = Boolean.toString(boolVal);
     String charStr1 = Character.toString(perfect);
+    int number1 = integerStr1.charAt(2) - integerStr1.charAt(3);
 
     System.out.println(number + "\n"
                        + pi + "\n"
@@ -38,6 +39,7 @@ public class StringConversion {
                        + floatStr1 + "\n"
                        + boolStr1 + "\n"
                        + charStr1 + "\n\n"
+                       + number1 + "\n\n"
                        + b + "\n"
                        + true + "\n"
                        + boolStr);
