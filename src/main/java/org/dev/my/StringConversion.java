@@ -22,12 +22,22 @@ public class StringConversion {
     float euler = Float.parseFloat(floatStr);
     boolean boolVal = Boolean.parseBoolean(boolStr);
     char perfect = charStr.charAt(0);
+    String integerStr1 = Integer.toString(number);
+    String doubleStr1 = Double.toString(pi);
+    String floatStr1 = Float.toString(euler);
+    String boolStr1 = Boolean.toString(boolVal);
+    String charStr1 = Character.toString(perfect);
 
     System.out.println(number + "\n"
                        + pi + "\n"
                        + euler + "\n"
                        + boolVal + "\n"
                        + perfect + "\n\n"
+                       + integerStr1 + "\n"
+                       + doubleStr1 + "\n"
+                       + floatStr1 + "\n"
+                       + boolStr1 + "\n"
+                       + charStr1 + "\n\n"
                        + b + "\n"
                        + true + "\n"
                        + boolStr);
