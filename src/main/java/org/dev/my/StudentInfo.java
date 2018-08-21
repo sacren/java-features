@@ -1,5 +1,5 @@
 /**
- * Mangae student info for a college.
+ * Manage student info for a college.
  */
 public class StudentInfo {
   public static void main(String[] args) {
