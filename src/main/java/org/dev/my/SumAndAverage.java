@@ -1,6 +1,5 @@
 /**
- * Sum all the numbers from 9 to 888.
- * Answer: 394680.
+ * Sum all the numbers from 111 to 8899.
  */
 public class SumAndAverage {
   public static void main(String[] args) {
@@ -8,8 +7,8 @@ public class SumAndAverage {
   }
 
   private static void sumNumbersAndAverage() {
-    int upperBound = 888;
-    int lowerBound = 9;
+    int upperBound = 8899;
+    int lowerBound = 111;
     int sum = 0;
     int count = 0;
     double average;
@@ -21,7 +20,7 @@ public class SumAndAverage {
 
     average = (double)sum / count;
 
-    System.out.println("Sum from 9 to 888 is " + sum + ".\n"
+    System.out.println("Sum from 111 to 8899 is " + sum + ".\n"
                        + "Average is " + average + ".");
   }
 }
