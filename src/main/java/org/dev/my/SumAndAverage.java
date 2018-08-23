@@ -4,6 +4,8 @@
  * Sum only the odd numbers from 1 to 100 and compute the average.
  *
  * Sum numbers from 1 to 100 divisible by 7 and compute the average.
+ *
+ * Sum of the squares from 1 to 100.
  */
 
 public class SumAndAverage {
@@ -11,6 +13,7 @@ public class SumAndAverage {
     sumNumbersAndAverage();
     sumOddNumbersAndAverage();
     sumNumbersDivisible7AndAverage();
+    sumOfSquares();
   }
 
   private static void sumNumbersAndAverage() {
@@ -69,5 +72,17 @@ public class SumAndAverage {
 
     System.out.println("Sum of numbers divisible by 7 is " + sum + ".\n"
                        + "Average is " + average);
+  }
+
+  private static void sumOfSquares() {
+    int upperBound = 100;
+    int lowerBound = 1;
+    int sum = 0;
+
+    for (int i = lowerBound; i <= upperBound; i++) {
+      sum += i * i;
+    }
+
+    System.out.println("Sum of squares is " + sum);
   }
 }
