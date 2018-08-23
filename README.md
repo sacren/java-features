@@ -27,8 +27,8 @@ those who want to participate in real world development of projects in Java.
 2. Build and test:
 
         $ mvn clean package
-        $ java -cp target/java-tutorial-1.0-SNAPSHOT.jar PrintCheckerPattern
-        $ java -cp target/java-tutorial-1.0-SNAPSHOT.jar LeapYears
+        $ java -cp target/java-tutorial-1.0.jar PrintCheckerPattern
+        $ java -cp target/java-tutorial-1.0.jar LeapYears
         ...
 
 ### From now on you shall contribute to make it better...
