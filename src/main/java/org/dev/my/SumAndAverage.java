@@ -2,11 +2,15 @@
  * Sum all the numbers from 111 to 8899.
  *
  * Sum only the odd numbers from 1 to 100 and compute the average.
+ *
+ * Sum numbers from 1 to 100 divisible by 7 and compute the average.
  */
+
 public class SumAndAverage {
   public static void main(String[] args) {
     sumNumbersAndAverage();
     sumOddNumbersAndAverage();
+    sumNumbersDivisible7AndAverage();
   }
 
   private static void sumNumbersAndAverage() {
@@ -44,6 +48,26 @@ public class SumAndAverage {
     average = (double)sum / count;
 
     System.out.println("Sum of odd numbers is " + sum + ".\n"
+                       + "Average is " + average);
+  }
+
+  private static void sumNumbersDivisible7AndAverage() {
+    int upperBound = 100;
+    int lowerBound = 1;
+    int sum = 0;
+    int count = 0;
+    double average;
+
+    for (int i = lowerBound; i <= upperBound; i++) {
+      if (i % 7 == 0) {
+        sum += i;
+        count++;
+      }
+    }
+
+    average = (double)sum / count;
+
+    System.out.println("Sum of numbers divisible by 7 is " + sum + ".\n"
                        + "Average is " + average);
   }
 }
