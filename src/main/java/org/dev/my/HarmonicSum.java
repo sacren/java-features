@@ -1,7 +1,7 @@
 /**
  * Sum of a harmonic series 1 + 1/2 + 1/3 + ... + 1/n, where n = 1000.
  */
-public class HarmonicSeriesSum {
+public class HarmonicSum {
   public static void main(String[] args) {
     getHarmonicSum();
   }
