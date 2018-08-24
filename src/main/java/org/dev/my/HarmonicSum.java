@@ -1,5 +1,5 @@
 /**
- * Sum of a harmonic series 1 + 1/2 + 1/3 + ... + 1/n, where n = 1000.
+ * Sum of a harmonic series 1 + 1/2 + 1/3 + ... + 1/n, where n = 50000.
  */
 public class HarmonicSum {
   public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class HarmonicSum {
   }
 
   private static void getHarmonicSum() {
-    int upperBound = 1000;
+    int upperBound = 50000;
     int lowerBound = 1;
     double sum = lowerBound;
 
