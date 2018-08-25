@@ -9,12 +9,20 @@ public class HarmonicSum {
   private static void getHarmonicSum() {
     int upperBound = 50000;
     int lowerBound = 1;
-    double sum = lowerBound;
+    double sumLeftToRight = lowerBound;
+    double sumRightToLeft = 0;
 
     for (int i = lowerBound + 1; i <= upperBound; i++) {
-      sum += (double)lowerBound / i;
+      sumLeftToRight += (double)lowerBound / i;
     }
 
-    System.out.println("Sum of harmonic series = " + sum);
+    for (int i = upperBound; i > lowerBound; i--) {
+      sumRightToLeft += (double)lowerBound / i;
+    }
+
+    sumRightToLeft += 1;
+
+    System.out.println("Sum of harmonic from left to right is " + sumLeftToRight + "\n"
+                       + "Sum of harmonic from right to left is " + sumRightToLeft);
   }
 }
