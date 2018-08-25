@@ -1,5 +1,11 @@
 /**
- * Sum of a harmonic series 1 + 1/2 + 1/3 + ... + 1/n, where n = 50000.
+ * Sum of a harmonic series adding from left to right:
+ * 1 + 1/2 + 1/3 + ... + 1/50000
+ *
+ * Sum of a harmonic series adding from right to left:
+ * 1/50000 + 1/49999 + 1/49998 + ... + 1/3 + 1/2 + 1
+ *
+ * Display of the difference.
  */
 public class HarmonicSum {
   public static void main(String[] args) {
