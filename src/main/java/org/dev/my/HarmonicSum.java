@@ -11,6 +11,7 @@ public class HarmonicSum {
     int lowerBound = 1;
     double sumLeftToRight = lowerBound;
     double sumRightToLeft = 0;
+    double difference;
 
     for (int i = lowerBound + 1; i <= upperBound; i++) {
       sumLeftToRight += (double)lowerBound / i;
@@ -21,8 +22,10 @@ public class HarmonicSum {
     }
 
     sumRightToLeft += 1;
+    difference = sumRightToLeft - sumLeftToRight;
 
     System.out.println("Sum of harmonic from left to right is " + sumLeftToRight + "\n"
-                       + "Sum of harmonic from right to left is " + sumRightToLeft);
+                       + "Sum of harmonic from right to left is " + sumRightToLeft + "\n"
+                       + "Difference is " + difference);
   }
 }
