@@ -11,10 +11,11 @@ public class ComputePi {
 
   private static void printPi() {
     int upperBound = 999999999;
+    int lowerBound = 3;
     double sum = 1;
     double pi;
 
-    for (int i = 3; i <= upperBound; i += 2) {
+    for (int i = lowerBound; i <= upperBound; i += 2) {
       if (i % 4 == 1) {
         sum += (double)1 / i;
         continue;
