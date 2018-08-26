@@ -32,6 +32,7 @@ public class HarmonicSum {
 
     System.out.println("Sum of harmonic from left to right is " + sumLeftToRight + "\n"
                        + "Sum of harmonic from right to left is " + sumRightToLeft + "\n"
-                       + "Difference is " + difference);
+                       + "Difference is " + difference + "\n"
+                       + "Which sum is more accurate?");
   }
 }
