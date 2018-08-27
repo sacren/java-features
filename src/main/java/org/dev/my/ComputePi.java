@@ -14,6 +14,7 @@ public class ComputePi {
     int lowerBound = 3;
     double sum = 1;
     double pi;
+    double percent;
 
     for (int i = lowerBound; i <= upperBound; i += 2) {
       if (i % 4 == 1) {
@@ -30,6 +31,9 @@ public class ComputePi {
     }
 
     pi = 4 * sum;
-    System.out.println("π = " + pi);
+    percent = pi / Math.PI;
+    System.out.println("π = " + pi + "\n"
+                       + "π of Math.PI = " + Math.PI + "\n"
+                       + "Percent of Math.PI = " + percent);
   }
 }
