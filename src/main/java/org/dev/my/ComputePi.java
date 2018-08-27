@@ -31,7 +31,7 @@ public class ComputePi {
     }
 
     pi = 4 * sum;
-    percent = pi / Math.PI;
+    percent = pi / Math.PI * 100;
     System.out.println("π = " + pi + "\n"
                        + "π of Math.PI = " + Math.PI + "\n"
                        + "Percent of Math.PI = " + percent);
