@@ -1,5 +1,5 @@
 /**
- * Another decision making.
+ * Print the given integer is odd or even.
  */
 public class CheckOddEven {
   public static void main(String[] args) {
