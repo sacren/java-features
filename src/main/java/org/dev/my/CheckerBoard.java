@@ -1,50 +1,33 @@
 /**
- * Print the checker pattern.
+ * Print 5 × 5 checker pattern using nested loops.
  * <p>
- *    * * * * *
- *     * * * * *
- *    * * * * *
- *     * * * * *
- *    * * * * *
+ * # # # # #
+ *  # # # # #
+ * # # # # #
+ *  # # # # #
+ * # # # # #
  * </p>
  */
-public class PrintCheckerPattern {
-  /**
-   * Entry point.
-   */
+public class CheckerBoard {
   public static void main(String[] args) {
     printChecker();
   }
 
   private static void printChecker() {
-    System.out.println();
+    final int size = 5;
 
-    for (int i = 0; i < 2; i++) {
-      print3Spaces();
-      printLine();
-      print3Spaces();
-      System.out.print(" ");
-      printLine();
-    }
+    for (int row = 1; row <= size; row++) {
+      if (row % 2 == 0) {
+        System.out.print(' ');
+      }
 
-    print3Spaces();
-    printLine();
-  }
-
-  /**
-   * Method to print one line of asterisk and space.
-   */
-  private static void printLine() {
-    for (int i = 0; i < 4; i++) {
-      System.out.print("* ");
-    }
-
-    System.out.println("*");
-  }
-
-  private static void print3Spaces() {
-    for (int i = 0; i < 3; i++) {
-      System.out.print(" ");
+      for (int col = 1; col <= size; col++) {
+        if (col == size) {
+          System.out.println('#');
+          break;
+        }
+        System.out.print("# ");
+      }
     }
   }
 }
