@@ -1,5 +1,5 @@
 /**
- * Print 5 × 5 checker pattern using nested loops.
+ * Print 7 × 7 checker pattern using nested loops.
  * <p>
  * # # # # #
  *  # # # # #
@@ -14,7 +14,7 @@ public class CheckerBoard {
   }
 
   private static void printChecker() {
-    final int size = 5;
+    final int size = 7;
 
     for (int row = 1; row <= size; row++) {
       if (row % 2 == 0) {
