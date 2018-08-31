@@ -1,11 +1,13 @@
 /**
  * Print 7 × 7 checker pattern using nested loops.
  * <p>
- * # # # # #
- *  # # # # #
- * # # # # #
- *  # # # # #
- * # # # # #
+ * # # # # # # #
+ *  # # # # # # #
+ * # # # # # # #
+ *  # # # # # # #
+ * # # # # # # #
+ *  # # # # # # #
+ * # # # # # # #
  * </p>
  */
 public class CheckerBoard {
