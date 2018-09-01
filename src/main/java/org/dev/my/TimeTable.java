@@ -23,11 +23,14 @@ public class TimeTable {
     final int size = 9;
     int product;
 
+    System.out.print(" * |");
+
     for (int col = 1; col <= size; col++) {
       System.out.print("  " + col);
     }
 
     System.out.println();
+    System.out.print(" ---");
 
     for (int col = 1; col <= size; col++) {
       System.out.print("---");
@@ -36,6 +39,7 @@ public class TimeTable {
     System.out.println();
 
     for (int row = 1; row <= size; row++) {
+      System.out.print(" " + row + " |");
       for (int col = 1; col <= size; col++) {
         product = row * col;
         if (product < 10) {
