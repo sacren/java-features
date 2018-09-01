@@ -23,6 +23,18 @@ public class TimeTable {
     final int size = 9;
     int product;
 
+    for (int col = 1; col <= size; col++) {
+      System.out.print("  " + col);
+    }
+
+    System.out.println();
+
+    for (int col = 1; col <= size; col++) {
+      System.out.print("---");
+    }
+
+    System.out.println();
+
     for (int row = 1; row <= size; row++) {
       for (int col = 1; col <= size; col++) {
         product = row * col;
