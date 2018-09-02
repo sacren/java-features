@@ -45,7 +45,7 @@ public class TimeTable {
       System.out.printf("%3d%2c", row, '|');
       for (int col = 1; col <= size; col++) {
         product = row * col;
-        System.out.printf("%-4d", product);
+        System.out.printf("%4d", product);
 
         if (col == size) {
           System.out.println();
