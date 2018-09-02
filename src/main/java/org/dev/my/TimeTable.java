@@ -26,17 +26,17 @@ public class TimeTable {
     final int size = 12;
     int product;
 
-    System.out.print(" * |");
+    System.out.printf("%3c%2c", '*', '|');
 
     for (int col = 1; col <= size; col++) {
-      System.out.print("  " + col);
+      System.out.printf("%4d", col);
     }
 
     System.out.println();
-    System.out.print(" ---");
+    System.out.print(" ----");
 
     for (int col = 1; col <= size; col++) {
-      System.out.print("---");
+      System.out.print("----");
     }
 
     System.out.println();
