@@ -32,9 +32,9 @@ public class TimeTable {
     }
 
     System.out.println();
-    System.out.print(" ----");
+    System.out.print(' ');
 
-    for (int col = 1; col <= size; col++) {
+    for (int col = 1 - 1; col <= size; col++) {
       System.out.print("----");
     }
 
