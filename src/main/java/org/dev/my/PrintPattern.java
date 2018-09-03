@@ -9,7 +9,7 @@
  *   * * * * *
  * </p>
  */
-public class PrintSquarePattern {
+public class PrintPattern {
   /**
    * Entry point.
    */
