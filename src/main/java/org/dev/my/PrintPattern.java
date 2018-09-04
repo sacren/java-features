@@ -16,14 +16,16 @@ public class PrintPattern {
   }
 
   private static void printSquarePattern() {
-    for (int row = 1; row <= 7; row++) {
-      for (int col = 1; col <= 7; col++) {
-        if (row % 7 > 1 && col % 7 > 1) {
+    final int size = 7;
+
+    for (int row = 1; row <= size; row++) {
+      for (int col = 1; col <= size; col++) {
+        if (row % size > 1 && col % size > 1) {
           System.out.print("  ");
           continue;
         }
 
-        if (col == 7) {
+        if (col == size) {
           System.out.println('#');
           continue;
         }
