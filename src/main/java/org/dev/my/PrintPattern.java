@@ -18,40 +18,20 @@ public class PrintPattern {
   }
 
   private static void printSquarePattern() {
-    System.out.println();
-    printThreeSpaces();
-    printFiveStars();
+    for (int row = 1; row <= 7; row++) {
+      for (int col = 1; col <= 7; col++) {
+        if (row % 7 > 1 && col % 7 > 1) {
+          System.out.print("  ");
+          continue;
+        }
 
-    for (int i = 0; i < 3; i++) {
-      printThreeSpaces();
-      printTwoStars();
-    }
+        if (col == 7) {
+          System.out.println('#');
+          continue;
+        }
 
-    printThreeSpaces();
-    printFiveStars();
-  }
-
-  private static void printFiveStars() {
-    for (int i = 0; i < 4; i++) {
-      System.out.print("* ");
-    }
-
-    System.out.println("*");
-  }
-
-  private static void printTwoStars() {
-    System.out.print("*");
-
-    for (int i = 0; i < 7; i++) {
-      System.out.print(" ");
-    }
-
-    System.out.println("*");
-  }
-
-  private static void printThreeSpaces() {
-    for (int i = 0; i < 3; i++) {
-      System.out.print(" ");
+        System.out.print("# ");
+      }
     }
   }
 }
