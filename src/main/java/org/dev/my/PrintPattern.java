@@ -1,18 +1,16 @@
 /**
- * Print the square pattern.
- *
+ * Print miscellaneous patterns using nested loop.
  * <p>
- *   * * * * *
- *   *       *
- *   *       *
- *   *       *
- *   * * * * *
+ *   # # # # # # #
+ *   #           #
+ *   #           #
+ *   #           #
+ *   #           #
+ *   #           #
+ *   # # # # # # #
  * </p>
  */
 public class PrintPattern {
-  /**
-   * Entry point.
-   */
   public static void main(String[] args) {
     printSquarePattern();
   }
