@@ -11,7 +11,12 @@
  * </p>
  */
 public class PrintPattern {
+  /**
+   * Entry point.
+   */
   public static void main(String[] args) {
+    triangleBottomLeft();
+    System.out.printf("%9s\n\n", "(a)");
     printSquarePattern();
   }
 
@@ -30,6 +35,20 @@ public class PrintPattern {
           continue;
         }
 
+        System.out.print("# ");
+      }
+    }
+  }
+
+  private static void triangleBottomLeft() {
+    final int size = 8;
+
+    for (int row = 1; row <= size; row++) {
+      for (int col = 1; col <= size; col++) {
+        if (col == row) {
+          System.out.println("#");
+          break;
+        }
         System.out.print("# ");
       }
     }
