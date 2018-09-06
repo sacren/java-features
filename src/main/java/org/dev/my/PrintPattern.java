@@ -23,10 +23,11 @@ public class PrintPattern {
     System.out.printf("%9s\n\n", "(c)");
     triangleBottomRight();
     System.out.printf("%9s\n\n", "(d)");
-    printSquarePattern();
+    emptySquare();
+    System.out.printf("%8s\n\n", "(e)");
   }
 
-  private static void printSquarePattern() {
+  private static void emptySquare() {
     final int size = 7;
 
     for (int row = 1; row <= size; row++) {
