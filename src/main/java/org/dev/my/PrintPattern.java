@@ -21,6 +21,8 @@ public class PrintPattern {
     System.out.printf("%9s\n\n", "(b)");
     triangleTopRight();
     System.out.printf("%9s\n\n", "(c)");
+    triangleBottomRight();
+    System.out.printf("%9s\n\n", "(d)");
     printSquarePattern();
   }
 
@@ -83,6 +85,26 @@ public class PrintPattern {
         }
 
         if (row > col) {
+          System.out.print("  ");
+          continue;
+        }
+
+        System.out.print("# ");
+      }
+    }
+  }
+
+  private static void triangleBottomRight() {
+    final int size = 8;
+
+    for (int row = 1; row <= size; row++) {
+      for (int col = 1; col <= size; col++) {
+        if (col == size) {
+          System.out.println("#");
+          break;
+        }
+
+        if (col + row <= size) {
           System.out.print("  ");
           continue;
         }
