@@ -25,6 +25,8 @@ public class PrintPattern {
     System.out.printf("%9s\n\n", "(d)");
     emptySquare();
     System.out.printf("%8s\n\n", "(e)");
+    letterZMirror();
+    System.out.printf("%9s\n\n", "(f)");
   }
 
   private static void emptySquare() {
@@ -111,6 +113,31 @@ public class PrintPattern {
         }
 
         System.out.print("# ");
+      }
+    }
+  }
+
+  private static void letterZMirror() {
+    final int size = 8;
+
+    for (int row = 1; row <= size; row++) {
+      for (int col = 1; col <= size; col++) {
+        if (col == size) {
+          System.out.println('#');
+          break;
+        }
+
+        if (row % size <= 1) {
+          System.out.print("# ");
+          continue;
+        }
+
+        if (col == row) {
+          System.out.println('#');
+          break;
+        }
+
+        System.out.print("  ");
       }
     }
   }
