@@ -186,7 +186,7 @@ public class PrintPattern {
           continue;
         }
 
-        if (col == row) {
+        if (row == col) {
           if (row > size / 2) {
             System.out.println('#');
             break;
@@ -196,7 +196,7 @@ public class PrintPattern {
           continue;
         }
 
-        if (col + row - 1 == size) {
+        if (size - row + 1 == col) {
           if (row > size / 2) {
             System.out.print("# ");
             continue;
