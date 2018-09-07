@@ -29,6 +29,8 @@ public class PrintPattern {
     System.out.printf("%9s\n\n", "(f)");
     letterZ();
     System.out.printf("%9s\n\n", "(g)");
+    letterX();
+    System.out.printf("%8s\n\n", "(h)");
   }
 
   private static void emptySquare() {
@@ -160,6 +162,46 @@ public class PrintPattern {
         }
 
         if (col + row - 1 == size) {
+          System.out.println('#');
+          break;
+        }
+
+        System.out.print("  ");
+      }
+    }
+  }
+
+  private static void letterX() {
+    final int size = 7;
+
+    for (int row = 1; row <= size; row++) {
+      for (int col = 1; col <= size; col++) {
+        if (col == size) {
+          System.out.println('#');
+          break;
+        }
+
+        if (row % size < 2) {
+          System.out.print("# ");
+          continue;
+        }
+
+        if (col == row) {
+          if (row > size / 2) {
+            System.out.println('#');
+            break;
+          }
+
+          System.out.print("# ");
+          continue;
+        }
+
+        if (col + row - 1 == size) {
+          if (row > size / 2) {
+            System.out.print("# ");
+            continue;
+          }
+
           System.out.println('#');
           break;
         }
