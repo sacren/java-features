@@ -187,8 +187,8 @@ public class PrintPattern {
           continue;
         }
 
-        if (size % 2 == 1 && row == col && size - row + 1 == col
-            || size % 2 == 0 && size / 2 + 1 == row) {
+        /* size / 2 + 1 for both odd and even numbers. */
+        if (size / 2 + 1 == row) {
           crossed = true;
         }
 
