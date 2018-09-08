@@ -29,7 +29,7 @@ public class PrintPattern {
     System.out.printf("%9s\n\n", "(f)");
     letterZ();
     System.out.printf("%9s\n\n", "(g)");
-    letterX();
+    hourGlass();
     System.out.printf("%8s\n\n", "(h)");
   }
 
@@ -171,7 +171,7 @@ public class PrintPattern {
     }
   }
 
-  private static void letterX() {
+  private static void hourGlass() {
     final int size = 7;
     boolean crossed = false;
 
