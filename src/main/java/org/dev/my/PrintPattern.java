@@ -173,6 +173,7 @@ public class PrintPattern {
 
   private static void letterX() {
     final int size = 7;
+    boolean crossed = false;
 
     for (int row = 1; row <= size; row++) {
       for (int col = 1; col <= size; col++) {
@@ -186,8 +187,13 @@ public class PrintPattern {
           continue;
         }
 
+        if (size % 2 == 1 && row == col && size - row + 1 == col
+            || size % 2 == 0 && size / 2 + 1 == row) {
+          crossed = true;
+        }
+
         if (row == col) {
-          if (row > size / 2) {
+          if (crossed) {
             System.out.println('#');
             break;
           }
@@ -197,7 +203,7 @@ public class PrintPattern {
         }
 
         if (size - row + 1 == col) {
-          if (row > size / 2) {
+          if (crossed) {
             System.out.print("# ");
             continue;
           }
