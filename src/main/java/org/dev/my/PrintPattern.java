@@ -179,12 +179,11 @@ public class PrintPattern {
 
     for (int row = 1; row <= size; row++) {
       for (int col = 1; col <= size; col++) {
-        if (col == size) {
-          System.out.println('#');
-          break;
-        }
-
         if (row % size < 2) {
+          if (size == col) {
+            System.out.println('#');
+            break;
+          }
           System.out.print("# ");
           continue;
         }
