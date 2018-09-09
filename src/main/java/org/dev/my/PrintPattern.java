@@ -26,9 +26,9 @@ public class PrintPattern {
     emptySquare();
     System.out.printf("%8s\n\n", "(e)");
     letterZMirror();
-    System.out.printf("%9s\n\n", "(f)");
+    System.out.printf("%8s\n\n", "(f)");
     letterZ();
-    System.out.printf("%9s\n\n", "(g)");
+    System.out.printf("%8s\n\n", "(g)");
     hourGlass();
     System.out.printf("%8s\n\n", "(h)");
     hourGlassInBox();
@@ -124,7 +124,7 @@ public class PrintPattern {
   }
 
   private static void letterZMirror() {
-    final int size = 8;
+    final int size = 7;
 
     for (int row = 1; row <= size; row++) {
       for (int col = 1; col <= size; col++) {
@@ -149,7 +149,7 @@ public class PrintPattern {
   }
 
   private static void letterZ() {
-    final int size = 8;
+    final int size = 7;
 
     for (int row = 1; row <= size; row++) {
       for (int col = 1; col <= size; col++) {
