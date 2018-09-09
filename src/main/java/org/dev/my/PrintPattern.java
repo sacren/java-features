@@ -31,6 +31,8 @@ public class PrintPattern {
     System.out.printf("%9s\n\n", "(g)");
     hourGlass();
     System.out.printf("%8s\n\n", "(h)");
+    hourGlassInBox();
+    System.out.printf("%8s\n\n", "(i)");
   }
 
   private static void emptySquare() {
@@ -210,6 +212,41 @@ public class PrintPattern {
 
           System.out.println('#');
           break;
+        }
+
+        System.out.print("  ");
+      }
+    }
+  }
+
+  private static void hourGlassInBox() {
+    final int size = 7;
+
+    for (int row = 1; row <= size; row++) {
+      for (int col = 1; col <= size; col++) {
+        if (col == 1) {
+          System.out.print("# ");
+          continue;
+        }
+
+        if (col == size) {
+          System.out.println('#');
+          break;
+        }
+
+        if (row % size < 2) {
+          System.out.print("# ");
+          continue;
+        }
+
+        if (row == col) {
+          System.out.print("# ");
+          continue;
+        }
+
+        if (size - row + 1 == col) {
+          System.out.print("# ");
+          continue;
         }
 
         System.out.print("  ");
