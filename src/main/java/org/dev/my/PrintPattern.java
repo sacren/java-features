@@ -103,25 +103,25 @@ public class PrintPattern {
    */
   public static void main(String[] args) {
     triangleBottomLeft();
-    System.out.printf("%9s\n\n", "(a)");
+    System.out.printf("%9s%n%n", "(a)");
     triangleTopLeft();
-    System.out.printf("%9s\n\n", "(b)");
+    System.out.printf("%9s%n%n", "(b)");
     triangleTopRight();
-    System.out.printf("%9s\n\n", "(c)");
+    System.out.printf("%9s%n%n", "(c)");
     triangleBottomRight();
-    System.out.printf("%9s\n\n", "(d)");
+    System.out.printf("%9s%n%n", "(d)");
     emptySquare();
-    System.out.printf("%8s\n\n", "(e)");
+    System.out.printf("%8s%n%n", "(e)");
     letterZMirror();
-    System.out.printf("%8s\n\n", "(f)");
+    System.out.printf("%8s%n%n", "(f)");
     letterZ();
-    System.out.printf("%8s\n\n", "(g)");
+    System.out.printf("%8s%n%n", "(g)");
     hourGlass();
-    System.out.printf("%8s\n\n", "(h)");
+    System.out.printf("%8s%n%n", "(h)");
     hourGlassInBox();
-    System.out.printf("%8s\n\n", "(i)");
+    System.out.printf("%8s%n%n", "(i)");
     parallelogram();
-    System.out.printf("%9s\n\n", "(j)");
+    System.out.printf("%9s%n%n", "(j)");
   }
 
   private static void emptySquare() {
