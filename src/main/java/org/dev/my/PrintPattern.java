@@ -85,6 +85,16 @@
  *   # #       # #
  *   # # # # # # #
  *        (i)
+ *
+ *          # # # # # # # #
+ *         # # # # # # # #
+ *        # # # # # # # #
+ *       # # # # # # # #
+ *      # # # # # # # #
+ *     # # # # # # # #
+ *    # # # # # # # #
+ *   # # # # # # # #
+ *         (j)
  * </p>
  */
 public class PrintPattern {
@@ -110,6 +120,8 @@ public class PrintPattern {
     System.out.printf("%8s\n\n", "(h)");
     hourGlassInBox();
     System.out.printf("%8s\n\n", "(i)");
+    parallelogram();
+    System.out.printf("%9s\n\n", "(j)");
   }
 
   private static void emptySquare() {
@@ -326,6 +338,27 @@ public class PrintPattern {
         }
 
         System.out.print("  ");
+      }
+    }
+  }
+
+  private static void parallelogram() {
+    final int size = 8;
+
+    for (int row = 1; row <= size; row++) {
+      for (int col = 1; col <= size; col++) {
+        if (size == col) {
+          System.out.println('#');
+          break;
+        }
+
+        if (col == 1) {
+          for (int prepend = row; prepend < size; prepend++) {
+            System.out.print(' ');
+          }
+        }
+
+        System.out.print("# ");
       }
     }
   }
