@@ -1,11 +1,10 @@
-# Welcome to Java Tutorial!
+# Welcome to Java Features!
 
-## What is Java Tutorial?
+## What is Java Features?
 
-Java Tutorial is a set of code examples in Java programming language, which
-covers the basic language features for those who want to acquire a good
-understanding from the beginning.  It indends to serve as a helping stone for
-those who want to participate in real world development of projects in Java.
+Java Features is a set of code examples in Java programming language that
+facilitates the basic language features in preparation for the participation in
+real world development of projects using Java.
 
 ## Prerequisite
 
@@ -19,16 +18,16 @@ those who want to participate in real world development of projects in Java.
 
 ## Setup and build
 
-1. Install java-tutorial:
+1. Install java-features:
 
-        $ git clone git://github.com/sacren/java-tutorial.git java-tutorial
-        $ cd java-tutoril
+        $ git clone git://github.com/sacren/java-features.git java-features
+        $ cd java-features
 
 2. Build and test:
 
         $ mvn clean package
-        $ java -cp target/java-tutorial-1.0.jar PrintCheckerPattern
-        $ java -cp target/java-tutorial-1.0.jar LeapYears
+        $ java -cp target/java-features-1.0.jar PrintPattern
+        $ java -cp target/java-features-1.0.jar LeapYears
         ...
 
 ### From now on you shall contribute to make it better...
