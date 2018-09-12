@@ -1,8 +1,8 @@
 /**
  * Use progressive income tax rate to calculate income tax.
  * (1) Income below $20,000 is exempted.
- * (2) Income $20,000 and above but below $40,000 has the rate of 10%.
- * (3) Income $40,000 and above but below $60,000 has the rate of 20%.
+ * (2) Income above $20,000 but below $40,000 has the rate of 10%.
+ * (3) Income above $40,000 but below $60,000 has the rate of 20%.
  * (4) Income $60,000 and above is 30%.
  */
 import java.util.Scanner;
@@ -25,18 +25,21 @@ public class IncomeTaxCalculator {
     stream.close();
 
     for (;;) {
-      if ((int)income / 60000 >= 1) {
-        tax = income * taxRate6k;
+      if (income > 60000) {
+        tax = 20000 * taxRate2k
+              + 20000 * taxRate4k
+              + (income - 60000) * taxRate6k;
         break;
       }
 
-      if ((int)income / 40000 >= 1) {
-        tax = income * taxRate4k;
+      if (income > 40000) {
+        tax = 20000 * taxRate2k
+              + (income - 40000) * taxRate4k;
         break;
       }
 
-      if ((int)income / 20000 >= 1) {
-        tax = income * taxRate2k;
+      if (income > 20000) {
+        tax = (income - 20000) * taxRate2k;
         break;
       }
 
