@@ -20,9 +20,9 @@ public class IncomeTaxCalculator {
     double income;
 
     System.out.print("Enter income: $");
-    Scanner stream = new Scanner(System.in);
-    income = stream.nextDouble();
-    stream.close();
+    Scanner inputStream = new Scanner(System.in);
+    income = inputStream.nextDouble();
+    inputStream.close();
 
     for (;;) {
       if (income > 60000) {
