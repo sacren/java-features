@@ -16,7 +16,7 @@ public class IncomeTaxCalculator {
     final double taxRate2k = 0.1;
     final double taxRate4k = 0.2;
     final double taxRate6k = 0.3;
-    double tax = 0;
+    double tax;
     double income;
 
     Scanner inputStream = new Scanner(System.in);
@@ -49,6 +49,7 @@ public class IncomeTaxCalculator {
           break;
         }
 
+        tax = 0;
         break;
       }
 
