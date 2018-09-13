@@ -19,33 +19,42 @@ public class IncomeTaxCalculator {
     double tax = 0;
     double income;
 
-    System.out.print("Enter income: $");
     Scanner inputStream = new Scanner(System.in);
-    income = inputStream.nextDouble();
-    inputStream.close();
 
     for (;;) {
-      if (income > 60000) {
-        tax = 20000 * taxRate2k
-              + 20000 * taxRate4k
-              + (income - 60000) * taxRate6k;
+      System.out.print("Enter income: $");
+      income = inputStream.nextDouble();
+
+      if (income == -1) {
+        System.out.println("Bye!");
         break;
       }
 
-      if (income > 40000) {
-        tax = 20000 * taxRate2k
-              + (income - 40000) * taxRate4k;
+      for (;;) {
+        if (income > 60000) {
+          tax = 20000 * taxRate2k
+                + 20000 * taxRate4k
+                + (income - 60000) * taxRate6k;
+          break;
+        }
+
+        if (income > 40000) {
+          tax = 20000 * taxRate2k
+                + (income - 40000) * taxRate4k;
+          break;
+        }
+
+        if (income > 20000) {
+          tax = (income - 20000) * taxRate2k;
+          break;
+        }
+
         break;
       }
 
-      if (income > 20000) {
-        tax = (income - 20000) * taxRate2k;
-        break;
-      }
-
-      break;
+      System.out.printf("Income tax is $%.2f%n", tax);
     }
 
-    System.out.printf("Income tax is $%.2f%n", tax);
+    inputStream.close();
   }
 }
