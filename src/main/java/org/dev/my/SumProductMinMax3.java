@@ -1,7 +1,8 @@
 /**
- * Compute and print the sum and product of three numbers.
+ * Prompt the user for three integers and compute the sum, product, minimum and
+ * maximum.
  */
-public class SumProduct3Numbers {
+public class SumProductMinMax3 {
   public static void main(String[] args) {
     compute3Numbers();
   }
