@@ -1,10 +1,10 @@
 /**
- * Prompt the user for three integers and compute the sum, product, minimum and
+ * Prompt the user for five integers and compute the sum, product, minimum and
  * maximum.
  */
 import java.util.Scanner;
 
-public class SumProductMinMax3 {
+public class SumProductMinMax5 {
   public static void main(String[] args) {
     compute3Numbers();
   }
