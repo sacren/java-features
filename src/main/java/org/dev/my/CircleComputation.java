@@ -6,9 +6,13 @@
 import java.util.Scanner;
 
 public class CircleComputation {
+  /**
+   * Entry point to CircleComputation.
+   */
   public static void main(String[] args) {
     double radius = getRadius();
     computeCircle(radius);
+    computeSphere(radius);
   }
 
   /**
@@ -28,14 +32,27 @@ public class CircleComputation {
    * Compute diameter, circumference, and area.
    */
   public static void computeCircle(double radius) {
-
     double diameter = radius * 2;
     double circumference = diameter * Math.PI;
     double area = Math.PI * radius * radius;
 
-    System.out.printf("The diameter is %.2f%n"
+    System.out.printf("%nCircle:%n"
+                      + "The diameter is %.2f%n"
                       + "The circumference is %.2f%n"
                       + "The area is %.2f%n",
                       diameter, circumference, area);
+  }
+
+  /**
+   * Compute sphere surface area and volume.
+   */
+  public static void computeSphere(double radius) {
+    double surfaceArea = Math.PI * radius * radius * 4;
+    double volume = Math.PI * radius * radius * radius * 4 / 3;
+
+    System.out.printf("%nSphere:%n"
+                      + "The surface area is %.2f%n"
+                      + "The volume is %.2f%n",
+                      surfaceArea, volume);
   }
 }
