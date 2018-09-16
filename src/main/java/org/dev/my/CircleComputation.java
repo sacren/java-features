@@ -10,22 +10,17 @@ public class CircleComputation {
    * Entry point to CircleComputation.
    */
   public static void main(String[] args) {
-    double radius = getRadius();
-    computeCircle(radius);
-    computeSphere(radius);
-  }
-
-  /**
-   * Ask the user for radius.
-   */
-  public static double getRadius() {
     Scanner inputStream = new Scanner(System.in);
 
     System.out.print("Enter the radius: ");
-    double radius = inputStream.nextDouble();
+    final double radius = inputStream.nextDouble();
+    System.out.print("Enter the height: ");
+    final double height = inputStream.nextDouble();
     inputStream.close();
 
-    return radius;
+    computeCircle(radius);
+    computeSphere(radius);
+    computeCylinder(radius, height);
   }
 
   /**
@@ -54,5 +49,20 @@ public class CircleComputation {
                       + "The surface area is %.2f%n"
                       + "The volume is %.2f%n",
                       surfaceArea, volume);
+  }
+
+  /**
+   * Compute cylinder base area, surface area and volume.
+   */
+  public static void computeCylinder(double radius, double height) {
+    double baseArea = Math.PI * radius * radius;
+    double surfaceArea = Math.PI * radius * 2 * height + baseArea * 2;
+    double volume = baseArea * height;
+
+    System.out.printf("%nCylinder:%n"
+                      + "The base area is %.2f%n"
+                      + "The surface area is %.2f%n"
+                      + "The volume is %.2f%n",
+                      baseArea, surfaceArea, volume);
   }
 }
