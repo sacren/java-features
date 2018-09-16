@@ -7,18 +7,27 @@ import java.util.Scanner;
 
 public class CircleComputation {
   public static void main(String[] args) {
-    computeCircle();
+    double radius = getRadius();
+    computeCircle(radius);
   }
 
   /**
-   * Compute diameter, circumference, and area.
+   * Ask the user for radius.
    */
-  public static void computeCircle() {
+  public static double getRadius() {
     Scanner inputStream = new Scanner(System.in);
 
     System.out.print("Enter the radius: ");
     double radius = inputStream.nextDouble();
     inputStream.close();
+
+    return radius;
+  }
+
+  /**
+   * Compute diameter, circumference, and area.
+   */
+  public static void computeCircle(double radius) {
 
     double diameter = radius * 2;
     double circumference = diameter * Math.PI;
