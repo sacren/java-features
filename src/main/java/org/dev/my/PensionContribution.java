@@ -27,6 +27,7 @@ public class PensionContribution {
    * Contribution calculation.
    */
   public static void calculateContribution(double salary, int age) {
+    final int maxContribSalary = 6000;
     final double employeeContribution55Below = 0.2;
     final double employerContribution55Below = 0.17;
     final double employeeContribution55To60 = 0.13;
@@ -39,8 +40,8 @@ public class PensionContribution {
     double employerContribution;
     double totalContribution;
 
-    if (salary > 6000) {
-      salary = 6000;
+    if (salary > maxContribSalary) {
+      salary = maxContribSalary;
     }
 
     for (;;) {
