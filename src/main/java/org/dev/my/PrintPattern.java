@@ -126,9 +126,10 @@ public class PrintPattern {
 
   private static void emptySquare() {
     final int size = 7;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (row % size > 1 && col % size > 1) {
           System.out.print("  ");
           continue;
@@ -146,9 +147,10 @@ public class PrintPattern {
 
   private static void triangleBottomLeft() {
     final int size = 8;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (col == row) {
           System.out.println("#");
           break;
@@ -160,9 +162,10 @@ public class PrintPattern {
 
   private static void triangleTopLeft() {
     final int size = 8;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (col + row > size) {
           System.out.println("#");
           break;
@@ -174,9 +177,10 @@ public class PrintPattern {
 
   private static void triangleTopRight() {
     final int size = 8;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (col == size) {
           System.out.println("#");
           break;
@@ -194,9 +198,10 @@ public class PrintPattern {
 
   private static void triangleBottomRight() {
     final int size = 8;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (col == size) {
           System.out.println("#");
           break;
@@ -214,9 +219,10 @@ public class PrintPattern {
 
   private static void letterZMirror() {
     final int size = 7;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (col == size) {
           System.out.println('#');
           break;
@@ -239,9 +245,10 @@ public class PrintPattern {
 
   private static void letterZ() {
     final int size = 7;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (col == size) {
           System.out.println('#');
           break;
@@ -264,10 +271,11 @@ public class PrintPattern {
 
   private static void hourGlass() {
     final int size = 7;
+    final int firstCount = 1;
     boolean crossed = false;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (row % size < 2) {
           if (size == col) {
             System.out.println('#');
@@ -309,10 +317,11 @@ public class PrintPattern {
 
   private static void hourGlassInBox() {
     final int size = 7;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
-        if (col == 1) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
+        if (col == firstCount) {
           System.out.print("# ");
           continue;
         }
@@ -344,15 +353,16 @@ public class PrintPattern {
 
   private static void parallelogram() {
     final int size = 8;
+    final int firstCount = 1;
 
-    for (int row = 1; row <= size; row++) {
-      for (int col = 1; col <= size; col++) {
+    for (int row = firstCount; row <= size; row++) {
+      for (int col = firstCount; col <= size; col++) {
         if (size == col) {
           System.out.println('#');
           break;
         }
 
-        if (col == 1) {
+        if (col == firstCount) {
           for (int prepend = row; prepend < size; prepend++) {
             System.out.print(' ');
           }
