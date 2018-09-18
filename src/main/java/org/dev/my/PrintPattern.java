@@ -363,7 +363,7 @@ public class PrintPattern {
         }
 
         if (col == firstCount) {
-          for (int prepend = row; prepend < size; prepend++) {
+          for (int spaceCount = 0; spaceCount < size - row; spaceCount++) {
             System.out.print(' ');
           }
         }
