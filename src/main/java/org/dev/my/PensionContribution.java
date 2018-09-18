@@ -14,13 +14,30 @@ public class PensionContribution {
    */
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    System.out.print("Enter monthly salary: $");
-    final double salary = input.nextDouble();
-    System.out.print("Enter employee age: ");
-    final int age = input.nextInt();
-    input.close();
+    double salary;
+    int age;
 
-    calculateContribution(salary, age);
+    for (;;) {
+      System.out.print("Enter monthly salary: $");
+      salary = input.nextDouble();
+
+      if (salary < 0) {
+        System.out.println("Negative salary. Bye!");
+        break;
+      }
+
+      System.out.print("Enter employee age: ");
+      age = input.nextInt();
+
+      if (age < 20) {
+        System.out.println("Too young to contribute. Bye!");
+        break;
+      }
+
+      calculateContribution(salary, age);
+    }
+
+    input.close();
   }
 
   /**
@@ -74,7 +91,7 @@ public class PensionContribution {
 
     System.out.printf("Employee contribution is %.2f%n"
                       + "Employer contribution is %.2f%n"
-                      + "Total contribution is %.2f%n",
+                      + "Total contribution is %.2f%n%n",
                       employeeContribution, employerContribution, totalContribution);
   }
 }
