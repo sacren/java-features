@@ -3,13 +3,19 @@
  */
 public class ReverseInt {
   public static void main(String[] args) {
-    printDigits();
+    makeReverse();
   }
 
-  private static void printDigits() {
+  /**
+   * Reverse the order of integer.
+   */
+  public static void makeReverse() {
     int number = 154023;
     int remainder;
     int quotient;
+
+    System.out.printf("Original integer is %d%n"
+                      + "Reversed integer is ", number);
 
     for (;;) {
       remainder = number % 10;
@@ -20,8 +26,8 @@ public class ReverseInt {
         break;
       }
 
-      System.out.print(remainder + " ");
       number = quotient;
+      System.out.print(remainder);
     }
   }
 }
