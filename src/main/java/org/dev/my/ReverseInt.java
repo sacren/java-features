@@ -1,7 +1,7 @@
 /**
- * Extract each digit of 154023 in the reverse order.
+ * Prompt user for a positive integer and print it in reverse order.
  */
-public class ExtractDigits {
+public class ReverseInt {
   public static void main(String[] args) {
     printDigits();
   }
