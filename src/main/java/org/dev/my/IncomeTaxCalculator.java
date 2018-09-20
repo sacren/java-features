@@ -1,9 +1,9 @@
 /**
  * Use progressive income tax rate to calculate income tax with sentinel.
- * (1) Income below $20,000 is exempt.
- * (2) Income above $20,000 but below $40,000 has the rate of 10%.
- * (3) Income above $40,000 but below $60,000 has the rate of 20%.
- * (4) Income $60,000 and above is 30%.
+ * (1) Income $20,000 or below is exempt.
+ * (2) Income above $20,000 but $40,000 or below has the rate of 10%.
+ * (3) Income above $40,000 but $60,000 or below has the rate of 20%.
+ * (4) Income above $60,000 is 30%.
  * (5) If income is negative, terminate tax calculation.
  */
 import java.util.Scanner;
