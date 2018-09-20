@@ -19,23 +19,22 @@ public class ReverseInt {
    * Reverse the order of integer.
    */
   public static void makeReverse(int number) {
+    String stringOfInt = "";
     int remainder;
-    int quotient;
 
-    System.out.printf("Original integer is %d%n"
-                      + "Reversed integer is ", number);
+    System.out.printf("Original integer is %d%n", number);
 
     for (;;) {
       remainder = number % 10;
-      quotient = number / 10;
+      number /= 10;
+      stringOfInt += remainder;
 
-      if (quotient == 0) {
-        System.out.println(remainder);
+      if (number == 0) {
         break;
       }
-
-      number = quotient;
-      System.out.print(remainder);
     }
+
+    number = Integer.parseInt(stringOfInt);
+    System.out.printf("Reversed integer is %d%n", number);
   }
 }
