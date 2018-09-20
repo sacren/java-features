@@ -14,9 +14,9 @@ public class IncomeTaxCalculator {
   }
 
   private static void calculateTax() {
-    final double taxRate2k = 0.1;
-    final double taxRate4k = 0.2;
-    final double taxRate6k = 0.3;
+    final double taxRateAbove20k = 0.1;
+    final double taxRateAbove40k = 0.2;
+    final double taxRateAbove60k = 0.3;
     double tax;
     double income;
 
@@ -33,20 +33,20 @@ public class IncomeTaxCalculator {
 
       for (;;) {
         if (income > 60000) {
-          tax = 20000 * taxRate2k
-                + 20000 * taxRate4k
-                + (income - 60000) * taxRate6k;
+          tax = 20000 * taxRateAbove20k
+                + 20000 * taxRateAbove40k
+                + (income - 60000) * taxRateAbove60k;
           break;
         }
 
         if (income > 40000) {
-          tax = 20000 * taxRate2k
-                + (income - 40000) * taxRate4k;
+          tax = 20000 * taxRateAbove20k
+                + (income - 40000) * taxRateAbove40k;
           break;
         }
 
         if (income > 20000) {
-          tax = (income - 20000) * taxRate2k;
+          tax = (income - 20000) * taxRateAbove20k;
           break;
         }
 
