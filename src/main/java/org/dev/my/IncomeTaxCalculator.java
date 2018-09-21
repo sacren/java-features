@@ -61,7 +61,7 @@ public class IncomeTaxCalculator {
         break;
       }
 
-      System.out.printf("Income tax is $%.2f%n", tax);
+      System.out.printf("Income tax is $%.2f%n%n", tax);
     }
 
     inputStream.close();
