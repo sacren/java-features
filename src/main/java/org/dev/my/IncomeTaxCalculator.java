@@ -13,7 +13,10 @@ public class IncomeTaxCalculator {
     calculateTax();
   }
 
-  private static void calculateTax() {
+  /**
+   * Calculate income tax by income amount and tax rate.
+   */
+  public static void calculateTax() {
     final double taxRateAbove20k = 0.1;
     final double taxRateAbove40k = 0.2;
     final double taxRateAbove60k = 0.3;
