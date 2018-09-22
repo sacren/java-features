@@ -4,7 +4,8 @@
  * (2) Income above $20,000 but $40,000 or below has the rate of 10%.
  * (3) Income above $40,000 but $60,000 or below has the rate of 20%.
  * (4) Income above $60,000 is 30%.
- * (5) If income is negative, terminate tax calculation.
+ * (5) Tax rebate of 10% of total tax payable with max of $1,000.
+ * (6) If income is negative, terminate tax calculation.
  */
 import java.util.Scanner;
 
