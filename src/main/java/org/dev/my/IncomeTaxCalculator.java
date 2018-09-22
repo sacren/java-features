@@ -24,6 +24,9 @@ public class IncomeTaxCalculator {
     final int income60k = 60000;
     final int income40k = 40000;
     final int income20k = 20000;
+    final int maxTaxRebate = 1000;
+    final double rebateRate = 0.1;
+    double taxRebate;
     double tax;
     double income;
 
@@ -61,6 +64,13 @@ public class IncomeTaxCalculator {
         break;
       }
 
+      taxRebate = tax * rebateRate;
+
+      if (taxRebate > maxTaxRebate) {
+        taxRebate = maxTaxRebate;
+      }
+
+      tax -= taxRebate;
       System.out.printf("Income tax is $%.2f%n%n", tax);
     }
 
