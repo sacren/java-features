@@ -7,11 +7,9 @@ public class Product1ToN {
    * Entry point to Product1ToN class.
    */
   public static void main(String[] args) {
-    computeProduct(10);
-    computeProduct(11);
-    computeProduct(12);
-    computeProduct(13);
-    computeProduct(14);
+    for (int i = 0; i < 5; i++) {
+      computeProduct(10 + i);
+    }
   }
 
   /**
