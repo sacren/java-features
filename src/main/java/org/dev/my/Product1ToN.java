@@ -3,71 +3,30 @@
  * 1 to 14.
  */
 public class Product1ToN {
+  /**
+   * Entry point to Product1ToN class.
+   */
   public static void main(String[] args) {
-    product1To10();
-    product1To11();
-    product1To12();
-    product1To13();
-    product1To14();
+    computeProduct(10);
+    computeProduct(11);
+    computeProduct(12);
+    computeProduct(13);
+    computeProduct(14);
   }
 
-  private static void product1To10() {
-    int upperBound = 10;
-    int lowerBound = 1;
-    int product = 1;
-
-    for (int i = lowerBound; i <= upperBound; i++) {
-      product *= i;
-    }
-
-    System.out.println("Product from 1 to 10 is " + product);
-  }
-
-  private static void product1To11() {
-    int upperBound = 11;
-    int lowerBound = 1;
-    int product = 1;
-
-    for (int i = lowerBound; i <= upperBound; i++) {
-      product *= i;
-    }
-
-    System.out.println("Product from 1 to 11 is " + product);
-  }
-
-  private static void product1To12() {
-    int upperBound = 12;
-    int lowerBound = 1;
-    int product = 1;
-
-    for (int i = lowerBound; i <= upperBound; i++) {
-      product *= i;
-    }
-
-    System.out.println("Product from 1 to 12 is " + product);
-  }
-
-  private static void product1To13() {
-    int upperBound = 13;
-    int lowerBound = 1;
+  /**
+   * Calculate the product from 1 to 10, 11, etc.
+   */
+  public static void computeProduct(int number) {
+    final int upperBound = number;
+    final int lowerBound = 2;
+    /* Use long type to not go over bounds. */
     long product = 1;
 
     for (int i = lowerBound; i <= upperBound; i++) {
       product *= i;
     }
 
-    System.out.println("Product from 1 to 13 is " + product);
-  }
-
-  private static void product1To14() {
-    int upperBound = 14;
-    int lowerBound = 1;
-    long product = 1;
-
-    for (int i = lowerBound; i <= upperBound; i++) {
-      product *= i;
-    }
-
-    System.out.println("Product from 1 to 14 is " + product);
+    System.out.printf("Product from 1 to %d is %d%n", number, product);
   }
 }
