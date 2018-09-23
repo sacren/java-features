@@ -13,9 +13,16 @@ public class SalesTaxCalculator {
     double taxInPrice;
     Scanner inputStream = new Scanner(System.in);
 
-    System.out.print("Enter the price including sales tax: ");
-    taxInPrice = inputStream.nextDouble();
-    calculatePrice(taxInPrice);
+    for (;;) {
+      System.out.print("Enter the price including sales tax: ");
+      taxInPrice = inputStream.nextDouble();
+
+      if (taxInPrice < 0) {
+        break;
+      }
+
+      calculatePrice(taxInPrice);
+    }
 
     inputStream.close();
   }
