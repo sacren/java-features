@@ -11,6 +11,7 @@ public class SalesTaxCalculator {
    */
   public static void main(String[] args) {
     double taxInPrice;
+    double total = 0;
     Scanner inputStream = new Scanner(System.in);
 
     for (;;) {
@@ -18,10 +19,12 @@ public class SalesTaxCalculator {
       taxInPrice = inputStream.nextDouble();
 
       if (taxInPrice < 0) {
+        calculatePrice(total);
         break;
       }
 
       calculatePrice(taxInPrice);
+      total += taxInPrice;
     }
 
     inputStream.close();
