@@ -9,7 +9,7 @@ public class ReverseInt {
    */
   public static void main(String[] args) {
     Scanner inputStream = new Scanner(System.in);
-    System.out.print("Enter an integer: ");
+    System.out.print("Enter a non-negative integer: ");
     int number = inputStream.nextInt();
     makeReverse(number);
     inputStream.close();
@@ -22,7 +22,10 @@ public class ReverseInt {
     String stringOfInt = "";
     int remainder;
 
-    System.out.printf("Original integer is %d%n", number);
+    if (number < 0) {
+      System.out.println("You must enter a non-negative integer. Bye!");
+      return;
+    }
 
     for (;;) {
       remainder = number % 10;
