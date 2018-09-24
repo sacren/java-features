@@ -23,8 +23,9 @@ public class SalesTaxCalculator {
         break;
       }
 
-      calculatePrice(taxInPrice);
       total += taxInPrice;
+      calculatePrice(taxInPrice);
+      System.out.println();
     }
 
     inputStream.close();
