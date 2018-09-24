@@ -34,13 +34,13 @@ public class SalesTaxCalculator {
   /**
    * Calculate actual price and sales tax.
    */
-  public static void calculatePrice(double userInput) {
+  public static void calculatePrice(double priceWithTax) {
     double taxRate = 0.07;
-    double actualPrice = userInput / (1 + taxRate);
+    double actualPrice = priceWithTax / (1 + taxRate);
     double salesTax = actualPrice * taxRate;
     System.out.printf("The actual price is %.2f%n"
                       + "The sales tax is %.2f%n"
                       + "The total price is %.2f%n",
-                      actualPrice, salesTax, userInput);
+                      actualPrice, salesTax, priceWithTax);
   }
 }
