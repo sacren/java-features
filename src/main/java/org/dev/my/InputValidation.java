@@ -9,34 +9,30 @@ public class InputValidation {
    * Entry point to InputValidation class.
    */
   public static void main(String[] args) {
-    int number;
+    int score;
 
     Scanner inputStream = new Scanner(System.in);
 
     for (;;) {
-      System.out.print("Enter an integer between 0 and 10 or between 90 and 100: ");
-      number = inputStream.nextInt();
+      System.out.print("Enter the student score between 0 and 100: ");
+      score = inputStream.nextInt();
 
-      if (isValid(number)) {
+      if (isValid(score)) {
         break;
       }
 
-      System.out.println("You have entered an invalid number. Please try again...");
+      System.out.println("The score is invalid. Please try again...");
     }
 
-    System.out.printf("You have entered a valid number %d%n", number);
+    System.out.printf("The valid score entered is %d%n", score);
     inputStream.close();
   }
 
   /**
-   * Check whether the input falls within the ranges.
+   * Check whether the student score is valid.
    */
-  public static boolean isValid(int number) {
-    if (number >= 0 && number <= 10) {
-      return true;
-    }
-
-    if (number >= 90 && number <= 100) {
+  public static boolean isValid(int score) {
+    if (score >= 0 && score <= 100) {
       return true;
     }
 
