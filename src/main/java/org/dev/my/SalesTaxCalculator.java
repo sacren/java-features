@@ -37,7 +37,7 @@ public class SalesTaxCalculator {
   public static void calculatePrice(double priceWithTax) {
     double taxRate = 0.07;
     double actualPrice = priceWithTax / (1 + taxRate);
-    double salesTax = actualPrice * taxRate;
+    double salesTax = priceWithTax - actualPrice;
     System.out.printf("The actual price is %.2f%n"
                       + "The sales tax is %.2f%n"
                       + "The total price is %.2f%n",
