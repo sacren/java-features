@@ -1,6 +1,6 @@
 /**
- * Prompt the user for an integer between 0 and 10 or between 90 and 100 and
- * repeat until the user enters a valid number.
+ * Prompt the user for the score of 3 students; compute the average in double;
+ * and print the result rounded to 2 decimal places.
  */
 import java.util.Scanner;
 
