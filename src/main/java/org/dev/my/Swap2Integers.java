@@ -14,22 +14,29 @@ public class Swap2Integers {
     int number1 = inputStream.nextInt();
     System.out.print("Enter the second integer: ");
     int number2 = inputStream.nextInt();
+    final String before = "Before";
+    final String after = "After";
 
-    System.out.printf("%nBefore:%n"
-                      + "The first integer is %d%n"
-                      + "The second integer is %d%n",
-                      number1, number2);
+    System.out.println();
+    printNumber(before, number1, number2);
 
     /* Now we swap the two integers. */
     int tmp = number1;
     number1 = number2;
     number2 = tmp;
 
-    System.out.printf("%nAfter:%n"
+    System.out.println();
+    printNumber(after, number1, number2);
+    inputStream.close();
+  }
+
+  /**
+   * Print out the numbers before and after swap.
+   */
+  public static void printNumber(String beforeOrAfter, int number1, int number2) {
+    System.out.printf("%s:%n"
                       + "The first integer is %d%n"
                       + "The second integer is %d%n",
-                      number1, number2);
-
-    inputStream.close();
+                      beforeOrAfter, number1, number2);
   }
 }
