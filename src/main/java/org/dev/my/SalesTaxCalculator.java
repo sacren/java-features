@@ -40,7 +40,7 @@ public class SalesTaxCalculator {
     double preTaxPrice = priceWithTax / (1 + taxRate);
     double salesTax = priceWithTax - preTaxPrice;
     System.out.printf("The pretax price is %.2f%n"
-                      + "The sales tax is %.2f%n"
+                      + "The 7%% sales tax is %.2f%n"
                       + "The price with tax is %.2f%n",
                       preTaxPrice, salesTax, priceWithTax);
   }
