@@ -10,21 +10,22 @@ public class SalesTaxCalculator {
    * Entry point to SalesTaxCalculator class.
    */
   public static void main(String[] args) {
-    double taxInPrice;
-    double total = 0;
+    double priceWithTax;
+    double sum = 0;
+
     Scanner inputStream = new Scanner(System.in);
 
     for (;;) {
       System.out.print("Enter the price including sales tax: ");
-      taxInPrice = inputStream.nextDouble();
+      priceWithTax = inputStream.nextDouble();
 
-      if (taxInPrice < 0) {
-        calculatePrice(total);
+      if (priceWithTax < 0) {
+        calculatePrice(sum);
         break;
       }
 
-      total += taxInPrice;
-      calculatePrice(taxInPrice);
+      sum += priceWithTax;
+      calculatePrice(priceWithTax);
       System.out.println();
     }
 
@@ -36,11 +37,11 @@ public class SalesTaxCalculator {
    */
   public static void calculatePrice(double priceWithTax) {
     double taxRate = 0.07;
-    double actualPrice = priceWithTax / (1 + taxRate);
-    double salesTax = priceWithTax - actualPrice;
-    System.out.printf("The actual price is %.2f%n"
+    double preTaxPrice = priceWithTax / (1 + taxRate);
+    double salesTax = priceWithTax - preTaxPrice;
+    System.out.printf("The pretax price is %.2f%n"
                       + "The sales tax is %.2f%n"
-                      + "The total price is %.2f%n",
-                      actualPrice, salesTax, priceWithTax);
+                      + "The price with tax is %.2f%n",
+                      preTaxPrice, salesTax, priceWithTax);
   }
 }
