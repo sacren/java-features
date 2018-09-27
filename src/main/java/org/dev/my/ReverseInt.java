@@ -8,10 +8,14 @@ public class ReverseInt {
    * Entry point of ReverseInt class.  It also prompts the user for an integer.
    */
   public static void main(String[] args) {
+    int number;
+
     Scanner inputStream = new Scanner(System.in);
+
     System.out.print("Enter a non-negative integer: ");
-    int number = inputStream.nextInt();
+    number = inputStream.nextInt();
     makeReverse(number);
+
     inputStream.close();
   }
 
