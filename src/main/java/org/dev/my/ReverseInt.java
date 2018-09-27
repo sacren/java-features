@@ -14,7 +14,7 @@ public class ReverseInt {
 
     System.out.print("Enter a non-negative integer: ");
     number = inputStream.nextInt();
-    makeReverse(number);
+    reverseNumber(number);
 
     inputStream.close();
   }
@@ -22,7 +22,7 @@ public class ReverseInt {
   /**
    * Reverse the order of integer.
    */
-  public static void makeReverse(int number) {
+  public static void reverseNumber(int number) {
     String stringOfInt = "";
     int remainder;
 
