@@ -14,7 +14,7 @@ public class ReverseInt {
 
     System.out.print("Enter a non-negative integer: ");
     number = inputStream.nextInt();
-    reverseNumber(number);
+    System.out.printf("Reversed integer is %d%n", reverseNumber(number));
 
     inputStream.close();
   }
@@ -22,26 +22,21 @@ public class ReverseInt {
   /**
    * Reverse the order of integer.
    */
-  public static void reverseNumber(int number) {
-    String stringOfInt = "";
+  public static int reverseNumber(int number) {
     int remainder;
-
-    if (number < 0) {
-      System.out.println("You must enter a non-negative integer. Bye!");
-      return;
-    }
+    int reversed = 0;
 
     for (;;) {
       remainder = number % 10;
       number /= 10;
-      stringOfInt += remainder;
+      reversed *= 10;
+      reversed += remainder;
 
       if (number == 0) {
         break;
       }
     }
 
-    number = Integer.parseInt(stringOfInt);
-    System.out.printf("Reversed integer is %d%n", number);
+    return reversed;
   }
 }
