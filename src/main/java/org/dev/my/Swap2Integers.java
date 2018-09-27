@@ -37,7 +37,7 @@ public class Swap2Integers {
   }
 
   /**
-   * Print out the numbers before and after swap.
+   * Print out two numbers.
    */
   public static void printNumber(int number1, int number2) {
     System.out.printf("The first integer is %d%n"
