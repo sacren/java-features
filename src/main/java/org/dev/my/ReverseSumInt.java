@@ -1,9 +1,10 @@
 /**
- * Prompt the user for an integer and print it in reverse order.
+ * Prompt the user for an integer and print it in reverse order as well as the
+ * sum of each digit.
  */
 import java.util.Scanner;
 
-public class ReverseInt {
+public class ReverseSumInt {
   /**
    * Entry point of ReverseInt class.  It also prompts the user for an integer.
    */
