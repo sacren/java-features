@@ -12,7 +12,7 @@ public class ReverseInt {
 
     Scanner inputStream = new Scanner(System.in);
 
-    System.out.print("Enter a non-negative integer: ");
+    System.out.print("Enter an integer: ");
     number = inputStream.nextInt();
     System.out.printf("Reversed integer is %d%n", reverseNumber(number));
 
