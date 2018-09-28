@@ -1,5 +1,5 @@
 /**
- * Prompt user for a positive integer and print it in reverse order.
+ * Prompt the user for an integer and print it in reverse order.
  */
 import java.util.Scanner;
 
