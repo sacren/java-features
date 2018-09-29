@@ -23,13 +23,11 @@ public class CheckerBoard {
         System.out.print(' ');
       }
 
-      for (int col = 1; col <= size; col++) {
-        if (col == size) {
-          System.out.println('#');
-          break;
-        }
+      for (int col = 1; col < size; col++) {
         System.out.print("# ");
       }
+
+      System.out.println('#');
     }
   }
 }
