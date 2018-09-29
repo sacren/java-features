@@ -45,11 +45,9 @@ public class TimeTable {
 
       for (int col = 1; col <= size; col++) {
         System.out.printf("%4d", row * col);
-
-        if (col == size) {
-          System.out.println();
-        }
       }
+
+      System.out.println();
     }
   }
 }
