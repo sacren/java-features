@@ -15,7 +15,10 @@ public class CheckerBoard {
     printChecker();
   }
 
-  private static void printChecker() {
+  /**
+   * Method to print out detailed checker pattern using nested loop.
+   */
+  public static void printChecker() {
     final int size = 7;
     final int firstCount = 1;
 
