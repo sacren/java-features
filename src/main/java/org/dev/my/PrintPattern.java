@@ -112,7 +112,7 @@ public class PrintPattern {
     System.out.printf("%9s%n%n", "(d)");
     emptySquare();
     System.out.printf("%8s%n%n", "(e)");
-    letterZMirror();
+    mirrorLetterZ();
     System.out.printf("%8s%n%n", "(f)");
     letterZ();
     System.out.printf("%8s%n%n", "(g)");
@@ -217,7 +217,7 @@ public class PrintPattern {
     }
   }
 
-  private static void letterZMirror() {
+  private static void mirrorLetterZ() {
     final int size = 7;
     final int firstCount = 1;
 
