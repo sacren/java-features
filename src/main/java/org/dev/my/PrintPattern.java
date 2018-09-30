@@ -238,7 +238,10 @@ public class PrintPattern {
     }
   }
 
-  private static void letterZ() {
+  /**
+   * Print out pattern of letter Z.
+   */
+  public static void letterZ() {
     final int size = 7;
     final int firstCount = 1;
 
