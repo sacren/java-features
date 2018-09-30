@@ -223,17 +223,12 @@ public class PrintPattern {
 
     for (int row = firstCount; row <= size; row++) {
       for (int col = firstCount; col <= size; col++) {
-        if (col == size) {
-          System.out.println('#');
-          break;
-        }
-
-        if (row % size <= 1) {
+        if (row % size < 2 && col != size) {
           System.out.print("# ");
           continue;
         }
 
-        if (col == row) {
+        if (col == row || col == size) {
           System.out.println('#');
           break;
         }
