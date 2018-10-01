@@ -24,14 +24,15 @@ public class HourGlass {
    * Print out hourglass pattern.
    */
   public static void makeHourGlass() {
-    final int size = 7;
+    final int height = 7;
+    final int width = 7;
     final int firstCount = 1;
     boolean crossed = false;
 
-    for (int row = firstCount; row <= size; row++) {
-      for (int col = firstCount; col <= size; col++) {
-        if (row % size < 2) {
-          if (col == size) {
+    for (int row = firstCount; row <= height; row++) {
+      for (int col = firstCount; col <= width; col++) {
+        if (row % height < 2) {
+          if (col == width) {
             System.out.println('#');
             break;
           }
@@ -40,8 +41,8 @@ public class HourGlass {
           continue;
         }
 
-        /* size / 2 + 1 for both odd and even numbers. */
-        if (size / 2 + 1 == row) {
+        /* height / 2 + 1 for both odd and even numbers. */
+        if (height / 2 + 1 == row) {
           crossed = true;
         }
 
@@ -55,7 +56,7 @@ public class HourGlass {
           continue;
         }
 
-        if (col == size - row + 1) {
+        if (col == height - row + 1) {
           if (crossed) {
             System.out.print("# ");
             continue;
