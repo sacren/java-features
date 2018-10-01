@@ -155,6 +155,7 @@ public class PrintPattern {
           System.out.println("#");
           break;
         }
+
         System.out.print("# ");
       }
     }
@@ -170,6 +171,7 @@ public class PrintPattern {
           System.out.println("#");
           break;
         }
+
         System.out.print("# ");
       }
     }
@@ -270,10 +272,11 @@ public class PrintPattern {
     for (int row = firstCount; row <= size; row++) {
       for (int col = firstCount; col <= size; col++) {
         if (row % size < 2) {
-          if (size == col) {
+          if (col == size) {
             System.out.println('#');
             break;
           }
+
           System.out.print("# ");
           continue;
         }
@@ -283,7 +286,7 @@ public class PrintPattern {
           crossed = true;
         }
 
-        if (row == col) {
+        if (col == row) {
           if (crossed) {
             System.out.println('#');
             break;
@@ -293,7 +296,7 @@ public class PrintPattern {
           continue;
         }
 
-        if (size - row + 1 == col) {
+        if (col == size - row + 1) {
           if (crossed) {
             System.out.print("# ");
             continue;
@@ -329,12 +332,12 @@ public class PrintPattern {
           continue;
         }
 
-        if (row == col) {
+        if (col == row) {
           System.out.print("# ");
           continue;
         }
 
-        if (size - row + 1 == col) {
+        if (col == size - row + 1) {
           System.out.print("# ");
           continue;
         }
