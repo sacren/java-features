@@ -26,8 +26,7 @@ public class HourGlass {
   public static void makeHourGlass() {
     final int height = 11;
     final int width = 7;
-    final int heightWidthDiff = height - width;
-    final int rowColAlignment = heightWidthDiff / 2;
+    final int rowColAlignment = (height - width) / 2;
     final int firstCount = 1;
     boolean crossed = false;
 
@@ -43,8 +42,8 @@ public class HourGlass {
           continue;
         }
 
-        if (row % height < rowColAlignment + 1
-            || row % height > height - (rowColAlignment + 1)) {
+        if (row % height <= rowColAlignment
+            || row % height >= height - rowColAlignment) {
           if (col == width) {
             System.out.println('#');
             break;
