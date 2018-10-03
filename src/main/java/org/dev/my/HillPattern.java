@@ -31,10 +31,26 @@ public class HillPattern {
     }
 
     makeHill(size);
+    centerId(size);
     System.out.printf("(a)%n%n");
     makeReverseHill(size);
-    System.out.printf("(b)%n%n");
+    centerId(size);
+    System.out.printf("(b)%n");
     inputStream.close();
+  }
+
+  /**
+   * Put ID in alignment with the pattern.
+   */
+  public static void centerId(int size) {
+    for (int col = 1; col < size; col++) {
+      if (col == size - 1) {
+        System.out.print(' ');
+        break;
+      }
+
+      System.out.print("  ");
+    }
   }
 
   /**
