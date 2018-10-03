@@ -44,7 +44,10 @@ public class HillPattern {
     System.out.printf("(a)%n%n");
     makeReverseHill(size);
     centerId(size);
-    System.out.printf("(b)%n");
+    System.out.printf("(b)%n%n");
+    mirrorHill(size);
+    centerId(size);
+    System.out.printf("(c)%n");
     inputStream.close();
   }
 
@@ -96,6 +99,54 @@ public class HillPattern {
 
     for (int row = startCount; row <= size; row++) {
       width = (size - row) * 2 + startCount;
+
+      for (int col = startCount; col < row; col++) {
+        System.out.print("  ");
+      }
+
+      for (int col = startCount; col <= width; col++) {
+        if (col == width) {
+          System.out.println('#');
+          break;
+        }
+
+        System.out.print("# ");
+      }
+    }
+  }
+
+  /**
+   * Mirror the hill pattern.
+   */
+  public static void mirrorHill(int size) {
+    final int startCount = 1;
+    final int top = size;
+    final int bottom = size - 1;
+    int width;
+
+    /* Hill pattern on the top. */
+    for (int row = startCount; row <= top; row++) {
+      width = row * 2 - 1;
+
+      for (int col = startCount; col <= top - row; col++) {
+        System.out.print("  ");
+      }
+
+      for (int col = startCount; col <= width; col++) {
+        if (col == width) {
+          System.out.println('#');
+          break;
+        }
+
+        System.out.print("# ");
+      }
+    }
+
+    /* Reverse hill pattern on the bottom. */
+    for (int row = startCount; row <= bottom; row++) {
+      width = (bottom - row) * 2 + 1;
+      /* Offset for the pattern. */
+      System.out.print("  ");
 
       for (int col = startCount; col < row; col++) {
         System.out.print("  ");
