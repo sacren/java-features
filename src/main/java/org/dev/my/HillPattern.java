@@ -60,7 +60,10 @@ public class HillPattern {
     System.out.printf("(b)%n%n");
     mirrorHill(size);
     centerId(size);
-    System.out.printf("(c)%n");
+    System.out.printf("(c)%n%n");
+    diamondInSquare(size);
+    centerId(size);
+    System.out.printf("(d)%n");
     inputStream.close();
   }
 
@@ -173,6 +176,46 @@ public class HillPattern {
 
         System.out.print("# ");
       }
+    }
+  }
+
+  /**
+   * Empty diamond inside a square.
+   */
+  public static void diamondInSquare(int size) {
+    final int firstCount = 1;
+    final int top = size;
+    final int bottom = size - 1;
+    int sideTriangle;
+    int midTriangle;
+
+    for (int row = firstCount; row <= top; row++) {
+      sideTriangle = top - row + 1;
+      midTriangle = (row - 1) * 2 - 1;
+
+      for (int col = firstCount; col <= sideTriangle; col++) {
+        System.out.print("# ");
+      }
+
+      for (int col = firstCount; col <= midTriangle; col++) {
+        System.out.print("  ");
+      }
+
+      for (int col = firstCount; col <= sideTriangle; col++) {
+        if (row == firstCount && col == firstCount) {
+          continue;
+        }
+
+        if (col == sideTriangle) {
+          System.out.println('#');
+          break;
+        }
+
+        System.out.print("# ");
+      }
+    }
+
+    for (int row = firstCount; row <= bottom; row++) {
     }
   }
 }
