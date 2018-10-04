@@ -184,13 +184,11 @@ public class HillPattern {
    */
   public static void diamondInSquare(int size) {
     final int firstCount = 1;
-    final int top = size;
-    final int bottom = size - 1;
     int sideTriangle;
     int midTriangle;
 
-    for (int row = firstCount; row <= top; row++) {
-      sideTriangle = top - row + 1;
+    for (int row = firstCount; row <= size; row++) {
+      sideTriangle = size - row + 1;
       midTriangle = (row - 1) * 2 - 1;
 
       for (int col = firstCount; col <= sideTriangle; col++) {
