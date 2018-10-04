@@ -215,7 +215,27 @@ public class HillPattern {
       }
     }
 
-    for (int row = firstCount; row <= bottom; row++) {
+    for (int row = firstCount + 1; row <= size; row++) {
+      for (int col = firstCount; col <= row; col++) {
+        System.out.print("# ");
+      }
+
+      for (int col = firstCount; col <= (size - row) * 2 - 1; col++) {
+        System.out.print("  ");
+      }
+
+      for (int col = firstCount; col <= row; col++) {
+        if (row == size && col == firstCount) {
+          continue;
+        }
+
+        if (col == row) {
+          System.out.println('#');
+          break;
+        }
+
+        System.out.print("# ");
+      }
     }
   }
 }
