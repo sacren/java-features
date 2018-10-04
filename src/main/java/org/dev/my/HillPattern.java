@@ -111,7 +111,7 @@ public class HillPattern {
     int width;
 
     for (int row = startCount; row <= size; row++) {
-      width = (size - row) * 2 + startCount;
+      width = (size - row) * 2 + 1;
 
       for (int col = startCount; col < row; col++) {
         System.out.print("  ");
