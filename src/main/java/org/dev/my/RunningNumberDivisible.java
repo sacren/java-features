@@ -4,10 +4,13 @@
  */
 public class RunningNumberDivisible {
   public static void main(String[] args) {
-    sumNumbersDivisible();
+    sumDivisible();
   }
 
-  private static void sumNumbersDivisible() {
+  /**
+   * The sum of all divisible by 13, 15 or 17 but not by 30.
+   */
+  public static void sumDivisible() {
     final int upperBound = 1000;
     final int lowerBound = 1;
     int sum = 0;
