@@ -21,6 +21,7 @@ public class RunningNumberDivisible {
       }
     }
 
-    System.out.println("Sum of integers divisible is " + sum + ".");
+    System.out.printf("Between 1 and 1000, the sum of integers divisible by 13, 15, or 17 "
+                       + "but not by 30 is %d%n", sum);
   }
 }
