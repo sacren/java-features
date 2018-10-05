@@ -8,8 +8,8 @@ public class RunningNumberDivisible {
   }
 
   private static void sumNumbersDivisible() {
-    int upperBound = 1000;
-    int lowerBound = 1;
+    final int upperBound = 1000;
+    final int lowerBound = 1;
     int sum = 0;
 
     for (int i = lowerBound; i <= upperBound; i++) {
