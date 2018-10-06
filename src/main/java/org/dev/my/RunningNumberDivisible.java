@@ -10,6 +10,7 @@ public class RunningNumberDivisible {
     sumDivisible();
     sumDivisibleBy7();
     sumOddNumbers();
+    productOfIntegers();
   }
 
   /**
@@ -69,5 +70,21 @@ public class RunningNumberDivisible {
 
     System.out.printf("Between %d and %d, the sum of all odd numbers is %d%n",
                       lowerBound, upperBound, sum);
+  }
+
+  /**
+   * The product of a series of integers.
+   */
+  private static void productOfIntegers() {
+    final int upperBound = 10;
+    final int lowerBound = 1;
+    int product = lowerBound;
+
+    for (int number = lowerBound + 1; number <= upperBound; number++) {
+      product *= number;
+    }
+
+    System.out.printf("Between %d and %d, the product of integer series is %d%n",
+                      lowerBound, upperBound, product);
   }
 }
