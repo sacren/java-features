@@ -11,6 +11,7 @@ public class RunningNumberDivisible {
     sumDivisibleBy7();
     sumOddNumbers();
     productOfIntegers();
+    sumOfSquares();
   }
 
   /**
@@ -86,5 +87,21 @@ public class RunningNumberDivisible {
 
     System.out.printf("Between %d and %d, the product of integer series is %d%n",
                       lowerBound, upperBound, product);
+  }
+
+  /**
+   * The sum of squares.
+   */
+  public static void sumOfSquares() {
+    final int upperBound = 100;
+    final int lowerBound = 1;
+    int sum = 0;
+
+    for (int number = lowerBound; number <= upperBound; number++) {
+      sum += number * number;
+    }
+
+    System.out.printf("Between %d and %d, the sum of all the squares is %d%n",
+                      lowerBound, upperBound, sum);
   }
 }
