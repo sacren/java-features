@@ -3,9 +3,13 @@
  * but not by 30.
  */
 public class RunningNumberDivisible {
+  /**
+   * Entry point to execute a list of methods.
+   */
   public static void main(String[] args) {
     sumDivisible();
     sumDivisibleBy7();
+    sumOddNumbers();
   }
 
   /**
@@ -42,5 +46,28 @@ public class RunningNumberDivisible {
     }
 
     System.out.printf("Between 1 and 1000, the sum of integers divisible by 7 is %d%n", sum);
+  }
+
+  /**
+   * The sum of odd integers.
+   */
+  public static void sumOddNumbers() {
+    final int upperBound = 1000;
+    final int lowerBound = 1;
+    int sum = 0;
+    int firstOddNumber;
+
+    if (lowerBound % 2 == 1) {
+      firstOddNumber = lowerBound;
+    } else {
+      firstOddNumber = lowerBound + 1;
+    }
+
+    for (int oddNumber = firstOddNumber; oddNumber <= upperBound; oddNumber += 2) {
+      sum += oddNumber;
+    }
+
+    System.out.printf("Between %d and %d, the sum of all odd numbers is %d%n",
+                      lowerBound, upperBound, sum);
   }
 }
