@@ -37,11 +37,11 @@ public class NumberPattern {
     for (int row = firstCount; row <= size; row++) {
       for (int col = firstCount; col <= row; col++) {
         if (col == row) {
-          System.out.printf("%2d%n", col);
+          System.out.printf("%3d%n", col);
           break;
         }
 
-        System.out.printf("%2d ", col);
+        System.out.printf("%3d", col);
       }
     }
   }
