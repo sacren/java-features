@@ -25,6 +25,8 @@ public class NumberPattern {
     }
 
     bottomLeft(size);
+    System.out.println();
+    topRight(size);
     inputStream.close();
   }
 
@@ -37,6 +39,31 @@ public class NumberPattern {
     for (int row = firstCount; row <= size; row++) {
       for (int col = firstCount; col <= row; col++) {
         if (col == row) {
+          System.out.printf("%3d%n", col);
+          break;
+        }
+
+        System.out.printf("%3d", col);
+      }
+    }
+  }
+
+  /**
+   * Print pattern with right angle at top-right corner.
+   */
+  public static void topRight(int size) {
+    final int firstCount = 1;
+    int width;
+
+    for (int row = firstCount; row <= size; row++) {
+      width = size - row + 1;
+
+      for (int col = firstCount; col < row; col++) {
+        System.out.printf("%3c", ' ');
+      }
+
+      for (int col = firstCount; col <= width; col++) {
+        if (col == width) {
           System.out.printf("%3d%n", col);
           break;
         }
