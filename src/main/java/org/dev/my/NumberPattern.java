@@ -31,7 +31,7 @@ public class NumberPattern {
   }
 
   /**
-   * Print patter with bottom-left right angle.
+   * Print pattern with right angle at bottom-left corner.
    */
   public static void bottomLeft(int size) {
     final int firstCount = 1;
