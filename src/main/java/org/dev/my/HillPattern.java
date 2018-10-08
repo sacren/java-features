@@ -65,28 +65,28 @@ public class HillPattern {
       System.out.println("Invalid number. Try again...");
     }
 
+    System.out.println();
     makeHill(size);
-    centerId(size);
-    System.out.printf("(a)%n%n");
+    centerId(size, 'a');
+    System.out.println();
     makeReverseHill(size);
-    centerId(size);
-    System.out.printf("(b)%n%n");
+    centerId(size, 'b');
+    System.out.println();
     mirrorHill(size);
-    centerId(size);
-    System.out.printf("(c)%n%n");
+    centerId(size, 'c');
+    System.out.println();
     diamondInSquare(size);
-    centerId(size);
-    System.out.printf("(d)%n");
+    centerId(size, 'd');
     inputStream.close();
   }
 
   /**
    * Put ID in alignment with the pattern.
    */
-  public static void centerId(int size) {
+  public static void centerId(int size, char id) {
     for (int col = 1; col < size; col++) {
       if (col == size - 1) {
-        System.out.print(' ');
+        System.out.printf("%c(%c)%n", ' ', id);
         break;
       }
 
