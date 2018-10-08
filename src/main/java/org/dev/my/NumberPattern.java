@@ -25,9 +25,23 @@ public class NumberPattern {
     }
 
     bottomLeft(size);
+    centerId(size, 'a');
     System.out.println();
     topRight(size);
+    centerId(size, 'b');
+    System.out.println();
     inputStream.close();
+  }
+
+  /**
+   * Annotate pattern with centered ID.
+   */
+  public static void centerId(int size, char id) {
+    for (int i = 0; i < size / 2; i++) {
+      System.out.printf("%3c", ' ');
+    }
+
+    System.out.printf("(%c)%n", id);
   }
 
   /**
