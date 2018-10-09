@@ -1,8 +1,7 @@
 /**
- * Sum all the integers between 1 and 1000, that are divisible by 13, 15 or 17,
- * but not by 30.
+ * The sum or the product of a series of integers.
  */
-public class RunningNumberDivisible {
+public class SumOrProduct {
   /**
    * Entry point to execute a list of methods.
    */
