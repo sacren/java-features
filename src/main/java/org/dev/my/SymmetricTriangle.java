@@ -1,15 +1,21 @@
 /**
- * Print the triangle pattern.
+ * Print symmetric triangles.
  *
- * <p>
  *   * * * * *
  *    *     *
  *     *   *
  *      * *
  *       *
- * </p>
+ *      (a)
+ *
+ *       *
+ *      * *
+ *     *   *
+ *    *     *
+ *   * * * * *
+ *      (b)
  */
-public class PrintTrianglePattern {
+public class SymmetricTriangle {
   public static void main(String[] args) {
     printTrianglePattern();
   }
