@@ -33,6 +33,9 @@ public class NumberPattern {
     System.out.println();
     bottomRight(size);
     centerId(size, 'c');
+    System.out.println();
+    topLeft(size);
+    centerId(size, 'd');
     inputStream.close();
   }
 
@@ -109,6 +112,30 @@ public class NumberPattern {
         number = row - col + 1;
 
         if (col == row) {
+          System.out.printf("%3d%n", number);
+          break;
+        }
+
+        System.out.printf("%3d", number);
+      }
+    }
+  }
+
+  /**
+   * Print pattern with right angle at top-left corner.
+   */
+  public static void topLeft(int size) {
+    final int firstCount = 1;
+    int sentinel;
+    int number;
+
+    for (int row = firstCount; row <= size; row++) {
+      sentinel = size - row + 1;
+
+      for (int col = firstCount; col <= size; col++) {
+        number = sentinel - col + 1;
+
+        if (col == sentinel) {
           System.out.printf("%3d%n", number);
           break;
         }
