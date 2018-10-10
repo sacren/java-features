@@ -37,38 +37,36 @@ public class SymmetricTriangle {
       System.out.println("You have entered an invalid number. Try again.");
     }
 
-    printTrianglePattern();
+    printTriangle(size);
     inStream.close();
   }
 
-  private static void printTrianglePattern() {
-    System.out.println();
-    printMultiChar(' ', 3);
-    printLine();
+  private static void printTriangle(int size) {
+    final int firstCount = 1;
 
-    for (int i = 1; i < 4; i++) {
-      printMultiChar(' ', 3 + i);
-      System.out.print('*');
-      printMultiChar(' ', 9 - (i + 1) * 2);
+    for (int row = firstCount; row <= size; row++) {
+      if (row == firstCount) {
+        for (int col = firstCount; col < size; col++) {
+          System.out.print("* ");
+        }
+
+        System.out.println('*');
+        continue;
+      }
+
+      for (int col = firstCount; col < row; col++) {
+        System.out.print(' ');
+      }
+
+      if (row != size) {
+        System.out.print('*');
+      }
+
+      for (int col = row; col < size * 2 - 1 - row; col++) {
+        System.out.print(' ');
+      }
+
       System.out.println('*');
-    }
-
-    /* Prepend with 3 + 4 = 7 spaces. */
-    printMultiChar(' ', 7);
-    System.out.println('*');
-  }
-
-  private static void printLine() {
-    for (int i = 0; i < 4; i++) {
-      System.out.print("* ");
-    }
-
-    System.out.println('*');
-  }
-
-  private static void printMultiChar(char character, int count) {
-    for (int i = 0; i < count; i++) {
-      System.out.print(character);
     }
   }
 }
