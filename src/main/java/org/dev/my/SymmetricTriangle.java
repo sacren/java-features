@@ -37,8 +37,18 @@ public class SymmetricTriangle {
       System.out.println("You have entered an invalid number. Try again.");
     }
 
+    System.out.println();
     printTriangle(size);
+    centerId(size, 'a');
     inStream.close();
+  }
+
+  private static void centerId(int size, char id) {
+    for (int col = 2; col < size; col++) {
+      System.out.print(' ');
+    }
+
+    System.out.printf("(%c)%n", id);
   }
 
   private static void printTriangle(int size) {
