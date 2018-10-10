@@ -40,6 +40,9 @@ public class SymmetricTriangle {
     System.out.println();
     printTriangle(size);
     centerId(size, 'a');
+    System.out.println();
+    printReverseTriangle(size);
+    centerId(size, 'b');
     inStream.close();
   }
 
@@ -73,6 +76,35 @@ public class SymmetricTriangle {
       }
 
       for (int col = row; col < size * 2 - 1 - row; col++) {
+        System.out.print(' ');
+      }
+
+      System.out.println('*');
+    }
+  }
+
+  private static void printReverseTriangle(int size) {
+    final int firstCount = 1;
+
+    for (int row = firstCount; row <= size; row++) {
+      if (row == size) {
+        for (int col = firstCount; col < size; col++) {
+          System.out.print("* ");
+        }
+
+        System.out.println('*');
+        break;
+      }
+
+      for (int col = 0; col < size - row; col++) {
+        System.out.print(' ');
+      }
+
+      if (row != firstCount) {
+        System.out.print('*');
+      }
+
+      for (int col = firstCount + 1; col < row * 2 - 1; col++) {
         System.out.print(' ');
       }
 
