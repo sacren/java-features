@@ -19,6 +19,15 @@ public class CharArithmetic {
     c3 = 98;
     c4 = (char)(c3 - 1); /* Exception: c3 = c1 + c2 */
 
+    for (char c = 'a'; c < 'd'; c++) {
+      System.out.println(c);
+    }
+
+    for (char c = 'Z'; c > 'W'; c--) {
+      System.out.println(c);
+    }
+
+    System.out.println();
     System.out.println("Display character unformatted:");
     System.out.println(c1);
     System.out.println(c2);
