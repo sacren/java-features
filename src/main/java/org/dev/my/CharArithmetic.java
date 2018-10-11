@@ -13,8 +13,10 @@ public class CharArithmetic {
     final char c1 = '0';
     final char c2 = 'A';
     char c3;
+    char c4;
 
-    c3 = 97;
+    c3 = 98;
+    c4 = (char)(c3 - 1); /* Exception: c3 = c1 + c2 */
 
     System.out.println("Display character unformatted:");
     System.out.println(c1);
@@ -28,12 +30,13 @@ public class CharArithmetic {
                       + "%c%n"    /* Display '0' by char */
                       + "%c%n"    /* Display 'A' by char */
                       + "%c%n"    /* Display 'A' by literal char */
-                      + "%c%n"    /* Display 'a' by char */
-                      + "%c%n"    /* Display 'a' by casting char to int */
-                      + "%c%n%n"  /* Display 'a' by literal int */
+                      + "%c%n"    /* Display 'b' by char */
+                      + "%c%n"    /* Display 'b' by casting char to int */
+                      + "%c%n"    /* Display 'c' by literal int */
+                      + "%c%n%n"  /* Display 'a' by int operation */
                       + "Now with cast:%n"
                       + "%d%n"    /* Display integer casting from char */
                       + "%d%n",   /* Display integer casting from char */
-                      c1, c2, 'A', c3, (int)c3, 97, (int)c1, (int)c2);
+                      c1, c2, 'A', c3, (int)c3, 99, c4, (int)c1, (int)c2);
   }
 }
