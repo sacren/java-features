@@ -10,11 +10,12 @@ public class CharArithmetic {
    * The type char in action.
    */
   public static void runChar() {
-    final char c1 = '0';
+    char c1 = '0';
     final char c2 = 'A';
     char c3;
     char c4;
 
+    c1 += 21;
     c3 = 98;
     c4 = (char)(c3 - 1); /* Exception: c3 = c1 + c2 */
 
