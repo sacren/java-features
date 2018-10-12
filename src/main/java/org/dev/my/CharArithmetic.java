@@ -10,7 +10,7 @@ public class CharArithmetic {
    * The type char in action.
    */
   public static void runChar() {
-    char c1 = '0';
+    final char c1 = '0';
     final char c2 = 'A';
     char c3;
     char c4;
@@ -19,9 +19,10 @@ public class CharArithmetic {
 
     c3 = 98;              /* Remain char */
     c4 = (char)(c3 - 1);  /* Promote to int for calculation */
-    n1 = c4 - '0';        /* Convert '0'..'9' to 0..9 */
+    c3 -= 44;             /* Compound operation of char */
+    n1 = c3 - '0';        /* Convert '0'..'9' to 0..9 */
     n2 = c4 - c1;         /* Same as above */
-    c1 += 21;             /* Compound operation of char */
+    c3 += 44;             /* Compound operation of char */
 
     for (char c = 'a'; c < 'd'; c++) {
       System.out.println(c);
@@ -46,7 +47,7 @@ public class CharArithmetic {
     System.out.println();
 
     System.out.printf("Display character formatted:%n"
-                      + "%c%n"    /* Display 'E' by char */
+                      + "%c%n"    /* Display '0' by char */
                       + "%c%n"    /* Display 'A' by char */
                       + "%c%n"    /* Display 'A' by literal char */
                       + "%c%n"    /* Display 'b' by char */
