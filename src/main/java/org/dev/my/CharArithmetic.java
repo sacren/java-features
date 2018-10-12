@@ -44,7 +44,7 @@ public class CharArithmetic {
     System.out.println();
 
     System.out.printf("Display character formatted:%n"
-                      + "%c%n"    /* Display '0' by char */
+                      + "%c%n"    /* Display 'E' by char */
                       + "%c%n"    /* Display 'A' by char */
                       + "%c%n"    /* Display 'A' by literal char */
                       + "%c%n"    /* Display 'b' by char */
