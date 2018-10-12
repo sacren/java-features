@@ -14,10 +14,14 @@ public class CharArithmetic {
     final char c2 = 'A';
     char c3;
     char c4;
+    int n1;
+    int n2;
 
-    c1 += 21;
     c3 = 98;
     c4 = (char)(c3 - 1); /* Exception: c3 = c1 + c2 */
+    n1 = c4 - '0';
+    n2 = c4 - c1;
+    c1 += 21;
 
     for (char c = 'a'; c < 'd'; c++) {
       System.out.println(c);
@@ -32,8 +36,11 @@ public class CharArithmetic {
     System.out.println(c1);
     System.out.println(c2);
     System.out.println();
+    System.out.println("Display numbers from characters:");
     System.out.println((int)c1);
     System.out.println((int)c2);
+    System.out.println(n1);
+    System.out.println(n2);
     System.out.println();
 
     System.out.printf("Display character formatted:%n"
