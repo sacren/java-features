@@ -9,10 +9,10 @@ public class StringOperation {
   private static void runString() {
     String s1 = "Oregon State University";
     String s2 = "oregon state university";
-    int length = s1.length();
-    int beginning = 0;
-    int middle = length / 2;
-    int end = length - 1;
+    final int length = s1.length();
+    final int beginning = 0;
+    final int middle = length / 2;
+    final int end = length - 1;
 
     System.out.println(s1 + "\n"
                        + "Number of char = " + length + "\n"
