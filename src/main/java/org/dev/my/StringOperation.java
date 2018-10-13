@@ -1,12 +1,12 @@
 /**
- * String operations.
+ * String operations by length(), charAt(), and equals().
  */
-public class StringOperations {
+public class StringOperation {
   public static void main(String[] args) {
-    doStringOperation();
+    runString();
   }
 
-  private static void doStringOperation() {
+  private static void runString() {
     String s1 = "Oregon State University";
     String s2 = "oregon state university";
     int length = s1.length();
