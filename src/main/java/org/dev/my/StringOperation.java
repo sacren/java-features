@@ -14,23 +14,41 @@ public class StringOperation {
     final int middle = length / 2;
     final int end = length - 1;
 
-    System.out.println(s1 + "\n"
-                       + "Number of char = " + length + "\n"
-                       + "Beginning char = " + s1.charAt(beginning) + "\n"
-                       + "Middle char = " + s1.charAt(middle) + "\n"
-                       + "End char = " + s1.charAt(end) + "\n\n"
-                       + s2 + "\n"
-                       + s1 + " = " + s2 + "? " + s1.equals(s2) + "\n"
-                       + s1 + " = " + s2 + "? (case ignored) " + s1.equalsIgnoreCase(s2) + "\n\n"
-                       + s2 + " = " + s1 + "? " + s2.equals(s1) + "\n"
-                       + s2 + " = " + s1 + "? (case ignored) " + s2.equalsIgnoreCase(s1) + "\n\n"
-                       + "Substring of " + s1 + " = " + s1.substring(middle) + "\n"
-                       + "Substring of " + s2 + " = " + s2.substring(0, length - middle) + "\n"
-                       + "Index (o) of " + s2 + " = " + s2.indexOf('o') + "\n"
-                       + "Last index (o) of " + s2 + " = " + s2.lastIndexOf('o') + "\n\n"
-                       + "Ends with -ity of " + s2 + " = " + s2.endsWith("ity") + "\n"
-                       + "Ends with -aty of " + s2 + " = " + s2.endsWith("aty") + "\n\n"
-                       + "Upper case of " + s2 + " = " + s2.toUpperCase() + "\n"
-                       + "Lower case of " + s1 + " = " + s1.toLowerCase());
+    System.out.printf("Original string = %s%n"
+                       + "Number of char = %d%n"
+                       + "Beginning char = %c%n"
+                       + "Middle char = %c%n"
+                       + "End char = %c%n%n"
+                       + "Original string = %s%n"
+                       + "%s = %s? %b%n"
+                       + "%s = %s? (case ignored) %b%n%n"
+                       + "%s = %s? %b%n"
+                       + "%s = %s? (case ignored) %b%n%n"
+                       + "Substring of %s = %s%n"
+                       + "Substring of %s = %s%n"
+                       + "Index (o) of %s = %d%n"
+                       + "Last index (o) of %s = %d%n%n"
+                       + "Ends with -ity of %s = %b%n"
+                       + "Ends with -aty of %s = %b%n%n"
+                       + "Upper case of %s = %s%n"
+                       + "Lower case of %s = %s%n",
+                       s1,
+                       length,
+                       s1.charAt(beginning),
+                       s1.charAt(middle),
+                       s1.charAt(end),
+                       s2,
+                       s1, s2, s1.equals(s2),
+                       s1, s2, s1.equalsIgnoreCase(s2),
+                       s2, s1, s2.equals(s1),
+                       s2, s1, s2.equalsIgnoreCase(s1),
+                       s1, s1.substring(middle),
+                       s2, s2.substring(0, length - middle),
+                       s2, s2.indexOf('o'),
+                       s2, s2.lastIndexOf('o'),
+                       s2, s2.endsWith("ity"),
+                       s2, s2.endsWith("aty"),
+                       s2, s2.toUpperCase(),
+                       s1, s1.toLowerCase());
   }
 }
