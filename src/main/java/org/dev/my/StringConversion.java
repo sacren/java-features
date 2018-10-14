@@ -3,10 +3,10 @@
  */
 public class StringConversion {
   public static void main(String[] args) {
-    convertStringToNumber();
+    runConversion();
   }
 
-  private static void convertStringToNumber() {
+  private static void runConversion() {
     int i = 2018;
     double d = Math.PI;
     float f = (float)Math.E;
@@ -29,19 +29,10 @@ public class StringConversion {
     String charStr1 = Character.toString(perfect);
     int number1 = integerStr1.charAt(2) - integerStr1.charAt(3);
 
-    System.out.println(number + "\n"
-                       + pi + "\n"
-                       + euler + "\n"
-                       + boolVal + "\n"
-                       + perfect + "\n\n"
-                       + integerStr1 + "\n"
-                       + doubleStr1 + "\n"
-                       + floatStr1 + "\n"
-                       + boolStr1 + "\n"
-                       + charStr1 + "\n\n"
-                       + number1 + "\n\n"
-                       + b + "\n"
-                       + true + "\n"
-                       + boolStr);
+    System.out.printf("%d%n%f%n%f%n%b%n%c%n%n%s%n%s%n%s%n%s%n"
+                      + "%s%n%n%d%n%n%b%n%b%n%s%n",
+                      number, pi, euler, boolVal, perfect, integerStr1,
+                      doubleStr1, floatStr1, boolStr1, charStr1, number1,
+                      b, true, boolStr);
   }
 }
