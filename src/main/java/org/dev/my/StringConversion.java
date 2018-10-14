@@ -40,47 +40,49 @@ public class StringConversion {
     /* difference between string index */
     final int indexDiff = yearToString.charAt(2) - yearToString.charAt(3);
 
-    System.out.printf("%d is int%n"
-                      + "%d is int%n"
-                      + "%s is string%n"
-                      + "%s is string%n%n"
-                      + "%f is double%n"
-                      + "%f is double%n"
-                      + "%s is string%n"
-                      + "%s is string%n%n"
-                      + "%f is float%n"
-                      + "%f is float%n"
-                      + "%s is string%n"
-                      + "%s is string%n%n"
-                      + "%b is boolean%n"
-                      + "%b is boolean%n"
-                      + "%s is string%n"
-                      + "%s is string%n%n"
-                      + "%c is char%n"
-                      + "%c is char%n"
-                      + "%s is string%n"
-                      + "%s is string%n%n"
-                      + "%d is int%n%n",
-                      year,
-                      yearInInt,
-                      yearInString,
-                      yearToString,
-                      piOfMath,
-                      pi,
-                      doubleStr,
-                      piToString,
-                      eulerOfMath,
-                      euler,
-                      eulerInString,
-                      eulerToString,
-                      trueVal,
-                      trueValBoolean,
-                      trueValInString,
-                      trueValToString,
-                      charCn,
-                      perfect,
-                      stringCn,
-                      perfectToString,
-                      indexDiff);
+    final String output = String.format("%d is int%n"
+                                        + "%d is int%n"
+                                        + "%s is string%n"
+                                        + "%s is string%n%n"
+                                        + "%f is double%n"
+                                        + "%f is double%n"
+                                        + "%s is string%n"
+                                        + "%s is string%n%n"
+                                        + "%f is float%n"
+                                        + "%f is float%n"
+                                        + "%s is string%n"
+                                        + "%s is string%n%n"
+                                        + "%b is boolean%n"
+                                        + "%b is boolean%n"
+                                        + "%s is string%n"
+                                        + "%s is string%n%n"
+                                        + "%c is char%n"
+                                        + "%c is char%n"
+                                        + "%s is string%n"
+                                        + "%s is string%n%n"
+                                        + "%d is int%n%n",
+                                        year,
+                                        yearInInt,
+                                        yearInString,
+                                        yearToString,
+                                        piOfMath,
+                                        pi,
+                                        doubleStr,
+                                        piToString,
+                                        eulerOfMath,
+                                        euler,
+                                        eulerInString,
+                                        eulerToString,
+                                        trueVal,
+                                        trueValBoolean,
+                                        trueValInString,
+                                        trueValToString,
+                                        charCn,
+                                        perfect,
+                                        stringCn,
+                                        perfectToString,
+                                        indexDiff);
+
+    System.out.printf(output);
   }
 }
