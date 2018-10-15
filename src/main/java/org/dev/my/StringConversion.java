@@ -33,9 +33,11 @@ public class StringConversion {
 
     /* string and character */
     final char charCn = '好';
+    final char charA = 'a';
     String stringCn = String.valueOf(charCn);
     final char perfect = stringCn.charAt(0);
     String perfectToString = Character.toString(perfect);
+    final int newChar = charCn - charA;
 
     /* difference between string index */
     final int indexDiff = yearToString.charAt(2) - yearToString.charAt(3);
@@ -60,7 +62,8 @@ public class StringConversion {
                                         + "%c is char%n"
                                         + "%s is string%n"
                                         + "%s is string%n%n"
-                                        + "%d is int%n%n",
+                                        + "%d is int of difference of two characters%n"
+                                        + "%c is char by int of difference between %17$c and %c%n",
                                         year,
                                         yearInInt,
                                         yearInString,
@@ -81,7 +84,9 @@ public class StringConversion {
                                         perfect,
                                         stringCn,
                                         perfectToString,
-                                        indexDiff);
+                                        indexDiff,
+                                        newChar,
+                                        charA);
 
     System.out.printf(output);
   }
