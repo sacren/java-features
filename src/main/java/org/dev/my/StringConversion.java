@@ -47,6 +47,14 @@ public class StringConversion {
     String maxByteInString = Byte.toString(maxByteVal);
     final Byte maxByte = Byte.parseByte(maxByteInString);
 
+    /* string and short conversion */
+    final short minShortVal = Short.MIN_VALUE;
+    String minShortInString = Short.toString(minShortVal);
+    final short minShort = Short.parseShort(minShortInString);
+    final short maxShortVal = Short.MAX_VALUE;
+    String maxShortInString = Short.toString(maxShortVal);
+    final short maxShort = Short.parseShort(maxShortInString);
+
     /* difference between string index */
     final int indexDiff = yearToString.charAt(2) - yearToString.charAt(3);
 
@@ -76,6 +84,12 @@ public class StringConversion {
                                         + "%d is byte%n"
                                         + "%d is byte%n"
                                         + "%s is string%n%n"
+                                        + "%d is short%n"
+                                        + "%d is short%n"
+                                        + "%s is string%n%n"
+                                        + "%d is short%n"
+                                        + "%d is short%n"
+                                        + "%s is string%n%n"
                                         + "%d is int of difference of two characters%n"
                                         + "%c is char by int of difference between %17$c and %c%n",
                                         year,
@@ -104,6 +118,12 @@ public class StringConversion {
                                         maxByteVal,
                                         maxByte,
                                         maxByteInString,
+                                        minShortVal,
+                                        minShort,
+                                        minShortInString,
+                                        maxShortVal,
+                                        maxShort,
+                                        maxShortInString,
                                         indexDiff,
                                         newChar,
                                         charA);
