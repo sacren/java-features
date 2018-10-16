@@ -39,6 +39,14 @@ public class StringConversion {
     String perfectToString = Character.toString(perfect);
     final int newChar = charCn - charA;
 
+    /* string and byte conversion */
+    final Byte minByteVal = Byte.MIN_VALUE;
+    String minByteInString = Byte.toString(minByteVal);
+    final Byte minByte = Byte.parseByte(minByteInString);
+    final Byte maxByteVal = Byte.MAX_VALUE;
+    String maxByteInString = Byte.toString(maxByteVal);
+    final Byte maxByte = Byte.parseByte(maxByteInString);
+
     /* difference between string index */
     final int indexDiff = yearToString.charAt(2) - yearToString.charAt(3);
 
@@ -62,6 +70,12 @@ public class StringConversion {
                                         + "%c is char%n"
                                         + "%s is string%n"
                                         + "%s is string%n%n"
+                                        + "%d is byte%n"
+                                        + "%d is byte%n"
+                                        + "%s is string%n%n"
+                                        + "%d is byte%n"
+                                        + "%d is byte%n"
+                                        + "%s is string%n%n"
                                         + "%d is int of difference of two characters%n"
                                         + "%c is char by int of difference between %17$c and %c%n",
                                         year,
@@ -84,6 +98,12 @@ public class StringConversion {
                                         perfect,
                                         stringCn,
                                         perfectToString,
+                                        minByteVal,
+                                        minByte,
+                                        minByteInString,
+                                        maxByteVal,
+                                        maxByte,
+                                        maxByteInString,
                                         indexDiff,
                                         newChar,
                                         charA);
