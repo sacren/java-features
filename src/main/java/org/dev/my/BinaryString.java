@@ -25,11 +25,7 @@ public class BinaryString {
       break;
     }
 
-    if (isBinary(line)) {
-      System.out.printf("%s is a binary string%n", line);
-    } else {
-      System.out.printf("%s is not a binary string%n", line);
-    }
+    System.out.printf("%s is %sa binary string%n", line, isBinary(line) ? "" : "not ");
 
     inStream.close();
   }
