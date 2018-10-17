@@ -37,12 +37,13 @@ public class BinaryString {
   private static boolean isBinary(String s) {
     final int size = s.length();
     final int first = 0;
-    char ch;
+    char c;
 
     for (int i = first; i < size; i++) {
-      ch = s.charAt(i);
+      c = s.charAt(i);
 
-      if (Character.isDigit(ch) && ch - '0' < 2) {
+      if (Character.valueOf(c).equals(Character.valueOf('0'))
+          || Character.valueOf(c).equals(Character.valueOf('1'))) {
         if (i == size - 1) {
           return true;
         }
