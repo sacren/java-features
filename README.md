@@ -2,9 +2,10 @@
 
 ## What is Java Features?
 
-Java Features is a set of code examples in Java programming language that
-facilitates the basic language features in preparation for the participation in
-real world development of projects using Java.
+Java Features attempts to manifest the most essential language features of Java
+programming language by code examples in the hope that some code might be good
+enough to spawn an independent project by itself.  Java Features depends upon
+IcedTea JDK and other OSS projects like Maven.
 
 ## Prerequisite
 
@@ -30,4 +31,4 @@ real world development of projects using Java.
         $ java -cp target/java-features-1.0.jar LeapYears
         ...
 
-### From now on you shall contribute to make it better...
+### From now on all is set up for collaboration.
