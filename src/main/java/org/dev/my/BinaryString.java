@@ -13,8 +13,17 @@ public class BinaryString {
 
     Scanner inStream = new Scanner(System.in);
 
-    System.out.print("Enter a binary string: ");
-    line = inStream.nextLine();
+    for (;;) {
+      System.out.print("Enter a binary string: ");
+      line = inStream.nextLine();
+
+      if (line.isEmpty()) {
+        System.out.println("The binary string is empty");
+        continue;
+      }
+
+      break;
+    }
 
     if (isBinary(line)) {
       System.out.printf("%s is a binary string%n", line);
