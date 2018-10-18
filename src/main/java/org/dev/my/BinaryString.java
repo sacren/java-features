@@ -25,7 +25,13 @@ public class BinaryString {
       break;
     }
 
-    System.out.printf("%s is %sa binary string%n", line, isBinary(line) ? "" : "not ");
+    if (isBinary(line)) {
+      System.out.printf("%s is a binary string%n"
+                        + "%1$s in decimal is %d%n",
+                        line, convertToDecimal(line));
+    } else {
+      System.out.printf("%s is not a binary string%n", line);
+    }
 
     inStream.close();
   }
@@ -51,5 +57,21 @@ public class BinaryString {
     }
 
     return false;
+  }
+
+  private static int convertToDecimal(String s) {
+    final int size = s.length();
+    final int first = 0;
+    int decimal = 0;
+    int bit;
+    int exponent;
+
+    for (int i = first; i < size; i++) {
+      exponent = size - i - 1;
+      bit = Integer.parseInt(String.valueOf(s.charAt(i)));
+      decimal += (int)Math.pow((double)2, (double)exponent) * bit;
+    }
+
+    return decimal;
   }
 }
