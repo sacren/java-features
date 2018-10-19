@@ -68,7 +68,7 @@ public class BinaryString {
     for (int i = first; i < size; i++) {
       exponent = size - i - 1;
       bit = Character.digit(s.charAt(i), 10);
-      decimal += (int)Math.pow((double)2, (double)exponent) * bit;
+      decimal += (int)Math.pow(2, exponent) * bit;
     }
 
     return decimal;
