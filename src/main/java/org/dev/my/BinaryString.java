@@ -1,6 +1,8 @@
 /**
  * Prompt the user for a string and check if it is a binary string consisting
  * of 1's and 0's only.
+ *
+ * Convert the binary string to numerical value in decimal.
  */
 import java.util.Scanner;
 
