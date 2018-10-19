@@ -42,7 +42,7 @@ public class BinaryString {
     int bit;
 
     for (int i = first; i < size; i++) {
-      bit = Character.digit(s.charAt(i), 10);
+      bit = Character.digit(s.charAt(i), 2);
 
       if (bit == 0 || bit == 1) {
         if (i == size - 1) {
