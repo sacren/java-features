@@ -68,32 +68,25 @@ public class HexString {
     int digit;
     int exponent;
     char c;
-    int bitAtLowerA;
-    int bitAtLowerF;
-    int bitAtUpperA;
-    int bitAtUpperF;
+    int bitLow;
+    int bitHigh;
+
+    s = s.toLowerCase();
 
     for (int i = first; i < size; i++) {
       c = s.charAt(i);
       exponent = size - i - 1;
       digit = Character.digit(c, 10);
-      bitAtLowerA = Character.compare(c, 'a');
-      bitAtLowerF = Character.compare(c, 'f');
-      bitAtUpperA = Character.compare(c, 'A');
-      bitAtUpperF = Character.compare(c, 'F');
+      bitLow = Character.compare(c, 'a');
+      bitHigh = Character.compare(c, 'f');
 
       for (;;) {
         if (digit >= 0 && digit <= 9) {
           break;
         }
 
-        if (bitAtLowerA >= 0 && bitAtLowerF <= 0) {
-          digit = bitAtLowerA + 10;
-          break;
-        }
-
-        if (bitAtUpperA >= 0 && bitAtUpperF <= 0) {
-          digit = bitAtUpperA + 10;
+        if (bitLow >= 0 && bitHigh <= 0) {
+          digit = bitLow + 10;
           break;
         }
       }
