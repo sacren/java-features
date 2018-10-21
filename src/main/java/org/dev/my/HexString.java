@@ -74,23 +74,21 @@ public class HexString {
     int digit;
     int exponent;
     char c;
-    int bitDiff;
 
     s = s.toLowerCase();
 
     for (int i = first; i < size; i++) {
       c = s.charAt(i);
       exponent = size - i - 1;
-      digit = Character.digit(c, 10);
 
       /* We are only interested in arithmetic difference between this character
        * and 'a'. And that includes 'A' due to toLowerCase() call.  We don't
        * have to worry about going over boundaries as isHex() protects.
        */
-      bitDiff = Character.compare(c, 'a');
-
-      if (!Character.isDigit(c)) {
-        digit = bitDiff + 10;
+      if (Character.isDigit(c)) {
+        digit = Character.digit(c, 10);
+      } else {
+        digit = Character.compare(c, 'a') + 10;
       }
 
       decimal += (int)Math.pow(16, exponent) * digit;
