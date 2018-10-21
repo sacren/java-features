@@ -41,13 +41,14 @@ public class HexString {
     int digit;
     char c;
 
+    s = s.toLowerCase();
+
     for (int i = first; i < size; i++) {
       c = s.charAt(i);
       digit = Character.digit(c, 10);
 
       if (digit >= 0 && digit <= 9
-          || Character.compare(c, 'a') >= 0 && Character.compare(c, 'f') <= 0
-          || Character.compare(c, 'A') >= 0 && Character.compare(c, 'F') <= 0) {
+          || Character.compare(c, 'a') >= 0 && Character.compare(c, 'f') <= 0) {
         if (i == size - 1) {
           return true;
         }
