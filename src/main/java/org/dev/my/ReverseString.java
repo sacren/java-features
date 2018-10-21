@@ -14,9 +14,9 @@ public class ReverseString {
 
     System.out.print("Enter a string: ");
     line = inStream.nextLine();
-    System.out.printf("The original line: %s%n%n", line);
-    line = reverseString(line);
-    System.out.printf("The reversed line: %s%n", line);
+    System.out.printf("The original string: %s%n%n"
+                      + "The reversed string: %s%n",
+                      line, reverseString(line));
 
     inStream.close();
   }
@@ -26,8 +26,8 @@ public class ReverseString {
     final int first = 0;
     String reversed = new String();
 
-    for (int i = size; i > first; i--) {
-      reversed = reversed.concat(String.valueOf(s.charAt(i - 1)));
+    for (int i = first; i < size; i++) {
+      reversed = reversed.concat(String.valueOf(s.charAt(size - 1 - i)));
     }
 
     return reversed;
