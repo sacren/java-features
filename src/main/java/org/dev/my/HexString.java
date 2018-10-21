@@ -39,6 +39,8 @@ public class HexString {
     final int size = s.length();
     final int first = 0;
     int digit;
+    int diffToA;
+    int diffToF;
     char c;
 
     s = s.toLowerCase();
@@ -46,9 +48,12 @@ public class HexString {
     for (int i = first; i < size; i++) {
       c = s.charAt(i);
       digit = Character.digit(c, 10);
+      /* Arithmetic difference to 'a' or 'f' */
+      diffToA = Character.compare(c, 'a');
+      diffToF = Character.compare(c, 'f');
 
       if (digit >= 0 && digit <= 9
-          || Character.compare(c, 'a') >= 0 && Character.compare(c, 'f') <= 0) {
+          || diffToA >= 0 && diffToF <= 0) {
         if (i == size - 1) {
           return true;
         }
