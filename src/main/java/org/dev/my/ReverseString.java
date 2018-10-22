@@ -27,7 +27,7 @@ public class ReverseString {
     String reversed = new String();
 
     for (int i = first; i < size; i++) {
-      reversed = reversed.concat(String.valueOf(s.charAt(size - 1 - i)));
+      reversed = reversed.concat(Character.toString(s.charAt(size - 1 - i)));
     }
 
     return reversed;
