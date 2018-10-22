@@ -40,6 +40,8 @@ public class CountVowelDigit {
     int count = 0;
     char vowel;
 
+    s = s.toLowerCase();
+
     for (int i = first; i < size; i++) {
       vowel = s.charAt(i);
 
@@ -49,11 +51,6 @@ public class CountVowelDigit {
         case 'i':
         case 'o':
         case 'u':
-        case 'A':
-        case 'E':
-        case 'I':
-        case 'O':
-        case 'U':
           count++;
           break;
         default:
