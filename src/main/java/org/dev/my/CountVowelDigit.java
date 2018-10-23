@@ -29,9 +29,9 @@ public class CountVowelDigit {
   }
 
   private static void printout(String s) {
-    int size = s.length();
-    int vowels = countVowel(s);
-    int digits = countDigit(s);
+    final int size = s.length();
+    final int vowels = countVowel(s);
+    final int digits = countDigit(s);
 
     System.out.printf("Number of vowels: %d (%.2f%%)%n"
                       + "Number of digits: %d (%.2f%%)%n",
