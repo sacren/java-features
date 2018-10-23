@@ -28,6 +28,8 @@ public class PhoneKeyPad {
       if (isAllLetter(line)) {
         break;
       }
+
+      System.out.println("You entered an invalid string. Try again.");
     }
 
     System.out.printf("The user entered: %s%n", makeKeyPad(line));
