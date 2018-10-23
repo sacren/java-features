@@ -23,15 +23,19 @@ public class CountVowelDigit {
       System.out.println("The string is empty. Try again.");
     }
 
-    int size = line.length();
-    int vowels = countVowel(line);
-    int digits = countDigit(line);
+    printout(line);
+
+    inStream.close();
+  }
+
+  private static void printout(String s) {
+    int size = s.length();
+    int vowels = countVowel(s);
+    int digits = countDigit(s);
 
     System.out.printf("Number of vowels: %d (%.2f%%)%n"
                       + "Number of digits: %d (%.2f%%)%n",
                       vowels, (float)vowels * 100 / size, digits, (float)digits * 100 / size);
-
-    inStream.close();
   }
 
   private static int countVowel(String s) {
