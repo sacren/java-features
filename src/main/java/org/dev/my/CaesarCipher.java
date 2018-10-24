@@ -58,6 +58,7 @@ public class CaesarCipher {
     final int size = s.length();
     final int first = 0;
     final int key = 3;
+    final int alphabet = 26;
     String cipherText = new String();
     char c;
 
@@ -68,18 +69,15 @@ public class CaesarCipher {
 
       switch (c) {
         case 'X':
-          cipherText += "A";
-          break;
         case 'Y':
-          cipherText += "B";
-          break;
         case 'Z':
-          cipherText += "C";
+          c = (char)(c + key - alphabet);
           break;
         default:
           c = (char)(c + key);
-          cipherText += Character.toString(c);
       }
+
+      cipherText += Character.toString(c);
     }
 
     return cipherText;
