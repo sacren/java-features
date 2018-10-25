@@ -95,6 +95,16 @@
  *  # # # # # # # #
  * # # # # # # # #
  *       (j)
+ *
+ * <p># # # # # # # #
+ *    # # # # # # # #
+ *    # # # # # # # #
+ *    # # # # # # # #
+ *    # # # # # # # #
+ *    # # # # # # # #
+ *    # # # # # # # #
+ *    # # # # # # # #
+ *          (k)
  */
 public class PatternIn2D {
     /** Entry point. */
@@ -119,6 +129,8 @@ public class PatternIn2D {
         System.out.printf("%8s%n%n", "(i)");
         parallelogram();
         System.out.printf("%9s%n%n", "(j)");
+        solidSquare();
+        System.out.printf("%9s%n%n", "(k)");
     }
 
     /* Pattern of square with empty enter. */
@@ -368,6 +380,24 @@ public class PatternIn2D {
                     }
                 }
 
+                System.out.print("# ");
+            }
+        }
+    }
+
+    /* Patter of solid square. The simplest pattern employing nested loop. All
+     * other patterns are more or less adding extension to it.
+     */
+    private static void solidSquare() {
+        final int size = 8;
+        final int first = 1;
+
+        for (int row = first; row <= size; row++) {
+            for (int col = first; col <= size; col++) {
+                if (col == size) {
+                    System.out.println('#');
+                    break;
+                }
                 System.out.print("# ");
             }
         }
