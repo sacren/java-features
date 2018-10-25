@@ -1,5 +1,5 @@
 /**
- * Print miscellaneous patterns using nested loop.
+ * Print 2-D patterns using nested loop.
  *
  * <p>#
  *    # #
@@ -121,6 +121,7 @@ public class PrintPattern {
         System.out.printf("%9s%n%n", "(j)");
     }
 
+    /* Pattern of square with empty enter. */
     private static void emptySquare() {
         final int size = 7;
         final int firstCount = 1;
@@ -142,6 +143,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of triangle with right angle at bottom left. */
     private static void triangleBottomLeft() {
         final int size = 8;
         final int firstCount = 1;
@@ -158,6 +160,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of triangle with right angle at top left. */
     private static void triangleTopLeft() {
         final int size = 8;
         final int firstCount = 1;
@@ -174,6 +177,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of triangle with right angle at top right. */
     private static void triangleTopRight() {
         final int size = 8;
         final int firstCount = 1;
@@ -195,6 +199,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of triangle with right angle at bottom right. */
     private static void triangleBottomRight() {
         final int size = 8;
         final int firstCount = 1;
@@ -216,6 +221,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of mirrored letter Z. */
     private static void mirrorLetterZ() {
         final int size = 7;
         final int firstCount = 1;
@@ -237,8 +243,8 @@ public class PrintPattern {
         }
     }
 
-    /** Print out pattern of letter Z. */
-    public static void letterZ() {
+    /* Pattern of letter Z. */
+    private static void letterZ() {
         final int size = 7;
         final int firstCount = 1;
 
@@ -259,6 +265,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of hourglass. */
     private static void hourGlass() {
         final int size = 7;
         final int firstCount = 1;
@@ -306,6 +313,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of hourglass inside a box. */
     private static void hourGlassInBox() {
         final int size = 7;
         final int firstCount = 1;
@@ -342,6 +350,7 @@ public class PrintPattern {
         }
     }
 
+    /* Pattern of parallelogram. */
     private static void parallelogram() {
         final int size = 8;
         final int firstCount = 1;
