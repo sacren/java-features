@@ -1,5 +1,5 @@
 /**
- * Print 2-D patterns using nested loop.
+ * Various 2-D patterns through nested loop.
  *
  * <p>#
  *    # #
@@ -96,7 +96,7 @@
  * # # # # # # # #
  *       (j)
  */
-public class PrintPattern {
+public class PatternIn2D {
     /** Entry point. */
     public static void main(String[] args) {
         triangleBottomLeft();
