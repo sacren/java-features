@@ -1,20 +1,18 @@
 /**
- * Prompt the user for a plaintext string consisting of mixed-case letters
- * only.  Swap the corresponding letters between plain and cipher texts.  Print
- * out the result in upper case.  Example: abcXYZ <-> ZYXCBA.
+ * Prompt the user for a plaintext string consisting of mixed-case letters only. Swap the
+ * corresponding letters between plain and cipher texts. Print out the result in upper case.
+ * Example: abcXYZ <-> ZYXCBA.
  */
 import java.util.Scanner;
 
 public class ExchangeCipher {
-    /**
-     * Entry point that retrieves and validates the input string.
-     */
+    /** Entry point that retrieves and validates the input string. */
     public static void main(String[] args) {
         String line;
 
         Scanner inStream = new Scanner(System.in);
 
-        for (;;) {
+        for (; ; ) {
             System.out.print("Enter a plaintext string: ");
             line = inStream.nextLine();
 
@@ -46,7 +44,7 @@ public class ExchangeCipher {
         s = s.toUpperCase();
 
         for (int i = first; i < size; i++) {
-            cipher += (char)(key - s.charAt(i));
+            cipher += (char) (key - s.charAt(i));
         }
 
         return cipher;

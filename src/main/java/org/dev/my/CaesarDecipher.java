@@ -1,19 +1,17 @@
 /**
- * Prompt the user for a ciphertext string consisting of mixed-case letters
- * only.  Decipher to plain text and print it out in upper case.  Let key = 3.
+ * Prompt the user for a ciphertext string consisting of mixed-case letters only. Decipher to plain
+ * text and print it out in upper case. Let key = 3.
  */
 import java.util.Scanner;
 
 public class CaesarDecipher {
-    /**
-     * Entry point that retrieves and validates user input.
-     */
+    /** Entry point that retrieves and validates user input. */
     public static void main(String[] args) {
         String line;
 
         Scanner inStream = new Scanner(System.in);
 
-        for (;;) {
+        for (; ; ) {
             System.out.print("Enter a string of cipher text: ");
             line = inStream.nextLine();
 
@@ -68,10 +66,10 @@ public class CaesarDecipher {
                 case 'A':
                 case 'B':
                 case 'C':
-                    plainText += (char)(c + alphabet - key);
+                    plainText += (char) (c + alphabet - key);
                     break;
                 default:
-                    plainText += (char)(c - key);
+                    plainText += (char) (c - key);
             }
         }
 
