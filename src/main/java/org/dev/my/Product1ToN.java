@@ -13,12 +13,12 @@ public class Product1ToN {
 
     /* Calculate the product from 1 to 10, 11, etc. */
     private static long computeProduct(int number) {
-        final int lastNumber = number;
+        /* Skip the first iterator as product is initialized to 1. */
         final int second = 2;
         /* Use long type to not go over bounds. */
         long product = 1;
 
-        for (int i = second; i <= lastNumber; i++) {
+        for (int i = second; i <= number; i++) {
             product *= i;
         }
 
