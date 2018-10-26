@@ -141,7 +141,7 @@ public class PatternIn2D {
         solidSquare();
         System.out.printf("%9s%n%n", "(k)");
         checkerBoard();
-        System.out.printf("%8s%n%n", "(l)");
+        System.out.printf("%8s%n", "(l)");
     }
 
     /* Pattern of square with empty enter. */
