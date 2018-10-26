@@ -105,6 +105,15 @@
  *    # # # # # # # #
  *    # # # # # # # #
  *          (k)
+ *
+ * <p># # # # # # #
+ *     # # # # # # #
+ *    # # # # # # #
+ *     # # # # # # #
+ *    # # # # # # #
+ *     # # # # # # #
+ *    # # # # # # #
+ *         (l)
  */
 public class PatternIn2D {
     /** Entry point. */
@@ -131,6 +140,8 @@ public class PatternIn2D {
         System.out.printf("%9s%n%n", "(j)");
         solidSquare();
         System.out.printf("%9s%n%n", "(k)");
+        checkerBoard();
+        System.out.printf("%8s%n%n", "(l)");
     }
 
     /* Pattern of square with empty enter. */
@@ -400,6 +411,24 @@ public class PatternIn2D {
                 }
                 System.out.print("# ");
             }
+        }
+    }
+
+    /* Pattern of checker board. */
+    private static void checkerBoard() {
+        final int size = 7;
+        final int first = 1;
+
+        for (int row = first; row <= size; row++) {
+            if (row % 2 == 0) {
+                System.out.print(' ');
+            }
+
+            for (int col = first; col < size; col++) {
+                System.out.print("# ");
+            }
+
+            System.out.println('#');
         }
     }
 }
