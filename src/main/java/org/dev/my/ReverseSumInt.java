@@ -23,15 +23,11 @@ public class ReverseSumInt {
         int remainder;
         int reversed = 0;
 
-        for (; ; ) {
-            remainder = number % 10;
-            number /= 10;
+        /* Decrement through division by 10. */
+        for (int i = number; i != 0; i /= 10) {
+            remainder = i % 10;
             reversed *= 10;
             reversed += remainder;
-
-            if (number == 0) {
-                break;
-            }
         }
 
         return reversed;
@@ -39,17 +35,11 @@ public class ReverseSumInt {
 
     /** Sum each digit of integer. */
     public static int sumDigit(int number) {
-        int remainder;
         int sum = 0;
 
-        for (; ; ) {
-            remainder = number % 10;
-            sum += remainder;
-            number /= 10;
-
-            if (number == 0) {
-                break;
-            }
+        /* Decrement through division by 10. */
+        for (int i = number; i != 0; i /= 10) {
+            sum += i % 10;
         }
 
         return sum;
