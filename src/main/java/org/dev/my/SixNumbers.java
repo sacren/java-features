@@ -1,5 +1,5 @@
 /** Addition and multiplication of six integers. */
-public class SixNumberProduct {
+public class SixNumbers {
     /** Print out the sum and product of six integers. */
     public static void main(String[] args) {
         System.out.printf(
