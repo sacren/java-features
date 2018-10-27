@@ -1,22 +1,21 @@
-/** Multiply six integers and print the product. */
+/** Multiplication of six integers. */
 public class SixNumberProduct {
-    /** Entry point. */
+    /** Print out the product of six integers. */
     public static void main(String[] args) {
-        printProduct();
+        System.out.printf("The product of 11, 22, 33, 44, 55 and 66 is %d%n", productOfSix());
     }
 
-    private static void printProduct() {
-        int number1 = 11;
-        int number2 = 22;
-        int number3 = 33;
-        int number4 = 44;
-        int number5 = 55;
-        int number6 = 66;
-        int product;
+    /* Calculate the product of six integers. */
+    private static int productOfSix() {
+        int[] numbers = {11, 22, 33, 44, 55, 66};
+        int product = numbers[0];
+        final int first = 1;
+        final int size = numbers.length;
 
-        product = number1 * number2 * number3 * number4 * number5;
-        product *= number6;
+        for (int i = first; i < size; i++) {
+            product *= numbers[i];
+        }
 
-        System.out.println("The product is " + product + ".");
+        return product;
     }
 }
