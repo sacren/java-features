@@ -11,7 +11,8 @@ public class ReverseString {
         System.out.print("Enter a string: ");
         line = inStream.nextLine();
         System.out.printf(
-                "The original string: %s%n%n" + "The reversed string: %s%n",
+                "The original string: %s%n"
+                + "The reversed string: %s%n",
                 line, reverseString(line));
 
         inStream.close();
