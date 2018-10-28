@@ -18,8 +18,8 @@ public class ReverseSumInt {
         inputStream.close();
     }
 
-    /** Reverse the order of integer. */
-    public static int reverseNumber(int number) {
+    /* Reverse the order of integer. */
+    private static int reverseNumber(int number) {
         int remainder;
         int reversed = 0;
 
@@ -33,8 +33,8 @@ public class ReverseSumInt {
         return reversed;
     }
 
-    /** Sum each digit of integer. */
-    public static int sumDigit(int number) {
+    /* Sum each digit of integer. */
+    private static int sumDigit(int number) {
         int sum = 0;
 
         /* Decrement through division by 10. */
