@@ -12,8 +12,12 @@ public class ReverseSumInt {
 
         System.out.print("Enter an integer: ");
         number = inputStream.nextInt();
-        System.out.printf("Reversed integer is %d%n", reverseNumber(number));
-        System.out.printf("Sum of each digit is %d%n", sumDigit(number));
+        System.out.printf(
+                "Reversed integer is %d"
+                + "%n"
+                + "Sum of each digit is %d"
+                + "%n",
+                reverseNumber(number), sumDigit(number));
 
         inputStream.close();
     }
