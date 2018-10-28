@@ -38,7 +38,7 @@ public class ReverseSumInt {
         int sum = 0;
 
         /* Decrement through division by 10. */
-        for (int i = number; i != 0; i /= 10) {
+        for (int i = Math.abs(number); i != 0; i /= 10) {
             sum += i % 10;
         }
 
