@@ -1,7 +1,10 @@
-/** Print day of the week. */
+/**
+ * Prompt the user for an integer between 0 and 6 (0 for Sunday, 6 for
+ * Saturday, etc.) and print the corresponding day of the week.
+ */
 import java.util.Scanner;
 
-public class PrintDayInWord {
+public class DayOfWeek {
     /** Ask the user for a number to show day of the week. */
     public static void main(String[] args) {
         int day;
