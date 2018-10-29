@@ -1,7 +1,10 @@
-/** Print ONE, TWO, THREE for 1, 2, 3. */
+/**
+ * Prompt the user for an integer between 1 and 12 for the name of the month
+ * in upper case.
+ */
 import java.util.Scanner;
 
-public class PrintNumberInWord {
+public class NumberToMonth {
     /** Ask the user for the number to display the month. */
     public static void main(String[] args) {
         int month;
