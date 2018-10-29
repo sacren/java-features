@@ -1,45 +1,71 @@
 /** Print ONE, TWO, THREE for 1, 2, 3. */
+import java.util.Scanner;
+
 public class PrintNumberInWord {
+    /** Ask the user for the number to display the month. */
     public static void main(String[] args) {
-        printWord();
+        int month;
+        Scanner inStream = new Scanner(System.in);
+
+        for ( ; ; ) {
+            System.out.print("Enter 1 to 12 for the month: ");
+            month = inStream.nextInt();
+
+            if (month >= 1 && month <= 12) {
+                break;
+            }
+
+            System.out.println("You entered an invalid number. Try again.");
+        }
+
+        System.out.printf("%d is for %s%n", month, getMonth(month));
+        inStream.close();
     }
 
-    private static void printWord() {
-        int number = 8;
-        String word;
+    private static String getMonth(int number) {
+        String month = "december";
 
         switch (number) {
             case 1:
-                word = "ONE";
+                month = "january";
                 break;
             case 2:
-                word = "TWO";
+                month = "february";
                 break;
             case 3:
-                word = "THREE";
+                month = "march";
                 break;
             case 4:
-                word = "FOUR";
+                month = "april";
                 break;
             case 5:
-                word = "FIVE";
+                month = "may";
                 break;
             case 6:
-                word = "SIX";
+                month = "june";
                 break;
             case 7:
-                word = "SEVEN";
+                month = "july";
                 break;
             case 8:
-                word = "EIGHT";
+                month = "august";
                 break;
             case 9:
-                word = "NINE";
+                month = "september";
+                break;
+            case 10:
+                month = "october";
+                break;
+            case 11:
+                month = "november";
+                break;
+            case 12:
+                /* month has been initialized. */
                 break;
             default:
-                word = "OTHER";
+                /* Nothing to do. */
         }
 
-        System.out.println(word);
+        return month.toUpperCase();
     }
 }
