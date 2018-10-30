@@ -22,11 +22,11 @@ public class DayOfWeek {
             System.out.println("You entered an invalid number. Try again.");
         }
 
-        dayOfWeek(day);
+        System.out.printf("%d is for %s%n", day, dayOfWeek(day));
         inStream.close();
     }
 
-    private static void dayOfWeek(int number) {
+    private static String dayOfWeek(int number) {
         String day = "Sunday";
 
         switch (number) {
@@ -51,6 +51,6 @@ public class DayOfWeek {
             default:
         }
 
-        System.out.printf("You entered %d for %s%n", number, day);
+        return day;
     }
 }
