@@ -33,13 +33,15 @@ public class IsPalindrome {
     private static boolean isPalindrome(String s) {
         final int size = s.length();
         final int first = 0;
-        String reversed = new String();
+        String firstHalf = s.substring(0, size / 2);
+        String secondHalf = new String();
 
-        for (int i = first; i < size; i++) {
-            reversed += s.charAt(size - 1 - i);
+        for (int i = first; i < size / 2; i++) {
+            secondHalf += s.charAt(size - 1 - i);
         }
 
-        if (s.equals(reversed)) {
+        /* Only need to compare the first half to the second. */
+        if (firstHalf.equals(secondHalf)) {
             return true;
         }
 
