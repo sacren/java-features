@@ -9,7 +9,7 @@ public class IsPalindrome {
         Scanner inStream = new Scanner(System.in);
 
         for ( ; ; ) {
-            System.out.print("Enter a word in palindrome: ");
+            System.out.print("Enter a phrase in palindrome: ");
             word = inStream.nextLine();
 
             if (word.isEmpty()) {
@@ -31,6 +31,8 @@ public class IsPalindrome {
     }
 
     private static boolean isPalindrome(String s) {
+        s = stripWhiteSpace(s);
+
         final int size = s.length();
         final int first = 0;
         String firstHalf = s.substring(0, size / 2);
@@ -51,9 +53,12 @@ public class IsPalindrome {
     private static boolean isInputValid(String s) {
         final int size = s.length();
         final int first = 0;
+        char c;
 
         for (int i = first; i < size; i++) {
-            if (!Character.isLetter(s.charAt(i))) {
+            c = s.charAt(i);
+
+            if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
                 break;
             }
 
@@ -63,5 +68,22 @@ public class IsPalindrome {
         }
 
         return false;
+    }
+
+    private static String stripWhiteSpace(String s) {
+        final int size = s.length();
+        final int first = 0;
+        String stripped = new String();
+        char c;
+
+        for (int i = first; i < size; i++) {
+            c = s.charAt(i);
+
+            if (Character.isLetter(c)) {
+                stripped += c;
+            }
+        }
+
+        return stripped;
     }
 }
