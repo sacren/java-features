@@ -31,7 +31,7 @@ public class IsPalindrome {
     }
 
     private static boolean isPalindrome(String s) {
-        s = stripWhiteSpace(s);
+        s = stripWhiteSpace(s).toLowerCase();
 
         final int size = s.length();
         final int first = 0;
