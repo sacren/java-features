@@ -4,20 +4,20 @@ import java.util.Scanner;
 public class IsPalindrome {
     /** Prompt the user for a word and test if it is a palindrome. */
     public static void main(String[] args) {
-        String word;
+        String phrase;
 
         Scanner inStream = new Scanner(System.in);
 
         for ( ; ; ) {
             System.out.print("Enter a phrase in palindrome: ");
-            word = inStream.nextLine();
+            phrase = inStream.nextLine();
 
-            if (word.isEmpty()) {
+            if (phrase.isEmpty()) {
                 System.out.println("You entered an empty string. Try again.");
                 continue;
             }
 
-            if (isInputValid(word)) {
+            if (isInputValid(phrase)) {
                 break;
             }
 
@@ -26,7 +26,7 @@ public class IsPalindrome {
 
         System.out.printf(
                 "%s is%s palindrome%n",
-                word, isPalindrome(word) ? "" : " not");
+                phrase, isPalindrome(phrase) ? "" : " not");
         inStream.close();
     }
 
@@ -58,7 +58,7 @@ public class IsPalindrome {
         for (int i = first; i < size; i++) {
             c = s.charAt(i);
 
-            if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
+            if (Character.isISOControl(c)) {
                 break;
             }
 
