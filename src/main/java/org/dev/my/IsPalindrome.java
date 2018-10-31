@@ -31,7 +31,7 @@ public class IsPalindrome {
     }
 
     private static boolean isPalindrome(String s) {
-        s = stripWhiteSpace(s).toLowerCase();
+        s = getAlphaStr(s);
 
         final int size = s.length();
         final int first = 0;
@@ -70,7 +70,7 @@ public class IsPalindrome {
         return false;
     }
 
-    private static String stripWhiteSpace(String s) {
+    private static String getAlphaStr(String s) {
         final int size = s.length();
         final int first = 0;
         String stripped = new String();
@@ -84,6 +84,6 @@ public class IsPalindrome {
             }
         }
 
-        return stripped;
+        return stripped.toLowerCase();
     }
 }
