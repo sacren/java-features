@@ -25,7 +25,7 @@ public class IsPalindrome {
         }
 
         System.out.printf(
-                "%s is%s palindrome%n",
+                "\"%s\" is%s a palindrome%n",
                 phrase, isPalindrome(phrase) ? "" : " not");
         inStream.close();
     }
