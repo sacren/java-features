@@ -1,5 +1,5 @@
 /**
- * Print an animal picture.
+ * An animal in 2D.
  *
  *           <p>'__'
  *              (oo)
@@ -8,7 +8,7 @@
  *    *  ||-----||
  *       ""     ""
  */
-public class PrintAnimalPicture {
+public class AnimalIn2D {
     public static void main(String[] args) {
         printAnimal();
     }
