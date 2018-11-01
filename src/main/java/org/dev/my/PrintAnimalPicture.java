@@ -56,7 +56,7 @@ public class PrintAnimalPicture {
         System.out.println();
     }
 
-    private static void printMultiChar(char c, int count) {
+    private static void printMultiChar(final char c, final int count) {
         for (int i = 0; i < count; i++) {
             System.out.print(c);
         }
