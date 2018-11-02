@@ -30,11 +30,11 @@ public class SalesTaxCalculator {
         inputStream.close();
     }
 
-    /** Calculate actual price and sales tax. */
-    public static void calculatePrice(double priceWithTax) {
-        double taxRate = 0.07;
-        double preTaxPrice = priceWithTax / (1 + taxRate);
-        double salesTax = priceWithTax - preTaxPrice;
+    /* Calculate actual price and sales tax. */
+    private static void calculatePrice(final double priceWithTax) {
+        final double taxRate = 0.07;
+        final double preTaxPrice = priceWithTax / (1 + taxRate);
+        final double salesTax = priceWithTax - preTaxPrice;
         System.out.printf(
                 "The pretax price is %.2f%n"
                         + "The 7%% sales tax is %.2f%n"
