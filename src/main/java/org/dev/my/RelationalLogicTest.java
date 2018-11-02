@@ -24,8 +24,9 @@ public class RelationalLogicTest {
                     + "Married and female = %b%n"
                     + "Height at least 180, weight at least above 65 and below 80 = %b%n"
                     + "Height at least above 180 or weight at least above 90 = %b%n",
-                    age == 18 && !married && !attached && gender == 'm',
-                    married && gender == 'f',
+                    age == 18 && !married && !attached
+                        && Character.valueOf(gender).equals(Character.valueOf('m')),
+                    married && Character.valueOf(gender).equals(Character.valueOf('f')),
                     height >= 180 && weight >= 65 && weight <= 80,
                     height >= 180 || weight >= 90);
     }
