@@ -33,8 +33,8 @@ public class InputValidation {
         inputStream.close();
     }
 
-    /** Check whether the student score is valid. */
-    public static boolean isValid(int score) {
+    /* Check whether the student score is within the range. */
+    private static boolean isValid(final int score) {
         if (score >= 0 && score <= 100) {
             return true;
         }
