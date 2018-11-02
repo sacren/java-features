@@ -12,13 +12,21 @@ public class RelationalLogicTest {
         final boolean attached = false;
         final char gender = 'm';
 
-        System.out.println(
-                (age == 18 && !married && !attached && gender == 'm')
-                        + "\n"
-                        + (married && gender == 'f')
-                        + "\n"
-                        + (height >= 180 && weight >= 65 && weight <= 80)
-                        + "\n"
-                        + (height >= 180 || weight >= 90));
+        System.out.printf(
+                "Age = 18%n"
+                    + "Weight = 71.23%n"
+                    + "Height = 191%n"
+                    + "Married = false%n"
+                    + "Attached = false%n"
+                    + "Gender = 'm'%n%n"
+                    + "Given the facts above, evaluate relational logic%n"
+                    + "Age 18, not married, not attached and male = %b%n"
+                    + "Married and female = %b%n"
+                    + "Height at least 180, weight at least above 65 and below 80 = %b%n"
+                    + "Height at least above 180 or weight at least above 90 = %b%n",
+                    age == 18 && !married && !attached && gender == 'm',
+                    married && gender == 'f',
+                    height >= 180 && weight >= 65 && weight <= 80,
+                    height >= 180 || weight >= 90);
     }
 }
