@@ -25,7 +25,7 @@ public class NumberToMonth {
         inStream.close();
     }
 
-    private static String getMonth(int number) {
+    private static String getMonth(final int number) {
         String month = "december";
 
         switch (number) {
