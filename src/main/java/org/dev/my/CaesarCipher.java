@@ -13,7 +13,7 @@ public class CaesarCipher {
 
         Scanner inStream = new Scanner(System.in);
 
-        for (; ; ) {
+        for ( ; ; ) {
             System.out.print("Enter text in mixed case: ");
             line = inStream.nextLine();
 
@@ -29,7 +29,7 @@ public class CaesarCipher {
             System.out.println("You entered an invalid string. Try again.");
         }
 
-        System.out.printf("The cipher text: %s%n", mkCipherText(line));
+        System.out.printf("The cipher text: %s%n", plainToCipher(line));
 
         inStream.close();
     }
@@ -51,11 +51,11 @@ public class CaesarCipher {
         return false;
     }
 
-    private static String mkCipherText(String s) {
+    private static String plainToCipher(String s) {
         final int size = s.length();
         final int first = 0;
         final int key = 3;
-        final int alphabet = 26;
+        final int cycle = 26;
         String cipherText = new String();
         char c;
 
@@ -68,7 +68,7 @@ public class CaesarCipher {
                 case 'X':
                 case 'Y':
                 case 'Z':
-                    c = (char) (c + key - alphabet);
+                    c = (char) (c + key - cycle);
                     break;
                 default:
                     c = (char) (c + key);

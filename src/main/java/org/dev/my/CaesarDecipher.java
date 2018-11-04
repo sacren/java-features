@@ -11,7 +11,7 @@ public class CaesarDecipher {
 
         Scanner inStream = new Scanner(System.in);
 
-        for (; ; ) {
+        for ( ; ; ) {
             System.out.print("Enter a string of cipher text: ");
             line = inStream.nextLine();
 
@@ -27,7 +27,7 @@ public class CaesarDecipher {
             System.out.println("The input is invalid. Try again.");
         }
 
-        System.out.printf("The plain text: %s%n", decipherText(line));
+        System.out.printf("The plain text: %s%n", cipherToPlain(line));
 
         inStream.close();
     }
@@ -49,11 +49,11 @@ public class CaesarDecipher {
         return false;
     }
 
-    private static String decipherText(String s) {
+    private static String cipherToPlain(String s) {
         String plainText = new String();
         final int size = s.length();
         final int first = 0;
-        final int alphabet = 26;
+        final int cycle = 26;
         final int key = 3;
         char c;
 
@@ -66,7 +66,7 @@ public class CaesarDecipher {
                 case 'A':
                 case 'B':
                 case 'C':
-                    plainText += (char) (c + alphabet - key);
+                    plainText += (char) (c + cycle - key);
                     break;
                 default:
                     plainText += (char) (c - key);
