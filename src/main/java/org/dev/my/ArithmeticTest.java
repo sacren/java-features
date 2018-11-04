@@ -1,37 +1,24 @@
 /** Test arithmetic operations. */
 public class ArithmeticTest {
+    /** Run elementary arithmetic. */
     public static void main(String[] args) {
-        testArithmetic();
-    }
+        final int number1 = 98;
+        final int number2 = 5;
+        final int sum = number1 + number2;
+        final int difference = number1 - number2;
+        final int product = number1 * number2;
+        final int quotient = number1 / number2;
+        final int remainder = number1 % number2;
+        final int multiSum = number1 * 31 + number2 * 17;
 
-    private static void testArithmetic() {
-        int number1 = 98;
-        int number2 = 5;
-        int sum = number1 + number2;
-        int difference = number1 - number2;
-        int product = number1 * number2;
-        int quotient = number1 / number2;
-        int remainder = number1 % number2;
-        int multiSum = number1 * 31 + number2 * 17;
-
-        System.out.println(
-                "The sum, difference, product, quotient and remainder:\n"
-                        + "98 + 5 = "
-                        + sum
-                        + "\n"
-                        + "98 - 5 = "
-                        + difference
-                        + "\n"
-                        + "98 × 5 = "
-                        + product
-                        + "\n"
-                        + "98 ÷ 5 = "
-                        + quotient
-                        + "\n"
-                        + "98 % 5 = "
-                        + remainder
-                        + "\n\n"
-                        + "98 × 31 + 5 × 17 = "
-                        + multiSum);
+        System.out.printf(
+                "The sum, difference, product, quotient and remainder:%n"
+                        + "98 + 5 = %d%n"
+                        + "98 - 5 = %d%n"
+                        + "98 × 5 = %d%n"
+                        + "98 ÷ 5 = %d%n"
+                        + "98 %% 5 = %d%n%n"
+                        + "98 × 31 + 5 × 17 = %d%n",
+                        sum, difference, product, quotient, remainder, multiSum);
     }
 }
