@@ -12,7 +12,7 @@ public class BinaryString {
 
         Scanner inStream = new Scanner(System.in);
 
-        for (; ; ) {
+        for ( ; ; ) {
             System.out.print("Enter a binary string: ");
             line = inStream.nextLine();
 
@@ -26,7 +26,8 @@ public class BinaryString {
 
         if (isBinary(line)) {
             System.out.printf(
-                    "%s is a binary string%n" + "%1$s in decimal is %d%n",
+                    "%s is a binary string%n"
+                            + "%1$s in decimal is %d%n",
                     line, convertToDecimal(line));
         } else {
             System.out.printf("%s is not a binary string%n", line);
