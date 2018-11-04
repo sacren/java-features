@@ -4,8 +4,8 @@ public class CharArithmetic {
         runChar();
     }
 
-    /** The type char in action. */
-    public static void runChar() {
+    /* The type char in action. */
+    private static void runChar() {
         final char c1 = '0'; /* Declare char and initialize with char */
         final char c2 = 'A';
         char c3 = 98; /* Declare char and initilize with int */
