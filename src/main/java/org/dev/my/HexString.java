@@ -74,7 +74,8 @@ public class HexString {
 
         for (int i = first; i < size; i++) {
             c = s.charAt(i);
-            exponent = size - i - 1;
+            /* (size - 1) is the greatest index and each iteration makes it decrement. */
+            exponent = size - 1 - i;
 
             /* We are only interested in arithmetic difference between this character
              * and 'a'. And that includes 'A' due to toLowerCase() call.  We don't

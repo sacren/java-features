@@ -66,7 +66,8 @@ public class BinaryString {
         int exponent;
 
         for (int i = first; i < size; i++) {
-            exponent = size - i - 1;
+            /* (size - 1) is the greatest index and each iteration makes it decrement. */
+            exponent = size - 1 - i;
             /* The radix doesn't matter much. We might as well use the value of 2. */
             numericValue = Character.digit(s.charAt(i), 10);
             decimal += (int) Math.pow(2, exponent) * numericValue;
