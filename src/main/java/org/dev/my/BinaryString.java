@@ -39,12 +39,12 @@ public class BinaryString {
     private static boolean isBinary(String s) {
         final int size = s.length();
         final int first = 0;
-        int bit;
+        int numericValue;
 
         for (int i = first; i < size; i++) {
-            bit = Character.digit(s.charAt(i), 2);
+            numericValue = Character.digit(s.charAt(i), 2);
 
-            if (bit == 0 || bit == 1) {
+            if (numericValue == 0 || numericValue == 1) {
                 if (i == size - 1) {
                     return true;
                 }
@@ -62,13 +62,13 @@ public class BinaryString {
         final int size = s.length();
         final int first = 0;
         int decimal = 0;
-        int bit;
+        int numericValue;
         int exponent;
 
         for (int i = first; i < size; i++) {
             exponent = size - i - 1;
-            bit = Character.digit(s.charAt(i), 10);
-            decimal += (int) Math.pow(2, exponent) * bit;
+            numericValue = Character.digit(s.charAt(i), 10);
+            decimal += (int) Math.pow(2, exponent) * numericValue;
         }
 
         return decimal;
