@@ -49,18 +49,12 @@ public class HexString {
             diffToA = Character.compare(c, 'a');
             diffToF = Character.compare(c, 'f');
 
-            if (digit >= 0 && digit <= 9 || diffToA >= 0 && diffToF <= 0) {
-                if (i == size - 1) {
-                    return true;
-                }
-
-                continue;
+            if (!(digit >= 0 && digit <= 9 || diffToA >= 0 && diffToF <= 0)) {
+                return false;
             }
-
-            break;
         }
 
-        return false;
+        return true;
     }
 
     private static int convertToDecimal(String s) {
