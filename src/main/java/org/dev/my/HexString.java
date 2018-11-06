@@ -8,7 +8,7 @@ public class HexString {
 
         Scanner inStream = new Scanner(System.in);
 
-        for (; ; ) {
+        for ( ; ; ) {
             System.out.print("Enter a hex string: ");
             line = inStream.nextLine();
 
@@ -17,16 +17,17 @@ public class HexString {
                 continue;
             }
 
-            break;
+            if (isHex(line)) {
+                break;
+            }
+
+            System.out.printf("%s is not a hex string. Try again.%n", line);
         }
 
-        if (isHex(line)) {
-            System.out.printf(
-                    "%s is a hex string%n" + "%1$s in decimal is %d%n",
-                    line, convertToDecimal(line));
-        } else {
-            System.out.printf("%s is not a hex string%n", line);
-        }
+        System.out.printf(
+                "%s is a hex string%n"
+                        + "%1$s in decimal is %d%n",
+                line, convertToDecimal(line));
 
         inStream.close();
     }
