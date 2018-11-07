@@ -2,6 +2,7 @@
  * Prompt the user for the number of items in an array (a non-negative integer)
  * and for the values of all the items.  Print the contents of the array.
  */
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class IntegerArray {
@@ -34,18 +35,9 @@ public class IntegerArray {
                 items[i] = inStream.nextInt();
             }
 
-            listArray(items);
-            System.out.println();
+            System.out.printf("Contents of the array: %s%n", Arrays.toString(items));
         }
 
         inStream.close();
-    }
-
-    private static void listArray(int[] a) {
-        System.out.print("Contents of the array: ");
-
-        for (int val: a) {
-            System.out.printf("%d ", val);
-        }
     }
 }
