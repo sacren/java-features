@@ -10,7 +10,7 @@ public class HexToBin {
 
         for ( ; ; ) {
             System.out.print("Enter a hexadecimal string: ");
-            hexString = inStream.next();
+            hexString = inStream.nextLine();
 
             if (isHex(hexString)) {
                 break;
