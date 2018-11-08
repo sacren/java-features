@@ -27,14 +27,11 @@ public class HexToBin {
     }
 
     private static boolean isHex(String s) {
-        final int size = s.length();
-        final int first = 0;
+        final char[] charArray = s.toCharArray();
         int numericValue;
 
-        s = s.toLowerCase();
-
-        for (int i = first; i < size; i++) {
-            numericValue = Character.digit(s.charAt(i), 16);
+        for (char c: charArray) {
+            numericValue = Character.digit(c, 16);
             if (!(numericValue >= 0 && numericValue <= 15)) {
                 return false;
             }
@@ -50,16 +47,11 @@ public class HexToBin {
             "1000", "1001", "1010", "1011",
             "1100", "1101", "1110", "1111"
         };
-        final int size = s.length();
-        final int first = 0;
+        final char[] charArray = s.toCharArray();
         String binString = "";
-        int numericValue;
 
-        s = s.toLowerCase();
-
-        for (int i = first; i < size; i++) {
-            numericValue = Character.digit(s.charAt(i), 16);
-            binString += binArray[numericValue];
+        for (char c: charArray) {
+            binString += binArray[Character.digit(c, 16)];
         }
 
         return binString;
