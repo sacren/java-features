@@ -30,14 +30,11 @@ public class HexToBin {
         final int size = s.length();
         final int first = 0;
         int numericValue;
-        char c;
 
         s = s.toLowerCase();
 
         for (int i = first; i < size; i++) {
-            c = s.charAt(i);
-            numericValue = Character.digit(c, 16);
-
+            numericValue = Character.digit(s.charAt(i), 16);
             if (!(numericValue >= 0 && numericValue <= 15)) {
                 return false;
             }
