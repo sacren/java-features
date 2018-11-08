@@ -35,21 +35,16 @@ public class HexString {
     private static boolean isHex(String s) {
         final int size = s.length();
         final int first = 0;
-        int digit;
-        int diffToA;
-        int diffToF;
+        int numericValue;
         char c;
 
         s = s.toLowerCase();
 
         for (int i = first; i < size; i++) {
             c = s.charAt(i);
-            digit = Character.digit(c, 10);
-            /* Arithmetic difference to 'a' or 'f' */
-            diffToA = Character.compare(c, 'a');
-            diffToF = Character.compare(c, 'f');
+            numericValue = Character.digit(c, 16);
 
-            if (!(digit >= 0 && digit <= 9 || diffToA >= 0 && diffToF <= 0)) {
+            if (!(numericValue >= 0 && numericValue <= 15)) {
                 return false;
             }
         }

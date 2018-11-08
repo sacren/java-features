@@ -30,20 +30,15 @@ public class HexToBin {
         final int size = s.length();
         final int first = 0;
         int numericValue;
-        int diffToA;
-        int diffToF;
         char c;
 
         s = s.toLowerCase();
 
         for (int i = first; i < size; i++) {
             c = s.charAt(i);
-            numericValue = Character.digit(c, 10);
-            /* Arithmetic difference to 'a' or 'f' */
-            diffToA = Character.compare(c, 'a');
-            diffToF = Character.compare(c, 'f');
+            numericValue = Character.digit(c, 16);
 
-            if (!(numericValue >= 0 && numericValue <= 9 || diffToA >= 0 && diffToF <= 0)) {
+            if (!(numericValue >= 0 && numericValue <= 15)) {
                 return false;
             }
         }
