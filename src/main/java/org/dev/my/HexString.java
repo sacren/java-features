@@ -53,7 +53,6 @@ public class HexString {
         final int size = s.length();
         final int first = 0;
         int decimal = 0;
-        int digit;
         int exponent;
         char c;
 
@@ -63,18 +62,7 @@ public class HexString {
             c = s.charAt(i);
             /* (size - 1) is the greatest index and each iteration makes it decrement. */
             exponent = size - 1 - i;
-
-            /* We are only interested in arithmetic difference between this character
-             * and 'a'. And that includes 'A' due to toLowerCase() call.  We don't
-             * have to worry about going over boundaries as isHex() protects.
-             */
-            if (Character.isDigit(c)) {
-                digit = Character.digit(c, 10);
-            } else {
-                digit = Character.compare(c, 'a') + 10;
-            }
-
-            decimal += (int) Math.pow(16, exponent) * digit;
+            decimal += (int) Math.pow(16, exponent) * Character.digit(c, 16);
         }
 
         return decimal;
