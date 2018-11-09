@@ -12,6 +12,11 @@ public class HexToBin {
             System.out.print("Enter a hex string: ");
             line = inStream.nextLine();
 
+            if (line.isEmpty()) {
+                System.out.println("The hex string is empty");
+                continue;
+            }
+
             if (isHex(line)) {
                 break;
             }
