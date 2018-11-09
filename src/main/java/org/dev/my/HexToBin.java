@@ -4,24 +4,24 @@ import java.util.Scanner;
 public class HexToBin {
     /** Prompt for hex string and convert to binary string. */
     public static void main(String[] args) {
-        String hexString;
+        String line;
 
         Scanner inStream = new Scanner(System.in);
 
         for ( ; ; ) {
-            System.out.print("Enter a hexadecimal string: ");
-            hexString = inStream.nextLine();
+            System.out.print("Enter a hex string: ");
+            line = inStream.nextLine();
 
-            if (isHex(hexString)) {
+            if (isHex(line)) {
                 break;
             }
 
-            System.out.println("Not a hexidecial number. Try again.");
+            System.out.printf("%s is not a hex string. Try again.%n", line);
         }
 
         System.out.printf(
                 "%s hex string is equivalent to %s binary string%n",
-                hexString, convertToBin(hexString));
+                line, convertToBin(line));
 
         inStream.close();
     }
