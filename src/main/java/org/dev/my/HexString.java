@@ -53,7 +53,6 @@ public class HexString {
         final int size = s.length();
         final int first = 0;
         int decimal = 0;
-        int exponent;
         char c;
 
         s = s.toLowerCase();
@@ -61,8 +60,7 @@ public class HexString {
         for (int i = first; i < size; i++) {
             c = s.charAt(i);
             /* (size - 1) is the greatest index and each iteration makes it decrement. */
-            exponent = size - 1 - i;
-            decimal += (int) Math.pow(16, exponent) * Character.digit(c, 16);
+            decimal += (int) Math.pow(16, size - 1 - i) * Character.digit(c, 16);
         }
 
         return decimal;
