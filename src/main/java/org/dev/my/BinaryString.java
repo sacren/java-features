@@ -25,7 +25,7 @@ public class BinaryString {
                 break;
             }
 
-            System.out.printf("%s is not a binary string. Try again.%n", line);
+            System.out.printf("\"%s\" is not a binary string. Try again.%n", line);
         }
 
         System.out.printf(

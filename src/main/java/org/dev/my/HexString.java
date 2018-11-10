@@ -21,7 +21,7 @@ public class HexString {
                 break;
             }
 
-            System.out.printf("%s is not a hex string. Try again.%n", line);
+            System.out.printf("\"%s\" is not a hex string. Try again.%n", line);
         }
 
         System.out.printf(
