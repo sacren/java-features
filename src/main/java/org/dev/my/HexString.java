@@ -33,14 +33,11 @@ public class HexString {
     }
 
     private static boolean isHex(String s) {
-        final int size = s.length();
-        final int first = 0;
+        final char[] charArray = s.toCharArray();
         int numericValue;
 
-        s = s.toLowerCase();
-
-        for (int i = first; i < size; i++) {
-            numericValue = Character.digit(s.charAt(i), 16);
+        for (char c: charArray) {
+            numericValue = Character.digit(c, 16);
             if (!(numericValue >= 0 && numericValue <= 15)) {
                 return false;
             }
@@ -49,18 +46,17 @@ public class HexString {
         return true;
     }
 
-    private static int convertToDecimal(String s) {
-        final int size = s.length();
-        final int first = 0;
+    private static int convertToDecimal(String hexString) {
+        final char[] charArray = hexString.toCharArray();
+        final int size = charArray.length;
+        int index = 0;
         int decimal = 0;
-        char c;
+        int exponent;
 
-        s = s.toLowerCase();
-
-        for (int i = first; i < size; i++) {
-            c = s.charAt(i);
+        for (char c: charArray) {
             /* (size - 1) is the greatest index and each iteration makes it decrement. */
-            decimal += (int) Math.pow(16, size - 1 - i) * Character.digit(c, 16);
+            exponent = size - 1 - index++;
+            decimal += (int) Math.pow(16, exponent) * Character.digit(c, 16);
         }
 
         return decimal;
