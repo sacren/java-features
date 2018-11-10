@@ -21,17 +21,17 @@ public class BinaryString {
                 continue;
             }
 
-            break;
+            if (isBinary(line)) {
+                break;
+            }
+
+            System.out.printf("%s is not a binary string. Try again.%n", line);
         }
 
-        if (isBinary(line)) {
-            System.out.printf(
-                    "%s is a binary string%n"
-                            + "%1$s in decimal is %d%n",
-                    line, convertToDecimal(line));
-        } else {
-            System.out.printf("%s is not a binary string%n", line);
-        }
+        System.out.printf(
+                "%s is a binary string%n"
+                        + "%1$s in decimal is %d%n",
+                line, convertToDecimal(line));
 
         inStream.close();
     }
