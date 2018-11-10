@@ -43,19 +43,12 @@ public class BinaryString {
 
         for (int i = first; i < size; i++) {
             numericValue = Character.digit(s.charAt(i), 2);
-
-            if (numericValue == 0 || numericValue == 1) {
-                if (i == size - 1) {
-                    return true;
-                }
-
-                continue;
+            if (!(numericValue == 0 || numericValue == 1)) {
+                return false;
             }
-
-            break;
         }
 
-        return false;
+        return true;
     }
 
     private static int convertToDecimal(String s) {
