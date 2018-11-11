@@ -33,14 +33,11 @@ public class OctalString {
     }
 
     private static boolean isOctal(String s) {
-        final int size = s.length();
-        final int first = 0;
+        final char[] charArray = s.toCharArray();
         int numericValue;
 
-        s = s.toLowerCase();
-
-        for (int i = first; i < size; i++) {
-            numericValue = Character.digit(s.charAt(i), 10);
+        for (char c: charArray) {
+            numericValue = Character.digit(c, 8);
             if (!(numericValue >= 0 && numericValue <= 7)) {
                 return false;
             }
@@ -49,20 +46,17 @@ public class OctalString {
         return true;
     }
 
-    private static int convertToDecimal(String s) {
-        final int size = s.length();
-        final int first = 0;
+    private static int convertToDecimal(String octalString) {
+        final char[] charArray = octalString.toCharArray();
+        final int size = charArray.length;
+        int index = 0;
         int decimal = 0;
-        int numericValue;
         int exponent;
 
-        s = s.toLowerCase();
-
-        for (int i = first; i < size; i++) {
+        for (char c: charArray) {
             /* (size - 1) is the greatest index and each iteration makes it decrement. */
-            exponent = size - 1 - i;
-            numericValue = Character.digit(s.charAt(i), 10);
-            decimal += (int) Math.pow(8, exponent) * numericValue;
+            exponent = size - 1 - index++;
+            decimal += (int) Math.pow(8, exponent) * Character.digit(c, 8);
         }
 
         return decimal;

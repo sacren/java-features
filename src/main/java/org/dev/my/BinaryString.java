@@ -37,12 +37,11 @@ public class BinaryString {
     }
 
     private static boolean isBinary(String s) {
-        final int size = s.length();
-        final int first = 0;
+        final char[] charArray = s.toCharArray();
         int numericValue;
 
-        for (int i = first; i < size; i++) {
-            numericValue = Character.digit(s.charAt(i), 2);
+        for (char c: charArray) {
+            numericValue = Character.digit(c, 2);
             if (!(numericValue == 0 || numericValue == 1)) {
                 return false;
             }
@@ -51,19 +50,17 @@ public class BinaryString {
         return true;
     }
 
-    private static int convertToDecimal(String s) {
-        final int size = s.length();
-        final int first = 0;
+    private static int convertToDecimal(String binaryString) {
+        final char[] charArray = binaryString.toCharArray();
+        final int size = charArray.length;
+        int index = 0;
         int decimal = 0;
-        int numericValue;
         int exponent;
 
-        for (int i = first; i < size; i++) {
+        for (char c: charArray) {
             /* (size - 1) is the greatest index and each iteration makes it decrement. */
-            exponent = size - 1 - i;
-            /* The radix doesn't matter much. We might as well use the value of 2. */
-            numericValue = Character.digit(s.charAt(i), 10);
-            decimal += (int) Math.pow(2, exponent) * numericValue;
+            exponent = size - 1 - index++;
+            decimal += (int) Math.pow(2, exponent) * Character.digit(c, 2);
         }
 
         return decimal;
