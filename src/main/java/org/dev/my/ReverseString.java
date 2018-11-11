@@ -17,7 +17,7 @@ public class ReverseString {
                 break;
             }
 
-            System.out.println("The string is empty. Try again.");
+            System.out.printf("\"%s\" is empty. Try again.%n", line);
         }
 
         System.out.printf(

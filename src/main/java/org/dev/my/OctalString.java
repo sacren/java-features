@@ -13,7 +13,7 @@ public class OctalString {
             line = inStream.nextLine();
 
             if (line.isEmpty()) {
-                System.out.println("The octal string is empty");
+                System.out.printf("\"%s\" is empty. Try again.%n", line);
                 continue;
             }
 

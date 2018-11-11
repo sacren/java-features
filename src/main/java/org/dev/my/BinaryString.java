@@ -17,7 +17,7 @@ public class BinaryString {
             line = inStream.nextLine();
 
             if (line.isEmpty()) {
-                System.out.println("The binary string is empty");
+                System.out.printf("\"%s\" is empty. Try again.%n", line);
                 continue;
             }
 
