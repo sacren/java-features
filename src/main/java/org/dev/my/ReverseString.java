@@ -19,12 +19,14 @@ public class ReverseString {
     }
 
     private static String reverseString(String s) {
-        final int size = s.length();
-        final int first = 0;
-        String reversed = new String();
+        final char[] charArray = s.toCharArray();
+        final int size = charArray.length;
+        /* From the last item in the array. */
+        String reversed = Character.toString(charArray[size - 1]);
 
-        for (int i = first; i < size; i++) {
-            reversed += Character.toString(s.charAt(size - 1 - i));
+        /* Start from the second last item of the array. */
+        for (int i = 1; i < size; i++) {
+            reversed += Character.toString(charArray[size - 1 - i]);
         }
 
         return reversed;
