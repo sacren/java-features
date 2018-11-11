@@ -8,11 +8,21 @@ public class ReverseString {
 
         Scanner inStream = new Scanner(System.in);
 
-        System.out.print("Enter a string: ");
-        line = inStream.nextLine();
+        for ( ; ; ) {
+            System.out.print("Enter a string: ");
+            line = inStream.nextLine();
+
+            /* The check protects array index falling into negative value. */
+            if (!line.isEmpty()) {
+                break;
+            }
+
+            System.out.println("The string is empty. Try again.");
+        }
+
         System.out.printf(
                 "The original string: %s%n"
-                + "The reversed string: %s%n",
+                        + "The reversed string: %s%n",
                 line, reverseString(line));
 
         inStream.close();
