@@ -48,9 +48,9 @@ public class CaesarDecipher {
 
     private static String cipherToPlain(String s) {
         final char[] charArray = s.toUpperCase().toCharArray();
-        String plainText = new String();
         final int cycle = 26;
         final int key = 3;
+        String plainText = "";
 
         for (char c: charArray) {
             switch (c) {

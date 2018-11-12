@@ -52,7 +52,7 @@ public class CaesarCipher {
         final char[] charArray = s.toUpperCase().toCharArray();
         final int key = 3;
         final int cycle = 26;
-        String cipherText = new String();
+        String cipherText = "";
 
         for (char c: charArray) {
             switch (c) {
