@@ -33,11 +33,10 @@ public class CaesarDecipher {
     }
 
     private static boolean isInputValid(String s) {
-        final int size = s.length();
-        final int first = 0;
+        final char[] charArray = s.toCharArray();
 
-        for (int i = first; i < size; i++) {
-            if (Character.isLetter(s.charAt(i))) {
+        for (char c: charArray) {
+            if (Character.isLetter(c)) {
                 continue;
             }
 
@@ -48,18 +47,12 @@ public class CaesarDecipher {
     }
 
     private static String cipherToPlain(String s) {
+        final char[] charArray = s.toUpperCase().toCharArray();
         String plainText = new String();
-        final int size = s.length();
-        final int first = 0;
         final int cycle = 26;
         final int key = 3;
-        char c;
 
-        s = s.toUpperCase();
-
-        for (int i = first; i < size; i++) {
-            c = s.charAt(i);
-
+        for (char c: charArray) {
             switch (c) {
                 case 'A':
                 case 'B':
