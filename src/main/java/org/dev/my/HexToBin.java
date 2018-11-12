@@ -13,7 +13,7 @@ public class HexToBin {
             line = inStream.nextLine();
 
             if (line.isEmpty()) {
-                System.out.println("The hex string is empty");
+                System.out.printf("\"%s\" is empty. Try again.%n", line);
                 continue;
             }
 
@@ -21,7 +21,7 @@ public class HexToBin {
                 break;
             }
 
-            System.out.printf("%s is not a hex string. Try again.%n", line);
+            System.out.printf("\"%s\" is not a hex string. Try again.%n", line);
         }
 
         System.out.printf(

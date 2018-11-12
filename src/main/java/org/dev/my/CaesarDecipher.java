@@ -16,7 +16,7 @@ public class CaesarDecipher {
             line = inStream.nextLine();
 
             if (line.isEmpty()) {
-                System.out.println("The string is empty. Try again.");
+                System.out.printf("\"%s\" is empty. Try again.%n", line);
                 continue;
             }
 
@@ -24,7 +24,7 @@ public class CaesarDecipher {
                 break;
             }
 
-            System.out.println("The input is invalid. Try again.");
+            System.out.printf("\"%s\" is invalid. Try again.%n", line);
         }
 
         System.out.printf("The plain text: %s%n", cipherToPlain(line));

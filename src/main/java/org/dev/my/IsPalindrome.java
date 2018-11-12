@@ -4,29 +4,29 @@ import java.util.Scanner;
 public class IsPalindrome {
     /** Prompt the user for a word and test if it is a palindrome. */
     public static void main(String[] args) {
-        String phrase;
+        String line;
 
         Scanner inStream = new Scanner(System.in);
 
         for ( ; ; ) {
             System.out.print("Enter a phrase in palindrome: ");
-            phrase = inStream.nextLine();
+            line = inStream.nextLine();
 
-            if (phrase.isEmpty()) {
-                System.out.println("You entered an empty string. Try again.");
+            if (line.isEmpty()) {
+                System.out.printf("\"%s\" is empty. Try again.%n", line);
                 continue;
             }
 
-            if (isInputValid(phrase)) {
+            if (isInputValid(line)) {
                 break;
             }
 
-            System.out.println("You entered an invalid string. Try again.");
+            System.out.printf("\"%s\" is invalid. Try again.%n", line);
         }
 
         System.out.printf(
                 "\"%s\" is%s a palindrome%n",
-                phrase, isPalindrome(phrase) ? "" : " not");
+                line, isPalindrome(line) ? "" : " not");
         inStream.close();
     }
 
