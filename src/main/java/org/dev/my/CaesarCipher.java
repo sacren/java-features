@@ -39,16 +39,14 @@ public class CaesarCipher {
         final int first = 0;
 
         for (int i = first; i < size; i++) {
-            if (!Character.isLetter(s.charAt(i))) {
-                break;
+            if (Character.isLetter(s.charAt(i))) {
+                continue;
             }
 
-            if (i == size - 1) {
-                return true;
-            }
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     private static String plainToCipher(String s) {
