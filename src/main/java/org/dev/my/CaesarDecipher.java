@@ -57,11 +57,13 @@ public class CaesarDecipher {
                 case 'A':
                 case 'B':
                 case 'C':
-                    plainText += (char) (c + cycle - key);
+                    c = (char) (c + cycle - key);
                     break;
                 default:
-                    plainText += (char) (c - key);
+                    c = (char) (c - key);
             }
+
+            plainText += Character.toString(c);
         }
 
         return plainText;
