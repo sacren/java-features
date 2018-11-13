@@ -51,23 +51,34 @@ public class IsPalindrome {
     }
 
     private static boolean isInputValid(String s) {
-        final int size = s.length();
-        final int first = 0;
-        char c;
+        final char[] charArray = s.toCharArray();
+        boolean hasAlpha = true;
 
-        for (int i = first; i < size; i++) {
-            c = s.charAt(i);
-
-            if (Character.isISOControl(c)) {
-                break;
+        for (char c: charArray) {
+            if (Character.isLetter(c)) {
+                hasAlpha = false;
+                continue;
             }
 
-            if (i == size - 1) {
-                return true;
+            switch (c) {
+                case ' ':
+                case '-':
+                case '?':
+                case ',':
+                case '.':
+                case '!':
+                case '\'':
+                    continue;
+                default:
+                    return false;
             }
         }
 
-        return false;
+        if (hasAlpha) {
+            return false;
+        }
+
+        return true;
     }
 
     private static String getAlphaStr(String s) {
