@@ -87,7 +87,8 @@ public class IsPalindrome {
     }
 
     private static String getAlpha(String s) {
-        final char[] charArray = s.toCharArray();
+        /* Each letter in array is lower case. Ignore case for comparison. */
+        final char[] charArray = s.toLowerCase().toCharArray();
         String stripped = "";
 
         for (char c: charArray) {
@@ -96,6 +97,6 @@ public class IsPalindrome {
             }
         }
 
-        return stripped.toLowerCase();
+        return stripped;
     }
 }
