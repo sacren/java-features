@@ -31,19 +31,24 @@ public class IsPalindrome {
     }
 
     private static boolean isPalindrome(String s) {
-        s = getAlphaStr(s);
-
+        s = getAlpha(s); /* Non-alphabet characters filtered out. */
         final int size = s.length();
-        final int first = 0;
+        /* If size is odd, size / 2 + 1 == (size + 1) / 2 and the middle
+         * character is included in neither firstHalf nor secondHalf. If size
+         * is even, size / 2 == (size + 1) / 2.
+         */
         String firstHalf = s.substring(0, size / 2);
-        String secondHalf = new String();
+        String secondHalf = s.substring((size + 1) / 2);
+        final char[] charArray = secondHalf.toCharArray();
+        final int halfSize = charArray.length;
+        String reverseSecondHalf = "";
 
-        for (int i = first; i < size / 2; i++) {
-            secondHalf += s.charAt(size - 1 - i);
+        for (int i = 0; i < halfSize; i++) {
+            reverseSecondHalf += Character.toString(charArray[halfSize - 1 - i]);
         }
 
-        /* Only need to compare the first half to the second. */
-        if (firstHalf.equals(secondHalf)) {
+        /* Palindrome is determined by comparing first half to the second. */
+        if (firstHalf.equals(reverseSecondHalf)) {
             return true;
         }
 
@@ -81,17 +86,13 @@ public class IsPalindrome {
         return true;
     }
 
-    private static String getAlphaStr(String s) {
-        final int size = s.length();
-        final int first = 0;
-        String stripped = new String();
-        char c;
+    private static String getAlpha(String s) {
+        final char[] charArray = s.toCharArray();
+        String stripped = "";
 
-        for (int i = first; i < size; i++) {
-            c = s.charAt(i);
-
+        for (char c: charArray) {
             if (Character.isLetter(c)) {
-                stripped += c;
+                stripped += Character.toString(c);
             }
         }
 
