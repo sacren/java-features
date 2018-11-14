@@ -34,11 +34,9 @@ public class OctalString {
 
     private static boolean isOctal(String s) {
         final char[] charArray = s.toCharArray();
-        int numericValue;
 
         for (char c: charArray) {
-            numericValue = Character.digit(c, 8);
-            if (!(numericValue >= 0 && numericValue <= 7)) {
+            if (Character.digit(c, 8) == -1) {
                 return false;
             }
         }

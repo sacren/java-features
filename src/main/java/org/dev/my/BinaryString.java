@@ -38,11 +38,9 @@ public class BinaryString {
 
     private static boolean isBinary(String s) {
         final char[] charArray = s.toCharArray();
-        int numericValue;
 
         for (char c: charArray) {
-            numericValue = Character.digit(c, 2);
-            if (!(numericValue == 0 || numericValue == 1)) {
+            if (Character.digit(c, 2) == -1) {
                 return false;
             }
         }

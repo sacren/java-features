@@ -33,11 +33,9 @@ public class HexToBin {
 
     private static boolean isHex(String s) {
         final char[] charArray = s.toCharArray();
-        int numericValue;
 
         for (char c: charArray) {
-            numericValue = Character.digit(c, 16);
-            if (!(numericValue >= 0 && numericValue <= 15)) {
+            if (Character.digit(c, 16) == -1) {
                 return false;
             }
         }
