@@ -6,14 +6,14 @@ public class Swap2Integers {
     public static void main(String[] args) {
         final String before = "Before";
         final String after = "After";
-        int number1;
-        int number2;
-        int tmp;
 
         Scanner inputStream = new Scanner(System.in);
 
+        int number1;
         System.out.print("Enter the first integer: ");
         number1 = inputStream.nextInt();
+
+        int number2;
         System.out.print("Enter the second integer: ");
         number2 = inputStream.nextInt();
 
@@ -22,7 +22,7 @@ public class Swap2Integers {
         printNumber(number1, number2);
 
         /* Now we swap the two integers. */
-        tmp = number1;
+        int tmp = number1;
         number1 = number2;
         number2 = tmp;
 
@@ -32,9 +32,9 @@ public class Swap2Integers {
         inputStream.close();
     }
 
-    /** Print out two numbers. */
-    public static void printNumber(int number1, int number2) {
+    private static void printNumber(int number1, int number2) {
         System.out.printf(
-                "The first integer is %d%n" + "The second integer is %d%n", number1, number2);
+                "The first integer is %d%n"
+                        + "The second integer is %d%n", number1, number2);
     }
 }
