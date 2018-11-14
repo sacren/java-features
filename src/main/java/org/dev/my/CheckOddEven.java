@@ -1,28 +1,27 @@
-/** Print the given integer is odd or even. */
+/** Prompt the user for an integer and check if it is odd or even. */
+import java.util.Scanner;
+
 public class CheckOddEven {
+    /** Prompt the user for an integer and check if it is odd or even. */
     public static void main(String[] args) {
-        printOddEven();
+        int number;
+
+        Scanner inputStream = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        number = inputStream.nextInt();
+        System.out.printf(
+                "%d is %s%n",
+                number, isOdd(number) ? "odd" : "even");
+
+        inputStream.close();
     }
 
-    private static void printOddEven() {
-        int n1 = 0;
-        int n2 = 49;
-        final int n3 = 1028;
-        final int n4 = -1;
-
-        isOddOrEven(n1);
-        isOddOrEven(n2);
-        isOddOrEven(n3);
-        isOddOrEven(n4);
-    }
-
-    private static void isOddOrEven(int number) {
-        int remainder = number % 2;
-
-        if (remainder == 0) {
-            System.out.println(number + " is even.");
-        } else {
-            System.out.println(number + " is odd.");
+    private static boolean isOdd(int number) {
+        if (number % 2 == 0) {
+            return false;
         }
+
+        return true;
     }
 }
