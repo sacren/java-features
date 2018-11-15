@@ -9,6 +9,7 @@ public class IntegerArray {
     /** Prompt for input and display results. */
     public static void main(String[] args) {
         int[] items; /* This references an array. */
+        double[] doubles;
         int size;
 
         Scanner inStream = new Scanner(System.in);
@@ -25,6 +26,7 @@ public class IntegerArray {
         }
 
         items = new int[size];
+        doubles = new double[size];
 
         if (size != 0) {
             System.out.print("Enter value for each item: ");
@@ -34,10 +36,23 @@ public class IntegerArray {
         }
 
         printArray(items);
+
+        int index = 0;
+        for (double number: items) {
+            doubles[index++] = number * number;
+        }
+        printArray(doubles);
         inStream.close();
     }
 
     private static void printArray(int[] a) {
+        System.out.printf(
+                "The size of array is %d%n"
+                        + "The contents of array is %s%n",
+                a.length, Arrays.toString(a));
+    }
+
+    private static void printArray(double[] a) {
         System.out.printf(
                 "The size of array is %d%n"
                         + "The contents of array is %s%n",
