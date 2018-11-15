@@ -39,7 +39,7 @@ public class IntegerArray {
 
         int index = 0;
         for (double number: items) {
-            doubles[index++] = number * number;
+            doubles[index++] = number * Math.E; /* make array distinctive */
         }
         printArray(doubles);
         inStream.close();
