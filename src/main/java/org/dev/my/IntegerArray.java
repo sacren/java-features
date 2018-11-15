@@ -26,18 +26,21 @@ public class IntegerArray {
 
         items = new int[size];
 
-        if (size == 0) {
-            System.out.println("Empty array.");
-        } else {
+        if (size != 0) {
             System.out.print("Enter value for each item: ");
-
             for (int i = 0; i < size; i++) {
                 items[i] = inStream.nextInt();
             }
-
-            System.out.printf("Contents of the array: %s%n", Arrays.toString(items));
         }
 
+        printArray(items);
         inStream.close();
+    }
+
+    private static void printArray(int[] a) {
+        System.out.printf(
+                "The size of array is %d%n"
+                        + "The contents of array is %s%n",
+                a.length, Arrays.toString(a));
     }
 }
