@@ -35,36 +35,34 @@ public class IntegerArray {
             }
         }
 
-        printArray(items);
+        System.out.printf(
+                "The size of array is %d%n"
+                        + "The contents of array is %s%n",
+                items.length, arrayToString(items));
 
         int index = 0;
         String typeName = "double";
         for (double number: items) {
             doubles[index++] = number * Math.E; /* make array distinctive */
         }
-        printArray(doubles);
-        printArray(doubles, typeName);
+        System.out.printf(
+                "The size of array is %d%n"
+                        + "The contents of array is %s%n"
+                        + "The size of array is %1$d%n"
+                        + "The contents of array is %s%n",
+                doubles.length, arrayToString(doubles), arrayToString(doubles, typeName));
         inStream.close();
     }
 
-    private static void printArray(int[] a) {
-        System.out.printf(
-                "The size of array is %d%n"
-                        + "The contents of array is %s%n",
-                a.length, Arrays.toString(a));
+    private static String arrayToString(int[] a) {
+        return Arrays.toString(a);
     }
 
-    private static void printArray(double[] a) {
-        System.out.printf(
-                "The size of array is %d%n"
-                        + "The contents of array is %s%n",
-                a.length, Arrays.toString(a));
+    private static String arrayToString(double[] a) {
+        return Arrays.toString(a);
     }
 
-    private static void printArray(double[] a, String s) {
-        System.out.printf(
-                "The size of array is %d%n"
-                        + "The contents of array is %s, of %s type%n",
-                a.length, Arrays.toString(a), s);
+    private static String arrayToString(double[] a, String s) {
+        return Arrays.toString(a) + ", of " + s + " type";
     }
 }
