@@ -43,8 +43,10 @@ public class IntegerArray {
         System.out.printf(
                 "The contents of int array is %s%n"
                         + "The contents of double array is %s%n"
-                        + "The contents of array is %s%n",
-                arrayToString(ints), arrayToString(doubles), arrayToString(doubles, typeName));
+                        + "The contents of array is %s%n"
+                        + "%1$s %s %d%n",
+                arrayToString(ints), arrayToString(doubles), arrayToString(doubles, typeName),
+                hasInt(ints, size) ? "has" : "doesn't have", size);
         inStream.close();
     }
 
@@ -58,5 +60,14 @@ public class IntegerArray {
 
     private static String arrayToString(double[] a, String s) {
         return Arrays.toString(a) + ", of " + s + " type";
+    }
+
+    private static boolean hasInt(int[] intArray, int number) {
+        for (int element: intArray) {
+            if (element == number) {
+                return true;
+            }
+        }
+        return false;
     }
 }
