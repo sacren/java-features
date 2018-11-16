@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class IntegerArray {
     /** Prompt for input and display results. */
     public static void main(String[] args) {
-        int[] items; /* This references an array. */
+        int[] ints; /* This references an array. */
         double[] doubles;
         int size;
 
@@ -25,32 +25,26 @@ public class IntegerArray {
             System.out.printf("%d is invalid. Try again.%n", size);
         }
 
-        items = new int[size];
+        ints = new int[size];
         doubles = new double[size];
 
         if (size != 0) {
             System.out.print("Enter value for each item: ");
             for (int i = 0; i < size; i++) {
-                items[i] = inStream.nextInt();
+                ints[i] = inStream.nextInt();
             }
         }
 
-        System.out.printf(
-                "The size of array is %d%n"
-                        + "The contents of array is %s%n",
-                items.length, arrayToString(items));
-
         int index = 0;
         String typeName = "double";
-        for (double number: items) {
+        for (double number: ints) {
             doubles[index++] = number * Math.E; /* make array distinctive */
         }
         System.out.printf(
-                "The size of array is %d%n"
-                        + "The contents of array is %s%n"
-                        + "The size of array is %1$d%n"
+                "The contents of int array is %s%n"
+                        + "The contents of double array is %s%n"
                         + "The contents of array is %s%n",
-                doubles.length, arrayToString(doubles), arrayToString(doubles, typeName));
+                arrayToString(ints), arrayToString(doubles), arrayToString(doubles, typeName));
         inStream.close();
     }
 
