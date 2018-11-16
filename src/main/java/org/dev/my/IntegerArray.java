@@ -38,10 +38,12 @@ public class IntegerArray {
         printArray(items);
 
         int index = 0;
+        String typeName = "double";
         for (double number: items) {
             doubles[index++] = number * Math.E; /* make array distinctive */
         }
         printArray(doubles);
+        printArray(doubles, typeName);
         inStream.close();
     }
 
@@ -57,5 +59,12 @@ public class IntegerArray {
                 "The size of array is %d%n"
                         + "The contents of array is %s%n",
                 a.length, Arrays.toString(a));
+    }
+
+    private static void printArray(double[] a, String s) {
+        System.out.printf(
+                "The size of array is %d%n"
+                        + "The contents of array is %s, of %s type%n",
+                a.length, Arrays.toString(a), s);
     }
 }
