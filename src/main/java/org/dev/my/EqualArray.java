@@ -51,7 +51,7 @@ public class EqualArray {
         }
 
         System.out.printf(
-                "%s and %s is%s equal%n",
+                "%s and %s are%s equal%n",
                 Arrays.toString(intArray1), Arrays.toString(intArray2),
                 isEqual(intArray1, intArray2) ? "" : " not");
         inStream.close();
