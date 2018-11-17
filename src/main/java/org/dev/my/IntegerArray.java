@@ -44,9 +44,10 @@ public class IntegerArray {
                 "The contents of int array is %s%n"
                         + "The contents of double array is %s%n"
                         + "The contents of array is %s%n"
-                        + "%1$s %s %d%n",
+                        + "%1$s %s %d%n"
+                        + "Index is %d%n",
                 arrayToString(ints), arrayToString(doubles), arrayToString(doubles, typeName),
-                hasInt(ints, size) ? "has" : "doesn't have", size);
+                hasInt(ints, size) ? "has" : "doesn't have", size, searchArray(ints, size));
         inStream.close();
     }
 
@@ -69,5 +70,21 @@ public class IntegerArray {
             }
         }
         return false;
+    }
+
+    private static int searchArray(int[] intArray, int number) {
+        int index = 0;
+        if (index == intArray.length) {
+            return -1;
+        }
+        for (int element: intArray) {
+            if (element == number) {
+                break;
+            }
+            if (index++ == intArray.length - 1) {
+                return -1;
+            }
+        }
+        return index;
     }
 }
