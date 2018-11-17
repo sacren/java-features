@@ -1,6 +1,16 @@
 /**
  * Prompt the user for the number of items in an array (a non-negative integer)
- * and for the values of all the items.  Print the contents of the array.
+ * and for the values of all the items.
+ *
+ * <p>
+ * Print the contents of the array.
+ *
+ * <p>
+ * Overload the method with different type and number of parameters.
+ *
+ * <p>
+ * Search the array for certain element with boolean and int return type.
+ * Return the index of the first found.
  */
 import java.util.Arrays;
 import java.util.Scanner;
