@@ -28,9 +28,11 @@ public class CopyOfArray {
         }
         System.out.printf(
                 "%s is the copy of %s%n"
-                        + "%2$s is truncated to %s%n",
+                        + "%2$s is truncated to %s%n"
+                        + "%2$s is padded to %s%n",
                 Arrays.toString(copyArray(intArray)), Arrays.toString(intArray),
-                Arrays.toString(truncateArray(intArray, 2)));
+                Arrays.toString(truncateArray(intArray, 2)),
+                Arrays.toString(padArray(intArray, 2)));
         inStream.close();
     }
 
@@ -50,6 +52,20 @@ public class CopyOfArray {
         }
         int[] b = new int[size];
         for (int i = 0; i < size; i++) {
+            b[i] = a[i];
+        }
+        return b;
+    }
+
+    private static int[] padArray(int[] a, int count) {
+        final int sizeOfArray = a.length;
+        final int size = sizeOfArray + count;
+        int[] b = new int[size];
+        for (int i = 0; i < size; i++) {
+            if (i >= sizeOfArray) {
+                b[i] = 0;
+                continue;
+            }
             b[i] = a[i];
         }
         return b;
