@@ -1,4 +1,5 @@
 /** Prompt the user for a string and reverse its order. */
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ReverseString {
@@ -28,17 +29,19 @@ public class ReverseString {
         inStream.close();
     }
 
+    /* String to array, reverse array, array to string. */
     private static String reverseString(String s) {
         final char[] charArray = s.toCharArray();
         final int size = charArray.length;
-        /* From the last item in the array. */
-        String reversed = Character.toString(charArray[size - 1]);
-
-        /* Start from the second last item of the array. */
-        for (int i = 1; i < size; i++) {
-            reversed += Character.toString(charArray[size - 1 - i]);
+        char[] reverseCharArray = new char[size];
+        int index = 0;
+        for (char c: charArray) {
+            reverseCharArray[size - 1 - index++] = c;
         }
-
+        String reversed = "";
+        for (char c: reverseCharArray) {
+            reversed += Character.toString(c);
+        }
         return reversed;
     }
 }
