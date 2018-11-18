@@ -27,8 +27,10 @@ public class CopyOfArray {
             }
         }
         System.out.printf(
-                "%s is the copy of %s%n",
-                Arrays.toString(copyArray(intArray)), Arrays.toString(intArray));
+                "%s is the copy of %s%n"
+                        + "%2$s is truncated to %s%n",
+                Arrays.toString(copyArray(intArray)), Arrays.toString(intArray),
+                Arrays.toString(truncateArray(intArray, 2)));
         inStream.close();
     }
 
@@ -37,6 +39,18 @@ public class CopyOfArray {
         int index = 0;
         for (int number: a) {
             b[index++] = number;
+        }
+        return b;
+    }
+
+    private static int[] truncateArray(int[] a, int count) {
+        int size = a.length - count;
+        if (size < 0) {
+            size = 0;
+        }
+        int[] b = new int[size];
+        for (int i = 0; i < size; i++) {
+            b[i] = a[i];
         }
         return b;
     }
