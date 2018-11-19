@@ -48,10 +48,12 @@ public class Grades {
         }
 
         System.out.printf(
-                "Average is %.2f%n"
+                "List of grades is %s%n"
+                        + "Average is %.2f%n"
                         + "Minimum is %d%n"
                         + "Maximum is %d%n",
-                getAverage(gradeArray), getMinimum(gradeArray), getMaximum(gradeArray));
+                Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
+                getMaximum(gradeArray));
         inStream.close();
     }
 
