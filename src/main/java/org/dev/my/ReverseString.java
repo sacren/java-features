@@ -33,13 +33,16 @@ public class ReverseString {
     private static String reverseString(String s) {
         final char[] charArray = s.toCharArray();
         final int size = charArray.length;
-        char[] reverseCharArray = new char[size];
         int index = 0;
         for (char c: charArray) {
-            reverseCharArray[size - 1 - index++] = c;
+            if (index == size / 2) {
+                break;
+            }
+            charArray[index] = charArray[size - 1 - index];
+            charArray[size - 1 - index++] = c;
         }
         String reversed = "";
-        for (char c: reverseCharArray) {
+        for (char c: charArray) {
             reversed += Character.toString(c);
         }
         return reversed;
