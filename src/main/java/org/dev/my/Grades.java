@@ -10,11 +10,10 @@ import java.util.Scanner;
 public class Grades {
     /** Prompt for input and display results. */
     public static void main(String[] args) {
-        int[] students; /* This references an array. */
+        Scanner inStream = new Scanner(System.in);
+        int[] gradeArray; /* This references an array. */
         int size;
         int grade;
-
-        Scanner inStream = new Scanner(System.in);
 
         for ( ; ; ) {
             System.out.print("Enter the number of students: ");
@@ -27,21 +26,18 @@ public class Grades {
             System.out.printf("%d is invalid. Try again.%n", size);
         }
 
-        students = new int[size];
-
+        gradeArray = new int[size];
         if (size == 0) {
             System.out.println("Empty class.");
         } else {
             for (int i = 0; i < size; i++) {
                 System.out.printf("Enter the grade of student %d: ", i + 1);
                 grade = inStream.nextInt();
-
                 for ( ; ; ) {
                     if (grade >= 0 && grade <= 100) {
-                        students[i] = grade;
+                        gradeArray[i] = grade;
                         break;
                     }
-
                     System.out.printf(
                             "%d is invalid%n"
                                     + "Enter the grade of student %d again: ",
@@ -55,8 +51,7 @@ public class Grades {
                 "Average is %.2f%n"
                         + "Minimum is %d%n"
                         + "Maximum is %d%n",
-                getAverage(students), getMinimum(students), getMaximum(students));
-
+                getAverage(gradeArray), getMinimum(gradeArray), getMaximum(gradeArray));
         inStream.close();
     }
 
