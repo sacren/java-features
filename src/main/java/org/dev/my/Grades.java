@@ -14,15 +14,12 @@ public class Grades {
         int[] gradeArray; /* This references an array. */
         int size;
         int grade;
-
         for ( ; ; ) {
             System.out.print("Enter the number of students: ");
             size = inStream.nextInt();
-
             if (size >= 0) {
                 break;
             }
-
             System.out.printf("%d is invalid. Try again.%n", size);
         }
 
@@ -58,37 +55,30 @@ public class Grades {
     }
 
     private static double getAverage(int[] a) {
-        final int size = a.length;
         int sum = 0;
-
-        for (int val: a) {
-            sum += val;
+        for (int element: a) {
+            sum += element;
         }
-
-        return (double) sum / size;
+        return (double) sum / a.length;
     }
 
     private static int getMinimum(int[] a) {
         int minimum = 100;
-
-        for (int val: a) {
-            if (minimum > val) {
-                minimum = val;
+        for (int element: a) {
+            if (minimum > element) {
+                minimum = element;
             }
         }
-
         return minimum;
     }
 
     private static int getMaximum(int[] a) {
         int maximum = 0;
-
-        for (int val: a) {
-            if (maximum < val) {
-                maximum = val;
+        for (int element: a) {
+            if (maximum < element) {
+                maximum = element;
             }
         }
-
         return maximum;
     }
 }
