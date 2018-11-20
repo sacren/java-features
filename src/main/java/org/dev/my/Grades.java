@@ -48,9 +48,10 @@ public class Grades {
                 "List of grades is %s%n"
                         + "Average is %.2f%n"
                         + "Minimum is %d%n"
-                        + "Maximum is %d%n",
+                        + "Maximum is %d%n"
+                        + "Standard deviation is %.2f%n",
                 Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
-                getMaximum(gradeArray));
+                getMaximum(gradeArray), getStdDeviation(gradeArray));
         inStream.close();
     }
 
@@ -80,5 +81,17 @@ public class Grades {
             }
         }
         return maximum;
+    }
+
+    private static double getStdDeviation(int[] a) {
+        final int size = a.length;
+        int sumOfSquare = 0;
+        int sum = 0;
+        for (int element: a) {
+            sumOfSquare += element * element;
+            sum += element;
+        }
+        return Math.sqrt((double) sumOfSquare / size
+                        - ((double) sum / size) * ((double) sum / size));
     }
 }
