@@ -45,14 +45,24 @@ public class Grades {
             }
         }
 
+        int[] bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
+        for (int element: gradeArray) {
+            if (element == 100) {
+                bins[9]++; /* Increment starting from 0 */
+            } else {
+                bins[element / 10]++;
+            }
+        }
+
         System.out.printf(
                 "List of grades is %s%n"
                         + "Average is %.2f%n"
                         + "Minimum is %d%n"
                         + "Maximum is %d%n"
-                        + "Standard deviation is %.2f%n",
+                        + "Standard deviation is %.2f%n"
+                        + "Histogram in bins is %s%n",
                 Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
-                getMaximum(gradeArray), getStdDeviation(gradeArray));
+                getMaximum(gradeArray), getStdDeviation(gradeArray), Arrays.toString(bins));
         inStream.close();
     }
 
