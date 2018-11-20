@@ -11,7 +11,6 @@ public class Grades {
     /** Prompt for input and display results. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
-        int[] gradeArray; /* This references an array. */
         int size;
         int grade;
         for ( ; ; ) {
@@ -23,24 +22,26 @@ public class Grades {
             System.out.printf("%d is invalid. Try again.%n", size);
         }
 
-        gradeArray = new int[size];
         if (size == 0) {
-            System.out.println("Empty class.");
-        } else {
-            for (int i = 0; i < size; i++) {
-                System.out.printf("Enter the grade of student %d: ", i + 1);
-                grade = inStream.nextInt();
-                for ( ; ; ) {
-                    if (grade >= 0 && grade <= 100) {
-                        gradeArray[i] = grade;
-                        break;
-                    }
-                    System.out.printf(
-                            "%d is invalid%n"
-                                    + "Enter the grade of student %d again: ",
-                            grade, i + 1);
-                    grade = inStream.nextInt();
+            System.out.println("No students, no grades.");
+            inStream.close();
+            return;
+        }
+
+        int[] gradeArray = new int[size];
+        for (int i = 0; i < size; i++) {
+            System.out.printf("Enter the grade of student %d: ", i + 1);
+            grade = inStream.nextInt();
+            for ( ; ; ) {
+                if (grade >= 0 && grade <= 100) {
+                    gradeArray[i] = grade;
+                    break;
                 }
+                System.out.printf(
+                        "%d is invalid%n"
+                                + "Enter the grade of student %d again: ",
+                        grade, i + 1);
+                grade = inStream.nextInt();
             }
         }
 
