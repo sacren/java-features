@@ -48,10 +48,9 @@ public class Grades {
         int[] bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
         for (int element: gradeArray) {
             if (element == 100) {
-                bins[9]++; /* Increment starting from 0 */
-            } else {
-                bins[element / 10]++;
+                element = 90; /* 100 belongs to 90..99 group */
             }
+            bins[element / 10]++; /* Initial values are all 0's, then increment. */
         }
 
         System.out.printf(
