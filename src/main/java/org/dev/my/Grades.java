@@ -63,6 +63,32 @@ public class Grades {
                     addAsterisk(count));
             index++;
         }
+        int maxCount = getMaxCount(getHistogram(gradeArray));
+        for (int row = 0; row < maxCount; row++) {
+            index = 0;
+            for (int count: getHistogram(gradeArray)) {
+                if (count >= maxCount - row) {
+                    if (index == 0) {
+                        System.out.printf("%3c%2c", '*', ' ');
+                    } else {
+                        System.out.printf("%3c%3c", '*', ' ');
+                    }
+                } else {
+                    System.out.printf("%6c", ' ');
+                }
+                if (index++ == 9) {
+                    System.out.println();
+                }
+            }
+        }
+        for (int i = 0; i < 9; i++) {
+            if (i == 0) {
+                System.out.printf("%2d-%-2d", i * 10, i * 10 + 9);
+            } else {
+                System.out.printf("%2d-%-3d", i * 10, i * 10 + 9);
+            }
+        }
+        System.out.printf("%2d-%-3d%n", 90, 100);
         inStream.close();
     }
 
@@ -127,5 +153,15 @@ public class Grades {
             s += " *";
         }
         return s;
+    }
+
+    private static int getMaxCount(int[] a) {
+        int max = a[0];
+        for (int number: a) {
+            if (max < number) {
+                max = number;
+            }
+        }
+        return max;
     }
 }
