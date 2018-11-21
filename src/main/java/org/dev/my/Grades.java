@@ -51,10 +51,18 @@ public class Grades {
                         + "Minimum is %d%n"
                         + "Maximum is %d%n"
                         + "Standard deviation is %.2f%n"
-                        + "Histogram in bins is %s%n",
+                        + "Histogram of grades:%n",
                 Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
-                getMaximum(gradeArray), getStdDeviation(gradeArray),
-                Arrays.toString(getHistogram(gradeArray)));
+                getMaximum(gradeArray), getStdDeviation(gradeArray));
+        int index = 0;
+        for (int count: getHistogram(gradeArray)) {
+            System.out.printf(
+                    "%2d - %3d: %s%n",
+                    index * 10,
+                    index == 9 ? index * 10 + 10 : index * 10 + 9,
+                    addAsterisk(count));
+            index++;
+        }
         inStream.close();
     }
 
@@ -107,5 +115,17 @@ public class Grades {
             bins[grade / 10]++; /* Initial values are all 0's, then increment. */
         }
         return bins;
+    }
+
+    private static String addAsterisk(int count) {
+        String s = "";
+        for (int i = 0; i < count; i++) {
+            if (i == 0) {
+                s += "*";
+                continue;
+            }
+            s += " *";
+        }
+        return s;
     }
 }
