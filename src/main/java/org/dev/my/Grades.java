@@ -45,14 +45,6 @@ public class Grades {
             }
         }
 
-        int[] bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
-        for (int element: gradeArray) {
-            if (element == 100) {
-                element = 90; /* 100 belongs to 90..99 group */
-            }
-            bins[element / 10]++; /* Initial values are all 0's, then increment. */
-        }
-
         System.out.printf(
                 "List of grades is %s%n"
                         + "Average is %.2f%n"
@@ -61,7 +53,8 @@ public class Grades {
                         + "Standard deviation is %.2f%n"
                         + "Histogram in bins is %s%n",
                 Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
-                getMaximum(gradeArray), getStdDeviation(gradeArray), Arrays.toString(bins));
+                getMaximum(gradeArray), getStdDeviation(gradeArray),
+                Arrays.toString(getHistogram(gradeArray)));
         inStream.close();
     }
 
@@ -103,5 +96,16 @@ public class Grades {
         }
         return Math.sqrt((double) sumOfSquare / size
                         - ((double) sum / size) * ((double) sum / size));
+    }
+
+    private static int[] getHistogram(int[] grades) {
+        int[] bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
+        for (int grade: grades) {
+            if (grade == 100) {
+                grade = 90; /* 100 belongs to 90..99 group */
+            }
+            bins[grade / 10]++; /* Initial values are all 0's, then increment. */
+        }
+        return bins;
     }
 }
