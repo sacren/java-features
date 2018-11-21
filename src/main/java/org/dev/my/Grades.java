@@ -54,8 +54,9 @@ public class Grades {
                         + "Histogram of grades:%n",
                 Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
                 getMaximum(gradeArray), getStdDeviation(gradeArray));
+        int[] histogramArray = getHistogram(gradeArray);
         int index = 0;
-        for (int count: getHistogram(gradeArray)) {
+        for (int count: histogramArray) {
             System.out.printf(
                     "%2d - %3d: %s%n",
                     index * 10,
@@ -63,10 +64,10 @@ public class Grades {
                     addAsterisk(count));
             index++;
         }
-        int maxCount = getMaxCount(getHistogram(gradeArray));
+        int maxCount = getMaxCount(histogramArray);
         for (int row = 0; row < maxCount; row++) {
             index = 0;
-            for (int count: getHistogram(gradeArray)) {
+            for (int count: histogramArray) {
                 if (count >= maxCount - row) {
                     if (index == 0) {
                         System.out.printf("%3c%2c", '*', ' ');
