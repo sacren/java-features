@@ -2,7 +2,8 @@
  * Prompt the user for the number of students in a class (a non-negative
  * integer) and for the grade of each of them (between 0 and 100).  Compute and
  * print the average (double rounded to 2 decimal places) as well as the lowest
- * and highest grades.
+ * and highest grades.  Add standard deviation and both vertical and horizontal
+ * histograms.
  */
 import java.util.Arrays;
 import java.util.Scanner;
