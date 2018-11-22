@@ -82,12 +82,10 @@ public class Grades {
                 }
             }
         }
-        for (int i = 0; i < 9; i++) {
-            if (i == 0) {
-                System.out.printf("%2d-%-2d", i * 10, i * 10 + 9);
-            } else {
-                System.out.printf("%2d-%-3d", i * 10, i * 10 + 9);
-            }
+        /* Deal with the end bins easily outside of the loop. */
+        System.out.printf("%2d-%-2d", 0, 9);
+        for (int i = 1; i < 9; i++) {
+            System.out.printf("%2d-%-3d", i * 10, i * 10 + 9);
         }
         System.out.printf("%2d-%-3d%n", 90, 100);
         inStream.close();
