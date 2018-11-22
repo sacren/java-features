@@ -70,9 +70,9 @@ public class Grades {
             for (int count: histogramArray) {
                 if (count >= maxCount - row) {
                     if (index == 0) {
-                        System.out.printf("%3c%2c", '*', ' ');
+                        System.out.printf("%2c%c%3c", ' ', '*', ' ');
                     } else {
-                        System.out.printf("%3c%3c", '*', ' ');
+                        System.out.printf("%c%c%4c", ' ', '*', ' ');
                     }
                 } else {
                     System.out.printf("%6c", ' ');
