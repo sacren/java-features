@@ -10,13 +10,25 @@ public class CircleComputation {
     /** Entry point to CircleComputation. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
-
-        System.out.print("Enter the radius: ");
-        final double radius = inputStream.nextDouble();
-        System.out.print("Enter the height: ");
-        final double height = inputStream.nextDouble();
+        double radius;
+        for ( ; ; ) {
+            System.out.print("Enter the radius: ");
+            radius = inputStream.nextDouble();
+            if (radius >= 0) {
+                break;
+            }
+            System.out.printf("%f is invalid. Try again.%n", radius);
+        }
+        double height;
+        for ( ; ; ) {
+            System.out.print("Enter the height: ");
+            height = inputStream.nextDouble();
+            if (height >= 0) {
+                break;
+            }
+            System.out.printf("%f is invalid. Try again.%n", height);
+        }
         inputStream.close();
-
         computeCircle(radius);
         computeSphere(radius);
         computeCylinder(radius, height);
