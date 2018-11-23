@@ -29,46 +29,48 @@ public class CircleComputation {
             System.out.printf("%f is invalid. Try again.%n", height);
         }
         inputStream.close();
-        computeCircle(radius);
-        computeSphere(radius);
-        computeCylinder(radius, height);
-    }
-
-    /** Compute diameter, circumference, and area. */
-    public static void computeCircle(double radius) {
-        double diameter = radius * 2;
-        double circumference = diameter * Math.PI;
-        double area = Math.PI * radius * radius;
-
+        double[] circleArray = computeCircle(radius);
+        double[] sphereArray = computeSphere(radius);
+        double[] cylinderArray = computeCylinder(radius, height);
         System.out.printf(
                 "%nCircle:%n"
                         + "The diameter is %.2f%n"
                         + "The circumference is %.2f%n"
-                        + "The area is %.2f%n",
-                diameter, circumference, area);
-    }
-
-    /** Compute sphere surface area and volume. */
-    public static void computeSphere(double radius) {
-        double surfaceArea = Math.PI * radius * radius * 4;
-        double volume = Math.PI * radius * radius * radius * 4 / 3;
-
-        System.out.printf(
-                "%nSphere:%n" + "The surface area is %.2f%n" + "The volume is %.2f%n",
-                surfaceArea, volume);
-    }
-
-    /** Compute cylinder base area, surface area and volume. */
-    public static void computeCylinder(double radius, double height) {
-        double baseArea = Math.PI * radius * radius;
-        double surfaceArea = Math.PI * radius * 2 * height + baseArea * 2;
-        double volume = baseArea * height;
-
-        System.out.printf(
-                "%nCylinder:%n"
+                        + "The area is %.2f%n"
+                        + "%nSphere:%n"
+                        + "The surface area is %.2f%n"
+                        + "The volume is %.2f%n"
+                        + "%nCylinder:%n"
                         + "The base area is %.2f%n"
                         + "The surface area is %.2f%n"
                         + "The volume is %.2f%n",
-                baseArea, surfaceArea, volume);
+                circleArray[0], circleArray[1], circleArray[2], sphereArray[0], sphereArray[1],
+                cylinderArray[0], cylinderArray[1], cylinderArray[2]);
+    }
+
+    /* Compute diameter, circumference, and area. */
+    private static double[] computeCircle(double radius) {
+        double[] circle = new double[3];
+        circle[0] = radius * 2; /* diameter */
+        circle[1] = circle[0] * Math.PI; /* circumference */
+        circle[2] = Math.PI * radius * radius; /* area */
+        return circle;
+    }
+
+    /* Compute sphere surface area and volume. */
+    private static double[] computeSphere(double radius) {
+        double[] sphere = new double[2];
+        sphere[0] = Math.PI * radius * radius * 4; /* surface area */
+        sphere[1] = Math.PI * radius * radius * radius * 4 / 3; /* volume */
+        return sphere;
+    }
+
+    /* Compute cylinder base area, surface area and volume. */
+    private static double[] computeCylinder(double radius, double height) {
+        double[] cylinder = new double[3];
+        cylinder[0] = Math.PI * radius * radius; /* base area */
+        cylinder[1] = Math.PI * radius * 2 * height + cylinder[0] * 2; /* surface area */
+        cylinder[2] = cylinder[0] * height; /* volume */
+        return cylinder;
     }
 }
