@@ -53,7 +53,7 @@ public class Grades {
                         + "Maximum is %d%n"
                         + "Standard deviation is %.2f%n"
                         + "Histogram of grades:%n",
-                Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
+                Arrays.toString(gradeArray), getAverage(gradeArray), getMin(gradeArray),
                 getMax(gradeArray), getStdDeviation(gradeArray));
         int[] histogramArray = getHistogram(gradeArray);
         int index = 0;
@@ -100,14 +100,14 @@ public class Grades {
         return (double) sum / a.length;
     }
 
-    private static int getMinimum(int[] a) {
-        int minimum = 100;
-        for (int element: a) {
-            if (minimum > element) {
-                minimum = element;
+    private static int getMin(int[] a) {
+        int min = a[0];
+        for (int number: a) {
+            if (min > number) {
+                min = number;
             }
         }
-        return minimum;
+        return min;
     }
 
     private static int getMax(int[] a) {
