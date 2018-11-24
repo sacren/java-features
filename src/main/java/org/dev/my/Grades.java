@@ -65,7 +65,7 @@ public class Grades {
                     addAsterisk(count));
             index++;
         }
-        int maxCount = getMaxCount(histogramArray);
+        final int maxCount = getMaxCount(histogramArray);
         for (int row = 0; row < maxCount; row++) {
             index = 0;
             for (int count: histogramArray) {
