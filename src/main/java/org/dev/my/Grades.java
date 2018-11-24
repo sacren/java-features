@@ -54,7 +54,7 @@ public class Grades {
                         + "Standard deviation is %.2f%n"
                         + "Histogram of grades:%n",
                 Arrays.toString(gradeArray), getAverage(gradeArray), getMinimum(gradeArray),
-                getMaximum(gradeArray), getStdDeviation(gradeArray));
+                getMax(gradeArray), getStdDeviation(gradeArray));
         int[] histogramArray = getHistogram(gradeArray);
         int index = 0;
         for (int count: histogramArray) {
@@ -65,11 +65,11 @@ public class Grades {
                     addAsterisk(count));
             index++;
         }
-        final int maxCount = getMaxCount(histogramArray);
-        for (int row = 0; row < maxCount; row++) {
+        final int maxAsterisk = getMax(histogramArray);
+        for (int row = 0; row < maxAsterisk; row++) {
             index = 0;
             for (int count: histogramArray) {
-                if (count >= maxCount - row) {
+                if (count >= maxAsterisk - row) {
                     if (index == 0) {
                         System.out.printf("%3c%3c", '*', ' ');
                     } else {
@@ -110,14 +110,14 @@ public class Grades {
         return minimum;
     }
 
-    private static int getMaximum(int[] a) {
-        int maximum = 0;
-        for (int element: a) {
-            if (maximum < element) {
-                maximum = element;
+    private static int getMax(int[] a) {
+        int max = a[0];
+        for (int number: a) {
+            if (max < number) {
+                max = number;
             }
         }
-        return maximum;
+        return max;
     }
 
     private static double getStdDeviation(int[] a) {
@@ -153,15 +153,5 @@ public class Grades {
             s += " *";
         }
         return s;
-    }
-
-    private static int getMaxCount(int[] a) {
-        int max = a[0];
-        for (int number: a) {
-            if (max < number) {
-                max = number;
-            }
-        }
-        return max;
     }
 }
