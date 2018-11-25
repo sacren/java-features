@@ -20,11 +20,11 @@ public class BitwiseOp {
                         + "0xAAAA5555 = %15$S%n"
                         + "0x55551111 = %16$S%n"
                         + "0xAAAA5555 ^ 0x55551111 = %11$s%n"
-                        + "MAX_VALUE in hex  is %6$S%n"
-                        + "MAX_VALUE in decimal is %5$d%n"
-                        + "0x80000000 is %3$d%n"
-                        + "MAX_VALUE in binary is %10$s%n"
-                        + "0x80000000 in binary is %11$s%n",
+                        + "MAX_VALUE (hex) = %6$S%n"
+                        + "MAX_VALUE (decimal) = %5$d%n"
+                        + "0x80000000 (decimal) = %3$d%n"
+                        + "MAX_VALUE  = 0%7$s%n"
+                        + "0x80000000 = %8$s%n",
                 x, y, z, ~x,
                 Integer.MAX_VALUE,
                 Integer.toHexString(Integer.MAX_VALUE),
