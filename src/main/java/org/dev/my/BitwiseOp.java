@@ -6,11 +6,11 @@ public class BitwiseOp {
         int y = 0x55551111;
         int z = 0x80000000; /* MAX_VALUE + 1 */
         System.out.printf(
-                "0xAAAA555 is %d%n"
+                "0xAAAA555 = %d%n"
                         + "~0xAAAA5555 = %4$8X%n"
                         + "~0xAAAA5555 = %17$s%n"
                         + "~0xAAAA5555 = %4$d%n"
-                        + "0x55551111 is %d%n"
+                        + "0x55551111 = %d%n"
                         + "0xAAAA5555 & 0x55551111 = %12$S%n"
                         + "0xAAAA5555 = %15$s%n"
                         + "0x55551111 = %16$s%n"
@@ -27,7 +27,19 @@ public class BitwiseOp {
                         + "MAX_VALUE (decimal) = %5$d%n"
                         + "0x80000000 (decimal) = %3$d%n"
                         + "MAX_VALUE  = 0%7$s%n"
-                        + "0x80000000 = %8$s%n",
+                        + "0x80000000 = %8$s%n"
+                        + "true & true = %22$b%n"
+                        + "false & false = %23$b%n"
+                        + "true & false = %24$b%n"
+                        + "false & true = %25$b%n"
+                        + "true | true = %26$b%n"
+                        + "false | false = %27$b%n"
+                        + "true | false = %28$b%n"
+                        + "false | true = %29$b%n"
+                        + "true ^ true = %18$b%n"
+                        + "false ^ false = %19$b%n"
+                        + "true ^ false = %20$b%n"
+                        + "false ^ true = %21$b%n",
                 x, y, z, ~x,
                 Integer.MAX_VALUE,
                 Integer.toHexString(Integer.MAX_VALUE),
@@ -41,6 +53,18 @@ public class BitwiseOp {
                 Integer.toHexString(x ^ y),
                 Integer.toBinaryString(x),
                 Integer.toBinaryString(y),
-                Integer.toBinaryString(~x));
+                Integer.toBinaryString(~x),
+                true ^ true,
+                false ^ false,
+                true ^ false,
+                false ^ true,
+                true & true,
+                false & false,
+                true & false,
+                false & true,
+                true | true,
+                false | false,
+                true | false,
+                false | true);
     }
 }
