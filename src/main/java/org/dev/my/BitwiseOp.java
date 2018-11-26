@@ -7,6 +7,9 @@ public class BitwiseOp {
         int z = 0x80000000; /* MAX_VALUE + 1 */
         System.out.printf(
                 "0xAAAA555 is %d%n"
+                        + "~0xAAAA5555 = %4$8X%n"
+                        + "~0xAAAA5555 = %17$s%n"
+                        + "~0xAAAA5555 = %4$d%n"
                         + "0x55551111 is %d%n"
                         + "0xAAAA5555 & 0x55551111 = %12$S%n"
                         + "0xAAAA5555 = %15$s%n"
@@ -37,6 +40,7 @@ public class BitwiseOp {
                 Integer.toHexString(x | y),
                 Integer.toHexString(x ^ y),
                 Integer.toBinaryString(x),
-                Integer.toBinaryString(y));
+                Integer.toBinaryString(y),
+                Integer.toBinaryString(~x));
     }
 }
