@@ -39,7 +39,11 @@ public class BitwiseOp {
                         + "true ^ true = %18$b%n"
                         + "false ^ false = %19$b%n"
                         + "true ^ false = %20$b%n"
-                        + "false ^ true = %21$b%n",
+                        + "false ^ true = %21$b%n"
+                        + "~0x01 = %33$2X%n"
+                        + "0x01 & 0xFF = %30$X%n"
+                        + "0x01 | 0xFF = %31$X%n"
+                        + "0x01 ^ 0xFF = %32$X%n",
                 x, y, z, ~x,
                 Integer.MAX_VALUE,
                 Integer.toHexString(Integer.MAX_VALUE),
@@ -65,6 +69,10 @@ public class BitwiseOp {
                 true | true,
                 false | false,
                 true | false,
-                false | true);
+                false | true,
+                0x01 & 0xFF,
+                0x01 | 0xFF,
+                0x01 ^ 0xFF,
+                ~0x01);
     }
 }
