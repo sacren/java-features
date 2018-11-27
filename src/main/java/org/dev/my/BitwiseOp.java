@@ -2,8 +2,8 @@
 public class BitwiseOp {
     /** Test bitwise opention. */
     public static void main(String[] args) {
-        int x = 0xAAAA5555;
-        int y = 0x55551111;
+        int x = 0xAAAA_5555;
+        int y = 0x5555_1111;
         int z = 0x80000000; /* MAX_VALUE + 1 */
         System.out.printf(
                 "0xAAAA555 = %d%n"
