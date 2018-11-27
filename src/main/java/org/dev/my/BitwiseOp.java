@@ -6,7 +6,11 @@ public class BitwiseOp {
         int y = 0x5555_1111;
         int z = 0x80000000; /* MAX_VALUE + 1 */
         System.out.printf(
-                "0xAAAA555 = %d%n"
+                "0xAAAA5555 = %d%n"
+                        + "0xAAAA5555 = %1$X%n"
+                        + "0xAAAA5555 << 1 = %34$X%n"
+                        + "0xAAAA5555      = %15$s%n"
+                        + "0xAAAA5555 << 1 =  %35$s%n"
                         + "~0xAAAA5555 = %4$8X%n"
                         + "~0xAAAA5555 = %17$s%n"
                         + "~0xAAAA5555 = %4$d%n"
@@ -73,6 +77,8 @@ public class BitwiseOp {
                 0x01 & 0xFF,
                 0x01 | 0xFF,
                 0x01 ^ 0xFF,
-                ~0x01);
+                ~0x01,
+                x << 1,
+                Integer.toBinaryString(x << 1));
     }
 }
