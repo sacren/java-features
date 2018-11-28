@@ -47,5 +47,7 @@ public class Bitshift {
         System.out.printf("0x40000000 / 4   =    %s%n", Integer.toBinaryString(p / 4));
         System.out.printf("0x40000000 >> 3  =     %s%n", Integer.toBinaryString(p >> 3));
         System.out.printf("0x40000000 / 8   =     %s%n", Integer.toBinaryString(p / 8));
+        System.out.printf("0x00             = %s%n", Integer.toBinaryString(0));
+        System.out.printf("0x00 >> 1        = %s%n", Integer.toBinaryString(0 >> 1));
     }
 }
