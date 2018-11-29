@@ -11,6 +11,12 @@ public class Bitshift {
         System.out.printf("0xAAAA5555 << 1  = %X%n", x << 1);
         System.out.printf("0xAAAA5555       = %s%n", Integer.toBinaryString(x));
         System.out.printf("0xAAAA5555 << 1  =  %s%n", Integer.toBinaryString(x << 1));
+        System.out.printf("0x7FFFFFFF       =  %s%n", Integer.toBinaryString(Integer.MAX_VALUE));
+        System.out.printf("0x7FFFFFFF << 1  = %s%n",
+                                                Integer.toBinaryString(Integer.MAX_VALUE << 1));
+        System.out.printf("0x80000000       = %s%n", Integer.toBinaryString(Integer.MIN_VALUE));
+        System.out.printf("0x80000000 << 1  = %s%n",
+                                                Integer.toBinaryString(Integer.MIN_VALUE << 1));
         System.out.printf("0xAAAA5555       = %s%n", Integer.toBinaryString(x));
         System.out.printf("0xAAAA5555 >> 1  = %s%n", Integer.toBinaryString(x >> 1));
         System.out.printf("0xAAAA5555 >> 1  = %d%n", x >> 1);
