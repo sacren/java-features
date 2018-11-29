@@ -27,7 +27,7 @@ public class PerfectNumber {
     private static boolean isPerfect(int number) {
         int sum = 0;
         for (int i = 1; i < number; i++) {
-            if (i > number / 2) {
+            if (i > number >> 1) {
                 break;
             }
             if (number % i == 0) {
