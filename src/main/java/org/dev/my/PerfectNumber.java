@@ -37,4 +37,18 @@ public class PerfectNumber {
         }
         return false;
     }
+
+    private static boolean isDeficient(int number) {
+        int sum = 0;
+        /* Proper divisor doesn't go beyond the median of the number. */
+        for (int i = 1; i <= number >> 1; i++) {
+            if (number % i == 0) {
+                sum += i;
+            }
+        }
+        if (sum < number) {
+            return true;
+        }
+        return false;
+    }
 }
