@@ -11,16 +11,19 @@ public class PerfectNumber {
         Scanner inputStream = new Scanner(System.in);
         int number;
         for ( ; ; ) {
-            System.out.print("Enter a positive integer: ");
+            System.out.print("Enter a positive integer for upper bound: ");
             number = inputStream.nextInt();
             if (number > 0) {
                 break;
             }
             System.out.printf("%d is invalid. Try again.%n", number);
         }
-        System.out.printf(
-                "%d is%s a perfect number%n",
-                number, isPerfect(number) ? "" : " not");
+        System.out.println("List of perfect numbers:");
+        for (int i = 1; i <= number; i++) {
+            if (isPerfect(i)) {
+                System.out.printf("%d%n", i);
+            }
+        }
         inputStream.close();
     }
 
