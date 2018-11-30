@@ -19,11 +19,14 @@ public class PerfectNumber {
             System.out.printf("%d is invalid. Try again.%n", number);
         }
         System.out.println("List of perfect numbers:");
+        int count = 0;
         for (int i = 1; i <= number; i++) {
             if (isPerfect(i)) {
                 System.out.printf("%d%n", i);
+                count++;
             }
         }
+        System.out.printf("%d perfect numbers (%.2f%%)%n", count, (double) count / number * 100);
         inputStream.close();
     }
 
