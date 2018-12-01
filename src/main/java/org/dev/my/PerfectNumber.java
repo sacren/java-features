@@ -21,7 +21,7 @@ public class PerfectNumber {
         String perfectNumbers = "";
         String neither = "";
         int perfectCount = 0;
-        int deficientCount = 0;
+        int neitherCount = 0;
         for (int i = 1; i <= number; i++) {
             if (isPerfect(i)) {
                 if (perfectNumbers.isEmpty()) {
@@ -33,7 +33,6 @@ public class PerfectNumber {
                 continue;
             }
             if (isDeficient(i)) {
-                deficientCount++;
                 continue;
             }
             if (neither.isEmpty()) {
@@ -41,6 +40,7 @@ public class PerfectNumber {
             } else {
                 neither += " " + Integer.toString(i);
             }
+            neitherCount++;
         }
         System.out.printf(
                 "List of perfect numbers:%n"
@@ -50,8 +50,7 @@ public class PerfectNumber {
                         + "%s%n"
                         + "%d neither perfect nor deficient (%.2f%%)%n",
                 perfectNumbers, perfectCount, (double) perfectCount / number * 100,
-                neither, number - perfectCount - deficientCount,
-                (double) (number - perfectCount - deficientCount) / number * 100);
+                neither, neitherCount, (double) neitherCount / number * 100);
         inputStream.close();
     }
 
