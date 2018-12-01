@@ -18,15 +18,40 @@ public class PerfectNumber {
             }
             System.out.printf("%d is invalid. Try again.%n", number);
         }
-        System.out.println("List of perfect numbers:");
-        int count = 0;
+        String perfectNumbers = "";
+        String neither = "";
+        int perfectCount = 0;
+        int deficientCount = 0;
         for (int i = 1; i <= number; i++) {
             if (isPerfect(i)) {
-                System.out.printf("%d%n", i);
-                count++;
+                if (perfectNumbers.isEmpty()) {
+                    perfectNumbers += Integer.toString(i);
+                } else {
+                    perfectNumbers += " " + Integer.toString(i);
+                }
+                perfectCount++;
+                continue;
+            }
+            if (isDeficient(i)) {
+                deficientCount++;
+                continue;
+            }
+            if (neither.isEmpty()) {
+                neither += Integer.toString(i);
+            } else {
+                neither += " " + Integer.toString(i);
             }
         }
-        System.out.printf("%d perfect numbers (%.2f%%)%n", count, (double) count / number * 100);
+        System.out.printf(
+                "List of perfect numbers:%n"
+                        + "%s%n"
+                        + "%d perfect numbers (%.2f%%)%n%n"
+                        + "List of numbers neither perfect nor deficient:%n"
+                        + "%s%n"
+                        + "%d neither perfect nor deficient (%.2f%%)%n",
+                perfectNumbers, perfectCount, (double) perfectCount / number * 100,
+                neither, number - perfectCount - deficientCount,
+                (double) (number - perfectCount - deficientCount) / number * 100);
         inputStream.close();
     }
 
