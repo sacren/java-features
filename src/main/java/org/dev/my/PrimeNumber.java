@@ -29,7 +29,7 @@ public class PrimeNumber {
         System.out.printf(
                 "List of prime numbers:%n"
                         + "%s%n"
-                        + "%d prime numbers (%.2f%%)%n%n",
+                        + "%d prime numbers (%.2f%%)%n",
                 Arrays.toString(primeArray), count, (double) count / number * 100);
         inputStream.close();
     }
