@@ -18,19 +18,13 @@ public class PrimeNumber {
             }
             System.out.printf("%d is invalid. Try again.%n", number);
         }
-        final int count = countPrime(number);
-        int[] primeArray = new int[count];
-        int index = 0;
-        for (int i = 2; i <= number; i++) { /* prime number starts from 2 */
-            if (isPrime(i)) {
-                primeArray[index++] = i;
-            }
-        }
+        int[] primeArray = getPrimeArray(number);
         System.out.printf(
                 "List of prime numbers:%n"
                         + "%s%n"
                         + "%d prime numbers (%.2f%%)%n",
-                Arrays.toString(primeArray), count, (double) count / number * 100);
+                Arrays.toString(primeArray),
+                primeArray.length, (double) primeArray.length / number * 100);
         inputStream.close();
     }
 
@@ -51,5 +45,16 @@ public class PrimeNumber {
             }
         }
         return count;
+    }
+
+    private static int[] getPrimeArray(int number) {
+        int[] primeArray = new int[countPrime(number)];
+        int index = 0;
+        for (int i = 2; i <= number; i++) { /* prime number starts from 2 */
+            if (isPrime(i)) {
+                primeArray[index++] = i;
+            }
+        }
+        return primeArray;
     }
 }
