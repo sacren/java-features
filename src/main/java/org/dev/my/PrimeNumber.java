@@ -21,7 +21,7 @@ public class PrimeNumber {
         final int count = countPrime(number);
         int[] primeArray = new int[count];
         int index = 0;
-        for (int i = 2; i <= number; i++) {
+        for (int i = 2; i <= number; i++) { /* prime number starts from 2 */
             if (isPrime(i)) {
                 primeArray[index++] = i;
             }
