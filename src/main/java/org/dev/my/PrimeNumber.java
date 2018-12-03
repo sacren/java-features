@@ -19,12 +19,17 @@ public class PrimeNumber {
             System.out.printf("%d is invalid. Try again.%n", number);
         }
         int[] primeArray = getPrimeArray(number);
+        int[] list = getNumberofPrimeFactor(number);
         System.out.printf(
                 "List of prime numbers:%n"
                         + "%s%n"
-                        + "%d prime numbers (%.2f%%)%n",
+                        + "%d prime numbers (%.2f%%)%n"
+                        + "List of numbers equal to the product of prime factors:%n"
+                        + "%s%n"
+                        + "%d numbers (%.2f%%)%n",
                 Arrays.toString(primeArray),
-                primeArray.length, (double) primeArray.length / number * 100);
+                primeArray.length, (double) primeArray.length / number * 100,
+                Arrays.toString(list), list.length, (double) list.length / number * 100);
         inputStream.close();
     }
 
@@ -56,5 +61,61 @@ public class PrimeNumber {
             }
         }
         return primeArray;
+    }
+
+    private static int[] getFactorArray(int number) {
+        int[] primeArray = getPrimeArray(number);
+        int index = 0;
+        for (int prime: primeArray) {
+            if (prime == number) {
+                break;
+            }
+            if (number % prime == 0) {
+                index++;
+            }
+        }
+        int[] factorArray = new int[index];
+        index = 0;
+        for (int prime: primeArray) {
+            if (number % prime == 0) {
+                factorArray[index++] = prime;
+            }
+        }
+        return factorArray;
+    }
+
+    private static boolean isProductOfPrimeFactors(int number) {
+        int[] factorArray = getFactorArray(number);
+        int product = 1;
+        for (int factor: factorArray) {
+            product *= factor;
+        }
+        if (product == number) {
+            return true;
+        }
+        return false;
+    }
+
+    private static int[] getNumberofPrimeFactor(int number) {
+        int index = 0;
+        for (int i = 1; i <= number; i++) {
+            if (isPrime(i)) {
+                continue;
+            }
+            if (isProductOfPrimeFactors(i)) {
+                index++;
+            }
+        }
+        int[] list = new int[index];
+        index = 0;
+        for (int i = 1; i <= number; i++) {
+            if (isPrime(i)) {
+                continue;
+            }
+            if (isProductOfPrimeFactors(i)) {
+                list[index++] = i;
+            }
+        }
+        return list;
     }
 }
