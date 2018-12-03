@@ -19,7 +19,7 @@ public class PrimeNumber {
             System.out.printf("%d is invalid. Try again.%n", number);
         }
         int[] primeArray = getPrimeArray(number);
-        int[] list = getNumberofPrimeFactor(number);
+        int[] list = getNumberOfPrimeFactor(number);
         System.out.printf(
                 "List of prime numbers:%n"
                         + "%s%n"
@@ -96,18 +96,22 @@ public class PrimeNumber {
         return false;
     }
 
-    private static int[] getNumberofPrimeFactor(int number) {
-        int index = 0;
+    private static int countPrimeFactor(int number) {
+        int count = 0;
         for (int i = 1; i <= number; i++) {
             if (isPrime(i)) {
                 continue;
             }
             if (isProductOfPrimeFactors(i)) {
-                index++;
+                count++;
             }
         }
-        int[] list = new int[index];
-        index = 0;
+        return count;
+    }
+
+    private static int[] getNumberOfPrimeFactor(int number) {
+        int[] list = new int[countPrimeFactor(number)];
+        int index = 0;
         for (int i = 1; i <= number; i++) {
             if (isPrime(i)) {
                 continue;
