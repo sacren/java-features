@@ -103,7 +103,7 @@ public class PrimeNumber {
 
     private static int countPrimeFactor(int number) {
         int count = 0;
-        for (int i = 1; i <= number; i++) {
+        for (int i = 2; i <= number; i++) {
             if (isPrime(i)) {
                 continue;
             }
@@ -117,7 +117,7 @@ public class PrimeNumber {
     private static int[] getNumberOfPrimeFactor(int number) {
         int[] list = new int[countPrimeFactor(number)];
         int index = 0;
-        for (int i = 1; i <= number; i++) {
+        for (int i = 2; i <= number; i++) {
             if (isPrime(i)) {
                 continue;
             }
