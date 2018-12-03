@@ -63,19 +63,24 @@ public class PrimeNumber {
         return primeArray;
     }
 
-    private static int[] getFactorArray(int number) {
+    private static int countFactors(int number) {
         int[] primeArray = getPrimeArray(number);
-        int index = 0;
+        int count = 0;
         for (int prime: primeArray) {
             if (prime == number) {
                 break;
             }
             if (number % prime == 0) {
-                index++;
+                count++;
             }
         }
-        int[] factorArray = new int[index];
-        index = 0;
+        return count;
+    }
+
+    private static int[] getFactorArray(int number) {
+        int[] primeArray = getPrimeArray(number);
+        int[] factorArray = new int[countFactors(number)];
+        int index = 0;
         for (int prime: primeArray) {
             if (number % prime == 0) {
                 factorArray[index++] = prime;
