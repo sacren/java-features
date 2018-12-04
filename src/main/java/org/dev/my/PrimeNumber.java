@@ -37,7 +37,7 @@ public class PrimeNumber {
     }
 
     private static boolean isPrime(int number) {
-        for (int i = 2; i < number; i++) {
+        for (int i = 2; i < number; i++) { /* prime number starts from 2 */
             if (number % i == 0) {
                 return false;
             }
@@ -58,7 +58,7 @@ public class PrimeNumber {
     private static int[] getPrimeArray(int number) {
         int[] primeArray = new int[countPrime(number)];
         int index = 0;
-        for (int i = 2; i <= number; i++) { /* prime number starts from 2 */
+        for (int i = 2; i < number; i++) { /* exclude the number for no factor */
             if (isPrime(i)) {
                 primeArray[index++] = i;
             }
@@ -70,9 +70,6 @@ public class PrimeNumber {
         int[] primeArray = getPrimeArray(number);
         int count = 0;
         for (int prime: primeArray) {
-            if (prime == number) {
-                break;
-            }
             if (number % prime == 0) {
                 count++;
             }
