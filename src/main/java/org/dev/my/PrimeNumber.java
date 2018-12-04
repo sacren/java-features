@@ -67,9 +67,8 @@ public class PrimeNumber {
     }
 
     private static int countFactors(int number) {
-        int[] primeArray = getPrimeArray(number);
         int count = 0;
-        for (int prime: primeArray) {
+        for (int prime: getPrimeArray(number)) {
             if (number % prime == 0) {
                 count++;
             }
@@ -78,10 +77,9 @@ public class PrimeNumber {
     }
 
     private static int[] getFactorArray(int number) {
-        int[] primeArray = getPrimeArray(number);
         int[] factorArray = new int[countFactors(number)];
         int index = 0;
-        for (int prime: primeArray) {
+        for (int prime: getPrimeArray(number)) {
             if (number % prime == 0) {
                 factorArray[index++] = prime;
             }
@@ -90,9 +88,8 @@ public class PrimeNumber {
     }
 
     private static boolean isProductOfPrimeFactors(int number) {
-        int[] factorArray = getFactorArray(number);
         int product = 1;
-        for (int factor: factorArray) {
+        for (int factor: getFactorArray(number)) {
             product *= factor;
         }
         if (product == number) {
