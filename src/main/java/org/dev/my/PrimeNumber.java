@@ -58,7 +58,7 @@ public class PrimeNumber {
     private static int[] getPrimeArray(int number) {
         int[] primeArray = new int[countPrime(number)];
         int index = 0;
-        for (int i = 2; i < number; i++) { /* exclude the number for no factor */
+        for (int i = 2; i <= number; i++) {
             if (isPrime(i)) {
                 primeArray[index++] = i;
             }
