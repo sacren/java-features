@@ -15,52 +15,33 @@ public class CountVowelDigit {
             System.out.println("The string is empty. Try again.");
         }
         final int size = line.length();
-        final int vowels = countVowel(line);
-        final int digits = countDigit(line);
+        int[] countArray = countVowelDigit(line);
         System.out.printf(
                 "Number of vowels: %d (%.2f%%)%n"
                         + "Number of digits: %d (%.2f%%)%n",
-                vowels, (float) vowels * 100 / size, digits, (float) digits * 100 / size);
+                countArray[0], (float) countArray[0] * 100 / size,
+                countArray[1], (float) countArray[1] * 100 / size);
         inStream.close();
     }
 
-    private static int countVowel(String s) {
-        final int size = s.length();
-        final int first = 0;
-        int count = 0;
-        char vowel;
-
-        s = s.toLowerCase();
-
-        for (int i = first; i < size; i++) {
-            vowel = s.charAt(i);
-
-            switch (vowel) {
+    private static int[] countVowelDigit(String s) {
+        int[] count = new int[2];
+        for (char c: s.toLowerCase().toCharArray()) {
+            if (Character.isDigit(c)) {
+                count[1]++;
+                continue;
+            }
+            switch (c) {
                 case 'a':
                 case 'e':
                 case 'i':
                 case 'o':
                 case 'u':
-                    count++;
+                    count[0]++;
                     break;
                 default:
             }
         }
-
-        return count;
-    }
-
-    private static int countDigit(String s) {
-        final int size = s.length();
-        final int first = 0;
-        int count = 0;
-
-        for (int i = first; i < size; i++) {
-            if (Character.isDigit(s.charAt(i))) {
-                count++;
-            }
-        }
-
         return count;
     }
 }
