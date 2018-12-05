@@ -87,6 +87,10 @@ public class PrimeNumber {
         return factorArray;
     }
 
+    /* Prime has no other prime factors, thus the number parameter is not a
+     * prime. Further product variable doesn't contain the number as a factor
+     * since all the factors are prime.
+     */
     private static boolean isProductOfPrimeFactors(int number) {
         int product = 1;
         for (int factor: getFactorArray(number)) {
