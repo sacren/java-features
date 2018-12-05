@@ -3,7 +3,7 @@
  * prime numbers less than or equal to this upper bound.
  *
  * Display all the numbers that is equal to the product of all its prime
- * factors excluding 1 and the number itself.
+ * factors less than the number itself.
  */
 import java.util.Arrays;
 import java.util.Scanner;
