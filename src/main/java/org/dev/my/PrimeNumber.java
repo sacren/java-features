@@ -22,7 +22,7 @@ public class PrimeNumber {
             System.out.printf("%d is invalid. Try again.%n", number);
         }
         int[] primeArray = getPrimeArray(number);
-        int[] list = getNumberOfPrimeFactor(number);
+        int[] list = getListOfNumbers(number);
         System.out.printf(
                 "List of prime numbers:%n"
                         + "%s%n"
@@ -45,9 +45,9 @@ public class PrimeNumber {
         return true;
     }
 
-    private static int countPrime(int upperBound) {
+    private static int countPrime(int number) {
         int count = 0;
-        for (int i = 2; i <= upperBound; i++) {
+        for (int i = 2; i <= number; i++) {
             if (isPrime(i)) {
                 count++;
             }
@@ -66,7 +66,7 @@ public class PrimeNumber {
         return primeArray;
     }
 
-    private static int countFactors(int number) {
+    private static int countFactor(int number) {
         int count = 0;
         for (int prime: getPrimeArray(number)) {
             if (number % prime == 0) {
@@ -76,8 +76,9 @@ public class PrimeNumber {
         return count;
     }
 
+    /* All array elements are prime numbers and now they are factors. */
     private static int[] getFactorArray(int number) {
-        int[] factorArray = new int[countFactors(number)];
+        int[] factorArray = new int[countFactor(number)];
         int index = 0;
         for (int prime: getPrimeArray(number)) {
             if (number % prime == 0) {
@@ -102,7 +103,7 @@ public class PrimeNumber {
         return false;
     }
 
-    private static int countPrimeFactor(int number) {
+    private static int countListOfNumbers(int number) {
         int count = 0;
         for (int i = 2; i <= number; i++) {
             if (isPrime(i)) {
@@ -115,8 +116,8 @@ public class PrimeNumber {
         return count;
     }
 
-    private static int[] getNumberOfPrimeFactor(int number) {
-        int[] list = new int[countPrimeFactor(number)];
+    private static int[] getListOfNumbers(int number) {
+        int[] list = new int[countListOfNumbers(number)];
         int index = 0;
         for (int i = 2; i <= number; i++) {
             if (isPrime(i)) {
