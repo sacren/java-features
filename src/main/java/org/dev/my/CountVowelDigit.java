@@ -14,19 +14,19 @@ public class CountVowelDigit {
             }
             System.out.println("The string is empty. Try again.");
         }
-        final int size = line.length();
-        int[] countArray = countVowelDigit(line);
+        char[] charArray = line.toLowerCase().toCharArray();
+        int[] countArray = countVowelDigit(charArray);
         System.out.printf(
                 "Number of vowels: %d (%.2f%%)%n"
                         + "Number of digits: %d (%.2f%%)%n",
-                countArray[0], (float) countArray[0] * 100 / size,
-                countArray[1], (float) countArray[1] * 100 / size);
+                countArray[0], (float) countArray[0] * 100 / charArray.length,
+                countArray[1], (float) countArray[1] * 100 / charArray.length);
         inStream.close();
     }
 
-    private static int[] countVowelDigit(String s) {
+    private static int[] countVowelDigit(char[] charArray) {
         int[] count = new int[2];
-        for (char c: s.toLowerCase().toCharArray()) {
+        for (char c: charArray) {
             if (Character.isDigit(c)) {
                 count[1]++;
                 continue;
