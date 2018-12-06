@@ -7,50 +7,26 @@ import java.util.Scanner;
 public class DayOfWeek {
     /** Ask the user for a number to show day of the week. */
     public static void main(String[] args) {
-        int day;
-
         Scanner inStream = new Scanner(System.in);
-
+        String[] weekDay = {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        };
+        int day;
         for ( ; ; ) {
             System.out.print("Enter between 0 and 6 with 0 for Sunday: ");
             day = inStream.nextInt();
-
             if (day >= 0 && day <= 6) {
                 break;
             }
-
-            System.out.println("You entered an invalid number. Try again.");
+            System.out.printf("%d is an invalid number. Try again.%n", day);
         }
-
-        System.out.printf("%d is for %s%n", day, dayOfWeek(day));
+        System.out.printf("%d is for %s%n", day, weekDay[day]);
         inStream.close();
-    }
-
-    private static String dayOfWeek(int number) {
-        String day = "Sunday";
-
-        switch (number) {
-            case 1:
-                day = "Monday";
-                break;
-            case 2:
-                day = "Tuesday";
-                break;
-            case 3:
-                day = "Wednesday";
-                break;
-            case 4:
-                day = "Thursday";
-                break;
-            case 5:
-                day = "Friday";
-                break;
-            case 6:
-                day = "Saturday";
-                break;
-            default:
-        }
-
-        return day;
     }
 }
