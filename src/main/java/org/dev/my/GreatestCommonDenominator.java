@@ -41,8 +41,9 @@ public class GreatestCommonDenominator {
             n2 = tmp;
         }
         System.out.printf(
-                "The greatest common denominator of %d and %d is %d%n",
-                n1, n2, gcd(n1, n2));
+                "The greatest common denominator of %d and %d is %d%n"
+                        + "By recursion the greatest common denominator of %1$d and %2$d is %d%n",
+                n1, n2, gcd(n1, n2), gcdRecursive(n1, n2));
         inStream.close();
     }
 
@@ -57,5 +58,12 @@ public class GreatestCommonDenominator {
             b = remainder;
         }
         return a;
+    }
+
+    private static int gcdRecursive(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcdRecursive(b, a % b);
     }
 }
