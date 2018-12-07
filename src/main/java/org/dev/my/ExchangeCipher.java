@@ -3,67 +3,47 @@
  * corresponding letters between plain and cipher texts. Print out the result in upper case.
  * Example: abcXYZ <-> ZYXCBA.
  */
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ExchangeCipher {
     /** Entry point that retrieves and validates the input string. */
     public static void main(String[] args) {
-        String line;
-
         Scanner inStream = new Scanner(System.in);
-
-        for (; ; ) {
+        String line;
+        for ( ; ; ) {
             System.out.print("Enter a plaintext string: ");
             line = inStream.nextLine();
-
             if (line.isEmpty()) {
-                System.out.println("The string is empty. Try again.");
+                System.out.printf("\"%s\" is empty. Try again.%n", line);
                 continue;
             }
-
             if (isInputValid(line)) {
                 break;
             }
-
-            System.out.println("The string is invalid. Try again.");
+            System.out.printf("\"%s\" is invalid. Try again.%n", line);
         }
-
         System.out.printf("The ciphertext string: %s%n", getCipher(line));
-
         inStream.close();
     }
 
     private static String getCipher(String s) {
-        String cipher = new String();
-        final int size = s.length();
-        final int first = 0;
+        char[] cipherArray = s.toUpperCase().toCharArray();
+        String cipher = "";
         /* 'A' + 'Z' and 'B' + 'Y'... are all equal. */
         final int key = 'A' + 'Z';
-
-        /* Make the whole string upper case for easier handling. */
-        s = s.toUpperCase();
-
-        for (int i = first; i < size; i++) {
-            cipher += (char) (key - s.charAt(i));
+        for (char c: cipherArray) {
+            cipher += Character.toString((char) (key - c));
         }
-
         return cipher;
     }
 
     private static boolean isInputValid(String s) {
-        final int size = s.length();
-        final int first = 0;
-
-        for (int i = first; i < size; i++) {
-            if (!Character.isLetter(s.charAt(i))) {
-                break;
-            }
-
-            if (i == size - 1) {
-                return true;
+        for (char c: s.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                return false;
             }
         }
-
-        return false;
+        return true;
     }
 }
