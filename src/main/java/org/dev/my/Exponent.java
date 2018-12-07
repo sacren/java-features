@@ -7,10 +7,9 @@ import java.util.Scanner;
 public class Exponent {
     /** Prompt the user for base and exponent and display the result. */
     public static void main(String[] args) {
+        Scanner inStream = new Scanner(System.in);
         int base;
         int exponent;
-        Scanner inStream = new Scanner(System.in);
-
         for ( ; ; ) {
             System.out.print("Enter non-negative integer for base: ");
             base = inStream.nextInt();
@@ -19,7 +18,6 @@ public class Exponent {
             }
             System.out.printf("%d is not valid. Try again.%n", base);
         }
-
         for ( ; ; ) {
             System.out.print("Enter non-negative integer for exponent: ");
             exponent = inStream.nextInt();
@@ -28,10 +26,11 @@ public class Exponent {
             }
             System.out.printf("%d is not valid. Try again.%n", exponent);
         }
-
         System.out.printf(
-                "%d to the power of %d is %d%n",
-                base, exponent, getProduct(base, exponent));
+                "No MATH API: %d to the power of %d is %d%n"
+                        + "With MATH API: %f to the power of %f is %f%n",
+                base, exponent, getProduct(base, exponent),
+                (double) base, (double) exponent, Math.pow((double) base, (double) exponent));
         inStream.close();
     }
 
