@@ -37,6 +37,16 @@ public class Circle {
         return radius;
     }
 
+    /** Public method for circle diameter. */
+    public double getDiameter() {
+        return radius * 2;
+    }
+
+    /** Public method for circumference. */
+    public double getCircumference() {
+        return radius * 2 * Math.PI;
+    }
+
     /** Public instance method for circle area. */
     public double getArea() {
         return Math.PI * radius * radius;
