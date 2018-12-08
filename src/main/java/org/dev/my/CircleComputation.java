@@ -50,12 +50,12 @@ public class CircleComputation {
 
     /* Compute diameter, circumference, and area. */
     private static double[] computeCircle(double radius) {
-        Circle circleInstance = new Circle(radius);
-        double[] circle = new double[3];
-        circle[0] = circleInstance.getDiameter(); /* diameter */
-        circle[1] = circleInstance.getCircumference(); /* circumference */
-        circle[2] = circleInstance.getArea(); /* area */
-        return circle;
+        Circle circle = new Circle(radius);
+        double[] circleArray = new double[3];
+        circleArray[0] = circle.getDiameter(); /* diameter */
+        circleArray[1] = circle.getCircumference(); /* circumference */
+        circleArray[2] = circle.getArea(); /* area */
+        return circleArray;
     }
 
     /* Compute sphere surface area and volume. */
