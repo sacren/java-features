@@ -23,10 +23,7 @@ public class Circle {
         color = "red";
     }
 
-    /**
-     * Customized instructor initializing attributes both default and not
-     * default.
-     */
+    /** Constructor initializing attributes both default and customized. */
     public Circle(double size) {
         radius = size;
         color = "red";
