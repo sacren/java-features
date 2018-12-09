@@ -29,6 +29,12 @@ public class Circle {
         color = "red";
     }
 
+    /** Constructor with 2 parameters. */
+    public Circle(double size, String shade) {
+        radius = size;
+        color = shade;
+    }
+
     /** Public instance method for radius. */
     public double getRadius() {
         return radius;
