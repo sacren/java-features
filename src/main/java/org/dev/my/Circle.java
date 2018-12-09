@@ -19,20 +19,20 @@ public class Circle {
 
     /** Default constructor initializing instance attributes. */
     public Circle() {
-        radius = 1.0;
-        color = "red";
+        this.radius = 1.0;
+        this.color = "red";
     }
 
     /** Constructor initializing attributes both default and customized. */
-    public Circle(double size) {
-        radius = size;
-        color = "red";
+    public Circle(double radius) {
+        this.radius = radius;
+        this.color = "red";
     }
 
     /** Constructor with 2 parameters. */
-    public Circle(double size, String shade) {
-        radius = size;
-        color = shade;
+    public Circle(double radius, String color) {
+        this.radius = radius;
+        this.color = color;
     }
 
     /** Public instance method for radius. */
