@@ -29,22 +29,32 @@ public class CircleComputation {
             System.out.printf("%f is invalid. Try again.%n", height);
         }
         inputStream.close();
+        Circle defaultCircle = new Circle();
         double[] circleArray = computeCircle(radius);
         double[] sphereArray = computeSphere(radius);
         double[] cylinderArray = computeCylinder(radius, height);
         System.out.printf(
                 "%nCircle:%n"
-                        + "The diameter is %.2f%n"
-                        + "The circumference is %.2f%n"
-                        + "The area is %.2f%n"
-                        + "%nSphere:%n"
+                        + "The default diameter is %.2f%n"
+                        + "The user diameter is %.2f%n"
+                        + "The default circumference is %.2f%n"
+                        + "The user circumference is %.2f%n"
+                        + "The default area is %.2f%n"
+                        + "The user area is %.2f%n%n"
+                        + "Sphere:%n"
                         + "The surface area is %.2f%n"
-                        + "The volume is %.2f%n"
-                        + "%nCylinder:%n"
+                        + "The volume is %.2f%n%n"
+                        + "Cylinder:%n"
                         + "The base area is %.2f%n"
                         + "The surface area is %.2f%n"
                         + "The volume is %.2f%n",
-                circleArray[0], circleArray[1], circleArray[2], sphereArray[0], sphereArray[1],
+                defaultCircle.getDiameter(), /* instance circle diameter */
+                circleArray[0],
+                defaultCircle.getCircumference(), /* instance circle circumference */
+                circleArray[1],
+                defaultCircle.getArea(), /* instance circle area */
+                circleArray[2],
+                sphereArray[0], sphereArray[1],
                 cylinderArray[0], cylinderArray[1], cylinderArray[2]);
     }
 
