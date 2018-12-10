@@ -9,9 +9,9 @@
  * A default constructor with no argument, and a constructor which takes a
  * double argument for radius.
  *
- * <p>Two public methods:
- * getRadius() and getArea(), which return the radius and area of this
- * instance, respectively.
+ * <p>Public methods:
+ * Usually including getter and setter, getRadius() and setRadius(), which
+ * return and reset the radius of this instance, respectively.
  */
 public class Circle {
     private double radius;
