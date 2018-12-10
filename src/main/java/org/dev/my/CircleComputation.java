@@ -30,7 +30,7 @@ public class CircleComputation {
         }
         inputStream.close();
         Circle defaultCircle = new Circle();
-        double[] circleArray = computeCircle(radius);
+        Circle userCircle = new Circle(radius);
         double[] sphereArray = computeSphere(radius);
         double[] cylinderArray = computeCylinder(radius, height);
         System.out.printf(
@@ -48,24 +48,14 @@ public class CircleComputation {
                         + "The base area is %.2f%n"
                         + "The surface area is %.2f%n"
                         + "The volume is %.2f%n",
-                defaultCircle.getDiameter(), /* instance circle diameter */
-                circleArray[0],
-                defaultCircle.getCircumference(), /* instance circle circumference */
-                circleArray[1],
-                defaultCircle.getArea(), /* instance circle area */
-                circleArray[2],
+                defaultCircle.getDiameter(), /* default circle diameter */
+                userCircle.getDiameter(), /* custome circle diameter */
+                defaultCircle.getCircumference(), /* default circle circumference */
+                userCircle.getCircumference(), /* custome circle circumference */
+                defaultCircle.getArea(), /* default circle area */
+                userCircle.getArea(), /* custome circle area */
                 sphereArray[0], sphereArray[1],
                 cylinderArray[0], cylinderArray[1], cylinderArray[2]);
-    }
-
-    /* Compute diameter, circumference, and area. */
-    private static double[] computeCircle(double radius) {
-        Circle circle = new Circle(radius);
-        double[] circleArray = new double[3];
-        circleArray[0] = circle.getDiameter(); /* diameter */
-        circleArray[1] = circle.getCircumference(); /* circumference */
-        circleArray[2] = circle.getArea(); /* area */
-        return circleArray;
     }
 
     /* Compute sphere surface area and volume. */
