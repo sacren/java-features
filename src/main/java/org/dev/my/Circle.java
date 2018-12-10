@@ -54,4 +54,9 @@ public class Circle {
     public double getArea() {
         return Math.PI * radius * radius;
     }
+
+    /** Public method to reset radius. */
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
 }
