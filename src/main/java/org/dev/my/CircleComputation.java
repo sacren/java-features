@@ -1,8 +1,8 @@
 /**
- * Prompt user for the radius of a circle in floating point number, compute the diameter,
- * circumference, and area of the circle in double and print the values rounded to 2 decimal places.
- *
- * <p>Compute the same way for sphere and cylinder.
+ * Prompt user for the radius of a circle in floating point number, compute the
+ * diameter, circumference, and area of the circle in double and print the
+ * values rounded to 2 decimal places.  Compute for sphere and cylinder as
+ * well.
  */
 import java.util.Scanner;
 
