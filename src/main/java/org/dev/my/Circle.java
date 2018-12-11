@@ -1,17 +1,19 @@
 /**
  * Circle class
  *
- * <p>Two private instance variables:
- * Radius (of the type double) and color (of the type String), with default
- * value of 1.0 and "red", respectively.
+ * <p>Private data with default values:
+ * -radius:double = 1.0
+ * -color:String = "red"
  *
- * <p>Two overloaded constructors:
- * A default constructor with no argument, and a constructor which takes a
- * double argument for radius.
+ * <p>Constructor:
+ * +Circle()
+ * +Circle(radius:double)
+ * +Circle(radius:double, color:String)
  *
  * <p>Public methods:
- * Usually including getter and setter, getRadius() and setRadius(), which
- * return and reset the radius of this instance, respectively.
+ * +getRadius():double
+ * +getArea():double
+ * +setRadius(radius:double):void
  */
 public class Circle {
     private double radius;
