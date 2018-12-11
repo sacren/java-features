@@ -59,14 +59,19 @@ public class CircleComputation {
                 cylinderArray[0], cylinderArray[1], cylinderArray[2]);
         /* Triple the radius. */
         userCircle.setRadius(radius * 3);
+        userSphere.setRadius(radius * 3);
         System.out.printf(
                 "After the radius is trippled:%n"
                         + "The user diameter is %.2f%n"
                         + "The user circumference is %.2f%n"
-                        + "The user area is %.2f%n",
+                        + "The user area is %.2f%n"
+                        + "The surface area is %.2f%n"
+                        + "The volume is %.2f%n",
                 userCircle.getDiameter(),
                 userCircle.getCircumference(),
-                userCircle.getArea());
+                userCircle.getArea(),
+                userSphere.getSurfaceArea(),
+                userSphere.getVolume());
     }
 
     /* Compute cylinder base area, surface area and volume. */
