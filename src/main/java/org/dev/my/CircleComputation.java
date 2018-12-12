@@ -33,29 +33,35 @@ public class CircleComputation {
         Circle userCircle = new Circle(radius);
         Sphere userSphere = new Sphere(radius);
         Cylinder userCylinder = new Cylinder(radius, height);
+        System.out.println();
+        System.out.print(userCircle);
+        System.out.println(":");
         System.out.printf(
-                "%nCircle:%n"
-                        + "The default diameter is %.2f%n"
+                "The default diameter is %.2f%n"
                         + "The user diameter is %.2f%n"
                         + "The default circumference is %.2f%n"
                         + "The user circumference is %.2f%n"
                         + "The default area is %.2f%n"
-                        + "The user area is %.2f%n%n"
-                        + "Sphere:%n"
-                        + "The surface area is %.2f%n"
-                        + "The volume is %.2f%n%n"
-                        + "Cylinder:%n"
-                        + "The base area is %.2f%n"
-                        + "The surface area is %.2f%n"
-                        + "The volume is %.2f%n%n",
+                        + "The user area is %.2f%n%n",
                 defaultCircle.getDiameter(), /* default circle diameter */
                 userCircle.getDiameter(), /* custome circle diameter */
                 defaultCircle.getCircumference(), /* default circle circumference */
                 userCircle.getCircumference(), /* custome circle circumference */
                 defaultCircle.getArea(), /* default circle area */
-                userCircle.getArea(), /* custome circle area */
+                userCircle.getArea()); /* custome circle area */
+        System.out.print(userSphere);
+        System.out.println(":");
+        System.out.printf(
+                "The surface area is %.2f%n"
+                        + "The volume is %.2f%n%n",
                 userSphere.getSurfaceArea(), /* custom sphere surface area */
-                userSphere.getVolume(), /* custom sphere volume */
+                userSphere.getVolume()); /* custom sphere volume */
+        System.out.print(userCylinder);
+        System.out.println(":");
+        System.out.printf(
+                "The base area is %.2f%n"
+                        + "The surface area is %.2f%n"
+                        + "The volume is %.2f%n%n",
                 userCylinder.getBaseArea(), /* custom cylinder base area */
                 userCylinder.getSurfaceArea(), /* custome cylinder surface area */
                 userCylinder.getVolume()); /* custome cylinder volume */

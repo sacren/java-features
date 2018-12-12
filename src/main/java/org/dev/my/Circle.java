@@ -61,4 +61,9 @@ public class Circle {
     public void setRadius(double radius) {
         this.radius = radius;
     }
+
+    /** Public method for Circle description. */
+    public String toString() {
+        return "Circle[radius=" + radius + " color=" + color + "]";
+    }
 }

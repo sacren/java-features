@@ -39,4 +39,9 @@ public class Cylinder {
     public double getVolume() {
         return getBaseArea() * height;
     }
+
+    /** Public method for Cylinder description. */
+    public String toString() {
+        return "Cylinder[radius=" + radius + " height=" + height + "]";
+    }
 }

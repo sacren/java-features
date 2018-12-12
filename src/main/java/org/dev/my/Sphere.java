@@ -35,4 +35,9 @@ public class Sphere {
     public void setRadius(double radius) {
         this.radius = radius;
     }
+
+    /** Public method for Sphere description. */
+    public String toString() {
+        return "Sphere[radius=" + radius + "]";
+    }
 }
