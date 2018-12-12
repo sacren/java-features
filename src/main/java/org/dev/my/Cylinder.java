@@ -40,6 +40,11 @@ public class Cylinder {
         return getBaseArea() * height;
     }
 
+    /** Public method to reset radius. */
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     /** Public method for Cylinder description. */
     public String toString() {
         return "Cylinder[radius=" + radius + " height=" + height + "]";
