@@ -13,6 +13,7 @@
  * +getBaseArea(radius:double):double
  * +getSurfaceArea(radius:double, height:double):double
  * +getVolume(radius:double):double
+ * +toString():String
  */
 public class Cylinder {
     private double radius;

@@ -12,6 +12,7 @@
  * +getSurfaceArea():double
  * +getVolume():double
  * +setRadius(radius:double):void
+ * +toString():String
  */
 public class Sphere {
     private double radius;

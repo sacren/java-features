@@ -14,6 +14,7 @@
  * +getRadius():double
  * +getArea():double
  * +setRadius(radius:double):void
+ * +toString():String
  */
 public class Circle {
     private double radius;
