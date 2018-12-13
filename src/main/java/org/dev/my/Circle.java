@@ -17,19 +17,24 @@
  * +toString():String
  */
 public class Circle {
+    /* public static data */
+    public static final double DEFAULT_RADIUS = 1.0;
+    public static final String DEFAULT_COLOR = "green";
+
+    /* private data */
     private double radius;
     private String color;
 
     /** Default constructor initializing instance attributes. */
     public Circle() {
-        this.radius = 1.0;
-        this.color = "red";
+        this.radius = DEFAULT_RADIUS;
+        this.color = DEFAULT_COLOR;
     }
 
     /** Constructor initializing attributes both default and customized. */
     public Circle(double radius) {
         this.radius = radius;
-        this.color = "red";
+        this.color = DEFAULT_COLOR;
     }
 
     /** Constructor with 2 parameters. */
