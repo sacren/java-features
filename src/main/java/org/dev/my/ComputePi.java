@@ -4,7 +4,7 @@
  * <p>π = 4 × (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...)
  */
 public class ComputePi {
-    /** Display the value of π. */
+    /** Display the value of π with comparison to Math API. */
     public static void main(String[] args) {
         final double pi = getPi();
         System.out.printf(
@@ -15,10 +15,11 @@ public class ComputePi {
     }
 
     private static double getPi() {
-        final int upperBound = 999999999;
+        /* Max of upperBound is Integer.MAX_VALUE. */
+        final int upperBound = Integer.MAX_VALUE - 1;
         final int lowerBound = 3;
         double sum = 1;
-        for (int i = lowerBound; i <= upperBound; i += 2) {
+        for (int i = lowerBound; i < upperBound; i += 2) {
             if (i % 4 == 1) {
                 sum += (double) 1 / i;
                 continue;
