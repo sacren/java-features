@@ -25,16 +25,22 @@ public class Sphere {
         this.radius = radius;
     }
 
+    /** Public accessor for private radius. */
+    public double getRadius() {
+        return radius;
+    }
+
+    /** Public mutator for private radius. */
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     public double getSurfaceArea() {
         return Math.PI * radius * radius * 4;
     }
 
     public double getVolume() {
         return Math.PI * radius * radius * radius * 4 / 3;
-    }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
     }
 
     /** Public method for Sphere description. */

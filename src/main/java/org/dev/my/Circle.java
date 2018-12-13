@@ -43,9 +43,24 @@ public class Circle {
         this.color = color;
     }
 
-    /** Public instance method for radius. */
+    /** Public accessor for private radius. */
     public double getRadius() {
         return radius;
+    }
+
+    /** Public mutator for private radius. */
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    /** Public accessor for private color. */
+    public String getColor() {
+        return color;
+    }
+
+    /** Public mutator for private color. */
+    public void setColor(String color) {
+        this.color = color;
     }
 
     /** Public method for circle diameter. */
@@ -61,11 +76,6 @@ public class Circle {
     /** Public instance method for circle area. */
     public double getArea() {
         return Math.PI * radius * radius;
-    }
-
-    /** Public method to reset radius. */
-    public void setRadius(double radius) {
-        this.radius = radius;
     }
 
     /** Public method for Circle description. */

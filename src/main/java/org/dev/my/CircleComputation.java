@@ -37,12 +37,16 @@ public class CircleComputation {
         System.out.print(userCircle);
         System.out.println(":");
         System.out.printf(
-                "The default diameter is %.2f%n"
+                "The default circle color is %s%n"
+                        + "The user circle color is %s%n"
+                        + "The default diameter is %.2f%n"
                         + "The user diameter is %.2f%n"
                         + "The default circumference is %.2f%n"
                         + "The user circumference is %.2f%n"
                         + "The default area is %.2f%n"
                         + "The user area is %.2f%n%n",
+                defaultCircle.getColor(),
+                userCircle.getColor(),
                 defaultCircle.getDiameter(), /* default circle diameter */
                 userCircle.getDiameter(), /* custome circle diameter */
                 defaultCircle.getCircumference(), /* default circle circumference */
@@ -65,17 +69,20 @@ public class CircleComputation {
                 userCylinder.getBaseArea(), /* custom cylinder base area */
                 userCylinder.getSurfaceArea(), /* custome cylinder surface area */
                 userCylinder.getVolume()); /* custome cylinder volume */
-        /* Triple the radius. */
+        /* Triple the radius and change circle color. */
         userCircle.setRadius(radius * 3);
         userSphere.setRadius(radius * 3);
         userCylinder.setRadius(radius * 3);
-        System.out.printf("After the radius is trippled.%n%n");
+        userCircle.setColor("purple");
+        System.out.printf("[After circle radius and color are reset]%n%n");
         System.out.print(userCircle);
         System.out.println(":");
         System.out.printf(
-                "The user diameter is %.2f%n"
+                "The circle color now is %s%n"
+                        + "The user diameter is %.2f%n"
                         + "The user circumference is %.2f%n"
                         + "The user area is %.2f%n%n",
+                userCircle.getColor(),
                 userCircle.getDiameter(),
                 userCircle.getCircumference(),
                 userCircle.getArea());

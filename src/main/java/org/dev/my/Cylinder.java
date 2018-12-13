@@ -29,6 +29,16 @@ public class Cylinder {
         this.height = height;
     }
 
+    /** Public accessor for radius. */
+    public double getRadius() {
+        return radius;
+    }
+
+    /** Public mutator for radius. */
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     public double getBaseArea() {
         return Math.PI * radius * radius;
     }
@@ -39,11 +49,6 @@ public class Cylinder {
 
     public double getVolume() {
         return getBaseArea() * height;
-    }
-
-    /** Public method to reset radius. */
-    public void setRadius(double radius) {
-        this.radius = radius;
     }
 
     /** Public method for Cylinder description. */
