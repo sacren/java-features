@@ -1,10 +1,6 @@
 /** Print the area and perimeter of a rectangle. */
 public class RectangleComputation {
     public static void main(String[] args) {
-        printRectangle();
-    }
-
-    private static void printRectangle() {
         final double length = 3.4;
         final double width = 2.0;
         double area;
