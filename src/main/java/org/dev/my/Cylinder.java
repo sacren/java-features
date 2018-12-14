@@ -16,12 +16,17 @@
  * +toString():String
  */
 public class Cylinder {
+    /* public static data */
+    public static final double DEFAULT_RADIUS = 1.0;
+    public static final double DEFAULT_HEIGHT = 1.0;
+
+    /* private data */
     private double radius;
     private double height;
 
     public Cylinder() {
-        this.radius = 1.0;
-        this.height = 1.0;
+        this.radius = DEFAULT_RADIUS;
+        this.height = DEFAULT_HEIGHT;
     }
 
     public Cylinder(double radius, double height) {

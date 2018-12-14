@@ -20,6 +20,7 @@ public class Circle {
     /* public static data */
     public static final double DEFAULT_RADIUS = 1.0;
     public static final String DEFAULT_COLOR = "green";
+    public static final String FAVORITE_COLOR = "pink";
 
     /* private data */
     private double radius;

@@ -73,7 +73,7 @@ public class CircleComputation {
         userCircle.setRadius(radius * 3);
         userSphere.setRadius(radius * 3);
         userCylinder.setRadius(radius * 3);
-        userCircle.setColor("purple");
+        userCircle.setColor(Circle.FAVORITE_COLOR);
         System.out.printf("[After circle radius and color are reset]%n%n");
         System.out.print(userCircle);
         System.out.println(":");

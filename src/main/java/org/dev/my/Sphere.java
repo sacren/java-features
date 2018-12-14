@@ -15,10 +15,14 @@
  * +toString():String
  */
 public class Sphere {
+    /* public static data */
+    public static final double DEFAULT_RADIUS = 1.0;
+
+    /* private data */
     private double radius;
 
     public Sphere() {
-        this.radius = 1.0;
+        this.radius = DEFAULT_RADIUS;
     }
 
     public Sphere(double radius) {
