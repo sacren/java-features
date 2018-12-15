@@ -25,6 +25,9 @@ public class RectangleComputation {
         }
         inputStream.close();
         Rectangle rectangleInstance = new Rectangle(length, width);
+        System.out.println();
+        System.out.print(rectangleInstance);
+        System.out.println(":");
         System.out.printf(
                 "The rectangle area is %.2f%n"
                         + "The rectangle perimeter is %.2f%n",
