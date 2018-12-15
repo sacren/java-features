@@ -1,7 +1,8 @@
-/** Print the area and perimeter of a rectangle. */
+/** Rectangle class driver. */
 import java.util.Scanner;
 
 public class RectangleComputation {
+    /** Prompt the user for input and test the driver. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         float length;
