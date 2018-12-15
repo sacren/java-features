@@ -4,7 +4,10 @@ public class RectangleComputation {
         final float length = 3.4f;
         final float width = 2.0f;
         Rectangle rectangleInstance = new Rectangle(length, width);
-        System.out.println("The rectangle area is " + rectangleInstance.getArea());
-        System.out.println("The rectangle perimeter is " + rectangleInstance.getPerimeter());
+        System.out.printf(
+                "The rectangle area is %.2f%n"
+                        + "The rectangle perimeter is %.2f%n",
+                rectangleInstance.getArea(),
+                rectangleInstance.getPerimeter());
     }
 }
