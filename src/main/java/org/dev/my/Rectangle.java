@@ -38,6 +38,12 @@ public class Rectangle {
         this();
     }
 
+    /* constructor initializing one of the attributes */
+    public Rectangle(float length) {
+        this();
+        this.length = length;
+    }
+
     /* custom constructor */
     public Rectangle(float length, float width) {
         this.length = length;
