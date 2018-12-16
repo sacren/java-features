@@ -34,7 +34,7 @@ public class Rectangle {
     }
 
     /* constructor initializing one attribute */
-    public Rectangle(String s) {
+    public Rectangle(Rectangle r) {
         this();
     }
 
