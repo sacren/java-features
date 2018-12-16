@@ -24,7 +24,16 @@ public class RectangleComputation {
             System.out.printf("%f is invalid. Try again.%n", width);
         }
         inputStream.close();
+        Rectangle defaultRectangle = new Rectangle();
         Rectangle rectangleInstance = new Rectangle(length, width);
+        System.out.println();
+        System.out.print(defaultRectangle);
+        System.out.println(":");
+        System.out.printf(
+                "Default rectangle area is %.2f%n"
+                        + "Default rectangle perimeter is %.2f%n",
+                defaultRectangle.getArea(),
+                defaultRectangle.getPerimeter());
         System.out.println();
         System.out.print(rectangleInstance);
         System.out.println(":");
