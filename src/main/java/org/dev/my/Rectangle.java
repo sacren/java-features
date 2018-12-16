@@ -33,6 +33,11 @@ public class Rectangle {
         width = DEFAULT_WIDTH;
     }
 
+    /* constructor initializing one attribute */
+    public Rectangle(String s) {
+        this();
+    }
+
     /* custom constructor */
     public Rectangle(float length, float width) {
         this.length = length;
