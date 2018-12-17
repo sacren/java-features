@@ -15,49 +15,37 @@
  * +getVolume(radius:double):double
  * +toString():String
  */
-public class Cylinder {
+public class Cylinder extends Circle {
     /* public static data */
-    public static final double DEFAULT_RADIUS = 1.0;
     public static final double DEFAULT_HEIGHT = 1.0;
 
     /* private data */
-    private double radius;
     private double height;
 
     public Cylinder() {
-        this.radius = DEFAULT_RADIUS;
         this.height = DEFAULT_HEIGHT;
     }
 
     public Cylinder(double radius, double height) {
-        this.radius = radius;
+        super(radius); /* execute Circle(radius) */
         this.height = height;
     }
 
-    /** Public accessor for radius. */
-    public double getRadius() {
-        return radius;
-    }
-
-    /** Public mutator for radius. */
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
     public double getBaseArea() {
-        return Math.PI * radius * radius;
+        return getArea(); /* from Circle's area */
     }
 
     public double getSurfaceArea() {
-        return getBaseArea() * 2 + height * Math.PI * radius * 2;
+        /* from Circle's area and circumference */
+        return getArea() * 2 + getCircumference() * height;
     }
 
     public double getVolume() {
-        return getBaseArea() * height;
+        return getArea() * height; /* from Circle's area */
     }
 
     /** Public method for Cylinder description. */
     public String toString() {
-        return "Cylinder[radius=" + radius + " height=" + height + "]";
+        return "Cylinder extends Circle";
     }
 }
