@@ -38,7 +38,7 @@ public class Circle {
         this.color = DEFAULT_COLOR;
     }
 
-    /** Constructor with 2 parameters. */
+    /** Constructor for fully customized instance. */
     public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
