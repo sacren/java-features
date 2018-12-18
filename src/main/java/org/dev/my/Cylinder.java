@@ -1,8 +1,7 @@
 /**
- * Cylinder class
+ * Cylinder class extends Circle class
  *
  * <p>Private data with default value:
- * -radius:double = 1.0
  * -height:double = 1.0
  *
  * <p>Constructor:
@@ -10,7 +9,6 @@
  * +Cylinder(radius:double, height:double)
  *
  * <p>Public methods:
- * +getBaseArea(radius:double):double
  * +getSurfaceArea(radius:double, height:double):double
  * +getVolume(radius:double):double
  * +toString():String
