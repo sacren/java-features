@@ -23,6 +23,7 @@ public class Cylinder extends Circle {
     private double height;
 
     public Cylinder() {
+        super(); /* execute Circle() */
         this.height = DEFAULT_HEIGHT;
     }
 
