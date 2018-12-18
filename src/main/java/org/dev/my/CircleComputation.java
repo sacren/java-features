@@ -66,7 +66,7 @@ public class CircleComputation {
                 "The base area is %.2f%n"
                         + "The surface area is %.2f%n"
                         + "The volume is %.2f%n%n",
-                userCylinder.getBaseArea(), /* custom cylinder base area */
+                userCylinder.getArea(), /* custom cylinder base area */
                 userCylinder.getSurfaceArea(), /* custome cylinder surface area */
                 userCylinder.getVolume()); /* custome cylinder volume */
         /* Triple the radius and change circle color. */
@@ -99,7 +99,7 @@ public class CircleComputation {
                 "The base area is %.2f%n"
                         + "The surface area is %.2f%n"
                         + "The volume is %.2f%n",
-                userCylinder.getBaseArea(),
+                userCylinder.getArea(),
                 userCylinder.getSurfaceArea(),
                 userCylinder.getVolume());
     }

@@ -35,7 +35,7 @@ public class CylinderDriver {
                 "The default base area is %.2f%n"
                         + "The default surface area is %.2f%n"
                         + "The default volume is %.2f%n%n",
-                defaultCylinder.getBaseArea(), /* default cylinder base area */
+                defaultCylinder.getArea(), /* default cylinder base area */
                 defaultCylinder.getSurfaceArea(), /* default cylinder surface area */
                 defaultCylinder.getVolume()); /* default cylinder volume */
         System.out.print(userCylinder);
@@ -44,7 +44,7 @@ public class CylinderDriver {
                 "The custom base area is %.2f%n"
                         + "The custom surface area is %.2f%n"
                         + "The custom volume is %.2f%n",
-                userCylinder.getBaseArea(), /* custom cylinder base area */
+                userCylinder.getArea(), /* custom cylinder base area */
                 userCylinder.getSurfaceArea(), /* custom cylinder surface area */
                 userCylinder.getVolume()); /* custom cylinder volume */
     }
