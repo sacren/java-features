@@ -7,6 +7,7 @@
  * <p>Constructor:
  * +Cylinder()
  * +Cylinder(radius:double, height:double)
+ * +Cylinder(radius:double, height:double, color:String)
  *
  * <p>Public methods:
  * +getSurfaceArea(radius:double, height:double):double
@@ -27,6 +28,11 @@ public class Cylinder extends Circle {
 
     public Cylinder(double radius, double height) {
         super(radius); /* execute Circle(radius) */
+        this.height = height;
+    }
+
+    public Cylinder(double radius, double height, String color) {
+        super(radius, color); /* execute Circle(radius, color) */
         this.height = height;
     }
 

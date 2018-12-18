@@ -25,7 +25,17 @@ public class CylinderDriver {
             }
             System.out.printf("%f is invalid. Try again.%n", height);
         }
+        String color;
+        for ( ; ; ) {
+            System.out.print("Enter cylinder color: ");
+            color = inputStream.next();
+            if (isInputValid(color)) {
+                break;
+            }
+            System.out.printf("\"%s\" is not valid. Try again.%n", color);
+        }
         inputStream.close();
+        Cylinder colorCylinder = new Cylinder(radius, height, color);
         Cylinder userCylinder = new Cylinder(radius, height);
         Cylinder defaultCylinder = new Cylinder();
         System.out.println();
@@ -43,9 +53,29 @@ public class CylinderDriver {
         System.out.printf(
                 "The custom base area is %.2f%n"
                         + "The custom surface area is %.2f%n"
-                        + "The custom volume is %.2f%n",
+                        + "The custom volume is %.2f%n%n",
                 userCylinder.getArea(), /* custom cylinder base area */
                 userCylinder.getSurfaceArea(), /* custom cylinder surface area */
                 userCylinder.getVolume()); /* custom cylinder volume */
+        System.out.print(colorCylinder);
+        System.out.println(":");
+        System.out.printf(
+                "The color cylinder base area is %.2f%n"
+                        + "The color cylinder surface area is %.2f%n"
+                        + "The color cylinder volume is %.2f%n"
+                        + "The color cylinder is %s%n",
+                colorCylinder.getArea(),
+                colorCylinder.getSurfaceArea(),
+                colorCylinder.getVolume(),
+                colorCylinder.getColor());
+    }
+
+    private static boolean isInputValid(String s) {
+        for (char c: s.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
