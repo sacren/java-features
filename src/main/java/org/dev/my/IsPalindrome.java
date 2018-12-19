@@ -47,9 +47,8 @@ public class IsPalindrome {
     }
 
     private static boolean isInputValid(String s) {
-        final char[] charArray = s.toCharArray();
         boolean hasAlpha = true;
-        for (char c: charArray) {
+        for (char c: s.toCharArray()) {
             if (Character.isLetter(c)) {
                 hasAlpha = false;
                 continue;
@@ -82,9 +81,8 @@ public class IsPalindrome {
 
     private static String getAlpha(String s) {
         /* Each letter in array is lower case. Ignore case for comparison. */
-        final char[] charArray = s.toLowerCase().toCharArray();
         String stripped = "";
-        for (char c: charArray) {
+        for (char c: s.toLowerCase().toCharArray()) {
             if (Character.isLetter(c)) {
                 stripped += Character.toString(c);
             }
