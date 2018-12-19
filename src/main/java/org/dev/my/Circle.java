@@ -12,8 +12,12 @@
  *
  * <p>Public methods:
  * +getRadius():double
- * +getArea():double
  * +setRadius(radius:double):void
+ * +getColor():String
+ * +setColor(color:String):void
+ * +getDiameter():double
+ * +getCircumference():double
+ * +getArea():double
  * +toString():String
  */
 public class Circle {
