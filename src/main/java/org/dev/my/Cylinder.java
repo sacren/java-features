@@ -10,6 +10,8 @@
  * +Cylinder(radius:double, height:double, color:String)
  *
  * <p>Public methods:
+ * +getHeight():double
+ * +setHeight(height:double):void
  * +getSurfaceArea(radius:double, height:double):double
  * +getVolume(radius:double):double
  * +toString():String
@@ -33,6 +35,16 @@ public class Cylinder extends Circle {
 
     public Cylinder(double radius, double height, String color) {
         super(radius, color); /* execute Circle(radius, color) */
+        this.height = height;
+    }
+
+    /** Public accessor for height attribute. */
+    public double getHeight() {
+        return height;
+    }
+
+    /** Public mutator for height attribute. */
+    public void setHeight(double height) {
         this.height = height;
     }
 
