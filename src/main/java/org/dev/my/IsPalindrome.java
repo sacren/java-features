@@ -4,26 +4,20 @@ import java.util.Scanner;
 public class IsPalindrome {
     /** Prompt the user for a word and test if it is a palindrome. */
     public static void main(String[] args) {
-        String line;
-
         Scanner inStream = new Scanner(System.in);
-
+        String line;
         for ( ; ; ) {
             System.out.print("Enter a phrase in palindrome: ");
             line = inStream.nextLine();
-
             if (line.isEmpty()) {
                 System.out.printf("\"%s\" is empty. Try again.%n", line);
                 continue;
             }
-
             if (isInputValid(line)) {
                 break;
             }
-
             System.out.printf("\"%s\" is invalid. Try again.%n", line);
         }
-
         System.out.printf(
                 "\"%s\" is%s a palindrome%n",
                 line, isPalindrome(line) ? "" : " not");
@@ -42,61 +36,59 @@ public class IsPalindrome {
         final char[] charArray = secondHalf.toCharArray();
         final int halfSize = charArray.length;
         String reverseSecondHalf = "";
-
         for (int i = 0; i < halfSize; i++) {
             reverseSecondHalf += Character.toString(charArray[halfSize - 1 - i]);
         }
-
         /* Palindrome is determined by comparing first half to the second. */
         if (firstHalf.equals(reverseSecondHalf)) {
             return true;
         }
-
         return false;
     }
 
     private static boolean isInputValid(String s) {
         final char[] charArray = s.toCharArray();
         boolean hasAlpha = true;
-
         for (char c: charArray) {
             if (Character.isLetter(c)) {
                 hasAlpha = false;
                 continue;
             }
-
-            switch (c) {
-                case ' ':
-                case '-':
-                case '?':
-                case ',':
-                case '.':
-                case '!':
-                case '\'':
-                    continue;
-                default:
-                    return false;
+            if (isOneOfThese(c)) {
+                continue;
             }
         }
-
         if (hasAlpha) {
             return false;
         }
-
         return true;
+    }
+
+    private static boolean isOneOfThese(char c) {
+        switch (c) {
+            case ' ':
+            case '-':
+            case '?':
+            case ',':
+            case '.':
+            case '!':
+            case '\'':
+                return true;
+            default:
+                break;
+        }
+        return false;
     }
 
     private static String getAlpha(String s) {
         /* Each letter in array is lower case. Ignore case for comparison. */
         final char[] charArray = s.toLowerCase().toCharArray();
         String stripped = "";
-
         for (char c: charArray) {
             if (Character.isLetter(c)) {
                 stripped += Character.toString(c);
             }
         }
-
         return stripped;
     }
 }
