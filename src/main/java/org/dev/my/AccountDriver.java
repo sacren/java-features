@@ -30,14 +30,12 @@ public class AccountDriver {
         Account defaultAccount = new Account();
         System.out.println();
         System.out.print(defaultAccount);
-        System.out.println(":");
         System.out.printf(
                 "The default account number is %d%n"
                         + "The default account balance is %.2f%n",
                 defaultAccount.getAccountNumber(), defaultAccount.getBalance());
         System.out.println();
         System.out.print(account);
-        System.out.println(":");
         System.out.printf(
                 "The account number is %d%n"
                         + "The balance is %.2f%n",

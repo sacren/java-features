@@ -82,6 +82,8 @@ public class Rectangle {
 
     /** Public method for Rectangle class description. */
     public String toString() {
-        return "Rectangle[length=" + length + ", width=" + width + "]";
+        return String.format(
+                "[Rectangle (Length=%.2f, Width=%.2f)]%n",
+                length, width);
     }
 }

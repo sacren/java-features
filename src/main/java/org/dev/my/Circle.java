@@ -85,6 +85,8 @@ public class Circle {
 
     /** Public method for Circle description. */
     public String toString() {
-        return "Circle[radius=" + radius + " color=" + color + "]";
+        return String.format(
+                "[Circle (Radius=%.2f, Color=%s)]%n",
+                radius, color);
     }
 }

@@ -40,7 +40,6 @@ public class CylinderDriver {
         Cylinder defaultCylinder = new Cylinder();
         System.out.println();
         System.out.print(defaultCylinder);
-        System.out.println(":");
         System.out.printf(
                 "The default base area is %.2f%n"
                         + "The default surface area is %.2f%n"
@@ -49,7 +48,6 @@ public class CylinderDriver {
                 defaultCylinder.getSurfaceArea(), /* default cylinder surface area */
                 defaultCylinder.getVolume()); /* default cylinder volume */
         System.out.print(userCylinder);
-        System.out.println(":");
         System.out.printf(
                 "The custom base area is %.2f%n"
                         + "The custom surface area is %.2f%n"
@@ -58,7 +56,6 @@ public class CylinderDriver {
                 userCylinder.getSurfaceArea(), /* custom cylinder surface area */
                 userCylinder.getVolume()); /* custom cylinder volume */
         System.out.print(colorCylinder);
-        System.out.println(":");
         System.out.printf(
                 "The color cylinder base area is %.2f%n"
                         + "The color cylinder surface area is %.2f%n"

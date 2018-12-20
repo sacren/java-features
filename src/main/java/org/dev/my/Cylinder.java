@@ -59,6 +59,8 @@ public class Cylinder extends Circle {
 
     /** Public method for Cylinder description. */
     public String toString() {
-        return "Cylinder extends Circle";
+        return String.format(
+                "[Cylinder (Radius=%.2f, Height=%.2f)]%n",
+                getRadius(), height);
     }
 }

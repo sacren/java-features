@@ -49,6 +49,6 @@ public class Sphere {
 
     /** Public method for Sphere description. */
     public String toString() {
-        return "Sphere[radius=" + radius + "]";
+        return String.format("[Sphere (Radius=%.2f)]%n", radius);
     }
 }

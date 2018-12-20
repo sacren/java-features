@@ -30,7 +30,6 @@ public class RectangleComputation {
         Rectangle rectangleInstance = new Rectangle(length, width);
         System.out.println();
         System.out.print(defaultRectangle);
-        System.out.println(":");
         System.out.printf(
                 "Default rectangle area is %.2f%n"
                         + "Default rectangle perimeter is %.2f%n",
@@ -38,7 +37,6 @@ public class RectangleComputation {
                 defaultRectangle.getPerimeter());
         System.out.println();
         System.out.print(rectangleInstance);
-        System.out.println(":");
         System.out.printf(
                 "The rectangle area is %.2f%n"
                         + "The rectangle perimeter is %.2f%n",
@@ -46,7 +44,6 @@ public class RectangleComputation {
                 rectangleInstance.getPerimeter());
         System.out.println();
         System.out.print(rectangleNull);
-        System.out.println(":");
         System.out.printf(
                 "The rectangle area is %.2f%n"
                         + "The rectangle perimeter is %.2f%n",
@@ -54,7 +51,6 @@ public class RectangleComputation {
                 rectangleNull.getPerimeter());
         System.out.println();
         System.out.print(rectangleOfLength);
-        System.out.println(":");
         System.out.printf(
                 "The rectangle area is %.2f%n"
                         + "The rectangle perimeter is %.2f%n",

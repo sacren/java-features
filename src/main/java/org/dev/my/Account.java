@@ -70,6 +70,6 @@ public class Account {
 
     /** Account description. */
     public String toString() {
-        return "Account[accountNumber=" + accountNumber + ", balance=" + balance + "]";
+        return String.format("[A/C #: %d, Balance: %.2f]%n", accountNumber, balance);
     }
 }

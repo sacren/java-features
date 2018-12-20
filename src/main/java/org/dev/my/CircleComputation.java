@@ -35,7 +35,6 @@ public class CircleComputation {
         Cylinder userCylinder = new Cylinder(radius, height);
         System.out.println();
         System.out.print(userCircle);
-        System.out.println(":");
         System.out.printf(
                 "The default circle color is %s%n"
                         + "The user circle color is %s%n"
@@ -54,14 +53,12 @@ public class CircleComputation {
                 defaultCircle.getArea(), /* default circle area */
                 userCircle.getArea()); /* custome circle area */
         System.out.print(userSphere);
-        System.out.println(":");
         System.out.printf(
                 "The surface area is %.2f%n"
                         + "The volume is %.2f%n%n",
                 userSphere.getSurfaceArea(), /* custom sphere surface area */
                 userSphere.getVolume()); /* custom sphere volume */
         System.out.print(userCylinder);
-        System.out.println(":");
         System.out.printf(
                 "The base area is %.2f%n"
                         + "The surface area is %.2f%n"
@@ -76,7 +73,6 @@ public class CircleComputation {
         userCircle.setColor(Circle.FAVORITE_COLOR);
         System.out.printf("[After circle radius and color are reset]%n%n");
         System.out.print(userCircle);
-        System.out.println(":");
         System.out.printf(
                 "The circle color now is %s%n"
                         + "The user diameter is %.2f%n"
@@ -87,14 +83,12 @@ public class CircleComputation {
                 userCircle.getCircumference(),
                 userCircle.getArea());
         System.out.print(userSphere);
-        System.out.println(":");
         System.out.printf(
                 "The surface area is %.2f%n"
                         + "The volume is %.2f%n%n",
                 userSphere.getSurfaceArea(),
                 userSphere.getVolume());
         System.out.print(userCylinder);
-        System.out.println(":");
         System.out.printf(
                 "The base area is %.2f%n"
                         + "The surface area is %.2f%n"
