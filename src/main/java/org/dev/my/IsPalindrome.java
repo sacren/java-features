@@ -47,18 +47,10 @@ public class IsPalindrome {
     }
 
     private static boolean isInputValid(String s) {
-        boolean hasAlpha = true;
         for (char c: s.toCharArray()) {
-            if (Character.isLetter(c)) {
-                hasAlpha = false;
-                continue;
+            if (!Character.isLetter(c) && !isOneOfThese(c)) {
+                return false;
             }
-            if (isOneOfThese(c)) {
-                continue;
-            }
-        }
-        if (hasAlpha) {
-            return false;
         }
         return true;
     }
