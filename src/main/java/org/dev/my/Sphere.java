@@ -1,5 +1,5 @@
 /**
- * Sphere class
+ * Sphere class extends Circle class
  *
  * <p>Private variable:
  * -radius:double = 1.0
@@ -14,41 +14,25 @@
  * +setRadius(radius:double):void
  * +toString():String
  */
-public class Sphere {
-    /* public static data */
-    public static final double DEFAULT_RADIUS = 1.0;
-
-    /* private data */
-    private double radius;
-
+public class Sphere extends Circle {
     public Sphere() {
-        this.radius = DEFAULT_RADIUS;
+        super();
     }
 
     public Sphere(double radius) {
-        this.radius = radius;
-    }
-
-    /** Public accessor for private radius. */
-    public double getRadius() {
-        return radius;
-    }
-
-    /** Public mutator for private radius. */
-    public void setRadius(double radius) {
-        this.radius = radius;
+        super(radius);
     }
 
     public double getSurfaceArea() {
-        return Math.PI * radius * radius * 4;
+        return getArea() * 4;
     }
 
     public double getVolume() {
-        return Math.PI * radius * radius * radius * 4 / 3;
+        return Math.PI * getRadius() * getRadius() * getRadius() * 4 / 3;
     }
 
     /** Public method for Sphere description. */
     public String toString() {
-        return String.format("[Sphere (Radius=%.2f)]%n", radius);
+        return String.format("[Sphere (Radius=%.2f)]%n", getRadius());
     }
 }
