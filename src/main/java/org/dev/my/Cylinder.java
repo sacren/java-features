@@ -12,8 +12,8 @@
  * <p>Public methods:
  * +getHeight():double
  * +setHeight(height:double):void
- * +getSurfaceArea(radius:double, height:double):double
- * +getVolume(radius:double):double
+ * +getSurfaceArea():double
+ * +getVolume():double
  * +toString():String
  */
 public class Cylinder extends Circle {

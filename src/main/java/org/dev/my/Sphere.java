@@ -1,8 +1,5 @@
 /**
- * Sphere class extends Circle class
- *
- * <p>Private variable:
- * -radius:double = 1.0
+ * Sphere extends Circle.
  *
  * <p>Constructor:
  * +Sphere()
@@ -11,7 +8,6 @@
  * <p>Public methods:
  * +getSurfaceArea():double
  * +getVolume():double
- * +setRadius(radius:double):void
  * +toString():String
  */
 public class Sphere extends Circle {
