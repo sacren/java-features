@@ -4,40 +4,33 @@
  * <p>F(n) = F(n–1) + F(n–2) and F(1) = F(2) = 1
  */
 public class Fibonacci {
+    /** Show Fibonacci series of the first 20. */
     public static void main(String[] args) {
-        printFib20AndAverage();
+        String series = "";
+        int sum = 0;
+        for (int f: getFibonacciArray()) {
+            sum += f;
+            series += String.format("%d ", f);
+        }
+        System.out.printf(
+                "Fibonacci series: %s%n"
+                        + "Average: %.2f%n",
+                series, (double) sum / 20);
     }
 
-    private static void printFib20AndAverage() {
-        int upperBound = 20;
-        int lowerBound = 1;
-        int prev1 = 1;
-        int prev2 = 1;
-        int sum = 2;
-        double average;
-        int f;
-
-        for (int i = lowerBound; i <= upperBound; i++) {
-            if (i == 1 || i == 2) {
-                System.out.print(1 + " ");
-                continue;
-            }
-
-            if (i == 20) {
-                f = prev1 + prev2;
-                sum += f;
-                System.out.println(f);
-                continue;
-            }
-
-            f = prev1 + prev2;
-            sum += f;
-            prev2 = prev1;
-            prev1 = f;
-            System.out.print(f + " ");
+    private static int[] getFibonacciArray() {
+        final int upperBound = 20;
+        final int lowerBound = 2;
+        int[] fibonacciArray = new int[upperBound];
+        fibonacciArray[0] = 1;
+        fibonacciArray[1] = 1;
+        int preNumber = 1;
+        int prepreNumber = 1;
+        for (int i = lowerBound; i < upperBound; i++) {
+            fibonacciArray[i] = preNumber + prepreNumber;
+            prepreNumber = preNumber;
+            preNumber = fibonacciArray[i];
         }
-
-        average = (double) sum / 20;
-        System.out.println("The average is " + average);
+        return fibonacciArray;
     }
 }
