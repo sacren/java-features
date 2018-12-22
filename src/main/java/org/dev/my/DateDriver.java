@@ -62,5 +62,14 @@ public class DateDriver {
                         + "Month is %02d%n"
                         + "Day is %02d%n",
                 date.getYear(), date.getMonth(), date.getDay());
+        date.setDate(4798, 1, 1);
+        System.out.println();
+        System.out.printf("[Change to another arbitrary date]%n");
+        System.out.print(date);
+        System.out.printf(
+                "Year is %04d%n"
+                        + "Month is %02d%n"
+                        + "Day is %02d%n",
+                date.getYear(), date.getMonth(), date.getDay());
     }
 }
