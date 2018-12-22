@@ -35,7 +35,15 @@ public class DateDriver {
             System.out.printf("%d is invalid. Try again.%n", day);
         }
         inStream.close();
+        Date defaultDate = new Date();
         Date date = new Date(year, month, day);
+        System.out.println();
+        System.out.print(defaultDate);
+        System.out.printf(
+                "Year is %04d%n"
+                        + "Month is %02d%n"
+                        + "Day is %02d%n",
+                defaultDate.getYear(), defaultDate.getMonth(), defaultDate.getDay());
         System.out.println();
         System.out.print(date);
         System.out.printf(
