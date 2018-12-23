@@ -24,12 +24,8 @@ public class Fibonacci {
         int[] fibonacciArray = new int[upperBound];
         fibonacciArray[0] = 1;
         fibonacciArray[1] = 1;
-        int preNumber = 1;
-        int prepreNumber = 1;
         for (int i = lowerBound; i < upperBound; i++) {
-            fibonacciArray[i] = preNumber + prepreNumber;
-            prepreNumber = preNumber;
-            preNumber = fibonacciArray[i];
+            fibonacciArray[i] = fibonacciArray[i - 1] + fibonacciArray[i - 2];
         }
         return fibonacciArray;
     }
