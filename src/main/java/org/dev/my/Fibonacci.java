@@ -11,10 +11,10 @@ public class Fibonacci {
         int sum = 0;
         for (int f: fibonacciArray) {
             sum += f;
-            series += String.format("%d ", f);
+            series += String.format(" %d", f);
         }
         System.out.printf(
-                "Fibonacci series: %s%n"
+                "Fibonacci series:%s%n"
                         + "Average: %.2f%n",
                 series, (double) sum / fibonacciArray.length);
     }
