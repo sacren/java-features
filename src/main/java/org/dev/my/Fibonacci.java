@@ -6,16 +6,17 @@
 public class Fibonacci {
     /** Show Fibonacci series of the first 20. */
     public static void main(String[] args) {
+        int[] fibonacciArray = getFibonacciArray();
         String series = "";
         int sum = 0;
-        for (int f: getFibonacciArray()) {
+        for (int f: fibonacciArray) {
             sum += f;
             series += String.format("%d ", f);
         }
         System.out.printf(
                 "Fibonacci series: %s%n"
                         + "Average: %.2f%n",
-                series, (double) sum / 20);
+                series, (double) sum / fibonacciArray.length);
     }
 
     private static int[] getFibonacciArray() {
