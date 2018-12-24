@@ -39,6 +39,17 @@ public class TimeDriver {
         System.out.println();
         System.out.print(currentTime);
         System.out.printf(
+                "Current time is %02d:%02d:%02d%n%n",
+                currentTime.getHour(),
+                currentTime.getMinute(),
+                currentTime.getSecond());
+        /* Reset time to zero hour. */
+        currentTime.setSecond(0);
+        currentTime.setMinute(0);
+        currentTime.setHour(0);
+        System.out.printf("Reset time to zero hour.%n%n");
+        System.out.print(currentTime);
+        System.out.printf(
                 "Current time is %02d:%02d:%02d%n",
                 currentTime.getHour(),
                 currentTime.getMinute(),
