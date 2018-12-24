@@ -25,7 +25,7 @@ public class IsPalindrome {
     }
 
     private static boolean isPalindrome(String s) {
-        s = getAlpha(s); /* Non-alphabet characters filtered out. */
+        s = getAlphaString(s); /* Strip non-alphabet characters. */
         final int size = s.length();
         /* If size is odd, size / 2 + 1 == (size + 1) / 2 and the middle
          * character is included in neither firstHalf nor secondHalf. If size
@@ -71,14 +71,14 @@ public class IsPalindrome {
         return false;
     }
 
-    private static String getAlpha(String s) {
+    private static String getAlphaString(String s) {
         /* Each letter in array is lower case. Ignore case for comparison. */
-        String stripped = "";
+        String alphaString = "";
         for (char c: s.toLowerCase().toCharArray()) {
             if (Character.isLetter(c)) {
-                stripped += Character.toString(c);
+                alphaString += Character.toString(c);
             }
         }
-        return stripped;
+        return alphaString;
     }
 }
