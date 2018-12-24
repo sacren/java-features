@@ -11,7 +11,7 @@ public class Fibonacci {
         int sum = 0;
         for (int f: fibonacciArray) {
             sum += f;
-            series += String.format(" %d", f);
+            series += " " + f;
         }
         System.out.printf(
                 "Fibonacci series:%s%n"
