@@ -43,10 +43,10 @@ public class TimeDriver {
                 currentTime.getHour(),
                 currentTime.getMinute(),
                 currentTime.getSecond());
-        /* Reset time to zero hour. */
-        currentTime.setSecond(0);
-        currentTime.setMinute(0);
-        currentTime.setHour(0);
+        /* Reset time to zero hour by default values. */
+        currentTime.setSecond(Time.DEFAULT_SECOND);
+        currentTime.setMinute(Time.DEFAULT_MINUTE);
+        currentTime.setHour(Time.DEFAULT_HOUR);
         System.out.printf("Reset time to zero hour.%n%n");
         System.out.print(currentTime);
         System.out.printf(
