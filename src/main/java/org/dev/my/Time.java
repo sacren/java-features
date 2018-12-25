@@ -28,6 +28,9 @@ public class Time {
     public static final int DEFAULT_HOUR = 0;
 
     /* private instance data */
+    private int originalSecond;
+    private int originalMinute;
+    private int originalHour;
     private int second;
     private int minute;
     private int hour;
@@ -41,9 +44,27 @@ public class Time {
 
     /** Custom constructor. */
     public Time(int second, int minute, int hour) {
+        this.originalSecond = second;
+        this.originalMinute = minute;
+        this.originalHour = hour;
         this.second = second;
         this.minute = minute;
         this.hour = hour;
+    }
+
+    /** Public accessor for original second. */
+    public int getOriginalSecond() {
+        return originalSecond;
+    }
+
+    /** Public accessor for original minute. */
+    public int getOriginalMinute() {
+        return originalMinute;
+    }
+
+    /** Public accessor for original hour. */
+    public int getOriginalHour() {
+        return originalHour;
     }
 
     /** Public accessor for second. */
