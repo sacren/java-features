@@ -43,6 +43,15 @@ public class TimeDriver {
                 currentTime.getHour(),
                 currentTime.getMinute(),
                 currentTime.getSecond());
+        /* Advance one second. */
+        currentTime.nextSecond();
+        System.out.printf("Advance to the next second.%n%n");
+        System.out.print(currentTime);
+        System.out.printf(
+                "Current time is %02d:%02d:%02d%n%n",
+                currentTime.getHour(),
+                currentTime.getMinute(),
+                currentTime.getSecond());
         /* Reset time to zero hour by default values. */
         currentTime.setSecond(Time.DEFAULT_SECOND);
         currentTime.setMinute(Time.DEFAULT_MINUTE);
