@@ -47,12 +47,24 @@ public class Time {
 
     /** Custom constructor. */
     public Time(int second, int minute, int hour) {
-        this.originalSecond = second;
-        this.originalMinute = minute;
-        this.originalHour = hour;
-        this.second = second;
-        this.minute = minute;
-        this.hour = hour;
+        if (hour >= 0 && hour < 24) {
+            this.originalHour = hour;
+            this.hour = hour;
+        } else {
+            throw new IllegalArgumentException("Invalid value for hour!");
+        }
+        if (minute >= 0 && minute < 60) {
+            this.originalMinute = minute;
+            this.minute = minute;
+        } else {
+            throw new IllegalArgumentException("Invalid value for minute!");
+        }
+        if (second >= 0 && second < 60) {
+            this.originalSecond = second;
+            this.second = second;
+        } else {
+            throw new IllegalArgumentException("Invalid value for second!");
+        }
     }
 
     /** Public accessor for second. */
@@ -62,7 +74,11 @@ public class Time {
 
     /** Public mutator for second. */
     public void setSecond(int second) {
-        this.second = second;
+        if (second >= 0 && second < 60) {
+            this.second = second;
+        } else {
+            throw new IllegalArgumentException("Invalid value for second!");
+        }
     }
 
     /** Public accessor for minute. */
@@ -72,7 +88,11 @@ public class Time {
 
     /** Public mutator for minute. */
     public void setMinute(int minute) {
-        this.minute = minute;
+        if (minute >= 0 && minute < 60) {
+            this.minute = minute;
+        } else {
+            throw new IllegalArgumentException("Invalid value for minute!");
+        }
     }
 
     /** Public accessor for hour. */
@@ -82,14 +102,30 @@ public class Time {
 
     /** Public mutator for hour. */
     public void setHour(int hour) {
-        this.hour = hour;
+        if (hour >= 0 && hour < 24) {
+            this.hour = hour;
+        } else {
+            throw new IllegalArgumentException("Invalid value for hour!");
+        }
     }
 
     /** Public method to set time. */
     public void setTime(int second, int minute, int hour) {
-        this.second = second;
-        this.minute = minute;
-        this.hour = hour;
+        if (second >= 0 && second < 60) {
+            this.second = second;
+        } else {
+            throw new IllegalArgumentException("Invalid value for second!");
+        }
+        if (minute >= 0 && minute < 60) {
+            this.minute = minute;
+        } else {
+            throw new IllegalArgumentException("Invalid value for minute!");
+        }
+        if (hour >= 0 && hour < 24) {
+            this.hour = hour;
+        } else {
+            throw new IllegalArgumentException("Invalid value for hour!");
+        }
     }
 
     /** Public method to advance time by one second. */
