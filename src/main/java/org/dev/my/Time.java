@@ -55,21 +55,6 @@ public class Time {
         this.hour = hour;
     }
 
-    /** Public accessor for original second. */
-    public int getOriginalSecond() {
-        return originalSecond;
-    }
-
-    /** Public accessor for original minute. */
-    public int getOriginalMinute() {
-        return originalMinute;
-    }
-
-    /** Public accessor for original hour. */
-    public int getOriginalHour() {
-        return originalHour;
-    }
-
     /** Public accessor for second. */
     public int getSecond() {
         return second;
@@ -119,6 +104,13 @@ public class Time {
             }
         }
         return this;
+    }
+
+    /** Restore instance to the original state. */
+    public void setOriginalState() {
+        second = originalSecond;
+        minute = originalMinute;
+        hour = originalHour;
     }
 
     /** Time description. */

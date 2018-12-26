@@ -64,10 +64,8 @@ public class TimeDriver {
                 currentTime.getMinute(),
                 currentTime.getSecond());
         /* Restore private attributes to original values. */
-        currentTime.setSecond(currentTime.getOriginalSecond());
-        currentTime.setMinute(currentTime.getOriginalMinute());
-        currentTime.setHour(currentTime.getOriginalHour());
-        System.out.printf("Restore to original values.%n%n");
+        System.out.printf("Restore to original state.%n%n");
+        currentTime.setOriginalState();
         System.out.print(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n%n",
