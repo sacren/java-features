@@ -2,6 +2,9 @@
  * Time class.
  *
  * <p>Private data with default values:
+ * -originalSecond:int
+ * -originalMinute:int
+ * -originalHour:int
  * -second:int = 0
  * -minute:int = 0
  * -hour:int = 0
