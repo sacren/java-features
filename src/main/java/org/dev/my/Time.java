@@ -47,9 +47,7 @@ public class Time {
 
     /** Custom constructor. */
     public Time(int second, int minute, int hour) {
-        setHour(hour);
-        setMinute(minute);
-        setSecond(second);
+        setTime(second, minute, hour);
         this.originalSecond = second;
         this.originalMinute = minute;
         this.originalHour = hour;
