@@ -47,24 +47,12 @@ public class Time {
 
     /** Custom constructor. */
     public Time(int second, int minute, int hour) {
-        if (hour >= 0 && hour < 24) {
-            this.originalHour = hour;
-            this.hour = hour;
-        } else {
-            throw new IllegalArgumentException("Invalid value for hour!");
-        }
-        if (minute >= 0 && minute < 60) {
-            this.originalMinute = minute;
-            this.minute = minute;
-        } else {
-            throw new IllegalArgumentException("Invalid value for minute!");
-        }
-        if (second >= 0 && second < 60) {
-            this.originalSecond = second;
-            this.second = second;
-        } else {
-            throw new IllegalArgumentException("Invalid value for second!");
-        }
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
+        this.originalSecond = second;
+        this.originalMinute = minute;
+        this.originalHour = hour;
     }
 
     /** Public accessor for second. */
@@ -111,21 +99,9 @@ public class Time {
 
     /** Public method to set time. */
     public void setTime(int second, int minute, int hour) {
-        if (second >= 0 && second < 60) {
-            this.second = second;
-        } else {
-            throw new IllegalArgumentException("Invalid value for second!");
-        }
-        if (minute >= 0 && minute < 60) {
-            this.minute = minute;
-        } else {
-            throw new IllegalArgumentException("Invalid value for minute!");
-        }
-        if (hour >= 0 && hour < 24) {
-            this.hour = hour;
-        } else {
-            throw new IllegalArgumentException("Invalid value for hour!");
-        }
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
     }
 
     /** Public method to advance time by one second. */
