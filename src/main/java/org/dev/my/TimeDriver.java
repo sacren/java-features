@@ -32,10 +32,8 @@ public class TimeDriver {
                 currentTime.getMinute(),
                 currentTime.getSecond());
         /* Reset time to zero hour by default values. */
-        currentTime.setSecond(Time.DEFAULT_SECOND);
-        currentTime.setMinute(Time.DEFAULT_MINUTE);
-        currentTime.setHour(Time.DEFAULT_HOUR);
         System.out.printf("Reset time to zero hour.%n%n");
+        currentTime.setTime(Time.DEFAULT_SECOND, Time.DEFAULT_MINUTE, Time.DEFAULT_HOUR);
         System.out.print(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n%n",
@@ -54,15 +52,6 @@ public class TimeDriver {
         /* Advance two seconds. */
         currentTime.nextSecond().nextSecond();
         System.out.printf("Advance to the next next second.%n%n");
-        System.out.print(currentTime);
-        System.out.printf(
-                "Current time is %02d:%02d:%02d%n%n",
-                currentTime.getHour(),
-                currentTime.getMinute(),
-                currentTime.getSecond());
-        /* Reset to zero hour by setTime(). */
-        currentTime.setTime(Time.DEFAULT_SECOND, Time.DEFAULT_MINUTE, Time.DEFAULT_HOUR);
-        System.out.printf("Reset again to zero hour.%n%n");
         System.out.print(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n",
