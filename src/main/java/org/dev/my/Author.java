@@ -17,10 +17,6 @@
  * +toString():String
  */
 public class Author {
-    /* public static data */
-    public static final String AUTHOR_NAME = "Dennis Ritchie";
-    public static final char AUTHOR_GENDER = 'M';
-
     /* private instance data */
     private String name;
     private String email;
@@ -28,8 +24,8 @@ public class Author {
 
     /** Custom constructor. */
     public Author(String name, String email, char gender) {
-        this.name = AUTHOR_NAME;
-        this.gender = AUTHOR_GENDER;
+        this.name = name;
+        this.gender = gender;
         setEmail(email);
     }
 
