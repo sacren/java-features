@@ -17,16 +17,21 @@ public class DayOfWeek {
             "Friday",
             "Saturday"
         };
-        int day;
-        for ( ; ; ) {
-            System.out.print("Enter between 0 and 6 with 0 for Sunday: ");
-            day = inStream.nextInt();
-            if (day >= 0 && day <= 6) {
-                break;
-            }
-            System.out.printf("%d is an invalid number. Try again.%n", day);
-        }
-        System.out.printf("%d is for %s%n", day, weekDay[day]);
+        System.out.print("Enter between 0 and 6 with 0 for Sunday: ");
+        int day = inStream.nextInt();
         inStream.close();
+        try {
+            checkInput(day);
+            System.out.printf("%d is for %s%n", day, weekDay[day]);
+        } catch (OutsideRangeException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void checkInput(int day) throws OutsideRangeException {
+        if (day < 0 || day > 6) {
+            throw new OutsideRangeException(
+                    String.format("%d is out of day range!", day));
+        }
     }
 }
