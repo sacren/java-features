@@ -70,7 +70,9 @@ public class Book {
                 "%s%n"
                         + "Author: %s%n"
                         + "Gender: %c%n"
-                        + "Contact email: %s%n",
-                name, author.getName(), author.getGender(), author.getEmail());
+                        + "Contact email: %s%n"
+                        + "Price: %.2f%n"
+                        + "Quantity: %d%n",
+                name, author.getName(), author.getGender(), author.getEmail(), price, quantity);
     }
 }
