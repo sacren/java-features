@@ -13,5 +13,10 @@ public class BookDriver {
         final int quantity = 90000;
         Book book = new Book(bookName, author, price, quantity);
         System.out.print(book);
+        System.out.println();
+        System.out.printf("After price doubles and order slashed to half.%n%n");
+        book.setPrice(price * 2);
+        book.setQuantity(quantity / 2);
+        System.out.print(book);
     }
 }
