@@ -1,7 +1,7 @@
-/** Rectangle class driver. */
+/** Rectangle driver. */
 import java.util.Scanner;
 
-public class RectangleComputation {
+public class RectangleDriver {
     /** Prompt the user for input and test the driver. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
