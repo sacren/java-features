@@ -145,11 +145,14 @@ public class Grades {
 
     private static String addAsterisk(int count) {
         String s = "";
-        for (int i = 0; i < count; i++) {
-            if (i == 0) {
-                s += "*";
-                continue;
-            }
+        /* 0 count: the check and loop are skipped.
+         * 1 count: loop is skipped.
+         * 2 and above: loop through.
+         */
+        if (count > 0) {
+            s = "*";
+        }
+        for (int i = 1; i < count; i++) {
             s += " *";
         }
         return s;
