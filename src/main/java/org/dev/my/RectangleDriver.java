@@ -5,25 +5,28 @@ public class RectangleDriver {
     /** Prompt the user for input and test the driver. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
-        float length;
-        for ( ; ; ) {
-            System.out.print("Enter rectangle length: ");
-            length = inputStream.nextFloat();
-            if (length >= 0) {
-                break;
-            }
-            System.out.printf("%f is invalid. Try again.%n", length);
-        }
-        float width;
-        for ( ; ; ) {
-            System.out.print("Enter rectangle width: ");
-            width = inputStream.nextFloat();
-            if (width >= 0) {
-                break;
-            }
-            System.out.printf("%f is invalid. Try again.%n", width);
-        }
+        System.out.print("Enter rectangle length: ");
+        float length = inputStream.nextFloat();
+        System.out.print("Enter rectangle width: ");
+        float width = inputStream.nextFloat();
         inputStream.close();
+        try {
+            checkInput(length);
+            checkInput(width);
+            printRectangle(length, width);
+        } catch (NegativeValueException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void checkInput(float size) throws NegativeValueException {
+        if (size < 0) {
+            throw new NegativeValueException(
+                    String.format("%f invokes exception!", size));
+        }
+    }
+
+    private static void printRectangle(float length, float width) {
         Rectangle defaultRectangle = new Rectangle();
         Rectangle rectangleNull = new Rectangle(null);
         Rectangle rectangleOfLength = new Rectangle(length);
