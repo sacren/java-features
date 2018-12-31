@@ -11,18 +11,22 @@
  * +toString():String
  */
 public class Sphere extends Circle {
+    /** Default constructor by inheritance. */
     public Sphere() {
         super();
     }
 
+    /** Custom constructor by inheritance. */
     public Sphere(double radius) {
         super(radius);
     }
 
+    /** Public method using inheritance. */
     public double getSurfaceArea() {
         return getArea() * 4;
     }
 
+    /** Public method using inheritance. */
     public double getVolume() {
         return Math.PI * getRadius() * getRadius() * getRadius() * 4 / 3;
     }
