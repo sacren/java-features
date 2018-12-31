@@ -13,25 +13,28 @@ public class CircleDriver {
     /** Prompt the user for input. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
-        double radius;
-        for ( ; ; ) {
-            System.out.print("Enter the radius: ");
-            radius = inputStream.nextDouble();
-            if (radius >= 0) {
-                break;
-            }
-            System.out.printf("%f is invalid. Try again.%n", radius);
-        }
-        double height;
-        for ( ; ; ) {
-            System.out.print("Enter the height: ");
-            height = inputStream.nextDouble();
-            if (height >= 0) {
-                break;
-            }
-            System.out.printf("%f is invalid. Try again.%n", height);
-        }
+        System.out.print("Enter the radius: ");
+        double radius = inputStream.nextDouble();
+        System.out.print("Enter the height: ");
+        double height = inputStream.nextDouble();
         inputStream.close();
+        try {
+            checkInput(radius);
+            checkInput(height);
+            runCircle(radius, height);
+        } catch (NegativeValueException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void checkInput(double size) throws NegativeValueException {
+        if (size < 0) {
+            throw new NegativeValueException(
+                    String.format("%f invokes exception!", size));
+        }
+    }
+
+    private static void runCircle(double radius, double height) {
         Circle defaultCircle = new Circle();
         Circle userCircle = new Circle(radius);
         Sphere userSphere = new Sphere(radius);
