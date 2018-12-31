@@ -7,16 +7,25 @@ public class SphereDriver {
     /** Prompt the user for the radius and initialize object. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
-        double radius;
-        for ( ; ; ) {
-            System.out.print("Enter the sphere radius: ");
-            radius = inStream.nextDouble();
-            if (radius > 0) {
-                break;
-            }
-            System.out.printf("\"%f\" is invalid. Try again.%n", radius);
-        }
+        System.out.print("Enter the sphere radius: ");
+        double radius = inStream.nextDouble();
         inStream.close();
+        try {
+            checkInput(radius);
+            getSphere(radius);
+        } catch (NegativeValueException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void checkInput(double radius) throws NegativeValueException {
+        if (radius < 0) {
+            throw new NegativeValueException(
+                    String.format("%f invokes exception!", radius));
+        }
+    }
+
+    private static void getSphere(double radius) {
         Sphere sphere = new Sphere(radius);
         System.out.println();
         System.out.print(sphere);
