@@ -1,13 +1,16 @@
 /**
+ * Circle driver
+ *
  * Prompt user for the radius of a circle in floating point number, compute the
  * diameter, circumference, and area of the circle in double and print the
- * values rounded to 2 decimal places.  Compute for sphere and cylinder as
- * well.
+ * values rounded to 2 decimal places.
+ *
+ * This driver also uses Sphere and Cylinder instances.
  */
 import java.util.Scanner;
 
-public class CircleComputation {
-    /** Entry point to CircleComputation. */
+public class CircleDriver {
+    /** Prompt the user for input. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         double radius;
