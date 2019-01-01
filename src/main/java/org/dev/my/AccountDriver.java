@@ -48,8 +48,12 @@ public class AccountDriver {
         account.setBalance(0);
         System.out.print(account);
         System.out.println();
-        System.out.printf("Add $100.00:%n");
+        System.out.printf("Deposit $100.00:%n");
         account.credit(100);
+        System.out.print(account);
+        System.out.println();
+        System.out.printf("Withdraw $101.00:%n");
+        account.debit(101);
         System.out.print(account);
     }
 }
