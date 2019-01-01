@@ -2,7 +2,7 @@
  * Account class
  *
  * <p>Private data with default values:
- * -accountNumber:int
+ * -accountNumber:int = Integer.MAX_VALUE
  * -balance:double = 0.0
  *
  * <p>Constructor:
@@ -27,13 +27,13 @@ public class Account {
     private int accountNumber;
     private double balance;
 
-    /* default constructor */
+    /** Default constructor. */
     public Account() {
         this.accountNumber = DEFAULT_ACCOUNT;
         this.balance = DEFAULT_BALANCE;
     }
 
-    /* custom constructor */
+    /** Custom constructor. */
     public Account(int accountNumber, double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
