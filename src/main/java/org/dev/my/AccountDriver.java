@@ -7,25 +7,28 @@ public class AccountDriver {
     /** Prompt the user for account number and balance. List account number and balance. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
-        int accountNumber;
-        for ( ; ; ) {
-            System.out.print("Enter the account number: ");
-            accountNumber = inStream.nextInt();
-            if (accountNumber > 0) {
-                break;
-            }
-            System.out.printf("\"%d\" is invalid. Try again.%n", accountNumber);
-        }
-        double balance;
-        for ( ; ; ) {
-            System.out.print("Enter the balance: ");
-            balance = inStream.nextDouble();
-            if (balance >= 0) {
-                break;
-            }
-            System.out.printf("\"%f\" is invalid. Try again.%n", balance);
-        }
+        System.out.print("Enter the account number: ");
+        int accountNumber = inStream.nextInt();
+        System.out.print("Enter the balance: ");
+        double balance = inStream.nextDouble();
         inStream.close();
+        try {
+            checkInput(accountNumber);
+            checkInput(balance);
+            listAccount(accountNumber, balance);
+        } catch (NegativeValueException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void checkInput(double value) throws NegativeValueException {
+        if (value < 0) {
+            throw new NegativeValueException(
+                    String.format("%f invokes exception!", value));
+        }
+    }
+
+    private static void listAccount(int accountNumber, double balance) {
         Account account = new Account(accountNumber, balance);
         Account defaultAccount = new Account();
         System.out.println();
