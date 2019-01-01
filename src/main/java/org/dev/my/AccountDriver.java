@@ -43,5 +43,13 @@ public class AccountDriver {
                 "The account number is %d%n"
                         + "The balance is %.2f%n",
                 account.getAccountNumber(), account.getBalance());
+        System.out.println();
+        System.out.printf("Reset balance to zero:%n");
+        account.setBalance(0);
+        System.out.print(account);
+        System.out.println();
+        System.out.printf("Add $100.00:%n");
+        account.credit(100);
+        System.out.print(account);
     }
 }
