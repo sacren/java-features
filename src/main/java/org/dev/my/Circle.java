@@ -38,13 +38,13 @@ public class Circle {
 
     /** Constructor initializing attributes both default and customized. */
     public Circle(double radius) {
-        this.radius = radius;
+        setRadius(radius);
         this.color = DEFAULT_COLOR;
     }
 
     /** Constructor for fully customized instance. */
     public Circle(double radius, String color) {
-        this.radius = radius;
+        setRadius(radius);
         this.color = color;
     }
 

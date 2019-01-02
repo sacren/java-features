@@ -8,32 +8,13 @@ public class CylinderDriver {
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         double radius;
-        for ( ; ; ) {
-            System.out.print("Enter cylinder radius: ");
-            radius = inputStream.nextDouble();
-            if (radius >= 0) {
-                break;
-            }
-            System.out.printf("%f is invalid. Try again.%n", radius);
-        }
+        System.out.print("Enter cylinder radius: ");
+        radius = inputStream.nextDouble();
         double height;
-        for ( ; ; ) {
-            System.out.print("Enter cylinder height: ");
-            height = inputStream.nextDouble();
-            if (height >= 0) {
-                break;
-            }
-            System.out.printf("%f is invalid. Try again.%n", height);
-        }
-        String color;
-        for ( ; ; ) {
-            System.out.print("Enter cylinder color: ");
-            color = inputStream.next();
-            if (isInputValid(color)) {
-                break;
-            }
-            System.out.printf("\"%s\" is not valid. Try again.%n", color);
-        }
+        System.out.print("Enter cylinder height: ");
+        height = inputStream.nextDouble();
+        System.out.print("Enter cylinder color: ");
+        String color = inputStream.next();
         inputStream.close();
         Cylinder colorCylinder = new Cylinder(radius, height, color);
         Cylinder userCylinder = new Cylinder(radius, height);
