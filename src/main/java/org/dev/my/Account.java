@@ -61,11 +61,13 @@ public class Account {
 
     /** Public method for debit from account. */
     public void debit(double amount) {
-        if (balance > amount) {
-            balance -= amount;
-        } else {
-            System.out.println("Not enough balance!");
+        if (amount > balance) {
+            throw new IllegalArgumentException(
+                    String.format(
+                        "Debit %.2f out of %.2f is not allowed!",
+                        amount, balance));
         }
+        balance -= amount;
     }
 
     /** Account description. */
