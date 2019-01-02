@@ -35,13 +35,22 @@ public class Account {
 
     /** Custom constructor. */
     public Account(int accountNumber, double balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
+        setAccountNumber(accountNumber);
+        setBalance(balance);
     }
 
     /** Public accessor for account number. */
     public int getAccountNumber() {
         return accountNumber;
+    }
+
+    /** Public mutator for account number. */
+    public void setAccountNumber(int accountNumber) {
+        if (accountNumber <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", accountNumber));
+        }
+        this.accountNumber = accountNumber;
     }
 
     /** Public accessor for account balance. */
@@ -51,6 +60,10 @@ public class Account {
 
     /** Public mutator for account balance. */
     public void setBalance(double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException(
+                    String.format("%f is invalid!", balance));
+        }
         this.balance = balance;
     }
 

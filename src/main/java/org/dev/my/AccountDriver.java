@@ -12,20 +12,7 @@ public class AccountDriver {
         System.out.print("Enter the balance: ");
         double balance = inStream.nextDouble();
         inStream.close();
-        try {
-            checkInput(accountNumber);
-            checkInput(balance);
-            listAccount(accountNumber, balance);
-        } catch (NegativeValueException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void checkInput(double value) throws NegativeValueException {
-        if (value < 0) {
-            throw new NegativeValueException(
-                    String.format("%f invokes exception!", value));
-        }
+        listAccount(accountNumber, balance);
     }
 
     private static void listAccount(int accountNumber, double balance) {
