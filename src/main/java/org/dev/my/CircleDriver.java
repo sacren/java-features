@@ -18,20 +18,7 @@ public class CircleDriver {
         System.out.print("Enter the height: ");
         double height = inputStream.nextDouble();
         inputStream.close();
-        try {
-            checkInput(radius);
-            checkInput(height);
-            runCircle(radius, height);
-        } catch (NegativeValueException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void checkInput(double size) throws NegativeValueException {
-        if (size < 0) {
-            throw new NegativeValueException(
-                    String.format("%f invokes exception!", size));
-        }
+        runCircle(radius, height);
     }
 
     private static void runCircle(double radius, double height) {

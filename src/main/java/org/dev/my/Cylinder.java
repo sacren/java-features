@@ -30,12 +30,12 @@ public class Cylinder extends Circle {
 
     public Cylinder(double radius, double height) {
         super(radius); /* execute Circle(radius) */
-        this.height = height;
+        setHeight(height);
     }
 
     public Cylinder(double radius, double height, String color) {
         super(radius, color); /* execute Circle(radius, color) */
-        this.height = height;
+        setHeight(height);
     }
 
     /** Public accessor for height attribute. */
@@ -45,6 +45,10 @@ public class Cylinder extends Circle {
 
     /** Public mutator for height attribute. */
     public void setHeight(double height) {
+        if (height < 0) {
+            throw new IllegalArgumentException(
+                    String.format("%f is invalid!", height));
+        }
         this.height = height;
     }
 
