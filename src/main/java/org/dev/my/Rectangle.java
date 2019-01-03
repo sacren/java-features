@@ -41,13 +41,13 @@ public class Rectangle {
     /** Constructor initializing one attribute. */
     public Rectangle(float length) {
         this();
-        this.length = length;
+        setLength(length);
     }
 
     /** Custom constructor. */
     public Rectangle(float length, float width) {
-        this.length = length;
-        this.width = width;
+        setLength(length);
+        setWidth(width);
     }
 
     /** Public accessor for rectangle length. */
@@ -57,6 +57,10 @@ public class Rectangle {
 
     /** Public mutator for rectangle length. */
     public void setLength(float length) {
+        if (length <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%f is invalid!", length));
+        }
         this.length = length;
     }
 
@@ -67,6 +71,10 @@ public class Rectangle {
 
     /** Public mutator for rectangle width. */
     public void setWidth(float width) {
+        if (width <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%f is invalid!", width));
+        }
         this.width = width;
     }
 

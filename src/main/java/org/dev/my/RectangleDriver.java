@@ -10,20 +10,7 @@ public class RectangleDriver {
         System.out.print("Enter rectangle width: ");
         float width = inputStream.nextFloat();
         inputStream.close();
-        try {
-            checkInput(length);
-            checkInput(width);
-            printRectangle(length, width);
-        } catch (NegativeValueException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void checkInput(float size) throws NegativeValueException {
-        if (size < 0) {
-            throw new NegativeValueException(
-                    String.format("%f invokes exception!", size));
-        }
+        printRectangle(length, width);
     }
 
     private static void printRectangle(float length, float width) {
