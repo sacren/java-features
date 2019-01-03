@@ -40,9 +40,9 @@ public class Date {
 
     /** Custom constructor. */
     public Date(int year, int month, int day) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
+        setYear(year);
+        setMonth(month);
+        setDay(day);
     }
 
     /** Public accessor of year. */
@@ -52,6 +52,10 @@ public class Date {
 
     /** Public mutator of year. */
     public void setYear(int year) {
+        if (year <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", year));
+        }
         this.year = year;
     }
 
@@ -62,6 +66,10 @@ public class Date {
 
     /** Public mutator of month. */
     public void setMonth(int month) {
+        if (month <= 0 || month > 12) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", month));
+        }
         this.month = month;
     }
 
@@ -72,14 +80,18 @@ public class Date {
 
     /** Public mutator of day. */
     public void setDay(int day) {
+        if (day <= 0 || day > 31) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", day));
+        }
         this.day = day;
     }
 
     /** Public method for date. */
     public void setDate(int year, int month, int day) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
+        setYear(year);
+        setMonth(month);
+        setDay(day);
     }
 
     /** Date description: DD/MM/YYYY. */

@@ -8,32 +8,14 @@ public class DateDriver {
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
         int year;
+        System.out.print("Enter the year in number: ");
+        year = inStream.nextInt();
         int month;
+        System.out.print("Enter the month in number: ");
+        month = inStream.nextInt();
         int day;
-        for ( ; ; ) {
-            System.out.print("Enter the year in number: ");
-            year = inStream.nextInt();
-            if (year >= 0) {
-                break;
-            }
-            System.out.printf("%d is invalid. Try again.%n", year);
-        }
-        for ( ; ; ) {
-            System.out.print("Enter the month in number: ");
-            month = inStream.nextInt();
-            if (month > 0 && month <= 12) {
-                break;
-            }
-            System.out.printf("%d is invalid. Try again.%n", month);
-        }
-        for ( ; ; ) {
-            System.out.print("Enter the day in number: ");
-            day = inStream.nextInt();
-            if (day > 0 && day <= 31) {
-                break;
-            }
-            System.out.printf("%d is invalid. Try again.%n", day);
-        }
+        System.out.print("Enter the day in number: ");
+        day = inStream.nextInt();
         inStream.close();
         Date defaultDate = new Date();
         Date date = new Date(year, month, day);
