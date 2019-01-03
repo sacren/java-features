@@ -27,24 +27,24 @@ public class Rectangle {
     private float length;
     private float width;
 
-    /* default constructor */
+    /** Default constructor. */
     public Rectangle() {
         length = DEFAULT_LENGTH;
         width = DEFAULT_WIDTH;
     }
 
-    /* constructor initializing one attribute */
+    /** Default constructor with parameter place holder. */
     public Rectangle(Rectangle r) {
         this();
     }
 
-    /* constructor initializing one of the attributes */
+    /** Constructor initializing one attribute. */
     public Rectangle(float length) {
         this();
         this.length = length;
     }
 
-    /* custom constructor */
+    /** Custom constructor. */
     public Rectangle(float length, float width) {
         this.length = length;
         this.width = width;
