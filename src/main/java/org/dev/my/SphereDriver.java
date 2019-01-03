@@ -10,19 +10,7 @@ public class SphereDriver {
         System.out.print("Enter the sphere radius: ");
         double radius = inStream.nextDouble();
         inStream.close();
-        try {
-            checkInput(radius);
-            getSphere(radius);
-        } catch (NegativeValueException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void checkInput(double radius) throws NegativeValueException {
-        if (radius < 0) {
-            throw new NegativeValueException(
-                    String.format("%f invokes exception!", radius));
-        }
+        getSphere(radius);
     }
 
     private static void getSphere(double radius) {
