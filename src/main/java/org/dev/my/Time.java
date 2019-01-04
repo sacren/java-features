@@ -60,11 +60,11 @@ public class Time {
 
     /** Public mutator for second. */
     public void setSecond(int second) {
-        if (second >= 0 && second < 60) {
-            this.second = second;
-        } else {
-            throw new IllegalArgumentException("Invalid value for second!");
+        if (second < 0 || second >= 60) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid value for second!", second));
         }
+        this.second = second;
     }
 
     /** Public accessor for minute. */
@@ -74,11 +74,11 @@ public class Time {
 
     /** Public mutator for minute. */
     public void setMinute(int minute) {
-        if (minute >= 0 && minute < 60) {
-            this.minute = minute;
-        } else {
-            throw new IllegalArgumentException("Invalid value for minute!");
+        if (minute < 0 || minute >= 60) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid value for minute!", minute));
         }
+        this.minute = minute;
     }
 
     /** Public accessor for hour. */
@@ -88,11 +88,11 @@ public class Time {
 
     /** Public mutator for hour. */
     public void setHour(int hour) {
-        if (hour >= 0 && hour < 24) {
-            this.hour = hour;
-        } else {
-            throw new IllegalArgumentException("Invalid value for hour!");
+        if (hour < 0 || hour >= 24) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid value for hour!", hour));
         }
+        this.hour = hour;
     }
 
     /** Public method to set time. */
