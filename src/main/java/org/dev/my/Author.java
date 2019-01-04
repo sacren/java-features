@@ -55,6 +55,6 @@ public class Author {
                 "Name: %s%n"
                         + "Contact email: %s%n"
                         + "Gender: %c%n",
-                        name, email, gender);
+                getName(), getEmail(), getGender());
     }
 }
