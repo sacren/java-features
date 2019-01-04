@@ -7,20 +7,19 @@ public class TimeDriver {
     /** Prompt the user for time input and initialize Time. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
+        int hour;
         System.out.print("Enter the hour: ");
-        int hour = inStream.nextInt();
+        hour = inStream.nextInt();
+        int minute;
         System.out.print("Enter the minute: ");
-        int minute = inStream.nextInt();
+        minute = inStream.nextInt();
+        int second;
         System.out.print("Enter the second: ");
-        int second = inStream.nextInt();
-        try {
-            Time currentTime = new Time(second, minute, hour);
-            System.out.println();
-            printTime(currentTime);
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
+        second = inStream.nextInt();
         inStream.close();
+        Time currentTime = new Time(second, minute, hour);
+        System.out.println();
+        printTime(currentTime);
     }
 
     private static void printTime(Time time) {
