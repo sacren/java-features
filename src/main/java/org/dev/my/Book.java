@@ -2,16 +2,16 @@
  * Book class.
  *
  * <p>Private data with default values:
- * -name:String
+ * -bootTitle:String
  * -author:Author
  * -price:double
  * -quantity:int
  *
  * <p>Constructor:
- * +Book(name:String, author:Autor, price:double, quantity:int)
+ * +Book(bootTitle:String, author:Autor, price:double, quantity:int)
  *
  * <p>Public methods:
- * +getName():String
+ * +getBookTitle():String
  * +getAuthor():Author
  * +getPrice():double
  * +setPrice(price:double):void
@@ -21,22 +21,22 @@
  */
 public class Book {
     /* private instance data */
-    private String name;
+    private String bootTitle;
     private Author author;
     private double price;
     private int quantity;
 
     /** Custom constructor. */
-    public Book(String name, Author author, double price, int quantity) {
-        this.name = name;
+    public Book(String bootTitle, Author author, double price, int quantity) {
+        this.bootTitle = bootTitle;
         this.author = author;
         this.price = price;
         this.quantity = quantity;
     }
 
-    /** Public accessor for book name. */
-    public String getName() {
-        return name;
+    /** Public accessor for book title. */
+    public String getBookTitle() {
+        return bootTitle;
     }
 
     /** Public accessor for Author instance. */
@@ -73,6 +73,11 @@ public class Book {
                         + "Contact email: %s%n"
                         + "Price: %.2f%n"
                         + "Quantity: %d%n",
-                name, author.getName(), author.getGender(), author.getEmail(), price, quantity);
+                getBookTitle(),
+                author.getName(),
+                author.getGender(),
+                author.getEmail(),
+                getPrice(),
+                getQuantity());
     }
 }
