@@ -8,10 +8,10 @@ public class BookDriver {
         String email = "dmr@bell-labs.com";
         final char gender = 'M';
         Author author = new Author(authorName, email, gender);
-        String bookName = "The C Programming Language";
+        String bookTitle = "The C Programming Language";
         final double price = 29.99;
         final int quantity = 90000;
-        Book book = new Book(bookName, author, price, quantity);
+        Book book = new Book(bookTitle, author, price, quantity);
         System.out.print(book);
         System.out.println();
         System.out.printf("After price doubles and order slashed to half.%n%n");

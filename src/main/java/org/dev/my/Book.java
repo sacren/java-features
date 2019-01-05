@@ -2,13 +2,13 @@
  * Book class.
  *
  * <p>Private data with default values:
- * -bootTitle:String
+ * -bookTitle:String
  * -author:Author
  * -price:double
  * -quantity:int
  *
  * <p>Constructor:
- * +Book(bootTitle:String, author:Author, price:double, quantity:int)
+ * +Book(bookTitle:String, author:Author, price:double, quantity:int)
  *
  * <p>Public methods:
  * +getBookTitle():String
@@ -21,14 +21,14 @@
  */
 public class Book {
     /* private instance data */
-    private String bootTitle;
+    private String bookTitle;
     private Author author;
     private double price;
     private int quantity;
 
     /** Custom constructor. */
-    public Book(String bootTitle, Author author, double price, int quantity) {
-        this.bootTitle = bootTitle;
+    public Book(String bookTitle, Author author, double price, int quantity) {
+        this.bookTitle = bookTitle;
         this.author = author;
         this.price = price;
         this.quantity = quantity;
@@ -36,7 +36,7 @@ public class Book {
 
     /** Public accessor for book title. */
     public String getBookTitle() {
-        return bootTitle;
+        return bookTitle;
     }
 
     /** Public accessor for Author instance. */
