@@ -8,7 +8,7 @@
  * -quantity:int
  *
  * <p>Constructor:
- * +Book(bootTitle:String, author:Autor, price:double, quantity:int)
+ * +Book(bootTitle:String, author:Author, price:double, quantity:int)
  *
  * <p>Public methods:
  * +getBookTitle():String
