@@ -15,8 +15,8 @@
  * +getY():int
  * +setY(y:int):void
  * +toString():String
- * +getXY():int[2]
- * +setXY(x:int, y:int):void
+ * +getX_Y():int[2]
+ * +setX_Y(x:int, y:int):void
  * +distance(x:int, y:int):double
  * +distance(another:Point):double
  * +distance():double
@@ -70,7 +70,7 @@ public class Point {
     }
 
     /** getter for a specific point. */
-    public int[] getXY() {
+    public int[] getX_Y() {
         int[] point = new int[2];
         point[0] = getX();
         point[1] = getY();
@@ -78,7 +78,7 @@ public class Point {
     }
 
     /** setter for a specific point. */
-    public void setXY(int x, int y) {
+    public void setX_Y(int x, int y) {
         setX(x);
         setY(y);
     }
