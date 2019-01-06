@@ -1,5 +1,5 @@
 /**
- * Point class
+ * Point class.
  *
  * <p>Private data with default values:
  * -axisX:int = 0
@@ -30,46 +30,46 @@ public class Point {
     private int axisX;
     private int axisY;
 
-    /** Default constructor */
+    /** Default constructor. */
     public Point() {
         setX(DEFAULT_X);
         setY(DEFAULT_Y);
     }
 
-    /** Custom constructor */
+    /** Custom constructor. */
     public Point(int x, int y) {
         setX(x);
         setY(y);
     }
 
-    /** getter for axisX */
+    /** getter for axisX. */
     public int getX() {
         return axisX;
     }
 
-    /** setter for axisX */
+    /** setter for axisX. */
     public void setX(int x) {
         axisX = x;
     }
 
-    /** getter for axisY */
+    /** getter for axisY. */
     public int getY() {
         return axisY;
     }
 
-    /** setter for axisY */
+    /** setter for axisY. */
     public void setY(int y) {
         axisY = y;
     }
 
-    /** Point description */
+    /** Point description. */
     public String toString() {
         return String.format(
                 "(%d, %d)",
                 getX(), getY());
     }
 
-    /** getter for a specific point */
+    /** getter for a specific point. */
     public int[] getXY() {
         int[] point = new int[2];
         point[0] = getX();
@@ -77,27 +77,27 @@ public class Point {
         return point;
     }
 
-    /** setter for a specific point */
+    /** setter for a specific point. */
     public void setXY(int x, int y) {
         setX(x);
         setY(y);
     }
 
-    /** Method for distance from this point to (x, y) */
+    /** Method for distance from this point to (x, y). */
     public double distance(int x, int y) {
         return Math.sqrt((double) (
                     Math.abs(x - axisX) * Math.abs(x - axisX)
                     + Math.abs(y - axisY) * Math.abs(y - axisY)));
     }
 
-    /** Method for distance from this point to another */
+    /** Method for distance from this point to another. */
     public double distance(Point another) {
         return Math.sqrt((double) (
                     Math.abs(another.getX() - axisX) * Math.abs(another.getX() - axisX)
                     + Math.abs(another.getY() - axisY) * Math.abs(another.getY() - axisY)));
     }
 
-    /** Method for distance from this point to (0, 0) */
+    /** Method for distance from this point to (0, 0). */
     public double distance() {
         return Math.sqrt((double) (
                     Math.abs(axisX) * Math.abs(axisX)
