@@ -22,8 +22,8 @@ public class Line {
 
     /** Custom constructor. */
     public Line(Point begin, Point end) {
-        setBegin(begin);
-        setEnd(end);
+        this.begin = begin;
+        this.end = end;
     }
 
     /** getter of begin point. */

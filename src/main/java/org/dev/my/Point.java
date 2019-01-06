@@ -32,14 +32,14 @@ public class Point {
 
     /** Default constructor. */
     public Point() {
-        setX(DEFAULT_X);
-        setY(DEFAULT_Y);
+        axisX = DEFAULT_X;
+        axisY = DEFAULT_Y;
     }
 
     /** Custom constructor. */
     public Point(int x, int y) {
-        setX(x);
-        setY(y);
+        axisX = x;
+        axisY = y;
     }
 
     /** getter for axisX. */
@@ -64,16 +64,14 @@ public class Point {
 
     /** Point description. */
     public String toString() {
-        return String.format(
-                "(%d, %d)",
-                getX(), getY());
+        return String.format("(%d, %d)", axisX, axisY);
     }
 
     /** getter for a specific point. */
     public int[] getX_Y() {
         int[] point = new int[2];
-        point[0] = getX();
-        point[1] = getY();
+        point[0] = axisX;
+        point[1] = axisY;
         return point;
     }
 
