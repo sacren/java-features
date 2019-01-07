@@ -24,9 +24,19 @@ public class LineDriver {
         Point to = new Point(endX, endY);
         Line line = new Line(from, to);
         System.out.println();
-        System.out.printf("%s%n%n", line);
         System.out.printf(
-                "Line length is %.2f%n",
-                line.getLength());
+                "%s%n"
+                + "Line length is %.2f%n%n",
+                line, line.getLength());
+        /* Test setter. */
+        Point anotherBegin = new Point(beginX * 2, beginY / 2);
+        Point anotherEnd = new Point(endX * 3, endY / 3);
+        line.setBegin(anotherBegin);
+        line.setEnd(anotherEnd);
+        System.out.printf(
+                "After begin and after points updated.%n%n"
+                + "%s%n"
+                + "Line length is %.2f%n",
+                line, line.getLength());
     }
 }
