@@ -53,4 +53,9 @@ public class Line {
                 begin, /* invoke begin.toString */
                 end); /* invoke end.toString */
     }
+
+    /** Line length from begin to end. */
+    public double getLength() {
+        return begin.distance(end);
+    }
 }

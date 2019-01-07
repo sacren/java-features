@@ -23,6 +23,10 @@ public class LineDriver {
         Point from = new Point(beginX, beginY);
         Point to = new Point(endX, endY);
         Line line = new Line(from, to);
-        System.out.printf("%s%n", line);
+        System.out.println();
+        System.out.printf("%s%n%n", line);
+        System.out.printf(
+                "Line length is %.2f%n",
+                line.getLength());
     }
 }
