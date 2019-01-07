@@ -26,8 +26,13 @@ public class LineDriver {
         System.out.println();
         System.out.printf(
                 "%s%n"
+                + "Begin Point %s%n"
+                + "End Point %s%n"
                 + "Line length is %.2f%n%n",
-                line, line.getLength());
+                line,
+                line.getBegin(), /* invoke Point's toString() */
+                line.getEnd(), /* invoke Point's toString() */
+                line.getLength());
         /* Test setter. */
         Point anotherBegin = new Point(beginX * 2, beginY / 2);
         Point anotherEnd = new Point(endX * 3, endY / 3);
@@ -36,7 +41,12 @@ public class LineDriver {
         System.out.printf(
                 "After begin and after points updated.%n%n"
                 + "%s%n"
+                + "Begin Point %s%n"
+                + "End Point %s%n"
                 + "Line length is %.2f%n",
-                line, line.getLength());
+                line,
+                line.getBegin(),
+                line.getEnd(),
+                line.getLength());
     }
 }
