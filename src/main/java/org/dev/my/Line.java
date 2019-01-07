@@ -50,8 +50,8 @@ public class Line {
     public String toString() {
         return String.format(
                 "From %s to %s",
-                begin, /* invoke begin.toString */
-                end); /* invoke end.toString */
+                begin, /* invoke Point's toString() */
+                end); /* invoke Point's toString() */
     }
 
     /** Line length from begin to end. */
