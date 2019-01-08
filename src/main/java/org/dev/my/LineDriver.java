@@ -20,10 +20,21 @@ public class LineDriver {
         System.out.print("Enter y-axis for end point: ");
         endY = inStream.nextInt();
         inStream.close();
+        Line lineBy4 = new Line(beginX, beginY, endX, endY);
         Point from = new Point(beginX, beginY);
         Point to = new Point(endX, endY);
         Line line = new Line(from, to);
         System.out.println();
+        System.out.printf(
+                "%s%n"
+                + "Begin Point %s%n"
+                + "End Point %s%n"
+                + "Line length is %.2f%n%n",
+                lineBy4,
+                lineBy4.getBegin(), /* invoke Point's toString() */
+                lineBy4.getEnd(), /* invoke Point's toString() */
+                lineBy4.getLength());
+        System.out.printf("Now by a different constructor.%n%n");
         System.out.printf(
                 "%s%n"
                 + "Begin Point %s%n"

@@ -21,6 +21,11 @@ public class Line {
     private Point end;
 
     /** Custom constructor. */
+    public Line(int beginX, int beginY, int endX, int endY) {
+        begin = new Point(beginX, beginY);
+        end = new Point(endX, endY);
+    }
+
     public Line(Point begin, Point end) {
         this.begin = begin;
         this.end = end;
