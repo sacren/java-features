@@ -46,6 +46,46 @@ public class Line {
         this.end = end;
     }
 
+    /** getter of Point begin x-axis. */
+    public int getBeginX() {
+        return begin.getX();
+    }
+
+    /** setter of Point begin x-axis. */
+    public void setBeginX(int x) {
+        begin.setX(x);
+    }
+
+    /** getter of Point begin y-axis. */
+    public int getBeginY() {
+        return begin.getY();
+    }
+
+    /** setter of Point begin y-axis. */
+    public void setBeginY(int y) {
+        begin.setY(y);
+    }
+
+    /** getter of Point end x-axis. */
+    public int getEndX() {
+        return end.getX();
+    }
+
+    /** setter of Point end x-axis. */
+    public void setEndX(int x) {
+        end.setX(x);
+    }
+
+    /** getter of Point end y-axis. */
+    public int getEndY() {
+        return end.getY();
+    }
+
+    /** setter of Point end y-axis. */
+    public void setEndY(int y) {
+        end.setY(y);
+    }
+
     /** Line description. */
     public String toString() {
         return String.format(
