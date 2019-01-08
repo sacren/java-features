@@ -77,8 +77,8 @@ public class Point {
 
     /** setter for a specific point. */
     public void setX_Y(int x, int y) {
-        setX(x);
-        setY(y);
+        axisX = x;
+        axisY = y;
     }
 
     /** Method for distance from this point to (x, y). */
