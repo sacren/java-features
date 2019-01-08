@@ -43,10 +43,27 @@ public class LineDriver {
                 + "%s%n"
                 + "Begin Point %s%n"
                 + "End Point %s%n"
-                + "Line length is %.2f%n",
+                + "Line length is %.2f%n%n",
                 line,
                 line.getBegin(),
                 line.getEnd(),
+                line.getLength());
+        /* Reset begin and end to 0. */
+        line.setBeginX(0);
+        line.setBeginY(0);
+        line.setEndX(0);
+        line.setEndY(0);
+        System.out.printf(
+                "After begin and after points reset to 0.%n%n"
+                + "%s%n"
+                + "Begin Point (%d, %d)%n"
+                + "End Point (%d, %d)%n"
+                + "Line length is %.2f%n",
+                line,
+                line.getBeginX(),
+                line.getBeginY(),
+                line.getEndX(),
+                line.getEndY(),
                 line.getLength());
     }
 }
