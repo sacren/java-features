@@ -1,7 +1,8 @@
 /**
- * Circle class
+ * Circle class composed of Point class
  *
  * <p>Private data with default values:
+ * -center:Point = {0, 0}
  * -radius:double = 1.0
  * -color:String = "red"
  *
@@ -9,6 +10,8 @@
  * +Circle()
  * +Circle(radius:double)
  * +Circle(radius:double, color:String)
+ * +Circle(centerX:int, centerY:int, radius:double)
+ * +Circle(center:Point, radius:double)
  *
  * <p>Public methods:
  * +getRadius():double
@@ -18,6 +21,8 @@
  * +getDiameter():double
  * +getCircumference():double
  * +getArea():double
+ * +getCenter():Point
+ * +setCenter(center:Point):void
  * +toString():String
  */
 public class Circle {
@@ -27,6 +32,7 @@ public class Circle {
     public static final String FAVORITE_COLOR = "pink";
 
     /* private data */
+    private Point center;
     private double radius;
     private String color;
 
@@ -46,6 +52,18 @@ public class Circle {
     public Circle(double radius, String color) {
         setRadius(radius);
         this.color = color;
+    }
+
+    /** Custom constructor with values for Point. */
+    public Circle(int centerX, int centerY, double radius) {
+        center = new Point(centerX, centerY);
+        this.radius = radius;
+    }
+
+    /** Custom constructor composed of Point. */
+    public Circle(Point center, double radius) {
+        this.center = center;
+        this.radius = radius;
     }
 
     /** Public accessor for private radius. */
@@ -87,10 +105,20 @@ public class Circle {
         return Math.PI * radius * radius;
     }
 
+    /** getter for center. */
+    public Point getCenter() {
+        return center;
+    }
+
+    /** setter for center. */
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
     /** Public method for Circle description. */
     public String toString() {
         return String.format(
-                "[Circle (Radius=%.2f, Color=%s)]%n",
-                radius, color);
+                "[Circle (Radius=%.2f, Color=%s, Center=%s)]%n",
+                radius, color, center);
     }
 }

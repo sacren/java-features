@@ -13,20 +13,30 @@ public class CircleDriver {
     /** Prompt the user for input. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
+        double radius;
         System.out.print("Enter the radius: ");
-        double radius = inputStream.nextDouble();
+        radius = inputStream.nextDouble();
+        double height;
         System.out.print("Enter the height: ");
-        double height = inputStream.nextDouble();
+        height = inputStream.nextDouble();
+        int centerX;
+        System.out.print("Enter center x-axis: ");
+        centerX = inputStream.nextInt();
+        int centerY;
+        System.out.print("Enter center y-axis: ");
+        centerY = inputStream.nextInt();
         inputStream.close();
-        runCircle(radius, height);
+        runCircle(radius, height, centerX, centerY);
     }
 
-    private static void runCircle(double radius, double height) {
+    private static void runCircle(double radius, double height, int centerX, int centerY) {
         Circle defaultCircle = new Circle();
         Circle userCircle = new Circle(radius);
         Sphere userSphere = new Sphere(radius);
         Cylinder userCylinder = new Cylinder(radius, height);
+        Circle compositeCircle = new Circle(new Point(centerX, centerY), radius);
         System.out.println();
+        System.out.printf("%s%n", compositeCircle);
         System.out.print(userCircle);
         System.out.printf(
                 "The default circle color is %s%n"
