@@ -73,7 +73,7 @@ public class Circle {
 
     /** Public mutator for private radius. */
     public void setRadius(double radius) {
-        if (radius <= 0) {
+        if (radius < 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", radius));
         }
