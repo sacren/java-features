@@ -1,5 +1,5 @@
 /**
- * Book class.
+ * Book class composed of Author class.
  *
  * <p>Private data with default values:
  * -bookTitle:String

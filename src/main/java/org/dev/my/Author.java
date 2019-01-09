@@ -29,22 +29,22 @@ public class Author {
         this.email = email;
     }
 
-    /** Public accessor for name. */
+    /** getter of name. */
     public String getName() {
         return name;
     }
 
-    /** Public accessor for email. */
+    /** getter of email. */
     public String getEmail() {
         return email;
     }
 
-    /** Public mutator for email. */
+    /** setter of email. */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /** Public accessor for gender. */
+    /** getter of gender. */
     public char getGender() {
         return gender;
     }
