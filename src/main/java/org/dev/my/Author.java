@@ -26,7 +26,7 @@ public class Author {
     public Author(String name, String email, char gender) {
         this.name = name;
         this.gender = gender;
-        setEmail(email);
+        this.email = email;
     }
 
     /** Public accessor for name. */
@@ -55,6 +55,6 @@ public class Author {
                 "Name: %s%n"
                         + "Contact email: %s%n"
                         + "Gender: %c%n",
-                getName(), getEmail(), getGender());
+                name, email, gender);
     }
 }
