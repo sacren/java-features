@@ -39,12 +39,12 @@ public class Account {
         setBalance(balance);
     }
 
-    /** Public accessor for account number. */
+    /** getter for account number. */
     public int getAccountNumber() {
         return accountNumber;
     }
 
-    /** Public mutator for account number. */
+    /** setter for account number. */
     public void setAccountNumber(int accountNumber) {
         if (accountNumber <= 0) {
             throw new IllegalArgumentException(
@@ -53,12 +53,12 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    /** Public accessor for account balance. */
+    /** getter for account balance. */
     public double getBalance() {
         return balance;
     }
 
-    /** Public mutator for account balance. */
+    /** setter for account balance. */
     public void setBalance(double balance) {
         if (balance < 0) {
             throw new IllegalArgumentException(
@@ -77,7 +77,7 @@ public class Account {
         if (amount > balance) {
             throw new IllegalArgumentException(
                     String.format(
-                        "Debit %.2f out of %.2f is not allowed!",
+                        "Withdraw %.2f out of balance of %.2f is not allowed!",
                         amount, balance));
         }
         balance -= amount;
@@ -85,6 +85,8 @@ public class Account {
 
     /** Account description. */
     public String toString() {
-        return String.format("[A/C #: %d, Balance: %.2f]%n", accountNumber, balance);
+        return String.format(
+                "[A/C #: %d, Balance: %.2f]%n",
+                accountNumber, balance);
     }
 }
