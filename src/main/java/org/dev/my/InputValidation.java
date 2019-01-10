@@ -15,17 +15,13 @@ public class InputValidation {
         Scanner inputStream = new Scanner(System.in);
 
         for (int i = 1; i <= studentCount; i++) {
-            for (; ; ) {
-                System.out.printf("Enter the score of Student %d: ", i);
-                score = inputStream.nextInt();
-
-                if (isValid(score)) {
-                    sum += score;
-                    break;
-                }
-
-                System.out.println("The score is invalid. Please try again...");
+            System.out.printf("Enter the score of Student %d: ", i);
+            score = inputStream.nextInt();
+            if (!isValid(score)) {
+                throw new IllegalArgumentException(
+                        String.format("%d is invalid.%n", score));
             }
+            sum += score;
         }
 
         average = (double) sum / studentCount;
