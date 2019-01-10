@@ -35,8 +35,10 @@ public class CircleDriver {
         Sphere userSphere = new Sphere(radius);
         Cylinder userCylinder = new Cylinder(radius, height);
         Circle compositeCircle = new Circle(new Point(centerX, centerY), radius);
+        Circle centerCircle = new Circle(centerX, centerY, radius);
         System.out.println();
         System.out.printf("%s%n", compositeCircle);
+        System.out.printf("%s%n", centerCircle);
         System.out.print(userCircle);
         System.out.printf(
                 "The default circle color is %s%n"
