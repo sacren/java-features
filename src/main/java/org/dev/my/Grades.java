@@ -14,13 +14,11 @@ public class Grades {
         Scanner inStream = new Scanner(System.in);
         int size;
         int grade;
-        for ( ; ; ) {
-            System.out.print("Enter the number of students: ");
-            size = inStream.nextInt();
-            if (size >= 0) {
-                break;
-            }
-            System.out.printf("%d is invalid. Try again.%n", size);
+        System.out.print("Enter the number of students: ");
+        size = inStream.nextInt();
+        if (size < 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid.", size));
         }
 
         if (size == 0) {
@@ -33,17 +31,11 @@ public class Grades {
         for (int i = 0; i < size; i++) {
             System.out.printf("Enter the grade of student %d: ", i + 1);
             grade = inStream.nextInt();
-            for ( ; ; ) {
-                if (grade >= 0 && grade <= 100) {
-                    gradeArray[i] = grade;
-                    break;
-                }
-                System.out.printf(
-                        "%d is invalid%n"
-                                + "Enter the grade of student %d again: ",
-                        grade, i + 1);
-                grade = inStream.nextInt();
+            if (grade < 0 || grade > 100) {
+                throw new IllegalArgumentException(
+                        String.format("%d is invalid!", grade));
             }
+            gradeArray[i] = grade;
         }
 
         System.out.printf(
