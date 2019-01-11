@@ -17,22 +17,18 @@ public class GreatestCommonDenominator {
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
         int n1;
-        for ( ; ; ) {
-            System.out.print("Enter a positive integer: ");
-            n1 = inStream.nextInt();
-            if (n1 > 0) {
-                break;
-            }
-            System.out.printf("%d is an invalid number. Try again.%n", n1);
+        System.out.print("Enter a positive integer: ");
+        n1 = inStream.nextInt();
+        if (n1 <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", n1));
         }
         int n2;
-        for ( ; ; ) {
-            System.out.print("Enter another positive integer: ");
-            n2 = inStream.nextInt();
-            if (n2 > 0) {
-                break;
-            }
-            System.out.printf("%d is an invalid number. Try again.%n", n2);
+        System.out.print("Enter a positive integer: ");
+        n2 = inStream.nextInt();
+        if (n2 <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", n2));
         }
         int tmp;
         if (n1 < n2) {
