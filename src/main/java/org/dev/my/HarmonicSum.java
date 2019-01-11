@@ -5,9 +5,9 @@
  *
  * <p>Sum of a harmonic series adding from right to left:
  *
- * <p>1/50000 + 1/49999 + 1/49998 + ... + 1/3 + * 1/2 + 1
+ * <p>1/50000 + 1/49999 + 1/49998 + ... + 1/3 + 1/2 + 1
  *
- * <p>Display of the difference.
+ * <p>Show the difference.
  */
 public class HarmonicSum {
     public static void main(String[] args) {
