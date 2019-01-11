@@ -15,11 +15,10 @@ public class HarmonicSum {
     }
 
     private static void getHarmonicSum() {
-        int upperBound = 50000;
-        int lowerBound = 1;
-        double sumLeftToRight = lowerBound;
+        final int upperBound = 50000;
+        final int lowerBound = 1;
+        double sumLeftToRight = 1;
         double sumRightToLeft = 0;
-        double difference;
 
         for (int i = lowerBound + 1; i <= upperBound; i++) {
             sumLeftToRight += (double) lowerBound / i;
@@ -30,18 +29,11 @@ public class HarmonicSum {
         }
 
         sumRightToLeft += 1;
-        difference = sumRightToLeft - sumLeftToRight;
-
-        System.out.println(
-                "Sum of harmonic from left to right is "
-                        + sumLeftToRight
-                        + "\n"
-                        + "Sum of harmonic from right to left is "
-                        + sumRightToLeft
-                        + "\n"
-                        + "Difference is "
-                        + difference
-                        + "\n"
-                        + "Which sum is more accurate?");
+        System.out.printf(
+                "Harmonic sum (%d) from left to right is %.30f%n"
+                        + "Harmonic sum (%1$d) from right to left is %.30f%n"
+                        + "Difference is %.30f%n"
+                        + "Which sum is more accurate?%n",
+                upperBound, sumLeftToRight, sumRightToLeft, sumRightToLeft - sumLeftToRight);
     }
 }
