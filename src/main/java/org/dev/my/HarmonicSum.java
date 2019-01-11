@@ -10,11 +10,8 @@
  * <p>Show the difference.
  */
 public class HarmonicSum {
+    /** Harmonic sum up to 50,000. */
     public static void main(String[] args) {
-        getHarmonicSum();
-    }
-
-    private static void getHarmonicSum() {
         final int upperBound = 50000;
         final int lowerBound = 1;
         double sumLeftToRight = 1;
