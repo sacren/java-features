@@ -13,10 +13,9 @@ public class HarmonicSum {
     /** Harmonic sum up to 50,000. */
     public static void main(String[] args) {
         final int upperBound = 50000;
-        final int lowerBound = 1;
-        double sumLeftToRight = 1;
-        for (int i = lowerBound + 1; i <= upperBound; i++) {
-            sumLeftToRight += (double) lowerBound / i;
+        double sumLeftToRight = 0;
+        for (int i = 0; i < upperBound; i++) {
+            sumLeftToRight += (double) 1 / (i + 1);
         }
 
         double sumRightToLeft = 0;
