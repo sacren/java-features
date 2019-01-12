@@ -4,32 +4,19 @@ import java.util.Scanner;
 public class HexString {
     /** Ask the user for a string and check if it is hex. */
     public static void main(String[] args) {
-        String line;
-
         Scanner inStream = new Scanner(System.in);
-
-        for ( ; ; ) {
-            System.out.print("Enter a hex string: ");
-            line = inStream.nextLine();
-
-            if (line.isEmpty()) {
-                System.out.printf("\"%s\" is empty. Try again.%n", line);
-                continue;
-            }
-
-            if (isHex(line)) {
-                break;
-            }
-
-            System.out.printf("\"%s\" is not a hex string. Try again.%n", line);
+        String line;
+        System.out.print("Enter a hex string: ");
+        line = inStream.nextLine();
+        inStream.close();
+        if (!isHex(line)) {
+            throw new IllegalArgumentException(
+                    String.format("\"%s\" is not a hex string!", line));
         }
-
         System.out.printf(
                 "%s is a hex string%n"
                         + "%1$s in decimal is %d%n",
                 line, convertToDecimal(line));
-
-        inStream.close();
     }
 
     private static boolean isHex(String s) {
