@@ -21,13 +21,14 @@ public class HexString {
 
     private static boolean isHex(String s) {
         final char[] charArray = s.toCharArray();
-
+        if (charArray.length == 0) {
+            return false;
+        }
         for (char c: charArray) {
             if (Character.digit(c, 16) == -1) {
                 return false;
             }
         }
-
         return true;
     }
 
