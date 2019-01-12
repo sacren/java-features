@@ -15,17 +15,15 @@ public class HarmonicSum {
         final int upperBound = 50000;
         final int lowerBound = 1;
         double sumLeftToRight = 1;
-        double sumRightToLeft = 0;
-
         for (int i = lowerBound + 1; i <= upperBound; i++) {
             sumLeftToRight += (double) lowerBound / i;
         }
 
-        for (int i = upperBound; i > lowerBound; i--) {
-            sumRightToLeft += (double) lowerBound / i;
+        double sumRightToLeft = 0;
+        for (int i = 0; i < upperBound; i++) {
+            sumRightToLeft += (double) 1 / (upperBound - i);
         }
 
-        sumRightToLeft += 1;
         System.out.printf(
                 "Harmonic sum (%d) from left to right is %.30f%n"
                         + "Harmonic sum (%1$d) from right to left is %.30f%n"
