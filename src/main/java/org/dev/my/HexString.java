@@ -13,9 +13,9 @@ public class HexString {
             throw new IllegalArgumentException(
                     String.format("\"%s\" is not a hex string!", line));
         }
+        System.out.println();
         System.out.printf(
-                "%s is a hex string%n"
-                        + "%1$s in decimal is %d%n",
+                "0X%s = %d%n",
                 line, convertToDecimal(line));
     }
 
@@ -38,13 +38,11 @@ public class HexString {
         int index = 0;
         int decimal = 0;
         int exponent;
-
         for (char c: charArray) {
             /* (size - 1) is the greatest index and each iteration makes it decrement. */
             exponent = size - 1 - index++;
             decimal += (int) Math.pow(16, exponent) * Character.digit(c, 16);
         }
-
         return decimal;
     }
 }
