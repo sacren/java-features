@@ -34,14 +34,13 @@ public class HexString {
 
     private static int convertToDecimal(String hexString) {
         final char[] charArray = hexString.toCharArray();
-        final int size = charArray.length;
         int index = 0;
         int decimal = 0;
-        int exponent;
         for (char c: charArray) {
-            /* (size - 1) is the greatest index and each iteration makes it decrement. */
-            exponent = size - 1 - index++;
-            decimal += (int) Math.pow(16, exponent) * Character.digit(c, 16);
+            /* (charArray.length - 1) is the position number of the most significant hex bit.
+             * (charArray.length - 1 - index) happens to be the exponent.
+             */
+            decimal += (int) Math.pow(16, charArray.length - 1 - index++) * Character.digit(c, 16);
         }
         return decimal;
     }
