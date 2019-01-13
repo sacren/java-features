@@ -20,7 +20,7 @@ public class Cylinder extends Circle {
     /* public static data */
     public static final double DEFAULT_HEIGHT = 1.0;
 
-    /* private data */
+    /* private instance data */
     private double height;
 
     public Cylinder() {

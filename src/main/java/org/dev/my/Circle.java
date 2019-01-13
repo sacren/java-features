@@ -31,7 +31,7 @@ public class Circle {
     public static final String DEFAULT_COLOR = "green";
     public static final String FAVORITE_COLOR = "pink";
 
-    /* private data */
+    /* private instance data */
     private Point center;
     private double radius;
     private String color;
