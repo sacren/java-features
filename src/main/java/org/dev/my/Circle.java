@@ -57,13 +57,13 @@ public class Circle {
     /** Custom constructor with values for Point. */
     public Circle(int centerX, int centerY, double radius) {
         center = new Point(centerX, centerY);
-        this.radius = radius;
+        setRadius(radius);
     }
 
     /** Custom constructor composed of Point. */
     public Circle(Point center, double radius) {
         this.center = center;
-        this.radius = radius;
+        setRadius(radius);
     }
 
     /** Public accessor for private radius. */
