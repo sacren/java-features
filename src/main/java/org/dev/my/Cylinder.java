@@ -23,27 +23,30 @@ public class Cylinder extends Circle {
     /* private instance data */
     private double height;
 
+    /** Default constructor for cylinder. */
     public Cylinder() {
         super(); /* execute Circle() */
         this.height = DEFAULT_HEIGHT;
     }
 
+    /** Custom constructor for cylinder. */
     public Cylinder(double radius, double height) {
         super(radius); /* execute Circle(radius) */
         setHeight(height);
     }
 
+    /** Custom constructor for cylinder with all parameters. */
     public Cylinder(double radius, double height, String color) {
         super(radius, color); /* execute Circle(radius, color) */
         setHeight(height);
     }
 
-    /** Public accessor for height attribute. */
+    /** getter for cylinder height. */
     public double getHeight() {
         return height;
     }
 
-    /** Public mutator for height attribute. */
+    /** setter for cylinder height. */
     public void setHeight(double height) {
         if (height < 0) {
             throw new IllegalArgumentException(
@@ -52,16 +55,18 @@ public class Cylinder extends Circle {
         this.height = height;
     }
 
+    /** Public method for cylinder surface area. */
     public double getSurfaceArea() {
         /* from Circle's area and circumference */
         return getArea() * 2 + getCircumference() * height;
     }
 
+    /** Public method for cylinder volume. */
     public double getVolume() {
         return getArea() * height; /* from Circle's area */
     }
 
-    /** Public method for Cylinder description. */
+    /** Cylinder instance description. */
     public String toString() {
         return String.format(
                 "[Cylinder (Radius=%.2f, Height=%.2f)]%n",
