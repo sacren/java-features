@@ -23,16 +23,16 @@ public class Sphere extends Circle {
 
     /** Public method using inheritance. */
     public double getSurfaceArea() {
-        return getArea() * 4;
+        return super.getArea() * 4;
     }
 
     /** Public method using inheritance. */
     public double getVolume() {
-        return Math.PI * getRadius() * getRadius() * getRadius() * 4 / 3;
+        return Math.PI * super.getRadius() * super.getRadius() * super.getRadius() * 4 / 3;
     }
 
     /** Public method for Sphere description. */
     public String toString() {
-        return String.format("[Sphere (Radius=%.2f)]%n", getRadius());
+        return String.format("[Sphere (Radius=%.2f)]%n", super.getRadius());
     }
 }
