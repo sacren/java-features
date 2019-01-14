@@ -21,6 +21,6 @@ public class SphereDriver {
                 "Sphere radius is %.2f%n"
                         + "Sphere surface area is %.2f%n"
                         + "Sphere volume is %.2f%n",
-                        sphere.getRadius(), sphere.getSurfaceArea(), sphere.getVolume());
+                        sphere.getRadius(), sphere.getArea(), sphere.getVolume());
     }
 }

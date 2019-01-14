@@ -61,7 +61,7 @@ public class CircleDriver {
         System.out.printf(
                 "The surface area is %.2f%n"
                         + "The volume is %.2f%n%n",
-                userSphere.getSurfaceArea(), /* custom sphere surface area */
+                userSphere.getArea(), /* custom sphere surface area */
                 userSphere.getVolume()); /* custom sphere volume */
         System.out.print(userCylinder);
         System.out.printf(
@@ -91,7 +91,7 @@ public class CircleDriver {
         System.out.printf(
                 "The surface area is %.2f%n"
                         + "The volume is %.2f%n%n",
-                userSphere.getSurfaceArea(),
+                userSphere.getArea(),
                 userSphere.getVolume());
         System.out.print(userCylinder);
         System.out.printf(

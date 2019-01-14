@@ -6,7 +6,7 @@
  * +Sphere(radius:double)
  *
  * <p>Public methods:
- * +getSurfaceArea():double
+ * +getArea():double
  * +getVolume():double
  * +toString():String
  */
@@ -21,9 +21,9 @@ public class Sphere extends Circle {
         super(radius);
     }
 
-    /** Public method using inheritance. */
-    public double getSurfaceArea() {
-        return super.getArea() * 4;
+    /** Public method for sphere surface area. */
+    public double getArea() { /* override getArea() from super class */
+        return super.getArea() * 4; /* use getArea() from super class */
     }
 
     /** Public method using inheritance. */
