@@ -18,6 +18,15 @@ public class SphereDriver {
         System.out.printf(
                 "Sphere radius is %.2f%n"
                         + "Sphere surface area is %.2f%n"
+                        + "Sphere volume is %.2f%n%n",
+                sphere.getRadius(), sphere.getArea(), sphere.getVolume());
+
+        System.out.printf("After sphere radius is doubled.%n%n");
+        sphere.setRadius(radius * 2);
+        System.out.print(sphere);
+        System.out.printf(
+                "Sphere radius is %.2f%n"
+                        + "Sphere surface area is %.2f%n"
                         + "Sphere volume is %.2f%n",
                 sphere.getRadius(), sphere.getArea(), sphere.getVolume());
     }

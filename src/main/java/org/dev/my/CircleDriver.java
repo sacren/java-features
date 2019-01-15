@@ -32,8 +32,6 @@ public class CircleDriver {
     private static void runCircle(double radius, double height, int centerX, int centerY) {
         Circle defaultCircle = new Circle();
         Circle userCircle = new Circle(radius);
-        Sphere userSphere = new Sphere(radius);
-        Cylinder userCylinder = new Cylinder(radius, height);
         Circle compositeCircle = new Circle(new Point(centerX, centerY), radius);
         Circle centerCircle = new Circle(centerX, centerY, radius);
         System.out.println();
@@ -57,24 +55,8 @@ public class CircleDriver {
                 userCircle.getCircumference(), /* custome circle circumference */
                 defaultCircle.getArea(), /* default circle area */
                 userCircle.getArea()); /* custome circle area */
-        System.out.print(userSphere);
-        System.out.printf(
-                "The surface area is %.2f%n"
-                        + "The volume is %.2f%n%n",
-                userSphere.getArea(), /* custom sphere surface area */
-                userSphere.getVolume()); /* custom sphere volume */
-        System.out.print(userCylinder);
-        System.out.printf(
-                "The base area is %.2f%n"
-                        + "The surface area is %.2f%n"
-                        + "The volume is %.2f%n%n",
-                userCylinder.getArea(), /* custom cylinder base area */
-                userCylinder.getSurfaceArea(), /* custome cylinder surface area */
-                userCylinder.getVolume()); /* custome cylinder volume */
         /* Triple the radius and change circle color. */
         userCircle.setRadius(radius * 3);
-        userSphere.setRadius(radius * 3);
-        userCylinder.setRadius(radius * 3);
         userCircle.setColor(Circle.FAVORITE_COLOR);
         System.out.printf("[After circle radius and color are reset]%n%n");
         System.out.print(userCircle);
@@ -87,19 +69,5 @@ public class CircleDriver {
                 userCircle.getDiameter(),
                 userCircle.getCircumference(),
                 userCircle.getArea());
-        System.out.print(userSphere);
-        System.out.printf(
-                "The surface area is %.2f%n"
-                        + "The volume is %.2f%n%n",
-                userSphere.getArea(),
-                userSphere.getVolume());
-        System.out.print(userCylinder);
-        System.out.printf(
-                "The base area is %.2f%n"
-                        + "The surface area is %.2f%n"
-                        + "The volume is %.2f%n",
-                userCylinder.getArea(),
-                userCylinder.getSurfaceArea(),
-                userCylinder.getVolume());
     }
 }
