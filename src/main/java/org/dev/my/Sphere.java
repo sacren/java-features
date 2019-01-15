@@ -32,8 +32,11 @@ public class Sphere extends Circle {
         return Math.PI * super.getRadius() * super.getRadius() * super.getRadius() * 4 / 3;
     }
 
-    /** Public method for Sphere description. */
+    /** Sphere description. */
+    @Override
     public String toString() {
-        return String.format("[Sphere (Radius=%.2f)]%n", super.getRadius());
+        return String.format(
+                "[Sphere (Radius=%.2f, Area=%.2f)]%n",
+                super.getRadius(), getArea());
     }
 }
