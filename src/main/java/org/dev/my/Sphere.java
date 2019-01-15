@@ -22,6 +22,7 @@ public class Sphere extends Circle {
     }
 
     /** Public method for sphere surface area. */
+    @Override
     public double getArea() { /* override getArea() from super class */
         return super.getArea() * 4; /* use getArea() from super class */
     }
