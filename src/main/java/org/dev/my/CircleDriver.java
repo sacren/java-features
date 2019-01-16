@@ -33,11 +33,11 @@ public class CircleDriver {
                 "The default circle color is %s%n"
                         + "The user circle color is %s%n"
                         + "The default diameter is %.2f%n"
-                        + "The user diameter is %.2f%n"
-                        + "The default circumference is %.2f%n"
-                        + "The user circumference is %.2f%n"
-                        + "The default area is %.2f%n"
-                        + "The user area is %.2f%n%n",
+                        + "The user circle diameter is %.2f%n"
+                        + "The default circle circumference is %.2f%n"
+                        + "The user circle circumference is %.2f%n"
+                        + "The default circle area is %.2f%n"
+                        + "The user circle area is %.2f%n%n",
                 defaultCircle.getColor(),
                 userCircle.getColor(),
                 defaultCircle.getDiameter(), /* default circle diameter */
@@ -53,9 +53,9 @@ public class CircleDriver {
         System.out.print(userCircle);
         System.out.printf(
                 "The circle color now is %s%n"
-                        + "The user diameter is %.2f%n"
-                        + "The user circumference is %.2f%n"
-                        + "The user area is %.2f%n",
+                        + "The user circle diameter is %.2f%n"
+                        + "The user circle circumference is %.2f%n"
+                        + "The user circle area is %.2f%n",
                 userCircle.getColor(),
                 userCircle.getDiameter(),
                 userCircle.getCircumference(),
