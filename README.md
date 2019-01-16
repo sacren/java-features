@@ -3,17 +3,16 @@
 ## What is Java Features?
 
 Java Features attempts to manifest the most essential language features of Java
-programming language by code examples in the hope that some code might be good
-enough to spawn an independent project by itself.  Java Features depends upon
-IcedTea JDK and other OSS projects like Maven.
+programming language by code examples.  Java Features embraces AdoptOpenJDK
+project.  Maven is essential in building Java Features.
 
 ## Prerequisite
 
-1. IcedTea JDK must be installed of version 3.8.0:
+1. Verify prebuilt OpenJDK 11 (LTS) is installed:
 
         $ java-config -L
 
-2. Apache Maven must be installed of version 3.3.3 or later:
+2. Verify Apache Maven 3.3.3 and above is installed:
 
         $ mvn --version
 
