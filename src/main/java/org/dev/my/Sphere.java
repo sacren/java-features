@@ -11,6 +11,9 @@
  * +toString():String
  */
 public class Sphere extends Circle {
+    /* public static data */
+    public static final String FAVORITE_COLOR = "blue";
+
     /** Default constructor by inheritance. */
     public Sphere() {
         super();
@@ -30,6 +33,11 @@ public class Sphere extends Circle {
     /** Public method using inheritance. */
     public double getVolume() {
         return Math.PI * super.getRadius() * super.getRadius() * super.getRadius() * 4 / 3;
+    }
+
+    /** Public method for Circle color. */
+    public String getColor() {
+        return super.FAVORITE_COLOR; /* hides FAVORITE_COLOR defined here */
     }
 
     /** Sphere description. */
