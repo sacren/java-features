@@ -1,11 +1,5 @@
 /**
  * Circle driver
- *
- * Prompt user for the radius of a circle in floating point number, compute the
- * diameter, circumference, and area of the circle in double and print the
- * values rounded to 2 decimal places.
- *
- * This driver also uses Sphere and Cylinder instances.
  */
 import java.util.Scanner;
 
@@ -26,10 +20,7 @@ public class CircleDriver {
         System.out.print("Enter center y-axis: ");
         centerY = inputStream.nextInt();
         inputStream.close();
-        runCircle(radius, height, centerX, centerY);
-    }
 
-    private static void runCircle(double radius, double height, int centerX, int centerY) {
         Circle defaultCircle = new Circle();
         Circle userCircle = new Circle(radius);
         Circle compositeCircle = new Circle(new Point(centerX, centerY), radius);
@@ -58,13 +49,13 @@ public class CircleDriver {
         /* Triple the radius and change circle color. */
         userCircle.setRadius(radius * 3);
         userCircle.setColor(Circle.FAVORITE_COLOR);
-        System.out.printf("[After circle radius and color are reset]%n%n");
+        System.out.printf("After circle radius is tripled and color is reset.%n%n");
         System.out.print(userCircle);
         System.out.printf(
                 "The circle color now is %s%n"
                         + "The user diameter is %.2f%n"
                         + "The user circumference is %.2f%n"
-                        + "The user area is %.2f%n%n",
+                        + "The user area is %.2f%n",
                 userCircle.getColor(),
                 userCircle.getDiameter(),
                 userCircle.getCircumference(),
