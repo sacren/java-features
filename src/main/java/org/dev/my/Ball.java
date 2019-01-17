@@ -114,4 +114,17 @@ public class Ball {
                 "Ball@(%.2f, %.2f), Speed=(%.2f, %.2f)%n",
                 axisX, axisY, axisXStep, axisYStep);
     }
+
+    /**
+     * Public method for making steps.
+     *
+     * <p>Move a step by increment axisX by axisXStep and axisY by axisYStep.
+     *
+     * <p>Return this for chaining.
+     */
+    public Ball move() {
+        axisX += axisXStep;
+        axisY += axisYStep;
+        return this;
+    }
 }

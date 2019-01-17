@@ -43,5 +43,9 @@ public class BallDriver {
                 ball.getYStep(),
                 Arrays.toString(ball.getX_Y()),
                 Arrays.toString(ball.getX_YStep()));
+        System.out.println();
+        System.out.printf("After we make a move.%n%n");
+        ball.move();
+        System.out.print(ball);
     }
 }
