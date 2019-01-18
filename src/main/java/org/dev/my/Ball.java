@@ -21,8 +21,8 @@
  * +setYStep(axisYStep:double):void
  * +getX_Y():double[2]
  * +setX_Y(axisX:double, axisY:double):void
- * +getX_YStep():double[2]
- * +setX_YStep(axisXStep:double, axisYStep:double):void
+ * +getXStepYStep():double[2]
+ * +setXStepYStep(axisXStep:double, axisYStep:double):void
  * +toString():String
  */
 public class Ball {
@@ -95,7 +95,7 @@ public class Ball {
     }
 
     /** getter for both axisXStep and axisYStep. */
-    public double[] getX_YStep() {
+    public double[] getXStepYStep() {
         double[] doubleArray = new double[2];
         doubleArray[0] = axisXStep;
         doubleArray[1] = axisYStep;
@@ -103,7 +103,7 @@ public class Ball {
     }
 
     /** setter for both axisXStep and axisYStep. */
-    public void setX_YStep(double axisXStep, double axisYStep) {
+    public void setXStepYStep(double axisXStep, double axisYStep) {
         this.axisXStep = axisXStep;
         this.axisYStep = axisYStep;
     }

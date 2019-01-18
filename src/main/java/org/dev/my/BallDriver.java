@@ -20,7 +20,7 @@ public class BallDriver {
                 ball.getXStep(),
                 ball.getYStep(),
                 Arrays.toString(ball.getX_Y()),
-                Arrays.toString(ball.getX_YStep()));
+                Arrays.toString(ball.getXStepYStep()));
         System.out.println();
         System.out.printf("After doubling all the data.%n%n");
         ball.setX(ball.getX() * 2);
@@ -28,7 +28,7 @@ public class BallDriver {
         ball.setXStep(ball.getXStep() * 2);
         ball.setYStep(ball.getYStep() * 2);
         ball.setX_Y(ball.getX(), ball.getY());
-        ball.setX_YStep(ball.getXStep(), ball.getYStep());
+        ball.setXStepYStep(ball.getXStep(), ball.getYStep());
         System.out.print(ball);
         System.out.printf(
                 "axisX is %.2f%n"
@@ -42,7 +42,7 @@ public class BallDriver {
                 ball.getXStep(),
                 ball.getYStep(),
                 Arrays.toString(ball.getX_Y()),
-                Arrays.toString(ball.getX_YStep()));
+                Arrays.toString(ball.getXStepYStep()));
         System.out.println();
         System.out.printf("After we make a move.%n%n");
         ball.move();
