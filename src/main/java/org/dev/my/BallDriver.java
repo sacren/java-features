@@ -47,5 +47,9 @@ public class BallDriver {
         System.out.printf("After we make a move.%n%n");
         ball.move();
         System.out.print(ball);
+        System.out.println();
+        System.out.printf("Make two additional moves.%n%n");
+        ball.move().move(); /* effect of chaining */
+        System.out.print(ball);
     }
 }
