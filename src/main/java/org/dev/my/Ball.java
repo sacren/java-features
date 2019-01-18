@@ -24,6 +24,7 @@
  * +getXStepYStep():double[2]
  * +setXStepYStep(axisXStep:double, axisYStep:double):void
  * +toString():String
+ * +move():Ball
  */
 public class Ball {
     /* private instance data */
