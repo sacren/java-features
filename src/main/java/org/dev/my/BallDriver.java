@@ -22,11 +22,11 @@ public class BallDriver {
                 Arrays.toString(ball.getX_Y()),
                 Arrays.toString(ball.getXStepYStep()));
         System.out.println();
-        System.out.printf("After doubling all the data.%n%n");
+        System.out.printf("After doubling the positions and incrementing speeds.%n%n");
         ball.setX(ball.getX() * 2);
         ball.setY(ball.getY() * 2);
-        ball.setXStep(ball.getXStep() * 2);
-        ball.setYStep(ball.getYStep() * 2);
+        ball.setXStep(ball.getXStep() + 1);
+        ball.setYStep(ball.getYStep() + 1);
         ball.setX_Y(ball.getX(), ball.getY());
         ball.setXStepYStep(ball.getXStep(), ball.getYStep());
         System.out.print(ball);
