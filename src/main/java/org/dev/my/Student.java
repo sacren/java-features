@@ -10,6 +10,8 @@
  *
  * <p>Constructor:
  * +Student(name:String, address:String)
+ *
+ * <p>Public methods:
  * +getName():String
  * +getAddress():String
  * +setAddress(address:String):void
