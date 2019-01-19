@@ -20,5 +20,17 @@ public class StudentDriver {
                         + "Address is %s%n",
                 student.getName(),
                 student.getAddress());
+        /* add courses and grades */
+        student.addCourseGrade("Quantum Mechanics", 100);
+        student.addCourseGrade("Nuclear Physics", 110);
+        String[] courses;
+        courses = student.getCourses();
+        int[] grades;
+        grades = student.getGrades();
+        System.out.println();
+        System.out.print(student);
+        for (int i = 0; i < student.getNumberOfCourses(); i++) {
+            System.out.printf("%s: %d%n", courses[i], grades[i]);
+        }
     }
 }

@@ -4,7 +4,7 @@
  * <p>Private data with default values:
  * -name:String
  * -address:String
- * -numberCourses:int = 0
+ * -numberOfCourses:int = 0
  * -courses:String[30] = {}
  * -grades:int[30] = {}
  *
@@ -21,11 +21,17 @@ public class Student {
     /* private instance data */
     private String name;
     private String address;
+    private int numberOfCourses;
+    private String[] courses;
+    private int[] grades;
 
     /** Custom constructor for student instance. */
     public Student(String name, String address) {
         this.name = name;
         this.address = address;
+        courses = new String[30];
+        grades = new int[30];
+        numberOfCourses = 0;
     }
 
     /** getter for student name. */
@@ -46,5 +52,27 @@ public class Student {
     /** Student description. */
     public String toString() {
         return String.format("%s (%s)%n", name, address);
+    }
+
+    /** Add course and grade to the instance. */
+    public void addCourseGrade(String course, int grade) {
+        courses[numberOfCourses] = course;
+        grades[numberOfCourses] = grade;
+        numberOfCourses++;
+    }
+
+    /** Public method for number of courses. */
+    public int getNumberOfCourses() {
+        return numberOfCourses;
+    }
+
+    /** Public method for courses array. */
+    public String[] getCourses() {
+        return courses;
+    }
+
+    /** Public method for grades array. */
+    public int[] getGrades() {
+        return grades;
     }
 }
