@@ -18,6 +18,9 @@
  * +toString():String
  */
 public class Student {
+    /* private static data */
+    private static final int MAX_COURSES = 30;
+
     /* private instance data */
     private String name;
     private String address;
@@ -29,8 +32,8 @@ public class Student {
     public Student(String name, String address) {
         this.name = name;
         this.address = address;
-        courses = new String[30];
-        grades = new int[30];
+        courses = new String[MAX_COURSES];
+        grades = new int[MAX_COURSES];
         numberOfCourses = 0;
     }
 
