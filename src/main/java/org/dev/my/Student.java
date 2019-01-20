@@ -16,6 +16,10 @@
  * +getAddress():String
  * +setAddress(address:String):void
  * +toString():String
+ * +addCourseGrade(course:String, grade:int):void
+ * +getNumberOfCourses():int
+ * +getCourses():String[]
+ * +getGrades():int[]
  */
 public class Student {
     /* private static data */
@@ -57,24 +61,24 @@ public class Student {
         return String.format("%s (%s)%n", name, address);
     }
 
-    /** Add course and grade to the instance. */
+    /** Public method adding course and grade. */
     public void addCourseGrade(String course, int grade) {
         courses[numberOfCourses] = course;
         grades[numberOfCourses] = grade;
         numberOfCourses++;
     }
 
-    /** Public method for number of courses. */
+    /** getter for number of courses. */
     public int getNumberOfCourses() {
         return numberOfCourses;
     }
 
-    /** Public method for courses array. */
+    /** getter for courses array. */
     public String[] getCourses() {
         return courses;
     }
 
-    /** Public method for grades array. */
+    /** getter for grades array. */
     public int[] getGrades() {
         return grades;
     }
