@@ -1,14 +1,14 @@
-/** Sum up the individual digits of a positive integer in command line. */
+/**
+ * Sum up the individual digits of a positive integer in command line.
+ */
 public class SumDigits {
-    /** Display the effect of command argument. */
+    /** Show the effect of command argument. */
     public static void main(String[] args) {
         if (args.length == 0) {
-            System.out.println("No argument.");
-            return;
+            throw new IllegalArgumentException("Missing argument!");
         }
         if (Integer.parseInt(args[0]) < 0) {
-            System.out.println("Can't be negative number.");
-            return;
+            throw new IllegalArgumentException("Argument can't be negative number!");
         }
         String digitString = "";
         int sum = 0;
