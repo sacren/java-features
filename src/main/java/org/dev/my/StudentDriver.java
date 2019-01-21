@@ -29,8 +29,6 @@ public class StudentDriver {
         grades = student.getGrades();
         System.out.println();
         System.out.print(student);
-        for (int i = 0; i < student.getNumberOfCourses(); i++) {
-            System.out.printf("%s: %d%n", courses[i], grades[i]);
-        }
+        student.printGrades();
     }
 }
