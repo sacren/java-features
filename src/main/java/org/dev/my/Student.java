@@ -83,15 +83,14 @@ public class Student {
         return grades;
     }
 
-    /** Public method of printing grades. */
-    public void printGrades() {
-        System.out.printf("%s (", name);
-        for (int i = 0; i < numberOfCourses; i++) {
-            if (i == numberOfCourses - 1) {
-                System.out.printf("%s:%d)%n", courses[i], grades[i]);
-                break;
-            }
-            System.out.printf("%s:%d, ", courses[i], grades[i]);
+    /** Public method for string of grades. */
+    public String getStringOfGrades() {
+        /* initialize formatted string with the first element of array */
+        String s = String.format("%s (%s:%d", name, courses[0], grades[0]);
+        for (int i = 1; i < numberOfCourses; i++) {
+            s += String.format(", %s:%d", courses[i], grades[i]);
         }
+        s += ")"; /* do not forget the closing parenthesis */
+        return s;
     }
 }

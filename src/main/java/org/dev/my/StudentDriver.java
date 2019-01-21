@@ -29,6 +29,6 @@ public class StudentDriver {
         grades = student.getGrades();
         System.out.println();
         System.out.print(student);
-        student.printGrades();
+        System.out.println(student.getStringOfGrades());
     }
 }
