@@ -23,6 +23,7 @@ public class StudentDriver {
         /* add courses and grades */
         student.addCourseGrade("Quantum Mechanics", 100);
         student.addCourseGrade("Nuclear Physics", 110);
+        student.addCourseGrade("Differential Geometry", 98);
         String[] courses;
         courses = student.getCourses();
         int[] grades;
