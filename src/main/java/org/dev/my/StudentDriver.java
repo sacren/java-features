@@ -31,5 +31,6 @@ public class StudentDriver {
         System.out.println();
         System.out.print(student);
         System.out.println(student.getStringOfGrades());
+        System.out.printf("Average grade is %.2f%n", student.getAverageGrade());
     }
 }

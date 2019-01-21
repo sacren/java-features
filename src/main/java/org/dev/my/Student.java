@@ -93,4 +93,16 @@ public class Student {
         s += ")"; /* do not forget the closing parenthesis */
         return s;
     }
+
+    /** Public method for average of grades. */
+    public double getAverageGrade() {
+        if (numberOfCourses == 0) {
+            throw new IllegalArgumentException("No courses taken yet!");
+        }
+        double sum = 0;
+        for (int i = 0; i < numberOfCourses; i++) {
+            sum += grades[i];
+        }
+        return sum / numberOfCourses;
+    }
 }
