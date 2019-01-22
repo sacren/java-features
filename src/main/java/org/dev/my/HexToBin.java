@@ -1,45 +1,33 @@
-/** Prompt the user for a hexadecimal string and print the equivalent binary string. */
+/**
+ * Prompt the user for a hex string and print the equivalent binary string.
+ */
 import java.util.Scanner;
 
 public class HexToBin {
     /** Prompt for hex string and convert to binary string. */
     public static void main(String[] args) {
-        String line;
-
         Scanner inStream = new Scanner(System.in);
-
-        for ( ; ; ) {
-            System.out.print("Enter a hex string: ");
-            line = inStream.nextLine();
-
-            if (line.isEmpty()) {
-                System.out.printf("\"%s\" is empty. Try again.%n", line);
-                continue;
-            }
-
-            if (isHex(line)) {
-                break;
-            }
-
-            System.out.printf("\"%s\" is not a hex string. Try again.%n", line);
+        System.out.print("Enter a hex string: ");
+        String line = inStream.nextLine();
+        inStream.close();
+        if (!isHex(line)) {
+            throw new IllegalArgumentException(
+                    String.format("\"%s\" is not a hex string!", line));
         }
-
         System.out.printf(
                 "%s hex string is equivalent to %s binary string%n",
                 line, convertToBin(line));
-
-        inStream.close();
     }
 
     private static boolean isHex(String s) {
-        final char[] charArray = s.toCharArray();
-
-        for (char c: charArray) {
+        if (s.isEmpty()) {
+            return false;
+        }
+        for (char c: s.toCharArray()) {
             if (Character.digit(c, 16) == -1) {
                 return false;
             }
         }
-
         return true;
     }
 
