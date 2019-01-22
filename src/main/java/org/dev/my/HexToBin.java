@@ -38,13 +38,10 @@ public class HexToBin {
             "1000", "1001", "1010", "1011",
             "1100", "1101", "1110", "1111"
         };
-        final char[] charArray = s.toCharArray();
         String binString = "";
-
-        for (char c: charArray) {
+        for (char c: s.toCharArray()) {
             binString += binArray[Character.digit(c, 16)];
         }
-
         return binString;
     }
 }
