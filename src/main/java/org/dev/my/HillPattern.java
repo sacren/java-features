@@ -57,18 +57,13 @@ public class HillPattern {
         int size;
 
         Scanner inputStream = new Scanner(System.in);
-
-        for (; ; ) {
-            System.out.print("Enter non-negative integer: ");
-            size = inputStream.nextInt();
-
-            if (size >= 0) {
-                break;
-            }
-
-            System.out.println("Invalid number. Try again...");
+        System.out.print("Enter integer not less than 3: ");
+        size = inputStream.nextInt();
+        inputStream.close();
+        if (size < 3) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", size));
         }
-
         System.out.println();
         makeHill(size);
         centerId(size, 'a');
@@ -81,7 +76,6 @@ public class HillPattern {
         System.out.println();
         diamondInSquare(size);
         centerId(size, 'd');
-        inputStream.close();
     }
 
     /** Put ID in alignment with the pattern. */
@@ -91,7 +85,6 @@ public class HillPattern {
                 System.out.printf("%c(%c)%n", ' ', id);
                 break;
             }
-
             System.out.print("  ");
         }
     }
@@ -103,17 +96,14 @@ public class HillPattern {
 
         for (int row = startCount; row <= size; row++) {
             width = row * 2 - 1;
-
             for (int col = startCount; col <= size - row; col++) {
                 System.out.print("  ");
             }
-
             for (int col = startCount; col <= width; col++) {
                 if (col == width) {
                     System.out.println('#');
                     break;
                 }
-
                 System.out.print("# ");
             }
         }
@@ -126,17 +116,14 @@ public class HillPattern {
 
         for (int row = startCount; row <= size; row++) {
             width = (size - row) * 2 + 1;
-
             for (int col = startCount; col < row; col++) {
                 System.out.print("  ");
             }
-
             for (int col = startCount; col <= width; col++) {
                 if (col == width) {
                     System.out.println('#');
                     break;
                 }
-
                 System.out.print("# ");
             }
         }
@@ -152,17 +139,14 @@ public class HillPattern {
         /* Hill pattern on the top. */
         for (int row = startCount; row <= top; row++) {
             width = row * 2 - 1;
-
             for (int col = startCount; col <= top - row; col++) {
                 System.out.print("  ");
             }
-
             for (int col = startCount; col <= width; col++) {
                 if (col == width) {
                     System.out.println('#');
                     break;
                 }
-
                 System.out.print("# ");
             }
         }
@@ -172,17 +156,14 @@ public class HillPattern {
             width = (bottom - row) * 2 + 1;
             /* Offset for the pattern. */
             System.out.print("  ");
-
             for (int col = startCount; col < row; col++) {
                 System.out.print("  ");
             }
-
             for (int col = startCount; col <= width; col++) {
                 if (col == width) {
                     System.out.println('#');
                     break;
                 }
-
                 System.out.print("# ");
             }
         }
@@ -197,25 +178,20 @@ public class HillPattern {
         for (int row = firstCount; row <= size; row++) {
             sideTriangle = size - row + 1;
             midTriangle = (row - 1) * 2 - 1;
-
             for (int col = firstCount; col <= sideTriangle; col++) {
                 System.out.print("# ");
             }
-
             for (int col = firstCount; col <= midTriangle; col++) {
                 System.out.print("  ");
             }
-
             for (int col = firstCount; col <= sideTriangle; col++) {
                 if (row == firstCount && col == firstCount) {
                     continue;
                 }
-
                 if (col == sideTriangle) {
                     System.out.println('#');
                     break;
                 }
-
                 System.out.print("# ");
             }
         }
@@ -224,21 +200,17 @@ public class HillPattern {
             for (int col = firstCount; col <= row; col++) {
                 System.out.print("# ");
             }
-
             for (int col = firstCount; col <= (size - row) * 2 - 1; col++) {
                 System.out.print("  ");
             }
-
             for (int col = firstCount; col <= row; col++) {
                 if (row == size && col == firstCount) {
                     continue;
                 }
-
                 if (col == row) {
                     System.out.println('#');
                     break;
                 }
-
                 System.out.print("# ");
             }
         }
