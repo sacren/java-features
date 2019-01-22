@@ -20,6 +20,8 @@
  * +getNumberOfCourses():int
  * +getCourses():String[]
  * +getGrades():int[]
+ * +getStringOfGrades():String
+ * +getAverageGrade():double
  */
 public class Student {
     /* private static data */
