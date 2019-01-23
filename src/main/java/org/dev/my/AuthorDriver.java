@@ -12,7 +12,7 @@ public class AuthorDriver {
         System.out.printf(
                 "The C Programming Language is authored by %s.%n"
                         + "Send email to %s for questions.%n",
-                author.getName(), author.getEmail());
+                author.getAuthorName(), author.getEmail());
         System.out.println();
         System.out.printf("After deleting email address.%n%n");
         author.setEmail("");

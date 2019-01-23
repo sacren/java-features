@@ -2,12 +2,12 @@
  * Author class.
  *
  * <p>Private data with default values:
- * -name:String
+ * -authorName:String
  * -email:String
  * -gender:char
  *
  * <p>Constructor:
- * +Author(name:String, email:String, gender:char)
+ * +Author(authorName:String, email:String, gender:char)
  *
  * <p>Public methods:
  * +getName():String
@@ -18,20 +18,20 @@
  */
 public class Author {
     /* private instance data */
-    private String name;
+    private String authorName;
     private String email;
     private char gender;
 
     /** Custom constructor. */
-    public Author(String name, String email, char gender) {
-        this.name = name;
+    public Author(String authorName, String email, char gender) {
+        this.authorName = authorName;
         this.gender = gender;
         this.email = email;
     }
 
-    /** getter of name. */
-    public String getName() {
-        return name;
+    /** getter of authorName. */
+    public String getAuthorName() {
+        return authorName;
     }
 
     /** getter of email. */
@@ -52,9 +52,9 @@ public class Author {
     /** Author description. */
     public String toString() {
         return String.format(
-                "Name: %s%n"
+                "Author name: %s%n"
                         + "Contact email: %s%n"
                         + "Gender: %c%n",
-                name, email, gender);
+                authorName, email, gender);
     }
 }
