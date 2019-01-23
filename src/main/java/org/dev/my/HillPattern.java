@@ -1,5 +1,5 @@
 /**
- * Prompt the user for the size (a non-negative integer in int) and print these patterns.
+ * Prompt the user for the size (integer not less than 3) and print patterns.
  *
  * <p>            #
  *              # # #
@@ -55,7 +55,6 @@ public class HillPattern {
     /** Entry point to HillPattern class. */
     public static void main(String[] args) {
         int size;
-
         Scanner inputStream = new Scanner(System.in);
         System.out.print("Enter integer not less than 3: ");
         size = inputStream.nextInt();
