@@ -68,16 +68,9 @@ public class Book {
     public String toString() {
         return String.format(
                 "%s%n"
-                        + "Author: %s%n"
-                        + "Gender: %c%n"
-                        + "Contact email: %s%n"
+                        + "%s"
                         + "Price: %.2f%n"
                         + "Quantity: %d%n",
-                getBookTitle(),
-                author.getName(),
-                author.getGender(),
-                author.getEmail(),
-                getPrice(),
-                getQuantity());
+                bookTitle, author, price, quantity);
     }
 }
