@@ -1,7 +1,7 @@
 /**
  * Book class composed of Author class.
  *
- * <p>Private data with default values:
+ * <p>Private data:
  * -bookTitle:String
  * -author:Author
  * -price:double

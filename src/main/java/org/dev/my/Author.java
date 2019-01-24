@@ -1,7 +1,7 @@
 /**
  * Author class.
  *
- * <p>Private data with default values:
+ * <p>Private data:
  * -authorName:String
  * -email:String
  * -gender:char
