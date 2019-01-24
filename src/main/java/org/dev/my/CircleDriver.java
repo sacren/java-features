@@ -26,8 +26,8 @@ public class CircleDriver {
         Circle compositeCircle = new Circle(new Point(centerX, centerY), radius);
         Circle centerCircle = new Circle(centerX, centerY, radius);
         System.out.println();
-        System.out.printf("%s%n", compositeCircle);
-        System.out.printf("%s%n", centerCircle);
+        System.out.println(compositeCircle);
+        System.out.println(centerCircle);
         System.out.print(userCircle);
         System.out.printf(
                 "The default circle color is %s%n"
@@ -49,7 +49,8 @@ public class CircleDriver {
         /* Triple the radius and change circle color. */
         userCircle.setRadius(radius * 3);
         userCircle.setColor(Circle.FAVORITE_COLOR);
-        System.out.printf("After circle radius is tripled and color is reset.%n%n");
+        System.out.println("After circle radius is tripled and color is reset.");
+        System.out.println();
         System.out.print(userCircle);
         System.out.printf(
                 "The circle color now is %s%n"
