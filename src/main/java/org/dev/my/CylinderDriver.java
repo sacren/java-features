@@ -47,13 +47,4 @@ public class CylinderDriver {
                 colorCylinder.getVolume(),
                 colorCylinder.getColor());
     }
-
-    private static boolean isInputValid(String s) {
-        for (char c: s.toCharArray()) {
-            if (!Character.isLetter(c)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
