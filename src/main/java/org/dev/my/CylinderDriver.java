@@ -13,10 +13,8 @@ public class CylinderDriver {
         double height;
         System.out.print("Enter cylinder height: ");
         height = inputStream.nextDouble();
-        System.out.print("Enter cylinder color: ");
-        String color = inputStream.next();
         inputStream.close();
-        Cylinder colorCylinder = new Cylinder(radius, height, color);
+        Cylinder yellowCylinder = new Cylinder(radius, height, "yellow");
         Cylinder userCylinder = new Cylinder(radius, height);
         Cylinder defaultCylinder = new Cylinder();
         System.out.println();
@@ -36,15 +34,15 @@ public class CylinderDriver {
                 userCylinder.getBaseArea(), /* custom cylinder base area */
                 userCylinder.getArea(), /* custom cylinder surface area */
                 userCylinder.getVolume()); /* custom cylinder volume */
-        System.out.print(colorCylinder);
+        System.out.print(yellowCylinder);
         System.out.printf(
-                "The color cylinder base area is %.2f%n"
-                        + "The color cylinder surface area is %.2f%n"
-                        + "The color cylinder volume is %.2f%n"
-                        + "The color cylinder is %s%n",
-                colorCylinder.getBaseArea(),
-                colorCylinder.getArea(),
-                colorCylinder.getVolume(),
-                colorCylinder.getColor());
+                "The cylinder base area is %.2f%n"
+                        + "The cylinder surface area is %.2f%n"
+                        + "The cylinder volume is %.2f%n"
+                        + "The cylinder is %s%n",
+                yellowCylinder.getBaseArea(),
+                yellowCylinder.getArea(),
+                yellowCylinder.getVolume(),
+                yellowCylinder.getColor());
     }
 }
