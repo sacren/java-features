@@ -16,7 +16,8 @@ public class Sphere extends Circle {
 
     /** Default constructor by inheritance. */
     public Sphere() {
-        super();
+        /* super(); */
+        /* above automatically inserted */
     }
 
     /** Custom constructor by inheritance. */

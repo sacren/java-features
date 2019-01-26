@@ -12,8 +12,13 @@ public class SphereDriver {
         radius = inStream.nextDouble();
         inStream.close();
 
-        Sphere sphere = new Sphere(radius);
+        /* default sphere */
+        Sphere defaultSphere = new Sphere();
         System.out.println();
+        System.out.printf("Default Sphere instance:%n%s%n", defaultSphere);
+
+        /* custom sphere */
+        Sphere sphere = new Sphere(radius);
         System.out.print(sphere);
         System.out.printf(
                 "Sphere radius is %.2f%n"
