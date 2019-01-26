@@ -29,9 +29,11 @@ public class SphereDriver {
                         + "Sphere surface area is %.2f%n"
                         + "Sphere volume is %.2f%n%n",
                 sphere.getRadius(), sphere.getArea(), sphere.getVolume());
-        /* shows the favorite color defined in superclass */
+        /* more examples of variable hide and override */
         System.out.printf(
-                "Circle favorite color is %s.%n",
-                sphere.getFavoriteColor());
+                "Circle favorite color is %s.%n"
+                        + "Sphere favorite color is %s.%n",
+                sphere.getFavoriteColor(), /* favorite color defined in superclass */
+                sphere.getColor());
     }
 }

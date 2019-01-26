@@ -40,6 +40,12 @@ public class Sphere extends Circle {
         return super.FAVORITE_COLOR; /* hides FAVORITE_COLOR defined here */
     }
 
+    /** Public method for Sphere favorite color. */
+    @Override
+    public String getColor() {
+        return FAVORITE_COLOR;
+    }
+
     /** Sphere description. */
     @Override
     public String toString() {
