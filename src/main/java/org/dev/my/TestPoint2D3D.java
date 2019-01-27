@@ -23,5 +23,16 @@ public class TestPoint2D3D {
                 customPoint3D.getX(),
                 customPoint3D.getY(),
                 customPoint3D.getZ());
+        System.out.println();
+        System.out.println("After change Point3D:");
+        customPoint3D.setX(101);
+        customPoint3D.setY(102);
+        customPoint3D.setZ(103);
+        System.out.println(customPoint3D);
+        System.out.printf(
+                "Custom Point3D at (%d, %d, %d)%n",
+                customPoint3D.getX(),
+                customPoint3D.getY(),
+                customPoint3D.getZ());
     }
 }
