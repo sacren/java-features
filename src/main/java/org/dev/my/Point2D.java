@@ -59,6 +59,6 @@ public class Point2D {
 
     /** Point2D description. */
     public String toString() {
-        return String.format("(%d, %d)", axisX, axisY);
+        return String.format("Point2D (%d, %d)", axisX, axisY);
     }
 }
