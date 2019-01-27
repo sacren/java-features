@@ -44,6 +44,7 @@ public class Point3D extends Point2D {
     }
 
     /** Point3D description. */
+    @Override
     public String toString() {
         return String.format(
                 "(%d, %d, %d)",
