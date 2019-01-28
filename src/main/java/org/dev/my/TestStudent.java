@@ -1,7 +1,7 @@
 /**
- * Student driver.
+ * Test driver for Student.
  */
-public class StudentDriver {
+public class TestStudent {
     /** Instantiate Student and display student info. */
     public static void main(String[] args) {
         Student student = new Student("Charlie Smith", "24 College Drive, Anytown, Anystate");
