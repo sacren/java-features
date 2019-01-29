@@ -10,6 +10,7 @@
  *
  * <p>Public methods:
  * +getCourses():String[]
+ * +getNumberOfCourses():int
  * +toString():String
  * +addCourse(course:String):boolean
  * +removeCourse(course:String):boolean
@@ -70,6 +71,7 @@ public class Teacher extends Person {
         return false;
     }
 
+    /* helper for removeCourse() method */
     private boolean hasCourse(String course) {
         for (int i = 0; i < numberOfCourses; i++) {
             if (courses[i].equals(course)) {
@@ -79,6 +81,7 @@ public class Teacher extends Person {
         return false;
     }
 
+    /* helper for removeCourse() method */
     private void resetCourses(String course) {
         String[] newCourses = new String[MAX_COURSES];
         int j = 0;
