@@ -17,7 +17,7 @@
 public class Teacher extends Person {
     /* public static data */
     private static final int INIT_NUMBER_OF_COURSES = 0;
-    private static final int MAX_COURSES = 30;
+    private static final int MAX_COURSES = 5;
 
     /* private instance data */
     private int numberOfCourses;
