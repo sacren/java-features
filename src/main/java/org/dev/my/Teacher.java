@@ -9,6 +9,7 @@
  * +Teacher(name:String, address:String)
  *
  * <p>Public methods:
+ * +getCourses():String[]
  * +toString():String
  * +addCourse(course:String):boolean
  * +removeCourse(course:String):boolean
@@ -36,5 +37,22 @@ public class Teacher extends Person {
                 "Instructor name: %s%n"
                         + "Instructor address: %s%n",
                 getName(), getAddress());
+    }
+
+    /** getter of Teacher courses array. */
+    public String[] getCourses() {
+        return courses;
+    }
+
+    /** Add course to the courses array. */
+    public boolean addCourse(String course) {
+        for (int i = 0; i < numberOfCourses; i++) {
+            /* if course is found, we cannot add it but return false */
+            if (courses[i].equals(course)) {
+                return false;
+            }
+        }
+        courses[numberOfCourses++] = course;
+        return true;
     }
 }
