@@ -39,9 +39,14 @@ public class Teacher extends Person {
                 getName(), getAddress());
     }
 
-    /** getter of Teacher courses array. */
+    /** getter for Teacher courses array. */
     public String[] getCourses() {
         return courses;
+    }
+
+    /** getter for Teacher number of courses. */
+    public int getNumberOfCourses() {
+        return numberOfCourses;
     }
 
     /** Add course to the courses array. */
@@ -54,5 +59,36 @@ public class Teacher extends Person {
         }
         courses[numberOfCourses++] = course;
         return true;
+    }
+
+    /** Remove course from the courses array. */
+    public boolean removeCourse(String course) {
+        if (hasCourse(course)) {
+            resetCourses(course);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean hasCourse(String course) {
+        for (int i = 0; i < numberOfCourses; i++) {
+            if (courses[i].equals(course)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void resetCourses(String course) {
+        String[] newCourses = new String[MAX_COURSES];
+        int j = 0;
+        for (int i = 0; i < numberOfCourses; i++) {
+            if (courses[i].equals(course)) {
+                continue;
+            }
+            newCourses[j++] = courses[i];
+        }
+        courses = newCourses;
+        numberOfCourses--;
     }
 }
