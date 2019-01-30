@@ -1,9 +1,9 @@
 /**
- * Driver for Account.
+ * Test driver for Account.
  */
 import java.util.Scanner;
 
-public class AccountDriver {
+public class TestAccount {
     /** Prompt the user for account number and balance. List account number and balance. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);

@@ -1,10 +1,10 @@
 /**
- * Ball driver.
+ * Test driver for Ball class.
  */
 import java.util.Arrays;
 
-public class BallDriver {
-    /** Instantiate Ball and apply methods. */
+public class TestBall {
+    /** Test driver for Ball. */
     public static void main(String[] args) {
         Ball ball = new Ball(1, 2, 11, 12);
         System.out.print(ball);

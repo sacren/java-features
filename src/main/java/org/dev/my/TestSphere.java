@@ -1,10 +1,10 @@
 /**
- * Sphere driver.
+ * Test driver for Sphere class.
  */
 import java.util.Scanner;
 
-public class SphereDriver {
-    /** Prompt the user for the radius and initialize object. */
+public class TestSphere {
+    /** Test driver for Sphere. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
         double radius;

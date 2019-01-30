@@ -1,10 +1,10 @@
 /**
- * Driver for Cylinder.
+ * Test driver for Cylinder class.
  */
 import java.util.Scanner;
 
-public class CylinderDriver {
-    /** Prompt the user for input and instantiate. */
+public class TestCylinder {
+    /** Test driver for Cylinder. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         double radius;

@@ -1,8 +1,10 @@
-/** Rectangle driver. */
+/**
+ * Test driver for Rectangle class.
+ */
 import java.util.Scanner;
 
-public class RectangleDriver {
-    /** Prompt the user for input and test the driver. */
+public class TestRectangle {
+    /** Test driver for Rectangle. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         System.out.print("Enter rectangle length: ");

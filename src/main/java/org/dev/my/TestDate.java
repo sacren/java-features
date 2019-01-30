@@ -1,10 +1,10 @@
 /**
- * Date driver.
+ * Test driver for Date class.
  */
 import java.util.Scanner;
 
-public class DateDriver {
-    /** Prompt the user for year, month and day. Initialize Date object. */
+public class TestDate {
+    /** Test driver for Date. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
         int year;

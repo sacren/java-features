@@ -1,7 +1,7 @@
 /**
- * Book driver.
+ * Test driver for Book class.
  */
-public class BookDriver {
+public class TestBook {
     /** Initialize Book instance and print book info. */
     public static void main(String[] args) {
         String authorName = "Dennis Ritchie";

@@ -1,10 +1,10 @@
 /**
- * Circle driver
+ * Test driver for Circle class.
  */
 import java.util.Scanner;
 
-public class CircleDriver {
-    /** Prompt the user for input. */
+public class TestCircle {
+    /** Test driver for Circle. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         double radius;

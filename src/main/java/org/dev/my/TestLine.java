@@ -1,10 +1,10 @@
 /**
- * Line driver.
+ * Test driver for Line class.
  */
 import java.util.Scanner;
 
-public class LineDriver {
-    /** Driver executes Line object. */
+public class TestLine {
+    /** Test driver for Line. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
         int beginX;

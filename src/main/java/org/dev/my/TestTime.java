@@ -1,10 +1,10 @@
 /**
- * Driver for Time.
+ * Test driver for Time class.
  */
 import java.util.Scanner;
 
-public class TimeDriver {
-    /** Prompt the user for time input and initialize Time. */
+public class TestTime {
+    /** Test driver for Time. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
         int hour;
