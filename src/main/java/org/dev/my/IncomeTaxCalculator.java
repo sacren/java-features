@@ -26,54 +26,43 @@ public class IncomeTaxCalculator {
         final int income20k = 20000;
         final int maxTaxRebate = 1000;
         final double rebateRate = 0.1;
-        double taxRebate;
         double tax;
         double income;
 
         Scanner inputStream = new Scanner(System.in);
+        System.out.print("Enter income: $");
+        income = inputStream.nextDouble();
+        inputStream.close();
 
-        for (; ; ) {
-            System.out.print("Enter income: $");
-            income = inputStream.nextDouble();
-
-            if (income < 0) {
-                System.out.println("Bye!");
-                break;
-            }
-
-            for (; ; ) {
-                if (income > income60k) {
-                    tax =
-                            taxableStep * taxRateAbove20k
-                                    + taxableStep * taxRateAbove40k
-                                    + (income - income60k) * taxRateAbove60k;
-                    break;
-                }
-
-                if (income > income40k) {
-                    tax = taxableStep * taxRateAbove20k + (income - income40k) * taxRateAbove40k;
-                    break;
-                }
-
-                if (income > income20k) {
-                    tax = (income - income20k) * taxRateAbove20k;
-                    break;
-                }
-
-                tax = 0;
-                break;
-            }
-
-            taxRebate = tax * rebateRate;
-
-            if (taxRebate > maxTaxRebate) {
-                taxRebate = maxTaxRebate;
-            }
-
-            tax -= taxRebate;
-            System.out.printf("Income tax is $%.2f%n%n", tax);
+        if (income < 0) {
+            throw new IllegalArgumentException(
+                    String.format("%f is invalid income!", income));
         }
 
-        inputStream.close();
+        for ( ; ; ) {
+            if (income > income60k) {
+                tax = taxableStep * taxRateAbove20k
+                            + taxableStep * taxRateAbove40k
+                            + (income - income60k) * taxRateAbove60k;
+                break;
+            }
+            if (income > income40k) {
+                tax = taxableStep * taxRateAbove20k + (income - income40k) * taxRateAbove40k;
+                break;
+            }
+            if (income > income20k) {
+                tax = (income - income20k) * taxRateAbove20k;
+                break;
+            }
+            tax = 0;
+            break;
+        }
+
+        double taxRebate = tax * rebateRate;
+        if (taxRebate > maxTaxRebate) {
+            taxRebate = maxTaxRebate;
+        }
+        tax -= taxRebate;
+        System.out.printf("Income tax is $%.2f%n", tax);
     }
 }
