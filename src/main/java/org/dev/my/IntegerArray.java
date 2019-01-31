@@ -43,8 +43,12 @@ public class IntegerArray {
                         + "The contents of array is %s%n"
                         + "%1$s %s %d%n"
                         + "Index is %d%n",
-                arrayToString(ints), arrayToString(doubles), arrayToString(doubles, typeName),
-                hasInt(ints, size) ? "has" : "doesn't have", size, searchArray(ints, size));
+                arrayToString(ints),
+                arrayToString(doubles),
+                arrayToString(doubles, typeName),
+                hasInt(ints, size) ? "has" : "doesn't have",
+                size,
+                searchArray(ints, size));
         inStream.close();
     }
 
@@ -57,7 +61,9 @@ public class IntegerArray {
     }
 
     private static String arrayToString(double[] a, String s) {
-        return Arrays.toString(a) + ", of " + s + " type";
+        return String.format(
+                "%s, of %s type",
+                Arrays.toString(a), s);
     }
 
     private static boolean hasInt(int[] intArray, int number) {
