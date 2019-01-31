@@ -27,8 +27,8 @@ public class IntegerArray {
         }
         int[] ints = new int[size];
         double[] doubles = new double[size];
-        System.out.print("Enter value for each item: ");
         for (int i = 0; i < size; i++) {
+            System.out.printf("Enter value for item %d: ", i + 1);
             ints[i] = inStream.nextInt();
         }
         int index = 0;
@@ -36,6 +36,7 @@ public class IntegerArray {
         for (double number: ints) {
             doubles[index++] = number * Math.E; /* make array distinctive */
         }
+        System.out.println();
         System.out.printf(
                 "The contents of int array is %s%n"
                         + "The contents of double array is %s%n"
