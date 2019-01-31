@@ -18,33 +18,19 @@ import java.util.Scanner;
 public class IntegerArray {
     /** Prompt for input and display results. */
     public static void main(String[] args) {
-        int[] ints; /* This references an array. */
-        double[] doubles;
-        int size;
-
         Scanner inStream = new Scanner(System.in);
-
-        for ( ; ; ) {
-            System.out.print("Enter the number of items: ");
-            size = inStream.nextInt();
-
-            if (size >= 0) {
-                break;
-            }
-
-            System.out.printf("%d is invalid. Try again.%n", size);
+        System.out.print("Enter the number of items: ");
+        int size = inStream.nextInt();
+        if (size <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", size));
         }
-
-        ints = new int[size];
-        doubles = new double[size];
-
-        if (size != 0) {
-            System.out.print("Enter value for each item: ");
-            for (int i = 0; i < size; i++) {
-                ints[i] = inStream.nextInt();
-            }
+        int[] ints = new int[size];
+        double[] doubles = new double[size];
+        System.out.print("Enter value for each item: ");
+        for (int i = 0; i < size; i++) {
+            ints[i] = inStream.nextInt();
         }
-
         int index = 0;
         String typeName = "double";
         for (double number: ints) {
