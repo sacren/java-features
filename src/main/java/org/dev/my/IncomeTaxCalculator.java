@@ -11,12 +11,8 @@
 import java.util.Scanner;
 
 public class IncomeTaxCalculator {
-    public static void main(String[] args) {
-        calculateTax();
-    }
-
     /** Calculate income tax by income amount and tax rate. */
-    public static void calculateTax() {
+    public static void main(String[] args) {
         final double taxRateAbove20k = 0.1;
         final double taxRateAbove40k = 0.2;
         final double taxRateAbove60k = 0.3;
