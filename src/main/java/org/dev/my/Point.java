@@ -22,9 +22,9 @@
  * +distance():double
  */
 public class Point {
-    /* public static data */
-    public static final int DEFAULT_X = 0;
-    public static final int DEFAULT_Y = 0;
+    /* private static data */
+    private static final int DEFAULT_X = 0;
+    private static final int DEFAULT_Y = 0;
 
     /* private instance data */
     private int axisX;
