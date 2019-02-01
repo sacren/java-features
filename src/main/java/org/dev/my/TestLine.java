@@ -50,7 +50,7 @@ public class TestLine {
         line.setBegin(anotherBegin);
         line.setEnd(anotherEnd);
         System.out.printf(
-                "After begin and after points updated.%n%n"
+                "After begin and end points updated.%n%n"
                 + "%s%n"
                 + "Begin Point %s%n"
                 + "End Point %s%n"
@@ -65,7 +65,7 @@ public class TestLine {
         line.setEndX(0);
         line.setEndY(0);
         System.out.printf(
-                "After begin and after points reset to 0.%n%n"
+                "After begin and end points reset to 0.%n%n"
                 + "%s%n"
                 + "Begin Point (%d, %d)%n"
                 + "End Point (%d, %d)%n"
