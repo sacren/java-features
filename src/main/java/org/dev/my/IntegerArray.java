@@ -2,13 +2,10 @@
  * Prompt the user for the number of items in an array (a non-negative integer)
  * and for the values of all the items.
  *
- * <p>
  * Print the contents of the array.
  *
- * <p>
  * Overload the method with different type and number of parameters.
  *
- * <p>
  * Search the array for certain element with boolean and int return type.
  * Return the index of the first found.
  */
@@ -16,7 +13,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class IntegerArray {
-    /** Prompt for input and display results. */
+    /** Examples of array and overloading. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
         System.out.print("Enter the number of items: ");
