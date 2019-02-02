@@ -2,21 +2,18 @@
 import java.util.Scanner;
 
 public class IntegerOfAnyRadixToDecimal {
-    /** Prompt the user and convert to decimal. */
+    /** Convert to decimal number. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
-        String stringInteger;
         int radix;
-        for ( ; ; ) {
-            System.out.print("Enter a radix: ");
-            radix = inStream.nextInt();
-            if (isRadixValid(radix)) {
-                break;
-            }
-            System.out.printf("%d is invalid. Try again.%n", radix);
+        System.out.print("Enter the radix: ");
+        radix = inStream.nextInt();
+        if (!isRadixValid(radix)) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid for radix!", radix));
         }
         System.out.print("Enter an integer: ");
-        stringInteger = inStream.next();
+        String stringInteger = inStream.next();
         System.out.printf(
                 "%s is %d in decimal%n",
                 stringInteger, Integer.parseInt(stringInteger, radix));
