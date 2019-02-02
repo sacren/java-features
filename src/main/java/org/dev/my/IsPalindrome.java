@@ -1,27 +1,22 @@
-/** Prompt the user for a word and tell if it is a palindrome. */
+/**
+ * Prompt the user for a word and tell if it is a palindrome.
+ */
 import java.util.Scanner;
 
 public class IsPalindrome {
-    /** Prompt the user for a word and test if it is a palindrome. */
+    /** Check if the string is a palindrome. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
-        String line;
-        for ( ; ; ) {
-            System.out.print("Enter a phrase in palindrome: ");
-            line = inStream.nextLine();
-            if (line.isEmpty()) {
-                System.out.printf("\"%s\" is empty. Try again.%n", line);
-                continue;
-            }
-            if (isInputValid(line)) {
-                break;
-            }
-            System.out.printf("\"%s\" is invalid. Try again.%n", line);
+        System.out.print("Enter a phrase in palindrome: ");
+        String line = inStream.nextLine();
+        inStream.close();
+        if (line.isEmpty() || !isInputValid(line)) {
+            throw new IllegalArgumentException(
+                    String.format("\"%s\" is invalid!", line));
         }
         System.out.printf(
                 "\"%s\" is%s a palindrome%n",
                 line, isPalindrome(line) ? "" : " not");
-        inStream.close();
     }
 
     private static boolean isPalindrome(String s) {
