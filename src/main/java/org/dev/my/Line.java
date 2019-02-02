@@ -1,11 +1,12 @@
 /**
- * Line class is composed of Point class.
+ * Line class as composed of Point class.
  *
- * <p>Private data with default values:
+ * <p>Private data:
  * -begin:Point
  * -end:Point
  *
  * <p>Constructor:
+ * +Line(beginX:int, beginY:int, endX:int, endY:int)
  * +Line(begin:Point, end:Point)
  *
  * <p>Public methods:
@@ -14,18 +15,28 @@
  * +getEnd():Point
  * +setEnd(end:Point):void
  * +toString():String
+ * +getBeginX():int
+ * +setBeginX(axisX:int):void
+ * +getBeginY():int
+ * +setBeginY(axisY:int):void
+ * +getEndX():int
+ * +setEndX(axisX):void
+ * +getEndY():int
+ * +setEndY(axisY):void
+ * +getLength():double
  */
 public class Line {
     /* private instance data */
     private Point begin;
     private Point end;
 
-    /** Custom constructor. */
+    /** Line constructor by 4 integers. */
     public Line(int beginX, int beginY, int endX, int endY) {
         begin = new Point(beginX, beginY);
         end = new Point(endX, endY);
     }
 
+    /** Line constructor by begin and end points. */
     public Line(Point begin, Point end) {
         this.begin = begin;
         this.end = end;
@@ -51,52 +62,51 @@ public class Line {
         this.end = end;
     }
 
-    /** getter of Point begin x-axis. */
+    /** Method for x-axis value of Point begin. */
     public int getBeginX() {
         return begin.getX();
     }
 
-    /** setter of Point begin x-axis. */
-    public void setBeginX(int x) {
-        begin.setX(x);
+    /** Method to set x-axis value of Point begin. */
+    public void setBeginX(int axisX) {
+        begin.setX(axisX);
     }
 
-    /** getter of Point begin y-axis. */
+    /** Method for y-axis value of Point begin. */
     public int getBeginY() {
         return begin.getY();
     }
 
-    /** setter of Point begin y-axis. */
-    public void setBeginY(int y) {
-        begin.setY(y);
+    /** Method to set y-axis value of Point begin. */
+    public void setBeginY(int axisY) {
+        begin.setY(axisY);
     }
 
-    /** getter of Point end x-axis. */
+    /** Method for x-axis value of Point end. */
     public int getEndX() {
         return end.getX();
     }
 
-    /** setter of Point end x-axis. */
-    public void setEndX(int x) {
-        end.setX(x);
+    /** Method to set x-axis value of Point end. */
+    public void setEndX(int axisX) {
+        end.setX(axisX);
     }
 
-    /** getter of Point end y-axis. */
+    /** Method for y-axis value of Point end. */
     public int getEndY() {
         return end.getY();
     }
 
-    /** setter of Point end y-axis. */
-    public void setEndY(int y) {
-        end.setY(y);
+    /** Method to set y-axis value of Point end. */
+    public void setEndY(int axisY) {
+        end.setY(axisY);
     }
 
     /** Line description. */
     public String toString() {
         return String.format(
-                "From %s to %s",
-                begin, /* invoke Point's toString() */
-                end); /* invoke Point's toString() */
+                "From %s to %s", /* invoke Point's toString() */
+                begin, end);
     }
 
     /** Line length from begin to end. */
