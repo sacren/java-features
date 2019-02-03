@@ -12,10 +12,7 @@ public class TestRectangle {
         System.out.print("Enter rectangle width: ");
         float width = inputStream.nextFloat();
         inputStream.close();
-        printRectangle(length, width);
-    }
 
-    private static void printRectangle(float length, float width) {
         Rectangle defaultRectangle = new Rectangle();
         Rectangle rectangleNull = new Rectangle(null);
         Rectangle rectangleOfLength = new Rectangle(length);
