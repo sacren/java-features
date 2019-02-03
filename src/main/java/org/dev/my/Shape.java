@@ -15,13 +15,18 @@ public class Shape {
     /* private instance data */
     private String color;
 
+    /** Shape default constructor. */
+    public Shape() {
+        color = "cyan";
+    }
+
     /** Shape custom constructor. */
     public Shape(String color) {
         this.color = color;
     }
 
     /** Calculate area of shape. */
-    public int getArea() {
+    public double getArea() {
         System.out.println("Error!");
         return 0;
     }

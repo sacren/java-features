@@ -18,7 +18,7 @@
  * +getPerimeter():double
  * +toString():String
  */
-public class Rectangle {
+public class Rectangle extends Shape {
     /* public static data */
     public static float DEFAULT_LENGTH = 2.0f;
     public static float DEFAULT_WIDTH = 1.0f;
@@ -79,6 +79,7 @@ public class Rectangle {
     }
 
     /** Public method for rectangle area. */
+    @Override
     public double getArea() {
         return length * width;
     }
