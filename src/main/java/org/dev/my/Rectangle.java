@@ -2,18 +2,18 @@
  * Rectangle class
  *
  * <p>Private data with default values:
- * -length:float = 2.0f
- * -width:float = 1.0f
+ * -length:double = 2.0f
+ * -width:double = 1.0f
  *
  * <p>Constructor:
  * +Rectangle()
- * +Rectangle(length:float, width:float)
+ * +Rectangle(length:double, width:double)
  *
  * <p>Public methods:
  * +getLength():float
- * +setLength(length:float):void
+ * +setLength(length:double):void
  * +getWidth():float
- * +setWidth(width:float):void
+ * +setWidth(width:double):void
  * +getArea():double
  * +getPerimeter():double
  * +toString():String
@@ -24,8 +24,8 @@ public class Rectangle extends Shape {
     public static float DEFAULT_WIDTH = 1.0f;
 
     /* private instance data */
-    private float length;
-    private float width;
+    private double length;
+    private double width;
 
     /** Default constructor. */
     public Rectangle() {
@@ -39,24 +39,31 @@ public class Rectangle extends Shape {
     }
 
     /** Constructor initializing one attribute. */
-    public Rectangle(float length) {
+    public Rectangle(double length) {
         this();
         setLength(length);
     }
 
     /** Custom constructor. */
-    public Rectangle(float length, float width) {
+    public Rectangle(double length, double width) {
+        setLength(length);
+        setWidth(width);
+    }
+
+    /** Custom rectangle constructor with color. */
+    public Rectangle(String color, double length, double width) {
+        super(color);
         setLength(length);
         setWidth(width);
     }
 
     /** Public accessor for rectangle length. */
-    public float getLength() {
+    public double getLength() {
         return length;
     }
 
     /** Public mutator for rectangle length. */
-    public void setLength(float length) {
+    public void setLength(double length) {
         if (length <= 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", length));
@@ -65,12 +72,12 @@ public class Rectangle extends Shape {
     }
 
     /** Public accessor for rectangle width. */
-    public float getWidth() {
+    public double getWidth() {
         return width;
     }
 
     /** Public mutator for rectangle width. */
-    public void setWidth(float width) {
+    public void setWidth(double width) {
         if (width <= 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", width));
@@ -92,7 +99,7 @@ public class Rectangle extends Shape {
     /** Public method for Rectangle class description. */
     public String toString() {
         return String.format(
-                "[Rectangle (Length=%.2f, Width=%.2f)]%n",
+                "[Rectangle (Length=%.2f, Width=%.2f)]",
                 length, width);
     }
 }
