@@ -14,6 +14,7 @@
  * +setLength(length:double):void
  * +getWidth():float
  * +setWidth(width:double):void
+ * +setLengthWidth(length:double, width:double):void
  * +getArea():double
  * +getPerimeter():double
  * +toString():String
@@ -46,15 +47,13 @@ public class Rectangle extends Shape {
 
     /** Custom constructor. */
     public Rectangle(double length, double width) {
-        setLength(length);
-        setWidth(width);
+        setLengthWidth(length, width);
     }
 
     /** Custom rectangle constructor with color. */
     public Rectangle(String color, double length, double width) {
         super(color);
-        setLength(length);
-        setWidth(width);
+        setLengthWidth(length, width);
     }
 
     /** Public accessor for rectangle length. */
@@ -83,6 +82,12 @@ public class Rectangle extends Shape {
                     String.format("%f is invalid!", width));
         }
         this.width = width;
+    }
+
+    /** Helper method for both setLength() and setWidth(). */
+    public void setLengthWidth(double length, double width) {
+        setLength(length);
+        setWidth(width);
     }
 
     /** Public method for rectangle area. */
