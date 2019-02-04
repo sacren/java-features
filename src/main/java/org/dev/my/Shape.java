@@ -9,8 +9,10 @@
  * <p>Constructor:
  * +Shape(color:String)
  *
+ * <p>Abstract methods:
+ * +getArea():double
+ *
  * <p>Public methods:
- * +getArea():int
  * +toString():String
  */
 public abstract class Shape {
