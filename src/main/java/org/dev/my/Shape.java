@@ -1,5 +1,7 @@
 /**
- * Shape superclass provides the common properties of all shapes.
+ * Shape (abstract class)
+ *
+ * <p>Shape superclass provides the common properties of all shapes.
  *
  * <p>Private data with default values:
  * -color:String
@@ -11,7 +13,7 @@
  * +getArea():int
  * +toString():String
  */
-public class Shape {
+public abstract class Shape {
     /* private instance data */
     private String color;
 
@@ -25,11 +27,8 @@ public class Shape {
         this.color = color;
     }
 
-    /** Calculate area of shape. */
-    public double getArea() {
-        System.out.println("Error!");
-        return 0;
-    }
+    /** Public interface for calculating area of particular shape. */
+    public abstract double getArea();
 
     /** Shape description. */
     public String toString() {
