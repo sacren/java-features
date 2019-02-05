@@ -9,5 +9,8 @@ public class TestShape {
         String color = "red";
         Shape rectangle = new Rectangle(color, length, width);
         System.out.println(rectangle);
+        System.out.printf(
+                "Rectangle area is %.2f%n",
+                rectangle.getArea());
     }
 }

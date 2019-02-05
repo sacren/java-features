@@ -24,7 +24,7 @@ public abstract class Shape {
         this.color = color;
     }
 
-    /** Public interface for calculating area of particular shape. */
+    /** Public interface for area of various shapes. */
     public abstract double getArea();
 
     /** Public method for color of various shapes. */
