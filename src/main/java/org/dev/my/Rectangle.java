@@ -24,12 +24,16 @@ public class Rectangle extends Shape {
     public static float DEFAULT_LENGTH = 2.0f;
     public static float DEFAULT_WIDTH = 1.0f;
 
+    /* private static data */
+    private static String DEFAULT_COLOR = "cyan";
+
     /* private instance data */
     private double length;
     private double width;
 
     /** Default constructor. */
     public Rectangle() {
+        super(DEFAULT_COLOR);
         length = DEFAULT_LENGTH;
         width = DEFAULT_WIDTH;
     }
@@ -47,6 +51,7 @@ public class Rectangle extends Shape {
 
     /** Custom constructor. */
     public Rectangle(double length, double width) {
+        super(DEFAULT_COLOR);
         setLengthWidth(length, width);
     }
 
@@ -104,7 +109,7 @@ public class Rectangle extends Shape {
     /** Public method for Rectangle class description. */
     public String toString() {
         return String.format(
-                "[Rectangle (Length=%.2f, Width=%.2f)]",
-                length, width);
+                "[Rectangle (Color=%s, Length=%.2f, Width=%.2f)]",
+                DEFAULT_COLOR, length, width);
     }
 }

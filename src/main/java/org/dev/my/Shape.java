@@ -11,18 +11,10 @@
  *
  * <p>Abstract methods:
  * +getArea():double
- *
- * <p>Public methods:
- * +toString():String
  */
 public abstract class Shape {
     /* private instance data */
     private String color;
-
-    /** Shape default constructor. */
-    public Shape() {
-        color = "cyan";
-    }
 
     /** Shape custom constructor. */
     public Shape(String color) {
@@ -31,9 +23,4 @@ public abstract class Shape {
 
     /** Public interface for calculating area of particular shape. */
     public abstract double getArea();
-
-    /** Shape description. */
-    public String toString() {
-        return String.format("Shape[color=%s]", color);
-    }
 }
