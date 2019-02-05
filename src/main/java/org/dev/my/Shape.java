@@ -11,6 +11,9 @@
  *
  * <p>Abstract methods:
  * +getArea():double
+ *
+ * <p>Public method:
+ * +getColor():String
  */
 public abstract class Shape {
     /* private instance data */
@@ -23,4 +26,9 @@ public abstract class Shape {
 
     /** Public interface for calculating area of particular shape. */
     public abstract double getArea();
+
+    /** Public method for color of various shapes. */
+    public String getColor() {
+        return color;
+    }
 }

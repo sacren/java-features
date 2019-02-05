@@ -110,6 +110,7 @@ public class Rectangle extends Shape {
     public String toString() {
         return String.format(
                 "[Rectangle (Color=%s, Length=%.2f, Width=%.2f)]",
-                DEFAULT_COLOR, length, width);
+                /* retrieve color via substitution */
+                getColor(), length, width);
     }
 }
