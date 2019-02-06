@@ -10,8 +10,10 @@ public class TestShape {
         Shape rectangle = new Rectangle(color, length, width);
         System.out.println(rectangle);
         System.out.printf(
-                "Rectangle area is %.2f%n",
-                rectangle.getArea());
+                "Rectangle area is %.2f%n"
+                        + "Rectangle perimeter is %.2f%n",
+                rectangle.getArea(),
+                rectangle.getPerimeter());
         Shape defRectangle = new Rectangle();
         System.out.println();
         System.out.println("Now showing default rectangle.");

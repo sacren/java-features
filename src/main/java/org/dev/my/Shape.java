@@ -11,6 +11,7 @@
  *
  * <p>Abstract methods:
  * +getArea():double
+ * +getPerimeter():double
  *
  * <p>Public method:
  * +getColor():String
@@ -31,4 +32,7 @@ public abstract class Shape {
 
     /** Public interface for area of various shapes. */
     public abstract double getArea();
+
+    /** Public interface for perimeter of various shapes. */
+    public abstract double getPerimeter();
 }
