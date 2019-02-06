@@ -3,7 +3,7 @@
  *
  * <p>Shape superclass provides the common properties of all shapes.
  *
- * <p>Private data with default values:
+ * <p>Private data:
  * -color:String
  *
  * <p>Constructor:
@@ -16,7 +16,7 @@
  * +getColor():String
  */
 public abstract class Shape {
-    /* private instance data */
+    /* private static data */
     private String color;
 
     /** Shape custom constructor. */
@@ -24,11 +24,11 @@ public abstract class Shape {
         this.color = color;
     }
 
-    /** Public interface for area of various shapes. */
-    public abstract double getArea();
-
     /** Public method for color of various shapes. */
     public String getColor() {
         return color;
     }
+
+    /** Public interface for area of various shapes. */
+    public abstract double getArea();
 }
