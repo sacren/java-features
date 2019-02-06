@@ -12,5 +12,13 @@ public class TestShape {
         System.out.printf(
                 "Rectangle area is %.2f%n",
                 rectangle.getArea());
+        Shape defRectangle = new Rectangle();
+        System.out.println();
+        System.out.println("Now showing default rectangle.");
+        System.out.println();
+        System.out.println(defRectangle);
+        System.out.printf(
+                "Default rectangle area is %.2f%n",
+                defRectangle.getArea());
     }
 }
