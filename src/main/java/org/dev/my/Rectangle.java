@@ -1,5 +1,5 @@
 /**
- * Rectangle class
+ * Rectangle subclass over Shape superclass
  *
  * <p>Private data with default values:
  * -length:double = 2.0f
@@ -7,12 +7,15 @@
  *
  * <p>Constructor:
  * +Rectangle()
+ * +Rectangle(r:Rectangle)
+ * +Rectangle(length:double)
  * +Rectangle(length:double, width:double)
+ * +Rectangle(color:String, length:double, width:double)
  *
  * <p>Public methods:
- * +getLength():float
+ * +getLength():double
  * +setLength(length:double):void
- * +getWidth():float
+ * +getWidth():double
  * +setWidth(width:double):void
  * +setLengthWidth(length:double, width:double):void
  * +getArea():double
@@ -29,42 +32,42 @@ public class Rectangle extends Shape {
     private double length;
     private double width;
 
-    /** Default constructor. */
+    /** Default Rectangle constructor. */
     public Rectangle() {
         super(DEFAULT_COLOR);
         length = DEFAULT_LENGTH;
         width = DEFAULT_WIDTH;
     }
 
-    /** Default constructor with parameter place holder. */
+    /** Default Rectangle constructor with parameter place holder. */
     public Rectangle(Rectangle r) {
         this();
     }
 
-    /** Constructor initializing one attribute. */
+    /** Rectangle constructor initializing length only. */
     public Rectangle(double length) {
         this();
         setLength(length);
     }
 
-    /** Custom constructor. */
+    /** Rectangle constructor initializing both length and width. */
     public Rectangle(double length, double width) {
         super(DEFAULT_COLOR);
         setLengthWidth(length, width);
     }
 
-    /** Custom rectangle constructor with color. */
+    /** Rectangle constructor initializing color, lenght and width. */
     public Rectangle(String color, double length, double width) {
         super(color);
         setLengthWidth(length, width);
     }
 
-    /** Public accessor for rectangle length. */
+    /** getter for rectangle length. */
     public double getLength() {
         return length;
     }
 
-    /** Public mutator for rectangle length. */
+    /** setter for rectangle length. */
     public void setLength(double length) {
         if (length <= 0) {
             throw new IllegalArgumentException(
@@ -73,12 +76,12 @@ public class Rectangle extends Shape {
         this.length = length;
     }
 
-    /** Public accessor for rectangle width. */
+    /** getter for rectangle width. */
     public double getWidth() {
         return width;
     }
 
-    /** Public mutator for rectangle width. */
+    /** setter for rectangle width. */
     public void setWidth(double width) {
         if (width <= 0) {
             throw new IllegalArgumentException(
@@ -105,7 +108,7 @@ public class Rectangle extends Shape {
         return (length + width) * 2;
     }
 
-    /** Public method for Rectangle class description. */
+    /** Rectangle description. */
     public String toString() {
         return String.format(
                 "[Rectangle (Color=%s, Length=%.2f, Width=%.2f)]",
