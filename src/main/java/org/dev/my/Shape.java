@@ -15,6 +15,7 @@
  *
  * <p>Public method:
  * +getColor():String
+ * +setColor(color:String):void
  */
 public abstract class Shape {
     /* private static data */
@@ -28,6 +29,11 @@ public abstract class Shape {
     /** Public method for color of various shapes. */
     public String getColor() {
         return color;
+    }
+
+    /** setter for color of various shapes. */
+    public void setColor(String color) {
+        this.color = color;
     }
 
     /** Public interface for area of various shapes. */

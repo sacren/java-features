@@ -1,10 +1,10 @@
 /**
  * Circle class composed of Point class
+ * Circle subclass over Shape superclass
  *
  * <p>Private data with default values:
  * -center:Point = {0, 0}
  * -radius:double = 1.0
- * -color:String = "red"
  *
  * <p>Constructor:
  * +Circle()
@@ -16,8 +16,6 @@
  * <p>Public methods:
  * +getRadius():double
  * +setRadius(radius:double):void
- * +getColor():String
- * +setColor(color:String):void
  * +getDiameter():double
  * +getCircumference():double
  * +getArea():double
@@ -25,7 +23,7 @@
  * +setCenter(center:Point):void
  * +toString():String
  */
-public class Circle {
+public class Circle extends Shape {
     /* public static data */
     public static final String FAVORITE_COLOR = "pink";
 
@@ -36,34 +34,35 @@ public class Circle {
     /* private instance data */
     private Point center;
     private double radius;
-    private String color;
 
     /** Circle constructor with default data. */
     public Circle() {
+        super(DEFAULT_COLOR);
         this.radius = DEFAULT_RADIUS;
-        this.color = DEFAULT_COLOR;
     }
 
     /** Circle constructor with mixed default and customized data. */
     public Circle(double radius) {
+        super(DEFAULT_COLOR);
         setRadius(radius);
-        this.color = DEFAULT_COLOR;
     }
 
     /** Circle constructor with all customized data. */
     public Circle(double radius, String color) {
+        super(color);
         setRadius(radius);
-        this.color = color;
     }
 
     /** Circle constructor with int pair for Point data. */
     public Circle(int centerX, int centerY, double radius) {
+        super(DEFAULT_COLOR);
         center = new Point(centerX, centerY);
         setRadius(radius);
     }
 
     /** Circle constructor directly using Point. */
     public Circle(Point center, double radius) {
+        super(DEFAULT_COLOR);
         this.center = center;
         setRadius(radius);
     }
@@ -82,16 +81,6 @@ public class Circle {
         this.radius = radius;
     }
 
-    /** getter for Circle color. */
-    public String getColor() {
-        return color;
-    }
-
-    /** setter for Circle color. */
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     /** Circle public method for circle diameter. */
     public double getDiameter() {
         return radius * 2;
@@ -102,7 +91,14 @@ public class Circle {
         return radius * 2 * Math.PI;
     }
 
+    /** Circle public method for circle perimeter. */
+    @Override
+    public double getPerimeter() {
+        return getCircumference();
+    }
+
     /** Circle public method for circle area. */
+    @Override
     public double getArea() {
         return Math.PI * radius * radius;
     }
@@ -121,6 +117,6 @@ public class Circle {
     public String toString() {
         return String.format(
                 "[Circle (Radius=%.2f, Color=%s, Center=%s)]%n",
-                radius, color, center);
+                radius, getColor(), center);
     }
 }

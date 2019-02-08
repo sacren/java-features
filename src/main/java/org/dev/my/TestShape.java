@@ -22,5 +22,9 @@ public class TestShape {
         System.out.printf(
                 "Default rectangle area is %.2f%n",
                 defRectangle.getArea());
+        double radius = 4.0;
+        Shape circle = new Circle(radius, color);
+        System.out.println();
+        System.out.println(circle);
     }
 }
