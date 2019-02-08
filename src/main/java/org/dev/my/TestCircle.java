@@ -27,8 +27,11 @@ public class TestCircle {
         Circle centerCircle = new Circle(centerX, centerY, radius);
         System.out.println();
         System.out.println(compositeCircle);
+        System.out.println();
         System.out.println(centerCircle);
-        System.out.print(userCircle);
+        System.out.println();
+        System.out.println(userCircle);
+        System.out.println();
         System.out.printf(
                 "The default circle color is %s%n"
                         + "The user circle color is %s%n"
@@ -51,7 +54,8 @@ public class TestCircle {
         userCircle.setColor(Circle.FAVORITE_COLOR);
         System.out.println("After circle radius is tripled and color is reset.");
         System.out.println();
-        System.out.print(userCircle);
+        System.out.println(userCircle);
+        System.out.println();
         System.out.printf(
                 "The circle color now is %s%n"
                         + "The user circle diameter is %.2f%n"
