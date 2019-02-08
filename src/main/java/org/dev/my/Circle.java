@@ -38,42 +38,42 @@ public class Circle {
     private double radius;
     private String color;
 
-    /** Default constructor initializing instance attributes. */
+    /** Circle constructor with default data. */
     public Circle() {
         this.radius = DEFAULT_RADIUS;
         this.color = DEFAULT_COLOR;
     }
 
-    /** Constructor initializing attributes both default and customized. */
+    /** Circle constructor with mixed default and customized data. */
     public Circle(double radius) {
         setRadius(radius);
         this.color = DEFAULT_COLOR;
     }
 
-    /** Constructor for fully customized instance. */
+    /** Circle constructor with all customized data. */
     public Circle(double radius, String color) {
         setRadius(radius);
         this.color = color;
     }
 
-    /** Custom constructor with values for Point. */
+    /** Circle constructor with int pair for Point data. */
     public Circle(int centerX, int centerY, double radius) {
         center = new Point(centerX, centerY);
         setRadius(radius);
     }
 
-    /** Custom constructor composed of Point. */
+    /** Circle constructor directly using Point. */
     public Circle(Point center, double radius) {
         this.center = center;
         setRadius(radius);
     }
 
-    /** Public accessor for private radius. */
+    /** getter for Circle radius. */
     public double getRadius() {
         return radius;
     }
 
-    /** Public mutator for private radius. */
+    /** setter of Circle radius. */
     public void setRadius(double radius) {
         if (radius < 0) {
             throw new IllegalArgumentException(
@@ -82,42 +82,42 @@ public class Circle {
         this.radius = radius;
     }
 
-    /** Public accessor for private color. */
+    /** getter for Circle color. */
     public String getColor() {
         return color;
     }
 
-    /** Public mutator for private color. */
+    /** setter for Circle color. */
     public void setColor(String color) {
         this.color = color;
     }
 
-    /** Public method for circle diameter. */
+    /** Circle public method for circle diameter. */
     public double getDiameter() {
         return radius * 2;
     }
 
-    /** Public method for circumference. */
+    /** Circle public method for circle circumference. */
     public double getCircumference() {
         return radius * 2 * Math.PI;
     }
 
-    /** Public instance method for circle area. */
+    /** Circle public method for circle area. */
     public double getArea() {
         return Math.PI * radius * radius;
     }
 
-    /** getter for center. */
+    /** getter for Circle center Point data. */
     public Point getCenter() {
         return center;
     }
 
-    /** setter for center. */
+    /** setter for Circle center Point data. */
     public void setCenter(Point center) {
         this.center = center;
     }
 
-    /** Public method for Circle description. */
+    /** Circle description. */
     public String toString() {
         return String.format(
                 "[Circle (Radius=%.2f, Color=%s, Center=%s)]%n",
