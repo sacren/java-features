@@ -125,6 +125,6 @@ public class Time {
 
     /** Time description. */
     public String toString() {
-        return String.format("[%02d:%02d:%02d]%n", hour, minute, second);
+        return String.format("[%02d:%02d:%02d]", hour, minute, second);
     }
 }

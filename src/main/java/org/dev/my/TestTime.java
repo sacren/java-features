@@ -19,7 +19,7 @@ public class TestTime {
         inStream.close();
         Time currentTime = new Time(second, minute, hour);
         System.out.println();
-        System.out.print(currentTime);
+        System.out.println(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n%n",
                 currentTime.getHour(),
@@ -28,7 +28,7 @@ public class TestTime {
         /* Advance one second. */
         currentTime.nextSecond();
         System.out.printf("Advance to the next second.%n%n");
-        System.out.print(currentTime);
+        System.out.println(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n%n",
                 currentTime.getHour(),
@@ -37,7 +37,7 @@ public class TestTime {
         /* Reset time to zero hour by default values. */
         System.out.printf("Reset time to zero hour.%n%n");
         currentTime.setTime(Time.DEFAULT_SECOND, Time.DEFAULT_MINUTE, Time.DEFAULT_HOUR);
-        System.out.print(currentTime);
+        System.out.println(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n%n",
                 currentTime.getHour(),
@@ -46,7 +46,7 @@ public class TestTime {
         /* Restore private attributes to original values. */
         System.out.printf("Restore to original state.%n%n");
         currentTime.setOriginalState();
-        System.out.print(currentTime);
+        System.out.println(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n%n",
                 currentTime.getHour(),
@@ -55,7 +55,7 @@ public class TestTime {
         /* Advance two seconds. */
         currentTime.nextSecond().nextSecond();
         System.out.printf("Advance to the next next second.%n%n");
-        System.out.print(currentTime);
+        System.out.println(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n",
                 currentTime.getHour(),
