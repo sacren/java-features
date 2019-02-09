@@ -46,21 +46,13 @@ import java.util.Scanner;
 public class TestNumberPattern {
     /** Ask the user for the size and print the pattern. */
     public static void main(String[] args) {
-        int size;
-
         Scanner inputStream = new Scanner(System.in);
-
-        for (; ; ) {
-            System.out.print("Enter the size of number pattern: ");
-            size = inputStream.nextInt();
-
-            if (size >= 0) {
-                break;
-            }
-
-            System.out.println("You entered an invalid size. Try again...");
+        System.out.print("Enter the size (max 24, min 4) of number pattern: ");
+        int size = inputStream.nextInt();
+        if (size < 4 || size > 24) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", size));
         }
-
         System.out.println();
         bottomLeft(size);
         centerId(size, 'a');
