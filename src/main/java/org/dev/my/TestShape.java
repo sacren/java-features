@@ -26,5 +26,11 @@ public class TestShape {
         Shape circle = new Circle(radius, color);
         System.out.println();
         System.out.println(circle);
+        System.out.printf(
+                "Circle area is %.2f%n"
+                        + "Circle circumference is %.2f%n",
+                circle.getArea(),
+                /* getPerimeter() is a wrapper for getCircumference() in Circle */
+                circle.getPerimeter());
     }
 }
