@@ -44,7 +44,7 @@
 import java.util.Scanner;
 
 public class TestNumberPattern {
-    /** Ask the user for the size and print the pattern. */
+    /** Display number pattern. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         System.out.print("Enter the size (max 24, min 4) of number pattern: ");
@@ -68,8 +68,8 @@ public class TestNumberPattern {
         inputStream.close();
     }
 
-    /** Annotate pattern with centered ID. */
-    public static void centerId(int size, char id) {
+    /* annotate pattern with centered ID */
+    private static void centerId(int size, char id) {
         for (int i = 0; i < size / 2; i++) {
             System.out.printf("%3c", ' ');
         }
@@ -77,8 +77,8 @@ public class TestNumberPattern {
         System.out.printf("(%c)%n", id);
     }
 
-    /** Print pattern with right angle at bottom-left corner. */
-    public static void bottomLeft(int size) {
+    /* right angle at bottom-left corner */
+    private static void bottomLeft(int size) {
         final int firstCount = 1;
 
         for (int row = firstCount; row <= size; row++) {
@@ -93,8 +93,8 @@ public class TestNumberPattern {
         }
     }
 
-    /** Print pattern with right angle at top-right corner. */
-    public static void topRight(int size) {
+    /* right angle at top-right corner */
+    private static void topRight(int size) {
         final int firstCount = 1;
         int width;
 
@@ -116,8 +116,8 @@ public class TestNumberPattern {
         }
     }
 
-    /** Print pattern with right angle at bottom-right corner. */
-    public static void bottomRight(int size) {
+    /* right angle at bottom-right corner */
+    private static void bottomRight(int size) {
         final int firstCount = 1;
         int width;
         int number;
@@ -142,8 +142,8 @@ public class TestNumberPattern {
         }
     }
 
-    /** Print pattern with right angle at top-left corner. */
-    public static void topLeft(int size) {
+    /* right angle at top-left corner */
+    private static void topLeft(int size) {
         final int firstCount = 1;
         int sentinel;
         int number;
