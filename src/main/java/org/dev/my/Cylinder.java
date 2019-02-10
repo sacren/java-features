@@ -18,8 +18,8 @@
  * +toString():String
  */
 public class Cylinder extends Circle {
-    /* public static data */
-    public static final double DEFAULT_HEIGHT = 1.0;
+    /* private static data */
+    private static final double DEFAULT_HEIGHT = 1.0;
 
     /* private instance data */
     private double height;
