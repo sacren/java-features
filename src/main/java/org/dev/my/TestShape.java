@@ -11,26 +11,32 @@ public class TestShape {
         System.out.println(rectangle);
         System.out.printf(
                 "Rectangle area is %.2f%n"
-                        + "Rectangle perimeter is %.2f%n",
+                        + "Rectangle perimeter is %.2f%n"
+                        + "Rectangle color is %s%n",
                 rectangle.getArea(),
-                rectangle.getPerimeter());
+                rectangle.getPerimeter(),
+                rectangle.getColor());
         Shape defRectangle = new Rectangle();
         System.out.println();
         System.out.println("Now showing default rectangle.");
         System.out.println();
         System.out.println(defRectangle);
         System.out.printf(
-                "Default rectangle area is %.2f%n",
-                defRectangle.getArea());
+                "Default rectangle area is %.2f%n"
+                        + "Default rectangle color is %s%n",
+                defRectangle.getArea(),
+                defRectangle.getColor());
         double radius = 4.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
         System.out.println(circle);
         System.out.printf(
                 "Circle area is %.2f%n"
-                        + "Circle circumference is %.2f%n",
+                        + "Circle circumference is %.2f%n"
+                        + "Circle color is %s%n",
                 circle.getArea(),
                 /* getPerimeter() is a wrapper for getCircumference() in Circle */
-                circle.getPerimeter());
+                circle.getPerimeter(),
+                circle.getColor());
     }
 }
