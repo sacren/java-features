@@ -20,20 +20,28 @@ public class TestCylinder {
         System.out.println();
         System.out.print(defaultCylinder);
         System.out.printf(
-                "The default base area is %.2f%n"
-                        + "The default surface area is %.2f%n"
-                        + "The default volume is %.2f%n%n",
+                "Default cylinder base area is %.2f%n"
+                        + "Default cylinder surface area is %.2f%n"
+                        + "Default cylinder volume is %.2f%n"
+                        + "Default cylinder color is %s%n",
                 defaultCylinder.getBaseArea(), /* default cylinder base area */
                 defaultCylinder.getArea(), /* default cylinder surface area */
-                defaultCylinder.getVolume()); /* default cylinder volume */
+                defaultCylinder.getVolume(), /* default cylinder volume */
+                defaultCylinder.getColor());
+        System.out.println();
         System.out.print(userCylinder);
         System.out.printf(
-                "The custom base area is %.2f%n"
-                        + "The custom surface area is %.2f%n"
-                        + "The custom volume is %.2f%n%n",
+                "Custom cylinder base area is %.2f%n"
+                        + "Custom cylinder surface area is %.2f%n"
+                        + "Custom cylinder volume is %.2f%n"
+                        + "Custom cylinder color is %s%n",
                 userCylinder.getBaseArea(), /* custom cylinder base area */
                 userCylinder.getArea(), /* custom cylinder surface area */
-                userCylinder.getVolume()); /* custom cylinder volume */
+                userCylinder.getVolume(), /* custom cylinder volume */
+                userCylinder.getColor());
+        System.out.println();
+        System.out.println("Now another cylinder with different color.");
+        System.out.println();
         System.out.print(yellowCylinder);
         System.out.printf(
                 "The cylinder base area is %.2f%n"
