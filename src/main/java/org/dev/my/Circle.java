@@ -30,6 +30,7 @@ public class Circle extends Shape {
     /* private static data */
     private static final double DEFAULT_RADIUS = 1.0;
     private static final String DEFAULT_COLOR = "green";
+    private static final Point DEFAULT_CENTER = new Point(1, 1);
 
     /* private instance data */
     private Point center;
@@ -38,18 +39,21 @@ public class Circle extends Shape {
     /** Circle constructor with default data. */
     public Circle() {
         super(DEFAULT_COLOR);
+        this.center = DEFAULT_CENTER;
         this.radius = DEFAULT_RADIUS;
     }
 
     /** Circle constructor with mixed default and customized data. */
     public Circle(double radius) {
         super(DEFAULT_COLOR);
+        this.center = DEFAULT_CENTER;
         setRadius(radius);
     }
 
     /** Circle constructor with all customized data. */
     public Circle(double radius, String color) {
         super(color);
+        this.center = DEFAULT_CENTER;
         setRadius(radius);
     }
 
