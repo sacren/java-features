@@ -26,6 +26,16 @@ public class TestShape {
                         + "Default rectangle color is %s%n",
                 defRectangle.getArea(),
                 defRectangle.getColor());
+        Shape nullRectangle = new Rectangle(null);
+        System.out.println();
+        System.out.println("Now showing null rectangle.");
+        System.out.println();
+        System.out.println(nullRectangle);
+        System.out.printf(
+                "The null rectangle area is %.2f%n"
+                        + "The null rectangle color is %s%n",
+                nullRectangle.getArea(),
+                nullRectangle.getColor());
         double radius = 4.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
