@@ -18,7 +18,7 @@ public class TestShape {
                 rectangle.getColor());
         Shape defRectangle = new Rectangle();
         System.out.println();
-        System.out.println("Now showing default rectangle.");
+        System.out.println("=== Now showing default Rectangle ===");
         System.out.println();
         System.out.println(defRectangle);
         System.out.printf(
@@ -28,7 +28,7 @@ public class TestShape {
                 defRectangle.getColor());
         Shape nullRectangle = new Rectangle(null);
         System.out.println();
-        System.out.println("Now showing null rectangle.");
+        System.out.println("=== Now showing null Rectangle ===");
         System.out.println();
         System.out.println(nullRectangle);
         System.out.printf(
@@ -38,6 +38,8 @@ public class TestShape {
                 nullRectangle.getColor());
         double radius = 4.0;
         Shape circle = new Circle(radius, color);
+        System.out.println();
+        System.out.println("=== Now showing Circle ===");
         System.out.println();
         System.out.println(circle);
         System.out.printf(
