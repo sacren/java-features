@@ -4,10 +4,13 @@
 public class TestShape {
     /** Test various shapes. */
     public static void main(String[] args) {
-        double length = 3.0;
-        double width = 2.0;
+        final double length = 300.0;
+        final double width = 200.0;
         String color = "red";
         Shape rectangle = new Rectangle(color, length, width);
+        System.out.println();
+        System.out.println("=== Showing custom Rectangle ===");
+        System.out.println();
         System.out.println(rectangle);
         System.out.printf(
                 "Rectangle area is %.2f%n"
