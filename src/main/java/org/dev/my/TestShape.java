@@ -23,8 +23,10 @@ public class TestShape {
         System.out.println(defRectangle);
         System.out.printf(
                 "Default rectangle area is %.2f%n"
+                        + "Default rectangle perimeter is %.2f%n"
                         + "Default rectangle color is %s%n",
                 defRectangle.getArea(),
+                defRectangle.getPerimeter(),
                 defRectangle.getColor());
         Shape nullRectangle = new Rectangle(null);
         System.out.println();
@@ -33,8 +35,10 @@ public class TestShape {
         System.out.println(nullRectangle);
         System.out.printf(
                 "The null rectangle area is %.2f%n"
+                        + "The null rectangle perimeter is %.2f%n"
                         + "The null rectangle color is %s%n",
                 nullRectangle.getArea(),
+                nullRectangle.getPerimeter(),
                 nullRectangle.getColor());
         double radius = 4.0;
         Shape circle = new Circle(radius, color);
