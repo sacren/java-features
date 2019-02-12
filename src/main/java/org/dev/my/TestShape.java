@@ -40,6 +40,18 @@ public class TestShape {
                 nullRectangle.getArea(),
                 nullRectangle.getPerimeter(),
                 nullRectangle.getColor());
+        Shape lengthRectangle = new Rectangle(length);
+        System.out.println();
+        System.out.println("=== Now showing Rectangle by length ===");
+        System.out.println();
+        System.out.println(lengthRectangle);
+        System.out.printf(
+                "The length rectangle area is %.2f%n"
+                        + "The length rectangle perimeter is %.2f%n"
+                        + "The length rectangle color is %s%n",
+                lengthRectangle.getArea(),
+                lengthRectangle.getPerimeter(),
+                lengthRectangle.getColor());
         double radius = 4.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
