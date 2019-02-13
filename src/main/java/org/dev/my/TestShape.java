@@ -67,7 +67,7 @@ public class TestShape {
                 sideRectangle.getArea(),
                 sideRectangle.getPerimeter(),
                 sideRectangle.getColor());
-        double radius = 4.0;
+        double radius = 100.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
         System.out.println("=== Now showing Circle ===");
@@ -93,5 +93,17 @@ public class TestShape {
                 defCircle.getArea(),
                 defCircle.getPerimeter(),
                 defCircle.getColor());
+        Shape radiusCircle = new Circle(radius);
+        System.out.println();
+        System.out.println("=== Now showing Circle with radius ===");
+        System.out.println();
+        System.out.println(radiusCircle);
+        System.out.printf(
+                "Circle area is %.2f%n"
+                        + "Circle circumference is %.2f%n"
+                        + "Circle color is %s%n",
+                radiusCircle.getArea(),
+                radiusCircle.getPerimeter(),
+                radiusCircle.getColor());
     }
 }
