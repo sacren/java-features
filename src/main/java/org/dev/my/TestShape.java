@@ -55,6 +55,18 @@ public class TestShape {
                 lengthRectangle.getArea(),
                 lengthRectangle.getPerimeter(),
                 lengthRectangle.getColor());
+        Shape sideRectangle = new Rectangle(length, width);
+        System.out.println();
+        System.out.println("=== Now showing Rectangle with both sides ===");
+        System.out.println();
+        System.out.println(sideRectangle);
+        System.out.printf(
+                "Rectangle area is %.2f%n"
+                        + "Rectangle perimeter is %.2f%n"
+                        + "Rectangle color is %s%n",
+                sideRectangle.getArea(),
+                sideRectangle.getPerimeter(),
+                sideRectangle.getColor());
         double radius = 4.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
