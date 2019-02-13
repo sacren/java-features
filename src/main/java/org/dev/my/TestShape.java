@@ -81,5 +81,17 @@ public class TestShape {
                 /* getPerimeter() is a wrapper for getCircumference() in Circle */
                 circle.getPerimeter(),
                 circle.getColor());
+        Shape defCircle = new Circle();
+        System.out.println();
+        System.out.println("=== Now showing default Circle ===");
+        System.out.println();
+        System.out.println(defCircle);
+        System.out.printf(
+                "Default Circle area is %.2f%n"
+                        + "Default Circle circumference is %.2f%n"
+                        + "Default Circle color is %s%n",
+                defCircle.getArea(),
+                defCircle.getPerimeter(),
+                defCircle.getColor());
     }
 }
