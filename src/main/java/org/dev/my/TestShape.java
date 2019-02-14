@@ -67,7 +67,7 @@ public class TestShape {
                 sideRectangle.getArea(),
                 sideRectangle.getPerimeter(),
                 sideRectangle.getColor());
-        double radius = 100.0;
+        final double radius = 100.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
         System.out.println("=== Now showing Circle ===");
