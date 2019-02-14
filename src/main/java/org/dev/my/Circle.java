@@ -1,6 +1,6 @@
 /**
  * Circle class composed of Point class
- * Circle subclass over Shape superclass
+ * Circle subclass extends Shape superclass
  *
  * <p>Private data with default values:
  * -center:Point = {0, 0}
