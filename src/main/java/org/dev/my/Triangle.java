@@ -104,12 +104,14 @@ public class Triangle extends Shape {
     }
 
     /** Public method for Triangle area. */
+    @Override
     public double getArea() {
         final double halfP = getPerimeter() / 2;
         return Math.sqrt(halfP * (halfP - sideA) * (halfP - sideB) * (halfP - sideC));
     }
 
     /** Public method for Triangle perimeter. */
+    @Override
     public double getPerimeter() {
         return sideA + sideB + sideC;
     }
