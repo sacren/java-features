@@ -23,9 +23,9 @@
  */
 public class Triangle extends Shape {
     /* private static data */
-    private static final double DEFAULT_SIDE_A = 1.0;
-    private static final double DEFAULT_SIDE_B = 2.0;
-    private static final double DEFAULT_SIDE_C = 3.0;
+    private static final double DEFAULT_SIDE_A = 4;
+    private static final double DEFAULT_SIDE_B = 5;
+    private static final double DEFAULT_SIDE_C = 6;
     private static final String DEFAULT_COLOR = "brown";
 
     /* private instance data */

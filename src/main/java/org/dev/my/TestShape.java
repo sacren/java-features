@@ -120,5 +120,17 @@ public class TestShape {
                 triangle.getArea(),
                 triangle.getPerimeter(),
                 triangle.getColor());
+        Shape defTriangle = new Triangle();
+        System.out.println();
+        System.out.println("=== Now showing default Triangle ===");
+        System.out.println();
+        System.out.println(defTriangle);
+        System.out.printf(
+                "Default triangle area is %.2f%n"
+                        + "Default triangle perimeter is %.2f%n"
+                        + "Default triangle color is %s%n",
+                defTriangle.getArea(),
+                defTriangle.getPerimeter(),
+                defTriangle.getColor());
     }
 }
