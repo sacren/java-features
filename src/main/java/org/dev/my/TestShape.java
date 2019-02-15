@@ -115,8 +115,10 @@ public class TestShape {
         System.out.println(triangle);
         System.out.printf(
                 "Triangle area is %.2f%n"
-                        + "Triangle perimeter is %.2f%n",
+                        + "Triangle perimeter is %.2f%n"
+                        + "Triangle color is %s%n",
                 triangle.getArea(),
-                triangle.getPerimeter());
+                triangle.getPerimeter(),
+                triangle.getColor());
     }
 }
