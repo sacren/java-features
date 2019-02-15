@@ -105,13 +105,16 @@ public class TestShape {
                 radiusCircle.getArea(),
                 radiusCircle.getPerimeter(),
                 radiusCircle.getColor());
-        final double sideA = 100.0;
-        final double sideB = 200.0;
-        final double sideC = 300.0;
+        final double sideA = 30;
+        final double sideB = 40;
+        final double sideC = 50;
         Shape triangle = new Triangle(color, sideA, sideB, sideC);
         System.out.println();
         System.out.println("=== Now showing custom Triangle ===");
         System.out.println();
         System.out.println(triangle);
+        System.out.printf(
+                "Triangle area is %.2f%n",
+                triangle.getArea());
     }
 }
