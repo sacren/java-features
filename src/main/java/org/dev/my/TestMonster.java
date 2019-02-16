@@ -11,5 +11,9 @@ public class TestMonster {
         System.out.println();
         System.out.println(waterMonster);
         System.out.println(waterMonster.attack());
+        Monster cookieMonster = new CookieMonster("c2a2");
+        System.out.println();
+        System.out.println(cookieMonster);
+        System.out.println(cookieMonster.attack());
     }
 }
