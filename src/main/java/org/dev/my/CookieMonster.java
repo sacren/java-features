@@ -22,6 +22,6 @@ public class CookieMonster extends Monster {
 
     /** CookieMonster description. */
     public String toString() {
-        return String.format("[Cookie Monster]");
+        return String.format("[Cookie Monster: %s]", getName());
     }
 }

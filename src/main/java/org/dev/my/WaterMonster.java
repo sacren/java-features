@@ -22,6 +22,6 @@ public class WaterMonster extends Monster {
 
     /** WaterMonster description. */
     public String toString() {
-        return String.format("[Water Monster]");
+        return String.format("[Water Monster: %s]", getName());
     }
 }

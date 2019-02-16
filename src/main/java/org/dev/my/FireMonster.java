@@ -22,6 +22,6 @@ public class FireMonster extends Monster {
 
     /** FireMonster description. */
     public String toString() {
-        return String.format("[Fire Monster]");
+        return String.format("[Fire Monster: %s]", getName());
     }
 }
