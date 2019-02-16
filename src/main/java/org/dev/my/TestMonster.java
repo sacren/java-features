@@ -7,5 +7,9 @@ public class TestMonster {
         Monster monster = new FireMonster("f2a2");
         System.out.println(monster);
         System.out.println(monster.attack());
+        Monster waterMonster = new WaterMonster("w2a2");
+        System.out.println();
+        System.out.println(waterMonster);
+        System.out.println(waterMonster.attack());
     }
 }
