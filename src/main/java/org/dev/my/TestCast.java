@@ -8,6 +8,8 @@ public class TestCast {
         System.out.println(top);
         CastTop middle = new CastMiddle();
         System.out.println(middle);
+        CastMiddle downCast = (CastMiddle)middle;
+        System.out.println(downCast);
         CastMiddle bottom = new CastBottom();
         System.out.println(bottom);
     }
