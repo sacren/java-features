@@ -6,5 +6,7 @@ public class TestCast {
     public static void main(String[] args) {
         CastTop top = new CastTop();
         System.out.println(top);
+        CastTop middle = new CastMiddle();
+        System.out.println(middle);
     }
 }
