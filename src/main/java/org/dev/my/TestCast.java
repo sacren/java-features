@@ -11,8 +11,7 @@ public class TestCast {
         CastTop middle = new CastMiddle();
         System.out.println(middle);
         /* downcast */
-        CastMiddle downCast = (CastMiddle)middle;
-        System.out.println(downCast);
+        System.out.println((CastMiddle)middle);
         /* upcast */
         CastMiddle bottom = new CastBottom();
         System.out.println(bottom);
