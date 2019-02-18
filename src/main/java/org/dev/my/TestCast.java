@@ -16,7 +16,9 @@ public class TestCast {
         CastMiddle bottom = new CastBottom();
         System.out.println(bottom);
         /* double upcast */
-        CastTop doubleUp = new CastBottom();
-        System.out.println(doubleUp);
+        CastTop anotherTop = new CastBottom();
+        System.out.println(anotherTop);
+        /* double downcast */
+        System.out.println((CastBottom)anotherTop);
     }
 }
