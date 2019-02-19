@@ -21,5 +21,11 @@ public class TestCast {
         System.out.println(anotherTop);
         /* double downcast */
         System.out.println((CastBottom)anotherTop);
+        /* instanceof operator */
+        System.out.println(top instanceof CastTop);
+        System.out.println(middle instanceof CastTop);
+        System.out.println(bottom instanceof CastTop);
+        System.out.println(top instanceof CastMiddle);
+        System.out.println(middle instanceof CastBottom);
     }
 }
