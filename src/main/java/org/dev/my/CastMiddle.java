@@ -14,6 +14,7 @@ public class CastMiddle extends CastTop {
     }
 
     /** CastMiddle description. */
+    @Override
     public String toString() {
         return "This is CastMiddle subclass and superclass.";
     }
