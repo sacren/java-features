@@ -28,13 +28,13 @@ public class TestCast {
         System.out.println();
         System.out.println("=== Double upcast ===");
         System.out.println();
-        CastTop anotherTop = new CastBottom();
-        System.out.println(anotherTop);
+        CastTop doubleTop = new CastBottom();
+        System.out.println(doubleTop);
         /* double downcast */
         System.out.println();
         System.out.println("=== Double downcast ===");
         System.out.println();
-        System.out.println((CastBottom)anotherTop);
+        System.out.println((CastBottom)doubleTop);
         /* instanceof operator */
         System.out.println();
         System.out.println("=== instanceof operator ===");
