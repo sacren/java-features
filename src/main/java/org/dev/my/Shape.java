@@ -1,5 +1,5 @@
 /**
- * Shape (abstract class)
+ * Shape abstract superclass
  *
  * <p>Shape superclass provides the common properties of all shapes.
  *
@@ -26,7 +26,7 @@ public abstract class Shape {
         this.color = color;
     }
 
-    /** Public method for color of various shapes. */
+    /** getter for color of various shapes. */
     public String getColor() {
         return color;
     }
