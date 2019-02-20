@@ -17,10 +17,12 @@
  * +setLength(length:double):void
  * +getWidth():double
  * +setWidth(width:double):void
- * +setLengthWidth(length:double, width:double):void
  * +getArea():double
  * +getPerimeter():double
  * +toString():String
+ *
+ * <p>Private helper methods:
+ * -setLengthWidth(length:double, width:double):void
  */
 public class Rectangle extends Shape {
     /* private static data */
@@ -90,8 +92,8 @@ public class Rectangle extends Shape {
         this.width = width;
     }
 
-    /** Helper method for both setLength() and setWidth(). */
-    public void setLengthWidth(double length, double width) {
+    /* helper method for both setLength() and setWidth() */
+    private void setLengthWidth(double length, double width) {
         setLength(length);
         setWidth(width);
     }
