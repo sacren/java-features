@@ -124,10 +124,12 @@ public class TestShape {
         System.out.printf(
                 "Composite Circle area is %.2f%n"
                         + "Composite Circle circumference is %.2f%n"
-                        + "Composite Circle color is %s%n",
+                        + "Composite Circle color is %s%n"
+                        + "Composite Circle diameter is %.2f%n",
                 centerCircle.getArea(),
                 centerCircle.getPerimeter(),
-                centerCircle.getColor());
+                centerCircle.getColor(),
+                ((Circle)centerCircle).getDiameter());
         /* custom Triangle instance with color and 3 sides */
         final double sideA = 30;
         final double sideB = 40;
