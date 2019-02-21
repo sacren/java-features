@@ -10,7 +10,7 @@ public class TestShape {
         String color = "red";
         Shape rectangle = new Rectangle(color, length, width);
         System.out.println();
-        System.out.println("=== Showing custom Rectangle ===");
+        System.out.println("=== Custom Rectangle ===");
         System.out.println();
         System.out.println(rectangle);
         System.out.printf(
@@ -23,7 +23,7 @@ public class TestShape {
         /* default Rectangle instance */
         Shape defRectangle = new Rectangle();
         System.out.println();
-        System.out.println("=== Now showing default Rectangle ===");
+        System.out.println("=== Default Rectangle ===");
         System.out.println();
         System.out.println(defRectangle);
         System.out.printf(
@@ -36,7 +36,7 @@ public class TestShape {
         /* Rectangle instance with null parameter */
         Shape nullRectangle = new Rectangle(null);
         System.out.println();
-        System.out.println("=== Now showing null Rectangle ===");
+        System.out.println("=== Rectangle with null parameter  ===");
         System.out.println();
         System.out.println(nullRectangle);
         System.out.printf(
@@ -49,7 +49,7 @@ public class TestShape {
         /* custom Rectangle instance with length */
         Shape lengthRectangle = new Rectangle(length);
         System.out.println();
-        System.out.println("=== Now showing Rectangle by length ===");
+        System.out.println("=== Rectangle with length ===");
         System.out.println();
         System.out.println(lengthRectangle);
         System.out.printf(
@@ -62,7 +62,7 @@ public class TestShape {
         /* custom Rectangle instance with length and width */
         Shape sideRectangle = new Rectangle(length, width);
         System.out.println();
-        System.out.println("=== Now showing Rectangle with both sides ===");
+        System.out.println("=== Rectangle with both sides ===");
         System.out.println();
         System.out.println(sideRectangle);
         System.out.printf(
@@ -76,7 +76,7 @@ public class TestShape {
         final double radius = 100.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
-        System.out.println("=== Now showing Circle ===");
+        System.out.println("=== Circle ===");
         System.out.println();
         System.out.println(circle);
         System.out.printf(
@@ -90,7 +90,7 @@ public class TestShape {
         /* default Circle instance */
         Shape defCircle = new Circle();
         System.out.println();
-        System.out.println("=== Now showing default Circle ===");
+        System.out.println("=== Default Circle ===");
         System.out.println();
         System.out.println(defCircle);
         System.out.printf(
@@ -103,7 +103,7 @@ public class TestShape {
         /* custome Circle instance with radius */
         Shape radiusCircle = new Circle(radius);
         System.out.println();
-        System.out.println("=== Now showing Circle with radius ===");
+        System.out.println("=== Circle with radius ===");
         System.out.println();
         System.out.println(radiusCircle);
         System.out.printf(
@@ -134,7 +134,7 @@ public class TestShape {
         final double sideC = 50;
         Shape triangle = new Triangle(color, sideA, sideB, sideC);
         System.out.println();
-        System.out.println("=== Now showing custom Triangle ===");
+        System.out.println("=== Custom Triangle ===");
         System.out.println();
         System.out.println(triangle);
         System.out.printf(
@@ -147,7 +147,7 @@ public class TestShape {
         /* default Triangle instance */
         Shape defTriangle = new Triangle();
         System.out.println();
-        System.out.println("=== Now showing default Triangle ===");
+        System.out.println("=== Default Triangle ===");
         System.out.println();
         System.out.println(defTriangle);
         System.out.printf(
