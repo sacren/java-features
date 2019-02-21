@@ -105,6 +105,21 @@ public class TestShape {
                 radiusCircle.getArea(),
                 radiusCircle.getPerimeter(),
                 radiusCircle.getColor());
+        /* composite circle with center Point and radius */
+        final int centerX = 40;
+        final int centerY = -5;
+        Shape centerCircle = new Circle(new Point(centerX, centerY), radius);
+        System.out.println();
+        System.out.println("=== Composite Circle with center Point and radius ===");
+        System.out.println();
+        System.out.println(centerCircle);
+        System.out.printf(
+                "Composite Circle area is %.2f%n"
+                        + "Composite Circle circumference is %.2f%n"
+                        + "Composite Circle color is %s%n",
+                centerCircle.getArea(),
+                centerCircle.getPerimeter(),
+                centerCircle.getColor());
         final double sideA = 30;
         final double sideB = 40;
         final double sideC = 50;
