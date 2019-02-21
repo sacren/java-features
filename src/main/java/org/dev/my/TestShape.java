@@ -4,6 +4,7 @@
 public class TestShape {
     /** Test various shapes. */
     public static void main(String[] args) {
+        /* custom Rectangle instance */
         final double length = 300.0;
         final double width = 200.0;
         String color = "red";
@@ -19,6 +20,7 @@ public class TestShape {
                 rectangle.getArea(),
                 rectangle.getPerimeter(),
                 rectangle.getColor());
+        /* default Rectangle instance */
         Shape defRectangle = new Rectangle();
         System.out.println();
         System.out.println("=== Now showing default Rectangle ===");
@@ -31,6 +33,7 @@ public class TestShape {
                 defRectangle.getArea(),
                 defRectangle.getPerimeter(),
                 defRectangle.getColor());
+        /* Rectangle instance with null parameter */
         Shape nullRectangle = new Rectangle(null);
         System.out.println();
         System.out.println("=== Now showing null Rectangle ===");
@@ -43,6 +46,7 @@ public class TestShape {
                 nullRectangle.getArea(),
                 nullRectangle.getPerimeter(),
                 nullRectangle.getColor());
+        /* custom Rectangle instance with length */
         Shape lengthRectangle = new Rectangle(length);
         System.out.println();
         System.out.println("=== Now showing Rectangle by length ===");
@@ -55,6 +59,7 @@ public class TestShape {
                 lengthRectangle.getArea(),
                 lengthRectangle.getPerimeter(),
                 lengthRectangle.getColor());
+        /* custom Rectangle instance with length and width */
         Shape sideRectangle = new Rectangle(length, width);
         System.out.println();
         System.out.println("=== Now showing Rectangle with both sides ===");
@@ -67,6 +72,7 @@ public class TestShape {
                 sideRectangle.getArea(),
                 sideRectangle.getPerimeter(),
                 sideRectangle.getColor());
+        /* custom Circle instance with radius and color */
         final double radius = 100.0;
         Shape circle = new Circle(radius, color);
         System.out.println();
@@ -81,6 +87,7 @@ public class TestShape {
                 /* getPerimeter() is a wrapper for getCircumference() in Circle */
                 circle.getPerimeter(),
                 circle.getColor());
+        /* default Circle instance */
         Shape defCircle = new Circle();
         System.out.println();
         System.out.println("=== Now showing default Circle ===");
@@ -93,6 +100,7 @@ public class TestShape {
                 defCircle.getArea(),
                 defCircle.getPerimeter(),
                 defCircle.getColor());
+        /* custome Circle instance with radius */
         Shape radiusCircle = new Circle(radius);
         System.out.println();
         System.out.println("=== Now showing Circle with radius ===");
@@ -120,6 +128,7 @@ public class TestShape {
                 centerCircle.getArea(),
                 centerCircle.getPerimeter(),
                 centerCircle.getColor());
+        /* custom Triangle instance with color and 3 sides */
         final double sideA = 30;
         final double sideB = 40;
         final double sideC = 50;
@@ -135,6 +144,7 @@ public class TestShape {
                 triangle.getArea(),
                 triangle.getPerimeter(),
                 triangle.getColor());
+        /* default Triangle instance */
         Shape defTriangle = new Triangle();
         System.out.println();
         System.out.println("=== Now showing default Triangle ===");
