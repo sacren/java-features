@@ -118,17 +118,24 @@ public class TestShape {
         final int centerY = -5;
         Shape centerCircle = new Circle(new Point(centerX, centerY), radius);
         Circle downcastCircle = (Circle)centerCircle;
+        Shape upcastCircle = (Shape)downcastCircle;
         System.out.println();
         System.out.println("=== Composite Circle with center Point and radius ===");
         System.out.println();
         System.out.println(centerCircle);
+        System.out.println(downcastCircle);
+        System.out.println(upcastCircle);
         System.out.printf(
                 "Composite Circle area is %.2f%n"
+                        + "Composite Circle area is %.2f%n"
+                        + "Composite Circle area is %.2f%n"
                         + "Composite Circle circumference is %.2f%n"
                         + "Composite Circle color is %s%n"
                         + "Composite Circle diameter is %.2f%n"
                         + "Composite Circle center is %s%n",
                 centerCircle.getArea(),
+                downcastCircle.getArea(),
+                upcastCircle.getArea(),
                 centerCircle.getPerimeter(),
                 centerCircle.getColor(),
                 downcastCircle.getDiameter(),
