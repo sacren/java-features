@@ -140,6 +140,30 @@ public class TestShape {
                 centerCircle.getColor(),
                 downcastCircle.getDiameter(),
                 downcastCircle.getCenter());
+        /* Triple the radius and change circle color. */
+        downcastCircle.setRadius(radius * 3);
+        downcastCircle.setColor(Circle.FAVORITE_COLOR);
+        System.out.println();
+        System.out.println("=== Composite Circle with radius and color changed ===");
+        System.out.println();
+        System.out.println(centerCircle);
+        System.out.println(downcastCircle);
+        System.out.println(upcastCircle);
+        System.out.printf(
+                "Composite Circle area is %.2f%n"
+                        + "Composite Circle area is %.2f%n"
+                        + "Composite Circle area is %.2f%n"
+                        + "Composite Circle circumference is %.2f%n"
+                        + "Composite Circle color is %s%n"
+                        + "Composite Circle diameter is %.2f%n"
+                        + "Composite Circle center is %s%n",
+                centerCircle.getArea(),
+                downcastCircle.getArea(),
+                upcastCircle.getArea(),
+                centerCircle.getPerimeter(),
+                centerCircle.getColor(),
+                downcastCircle.getDiameter(),
+                downcastCircle.getCenter());
         /* custom Triangle instance with color and 3 sides */
         final double sideA = 30;
         final double sideB = 40;
