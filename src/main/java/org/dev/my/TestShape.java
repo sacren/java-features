@@ -117,6 +117,7 @@ public class TestShape {
         final int centerX = 40;
         final int centerY = -5;
         Shape centerCircle = new Circle(new Point(centerX, centerY), radius);
+        Circle downcastCircle = (Circle)centerCircle;
         System.out.println();
         System.out.println("=== Composite Circle with center Point and radius ===");
         System.out.println();
@@ -130,8 +131,8 @@ public class TestShape {
                 centerCircle.getArea(),
                 centerCircle.getPerimeter(),
                 centerCircle.getColor(),
-                ((Circle)centerCircle).getDiameter(),
-                ((Circle)centerCircle).getCenter());
+                downcastCircle.getDiameter(),
+                downcastCircle.getCenter());
         /* custom Triangle instance with color and 3 sides */
         final double sideA = 30;
         final double sideB = 40;
