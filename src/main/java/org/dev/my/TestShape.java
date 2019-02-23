@@ -143,8 +143,9 @@ public class TestShape {
         /* Triple the radius and change circle color. */
         downcastCircle.setRadius(radius * 3);
         downcastCircle.setColor(Circle.FAVORITE_COLOR);
+        downcastCircle.setCenter(new Point(centerX - 99, centerY * 3));
         System.out.println();
-        System.out.println("=== Composite Circle with radius and color changed ===");
+        System.out.println("=== Composite Circle with center, radius and color updated ===");
         System.out.println();
         System.out.println(centerCircle);
         System.out.println(downcastCircle);
