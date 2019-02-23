@@ -116,55 +116,48 @@ public class TestShape {
         /* composite circle with center Point and radius */
         final int centerX = 40;
         final int centerY = -5;
-        Shape shapeCircle = new Circle(new Point(centerX, centerY), radius);
-        Circle circlecastCircle = (Circle)shapeCircle;
-        Shape shapecastCircle = (Shape)circlecastCircle;
+        Circle originalCircle = new Circle(new Point(centerX, centerY), radius);
+        Shape shapeCircle = (Shape)originalCircle;
         System.out.println();
         System.out.println("=== Composite Circle with center Point and radius ===");
         System.out.println();
+        System.out.println(originalCircle);
         System.out.println(shapeCircle);
-        System.out.println(circlecastCircle);
-        System.out.println(shapecastCircle);
         System.out.printf(
                 "Composite Circle area is %.2f%n"
-                        + "Composite Circle area is %.2f%n"
-                        + "Composite Circle area is %.2f%n"
+                        + "Upcast composite Circle area is %.2f%n"
                         + "Composite Circle circumference is %.2f%n"
                         + "Composite Circle color is %s%n"
                         + "Composite Circle diameter is %.2f%n"
                         + "Composite Circle center is %s%n",
+                originalCircle.getArea(),
                 shapeCircle.getArea(),
-                circlecastCircle.getArea(),
-                shapecastCircle.getArea(),
                 shapeCircle.getPerimeter(),
                 shapeCircle.getColor(),
-                circlecastCircle.getDiameter(),
-                circlecastCircle.getCenter());
+                originalCircle.getDiameter(),
+                originalCircle.getCenter());
         /* Triple the radius and change circle color. */
-        circlecastCircle.setRadius(radius * 3);
-        circlecastCircle.setColor(Circle.FAVORITE_COLOR);
-        circlecastCircle.setCenter(new Point(centerX - 99, centerY * 3));
+        originalCircle.setRadius(radius * 3);
+        originalCircle.setColor(Circle.FAVORITE_COLOR);
+        originalCircle.setCenter(new Point(centerX - 99, centerY * 3));
         System.out.println();
         System.out.println("=== Composite Circle with center, radius and color updated ===");
         System.out.println();
+        System.out.println(originalCircle);
         System.out.println(shapeCircle);
-        System.out.println(circlecastCircle);
-        System.out.println(shapecastCircle);
         System.out.printf(
                 "Composite Circle area is %.2f%n"
-                        + "Composite Circle area is %.2f%n"
-                        + "Composite Circle area is %.2f%n"
+                        + "Upcast composite Circle area is %.2f%n"
                         + "Composite Circle circumference is %.2f%n"
                         + "Composite Circle color is %s%n"
                         + "Composite Circle diameter is %.2f%n"
                         + "Composite Circle center is %s%n",
+                originalCircle.getArea(),
                 shapeCircle.getArea(),
-                circlecastCircle.getArea(),
-                shapecastCircle.getArea(),
                 shapeCircle.getPerimeter(),
                 shapeCircle.getColor(),
-                circlecastCircle.getDiameter(),
-                circlecastCircle.getCenter());
+                originalCircle.getDiameter(),
+                originalCircle.getCenter());
         /* custom Triangle instance with color and 3 sides */
         final double sideA = 30;
         final double sideB = 40;
