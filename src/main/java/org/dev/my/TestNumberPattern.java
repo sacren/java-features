@@ -49,118 +49,107 @@ public class TestNumberPattern {
         Scanner inputStream = new Scanner(System.in);
         System.out.print("Enter the size (max 24, min 4) of number pattern: ");
         int size = inputStream.nextInt();
+        inputStream.close();
         if (size < 4 || size > 24) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", size));
         }
         System.out.println();
-        bottomLeft(size);
-        centerId(size, 'a');
-        System.out.println();
-        topRight(size);
-        centerId(size, 'b');
-        System.out.println();
-        bottomRight(size);
-        centerId(size, 'c');
-        System.out.println();
-        topLeft(size);
-        centerId(size, 'd');
-        inputStream.close();
+        System.out.print(bottomLeft(size));
+        System.out.println(centerId(size, 'a'));
+        System.out.print(topRight(size));
+        System.out.println(centerId(size, 'b'));
+        System.out.print(bottomRight(size));
+        System.out.println(centerId(size, 'c'));
+        System.out.print(topLeft(size) + centerId(size, 'd'));
     }
 
     /* annotate pattern with centered ID */
-    private static void centerId(int size, char id) {
+    private static String centerId(int size, char id) {
+        String s = String.format("(%c)%n", id);
         for (int i = 0; i < size / 2; i++) {
-            System.out.printf("%3c", ' ');
+            s = String.format("%3c", ' ') + s;
         }
-
-        System.out.printf("(%c)%n", id);
+        return s;
     }
 
     /* right angle at bottom-left corner */
-    private static void bottomLeft(int size) {
+    private static String bottomLeft(int size) {
         final int firstCount = 1;
-
+        String s = "";
         for (int row = firstCount; row <= size; row++) {
             for (int col = firstCount; col <= row; col++) {
                 if (col == row) {
-                    System.out.printf("%3d%n", col);
+                    s += String.format("%3d%n", col);
                     break;
                 }
-
-                System.out.printf("%3d", col);
+                s += String.format("%3d", col);
             }
         }
+        return s;
     }
 
     /* right angle at top-right corner */
-    private static void topRight(int size) {
+    private static String topRight(int size) {
         final int firstCount = 1;
+        String s = "";
         int width;
-
         for (int row = firstCount; row <= size; row++) {
             width = size - row + 1;
-
             for (int col = firstCount; col < row; col++) {
-                System.out.printf("%3c", ' ');
+                s += String.format("%3c", ' ');
             }
-
             for (int col = firstCount; col <= width; col++) {
                 if (col == width) {
-                    System.out.printf("%3d%n", col);
+                    s += String.format("%3d%n", col);
                     break;
                 }
-
-                System.out.printf("%3d", col);
+                s += String.format("%3d", col);
             }
         }
+        return s;
     }
 
     /* right angle at bottom-right corner */
-    private static void bottomRight(int size) {
+    private static String bottomRight(int size) {
         final int firstCount = 1;
+        String s = "";
         int width;
         int number;
-
         for (int row = firstCount; row <= size; row++) {
             width = size - row + 1;
-
             for (int col = firstCount; col < width; col++) {
-                System.out.printf("%3c", ' ');
+                s += String.format("%3c", ' ');
             }
-
             for (int col = firstCount; col <= row; col++) {
                 number = row - col + 1;
-
                 if (col == row) {
-                    System.out.printf("%3d%n", number);
+                    s += String.format("%3d%n", number);
                     break;
                 }
-
-                System.out.printf("%3d", number);
+                s += String.format("%3d", number);
             }
         }
+        return s;
     }
 
     /* right angle at top-left corner */
-    private static void topLeft(int size) {
+    private static String topLeft(int size) {
         final int firstCount = 1;
+        String s = "";
         int sentinel;
         int number;
-
         for (int row = firstCount; row <= size; row++) {
             sentinel = size - row + 1;
-
             for (int col = firstCount; col <= size; col++) {
                 number = sentinel - col + 1;
-
                 if (col == sentinel) {
-                    System.out.printf("%3d%n", number);
+                    s += String.format("%3d%n", number);
                     break;
                 }
-
-                System.out.printf("%3d", number);
+                s += String.format("%3d", number);
             }
         }
+        return s;
     }
 }
