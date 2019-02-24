@@ -1,5 +1,5 @@
 /**
- * Prompt the user for the size of a non-negative integer and print the pattern.
+ * Print a list of numbers in 8 x 8 format.
  *
  * <p>1
  *    1  2
@@ -21,15 +21,15 @@
  *                         1
  *              (b)
  *
- * <p>                       1
- *                        2  1
- *                     3  2  1
- *                  4  3  2  1
- *               5  4  3  2  1
- *            6  5  4  3  2  1
- *         7  6  5  4  3  2  1
- *      8  7  6  5  4  3  2  1
- *                (c)
+ *                      <p>1
+ *                      2  1
+ *                   3  2  1
+ *                4  3  2  1
+ *             5  4  3  2  1
+ *          6  5  4  3  2  1
+ *       7  6  5  4  3  2  1
+ *    8  7  6  5  4  3  2  1
+ *              (c)
  *
  * <p>8  7  6  5  4  3  2  1
  *    7  6  5  4  3  2  1
@@ -41,19 +41,12 @@
  *    1
  *              (d)
  */
-import java.util.Scanner;
-
 public class TestNumberPattern {
-    /** Display number pattern. */
+    /** Display number pattern in 8 x 8 format. */
     public static void main(String[] args) {
-        Scanner inputStream = new Scanner(System.in);
-        System.out.print("Enter the size (max 24, min 4) of number pattern: ");
-        int size = inputStream.nextInt();
-        inputStream.close();
-        if (size < 4 || size > 24) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid!", size));
-        }
+        final int size = 8;
+        System.out.println();
+        System.out.println("Display numbers in 8 x 8 format.");
         System.out.println();
         System.out.print(bottomLeft(size));
         System.out.println(centerId(size, 'a'));
