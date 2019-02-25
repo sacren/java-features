@@ -343,15 +343,7 @@ public class TestPatternIn2D {
                     s += String.format("#%n");
                     break;
                 }
-                if (row % size < 2) {
-                    s += String.format("# ");
-                    continue;
-                }
-                if (col == row) {
-                    s += String.format("# ");
-                    continue;
-                }
-                if (col == size - row + 1) {
+                if (row % size < 2 || col == row || col == size - row + 1) {
                     s += String.format("# ");
                     continue;
                 }
