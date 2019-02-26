@@ -4,14 +4,17 @@
 public class TestMonster {
     /** Test driver for various monsters. */
     public static void main(String[] args) {
-        Monster fireMonster = new FireMonster("f2a2");
+        String fireMonsterName = "Escalante";
+        Monster fireMonster = new FireMonster(fireMonsterName);
         System.out.println(fireMonster);
         System.out.println(fireMonster.attack());
-        Monster waterMonster = new WaterMonster("w2a2");
+        String waterMonsterName = "Aquaphonia";
+        Monster waterMonster = new WaterMonster(waterMonsterName);
         System.out.println();
         System.out.println(waterMonster);
         System.out.println(waterMonster.attack());
-        Monster cookieMonster = new CookieMonster("c2a2");
+        String cookieMonsterName = "Abominable Kuch";
+        Monster cookieMonster = new CookieMonster(cookieMonsterName);
         System.out.println();
         System.out.println(cookieMonster);
         System.out.println(cookieMonster.attack());
