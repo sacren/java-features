@@ -26,8 +26,8 @@ project.  Maven is essential in building Java Features.
 2. Build and test:
 
         $ mvn clean package
-        $ java -cp target/java-features-1.0.jar PrintPattern
-        $ java -cp target/java-features-1.0.jar LeapYears
+        $ java -cp target/java-features-1.0.jar TestPatternIn2D
+        $ java -cp target/java-features-1.0.jar TestShape
         ...
 
 ### From now on all is set up for collaboration.
