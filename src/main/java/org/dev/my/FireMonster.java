@@ -17,7 +17,7 @@ public class FireMonster extends Monster {
     /** FireMonster public method for attack. */
     @Override
     public String attack() {
-        return "Attack with fire!";
+        return String.format("%s blows fire!", getName());
     }
 
     /** FireMonster description. */

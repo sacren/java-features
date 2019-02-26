@@ -17,7 +17,7 @@ public class CookieMonster extends Monster {
     /** CookieMonster public method for attack. */
     @Override
     public String attack() {
-        return "Eat all the cookies!";
+        return String.format("%s eats all the cookies!", getName());
     }
 
     /** CookieMonster description. */

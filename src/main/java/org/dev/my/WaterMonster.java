@@ -17,7 +17,7 @@ public class WaterMonster extends Monster {
     /** WaterMonster public method for attack. */
     @Override
     public String attack() {
-        return "Attack with water!";
+        return String.format("%s pours water!", getName());
     }
 
     /** WaterMonster description. */
