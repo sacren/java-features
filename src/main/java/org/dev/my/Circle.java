@@ -39,8 +39,8 @@ public class Circle extends Shape {
     /** Circle constructor with default data. */
     public Circle() {
         super(DEFAULT_COLOR);
-        this.center = DEFAULT_CENTER;
-        this.radius = DEFAULT_RADIUS;
+        center = DEFAULT_CENTER;
+        radius = DEFAULT_RADIUS;
     }
 
     /** Circle constructor with customized radius. */
@@ -52,7 +52,7 @@ public class Circle extends Shape {
     /** Circle constructor with customized color and radisu. */
     public Circle(double radius, String color) {
         super(color);
-        this.center = DEFAULT_CENTER;
+        center = DEFAULT_CENTER;
         setRadius(radius);
     }
 
