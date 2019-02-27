@@ -45,8 +45,7 @@ public class Circle extends Shape {
 
     /** Circle constructor with customized radius. */
     public Circle(double radius) {
-        super(DEFAULT_COLOR);
-        this.center = DEFAULT_CENTER;
+        this();
         setRadius(radius);
     }
 
