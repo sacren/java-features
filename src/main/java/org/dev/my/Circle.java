@@ -89,8 +89,8 @@ public class Circle extends Shape {
         return radius * 2;
     }
 
-    /** Circle public method for circle circumference. */
-    public double getCircumference() {
+    /* Circle private method for circle circumference. */
+    private double getCircumference() {
         return radius * 2 * Math.PI;
     }
 
