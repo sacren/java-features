@@ -110,11 +110,10 @@ public class Rectangle extends Shape {
         return (length + width) * 2;
     }
 
-    /** Rectangle description. */
+    /** Rectangle instance description. */
     public String toString() {
         return String.format(
                 "[Rectangle (Color=%s, Length=%.2f, Width=%.2f)]",
-                /* retrieve color via substitution */
                 getColor(), length, width);
     }
 }
