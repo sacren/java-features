@@ -89,15 +89,10 @@ public class Circle extends Shape {
         return radius * 2;
     }
 
-    /* Circle private method for circle circumference. */
-    private double getCircumference() {
-        return radius * 2 * Math.PI;
-    }
-
     /** Circle public method for circle perimeter. */
     @Override
     public double getPerimeter() {
-        return getCircumference();
+        return radius * 2 * Math.PI;
     }
 
     /** Circle public method for circle area. */
