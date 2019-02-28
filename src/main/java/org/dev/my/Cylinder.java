@@ -24,10 +24,10 @@ public class Cylinder extends Circle {
     /* private instance data */
     private double height;
 
-    /** Default constructor for cylinder. */
+    /** Cylinder default constructor. */
     public Cylinder() {
-        super(); /* execute Circle() */
-        this.height = DEFAULT_HEIGHT;
+        super();
+        height = DEFAULT_HEIGHT;
     }
 
     /** Custom constructor for cylinder. */
