@@ -187,5 +187,21 @@ public class TestShape {
                 defTriangle.getArea(),
                 defTriangle.getPerimeter(),
                 defTriangle.getColor());
+        /* default Cylinder instance */
+        System.out.println();
+        System.out.println("=== Default Cylinder ===");
+        System.out.println();
+        Cylinder defCylinder = new Cylinder();
+        System.out.print((Shape)defCylinder);
+        System.out.print((Circle)defCylinder);
+        System.out.printf(
+                "Default cylinder base area is %.2f%n"
+                        + "Default cylinder surface area is %.2f%n"
+                        + "Default cylinder volume is %.2f%n"
+                        + "Default cylinder color is %s%n",
+                defCylinder.getBaseArea(), /* default cylinder base area */
+                defCylinder.getArea(), /* default cylinder surface area */
+                defCylinder.getVolume(), /* default cylinder volume */
+                defCylinder.getColor());
     }
 }
