@@ -27,8 +27,8 @@
 public class Rectangle extends Shape {
     /* private static data */
     private static String DEFAULT_COLOR = "cyan";
-    private static double DEFAULT_LENGTH = 2.0f;
-    private static double DEFAULT_WIDTH = 1.0f;
+    private static final double DEFAULT_LENGTH = 2.0f;
+    private static final double DEFAULT_WIDTH = 1.0f;
 
     /* private instance data */
     private double length;
