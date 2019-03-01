@@ -100,7 +100,7 @@ public class TestShape {
                 defCircle.getArea(),
                 defCircle.getPerimeter(),
                 defCircle.getColor());
-        /* custome Circle instance with radius */
+        /* custom Circle instance with radius */
         Shape radiusCircle = new Circle(radius);
         System.out.println();
         System.out.println("=== Circle with radius ===");
@@ -203,5 +203,22 @@ public class TestShape {
                 defCylinder.getArea(), /* default cylinder surface area */
                 defCylinder.getVolume(), /* default cylinder volume */
                 defCylinder.getColor());
+        /* custom Cylinder instance */
+        System.out.println();
+        System.out.println("=== Custom Cylinder ===");
+        System.out.println();
+        final double height = 12;
+        Shape shapeCylinder = new Cylinder(radius, height, color);
+        System.out.print(shapeCylinder);
+        Cylinder cylinder = (Cylinder)shapeCylinder;
+        System.out.printf(
+                "Custom cylinder base area is %.2f%n"
+                        + "Custom cylinder surface area is %.2f%n"
+                        + "Custom cylinder volume is %.2f%n"
+                        + "Custom cylinder color is %s%n",
+                cylinder.getBaseArea(), /* custom cylinder base area */
+                cylinder.getArea(), /* custom cylinder surface area */
+                cylinder.getVolume(), /* custom cylinder volume */
+                cylinder.getColor()); /* custom cylinder color */
     }
 }
