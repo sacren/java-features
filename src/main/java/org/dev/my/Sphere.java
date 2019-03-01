@@ -33,7 +33,7 @@ public class Sphere extends Circle {
 
     /** Public method using inheritance. */
     public double getVolume() {
-        return Math.PI * super.getRadius() * super.getRadius() * super.getRadius() * 4 / 3;
+        return Math.PI * getRadius() * getRadius() * getRadius() * 4 / 3;
     }
 
     /** Public method for favorite color of Circle superclass. */
@@ -52,6 +52,6 @@ public class Sphere extends Circle {
     public String toString() {
         return String.format(
                 "[Sphere (Radius=%.2f, Area=%.2f)]%n",
-                super.getRadius(), getArea());
+                getRadius(), getArea());
     }
 }
