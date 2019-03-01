@@ -64,13 +64,12 @@ public class Cylinder extends Circle {
     /** Public method for cylinder surface area. */
     @Override
     public double getArea() {
-        /* from Circle's area and circumference */
-        return super.getArea() * 2 + getPerimeter() * height;
+        return getBaseArea() * 2 + getPerimeter() * height;
     }
 
     /** Public method for cylinder volume. */
     public double getVolume() {
-        return super.getArea() * height; /* from Circle's area */
+        return getBaseArea() * height;
     }
 
     /** Cylinder instance description. */
