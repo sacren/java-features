@@ -27,8 +27,8 @@ public class Sphere extends Circle {
 
     /** Public method for sphere surface area. */
     @Override
-    public double getArea() { /* override getArea() from super class */
-        return super.getArea() * 4; /* use getArea() from super class */
+    public double getArea() { /* hide getArea() in Circle superclass */
+        return super.getArea() * 4; /* use getArea() from Circle superclass */
     }
 
     /** Public method using inheritance. */
@@ -38,7 +38,7 @@ public class Sphere extends Circle {
 
     /** Public method for favorite color of Circle superclass. */
     public String getFavoriteColor() {
-        return super.FAVORITE_COLOR; /* hides FAVORITE_COLOR defined here */
+        return super.FAVORITE_COLOR; /* override FAVORITE_COLOR defined here */
     }
 
     /** Public method for Sphere favorite color. */
@@ -47,7 +47,7 @@ public class Sphere extends Circle {
         return FAVORITE_COLOR;
     }
 
-    /** Sphere description. */
+    /** Sphere instance description. */
     @Override
     public String toString() {
         return String.format(
