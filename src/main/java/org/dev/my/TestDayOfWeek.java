@@ -5,9 +5,16 @@
 import java.util.Scanner;
 
 public class TestDayOfWeek {
-    /** Ask the user for a number to show day of the week. */
+    /** Convert the number to the day of the week. */
     public static void main(String[] args) {
         Scanner inStream = new Scanner(System.in);
+        System.out.print("Enter between 0 and 6 with 0 for Sunday: ");
+        int day = inStream.nextInt();
+        inStream.close();
+        if (day < 0 || day > 6) {
+            throw new IllegalArgumentException(
+                    String.format("%d is out of day range!", day));
+        }
         String[] weekDay = {
             "Sunday",
             "Monday",
@@ -17,21 +24,7 @@ public class TestDayOfWeek {
             "Friday",
             "Saturday"
         };
-        System.out.print("Enter between 0 and 6 with 0 for Sunday: ");
-        int day = inStream.nextInt();
-        inStream.close();
-        try {
-            checkInput(day);
-            System.out.printf("%d is for %s%n", day, weekDay[day]);
-        } catch (OutsideRangeException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void checkInput(int day) throws OutsideRangeException {
-        if (day < 0 || day > 6) {
-            throw new OutsideRangeException(
-                    String.format("%d is out of day range!", day));
-        }
+        System.out.println();
+        System.out.printf("%d is for %s%n", day, weekDay[day]);
     }
 }
