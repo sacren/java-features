@@ -192,8 +192,8 @@ public class TestShape {
         System.out.println("=== Default Cylinder ===");
         System.out.println();
         Cylinder defCylinder = new Cylinder();
-        System.out.print((Shape)defCylinder);
-        System.out.print((Circle)defCylinder);
+        System.out.println((Shape)defCylinder);
+        System.out.println((Circle)defCylinder);
         System.out.printf(
                 "Default cylinder base area is %.2f%n"
                         + "Default cylinder surface area is %.2f%n"
@@ -209,7 +209,7 @@ public class TestShape {
         System.out.println();
         final double height = 12;
         Shape shapeCylinder = new Cylinder(radius, height, color);
-        System.out.print(shapeCylinder);
+        System.out.println(shapeCylinder);
         Cylinder cylinder = (Cylinder)shapeCylinder;
         System.out.printf(
                 "Custom cylinder base area is %.2f%n"

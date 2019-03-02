@@ -75,7 +75,7 @@ public class Cylinder extends Circle {
     /** Cylinder instance description. */
     public String toString() {
         return String.format(
-                "[Cylinder (Radius=%.2f, Height=%.2f, Color=%s)]%n",
+                "[Cylinder (Radius=%.2f, Height=%.2f, Color=%s)]",
                 getRadius(), height, getColor());
     }
 }
