@@ -232,10 +232,12 @@ public class TestShape {
                 "Default sphere radius is %.2f%n"
                         + "Default sphere surface area is %.2f%n"
                         + "Default sphere volume is %.2f%n"
-                        + "Default sphere color is %s%n",
+                        + "Default sphere color is %s%n"
+                        + "Default sphere favorite color is %s%n",
                 defSphere.getRadius(),
                 defSphere.getArea(),
                 defSphere.getVolume(),
-                defSphere.getColor());
+                defSphere.getColor(),
+                defSphere.getFavoriteColor());
     }
 }
