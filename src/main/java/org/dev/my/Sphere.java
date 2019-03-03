@@ -51,7 +51,7 @@ public class Sphere extends Circle {
     @Override
     public String toString() {
         return String.format(
-                "[Sphere (Radius=%.2f, Area=%.2f, Volume=%.2f)]",
-                getRadius(), getArea(), getVolume());
+                "[Sphere (Radius=%.2f, Area=%.2f, Volume=%.2f, Color=%s)]",
+                getRadius(), getArea(), getVolume(), getColor());
     }
 }

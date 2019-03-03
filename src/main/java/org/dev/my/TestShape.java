@@ -231,9 +231,11 @@ public class TestShape {
         System.out.printf(
                 "Default sphere radius is %.2f%n"
                         + "Default sphere surface area is %.2f%n"
-                        + "Default sphere volume is %.2f%n",
+                        + "Default sphere volume is %.2f%n"
+                        + "Default sphere color is %s%n",
                 defSphere.getRadius(),
                 defSphere.getArea(),
-                defSphere.getVolume());
+                defSphere.getVolume(),
+                defSphere.getColor());
     }
 }
