@@ -225,9 +225,9 @@ public class TestShape {
         System.out.println("=== Default Sphere ===");
         System.out.println();
         Shape shapeSphere = new Sphere();
-        System.out.print(shapeSphere);
+        System.out.println(shapeSphere);
         Sphere defSphere = (Sphere)shapeSphere;
-        System.out.print(defSphere);
+        System.out.println(defSphere);
         System.out.printf(
                 "Default sphere radius is %.2f%n"
                         + "Default sphere surface area is %.2f%n"
