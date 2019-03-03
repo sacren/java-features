@@ -220,5 +220,20 @@ public class TestShape {
                 cylinder.getArea(), /* custom cylinder surface area */
                 cylinder.getVolume(), /* custom cylinder volume */
                 cylinder.getColor()); /* custom cylinder color */
+        /* default Sphere instance */
+        System.out.println();
+        System.out.println("=== Default Sphere ===");
+        System.out.println();
+        Shape shapeSphere = new Sphere();
+        System.out.print(shapeSphere);
+        Sphere defSphere = (Sphere)shapeSphere;
+        System.out.print(defSphere);
+        System.out.printf(
+                "Default sphere radius is %.2f%n"
+                        + "Default sphere surface area is %.2f%n"
+                        + "Default sphere volume is %.2f%n",
+                defSphere.getRadius(),
+                defSphere.getArea(),
+                defSphere.getVolume());
     }
 }
