@@ -134,7 +134,6 @@ public class TestShape {
                         + "Custom Circle circumference is %.2f%n"
                         + "Custom Circle color is %s%n",
                 circle.getArea(),
-                /* getPerimeter() is a wrapper for getCircumference() in Circle */
                 circle.getPerimeter(),
                 circle.getColor());
         /* Triple the radius and change circle color. */
