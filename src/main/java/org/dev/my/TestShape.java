@@ -239,5 +239,24 @@ public class TestShape {
                 defSphere.getVolume(),
                 defSphere.getColor(),
                 defSphere.getFavoriteColor());
+        /* custom Sphere instance */
+        System.out.println();
+        System.out.println("=== Custom Sphere ===");
+        System.out.println();
+        Shape shapeCustomSphere = new Sphere(radius);
+        System.out.println(shapeCustomSphere);
+        Sphere customSphere = (Sphere)shapeCustomSphere;
+        System.out.println(customSphere);
+        System.out.printf(
+                "Custom sphere radius is %.2f%n"
+                        + "Custom sphere surface area is %.2f%n"
+                        + "Custom sphere volume is %.2f%n"
+                        + "Custom sphere color is %s%n"
+                        + "Custom sphere favorite color is %s%n",
+                customSphere.getRadius(),
+                customSphere.getArea(),
+                customSphere.getVolume(),
+                customSphere.getColor(),
+                customSphere.getFavoriteColor());
     }
 }
