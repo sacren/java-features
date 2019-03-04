@@ -70,6 +70,13 @@ public class Circle extends Shape {
         setRadius(radius);
     }
 
+    /** Circle custom constructor with center, color and radisu. */
+    public Circle(Point center, double radius, String color) {
+        super(color);
+        this.center = center;
+        setRadius(radius);
+    }
+
     /** getter for Circle radius. */
     public double getRadius() {
         return radius;

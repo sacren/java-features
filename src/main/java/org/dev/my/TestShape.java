@@ -72,21 +72,6 @@ public class TestShape {
                 sideRectangle.getArea(),
                 sideRectangle.getPerimeter(),
                 sideRectangle.getColor());
-        /* custom Circle instance with radius and color */
-        final double radius = 100.0;
-        Shape circle = new Circle(radius, color);
-        System.out.println();
-        System.out.println("=== Circle ===");
-        System.out.println();
-        System.out.println(circle);
-        System.out.printf(
-                "Circle area is %.2f%n"
-                        + "Circle circumference is %.2f%n"
-                        + "Circle color is %s%n",
-                circle.getArea(),
-                /* getPerimeter() is a wrapper for getCircumference() in Circle */
-                circle.getPerimeter(),
-                circle.getColor());
         /* default Circle instance */
         Shape defCircle = new Circle();
         System.out.println();
@@ -101,6 +86,7 @@ public class TestShape {
                 defCircle.getPerimeter(),
                 defCircle.getColor());
         /* custom Circle instance with radius */
+        final double radius = 100.0;
         Shape radiusCircle = new Circle(radius);
         System.out.println();
         System.out.println("=== Circle with radius ===");
@@ -116,7 +102,8 @@ public class TestShape {
         /* composite circle with center Point and radius */
         final int centerX = 40;
         final int centerY = -5;
-        Circle originalCircle = new Circle(new Point(centerX, centerY), radius);
+        Point center = new Point(centerX, centerY);
+        Circle originalCircle = new Circle(center, radius);
         Shape shapeCircle = (Shape)originalCircle;
         System.out.println();
         System.out.println("=== Composite Circle with center Point and radius ===");
@@ -136,6 +123,20 @@ public class TestShape {
                 shapeCircle.getColor(),
                 originalCircle.getDiameter(),
                 originalCircle.getCenter());
+        /* custom Circle instance with center, radius and color */
+        Shape circle = new Circle(center, radius, color);
+        System.out.println();
+        System.out.println("=== Custom Circle in full ===");
+        System.out.println();
+        System.out.println(circle);
+        System.out.printf(
+                "Custom Circle area is %.2f%n"
+                        + "Custom Circle circumference is %.2f%n"
+                        + "Custom Circle color is %s%n",
+                circle.getArea(),
+                /* getPerimeter() is a wrapper for getCircumference() in Circle */
+                circle.getPerimeter(),
+                circle.getColor());
         /* Triple the radius and change circle color. */
         originalCircle.setRadius(radius * 3);
         originalCircle.setColor(Circle.FAVORITE_COLOR);
