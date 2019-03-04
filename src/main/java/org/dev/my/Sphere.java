@@ -36,15 +36,9 @@ public class Sphere extends Circle {
         return Math.PI * getRadius() * getRadius() * getRadius() * 4 / 3;
     }
 
-    /** Public method for favorite color of Circle superclass. */
+    /** Sphere instance favorite color. */
     public String getFavoriteColor() {
-        return super.FAVORITE_COLOR; /* override FAVORITE_COLOR defined here */
-    }
-
-    /** Public method for Sphere favorite color. */
-    @Override
-    public String getColor() {
-        return FAVORITE_COLOR;
+        return FAVORITE_COLOR; /* hide Circle FAVORITE_COLOR */
     }
 
     /** Sphere instance description. */
