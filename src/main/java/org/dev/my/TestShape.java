@@ -259,11 +259,13 @@ public class TestShape {
                         + "Custom sphere surface area is %.2f%n"
                         + "Custom sphere volume is %.2f%n"
                         + "Custom sphere color is %s%n"
+                        + "Circle FAVORITE_COLOR is %s%n"
                         + "Custom sphere favorite color is %s%n",
                 customSphere.getRadius(),
                 customSphere.getArea(),
                 customSphere.getVolume(),
                 customSphere.getColor(),
+                Circle.FAVORITE_COLOR,
                 customSphere.getFavoriteColor());
     }
 }
