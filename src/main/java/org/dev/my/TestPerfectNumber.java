@@ -7,19 +7,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class TestPerfectNumber {
-    /** Prompt for a positive integer and check if it is a perfect number. */
+    /** TestPerfectNumber is the driver for a perfect number. */
     public static void main(String[] args) {
         Scanner inputStream = new Scanner(System.in);
         int number;
-        for ( ; ; ) {
-            System.out.print("Enter a positive integer for upper bound: ");
-            number = inputStream.nextInt();
-            if (number > 0) {
-                break;
-            }
-            System.out.printf("%d is invalid. Try again.%n", number);
+        System.out.print("Enter a positive integer for upper bound: ");
+        number = inputStream.nextInt();
+        if (number <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", number));
         }
-
+        inputStream.close();
         int[] countArray = new int[2]; /* [0]: perfect count, [1]: neither count */
         for (int i = 1; i <= number; i++) {
             if (isPerfect(i)) {
@@ -54,7 +52,6 @@ public class TestPerfectNumber {
                         + "%d neither perfect nor deficient (%.2f%%)%n",
                 Arrays.toString(perfectArray), perfectCount, (double) perfectCount / number * 100,
                 Arrays.toString(neitherArray), neitherCount, (double) neitherCount / number * 100);
-        inputStream.close();
     }
 
     private static boolean isPerfect(int number) {
