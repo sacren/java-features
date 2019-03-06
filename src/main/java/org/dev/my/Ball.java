@@ -33,7 +33,7 @@ public class Ball {
     private double axisXStep;
     private double axisYStep;
 
-    /** Custom constructor. */
+    /** Ball custom constructor. */
     public Ball(double axisX, double axisY, double axisXStep, double axisYStep) {
         this.axisX = axisX;
         this.axisY = axisY;
@@ -41,47 +41,47 @@ public class Ball {
         this.axisYStep = axisYStep;
     }
 
-    /** getter for axisX. */
+    /** Ball getter for axisX. */
     public double getX() {
         return axisX;
     }
 
-    /** setter for axisX. */
+    /** Ball setter for axisX. */
     public void setX(double axisX) {
         this.axisX = axisX;
     }
 
-    /** getter for axisY. */
+    /** Ball getter for axisY. */
     public double getY() {
         return axisY;
     }
 
-    /** setter for axisY. */
+    /** Ball setter for axisY. */
     public void setY(double axisY) {
         this.axisY = axisY;
     }
 
-    /** getter for axisXStep. */
+    /** Ball getter for axisXStep. */
     public double getXStep() {
         return axisXStep;
     }
 
-    /** setter for axisXStep. */
+    /** Ball setter for axisXStep. */
     public void setXStep(double axisXStep) {
         this.axisXStep = axisXStep;
     }
 
-    /** getter for axisYStep. */
+    /** Ball getter for axisYStep. */
     public double getYStep() {
         return axisYStep;
     }
 
-    /** setter for axisYStep. */
+    /** Ball setter for axisYStep. */
     public void setYStep(double axisYStep) {
         this.axisYStep = axisYStep;
     }
 
-    /** getter for both axisX and axisY. */
+    /** Ball getter for both axisX and axisY. */
     public double[] getX_Y() {
         double[] doubleArray = new double[2];
         doubleArray[0] = axisX;
@@ -89,13 +89,13 @@ public class Ball {
         return doubleArray;
     }
 
-    /** setter for both axisX and axisY. */
+    /** Ball setter for both axisX and axisY. */
     public void setX_Y(double axisX, double axisY) {
         this.axisX = axisX;
         this.axisY = axisY;
     }
 
-    /** getter for both axisXStep and axisYStep. */
+    /** Ball getter for both axisXStep and axisYStep. */
     public double[] getXStepYStep() {
         double[] doubleArray = new double[2];
         doubleArray[0] = axisXStep;
@@ -103,7 +103,7 @@ public class Ball {
         return doubleArray;
     }
 
-    /** setter for both axisXStep and axisYStep. */
+    /** Ball setter for both axisXStep and axisYStep. */
     public void setXStepYStep(double axisXStep, double axisYStep) {
         this.axisXStep = axisXStep;
         this.axisYStep = axisYStep;
@@ -117,7 +117,7 @@ public class Ball {
     }
 
     /**
-     * Public method for making steps.
+     * Ball public method for making steps.
      *
      * <p>Move a step by increment axisX by axisXStep and axisY by axisYStep.
      *
