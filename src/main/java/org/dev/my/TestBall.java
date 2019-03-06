@@ -4,10 +4,17 @@
 import java.util.Arrays;
 
 public class TestBall {
-    /** Test driver for Ball. */
+    /** Ball test driver. */
     public static void main(String[] args) {
-        Ball ball = new Ball(1, 2, 11, 12);
+        /* instantiate Ball */
+        final double axisX = 1;
+        final double axisY = 2;
+        final double axisXStep = 11;
+        final double axisYStep = 12;
+        Ball ball = new Ball(axisX, axisY, axisXStep, axisYStep);
+        System.out.println();
         System.out.println(ball);
+        System.out.println();
         System.out.printf(
                 "axisX is %.2f%n"
                         + "axisY is %.2f%n"
@@ -21,16 +28,18 @@ public class TestBall {
                 ball.getYStep(),
                 Arrays.toString(ball.getX_Y()),
                 Arrays.toString(ball.getXStepYStep()));
-        System.out.println();
-        System.out.println("=== Double the positions and increment speeds ===");
-        System.out.println();
+        /* update Ball instance */
         ball.setX(ball.getX() * 2);
         ball.setY(ball.getY() * 2);
         ball.setXStep(ball.getXStep() + 1);
         ball.setYStep(ball.getYStep() + 1);
         ball.setX_Y(ball.getX(), ball.getY());
         ball.setXStepYStep(ball.getXStep(), ball.getYStep());
+        System.out.println();
+        System.out.println("=== Double the positions and increment speeds ===");
+        System.out.println();
         System.out.println(ball);
+        System.out.println();
         System.out.printf(
                 "axisX is %.2f%n"
                         + "axisY is %.2f%n"
