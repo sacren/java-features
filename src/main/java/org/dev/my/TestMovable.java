@@ -29,5 +29,27 @@ public class TestMovable {
         System.out.println();
         movablePoint.moveLeft();
         System.out.println(movablePoint);
+        /* downcast to MovablePoint */
+        MovablePoint p = (MovablePoint)movablePoint;
+        System.out.println();
+        System.out.println("=== Downcast ===");
+        System.out.println();
+        System.out.println(p);
+        System.out.println();
+        System.out.println("=== Move up ===");
+        System.out.println();
+        p.moveUp();
+        System.out.println(p);
+        /* upcast to Movable again */
+        Movable p1 = (Movable)p;
+        System.out.println();
+        System.out.println("=== Upcast ===");
+        System.out.println();
+        System.out.println(p1);
+        System.out.println();
+        System.out.println("=== Move right ===");
+        System.out.println();
+        p1.moveRight();
+        System.out.println(p1);
     }
 }
