@@ -57,14 +57,26 @@ public class Grades {
         average = total / count;
     }
 
+    /** Grades method for max of grades. */
+    public void max() {
+        max = grades[0];
+        for (int grade : grades) {
+            if (max < grade) {
+                max = grade;
+            }
+        }
+    }
+
     /** Grades instance description. */
     public String toString() {
         return String.format(
                 "Number of students: %d%n"
                         + "List of grades: %s%n"
-                        + "Average of grades: %.2f",
+                        + "Average of grades: %.2f%n"
+                        + "Max of grades: %d",
                 count,
                 Arrays.toString(grades),
-                average);
+                average,
+                max);
     }
 }
