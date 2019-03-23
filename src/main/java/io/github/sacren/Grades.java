@@ -48,12 +48,23 @@ public class Grades {
         grades[index] = grade;
     }
 
+    /** Grades method for average of grades. */
+    public void average() {
+        double total = 0;
+        for (int grade : grades) {
+            total += grade;
+        }
+        average = total / count;
+    }
+
     /** Grades instance description. */
     public String toString() {
         return String.format(
                 "Number of students: %d%n"
-                        + "List of grades: %s",
+                        + "List of grades: %s%n"
+                        + "Average of grades: %.2f",
                 count,
-                Arrays.toString(grades));
+                Arrays.toString(grades),
+                average);
     }
 }
