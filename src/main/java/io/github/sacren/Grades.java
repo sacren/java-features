@@ -20,6 +20,7 @@ public class Grades {
     /* private instance data */
     private int count;
     private int[] grades;
+    private double sum;
     private double average;
     private int max;
     private int min;
@@ -48,13 +49,17 @@ public class Grades {
         grades[index] = grade;
     }
 
+    /** Grades method for the sum of grades. */
+    public void sum() {
+        sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+    }
+
     /** Grades method for average of grades. */
     public void average() {
-        double total = 0;
-        for (int grade : grades) {
-            total += grade;
-        }
-        average = total / count;
+        average = sum / count;
     }
 
     /** Grades method for max of grades. */
@@ -79,6 +84,7 @@ public class Grades {
 
     /** Grades wrapper method. */
     public void init() {
+        this.sum();
         this.average();
         this.max();
         this.min();
