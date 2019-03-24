@@ -67,16 +67,28 @@ public class Grades {
         }
     }
 
+    /** Grades method for min of grades. */
+    public void min() {
+        min = grades[0];
+        for (int grade : grades) {
+            if (min > grade) {
+                min = grade;
+            }
+        }
+    }
+
     /** Grades instance description. */
     public String toString() {
         return String.format(
                 "Number of students: %d%n"
                         + "List of grades: %s%n"
                         + "Average of grades: %.2f%n"
-                        + "Max of grades: %d",
+                        + "Max of grades: %d%n"
+                        + "Min of grades: %d",
                 count,
                 Arrays.toString(grades),
                 average,
-                max);
+                max,
+                min);
     }
 }
