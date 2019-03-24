@@ -21,6 +21,7 @@ public class Grades {
     private int count;
     private int[] grades;
     private double sum;
+    private double sqSum;
     private double average;
     private int max;
     private int min;
@@ -52,8 +53,10 @@ public class Grades {
     /** Grades method for the sum of grades. */
     public void sum() {
         sum = 0;
+        sqSum = 0;
         for (int grade : grades) {
             sum += grade;
+            sqSum += grade * grade;
         }
     }
 
