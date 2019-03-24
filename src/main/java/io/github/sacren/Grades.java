@@ -77,6 +77,13 @@ public class Grades {
         }
     }
 
+    /** Grades wrapper method. */
+    public void init() {
+        this.average();
+        this.max();
+        this.min();
+    }
+
     /** Grades instance description. */
     public String toString() {
         return String.format(
