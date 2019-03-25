@@ -24,6 +24,7 @@ public class Grades {
     private double sqSum;
     private double average;
     private double stdDevi;
+    private int[] bins;
     private int max;
     private int min;
 
@@ -31,6 +32,7 @@ public class Grades {
     public Grades(int count) {
         stuCount(count);
         grades = new int[count];
+        bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
     }
 
     /** Grades setter for statudent count. */
@@ -71,6 +73,17 @@ public class Grades {
         stdDevi = Math.sqrt(sqSum / count - average * average);
     }
 
+    /** Grades method for bins of grades. */
+    public void bins() {
+        for (int grade : grades) {
+            if (grade == 100) {
+                grade = 90; /* 100 belongs to 90..99 group */
+            }
+            grade /= 10;
+            bins[grade]++; /* Initial values are all 0's, then increment. */
+        }
+    }
+
     /** Grades method for max of grades. */
     public void max() {
         max = grades[0];
@@ -96,6 +109,7 @@ public class Grades {
         this.sum();
         this.average();
         this.stdDevi();
+        this.bins();
         this.max();
         this.min();
     }
@@ -108,12 +122,14 @@ public class Grades {
                         + "Average of grades: %.2f%n"
                         + "Max of grades: %d%n"
                         + "Min of grades: %d%n"
-                        + "Standard deviation of grades: %.2f",
+                        + "Standard deviation of grades: %.2f%n"
+                        + "Bins of grades: %s",
                 count,
                 Arrays.toString(grades),
                 average,
                 max,
                 min,
-                stdDevi);
+                stdDevi,
+                Arrays.toString(bins));
     }
 }
