@@ -23,6 +23,7 @@ public class Grades {
     private double sum;
     private double sqSum;
     private double average;
+    private double stdDevi;
     private int max;
     private int min;
 
@@ -65,6 +66,11 @@ public class Grades {
         average = sum / count;
     }
 
+    /** Grades method for standard deviation of grades. */
+    public void stdDevi() {
+        stdDevi = Math.sqrt(sqSum / count - average * average);
+    }
+
     /** Grades method for max of grades. */
     public void max() {
         max = grades[0];
@@ -89,6 +95,7 @@ public class Grades {
     public void init() {
         this.sum();
         this.average();
+        this.stdDevi();
         this.max();
         this.min();
     }
@@ -100,11 +107,13 @@ public class Grades {
                         + "List of grades: %s%n"
                         + "Average of grades: %.2f%n"
                         + "Max of grades: %d%n"
-                        + "Min of grades: %d",
+                        + "Min of grades: %d%n"
+                        + "Standard deviation of grades: %.2f",
                 count,
                 Arrays.toString(grades),
                 average,
                 max,
-                min);
+                min,
+                stdDevi);
     }
 }
