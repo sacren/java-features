@@ -4,7 +4,11 @@
  * <p>Private data:
  * -count:int
  * -grades:int[]
+ * -sum:double
+ * -sqSum:double
  * -average:double
+ * -stdDevi:double
+ * -bins:int[]
  * -max:int
  * -min:int
  *
@@ -35,7 +39,7 @@ public class Grades {
         bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
     }
 
-    /** Grades setter for statudent count. */
+    /** Grades setter for student count. */
     public void stuCount(int count) {
         if (count < 0) {
             throw new IllegalArgumentException(
@@ -53,7 +57,7 @@ public class Grades {
         grades[index] = grade;
     }
 
-    /** Grades method for the sum of grades. */
+    /** Grades method for the sum and square sum of grades. */
     public void sum() {
         sum = 0;
         sqSum = 0;
@@ -104,7 +108,7 @@ public class Grades {
         }
     }
 
-    /** Grades wrapper method. */
+    /** Grades helper for instance data. */
     public void init() {
         this.sum();
         this.average();
