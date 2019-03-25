@@ -41,7 +41,7 @@ public class Grades {
 
     /** Grades setter for student count. */
     public void stuCount(int count) {
-        if (count < 0) {
+        if (count <= 0) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid.", count));
         }
