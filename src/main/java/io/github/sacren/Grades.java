@@ -90,12 +90,18 @@ public class Grades {
 
     /** Grades method for max of grades. */
     public void max() {
-        max = grades[0];
-        for (int grade : grades) {
-            if (max < grade) {
-                max = grade;
+        max = intMax(grades);
+    }
+
+    /* helper for max of integer array */
+    private static int intMax(int[] a) {
+        int max = a[0];
+        for (int i : a) {
+            if (max < i) {
+                max = i;
             }
         }
+        return max;
     }
 
     /** Grades method for min of grades. */
