@@ -175,4 +175,47 @@ public class Grades {
         }
         return s;
     }
+
+    /** Grades method for horizontal histogram. */
+    public String flatHisto() {
+        String gram = stackAsterisk(bins);
+        int size = bins.length;
+        for (int i = 0; i < size; i++) {
+            gram += String.format(
+                    i == 0 ? "%d-%-2d" : "%2d-%-3d",
+                    i * 10,
+                    i == size - 1 ? i * 10 + 10 : i * 10 + 9);
+        }
+        return gram;
+    }
+
+    /* helper for asterisk stack */
+    private static String stackAsterisk(int[] a) {
+        final int max = intMax(a);
+        String gram = "";
+        int column;
+        for (int row = 0; row < max; row++) {
+            /* inner loop for column */
+            column = 0;
+            for (int count : a) {
+                if (count >= max - row) {
+                    if (column == 0) {
+                        gram += String.format("%2c%2c", '*', ' ');
+                    } else {
+                        gram += String.format("%3c%3c", '*', ' ');
+                    }
+                } else {
+                    if (column == 0) {
+                        gram += String.format("%4c", ' ');
+                    } else {
+                        gram += String.format("%6c", ' ');
+                    }
+                }
+                if (++column == a.length) {
+                    gram += String.format("%n");
+                }
+            }
+        }
+        return gram;
+    }
 }
