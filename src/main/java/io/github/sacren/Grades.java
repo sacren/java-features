@@ -136,4 +136,37 @@ public class Grades {
                 stdDevi,
                 Arrays.toString(bins));
     }
+
+    /** Grades method for vertical histogram. */
+    public String vertHisto() {
+        String gram = "";
+        int i = 0;
+        for (int count : bins) {
+            gram += String.format(
+                    "%2d - %3d: %s",
+                    i * 10,
+                    i == 9 ? i * 10 + 10 : i * 10 + 9,
+                    addAsterisk(count));
+            if (++i < bins.length) {
+                gram += String.format("%n");
+            }
+        }
+        return gram;
+    }
+
+    /* helper for horizontal asterisks */
+    private static String addAsterisk(int count) {
+        String s = "";
+        /* 0 count: the check and loop are skipped.
+         * 1 count: loop is skipped.
+         * 2 and above: loop through.
+         */
+        if (count > 0) {
+            s = "*";
+        }
+        for (int i = 1; i < count; i++) {
+            s += " *";
+        }
+        return s;
+    }
 }
