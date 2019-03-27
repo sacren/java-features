@@ -44,12 +44,12 @@ public class Gcd {
     }
 
     /** Gcd setter for numB. */
-    public void numB(int m) {
-        if (m <= 0) {
+    public void numB(int n) {
+        if (n <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid!", m));
+                    String.format("%d is invalid!", n));
         }
-        numB = m;
+        numB = n;
     }
 
     /** Gcd method for tmpA and tmpB. */
