@@ -72,6 +72,14 @@ public class Gcd {
         gcd = tmpA;
     }
 
+    /** Gcd method for recursive GCD. */
+    public int recGcd(int n, int m) {
+        if (m == 0) {
+            return n;
+        }
+        return recGcd(m, n % m);
+    }
+
     /** Gcd instance description. */
     public String toString() {
         return String.format(
