@@ -1,6 +1,23 @@
 /**
  * HillPat class for various hill patterns.
  *
+ * <p>Private data:
+ * -size:int
+ * -patA:String
+ * -patB:String
+ * -patC:String
+ * -patD:String
+ *
+ * <p>Constructor:
+ * +HillPat(size:int)
+ *
+ * <p>Public method:
+ * +patA():void
+ * +patB():void
+ * +patC():void
+ * +patD():void
+ * +toString():String
+ *
  *             <p>#
  *              # # #
  *            # # # # #
