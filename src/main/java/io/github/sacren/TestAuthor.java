@@ -15,7 +15,7 @@ public class TestAuthor {
                 author.getAuthorName(), author.getEmail());
         System.out.println();
         System.out.printf("After deleting email address.%n%n");
-        author.setEmail("");
+        author.setEmail(null);
         System.out.println(author);
         System.out.printf("After restoring email address.%n%n");
         author.setEmail(email);
