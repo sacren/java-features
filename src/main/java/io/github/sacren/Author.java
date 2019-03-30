@@ -22,39 +22,41 @@ public class Author {
     private String email;
     private char gender;
 
-    /** Custom constructor. */
+    /** Author constructor. */
     public Author(String authorName, String email, char gender) {
         this.authorName = authorName;
-        this.gender = gender;
         this.email = email;
+        this.gender = gender;
     }
 
-    /** getter of authorName. */
+    /** Author getter for author name. */
     public String getAuthorName() {
         return authorName;
     }
 
-    /** getter of email. */
+    /** Author getter for author email. */
     public String getEmail() {
         return email;
     }
 
-    /** setter of email. */
+    /** Author setter of author email. */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /** getter of gender. */
+    /** Author getter for author gender. */
     public char getGender() {
         return gender;
     }
 
-    /** Author description. */
+    /** Author instance display. */
     public String toString() {
         return String.format(
                 "Author name: %s%n"
                         + "Contact email: %s%n"
-                        + "Gender: %c%n",
-                authorName, email, gender);
+                        + "Gender: %c",
+                authorName,
+                email,
+                gender);
     }
 }
