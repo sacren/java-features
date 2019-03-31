@@ -9,12 +9,10 @@ public class TestGrades {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter the number of students: ");
         int size = in.nextInt();
-        int grade;
         Grades grades = new Grades(size);
         for (int i = 0; i < size; i++) {
             System.out.printf("Enter the grade of Student %d: ", i + 1);
-            grade = in.nextInt();
-            grades.addGrade(i, grade); /* add grades one by one */
+            grades.addGrade(i, in.nextInt()); /* add grades one by one */
         }
         in.close();
         grades.init();
