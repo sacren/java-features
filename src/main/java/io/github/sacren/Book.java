@@ -68,9 +68,12 @@ public class Book {
     public String toString() {
         return String.format(
                 "%s%n"
-                        + "%s"
+                        + "%s%n"
                         + "Price: %.2f%n"
                         + "Quantity: %d%n",
-                bookTitle, author, price, quantity);
+                bookTitle,
+                author,
+                price,
+                quantity);
     }
 }

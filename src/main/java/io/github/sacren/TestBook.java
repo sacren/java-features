@@ -15,7 +15,7 @@ public class TestBook {
         System.out.println(book);
         System.out.printf(
                 "The book title: %s%n"
-                        + "%s"
+                        + "%s%n"
                         + "The book price: %.2f%n"
                         + "The book quantity: %d%n%n",
                 book.getBookTitle(),
@@ -28,7 +28,7 @@ public class TestBook {
         System.out.println(book);
         System.out.printf(
                 "The book title: %s%n"
-                        + "%s"
+                        + "%s%n"
                         + "The book price: %.2f%n"
                         + "The book quantity: %d%n",
                 book.getBookTitle(),
