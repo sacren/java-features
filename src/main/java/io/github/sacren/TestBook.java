@@ -4,36 +4,34 @@
 public class TestBook {
     /** Initialize Book instance and print book info. */
     public static void main(String[] args) {
-        String authorName = "Dennis Ritchie";
-        String email = "dmr@bell-labs.com";
-        final char gender = 'M';
-        Author author = new Author(authorName, email, gender);
-        String bookTitle = "The C Programming Language";
+        Author author = new Author("Dennis Ritchie", "dmr@bell-labs.com", 'M');
+        String title = "The C Programming Language";
         final double price = 29.99;
-        final int quantity = 90000;
-        Book book = new Book(bookTitle, author, price, quantity);
+        final int sales = 90000;
+        Book book = new Book(title, author, price, sales);
         System.out.println(book);
         System.out.printf(
-                "The book title: %s%n"
+                "Book Title: %s%n"
                         + "%s%n"
-                        + "The book price: %.2f%n"
-                        + "The book quantity: %d%n%n",
+                        + "Price: %.2f%n"
+                        + "Sales: %d%n%n",
                 book.getBookTitle(),
                 author,
                 book.getPrice(),
-                book.getQuantity());
-        System.out.printf("After price doubles and sales slashed to half.%n%n");
+                book.getSales());
+        System.out.println("=== After price doubles and sales fall to half ===");
+        System.out.println();
         book.setPrice(price * 2);
-        book.setQuantity(quantity / 2);
+        book.setSales(sales / 2);
         System.out.println(book);
         System.out.printf(
-                "The book title: %s%n"
+                "Book Title: %s%n"
                         + "%s%n"
-                        + "The book price: %.2f%n"
-                        + "The book quantity: %d%n",
+                        + "Price: %.2f%n"
+                        + "Sales: %d%n",
                 book.getBookTitle(),
                 author,
                 book.getPrice(),
-                book.getQuantity());
+                book.getSales());
     }
 }

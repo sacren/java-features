@@ -5,18 +5,18 @@
  * -bookTitle:String
  * -author:Author
  * -price:double
- * -quantity:int
+ * -sales:int
  *
  * <p>Constructor:
- * +Book(bookTitle:String, author:Author, price:double, quantity:int)
+ * +Book(bookTitle:String, author:Author, price:double, sales:int)
  *
  * <p>Public methods:
  * +getBookTitle():String
  * +getAuthor():Author
  * +getPrice():double
  * +setPrice(price:double):void
- * +getQuantity():int
- * +setQuantity(quantity:int):void
+ * +getSales():int
+ * +setSales(sales:int):void
  * +toString():String
  */
 public class Book {
@@ -24,14 +24,14 @@ public class Book {
     private String bookTitle;
     private Author author;
     private double price;
-    private int quantity;
+    private int sales;
 
     /** Custom constructor. */
-    public Book(String bookTitle, Author author, double price, int quantity) {
+    public Book(String bookTitle, Author author, double price, int sales) {
         this.bookTitle = bookTitle;
         this.author = author;
         this.price = price;
-        this.quantity = quantity;
+        this.sales = sales;
     }
 
     /** Public accessor for book title. */
@@ -54,14 +54,14 @@ public class Book {
         this.price = price;
     }
 
-    /** Public accessor for book quantity. */
-    public int getQuantity() {
-        return quantity;
+    /** Public accessor for book sales. */
+    public int getSales() {
+        return sales;
     }
 
-    /** Public setter for book quantity. */
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    /** Public setter for book sales. */
+    public void setSales(int sales) {
+        this.sales = sales;
     }
 
     /** Book description. */
@@ -70,10 +70,10 @@ public class Book {
                 "%s%n"
                         + "%s%n"
                         + "Price: %.2f%n"
-                        + "Quantity: %d%n",
+                        + "Sales: %d%n",
                 bookTitle,
                 author,
                 price,
-                quantity);
+                sales);
     }
 }
