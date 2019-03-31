@@ -29,6 +29,7 @@ public class Grades {
     private double average;
     private double stdDevi;
     private int[] bins;
+    private int binsMax;
     private int max;
     private int min;
 
@@ -93,6 +94,11 @@ public class Grades {
         max = intMax(grades);
     }
 
+    /** Grades method for max of bins. */
+    public void binsMax() {
+        binsMax = intMax(bins);
+    }
+
     /* helper for max of integer array */
     private static int intMax(int[] a) {
         int max = a[0];
@@ -120,6 +126,7 @@ public class Grades {
         this.average();
         this.stdDevi();
         this.bins();
+        this.binsMax();
         this.max();
         this.min();
     }
@@ -178,7 +185,7 @@ public class Grades {
 
     /** Grades method for horizontal histogram. */
     public String flatHisto() {
-        String gram = stackAsterisk(bins);
+        String gram = stackAsterisk();
         int size = bins.length;
         for (int i = 0; i < size; i++) {
             gram += String.format(
@@ -189,33 +196,32 @@ public class Grades {
         return gram;
     }
 
-    /* helper for asterisk stack */
-    private static String stackAsterisk(int[] a) {
-        final int max = intMax(a);
-        String gram = "";
+    /** Grades method for vertical graph of asterisks. */
+    public String stackAsterisk() {
+        String astGraph = "";
         int column;
-        for (int row = 0; row < max; row++) {
+        for (int row = 0; row < binsMax; row++) {
             /* inner loop for column */
             column = 0;
-            for (int count : a) {
-                if (count >= max - row) {
+            for (int count : bins) {
+                if (count >= binsMax - row) {
                     if (column == 0) {
-                        gram += String.format("%2c%2c", '*', ' ');
+                        astGraph += String.format("%2c%2c", '*', ' ');
                     } else {
-                        gram += String.format("%3c%3c", '*', ' ');
+                        astGraph += String.format("%3c%3c", '*', ' ');
                     }
                 } else {
                     if (column == 0) {
-                        gram += String.format("%4c", ' ');
+                        astGraph += String.format("%4c", ' ');
                     } else {
-                        gram += String.format("%6c", ' ');
+                        astGraph += String.format("%6c", ' ');
                     }
                 }
-                if (++column == a.length) {
-                    gram += String.format("%n");
+                if (++column == bins.length) {
+                    astGraph += String.format("%n");
                 }
             }
         }
-        return gram;
+        return astGraph;
     }
 }
