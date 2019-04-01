@@ -152,19 +152,19 @@ public class Grades {
 
     /** Grades method for vertical histogram. */
     public String vertHisto() {
-        String gram = "";
+        String astGraph = "";
         int i = 0;
         for (int count : bins) {
-            gram += String.format(
+            astGraph += String.format(
                     "%2d - %3d: %s",
                     i * 10,
                     i == 9 ? i * 10 + 10 : i * 10 + 9,
                     addAsterisk(count));
             if (++i < bins.length) {
-                gram += String.format("%n");
+                astGraph += String.format("%n");
             }
         }
-        return gram;
+        return astGraph;
     }
 
     /* helper for horizontal asterisks */
@@ -185,15 +185,15 @@ public class Grades {
 
     /** Grades method for horizontal histogram. */
     public String flatHisto() {
-        String gram = stackAsterisk();
+        String astGraph = stackAsterisk();
         int size = bins.length;
         for (int i = 0; i < size; i++) {
-            gram += String.format(
+            astGraph += String.format(
                     i == 0 ? "%d-%-2d" : "%2d-%-3d",
                     i * 10,
                     i == size - 1 ? i * 10 + 10 : i * 10 + 9);
         }
-        return gram;
+        return astGraph;
     }
 
     /** Grades method for vertical graph of asterisks. */
