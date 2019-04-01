@@ -70,7 +70,7 @@ public class Book {
                 "%s%n"
                         + "%s%n"
                         + "Price: %.2f%n"
-                        + "Sales: %d%n",
+                        + "Sales: %d",
                 bookTitle,
                 author,
                 price,

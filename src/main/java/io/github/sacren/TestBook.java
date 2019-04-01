@@ -10,6 +10,7 @@ public class TestBook {
         final int sales = 90000;
         Book book = new Book(title, author, price, sales);
         System.out.println(book);
+        System.out.println();
         System.out.printf(
                 "Book Title: %s%n"
                         + "%s%n"
@@ -24,6 +25,7 @@ public class TestBook {
         book.setPrice(price * 2);
         book.setSales(sales / 2);
         System.out.println(book);
+        System.out.println();
         System.out.printf(
                 "Book Title: %s%n"
                         + "%s%n"
