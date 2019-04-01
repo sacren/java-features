@@ -2,13 +2,13 @@
  * Book class composed of Author class.
  *
  * <p>Private data:
- * -bookTitle:String
+ * -title:String
  * -author:Author
  * -price:double
  * -sales:int
  *
  * <p>Constructor:
- * +Book(bookTitle:String, author:Author, price:double, sales:int)
+ * +Book(title:String, author:Author, price:double, sales:int)
  *
  * <p>Public methods:
  * +getBookTitle():String
@@ -21,14 +21,14 @@
  */
 public class Book {
     /* private instance data */
-    private String bookTitle;
+    private String title;
     private Author author;
     private double price;
     private int sales;
 
     /** Custom constructor. */
-    public Book(String bookTitle, Author author, double price, int sales) {
-        this.bookTitle = bookTitle;
+    public Book(String title, Author author, double price, int sales) {
+        this.title = title;
         this.author = author;
         this.price = price;
         this.sales = sales;
@@ -36,7 +36,7 @@ public class Book {
 
     /** Public accessor for book title. */
     public String getBookTitle() {
-        return bookTitle;
+        return title;
     }
 
     /** Public accessor for Author instance. */
@@ -71,7 +71,7 @@ public class Book {
                         + "%s%n"
                         + "Price: %.2f%n"
                         + "Sales: %d",
-                bookTitle,
+                title,
                 author,
                 price,
                 sales);
