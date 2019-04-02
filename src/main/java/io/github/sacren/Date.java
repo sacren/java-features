@@ -21,10 +21,10 @@
  * +toString():String
  */
 public class Date {
-    /* public static data */
-    public static final int DEFAULT_YEAR = 1776;
-    public static final int DEFAULT_MONTH = 7;
-    public static final int DEFAULT_DAY = 4;
+    /* private static data */
+    private static final int DEFAULT_YEAR = 1776;
+    private static final int DEFAULT_MONTH = 7;
+    private static final int DEFAULT_DAY = 4;
 
     /* private instance data */
     private int year;
