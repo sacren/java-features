@@ -86,7 +86,7 @@ public class Account {
     /** Account description. */
     public String toString() {
         return String.format(
-                "[A/C #: %d, Balance: %.2f]%n",
+                "[A/C #%d has balance of %.2f]",
                 accountNumber, balance);
     }
 }
