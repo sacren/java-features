@@ -96,6 +96,10 @@ public class Date {
 
     /** Date description: DD/MM/YYYY. */
     public String toString() {
-        return String.format("[%02d/%02d/%04d]%n", day, month, year);
+        return String.format(
+                "[%02d/%02d/%04d]",
+                day,
+                month,
+                year);
     }
 }
