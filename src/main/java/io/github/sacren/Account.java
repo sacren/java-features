@@ -19,9 +19,9 @@
  * +toString():String
  */
 public class Account {
-    /* public static data */
-    public static final int DEFAULT_ACCOUNT = Integer.MAX_VALUE;
-    public static final double DEFAULT_BALANCE = 0;
+    /* private static data */
+    private static final int DEFAULT_ACCOUNT = Integer.MAX_VALUE;
+    private static final double DEFAULT_BALANCE = 0;
 
     /* private instance data */
     private int accountNumber;
