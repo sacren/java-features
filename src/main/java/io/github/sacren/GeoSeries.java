@@ -29,6 +29,7 @@ public class GeoSeries {
         }
     }
 
+    /** GeoSeries instance printout. */
     public String toString() {
         return String.format(
                 "1 + 1/2 + 1/4 + 1/8 + ... = %f",
