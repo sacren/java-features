@@ -1,5 +1,5 @@
 /**
- * Account class
+ * Account class.
  *
  * <p>Private data with default values:
  * -accountNumber:int = Integer.MAX_VALUE
@@ -7,7 +7,6 @@
  *
  * <p>Constructor:
  * +Account()
- * +Account(accountNumber:int)
  * +Account(accountNumber:int, balance:double)
  *
  * <p>Public methods:
@@ -27,24 +26,24 @@ public class Account {
     private int accountNumber;
     private double balance;
 
-    /** Default constructor. */
+    /** Account default constructor. */
     public Account() {
         this.accountNumber = DEFAULT_ACCOUNT;
         this.balance = DEFAULT_BALANCE;
     }
 
-    /** Custom constructor. */
+    /** Account custom constructor. */
     public Account(int accountNumber, double balance) {
         setAccountNumber(accountNumber);
         setBalance(balance);
     }
 
-    /** getter for account number. */
+    /** Account getter for account number. */
     public int getAccountNumber() {
         return accountNumber;
     }
 
-    /** setter for account number. */
+    /** Account setter for account number. */
     public void setAccountNumber(int accountNumber) {
         if (accountNumber <= 0) {
             throw new IllegalArgumentException(
@@ -53,12 +52,12 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    /** getter for account balance. */
+    /** Account getter for account balance. */
     public double getBalance() {
         return balance;
     }
 
-    /** setter for account balance. */
+    /** Account setter for account balance. */
     public void setBalance(double balance) {
         if (balance < 0) {
             throw new IllegalArgumentException(
@@ -67,12 +66,12 @@ public class Account {
         this.balance = balance;
     }
 
-    /** Public method for credit to account. */
+    /** Account method for credit to the account. */
     public void credit(double amount) {
         balance += amount;
     }
 
-    /** Public method for debit from account. */
+    /** Account method for debit from the account. */
     public void debit(double amount) {
         if (amount > balance) {
             throw new IllegalArgumentException(
@@ -83,7 +82,7 @@ public class Account {
         balance -= amount;
     }
 
-    /** Account description. */
+    /** Account instance printout. */
     public String toString() {
         return String.format(
                 "[A/C #%d has balance of %.2f]",
