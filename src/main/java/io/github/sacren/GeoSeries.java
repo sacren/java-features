@@ -4,6 +4,7 @@
  *
  * <P>Private data:
  * -sum:double
+ * -last:int
  *
  * <p>Constructor:
  * +GeoSeries()
@@ -15,6 +16,7 @@
 public class GeoSeries {
     /* private data */
     private double sum;
+    private int last;
 
     /** GeoSeries constructor. */
     public GeoSeries() {
@@ -26,13 +28,14 @@ public class GeoSeries {
         sum = 1;
         for (int i = 2; i <= 1000; i *= 2) {
             sum += 1f / i;
+            last = i;
         }
     }
 
     /** GeoSeries instance printout. */
     public String toString() {
         return String.format(
-                "1 + 1/2 + 1/4 + 1/8 + ... = %f",
-                sum);
+                "1 + 1/2 + 1/4 + 1/8 + ... + 1/%d = %f",
+                last, sum);
     }
 }
