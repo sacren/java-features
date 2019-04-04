@@ -1,6 +1,7 @@
 /**
- * GeoSeries class for the sum of geometric series: 1 + 1/2 + 1/4 + 1/8 + ...
- * (1000 for upper bound)
+ * GeoSeries class.
+ *
+ * <p>Obtain the sum of geometric series: 1 + 1/2 + 1/4 + 1/8 + ...
  *
  * <P>Private data:
  * -sum:double
@@ -8,14 +9,14 @@
  * -bounds:int
  *
  * <p>Constructor:
- * +GeoSeries()
+ * +GeoSeries(bounds:int)
  *
  * <P>Public method:
  * +sum():void
  * +toString():void
  */
 public class GeoSeries {
-    /* private data */
+    /* private instance data */
     private double sum;
     private int last;
     private int bounds;
