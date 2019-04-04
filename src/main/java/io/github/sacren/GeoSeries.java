@@ -5,6 +5,7 @@
  * <P>Private data:
  * -sum:double
  * -last:int
+ * -bounds:int
  *
  * <p>Constructor:
  * +GeoSeries()
@@ -17,16 +18,18 @@ public class GeoSeries {
     /* private data */
     private double sum;
     private int last;
+    private int bounds;
 
     /** GeoSeries constructor. */
-    public GeoSeries() {
-        sum();
+    public GeoSeries(int bounds) {
+        this.bounds = bounds;
+        sum(bounds);
     }
 
     /** GeoSeries method for the sum of geometric series. */
-    public void sum() {
+    public void sum(int bounds) {
         sum = 1;
-        for (int i = 2; i <= 1000; i *= 2) {
+        for (int i = 2; i <= bounds; i *= 2) {
             sum += 1f / i;
             last = i;
         }
