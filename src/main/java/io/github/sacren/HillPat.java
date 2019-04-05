@@ -84,7 +84,7 @@ public class HillPat {
     }
 
     /** HillPat method for patA. */
-    private void patA() {
+    public void patA() {
         patA = "";
         int width;
         for (int row = 1; row <= size; row++) {
