@@ -77,10 +77,19 @@ public class HillPat {
     /** HillPat constructor. */
     public HillPat(int size) {
         this.size = size;
+        checkSize();
         patA();
         patB();
         patC();
         patD();
+    }
+
+    /** HillPat method for pattern size validation. */
+    public void checkSize() {
+        if (size < 3) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", size));
+        }
     }
 
     /** HillPat method for patA. */

@@ -11,10 +11,7 @@ public class TestHillPat {
         System.out.print("Enter size greater than 2: ");
         size = in.nextInt();
         in.close();
-        if (size < 3) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid!", size));
-        }
+        /* display patterns */
         HillPat hp = new HillPat(size);
         System.out.println();
         System.out.println(hp);
