@@ -92,7 +92,7 @@ public class HillPat {
         }
     }
 
-    /** HillPat method for patA. */
+    /** HillPat method for pattern A. */
     public void patA() {
         patA = "";
         int width;
@@ -111,7 +111,7 @@ public class HillPat {
         }
     }
 
-    /** HillPat method for patB. */
+    /** HillPat method for pattern B. */
     public void patB() {
         patB = "";
         int width;
@@ -130,7 +130,7 @@ public class HillPat {
         }
     }
 
-    /** HillPat method for patC. */
+    /** HillPat method for pattern C. */
     public void patC() {
         patC = patA; /* hill pattern for the top half */
         int width;
@@ -152,7 +152,7 @@ public class HillPat {
         }
     }
 
-    /** HillPat method for patD. */
+    /** HillPat method for pattern D. */
     public void patD() {
         patD = "";
         int sideTriangle;
@@ -199,7 +199,7 @@ public class HillPat {
         }
     }
 
-    /** HillPat instance display. */
+    /** HillPat instance printout. */
     public String toString() {
         return String.format(
                 "%s%s%n%n"
