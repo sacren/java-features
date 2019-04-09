@@ -4,7 +4,7 @@
 import java.util.Scanner;
 
 public class TestArrayByStars {
-    /** ArrayByStars test dirver. */
+    /** ArrayByStars test driver. */
     public static void main(String[] args) {
         int[] items; /* This references an array. */
         int size;
