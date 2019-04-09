@@ -5,7 +5,6 @@
  *
  * <p>Private data:
  * -array:int[]
- * -list:String
  *
  * <p>Constructor:
  * +ArrayByStars(array:int[])
@@ -16,7 +15,6 @@
 public class ArrayByStars {
     /* private instance data */
     private int[] array;
-    private String list;
 
     /** ArrayByStars constructor. */
     public ArrayByStars(int[] array) {
@@ -25,14 +23,14 @@ public class ArrayByStars {
 
     /** ArrayByStars instance printout. */
     public String toString() {
-        list = "";
+        String s = "";
         for (int row = 0; row < array.length; row++) {
-            list += String.format("%d: ", row);
+            s += String.format("%d: ", row);
             for (int col = 0; col < array[row]; col++) {
-                list += String.format("%c", '*');
+                s += String.format("%c", '*');
             }
-            list += String.format("(%d)%n", array[row]);
+            s += String.format("(%d)%n", array[row]);
         }
-        return list;
+        return s;
     }
 }
