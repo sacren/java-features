@@ -12,11 +12,14 @@ public class TestArrayByStars {
         System.out.print("Enter the number of items: ");
         size = in.nextInt();
         items = new int[size];
-        System.out.print("Enter value for each item: ");
         for (int i = 0; i < size; i++) {
+            System.out.printf("Enter value for item %d: ", i + 1);
             items[i] = in.nextInt();
         }
         in.close();
+        System.out.println();
+        System.out.println("=== Array by asterisks ===");
+        System.out.println();
         System.out.print(new ArrayByStars(items));
     }
 }
