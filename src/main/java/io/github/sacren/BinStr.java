@@ -11,7 +11,7 @@
  * +BinStr(binStr:String)
  *
  * <p>Public methods:
- * +convirt():void
+ * +convert():void
  * +toString():String
  */
 public class BinStr {
