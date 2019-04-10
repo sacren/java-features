@@ -1,11 +1,16 @@
-/** Test bitwise operation. */
-public class TestBitwise {
-    /** Test bitwise opention. */
-    public static void main(String[] args) {
+/**
+ * BitWise class for bitwise operation.
+ *
+ * <p>Public methods:
+ * +toString():String
+ */
+public class BitWise {
+    /** BitWise instance printout. */
+    public String toString() {
         int x = 0xAAAA_5555;
         int y = 0x5555_1111;
         int z = 0x80000000; /* MAX_VALUE + 1 */
-        System.out.printf(
+        return String.format(
                 "0xAAAA5555 = %d%n"
                         + "0xAAAA5555 = %1$X%n"
                         + "0xAAAA5555 << 1 = %34$X%n"
@@ -47,7 +52,7 @@ public class TestBitwise {
                         + "~0x01 = %33$2X%n"
                         + "0x01 & 0xFF = %30$X%n"
                         + "0x01 | 0xFF = %31$X%n"
-                        + "0x01 ^ 0xFF = %32$X%n",
+                        + "0x01 ^ 0xFF = %32$X",
                 x, y, z, ~x,
                 Integer.MAX_VALUE,
                 Integer.toHexString(Integer.MAX_VALUE),
