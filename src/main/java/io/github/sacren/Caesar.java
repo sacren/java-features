@@ -27,18 +27,20 @@ public class Caesar {
     public void cipher() {
         final int key = 3;
         final int cycle = 26;
+        int tmp;
         encrypted = "";
-        for (char c: usrStr.toUpperCase().toCharArray()) {
+        for (char c: usrStr.toCharArray()) {
             if (!Character.isLetter(c)) {
                 throw new IllegalArgumentException(
                         String.format("\"%s\" is invalid!", usrStr));
             }
-            if (Character.getNumericValue(c) > 35 - key) {
-                c = (char) (c + key - cycle);
+            tmp = Character.getNumericValue(c);
+            if (tmp > 35 - key) {
+                c = Character.forDigit(tmp + key - cycle, 35 + 1);
             } else {
-                c = (char) (c + key);
+                c = Character.forDigit(tmp + key, 35 + 1);
             }
-            encrypted += Character.toString(c);
+            encrypted += Character.toString(Character.toUpperCase(c));
         }
     }
 
