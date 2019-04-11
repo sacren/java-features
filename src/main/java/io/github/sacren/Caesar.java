@@ -33,14 +33,10 @@ public class Caesar {
                 throw new IllegalArgumentException(
                         String.format("\"%s\" is invalid!", usrStr));
             }
-            switch (c) {
-                case 'X':
-                case 'Y':
-                case 'Z':
-                    c = (char) (c + key - cycle);
-                    break;
-                default:
-                    c = (char) (c + key);
+            if (Character.getNumericValue(c) > 35 - key) {
+                c = (char) (c + key - cycle);
+            } else {
+                c = (char) (c + key);
             }
             encrypted += Character.toString(c);
         }
