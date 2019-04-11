@@ -13,6 +13,11 @@
  * +toString():String
  */
 public class Caesar {
+    /* private static data */
+    private static final int CHAR_MAX = 35;
+    private static final int CIPHER_KEY = 3;
+    private static final int ALPHABET = 26;
+
     /* private instance data */
     private String usrStr;
     private String encrypted;
@@ -25,8 +30,6 @@ public class Caesar {
 
     /** Caesar method for encryption. */
     public void cipher() {
-        final int key = 3;
-        final int cycle = 26;
         int tmp;
         encrypted = "";
         for (char c: usrStr.toCharArray()) {
@@ -35,10 +38,10 @@ public class Caesar {
                         String.format("\"%s\" is invalid!", usrStr));
             }
             tmp = Character.getNumericValue(c);
-            if (tmp > 35 - key) {
-                c = Character.forDigit(tmp + key - cycle, 35 + 1);
+            if (tmp > CHAR_MAX - CIPHER_KEY) {
+                c = Character.forDigit(tmp + CIPHER_KEY - ALPHABET, CHAR_MAX + 1);
             } else {
-                c = Character.forDigit(tmp + key, 35 + 1);
+                c = Character.forDigit(tmp + CIPHER_KEY, CHAR_MAX + 1);
             }
             encrypted += Character.toString(Character.toUpperCase(c));
         }
