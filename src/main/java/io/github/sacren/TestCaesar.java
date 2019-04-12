@@ -12,7 +12,7 @@ public class TestCaesar {
         usrStr = in.nextLine();
         in.close();
         System.out.println();
-        System.out.println("=== Caesar cipher ===");
+        System.out.println("=== Caesar cipher and decipher ===");
         System.out.println();
         System.out.println(new Caesar(usrStr));
     }
