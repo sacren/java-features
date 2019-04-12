@@ -17,6 +17,7 @@
 public class Caesar {
     /* private static data */
     private static final int CHAR_MAX = 35;
+    private static final int CHAR_MIN = 10;
     private static final int CIPHER_KEY = 3;
     private static final int ALPHABET = 26;
 
@@ -54,18 +55,16 @@ public class Caesar {
 
     /** Caesar method for decryption. */
     public void decipher() {
+        int tmp;
         decrypted = "";
         for (char c: encrypted.toCharArray()) {
-            switch (c) {
-                case 'A':
-                case 'B':
-                case 'C':
-                    c = (char) (c + ALPHABET - CIPHER_KEY);
-                    break;
-                default:
-                    c = (char) (c - CIPHER_KEY);
+            tmp = Character.getNumericValue(c);
+            if (tmp < CHAR_MIN + CIPHER_KEY) {
+                c = Character.forDigit(tmp + ALPHABET - CIPHER_KEY, CHAR_MAX + 1);
+            } else {
+                c = Character.forDigit(tmp - CIPHER_KEY, CHAR_MAX + 1);
             }
-            decrypted += Character.toString(c);
+            decrypted += Character.toString(Character.toUpperCase(c));
         }
     }
 
