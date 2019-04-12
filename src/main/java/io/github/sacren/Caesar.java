@@ -37,6 +37,7 @@ public class Caesar {
                 throw new IllegalArgumentException(
                         String.format("\"%s\" is invalid!", usrStr));
             }
+            /* use character numeric value to calculate for cipher */
             tmp = Character.getNumericValue(c);
             if (tmp > CHAR_MAX - CIPHER_KEY) {
                 c = Character.forDigit(tmp + CIPHER_KEY - ALPHABET, CHAR_MAX + 1);
