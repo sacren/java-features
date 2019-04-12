@@ -4,12 +4,14 @@
  * <p>Private instance data:
  * -usrStr:String
  * -encrypted:String
+ * -decrypted:String
  *
  * <p>Constructor:
  * +Caesar(usrStr:String)
  *
  * <p>Public methods:
  * +cipher():void
+ * +decipher():void
  * +toString():String
  */
 public class Caesar {
@@ -21,11 +23,13 @@ public class Caesar {
     /* private instance data */
     private String usrStr;
     private String encrypted;
+    private String decrypted;
 
     /** Caesar constructor. */
     public Caesar(String usrStr) {
         this.usrStr = usrStr;
         cipher();
+        decipher();
     }
 
     /** Caesar method for encryption. */
@@ -48,12 +52,31 @@ public class Caesar {
         }
     }
 
+    /** Caesar method for decryption. */
+    public void decipher() {
+        decrypted = "";
+        for (char c: encrypted.toCharArray()) {
+            switch (c) {
+                case 'A':
+                case 'B':
+                case 'C':
+                    c = (char) (c + ALPHABET - CIPHER_KEY);
+                    break;
+                default:
+                    c = (char) (c - CIPHER_KEY);
+            }
+            decrypted += Character.toString(c);
+        }
+    }
+
     /** Caesar instance printout. */
     public String toString() {
         return String.format(
                 "Plain text:     %s%n"
-                        + "Encrypted text: %s",
+                        + "Encrypted text: %s%n"
+                        + "Decrypted text: %s",
                 usrStr,
-                encrypted);
+                encrypted,
+                decrypted);
     }
 }
