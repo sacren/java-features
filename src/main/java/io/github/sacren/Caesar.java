@@ -45,10 +45,9 @@ public class Caesar {
             /* use character numeric value to calculate for cipher */
             tmp = Character.getNumericValue(c);
             if (tmp > CHAR_MAX - CIPHER_KEY) {
-                c = Character.forDigit(tmp + CIPHER_KEY - ALPHABET, CHAR_MAX + 1);
-            } else {
-                c = Character.forDigit(tmp + CIPHER_KEY, CHAR_MAX + 1);
+                tmp -= ALPHABET;
             }
+            c = Character.forDigit(tmp + CIPHER_KEY, CHAR_MAX + 1);
             encrypted += Character.toString(Character.toUpperCase(c));
         }
     }
@@ -60,10 +59,9 @@ public class Caesar {
         for (char c: encrypted.toCharArray()) {
             tmp = Character.getNumericValue(c);
             if (tmp < CHAR_MIN + CIPHER_KEY) {
-                c = Character.forDigit(tmp + ALPHABET - CIPHER_KEY, CHAR_MAX + 1);
-            } else {
-                c = Character.forDigit(tmp - CIPHER_KEY, CHAR_MAX + 1);
+                tmp += ALPHABET;
             }
+            c = Character.forDigit(tmp - CIPHER_KEY, CHAR_MAX + 1);
             decrypted += Character.toString(Character.toUpperCase(c));
         }
     }
