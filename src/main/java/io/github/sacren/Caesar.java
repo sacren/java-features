@@ -1,5 +1,11 @@
 /**
- * Caesar class for cipher.
+ * Caesar class for cipher and decipher.
+ *
+ * <p>Private static data:
+ * -CHAR_MAX:int = 35
+ * -CHAR_MIN:int = 10
+ * -CIPHER_KEY:int = 3
+ * -ALPHABET:int = 26
  *
  * <p>Private instance data:
  * -usrStr:String
@@ -57,6 +63,7 @@ public class Caesar {
         int tmp;
         decrypted = "";
         for (char c: encrypted.toCharArray()) {
+            /* use character numeric value to calculate for decipher */
             tmp = Character.getNumericValue(c);
             if (tmp < CHAR_MIN + CIPHER_KEY) {
                 tmp += ALPHABET;
