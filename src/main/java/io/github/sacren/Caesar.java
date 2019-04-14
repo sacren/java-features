@@ -43,6 +43,7 @@ public class Caesar {
     public void cipher() {
         int tmp;
         encrypted = "";
+        /* loop for cipher and for character validation at the same time */
         for (char c: usrStr.toCharArray()) {
             if (!Character.isLetter(c)) {
                 throw new IllegalArgumentException(
