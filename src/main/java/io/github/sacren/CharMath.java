@@ -16,6 +16,10 @@
  * +toString():String
  */
 public class CharMath {
+    /* private static data */
+    private static final char C1 = '0'; /* initialize character with char */
+    private static final char C2 = 'A';
+
     /* private instance data */
     private String str;
 
@@ -44,8 +48,6 @@ public class CharMath {
 
     /** CharMath method to display various characters. */
     public void show() {
-        final char c1 = '0'; /* initialize character with char */
-        final char c2 = 'A';
         char c3 = 98; /* initilize character with int */
         c3 -= 44; /* character as int */
         c3 += 44; /* restore original value */
@@ -63,14 +65,14 @@ public class CharMath {
                         + "%d%n" /* show integer casting from char */
                         + "%d%n" /* show integer casting from char */
                         + "%c", /* show 'b' by char */
-                c1,
-                c2,
+                C1,
+                C2,
                 'A',
                 c3,
                 74,
                 c4,
-                (int) c1,
-                (int) c2,
+                (int) C1,
+                (int) C2,
                 (int) c3);
     }
 
