@@ -5,8 +5,6 @@
  * -usrStr:String
  * -vowels:int
  * -digits:int
- * -vowRate:double
- * -digiRate:double
  *
  * <p>Constructor:
  * +AlphaNum(usrStr:String)
@@ -19,15 +17,11 @@ public class AlphaNum {
     private String usrStr;
     private int vowels;
     private int digits;
-    private double vowRate;
-    private double digiRate;
 
     /** AlphaNum constructor. */
     public AlphaNum(String usrStr) {
         this.usrStr = usrStr;
         count();
-        vowRate = (double) vowels * 100 / usrStr.length();
-        digiRate = (double) digits * 100 / usrStr.length();
     }
 
     /** AlphaNum method to count vowels and digits. */
@@ -50,12 +44,17 @@ public class AlphaNum {
         }
     }
 
+    /** AlphaNum method for the percent of vowels or digits. */
+    public double rate(int num) {
+        return (double) num * 100 / usrStr.length();
+    }
+
     /** AlphaNum instance printout. */
     public String toString() {
         return String.format(
                 "Number of vowels: %d (%.2f%%)%n"
                         + "Number of digits: %d (%.2f%%)",
-                vowels, vowRate,
-                digits, digiRate);
+                vowels, rate(vowels),
+                digits, rate(digits));
     }
 }
