@@ -10,6 +10,9 @@
  * +AlphaNum(usrStr:String)
  *
  * <p>Public methods:
+ * +set(usrStr:String):void
+ * +count():void
+ * +rate(num:int):double
  * +toString():String
  */
 public class AlphaNum {
