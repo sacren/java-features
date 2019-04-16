@@ -20,8 +20,17 @@ public class AlphaNum {
 
     /** AlphaNum constructor. */
     public AlphaNum(String usrStr) {
-        this.usrStr = usrStr;
+        set(usrStr);
         count();
+    }
+
+    /** AlphaNum setter for input string. */
+    public void set(String usrStr) {
+        if (usrStr.length() == 0) {
+            throw new IllegalArgumentException(
+                    String.format("\"%s\" for input is invalid!", usrStr));
+        }
+        this.usrStr = usrStr;
     }
 
     /** AlphaNum method to count vowels and digits. */
