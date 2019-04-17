@@ -13,6 +13,8 @@ public class TestDayOfWeek {
         in.close();
         DayOfWeek dayOfWeek = new DayOfWeek(day);
         System.out.println();
+        System.out.println("=== Day of week ===");
+        System.out.println();
         System.out.println(dayOfWeek);
     }
 }
