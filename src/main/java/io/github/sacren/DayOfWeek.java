@@ -17,7 +17,7 @@
  * +DayOfWeek(day:int)
  *
  * <p>Public methods:
- * +setDay(day:int):void
+ * +set(day:int):void
  * +toString():String
  */
 public class DayOfWeek {
@@ -26,11 +26,11 @@ public class DayOfWeek {
 
     /** DayOfWeek constructor. */
     public DayOfWeek(int day) {
-        setDay(day);
+        set(day);
     }
 
-    /** DayOfWeek method for the day of the week. */
-    public void setDay(int day) {
+    /** DayOfWeek setter for the day of the week. */
+    public void set(int day) {
         if (day < 0 || day > 6) {
             throw new IllegalArgumentException(
                     String.format("%d is out of day range!", day));
@@ -40,7 +40,7 @@ public class DayOfWeek {
 
     /** DayOfWeek instance printout. */
     public String toString() {
-        String[] weekDay = {
+        String[] week = {
             "Sunday",
             "Monday",
             "Tuesday",
@@ -51,7 +51,6 @@ public class DayOfWeek {
         };
         return String.format(
                 "%d is for %s",
-                day,
-                weekDay[day]);
+                day, week[day]);
     }
 }
