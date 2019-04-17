@@ -1,7 +1,7 @@
 /**
  * Date class.
  *
- * <p>Private data with default values:
+ * <p>Private instance data:
  * -year:int
  * -month:int
  * -day:int
@@ -31,26 +31,26 @@ public class Date {
     private int month;
     private int day;
 
-    /** Default constructor. */
+    /** Date default constructor. */
     public Date() {
         this.year = DEFAULT_YEAR;
         this.month = DEFAULT_MONTH;
         this.day = DEFAULT_DAY;
     }
 
-    /** Custom constructor. */
+    /** Date custom constructor. */
     public Date(int year, int month, int day) {
         setYear(year);
         setMonth(month);
         setDay(day);
     }
 
-    /** Public accessor of year. */
+    /** Date getter of year. */
     public int getYear() {
         return year;
     }
 
-    /** Public mutator of year. */
+    /** Date setter of year. */
     public void setYear(int year) {
         if (year <= 0) {
             throw new IllegalArgumentException(
@@ -59,12 +59,12 @@ public class Date {
         this.year = year;
     }
 
-    /** Public accessor of month. */
+    /** Date getter of month. */
     public int getMonth() {
         return month;
     }
 
-    /** Public mutator of month. */
+    /** Date setter of month. */
     public void setMonth(int month) {
         if (month <= 0 || month > 12) {
             throw new IllegalArgumentException(
@@ -73,12 +73,12 @@ public class Date {
         this.month = month;
     }
 
-    /** Public accessor of day. */
+    /** Date getter of day. */
     public int getDay() {
         return day;
     }
 
-    /** Public mutator of day. */
+    /** Date setter of day. */
     public void setDay(int day) {
         if (day <= 0 || day > 31) {
             throw new IllegalArgumentException(
@@ -87,14 +87,14 @@ public class Date {
         this.day = day;
     }
 
-    /** Public method for date. */
+    /** Date method for date. */
     public void setDate(int year, int month, int day) {
         setYear(year);
         setMonth(month);
         setDay(day);
     }
 
-    /** Date description: DD/MM/YYYY. */
+    /** Date instance printout. */
     public String toString() {
         return String.format(
                 "[%02d/%02d/%04d]",
