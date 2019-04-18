@@ -11,6 +11,7 @@
  * -usrStr:String
  * -encrypted:String
  * -decrypted:String
+ * -swapped:String
  *
  * <p>Constructor:
  * +Caesar(usrStr:String)
@@ -31,14 +32,14 @@ public class Caesar {
     private String usrStr;
     private String encrypted;
     private String decrypted;
-    private String cipherText;
+    private String swapped;
 
     /** Caesar constructor. */
     public Caesar(String usrStr) {
         this.usrStr = usrStr;
         cipher();
         decipher();
-        cipherText();
+        swap();
     }
 
     /** Caesar method for encryption. */
@@ -77,16 +78,16 @@ public class Caesar {
     }
 
     /** Caesar method for cipher text. */
-    public void cipherText() {
+    public void swap() {
         int tmp;
-        cipherText = "";
+        swapped = "";
         /* 'A' + 'Z' and 'B' + 'Y'... are all equal. */
         final int A = Character.getNumericValue('A');
         final int Z = Character.getNumericValue('Z');
         for (char c : usrStr.toUpperCase().toCharArray()) {
             tmp = Character.getNumericValue(c);
             c = Character.forDigit(A + Z - tmp, CHAR_MAX + 1);
-            cipherText += Character.toString(Character.toUpperCase(c));
+            swapped += Character.toString(Character.toUpperCase(c));
         }
     }
 
@@ -100,6 +101,6 @@ public class Caesar {
                 usrStr,
                 encrypted,
                 decrypted,
-                cipherText);
+                swapped);
     }
 }
