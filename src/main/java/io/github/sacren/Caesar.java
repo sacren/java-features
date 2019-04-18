@@ -31,12 +31,14 @@ public class Caesar {
     private String usrStr;
     private String encrypted;
     private String decrypted;
+    private String cipherText;
 
     /** Caesar constructor. */
     public Caesar(String usrStr) {
         this.usrStr = usrStr;
         cipher();
         decipher();
+        cipherText();
     }
 
     /** Caesar method for encryption. */
@@ -74,14 +76,30 @@ public class Caesar {
         }
     }
 
+    /** Caesar method for cipher text. */
+    public void cipherText() {
+        int tmp;
+        cipherText = "";
+        /* 'A' + 'Z' and 'B' + 'Y'... are all equal. */
+        final int A = Character.getNumericValue('A');
+        final int Z = Character.getNumericValue('Z');
+        for (char c : usrStr.toUpperCase().toCharArray()) {
+            tmp = Character.getNumericValue(c);
+            c = Character.forDigit(A + Z - tmp, CHAR_MAX + 1);
+            cipherText += Character.toString(Character.toUpperCase(c));
+        }
+    }
+
     /** Caesar instance printout. */
     public String toString() {
         return String.format(
                 "Plain text:     %s%n"
                         + "Encrypted text: %s%n"
-                        + "Decrypted text: %s",
+                        + "Decrypted text: %s%n"
+                        + "Cipher text:    %s",
                 usrStr,
                 encrypted,
-                decrypted);
+                decrypted,
+                cipherText);
     }
 }
