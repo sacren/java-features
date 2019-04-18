@@ -19,6 +19,7 @@
  * <p>Public methods:
  * +cipher():void
  * +decipher():void
+ * +swap():void
  * +toString():String
  */
 public class Caesar {
