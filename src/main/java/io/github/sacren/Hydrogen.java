@@ -2,7 +2,7 @@
  * Hydrogen subclass extends Atom superclass.
  *
  * <p>Constructor:
- * +Hydrogen(atomicNumber:int)
+ * +Hydrogen()
  *
  * <p>Public methods:
  * +toString():String

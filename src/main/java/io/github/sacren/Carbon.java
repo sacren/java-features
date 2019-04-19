@@ -2,7 +2,7 @@
  * Carbon subclass extends Atom superclass.
  *
  * <p>Constructor:
- * +Carbon(atomicNumber:int)
+ * +Carbon()
  *
  * <p>Public methods:
  * +toString():String
