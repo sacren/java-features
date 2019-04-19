@@ -18,8 +18,6 @@ public class Carbon extends Atom {
 
     /** Carbon instance description. */
     public String toString() {
-        return String.format(
-                "Carbon:   %d",
-                getAtomicNumber());
+        return String.format("Carbon:   %d", get());
     }
 }

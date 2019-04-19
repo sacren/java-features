@@ -18,8 +18,6 @@ public class Hydrogen extends Atom {
 
     /** Hydrogen instance description. */
     public String toString() {
-        return String.format(
-                "Hydrogen: %d",
-                getAtomicNumber());
+        return String.format("Hydrogen: %d", get());
     }
 }
