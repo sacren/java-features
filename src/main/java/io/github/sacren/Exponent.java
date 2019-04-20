@@ -10,6 +10,7 @@
  * +Exponent(base:int, exponent:int)
  *
  * <p>Public methods:
+ * +setExpo(exponent:int):void
  * +toString():String
  */
 public class Exponent {
@@ -21,8 +22,17 @@ public class Exponent {
     /** Exponent constructor. */
     public Exponent(int base, int exponent) {
         this.base = base;
-        this.exponent = exponent;
+        setExpo(exponent);
         product = 1;
+    }
+
+    /** Exponent setter for exponent. */
+    public void setExpo(int exponent) {
+        if (exponent <= 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", exponent));
+        }
+        this.exponent = exponent;
     }
 
     /** Exponent instance printout. */
