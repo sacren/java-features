@@ -7,7 +7,7 @@
  * <p>Constructor:
  * +Atom(atomicNumber:int)
  *
- * <p>Abstract methods:
+ * <p>Public methods:
  * +get():int
  * +set(atomicNumber:int):void
  */
