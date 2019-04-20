@@ -29,7 +29,9 @@ public class Atom {
     public void set(int atomicNumber) {
         if (atomicNumber < 1 || atomicNumber > 118) {
             throw new IllegalArgumentException(
-                    String.format("Invalid atomic number %d!", atomicNumber));
+                    String.format(
+                        "%d is invalid atomic number!",
+                        atomicNumber));
         }
         this.atomicNumber = atomicNumber;
     }
