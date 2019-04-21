@@ -1,13 +1,13 @@
 /**
  * Gcd class for greatest common denominator.
  *
- * <p>numA >= numB > 0
- * GCD(numA, 0) = numA
- * GCD(numA, numB) = GCD(numB, numA mod numB)
+ * <p>num1 >= num2 > 0
+ * GCD(num1, 0) = num1
+ * GCD(num1, num2) = GCD(num2, num1 mod num2)
  *
  * <p>Private data:
- * -numA:int
- * -numB:int
+ * -num1:int
+ * -num2:int
  * -tmpA:int
  * -tmpB:int
  * -gcd:int
@@ -20,42 +20,42 @@
  */
 public class Gcd {
     /* private instance data */
-    private int numA;
-    private int numB;
+    private int num1;
+    private int num2;
     private int tmpA;
     private int tmpB;
     private int gcd;
 
     /** Gcd constructor. */
     public Gcd(int n, int m) {
-        numA(n);
-        numB(m);
+        setNum1(n);
+        setNum2(m);
         dupe();
         gcd();
     }
 
-    /** Gcd setter for numA. */
-    public void numA(int n) {
+    /** Gcd setter for num1. */
+    public void setNum1(int n) {
         if (n <= 0) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", n));
         }
-        numA = n;
+        num1 = n;
     }
 
-    /** Gcd setter for numB. */
-    public void numB(int n) {
+    /** Gcd setter for num2. */
+    public void setNum2(int n) {
         if (n <= 0) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", n));
         }
-        numB = n;
+        num2 = n;
     }
 
     /** Gcd method for tmpA and tmpB. */
     public void dupe() {
-        tmpA = numA;
-        tmpB = numB;
+        tmpA = num1;
+        tmpB = num2;
     }
 
     /** Gcd method for greatest common denominator. */
@@ -86,8 +86,8 @@ public class Gcd {
                 "First Number: %d%n"
                         + "Second Number: %d%n"
                         + "GCD: %d",
-                numA,
-                numB,
+                num1,
+                num2,
                 gcd);
     }
 }
