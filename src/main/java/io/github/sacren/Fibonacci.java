@@ -13,6 +13,7 @@
  *
  * <p>Public methods:
  * +init():void
+ * +average():void
  * +toString():String
  */
 import java.util.Arrays;
@@ -25,6 +26,7 @@ public class Fibonacci {
     /** Fibonacci constructor. */
     public Fibonacci() {
         init();
+        average();
     }
 
     /** Fibonacci method to initialize first 20 fibonacci numbers. */
@@ -33,14 +35,21 @@ public class Fibonacci {
         fibo[0] = 1;
         fibo[1] = 1;
         int i = 0;
-        average = 0;
         for (int num : fibo) {
             if (num == 0) {
                 fibo[i] = fibo[i - 2] + fibo[i - 1];
             }
-            average += fibo[i++];
+            i++;
         }
-        average /= 20;
+    }
+
+    /** Fibonacci method for average. */
+    public void average() {
+        average = 0;
+        for (int n : fibo) {
+            average += n;
+        }
+        average /= fibo.length;
     }
 
     /** Fibonacci instance printout. */
