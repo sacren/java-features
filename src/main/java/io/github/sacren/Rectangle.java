@@ -1,7 +1,7 @@
 /**
- * Rectangle subclass over Shape superclass
+ * Rectangle subclass extends Shape superclass
  *
- * <p>Private data with default values:
+ * <p>Private instance data with default values:
  * -length:double = 2.0f
  * -width:double = 1.0f
  *
@@ -34,14 +34,14 @@ public class Rectangle extends Shape {
     private double length;
     private double width;
 
-    /** Default Rectangle constructor. */
+    /** Rectangle default constructor. */
     public Rectangle() {
         super(DEFAULT_COLOR);
         length = DEFAULT_LENGTH;
         width = DEFAULT_WIDTH;
     }
 
-    /** Default Rectangle constructor with parameter place holder. */
+    /** Rectangle default constructor with parameter place holder. */
     public Rectangle(Rectangle r) {
         this();
     }
@@ -64,12 +64,12 @@ public class Rectangle extends Shape {
         setLengthWidth(length, width);
     }
 
-    /** getter for rectangle length. */
+    /** Rectangle getter for length. */
     public double getLength() {
         return length;
     }
 
-    /** setter for rectangle length. */
+    /** Rectangle setter for length. */
     public void setLength(double length) {
         if (length <= 0) {
             throw new IllegalArgumentException(
@@ -78,12 +78,12 @@ public class Rectangle extends Shape {
         this.length = length;
     }
 
-    /** getter for rectangle width. */
+    /** Rectangle getter for width. */
     public double getWidth() {
         return width;
     }
 
-    /** setter for rectangle width. */
+    /** Rectangle setter for width. */
     public void setWidth(double width) {
         if (width <= 0) {
             throw new IllegalArgumentException(
@@ -98,19 +98,19 @@ public class Rectangle extends Shape {
         setWidth(width);
     }
 
-    /** Public method for rectangle area. */
+    /** Rectangle method for area. */
     @Override
     public double getArea() {
         return length * width;
     }
 
-    /** Public method for rectangle perimeter. */
+    /** Rectangle method for perimeter. */
     @Override
     public double getPerimeter() {
         return (length + width) * 2;
     }
 
-    /** Rectangle instance description. */
+    /** Rectangle instance printout. */
     public String toString() {
         return String.format(
                 "[Rectangle (Color=%s, Length=%.2f, Width=%.2f)]",
