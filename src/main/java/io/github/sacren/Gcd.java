@@ -14,6 +14,12 @@
  * +Gcd(n:int, m:int)
  *
  * <p>Public methods:
+ * +getNum1():int
+ * +setNum1(num:int):void
+ * +getNum2():int
+ * +setNum2(num2:int):void
+ * +gcd():void
+ * +recGcd(n:int, m:int):int
  * +toString():String
  */
 public class Gcd {
@@ -81,7 +87,7 @@ public class Gcd {
         return recGcd(m, n % m);
     }
 
-    /** Gcd instance description. */
+    /** Gcd instance printout. */
     public String toString() {
         return String.format(
                 "First Number:  %d%n"
