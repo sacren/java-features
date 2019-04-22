@@ -8,7 +8,6 @@
  * <p>Private data:
  * -num1:int
  * -num2:int
- * -gcd:int
  *
  * <p>Constructor:
  * +Gcd(n:int, m:int)
@@ -18,7 +17,7 @@
  * +setNum1(num:int):void
  * +getNum2():int
  * +setNum2(num2:int):void
- * +gcd():void
+ * +gcd():int
  * +recGcd(n:int, m:int):int
  * +toString():String
  */
@@ -26,13 +25,11 @@ public class Gcd {
     /* private instance data */
     private int num1;
     private int num2;
-    private int gcd;
 
     /** Gcd constructor. */
     public Gcd(int n, int m) {
         setNum1(n);
         setNum2(m);
-        gcd();
     }
 
     /** Gcd getter for num1. */
@@ -64,7 +61,7 @@ public class Gcd {
     }
 
     /** Gcd method for greatest common denominator. */
-    public void gcd() {
+    public int gcd() {
         int remainder;
         int tmp1 = num1;
         int tmp2 = num2;
@@ -76,7 +73,7 @@ public class Gcd {
             tmp1 = tmp2;
             tmp2 = remainder;
         }
-        gcd = tmp1;
+        return tmp1;
     }
 
     /** Gcd method for recursive GCD. */
@@ -95,6 +92,6 @@ public class Gcd {
                         + "GCD:           %d",
                 num1,
                 num2,
-                gcd);
+                gcd());
     }
 }
