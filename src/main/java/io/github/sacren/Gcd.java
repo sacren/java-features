@@ -29,22 +29,32 @@ public class Gcd {
         gcd();
     }
 
+    /** Gcd getter for num1. */
+    public int getNum1() {
+        return num1;
+    }
+
     /** Gcd setter for num1. */
-    public void setNum1(int n) {
-        if (n <= 0) {
+    public void setNum1(int num) {
+        if (num <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid!", n));
+                    String.format("%d is invalid!", num));
         }
-        num1 = n;
+        num1 = num;
+    }
+
+    /** Gcd getter for num2. */
+    public int getNum2() {
+        return num2;
     }
 
     /** Gcd setter for num2. */
-    public void setNum2(int n) {
-        if (n <= 0) {
+    public void setNum2(int num) {
+        if (num <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid!", n));
+                    String.format("%d is invalid!", num));
         }
-        num2 = n;
+        num2 = num;
     }
 
     /** Gcd method for greatest common denominator. */

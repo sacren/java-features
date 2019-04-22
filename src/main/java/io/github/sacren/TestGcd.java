@@ -20,6 +20,8 @@ public class TestGcd {
         System.out.println();
         System.out.println("=== Recursive GCD ===");
         System.out.println();
-        System.out.printf("GCD: %d%n", gcd.recGcd(n, m));
+        System.out.printf("First number:  %d%n", gcd.getNum1());
+        System.out.printf("Second number: %d%n", gcd.getNum2());
+        System.out.printf("GCD:           %d%n", gcd.recGcd(n, m));
     }
 }
