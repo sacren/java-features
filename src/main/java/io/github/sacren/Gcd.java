@@ -8,8 +8,6 @@
  * <p>Private data:
  * -num1:int
  * -num2:int
- * -tmpA:int
- * -tmpB:int
  * -gcd:int
  *
  * <p>Constructor:
@@ -22,15 +20,12 @@ public class Gcd {
     /* private instance data */
     private int num1;
     private int num2;
-    private int tmpA;
-    private int tmpB;
     private int gcd;
 
     /** Gcd constructor. */
     public Gcd(int n, int m) {
         setNum1(n);
         setNum2(m);
-        dupe();
         gcd();
     }
 
@@ -52,24 +47,20 @@ public class Gcd {
         num2 = n;
     }
 
-    /** Gcd method for tmpA and tmpB. */
-    public void dupe() {
-        tmpA = num1;
-        tmpB = num2;
-    }
-
     /** Gcd method for greatest common denominator. */
     public void gcd() {
         int remainder;
+        int tmp1 = num1;
+        int tmp2 = num2;
         for ( ; ; ) {
-            if (tmpB == 0) {
+            if (tmp2 == 0) {
                 break;
             }
-            remainder = tmpA % tmpB;
-            tmpA = tmpB;
-            tmpB = remainder;
+            remainder = tmp1 % tmp2;
+            tmp1 = tmp2;
+            tmp2 = remainder;
         }
-        gcd = tmpA;
+        gcd = tmp1;
     }
 
     /** Gcd method for recursive GCD. */
@@ -83,9 +74,9 @@ public class Gcd {
     /** Gcd instance description. */
     public String toString() {
         return String.format(
-                "First Number: %d%n"
+                "First Number:  %d%n"
                         + "Second Number: %d%n"
-                        + "GCD: %d",
+                        + "GCD:           %d",
                 num1,
                 num2,
                 gcd);
