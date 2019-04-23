@@ -134,13 +134,13 @@ public class Grades {
     /** Grades instance description. */
     public String toString() {
         return String.format(
-                "Number of students: %d%n"
-                        + "List of grades: %s%n"
-                        + "Average of grades: %.2f%n"
-                        + "Max of grades: %d%n"
-                        + "Min of grades: %d%n"
+                "Number of students:           %d%n"
+                        + "List of grades:               %s%n"
+                        + "Average of grades:            %.2f%n"
+                        + "Max of grades:                %d%n"
+                        + "Min of grades:                %d%n"
                         + "Standard deviation of grades: %.2f%n"
-                        + "Bins of grades: %s",
+                        + "Bins of grades:               %s",
                 count,
                 Arrays.toString(grades),
                 average,
