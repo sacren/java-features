@@ -41,7 +41,7 @@ public class Gcd {
     public void setNum1(int num) {
         if (num <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid!", num));
+                    String.format("\"%d\" is invalid!", num));
         }
         num1 = num;
     }
@@ -55,7 +55,7 @@ public class Gcd {
     public void setNum2(int num) {
         if (num <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid!", num));
+                    String.format("\"%d\" is invalid!", num));
         }
         num2 = num;
     }
