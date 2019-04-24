@@ -8,45 +8,41 @@
  * Difference?
  *
  * <p>Private data:
- * -sumFrom:double
- * -sumTo:double
  * -bounds:int
  *
  * <p>Constructor:
  * +Harmonic(bounds:int)
  *
  * <p>Public methods:
- * +sumFrom():void
- * +sumTo():void
+ * +sumFrom():double
+ * +sumTo():double
  * +toString():String
  */
 public class Harmonic {
     /* private data */
-    private double sumFrom;
-    private double sumTo;
     private int bounds;
 
     /** Harmonic custom constructor. */
     public Harmonic(int bounds) {
         this.bounds = bounds;
-        sumFrom();
-        sumTo();
     }
 
     /** Harmonic method for the sum of the series from 1. */
-    public void sumFrom() {
-        sumFrom = 0;
+    public double sumFrom() {
+        double sum = 0;
         for (int i = 0; i < bounds; i++) {
-            sumFrom += (double) 1 / (i + 1);
+            sum += (double) 1 / (i + 1);
         }
+        return sum;
     }
 
     /** Harmonic method for the sum of the series to 1. */
-    public void sumTo() {
-        sumTo = 0;
+    public double sumTo() {
+        double sum = 0;
         for (int i = 0; i < bounds; i++) {
-            sumTo += (double) 1 / (bounds - i);
+            sum += (double) 1 / (bounds - i);
         }
+        return sum;
     }
 
     /** Harmonic instance string. */
@@ -57,8 +53,8 @@ public class Harmonic {
                         + "Difference is %.30f%n"
                         + "Which sum is more accurate?",
                 bounds,
-                sumFrom,
-                sumTo,
-                sumTo - sumFrom);
+                sumFrom(),
+                sumTo(),
+                sumTo() - sumFrom());
     }
 }
