@@ -9,7 +9,7 @@
  * +HexToBin(hex:String)
  *
  * <p>Public methods:
- * +checkHex():void
+ * +check():void
  * +toBin():void
  * +toString():String
  */
@@ -21,31 +21,26 @@ public class HexToBin {
     /** HexToBin custom constructor. */
     public HexToBin(String hex) {
         this.hex = hex;
-        checkHex();
+        check();
         toBin();
     }
 
     /** HexToBin method to validate input string is hex. */
-    public void checkHex() {
-        if (!isHex(hex)) {
+    public void check() {
+        if (hex.isEmpty()) {
             throw new IllegalArgumentException(
                     String.format(
                         "\"%s\" is not a hex string!",
                         hex));
         }
-    }
-
-    /* helper for hex string validation */
-    private static boolean isHex(String s) {
-        if (s.isEmpty()) {
-            return false;
-        }
-        for (char c: s.toCharArray()) {
+        for (char c : hex.toCharArray()) {
             if (Character.digit(c, 16) == -1) {
-                return false;
+                throw new IllegalArgumentException(
+                        String.format(
+                            "\"%s\" is not a hex string!",
+                            hex));
             }
         }
-        return true;
     }
 
     /** HexToBin method to convert hex string to binary string. */
