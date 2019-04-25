@@ -58,7 +58,7 @@ public class HexToBin {
     /** HexToBin instance printout. */
     public String toString() {
         return String.format(
-                "Hex: %s%n"
+                "Hex:    %s%n"
                         + "Binary: %s",
                 hex, toBin());
     }
