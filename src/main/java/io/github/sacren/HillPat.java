@@ -3,19 +3,15 @@
  *
  * <p>Private data:
  * -size:int
- * -patA:String
- * -patB:String
- * -patC:String
- * -patD:String
  *
  * <p>Constructor:
  * +HillPat(size:int)
  *
  * <p>Public method:
- * +patA():void
- * +patB():void
- * +patC():void
- * +patD():void
+ * +patA():String
+ * +patB():String
+ * +patC():String
+ * +patD():String
  * +toString():String
  *
  *             <p>#
@@ -69,19 +65,11 @@
 public class HillPat {
     /* private instance data */
     private int size;
-    private String patA;
-    private String patB;
-    private String patC;
-    private String patD;
 
     /** HillPat constructor. */
     public HillPat(int size) {
         this.size = size;
         checkSize();
-        patA();
-        patB();
-        patC();
-        patD();
     }
 
     /** HillPat method for pattern size validation. */
@@ -93,68 +81,71 @@ public class HillPat {
     }
 
     /** HillPat method for pattern A. */
-    public void patA() {
-        patA = "";
+    public String patA() {
+        String s = "";
         int width;
         for (int row = 1; row <= size; row++) {
             width = row * 2 - 1;
             for (int col = 1; col <= size - row; col++) {
-                patA += "  ";
+                s += "  ";
             }
             for (int col = 1; col <= width; col++) {
                 if (col == width) {
-                    patA += String.format("#%n");
+                    s += String.format("#%n");
                     break;
                 }
-                patA += "# ";
+                s += "# ";
             }
         }
+        return s;
     }
 
     /** HillPat method for pattern B. */
-    public void patB() {
-        patB = "";
+    public String patB() {
+        String s = "";
         int width;
         for (int row = 1; row <= size; row++) {
             width = (size - row) * 2 + 1;
             for (int col = 1; col < row; col++) {
-                patB += "  ";
+                s += "  ";
             }
             for (int col = 1; col <= width; col++) {
                 if (col == width) {
-                    patB += String.format("#%n");
+                    s += String.format("#%n");
                     break;
                 }
-                patB += "# ";
+                s += "# ";
             }
         }
+        return s;
     }
 
     /** HillPat method for pattern C. */
-    public void patC() {
-        patC = patA; /* hill pattern for the top half */
+    public String patC() {
+        String s = patA(); /* hill pattern for the top half */
         int width;
         /* reverse hill pattern for the bottom half */
         for (int row = 1; row <= size - 1; row++) {
             width = (size - 1 - row) * 2 + 1;
             /* offset for the bottom half */
-            patC += "  ";
+            s += "  ";
             for (int col = 1; col < row; col++) {
-                patC += "  ";
+                s += "  ";
             }
             for (int col = 1; col <= width; col++) {
                 if (col == width) {
-                    patC += String.format("#%n");
+                    s += String.format("#%n");
                     break;
                 }
-                patC += "# ";
+                s += "# ";
             }
         }
+        return s;
     }
 
     /** HillPat method for pattern D. */
-    public void patD() {
-        patD = "";
+    public String patD() {
+        String s = "";
         int sideTriangle;
         int midTriangle;
 
@@ -162,41 +153,42 @@ public class HillPat {
             sideTriangle = size - row + 1;
             midTriangle = (row - 1) * 2 - 1;
             for (int col = 1; col <= sideTriangle; col++) {
-                patD += "# ";
+                s += "# ";
             }
             for (int col = 1; col <= midTriangle; col++) {
-                patD += "  ";
+                s += "  ";
             }
             for (int col = 1; col <= sideTriangle; col++) {
                 if (row == 1 && col == 1) {
                     continue;
                 }
                 if (col == sideTriangle) {
-                    patD += String.format("#%n");
+                    s += String.format("#%n");
                     break;
                 }
-                patD += "# ";
+                s += "# ";
             }
         }
 
         for (int row = 1 + 1; row <= size; row++) {
             for (int col = 1; col <= row; col++) {
-                patD += "# ";
+                s += "# ";
             }
             for (int col = 1; col <= (size - row) * 2 - 1; col++) {
-                patD += "  ";
+                s += "  ";
             }
             for (int col = 1; col <= row; col++) {
                 if (row == size && col == 1) {
                     continue;
                 }
                 if (col == row) {
-                    patD += String.format("#%n");
+                    s += String.format("#%n");
                     break;
                 }
-                patD += "# ";
+                s += "# ";
             }
         }
+        return s;
     }
 
     /** HillPat instance printout. */
@@ -206,10 +198,10 @@ public class HillPat {
                         + "%s%s%n%n"
                         + "%s%s%n%n"
                         + "%s%s",
-                patA, addId('A'),
-                patB, addId('B'),
-                patC, addId('C'),
-                patD, addId('D'));
+                patA(), addId('A'),
+                patB(), addId('B'),
+                patC(), addId('C'),
+                patD(), addId('D'));
     }
 
     /* helper for pattern ID */
