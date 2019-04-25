@@ -2,7 +2,6 @@
  * HexToBin class.
  *
  * <p>Private data:
- * -bin:String
  * -hex:String
  *
  * <p>Custom constructor:
@@ -10,19 +9,17 @@
  *
  * <p>Public methods:
  * +check():void
- * +toBin():void
+ * +toBin():String
  * +toString():String
  */
 public class HexToBin {
     /* private instance data */
-    private String bin;
     private String hex;
 
     /** HexToBin custom constructor. */
     public HexToBin(String hex) {
         this.hex = hex;
         check();
-        toBin();
     }
 
     /** HexToBin method to validate input string is hex. */
@@ -44,17 +41,18 @@ public class HexToBin {
     }
 
     /** HexToBin method to convert hex string to binary string. */
-    public void toBin() {
-        String[] binArray = {
+    public String toBin() {
+        String[] bin = {
             "0000", "0001", "0010", "0011",
             "0100", "0101", "0110", "0111",
             "1000", "1001", "1010", "1011",
             "1100", "1101", "1110", "1111"
         };
-        bin = "";
-        for (char c: hex.toCharArray()) {
-            bin += binArray[Character.digit(c, 16)];
+        String s = "";
+        for (char c : hex.toCharArray()) {
+            s += bin[Character.digit(c, 16)];
         }
+        return s;
     }
 
     /** HexToBin instance printout. */
@@ -62,6 +60,6 @@ public class HexToBin {
         return String.format(
                 "Hex: %s%n"
                         + "Binary: %s",
-                hex, bin);
+                hex, toBin());
     }
 }
