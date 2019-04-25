@@ -1,10 +1,10 @@
 /**
  * HexToBin class.
  *
- * <p>Private data:
+ * <p>Private instance data:
  * -hex:String
  *
- * <p>Custom constructor:
+ * <p>Constructor:
  * +HexToBin(hex:String)
  *
  * <p>Public methods:
