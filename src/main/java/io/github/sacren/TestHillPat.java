@@ -12,8 +12,9 @@ public class TestHillPat {
         size = in.nextInt();
         in.close();
         /* display patterns */
-        HillPat hp = new HillPat(size);
         System.out.println();
-        System.out.println(hp);
+        System.out.println("=== Hill patterns ===");
+        System.out.println();
+        System.out.println(new HillPat(size));
     }
 }
