@@ -14,6 +14,7 @@
  *
  * <p>Public methods:
  * +check():void
+ * +getDbl():double[]
  * +toString():String
  */
 import java.util.Arrays;
@@ -40,9 +41,22 @@ public class IntArray {
         }
     }
 
+    /** IntArray getter for double array. */
+    public double[] getDbl() {
+        double[] a = new double[intArray.length];
+        int i = 0;
+        for (double n : intArray) {
+            a[i++] = n * Math.E;
+        }
+        return a;
+    }
+
     /** IntArray instance printout. */
     public String toString() {
         return String.format(
-                "%s", Arrays.toString(intArray));
+                "Integer array: %s%n"
+                        + "Double array:  %s",
+                Arrays.toString(intArray),
+                Arrays.toString(getDbl()));
     }
 }
