@@ -44,10 +44,12 @@ public class Tax {
 
     /** Tax method to calculate tax. */
     public void calc() {
+        /* validate imcome first */
         if (income < 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid income!", income));
         }
+        /* loop for tax payable by income */
         for ( ; ; ) {
             if (income > INCOME_60K) {
                 tax = TAX_STEP * TAX_RATE_20K
@@ -66,6 +68,7 @@ public class Tax {
             tax = 0;
             break;
         }
+        /* tax with rebate applied */
         tax -= rebate();
     }
 
