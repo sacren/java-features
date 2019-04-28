@@ -3,8 +3,7 @@
  *
  * <p>Overload the method with different type and number of parameters.
  *
- * <p>Search the array for elements of boolean and int types.  Return the index
- * of the first found.
+ * <p>Search int array for element of array length value.
  *
  * <p>Private instance data:
  * -intArray:int[]
@@ -14,6 +13,7 @@
  *
  * <p>Public methods:
  * +check():void
+ * +hasInt():boolean
  * +getDbl():double[]
  * +toStr(a:int[]):String
  * +toStr(a:double[]):String
