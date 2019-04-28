@@ -44,6 +44,16 @@ public class IntArray {
         }
     }
 
+    /** IntArray method for array length value. */
+    public boolean hasInt() {
+        for (int n : intArray) {
+            if (n == intArray.length) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** IntArray getter for double array. */
     public double[] getDbl() {
         double[] a = new double[intArray.length];
@@ -76,11 +86,15 @@ public class IntArray {
     /** IntArray instance printout. */
     public String toString() {
         return String.format(
-                "Integer array: %s%n"
+                "Integer array: %s%n%n"
+                        + "%s %s %d%n%n"
                         + "Double array:  %s%n%n"
                         + "=== Another approach ===%n%n"
                         + "%s",
                 toStr(intArray),
+                toStr(intArray),
+                hasInt() ? "has" : "doesn't have",
+                intArray.length,
                 toStr(getDbl()),
                 toStr(intArray, getDbl()));
     }
