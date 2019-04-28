@@ -15,6 +15,9 @@
  * <p>Public methods:
  * +check():void
  * +getDbl():double[]
+ * +toStr(a:int[]):String
+ * +toStr(a:double[]):String
+ * +toStr(a1:int[], a2:double[]):String
  * +toString():String
  */
 import java.util.Arrays;
@@ -51,12 +54,34 @@ public class IntArray {
         return a;
     }
 
+    /** IntArray overloaded method for integer array to string. */
+    public String toStr(int[] a) {
+        return Arrays.toString(a);
+    }
+
+    /** IntArray overloaded method for double array to string. */
+    public String toStr(double[] a) {
+        return Arrays.toString(a);
+    }
+
+    /** IntArray overloaded method for integer and double arrays to strings. */
+    public String toStr(int[] a1, double[] a2) {
+        return String.format(
+                "Integer array: %s%n"
+                        + "Double aray:   %s",
+                Arrays.toString(a1),
+                Arrays.toString(a2));
+    }
+
     /** IntArray instance printout. */
     public String toString() {
         return String.format(
                 "Integer array: %s%n"
-                        + "Double array:  %s",
-                Arrays.toString(intArray),
-                Arrays.toString(getDbl()));
+                        + "Double array:  %s%n%n"
+                        + "=== Another approach ===%n%n"
+                        + "%s",
+                toStr(intArray),
+                toStr(getDbl()),
+                toStr(intArray, getDbl()));
     }
 }
