@@ -12,11 +12,14 @@ public class TestCopyArray {
         System.out.print("Enter the size of integer array: ");
         size = in.nextInt();
         intArray = new int[size];
-        System.out.print("Enter value for each element of the array: ");
         for (int i = 0; i < size; i++) {
+            System.out.printf("Enter value of array element %d: ", i + 1);
             intArray[i] = in.nextInt();
         }
         in.close();
+        System.out.println();
+        System.out.println("=== Copy array ===");
+        System.out.println();
         System.out.println(new CopyArray(intArray));
     }
 }
