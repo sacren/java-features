@@ -18,8 +18,8 @@ public class LeapYears {
         int count = 0;
         for (int year = BEGIN; year <= END; year++) {
             if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-                s += String.format("%-5d", year);
-                if (++count % 20 == 0) {
+                s += String.format("%5d", year);
+                if (++count % 10 == 0 && year != END) {
                     s += String.format("%n");
                 }
             }
