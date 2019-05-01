@@ -11,7 +11,7 @@
  *
  * <p>Public methods:
  * +setSize():void
- * +filter():void
+ * +setAlNum():void
  * +reverse():void
  * +toString():String
  */
@@ -33,7 +33,7 @@ public class Palindrome {
         alNum = new char[size];
         reversed = new char[size];
         check();
-        filter();
+        setAlNum();
         reverse();
     }
 
@@ -56,7 +56,7 @@ public class Palindrome {
     }
 
     /** Palindrome method for alpha numeric array of string. */
-    public void filter() {
+    public void setAlNum() {
         int i = 0;
         for (char c : usrArray) {
             if (Character.isDigit(c) || Character.isLetter(c)) {
