@@ -19,11 +19,15 @@ public class LeapYears {
         for (int year = BEGIN; year <= END; year++) {
             if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
                 s += String.format("%5d", year);
-                if (++count % 10 == 0 && year != END) {
+                if (++count % 10 == 0) {
                     s += String.format("%n");
                 }
             }
         }
-        return s;
+        return String.format(
+                "%s%n"
+                        + "Total leap years: %d",
+                s,
+                count);
     }
 }
