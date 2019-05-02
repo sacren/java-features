@@ -42,32 +42,32 @@ public class Point {
         this.axisY = axisY;
     }
 
-    /** getter for axisX. */
+    /** Point getter for axisX. */
     public int getX() {
         return axisX;
     }
 
-    /** setter for axisX. */
+    /** Point setter for axisX. */
     public void setX(int axisX) {
         this.axisX = axisX;
     }
 
-    /** getter for axisY. */
+    /** Point getter for axisY. */
     public int getY() {
         return axisY;
     }
 
-    /** setter for axisY. */
+    /** Point setter for axisY. */
     public void setY(int axisY) {
         this.axisY = axisY;
     }
 
-    /** Point description. */
+    /** Point instance printout. */
     public String toString() {
         return String.format("(%d, %d)", axisX, axisY);
     }
 
-    /** getter for a specific point. */
+    /** Point getter for a specific point. */
     public int[] getX_Y() {
         int[] point = new int[2];
         point[0] = axisX;
@@ -75,27 +75,27 @@ public class Point {
         return point;
     }
 
-    /** setter for a specific point. */
+    /** Point setter for a specific point. */
     public void setX_Y(int axisX, int axisY) {
         this.axisX = axisX;
         this.axisY = axisY;
     }
 
-    /** Method for distance from this point to (axisX, axisY). */
+    /** Point method for distance from this point to P(axisX, axisY). */
     public double distance(int axisX, int axisY) {
         return Math.sqrt((double) (
                     Math.abs(axisX - this.axisX) * Math.abs(axisX - this.axisX)
                     + Math.abs(axisY - this.axisY) * Math.abs(axisY - this.axisY)));
     }
 
-    /** Method for distance from this point to another. */
+    /** Point method for distance from this point to another. */
     public double distance(Point p) {
         return Math.sqrt((double) (
                     Math.abs(p.getX() - axisX) * Math.abs(p.getX() - axisX)
                     + Math.abs(p.getY() - axisY) * Math.abs(p.getY() - axisY)));
     }
 
-    /** Method for distance from this point to (0, 0). */
+    /** Point method for distance from this point to P(0, 0). */
     public double distance() {
         return Math.sqrt((double) (
                     Math.abs(axisX) * Math.abs(axisX)
