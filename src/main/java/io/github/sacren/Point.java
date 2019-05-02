@@ -64,7 +64,7 @@ public class Point {
 
     /** Point instance printout. */
     public String toString() {
-        return String.format("(%d, %d)", axisX, axisY);
+        return String.format("P(%d, %d)", axisX, axisY);
     }
 
     /** Point getter for a specific point. */
