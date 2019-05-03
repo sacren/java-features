@@ -4,22 +4,22 @@
 import java.util.Scanner;
 
 public class TestLine {
-    /** Test driver for Line. */
+    /** Line test driver. */
     public static void main(String[] args) {
-        Scanner inStream = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         int beginX;
         System.out.print("Enter x-axis for begin point: ");
-        beginX = inStream.nextInt();
+        beginX = in.nextInt();
         int beginY;
         System.out.print("Enter y-axis for begin point: ");
-        beginY = inStream.nextInt();
+        beginY = in.nextInt();
         int endX;
         System.out.print("Enter x-axis for end point: ");
-        endX = inStream.nextInt();
+        endX = in.nextInt();
         int endY;
         System.out.print("Enter y-axis for end point: ");
-        endY = inStream.nextInt();
-        inStream.close();
+        endY = in.nextInt();
+        in.close();
         System.out.println();
         System.out.println("=== Line by 4 integers ===");
         System.out.println();
