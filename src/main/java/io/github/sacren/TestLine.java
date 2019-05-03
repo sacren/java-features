@@ -20,30 +20,40 @@ public class TestLine {
         System.out.print("Enter y-axis for end point: ");
         endY = in.nextInt();
         in.close();
+        /* use 4 numbers for Line instance */
         System.out.println();
         System.out.println("=== Line by 4 integers ===");
         System.out.println();
-        System.out.println(new Line(beginX, beginY, endX, endY));
-        System.out.println();
-        System.out.println("=== Line by 2 points ===");
-        System.out.println();
-        Line line = new Line(new Point(beginX, beginY), new Point(endX, endY));
-        System.out.println(line);
-        /* update line points. */
-        line.setBegin(new Point(line.getBeginX() * 2, line.getBeginY() / 2));
-        line.setEnd(new Point(line.getEndX() * 3, line.getEndY() / 3));
-        System.out.println();
-        System.out.println("=== Update line points ===");
-        System.out.println();
-        System.out.println(line);
+        Line line1 = new Line(beginX, beginY, endX, endY);
+        System.out.println(line1);
         /* reset line points to all 0's. */
-        line.setBeginX(0);
-        line.setBeginY(0);
-        line.setEndX(0);
-        line.setEndY(0);
+        line1.setBeginX(0);
+        line1.setBeginY(0);
+        line1.setEndX(0);
+        line1.setEndY(0);
         System.out.println();
         System.out.println("=== Reset points to 0 ===");
         System.out.println();
-        System.out.println(line);
+        System.out.println(line1);
+        /* use points for Line instance */
+        System.out.println();
+        System.out.println("=== Line by 2 points ===");
+        System.out.println();
+        Line line2 = new Line(new Point(beginX, beginY), new Point(endX, endY));
+        System.out.println(line2);
+        /* update line points. */
+        line2.setBegin(new Point(line2.getBeginX() * 2, line2.getBeginY() / 2));
+        line2.setEnd(new Point(line2.getEndX() * 3, line2.getEndY() / 3));
+        System.out.println();
+        System.out.println("=== Update line points ===");
+        System.out.println();
+        System.out.println(line2);
+        /* reset line points to all 0's by points. */
+        line2.setBegin(new Point(0, 0));
+        line2.setEnd(new Point(0, 0));
+        System.out.println();
+        System.out.println("=== Reset points to 0 by points ===");
+        System.out.println();
+        System.out.println(line2);
     }
 }
