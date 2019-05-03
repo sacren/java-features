@@ -20,61 +20,30 @@ public class TestLine {
         System.out.print("Enter y-axis for end point: ");
         endY = inStream.nextInt();
         inStream.close();
-        Line lineBy4 = new Line(beginX, beginY, endX, endY);
-        Point from = new Point(beginX, beginY);
-        Point to = new Point(endX, endY);
-        Line line = new Line(from, to);
         System.out.println();
-        System.out.printf(
-                "%s%n"
-                + "Begin Point %s%n"
-                + "End Point %s%n"
-                + "Line length is %.2f%n%n",
-                lineBy4,
-                lineBy4.getBegin(), /* invoke Point's toString() */
-                lineBy4.getEnd(), /* invoke Point's toString() */
-                lineBy4.getLength());
-        System.out.printf("Now by a different constructor.%n%n");
-        System.out.printf(
-                "%s%n"
-                + "Begin Point %s%n"
-                + "End Point %s%n"
-                + "Line length is %.2f%n%n",
-                line,
-                line.getBegin(), /* invoke Point's toString() */
-                line.getEnd(), /* invoke Point's toString() */
-                line.getLength());
-        /* Test setter. */
-        Point anotherBegin = new Point(beginX * 2, beginY / 2);
-        Point anotherEnd = new Point(endX * 3, endY / 3);
-        line.setBegin(anotherBegin);
-        line.setEnd(anotherEnd);
-        System.out.printf(
-                "After begin and end points updated.%n%n"
-                + "%s%n"
-                + "Begin Point %s%n"
-                + "End Point %s%n"
-                + "Line length is %.2f%n%n",
-                line,
-                line.getBegin(),
-                line.getEnd(),
-                line.getLength());
-        /* Reset begin and end to 0. */
+        System.out.println("=== Line by 4 integers ===");
+        System.out.println();
+        System.out.println(new Line(beginX, beginY, endX, endY));
+        System.out.println();
+        System.out.println("=== Line by 2 points ===");
+        System.out.println();
+        Line line = new Line(new Point(beginX, beginY), new Point(endX, endY));
+        System.out.println(line);
+        /* update line points. */
+        line.setBegin(new Point(beginX * 2, beginY / 2));
+        line.setEnd(new Point(endX * 3, endY / 3));
+        System.out.println();
+        System.out.println("=== Update line points ===");
+        System.out.println();
+        System.out.println(line);
+        /* reset line points to all 0's. */
         line.setBeginX(0);
         line.setBeginY(0);
         line.setEndX(0);
         line.setEndY(0);
-        System.out.printf(
-                "After begin and end points reset to 0.%n%n"
-                + "%s%n"
-                + "Begin Point (%d, %d)%n"
-                + "End Point (%d, %d)%n"
-                + "Line length is %.2f%n",
-                line,
-                line.getBeginX(),
-                line.getBeginY(),
-                line.getEndX(),
-                line.getEndY(),
-                line.getLength());
+        System.out.println();
+        System.out.println("=== Reset points to 0 ===");
+        System.out.println();
+        System.out.println(line);
     }
 }
