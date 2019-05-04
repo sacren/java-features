@@ -15,7 +15,6 @@
  * +getY():int
  * +setY(axisY:int):void
  * +toString():String
- * +getX_Y():int[2]
  * +setX_Y(axisX:int, axisY:int):void
  * +distance(axisX:int, axisY:int):double
  * +distance(p:Point):double
@@ -29,6 +28,7 @@ public class Point {
     /* private instance data */
     private int axisX;
     private int axisY;
+    private Point point;
 
     /** Point default constructor. */
     public Point() {
@@ -65,14 +65,6 @@ public class Point {
     /** Point instance printout. */
     public String toString() {
         return String.format("P(%d, %d)", axisX, axisY);
-    }
-
-    /** Point getter for a specific point. */
-    public int[] getX_Y() {
-        int[] point = new int[2];
-        point[0] = axisX;
-        point[1] = axisY;
-        return point;
     }
 
     /** Point setter for a specific point. */
