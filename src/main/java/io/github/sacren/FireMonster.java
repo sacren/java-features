@@ -14,14 +14,18 @@ public class FireMonster extends Monster {
         super(name);
     }
 
-    /** FireMonster public method for attack. */
+    /** FireMonster method for attack. */
     @Override
     public String attack() {
-        return String.format("%s blows fire!", getName());
+        return String.format(
+                "%s blows fire!",
+                getName());
     }
 
-    /** FireMonster description. */
+    /** FireMonster instance printout. */
     public String toString() {
-        return String.format("[Fire Monster: %s]", getName());
+        return String.format(
+                "[Fire Monster: %s]",
+                getName());
     }
 }

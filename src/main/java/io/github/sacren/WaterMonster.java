@@ -14,14 +14,18 @@ public class WaterMonster extends Monster {
         super(name);
     }
 
-    /** WaterMonster public method for attack. */
+    /** WaterMonster method for attack. */
     @Override
     public String attack() {
-        return String.format("%s pours water!", getName());
+        return String.format(
+                "%s pours water!",
+                getName());
     }
 
-    /** WaterMonster description. */
+    /** WaterMonster instance printout. */
     public String toString() {
-        return String.format("[Water Monster: %s]", getName());
+        return String.format(
+                "[Water Monster: %s]",
+                getName());
     }
 }

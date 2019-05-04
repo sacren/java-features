@@ -2,7 +2,7 @@
  * Test driver for Monster class.
  */
 public class TestMonster {
-    /** Test driver for various monsters. */
+    /** Moster test driver for various monsters. */
     public static void main(String[] args) {
         String fireMonsterName = "Escalante";
         Monster fireMonster = new FireMonster(fireMonsterName);

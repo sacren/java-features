@@ -14,14 +14,18 @@ public class CookieMonster extends Monster {
         super(name);
     }
 
-    /** CookieMonster public method for attack. */
+    /** CookieMonster method for attack. */
     @Override
     public String attack() {
-        return String.format("%s eats all the cookies!", getName());
+        return String.format(
+                "%s eats all the cookies!",
+                getName());
     }
 
-    /** CookieMonster description. */
+    /** CookieMonster instance printout. */
     public String toString() {
-        return String.format("[Cookie Monster: %s]", getName());
+        return String.format(
+                "[Cookie Monster: %s]",
+                getName());
     }
 }

@@ -7,22 +7,22 @@
  * <p>Constructor:
  * +Monster(name:String)
  *
- * <p>Public methods:
+ * <p>Public method:
  * +getName():String
  *
- * <p>Abstract methods:
+ * <p>Abstract method:
  * +attack():String
  */
 public abstract class Monster {
     /* private instance data */
     private String name;
 
-    /** Monster custom constructor. */
+    /** Monster constructor. */
     public Monster(String name) {
         this.name = name;
     }
 
-    /** getter of Monster name. */
+    /** Monster getter for name. */
     public String getName() {
         return name;
     }
