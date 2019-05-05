@@ -25,7 +25,7 @@ public class FireMonster extends Monster {
     /** FireMonster instance printout. */
     public String toString() {
         return String.format(
-                "=== Fire Monster %s ===%n",
+                "=== Fire Monster %s ===",
                 getName());
     }
 }
