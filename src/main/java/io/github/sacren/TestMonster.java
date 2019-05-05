@@ -19,6 +19,7 @@ public class TestMonster {
         System.out.println(kuch);
         System.out.println();
         System.out.println(kuch.attack());
+        /* declared as CookieMonster */
         CookieMonster cookie = new CookieMonster("Abominable Cookie Monster");
         System.out.println();
         System.out.println(cookie);
