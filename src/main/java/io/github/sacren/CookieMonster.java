@@ -25,7 +25,7 @@ public class CookieMonster extends Monster {
     /** CookieMonster instance printout. */
     public String toString() {
         return String.format(
-                "[Cookie Monster: %s]",
+                "=== Cookie Monster %s ===%n",
                 getName());
     }
 }

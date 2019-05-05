@@ -25,7 +25,7 @@ public class WaterMonster extends Monster {
     /** WaterMonster instance printout. */
     public String toString() {
         return String.format(
-                "[Water Monster: %s]",
+                "=== Water Monster %s ===%n",
                 getName());
     }
 }
