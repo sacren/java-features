@@ -52,6 +52,8 @@ public class MovablePoint implements Movable {
 
     /** MovablePoint instance printout. */
     public String toString() {
-        return String.format("MovablePoint(%d, %d)", axisX, axisY);
+        return String.format(
+                "Movable P(%d, %d)",
+                axisX, axisY);
     }
 }
