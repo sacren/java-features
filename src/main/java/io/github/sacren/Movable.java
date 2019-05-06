@@ -1,7 +1,7 @@
 /**
  * Movable interface for MovablePoint subclass.
  *
- * <p>Public methods:
+ * <p>Public abstract methods:
  * +moveUp():void
  * +moveDown():void
  * +moveLeft():void
