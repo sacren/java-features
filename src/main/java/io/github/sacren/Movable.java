@@ -8,15 +8,15 @@
  * +moveRight():void
  */
 public interface Movable {
-    /** Move up method signature. */
+    /** Movable interface method to move up the point. */
     void moveUp();
 
-    /** Move down method signature. */
+    /** Movable interface method to move down the point. */
     void moveDown();
 
-    /** Move left method signature. */
+    /** Movable interface method to move left the point. */
     void moveLeft();
 
-    /** Move right method signature. */
+    /** Movable interface method to move right the point. */
     void moveRight();
 }

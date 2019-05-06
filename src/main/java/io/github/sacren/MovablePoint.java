@@ -26,31 +26,31 @@ public class MovablePoint implements Movable {
         this.axisY = axisY;
     }
 
-    /** MovablePoint implementation of moving point up. */
+    /** MovablePoint method to implement moving point up. */
     @Override
     public void moveUp() {
         axisY++;
     }
 
-    /** MovablePoint implementation of moving point down. */
+    /** MovablePoint method to implement moving point down. */
     @Override
     public void moveDown() {
         axisY--;
     }
 
-    /** MovablePoint implementation of moving point left. */
+    /** MovablePoint method to implement moving point left. */
     @Override
     public void moveLeft() {
         axisX--;
     }
 
-    /** MovablePoint implementation of moving point right. */
+    /** MovablePoint method to implement moving point right. */
     @Override
     public void moveRight() {
         axisX++;
     }
 
-    /** MovablePoint instance description. */
+    /** MovablePoint instance printout. */
     public String toString() {
         return String.format("MovablePoint(%d, %d)", axisX, axisY);
     }

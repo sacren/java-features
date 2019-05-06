@@ -2,7 +2,7 @@
  * Test driver for Movable interface.
  */
 public class TestMovable {
-    /** Movable point driver. */
+    /** Movable interface test driver. */
     public static void main(String[] args) {
         final int axisX = 4;
         final int axisY = 18;
