@@ -26,7 +26,7 @@ public class TestBall {
                 ball.getY(),
                 ball.getXStep(),
                 ball.getYStep(),
-                Arrays.toString(ball.getX_Y()),
+                ball.getPos(),
                 Arrays.toString(ball.getXStepYStep()));
         /* update Ball instance */
         ball.setX(ball.getX() * 2);
@@ -51,7 +51,7 @@ public class TestBall {
                 ball.getY(),
                 ball.getXStep(),
                 ball.getYStep(),
-                Arrays.toString(ball.getX_Y()),
+                ball.getPos(),
                 Arrays.toString(ball.getXStepYStep()));
         System.out.println();
         System.out.println("=== After we make a move ===");
