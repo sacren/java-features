@@ -33,7 +33,6 @@ public class TestBall {
         ball.setY(ball.getY() * 2);
         ball.setXStep(ball.getXStep() + 1);
         ball.setYStep(ball.getYStep() + 1);
-        ball.setX_Y(ball.getX(), ball.getY());
         ball.setXStepYStep(ball.getXStep(), ball.getYStep());
         System.out.println();
         System.out.println("=== Double the positions and increment speeds ===");

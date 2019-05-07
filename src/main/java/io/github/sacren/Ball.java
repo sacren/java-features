@@ -20,7 +20,6 @@
  * +getYStep():double
  * +setYStep(axisYStep:double):void
  * +getPos():Point
- * +setX_Y(axisX:double, axisY:double):void
  * +getXStepYStep():double[2]
  * +setXStepYStep(axisXStep:double, axisYStep:double):void
  * +toString():String
@@ -84,12 +83,6 @@ public class Ball {
     /** Ball getter for the ball position. */
     public Point getPos() {
         return new Point(axisX, axisY);
-    }
-
-    /** Ball setter for both axisX and axisY. */
-    public void setX_Y(double axisX, double axisY) {
-        this.axisX = axisX;
-        this.axisY = axisY;
     }
 
     /** Ball getter for both axisXStep and axisYStep. */
