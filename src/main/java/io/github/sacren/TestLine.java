@@ -7,18 +7,18 @@ public class TestLine {
     /** Line test driver. */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int beginX;
+        double beginX;
         System.out.print("Enter x-axis for begin point: ");
-        beginX = in.nextInt();
-        int beginY;
+        beginX = in.nextDouble();
+        double beginY;
         System.out.print("Enter y-axis for begin point: ");
-        beginY = in.nextInt();
-        int endX;
+        beginY = in.nextDouble();
+        double endX;
         System.out.print("Enter x-axis for end point: ");
-        endX = in.nextInt();
-        int endY;
+        endX = in.nextDouble();
+        double endY;
         System.out.print("Enter y-axis for end point: ");
-        endY = in.nextInt();
+        endY = in.nextDouble();
         in.close();
         /* use 4 numbers for Line instance */
         System.out.println();

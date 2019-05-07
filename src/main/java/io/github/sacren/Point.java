@@ -2,32 +2,32 @@
  * Point class.
  *
  * <p>Private data with default values:
- * -axisX:int = 0
- * -axisY:int = 0
+ * -axisX:double = 0
+ * -axisY:double = 0
  *
  * <p>Constructor:
  * +Point()
- * +Point(axisX:int, axisY:int)
+ * +Point(axisX:double, axisY:double)
  *
  * <p>Public methods:
- * +getX():int
- * +setX(axisX:int):void
- * +getY():int
- * +setY(axisY:int):void
+ * +getX():double
+ * +setX(axisX:double):void
+ * +getY():double
+ * +setY(axisY:double):void
  * +toString():String
- * +setX_Y(axisX:int, axisY:int):void
- * +distance(axisX:int, axisY:int):double
+ * +setX_Y(axisX:double, axisY:double):void
+ * +distance(axisX:double, axisY:double):double
  * +distance(p:Point):double
  * +distance():double
  */
 public class Point {
     /* private static data */
-    private static final int DEFAULT_X = 0;
-    private static final int DEFAULT_Y = 0;
+    private static final double DEFAULT_X = 0;
+    private static final double DEFAULT_Y = 0;
 
     /* private instance data */
-    private int axisX;
-    private int axisY;
+    private double axisX;
+    private double axisY;
     private Point point;
 
     /** Point default constructor. */
@@ -37,44 +37,46 @@ public class Point {
     }
 
     /** Point custom constructor. */
-    public Point(int axisX, int axisY) {
+    public Point(double axisX, double axisY) {
         this.axisX = axisX;
         this.axisY = axisY;
     }
 
     /** Point getter for axisX. */
-    public int getX() {
+    public double getX() {
         return axisX;
     }
 
     /** Point setter for axisX. */
-    public void setX(int axisX) {
+    public void setX(double axisX) {
         this.axisX = axisX;
     }
 
     /** Point getter for axisY. */
-    public int getY() {
+    public double getY() {
         return axisY;
     }
 
     /** Point setter for axisY. */
-    public void setY(int axisY) {
+    public void setY(double axisY) {
         this.axisY = axisY;
     }
 
     /** Point instance printout. */
     public String toString() {
-        return String.format("P(%d, %d)", axisX, axisY);
+        return String.format(
+                "P(%.2f, %.2f)",
+                axisX, axisY);
     }
 
     /** Point setter for a specific point. */
-    public void setX_Y(int axisX, int axisY) {
+    public void setX_Y(double axisX, double axisY) {
         this.axisX = axisX;
         this.axisY = axisY;
     }
 
     /** Point method for distance from this point to P(axisX, axisY). */
-    public double distance(int axisX, int axisY) {
+    public double distance(double axisX, double axisY) {
         return Math.sqrt((double) (
                     Math.abs(axisX - this.axisX) * Math.abs(axisX - this.axisX)
                     + Math.abs(axisY - this.axisY) * Math.abs(axisY - this.axisY)));

@@ -6,7 +6,7 @@
  * -end:Point
  *
  * <p>Constructor:
- * +Line(beginX:int, beginY:int, endX:int, endY:int)
+ * +Line(beginX:double, beginY:double, endX:double, endY:double)
  * +Line(begin:Point, end:Point)
  *
  * <p>Public methods:
@@ -15,13 +15,13 @@
  * +getEnd():Point
  * +setEnd(end:Point):void
  * +toString():String
- * +getBeginX():int
- * +setBeginX(axisX:int):void
- * +getBeginY():int
- * +setBeginY(axisY:int):void
- * +getEndX():int
+ * +getBeginX():double
+ * +setBeginX(axisX:double):void
+ * +getBeginY():double
+ * +setBeginY(axisY:double):void
+ * +getEndX():double
  * +setEndX(axisX):void
- * +getEndY():int
+ * +getEndY():double
  * +setEndY(axisY):void
  * +getLength():double
  */
@@ -31,7 +31,7 @@ public class Line {
     private Point end;
 
     /** Line constructor by 4 integers. */
-    public Line(int beginX, int beginY, int endX, int endY) {
+    public Line(double beginX, double beginY, double endX, double endY) {
         begin = new Point(beginX, beginY);
         end = new Point(endX, endY);
     }
@@ -63,42 +63,42 @@ public class Line {
     }
 
     /** Line method for x-axis of Point begin. */
-    public int getBeginX() {
+    public double getBeginX() {
         return begin.getX();
     }
 
     /** Line method to set x-axis of Point begin. */
-    public void setBeginX(int axisX) {
+    public void setBeginX(double axisX) {
         begin.setX(axisX);
     }
 
     /** Line method for y-axis of Point begin. */
-    public int getBeginY() {
+    public double getBeginY() {
         return begin.getY();
     }
 
     /** Line method to set y-axis of Point begin. */
-    public void setBeginY(int axisY) {
+    public void setBeginY(double axisY) {
         begin.setY(axisY);
     }
 
     /** Line method for x-axis of Point end. */
-    public int getEndX() {
+    public double getEndX() {
         return end.getX();
     }
 
     /** Line method to set x-axis of Point end. */
-    public void setEndX(int axisX) {
+    public void setEndX(double axisX) {
         end.setX(axisX);
     }
 
     /** Line method for y-axis of Point end. */
-    public int getEndY() {
+    public double getEndY() {
         return end.getY();
     }
 
     /** Line method to set y-axis of Point end. */
-    public void setEndY(int axisY) {
+    public void setEndY(double axisY) {
         end.setY(axisY);
     }
 
