@@ -99,11 +99,12 @@ public class Ball {
         this.axisYStep = axisYStep;
     }
 
-    /** Ball instance description. */
+    /** Ball instance printout. */
     public String toString() {
         return String.format(
-                "Ball[Position@(%.2f, %.2f), Speed=(%.2f, %.2f)]",
-                axisX, axisY, axisXStep, axisYStep);
+                "Position: %s%n"
+                        + "Speed:     (%.2f, %.2f)",
+                getPos(), axisXStep, axisYStep);
     }
 
     /**

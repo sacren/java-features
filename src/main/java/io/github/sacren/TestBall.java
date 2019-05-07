@@ -13,6 +13,8 @@ public class TestBall {
         final double axisYStep = 12;
         Ball ball = new Ball(axisX, axisY, axisXStep, axisYStep);
         System.out.println();
+        System.out.println("=== Ball ===");
+        System.out.println();
         System.out.println(ball);
         System.out.println();
         System.out.printf(
