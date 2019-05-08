@@ -102,7 +102,7 @@ public class Ball {
     /** Ball instance printout. */
     public String toString() {
         return String.format(
-                "Position: %s%n"
+                "Position: P%s%n"
                         + "Speed:     (%.2f, %.2f)",
                 getPos(), axisXStep, axisYStep);
     }

@@ -65,7 +65,7 @@ public class Point {
     /** Point instance printout. */
     public String toString() {
         return String.format(
-                "P(%.2f, %.2f)",
+                "(%.2f, %.2f)",
                 axisX, axisY);
     }
 

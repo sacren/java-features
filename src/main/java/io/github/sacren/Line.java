@@ -110,9 +110,9 @@ public class Line {
     /** Line instance printout. */
     public String toString() {
         return String.format(
-                "From %s to %s%n" /* invoke Point's toString() */
-                        + "Start point: %s%n"
-                        + "End point:   %s%n"
+                "From P%s to P%s%n" /* invoke Point's toString() */
+                        + "Start point: P%s%n"
+                        + "End point:   P%s%n"
                         + "Line length is %.2f",
                 begin, end,
                 begin,
