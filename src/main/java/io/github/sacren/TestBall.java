@@ -4,24 +4,20 @@
 public class TestBall {
     /** Ball test driver. */
     public static void main(String[] args) {
-        /* instantiate Ball */
-        final double axisX = 1;
-        final double axisY = 2;
-        final double axisXStep = 11;
-        final double axisYStep = 12;
-        Ball ball = new Ball(axisX, axisY, axisXStep, axisYStep);
+        /* Ball instance */
+        Ball ball = new Ball(1, 2, 11, 12);
         System.out.println();
         System.out.println("=== Ball ===");
         System.out.println();
         System.out.println(ball);
         System.out.println();
         System.out.printf(
-                "axisX is %.2f%n"
-                        + "axisY is %.2f%n"
-                        + "axisXStep is %.2f%n"
-                        + "axisYStep is %.2f%n"
-                        + "(axisX, axisY) is %s%n"
-                        + "(axisXStep, axisYStep) is %s%n",
+                "X axis:       %.2f%n"
+                        + "Y axis:       %.2f%n"
+                        + "X axis speed: %.2f%n"
+                        + "Y axis speed: %.2f%n"
+                        + "Position:     P%s%n"
+                        + "Speed:        %s%n",
                 ball.getX(),
                 ball.getY(),
                 ball.getXStep(),
@@ -35,17 +31,17 @@ public class TestBall {
         ball.setYStep(ball.getYStep() + 1);
         ball.setSpeed(ball.getSpeed());
         System.out.println();
-        System.out.println("=== Double the positions and increment speeds ===");
+        System.out.println("=== Updata ball position and speed ===");
         System.out.println();
         System.out.println(ball);
         System.out.println();
         System.out.printf(
-                "axisX is %.2f%n"
-                        + "axisY is %.2f%n"
-                        + "axisXStep is %.2f%n"
-                        + "axisYStep is %.2f%n"
-                        + "(axisX, axisY) is %s%n"
-                        + "(axisXStep, axisYStep) is %s%n",
+                "X axis:       %.2f%n"
+                        + "Y axis:       %.2f%n"
+                        + "X axis speed: %.2f%n"
+                        + "Y axis speed: %.2f%n"
+                        + "Position:     P%s%n"
+                        + "Speed:        %s%n",
                 ball.getX(),
                 ball.getY(),
                 ball.getXStep(),
