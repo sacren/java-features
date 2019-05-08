@@ -17,7 +17,7 @@ public class TestBall {
                         + "X axis speed: %.2f%n"
                         + "Y axis speed: %.2f%n"
                         + "Position:     P%s%n"
-                        + "Speed:        %s%n",
+                        + "Speed:         %s%n",
                 ball.getX(),
                 ball.getY(),
                 ball.getXStep(),
@@ -29,7 +29,6 @@ public class TestBall {
         ball.setY(ball.getY() * 2);
         ball.setXStep(ball.getXStep() + 1);
         ball.setYStep(ball.getYStep() + 1);
-        ball.setSpeed(ball.getSpeed());
         System.out.println();
         System.out.println("=== Updata ball position and speed ===");
         System.out.println();
@@ -41,7 +40,7 @@ public class TestBall {
                         + "X axis speed: %.2f%n"
                         + "Y axis speed: %.2f%n"
                         + "Position:     P%s%n"
-                        + "Speed:        %s%n",
+                        + "Speed:         %s%n",
                 ball.getX(),
                 ball.getY(),
                 ball.getXStep(),

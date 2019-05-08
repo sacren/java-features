@@ -21,7 +21,6 @@
  * +setYStep(axisYStep:double):void
  * +getPos():Point
  * +getSpeed():Point
- * +setSpeed(Point speed):void
  * +toString():String
  * +move():Ball
  */
@@ -88,12 +87,6 @@ public class Ball {
     /** Ball getter for both axisXStep and axisYStep. */
     public Point getSpeed() {
         return new Point(axisXStep, axisYStep);
-    }
-
-    /** Ball setter for both axisXStep and axisYStep. */
-    public void setSpeed(Point speed) {
-        axisXStep = speed.getX();
-        axisYStep = speed.getY();
     }
 
     /** Ball instance printout. */
