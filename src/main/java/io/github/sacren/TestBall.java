@@ -1,8 +1,6 @@
 /**
  * Test driver for Ball class.
  */
-import java.util.Arrays;
-
 public class TestBall {
     /** Ball test driver. */
     public static void main(String[] args) {
@@ -29,13 +27,13 @@ public class TestBall {
                 ball.getXStep(),
                 ball.getYStep(),
                 ball.getPos(),
-                Arrays.toString(ball.getXStepYStep()));
+                ball.getSpeed());
         /* update Ball instance */
         ball.setX(ball.getX() * 2);
         ball.setY(ball.getY() * 2);
         ball.setXStep(ball.getXStep() + 1);
         ball.setYStep(ball.getYStep() + 1);
-        ball.setXStepYStep(ball.getXStep(), ball.getYStep());
+        ball.setSpeed(ball.getSpeed());
         System.out.println();
         System.out.println("=== Double the positions and increment speeds ===");
         System.out.println();
@@ -53,7 +51,7 @@ public class TestBall {
                 ball.getXStep(),
                 ball.getYStep(),
                 ball.getPos(),
-                Arrays.toString(ball.getXStepYStep()));
+                ball.getSpeed());
         System.out.println();
         System.out.println("=== After we make a move ===");
         System.out.println();

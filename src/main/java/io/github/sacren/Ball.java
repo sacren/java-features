@@ -20,8 +20,8 @@
  * +getYStep():double
  * +setYStep(axisYStep:double):void
  * +getPos():Point
- * +getXStepYStep():double[2]
- * +setXStepYStep(axisXStep:double, axisYStep:double):void
+ * +getSpeed():Point
+ * +setSpeed(Point speed):void
  * +toString():String
  * +move():Ball
  */
@@ -86,17 +86,14 @@ public class Ball {
     }
 
     /** Ball getter for both axisXStep and axisYStep. */
-    public double[] getXStepYStep() {
-        double[] doubleArray = new double[2];
-        doubleArray[0] = axisXStep;
-        doubleArray[1] = axisYStep;
-        return doubleArray;
+    public Point getSpeed() {
+        return new Point(axisXStep, axisYStep);
     }
 
     /** Ball setter for both axisXStep and axisYStep. */
-    public void setXStepYStep(double axisXStep, double axisYStep) {
-        this.axisXStep = axisXStep;
-        this.axisYStep = axisYStep;
+    public void setSpeed(Point speed) {
+        axisXStep = speed.getX();
+        axisYStep = speed.getY();
     }
 
     /** Ball instance printout. */
