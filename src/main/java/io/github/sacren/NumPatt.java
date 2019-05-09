@@ -1,5 +1,5 @@
 /**
- * Print a list of numbers in 8 x 8 format.
+ * NumPatt class for a list of numbers in 8 x 8 format.
  *
  * <p>1
  *    1  2
@@ -40,38 +40,20 @@
  *    2  1
  *    1
  *              (d)
+ *
+ * <p>Public method:
+ * +toString():String
  */
-public class TestNumberPattern {
-    /** Display number pattern in 8 x 8 format. */
-    public static void main(String[] args) {
-        final int size = 8;
-        System.out.println();
-        System.out.println("Display numbers in 8 x 8 format.");
-        System.out.println();
-        System.out.print(bottomLeft(size));
-        System.out.println(centerId(size, 'a'));
-        System.out.print(topRight(size));
-        System.out.println(centerId(size, 'b'));
-        System.out.print(bottomRight(size));
-        System.out.println(centerId(size, 'c'));
-        System.out.print(topLeft(size) + centerId(size, 'd'));
-    }
+public class NumPatt {
+    /* private static data */
+    private static final int SIZE = 8;
+    private static final int FIRST_COUNT = 1;
 
-    /* annotate pattern with centered ID */
-    private static String centerId(int size, char id) {
-        String s = String.format("(%c)%n", id);
-        for (int i = 0; i < size / 2; i++) {
-            s = String.format("%3c", ' ') + s;
-        }
-        return s;
-    }
-
-    /* right angle at bottom-left corner */
-    private static String bottomLeft(int size) {
-        final int firstCount = 1;
+    /** NumPatt getter for bottom-left pattern. */
+    public String getBotLeft() {
         String s = "";
-        for (int row = firstCount; row <= size; row++) {
-            for (int col = firstCount; col <= row; col++) {
+        for (int row = FIRST_COUNT; row <= SIZE; row++) {
+            for (int col = FIRST_COUNT; col <= row; col++) {
                 if (col == row) {
                     s += String.format("%3d%n", col);
                     break;
@@ -82,17 +64,16 @@ public class TestNumberPattern {
         return s;
     }
 
-    /* right angle at top-right corner */
-    private static String topRight(int size) {
-        final int firstCount = 1;
+    /** NumPatt getter for top-right pattern. */
+    public String getTopRight() {
         String s = "";
         int width;
-        for (int row = firstCount; row <= size; row++) {
-            width = size - row + 1;
-            for (int col = firstCount; col < row; col++) {
+        for (int row = FIRST_COUNT; row <= SIZE; row++) {
+            width = SIZE - row + 1;
+            for (int col = FIRST_COUNT; col < row; col++) {
                 s += String.format("%3c", ' ');
             }
-            for (int col = firstCount; col <= width; col++) {
+            for (int col = FIRST_COUNT; col <= width; col++) {
                 if (col == width) {
                     s += String.format("%3d%n", col);
                     break;
@@ -103,18 +84,17 @@ public class TestNumberPattern {
         return s;
     }
 
-    /* right angle at bottom-right corner */
-    private static String bottomRight(int size) {
-        final int firstCount = 1;
+    /** NumPatt getter for bottom-right pattern. */
+    public String getBotRight() {
         String s = "";
         int width;
         int number;
-        for (int row = firstCount; row <= size; row++) {
-            width = size - row + 1;
-            for (int col = firstCount; col < width; col++) {
+        for (int row = FIRST_COUNT; row <= SIZE; row++) {
+            width = SIZE - row + 1;
+            for (int col = FIRST_COUNT; col < width; col++) {
                 s += String.format("%3c", ' ');
             }
-            for (int col = firstCount; col <= row; col++) {
+            for (int col = FIRST_COUNT; col <= row; col++) {
                 number = row - col + 1;
                 if (col == row) {
                     s += String.format("%3d%n", number);
@@ -126,15 +106,14 @@ public class TestNumberPattern {
         return s;
     }
 
-    /* right angle at top-left corner */
-    private static String topLeft(int size) {
-        final int firstCount = 1;
+    /** NumPatt getter for top-left pattern. */
+    public String getTopLeft() {
         String s = "";
         int sentinel;
         int number;
-        for (int row = firstCount; row <= size; row++) {
-            sentinel = size - row + 1;
-            for (int col = firstCount; col <= size; col++) {
+        for (int row = FIRST_COUNT; row <= SIZE; row++) {
+            sentinel = SIZE - row + 1;
+            for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 number = sentinel - col + 1;
                 if (col == sentinel) {
                     s += String.format("%3d%n", number);
@@ -144,5 +123,35 @@ public class TestNumberPattern {
             }
         }
         return s;
+    }
+
+    /** NumPatt getter for centered ID. */
+    public String getId(char id) {
+        String s = String.format("(%c)%n", id);
+        for (int i = 0; i < SIZE / 2; i++) {
+            s = String.format("%3c", ' ') + s;
+        }
+        return s;
+    }
+
+    /** NumPatt instance string method. */
+    public String toString() {
+        return String.format(
+                "%s"
+                        + "%s%n"
+                        + "%s"
+                        + "%s%n"
+                        + "%s"
+                        + "%s%n"
+                        + "%s"
+                        + "%s",
+                getBotLeft(),
+                getId('a'),
+                getTopRight(),
+                getId('b'),
+                getBotRight(),
+                getId('c'),
+                getTopLeft(),
+                getId('d'));
     }
 }
