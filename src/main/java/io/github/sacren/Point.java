@@ -28,7 +28,6 @@ public class Point {
     /* private instance data */
     private double axisX;
     private double axisY;
-    private Point point;
 
     /** Point default constructor. */
     public Point() {
