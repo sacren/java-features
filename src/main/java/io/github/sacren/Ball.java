@@ -39,6 +39,14 @@ public class Ball {
         this.axisYStep = axisYStep;
     }
 
+    /** Ball constructor by Point. */
+    public Ball(Point position, Point speed) {
+        axisX = position.getX();
+        axisY = position.getY();
+        axisXStep = speed.getX();
+        axisYStep = speed.getY();
+    }
+
     /** Ball getter for axisX. */
     public double getX() {
         return axisX;

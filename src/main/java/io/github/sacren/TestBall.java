@@ -5,7 +5,7 @@ public class TestBall {
     /** Ball test driver. */
     public static void main(String[] args) {
         /* Ball instance */
-        Ball ball = new Ball(1, 2, 11, 12);
+        Ball ball = new Ball(new Point(1, 2), new Point(11, 12));
         System.out.println();
         System.out.println("=== Ball ===");
         System.out.println();
