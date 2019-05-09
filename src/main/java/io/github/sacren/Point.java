@@ -15,7 +15,6 @@
  * +getY():double
  * +setY(axisY:double):void
  * +toString():String
- * +setX_Y(axisX:double, axisY:double):void
  * +distance(axisX:double, axisY:double):double
  * +distance(p:Point):double
  * +distance():double
@@ -66,12 +65,6 @@ public class Point {
         return String.format(
                 "(%.2f, %.2f)",
                 axisX, axisY);
-    }
-
-    /** Point setter for a specific point. */
-    public void setX_Y(double axisX, double axisY) {
-        this.axisX = axisX;
-        this.axisY = axisY;
     }
 
     /** Point method for distance from this point to P(axisX, axisY). */
