@@ -1,34 +1,40 @@
 /**
- * Prompt the user for an integer between 1 and 12 for the name of the month
- * in upper case.
+ * NumMon class for 1 - 12 for the name of the month in upper case.
+ *
+ * <p>Private instance data:
+ * -num:int
+ *
+ * <p>Constructor:
+ * +NumMon(num:int)
+ *
+ * <p>Public methods:
+ * +getMonth():String
+ * +check():void
+ * +toString():String
  */
-import java.util.Scanner;
+public class NumMon {
+    /* private instance data */
+    private int num;
 
-public class TestNumberToMonth {
-    /** Ask the user for the number to display the month. */
-    public static void main(String[] args) {
-        int month;
-        Scanner inStream = new Scanner(System.in);
-
-        for ( ; ; ) {
-            System.out.print("Enter 1 to 12 for the month: ");
-            month = inStream.nextInt();
-
-            if (month >= 1 && month <= 12) {
-                break;
-            }
-
-            System.out.println("You entered an invalid number. Try again.");
-        }
-
-        System.out.printf("%d is for %s%n", month, getMonth(month));
-        inStream.close();
+    /** NumMon constructor. */
+    public NumMon(int num) {
+        this.num = num;
+        check();
     }
 
-    private static String getMonth(final int number) {
-        String month = "december";
+    /** NumMon method to validate the input. */
+    public void check() {
+        if (num < 1 || num > 12) {
+            throw new IllegalArgumentException(
+                    String.format(
+                        "%d is invalid!", num));
+        }
+    }
 
-        switch (number) {
+    /** NumMon getter for the name of the month. */
+    public String getMonth() {
+        String month = "december";
+        switch (num) {
             case 1:
                 month = "january";
                 break;
@@ -68,7 +74,15 @@ public class TestNumberToMonth {
             default:
                 /* Nothing to do. */
         }
-
         return month.toUpperCase();
+    }
+
+    /** NumMon instance string. */
+    public String toString() {
+        return String.format(
+                "Number: %d%n%n"
+                        + "Month: %s",
+                num,
+                getMonth());
     }
 }
