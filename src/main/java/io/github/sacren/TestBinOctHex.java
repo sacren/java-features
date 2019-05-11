@@ -18,7 +18,7 @@ public class TestBinOctHex {
         hexStr = in.nextLine();
         in.close();
         System.out.println();
-        System.out.println("=== Binary string to decimal ===");
+        System.out.println("=== Binary string ===");
         System.out.println();
         System.out.println(new BinStr(binStr));
         System.out.println();

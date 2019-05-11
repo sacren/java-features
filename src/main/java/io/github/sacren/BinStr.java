@@ -1,7 +1,5 @@
 /**
- * BinStr class.
- *
- * <p>Convert binary string to numerical value in decimal.
+ * BinStr class converts binary string to octal, hex and decimal.
  *
  * <p>Private data:
  * -binStr:String
@@ -26,10 +24,15 @@ public class BinStr {
 
     /** BinStr instance printout. */
     public String toString() {
+        int i = Integer.parseInt(binStr, RADIX);
         return String.format(
                 "Binary string: %s%n"
+                        + "Octal string:  %s%n"
+                        + "Hex string:    %s%n"
                         + "Decimal value: %d",
                 binStr,
-                Integer.parseInt(binStr, RADIX));
+                Integer.toOctalString(i),
+                Integer.toHexString(i),
+                i);
     }
 }
