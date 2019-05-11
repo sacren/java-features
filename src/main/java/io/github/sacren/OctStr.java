@@ -2,10 +2,10 @@
  * OctStr class converts octal number to decimal.
  *
  * <p>Private instance data:
- * -inStr:String
+ * -octStr:String
  *
  * <p>Constructor:
- * +OctStr(inStr:String)
+ * +OctStr(octStr:String)
  *
  * <p>Public methods:
  * +toString():String
@@ -15,19 +15,24 @@ public class OctStr {
     private static final int RADIX = 8;
 
     /* private instance data */
-    private String inStr;
+    private String octStr;
 
     /** OctStr constructor. */
-    public OctStr(String inStr) {
-        this.inStr = inStr;
+    public OctStr(String octStr) {
+        this.octStr = octStr;
     }
 
     /** OctStr instance string method. */
     public String toString() {
+        int i = Integer.parseInt(octStr, RADIX);
         return String.format(
-                "Octal:   %s%n"
-                        + "Decimal: %d",
-                inStr,
-                Integer.parseInt(inStr, RADIX));
+                "Octal string:  %s%n"
+                        + "Binary string: %s%n"
+                        + "Hex string:    %s%n"
+                        + "Decimal value: %d",
+                octStr,
+                Integer.toBinaryString(i),
+                Integer.toHexString(i),
+                i);
     }
 }
