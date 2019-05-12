@@ -2,30 +2,28 @@
  * OddEven class.
  *
  * <p>Private instance data:
- * -number:int
- * -oddEven:String
+ * -num:int
  *
  * <p>Constructor:
- * +OddEven(number:int)
+ * +OddEven(num:int)
  *
  * <p>Public methods:
  * +toString():String
  */
 public class OddEven {
     /* private instance data */
-    private int number;
-    private String oddEven;
+    private int num;
 
     /** OddEven constructor. */
-    public OddEven(int number) {
-        this.number = number;
-        oddEven = number % 2 == 0 ? "even" : "odd";
+    public OddEven(int num) {
+        this.num = num;
     }
 
-    /** OddEven instance printout. */
+    /** OddEven string method. */
     public String toString() {
         return String.format(
                 "%d is %s",
-                number, oddEven);
+                num,
+                num % 2 == 0 ? "even" : "odd");
     }
 }
