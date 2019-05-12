@@ -24,10 +24,15 @@ public class HexToBin {
 
     /** HexToBin instance printout. */
     public String toString() {
+        int i = Integer.parseUnsignedInt(hex, RADIX);
         return String.format(
-                "Hex:    %s%n"
-                        + "Binary: %s",
+                "Hex string:    %s%n"
+                        + "Binary string: %s%n"
+                        + "Octal string:  %s%n"
+                        + "Decimal value: %d",
                 hex,
-                Integer.toBinaryString(Integer.parseUnsignedInt(hex, RADIX)));
+                Integer.toBinaryString(i),
+                Integer.toOctalString(i),
+                i);
     }
 }
