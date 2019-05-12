@@ -24,7 +24,7 @@ public class OctStr {
 
     /** OctStr instance string method. */
     public String toString() {
-        int i = Integer.parseInt(octStr, RADIX);
+        int i = Integer.parseUnsignedInt(octStr, RADIX);
         return String.format(
                 "Octal string:  %s%n"
                         + "Binary string: %s%n"

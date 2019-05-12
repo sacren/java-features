@@ -24,7 +24,7 @@ public class BinStr {
 
     /** BinStr instance printout. */
     public String toString() {
-        int i = Integer.parseInt(binStr, RADIX);
+        int i = Integer.parseUnsignedInt(binStr, RADIX);
         return String.format(
                 "Binary string: %s%n"
                         + "Octal string:  %s%n"
