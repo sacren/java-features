@@ -1,10 +1,10 @@
 /**
- * Test driver for HexToBin class.
+ * Test driver for HexStr class.
  */
 import java.util.Scanner;
 
-public class TestHexToBin {
-    /** HexToBin test driver. */
+public class TestHexStr {
+    /** HexStr test driver. */
     public static void main(String[] args) {
         String hex;
         Scanner in = new Scanner(System.in);
@@ -13,8 +13,8 @@ public class TestHexToBin {
         hex = in.nextLine();
         in.close();
         System.out.println();
-        System.out.println("=== Hex to binary ===");
+        System.out.println("=== Hex string ===");
         System.out.println();
-        System.out.println(new HexToBin(hex));
+        System.out.println(new HexStr(hex));
     }
 }
