@@ -2,15 +2,16 @@
  * Account class.
  *
  * <p>Private data with default values:
- * -accountNumber:int = Integer.MAX_VALUE
+ * -acctNum:int = Integer.MAX_VALUE
  * -balance:double = 0.0
  *
  * <p>Constructor:
  * +Account()
- * +Account(accountNumber:int, balance:double)
+ * +Account(acctNum:int, balance:double)
  *
  * <p>Public methods:
- * +getAccountNumber():int
+ * +getAcctNum():int
+ * +setAcctNum(acctNum:int):void
  * +getBalance():double
  * +setBalance(balance:double):void
  * +credit(amount:double):void
@@ -23,33 +24,33 @@ public class Account {
     private static final double DEFAULT_BALANCE = 0;
 
     /* private instance data */
-    private int accountNumber;
+    private int acctNum;
     private double balance;
 
     /** Account default constructor. */
     public Account() {
-        this.accountNumber = DEFAULT_ACCOUNT;
+        this.acctNum = DEFAULT_ACCOUNT;
         this.balance = DEFAULT_BALANCE;
     }
 
     /** Account custom constructor. */
-    public Account(int accountNumber, double balance) {
-        setAccountNumber(accountNumber);
+    public Account(int acctNum, double balance) {
+        setAcctNum(acctNum);
         setBalance(balance);
     }
 
     /** Account getter for account number. */
-    public int getAccountNumber() {
-        return accountNumber;
+    public int getAcctNum() {
+        return acctNum;
     }
 
     /** Account setter for account number. */
-    public void setAccountNumber(int accountNumber) {
-        if (accountNumber <= 0) {
+    public void setAcctNum(int acctNum) {
+        if (acctNum <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid!", accountNumber));
+                    String.format("%d is invalid!", acctNum));
         }
-        this.accountNumber = accountNumber;
+        this.acctNum = acctNum;
     }
 
     /** Account getter for account balance. */
@@ -86,6 +87,6 @@ public class Account {
     public String toString() {
         return String.format(
                 "[A/C #%d has balance of %.2f]",
-                accountNumber, balance);
+                acctNum, balance);
     }
 }
