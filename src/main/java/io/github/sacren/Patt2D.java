@@ -327,15 +327,14 @@ public class Patt2D {
     public String getParall() {
         String s = "";
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
+            /* add leading spaces to the row */
+            for (int sp = 0; sp < SIZE - row; sp++) {
+                s += String.format(" ");
+            }
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (SIZE == col) {
                     s += String.format("#%n");
                     break;
-                }
-                if (col == FIRST_COUNT) {
-                    for (int spaceCount = 0; spaceCount < SIZE - row; spaceCount++) {
-                        s += String.format(" ");
-                    }
                 }
                 s += String.format("# ");
             }
