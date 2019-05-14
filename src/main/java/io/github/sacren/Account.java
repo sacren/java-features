@@ -86,7 +86,9 @@ public class Account {
     /** Account instance printout. */
     public String toString() {
         return String.format(
-                "[A/C #%d has balance of %.2f]",
-                acctNum, balance);
+                "Account number: %d%n"
+                        + "Balance:        %.2f",
+                acctNum,
+                balance);
     }
 }

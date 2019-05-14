@@ -22,9 +22,11 @@ public class TestAccount {
         System.out.println();
         System.out.println(defAcct);
         System.out.println();
+        System.out.println("=== Use getter for default account ===");
+        System.out.println();
         System.out.printf(
-                "The default account number is %d%n"
-                        + "The default account balance is %.2f%n",
+                "Default account number:  %d%n"
+                        + "Default account balance: %.2f%n",
                 defAcct.getAcctNum(),
                 defAcct.getBalance());
         Account acct = new Account(acctNum, balance);
@@ -33,9 +35,11 @@ public class TestAccount {
         System.out.println();
         System.out.println(acct);
         System.out.println();
+        System.out.println("=== Use getter for account ===");
+        System.out.println();
         System.out.printf(
-                "The account number is %d%n"
-                        + "The balance is %.2f%n",
+                "Account number: %d%n"
+                        + "Balance:        %.2f%n",
                 acct.getAcctNum(),
                 acct.getBalance());
         System.out.println();
