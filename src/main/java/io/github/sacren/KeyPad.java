@@ -42,44 +42,44 @@ public class KeyPad {
                 case 'a':
                 case 'b':
                 case 'c':
-                    phNum += "2";
+                    phNum += 2;
                     break;
                 case 'd':
                 case 'e':
                 case 'f':
-                    phNum += "3";
+                    phNum += 3;
                     break;
                 case 'g':
                 case 'h':
                 case 'i':
-                    phNum += "4";
+                    phNum += 4;
                     break;
                 case 'j':
                 case 'k':
                 case 'l':
-                    phNum += "5";
+                    phNum += 5;
                     break;
                 case 'm':
                 case 'n':
                 case 'o':
-                    phNum += "6";
+                    phNum += 6;
                     break;
                 case 'p':
                 case 'q':
                 case 'r':
                 case 's':
-                    phNum += "7";
+                    phNum += 7;
                     break;
                 case 't':
                 case 'u':
                 case 'v':
-                    phNum += "8";
+                    phNum += 8;
                     break;
                 case 'w':
                 case 'x':
                 case 'y':
                 case 'z':
-                    phNum += "9";
+                    phNum += 9;
                     break;
                 default:
             }
