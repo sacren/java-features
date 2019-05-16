@@ -1,7 +1,7 @@
 /**
  * Test driver for Point and Point3D classes.
  */
-public class TestPoint2D3D {
+public class TestPoint3D {
     /** Initialize and run Point2D class. */
     public static void main(String[] args) {
         /* point in 2-D */
