@@ -22,13 +22,13 @@ public class TestPoint2D3D {
         System.out.println();
         System.out.println(point3D);
         System.out.printf(
-                "Default Point3D at (%d, %d, %d)%n",
+                "Default Point3D at (%.2f, %.2f, %.2f)%n",
                 point3D.getX(), point3D.getY(), point3D.getZ());
         System.out.println();
         Point3D customPoint3D = new Point3D(1, 2, 3);
         System.out.println(customPoint3D);
         System.out.printf(
-                "Custom Point3D at (%d, %d, %d)%n",
+                "Custom Point3D at (%.2f, %.2f, %.2f)%n",
                 customPoint3D.getX(),
                 customPoint3D.getY(),
                 customPoint3D.getZ());
@@ -40,7 +40,7 @@ public class TestPoint2D3D {
         customPoint3D.setZ(103);
         System.out.println(customPoint3D);
         System.out.printf(
-                "Custom Point3D at (%d, %d, %d)%n",
+                "Custom Point3D at (%.2f, %.2f, %.2f)%n",
                 customPoint3D.getX(),
                 customPoint3D.getY(),
                 customPoint3D.getZ());

@@ -1,24 +1,24 @@
 /**
- * Point3D: subclass under Point2D.
+ * Point3D: subclass under Point superclass.
  *
  * <p>Private data with default values:
- * -axisZ:int = 0
+ * -axisZ:double = 0
  *
  * <p>Constructor:
  * +Point3D()
- * +Point3D(axisX:int, axisY:int, axisZ:int)
+ * +Point3D(axisX:double, axisY:double, axisZ:double)
  *
  * <p>Public methods:
- * +getZ():int
- * +setZ(axisZ:int):void
+ * +getZ():double
+ * +setZ(axisZ:double):void
  * +toString():String
  */
-public class Point3D extends Point2D {
+public class Point3D extends Point {
     /* public static data */
-    public static final int DEFAULT_Z = 0;
+    public static final double DEFAULT_Z = 0;
 
     /* private instance data */
-    private int axisZ;
+    private double axisZ;
 
     /** Default constructor. */
     public Point3D() {
@@ -28,18 +28,18 @@ public class Point3D extends Point2D {
     }
 
     /** Custom constructor. */
-    public Point3D(int axisX, int axisY, int axisZ) {
+    public Point3D(double axisX, double axisY, double axisZ) {
         super(axisX, axisY);
         this.axisZ = axisZ;
     }
 
     /** getter of axisZ. */
-    public int getZ() {
+    public double getZ() {
         return axisZ;
     }
 
     /** setter of axisZ. */
-    public void setZ(int axisZ) {
+    public void setZ(double axisZ) {
         this.axisZ = axisZ;
     }
 
@@ -47,7 +47,7 @@ public class Point3D extends Point2D {
     @Override
     public String toString() {
         return String.format(
-                "Point3D (%d, %d, %d)",
+                "Point3D (%.2f, %.2f, %.2f)",
                 getX(), getY(), axisZ);
     }
 }
