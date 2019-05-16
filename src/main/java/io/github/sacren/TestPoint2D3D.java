@@ -1,18 +1,20 @@
 /**
- * Test driver for Point2D and Point3D classes.
+ * Test driver for Point and Point3D classes.
  */
 public class TestPoint2D3D {
     /** Initialize and run Point2D class. */
     public static void main(String[] args) {
         /* point in 2-D */
-        Point2D point2D = new Point2D();
+        Point p2D = new Point();
         System.out.println();
         System.out.println("=== Point in 2-D ===");
         System.out.println();
-        System.out.println(point2D);
         System.out.printf(
-                "Default Point2D at (%d, %d)%n",
-                point2D.getX(), point2D.getY());
+                "Default 2-D point: P%s%n%n"
+                        + "Default 2-D point: P(%.2f, %.2f)%n",
+                p2D,
+                p2D.getX(),
+                p2D.getY());
         /* point in 3-D */
         Point3D point3D = new Point3D();
         System.out.println();
