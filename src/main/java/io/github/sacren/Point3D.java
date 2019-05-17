@@ -1,7 +1,7 @@
 /**
  * Point3D: subclass under Point superclass.
  *
- * <p>Private data with default values:
+ * <p>Private data with default value:
  * -axisZ:double = 0
  *
  * <p>Constructor:
@@ -20,25 +20,25 @@ public class Point3D extends Point {
     /* private instance data */
     private double axisZ;
 
-    /** Default constructor. */
+    /** Point3D default constructor. */
     public Point3D() {
         /* super(); */
         /* above implicitly executed for default class */
         axisZ = DEFAULT_Z;
     }
 
-    /** Custom constructor. */
+    /** Point3D custom constructor. */
     public Point3D(double axisX, double axisY, double axisZ) {
         super(axisX, axisY);
         this.axisZ = axisZ;
     }
 
-    /** getter of axisZ. */
+    /** Point3D getter for axisZ. */
     public double getZ() {
         return axisZ;
     }
 
-    /** setter of axisZ. */
+    /** Point3D setter for axisZ. */
     public void setZ(double axisZ) {
         this.axisZ = axisZ;
     }
