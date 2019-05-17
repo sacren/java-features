@@ -47,7 +47,7 @@ public class Point3D extends Point {
     @Override
     public String toString() {
         return String.format(
-                "Point3D (%.2f, %.2f, %.2f)",
+                "(%.2f, %.2f, %.2f)",
                 getX(), getY(), axisZ);
     }
 }
