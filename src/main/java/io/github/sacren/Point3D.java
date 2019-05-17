@@ -14,8 +14,8 @@
  * +toString():String
  */
 public class Point3D extends Point {
-    /* public static data */
-    public static final double DEFAULT_Z = 0;
+    /* private static data */
+    private static final double DEFAULT_Z = 0;
 
     /* private instance data */
     private double axisZ;
