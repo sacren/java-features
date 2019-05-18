@@ -10,8 +10,8 @@
  * <p>Public methods:
  * +setNum(num:int):void
  * +isPrime(num:int):boolean
- * +getCount():int
- * +getList():int[]
+ * +setCount():void
+ * +setList():void
  * +toString():String
  */
 import java.util.Arrays;
@@ -19,10 +19,14 @@ import java.util.Arrays;
 public class Prime {
     /* private instance data */
     private int num;
+    private int count;
+    private int[] list;
 
     /** Prime constructor. */
     public Prime(int num) {
         setNum(num);
+        setCount();
+        setList();
     }
 
     /** Prime setter for the range. */
@@ -44,31 +48,29 @@ public class Prime {
         return true;
     }
 
-    /** Prime getter for how many prime numbers. */
-    public int getCount() {
-        int count = 0;
+    /** Prime setter for how many prime numbers. */
+    public void setCount() {
+        count = 0;
         for (int i = 2; i <= num; i++) { /* prime number starts from 2 */
             if (isPrime(i)) {
                 count++;
             }
         }
-        return count;
+        list = new int[count];
     }
 
-    /** Prime getter for the list of prime numbers. */
-    public int[] getList() {
-        int[] list = new int[getCount()];
+    /** Prime setter for the list of prime numbers. */
+    public void setList() {
         int count = 0;
         for (int i = 2; i <= num; i++) {
             if (isPrime(i)) {
                 list[count++] = i;
             }
         }
-        return list;
     }
 
     /** Prime string method. */
     public String toString() {
-        return Arrays.toString(getList());
+        return Arrays.toString(list);
     }
 }
