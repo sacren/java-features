@@ -50,8 +50,11 @@ public class Prime {
 
     /** Prime setter for how many prime numbers. */
     public void setCount() {
-        count = 0;
-        for (int i = 2; i <= num; i++) { /* prime number starts from 2 */
+        count = 0; /* for 0 and 1 */
+        if (num > 1) {
+            count = 1; /* for 2 and above */
+        }
+        for (int i = 3; i <= num; i += 2) { /* from 3 and odd numbers */
             if (isPrime(i)) {
                 count++;
             }
