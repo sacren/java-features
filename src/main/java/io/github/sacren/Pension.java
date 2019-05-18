@@ -21,7 +21,7 @@
  * <p>Public methods:
  * +setSalary(salary:double):void
  * +setAge(age:int):void
- * +getContribByAge():Point
+ * +setContribByAge():void
  * +getEeContrib():double
  * +getErContrib():double
  * +toString():String
@@ -38,11 +38,13 @@ public class Pension {
     /* private instance data */
     private double salary;
     private int age;
+    private Point contribByAge;
 
     /** Pension constructor. */
     public Pension(double salary, int age) {
         setSalary(salary);
         setAge(age);
+        setContribByAge();
     }
 
     /** Pension setter for salary. */
@@ -66,28 +68,31 @@ public class Pension {
         this.age = age;
     }
 
-    /** Pension getter for contribution by age. */
-    public Point getContribByAge() {
+    /** Pension setter for contribution by age. */
+    public void setContribByAge() {
         if (age > 65) {
-            return CONTRIB65UP;
+            contribByAge = CONTRIB65UP;
+            return;
         }
         if (age > 60) {
-            return CONTRIB65;
+            contribByAge = CONTRIB65;
+            return;
         }
         if (age > 55) {
-            return CONTRIB60;
+            contribByAge = CONTRIB60;
+            return;
         }
-        return CONTRIB55;
+        contribByAge = CONTRIB55;
     }
 
     /** Pension getter for employee contribution. */
     public double getEeContrib() {
-        return salary * getContribByAge().getX();
+        return salary * contribByAge.getX();
     }
 
     /** Pension getter for employer contribution. */
     public double getErContrib() {
-        return salary * getContribByAge().getY();
+        return salary * contribByAge.getY();
     }
 
     /** Pension string method. */
