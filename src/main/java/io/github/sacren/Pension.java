@@ -26,8 +26,6 @@
  * +getErContrib():double
  * +toString():String
  */
-import java.util.Scanner;
-
 public class Pension {
     /* private static data */
     private static final Point CONTRIB55 = new Point(0.2, 0.17);
