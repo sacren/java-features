@@ -3,6 +3,8 @@
  *
  * <p>Private instance data:
  * -num:int
+ * -count:int
+ * -list:int[]
  *
  * <p>Constructor:
  * +Prime(num:int)
@@ -43,7 +45,7 @@ public class Prime {
 
     /** Prime getter if the number is prime. */
     private boolean isPrime(int num) {
-        for (int i = 2; i < num; i++) { /* exclude divisor of 1 and number */
+        for (int i = 2; i < num; i++) { /* exclude divisor of 1 and num */
             if (num % i == 0) {
                 return false;
             }
