@@ -79,6 +79,12 @@ public class Prime {
 
     /** Prime string method. */
     public String toString() {
-        return Arrays.toString(list);
+        return String.format(
+                "%s%n%n"
+                        + "Prime number total:   %d%n"
+                        + "Prime number percent: %.2f%%",
+                Arrays.toString(list),
+                list.length,
+                (double) list.length / num * 100);
     }
 }
