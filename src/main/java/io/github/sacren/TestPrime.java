@@ -8,7 +8,7 @@ public class TestPrime {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int num;
-        System.out.print("Enter a positive integer for upper bound: ");
+        System.out.print("Enter an integer number for upper limit: ");
         num = in.nextInt();
         in.close();
         System.out.println();
