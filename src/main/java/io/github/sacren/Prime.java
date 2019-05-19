@@ -17,6 +17,9 @@
 import java.util.Arrays;
 
 public class Prime {
+    /* private static data */
+    private static final int MAX_NUM = 10000;
+
     /* private instance data */
     private int num;
     private int count;
@@ -31,9 +34,9 @@ public class Prime {
 
     /** Prime setter for the range. */
     public void setNum(int num) {
-        if (num < 0) {
+        if (num < 0 || num > MAX_NUM) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid!", num));
+                    String.format("%d is out of range!", num));
         }
         this.num = num;
     }
