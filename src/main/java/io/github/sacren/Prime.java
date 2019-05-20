@@ -77,13 +77,30 @@ public class Prime {
         }
     }
 
+    /** Prime getter if it is the product of prime factors. */
+    public boolean getFactor() {
+        int product = 1;
+        for (int prime : list) {
+            if (num % prime == 0) {
+                product *= prime;
+            }
+        }
+        if (isPrime(num)) {
+            product /= num;
+        }
+        return product == num;
+    }
+
     /** Prime string method. */
     public String toString() {
         return String.format(
                 "%s%n%n"
+                        + "%d is%s equal to the product of prime factors of the list%n%n"
                         + "Prime number total:   %d%n"
                         + "Prime number percent: %.2f%%",
                 Arrays.toString(list),
+                num,
+                getFactor() ? "" : " not",
                 list.length,
                 (double) list.length / num * 100);
     }
