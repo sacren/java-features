@@ -84,6 +84,10 @@ public class Prime {
             if (num % prime == 0) {
                 product *= prime;
             }
+            /* good enough for the first third of the prime numbers */
+            if (prime > num / 3) {
+                break;
+            }
         }
         if (isPrime(num)) {
             return false;
