@@ -86,7 +86,7 @@ public class Prime {
             }
         }
         if (isPrime(num)) {
-            product /= num;
+            return false;
         }
         return product == num;
     }
@@ -95,7 +95,7 @@ public class Prime {
     public String toString() {
         return String.format(
                 "%s%n%n"
-                        + "%d is%s equal to the product of prime factors of the list%n%n"
+                        + "%d is%s equal to the product of its prime factors of the list%n%n"
                         + "Prime number total:   %d%n"
                         + "Prime number percent: %.2f%%",
                 Arrays.toString(list),
