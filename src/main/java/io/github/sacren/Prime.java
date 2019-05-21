@@ -91,10 +91,6 @@ public class Prime {
             if (num % prime == 0) {
                 product *= prime;
             }
-            /* good enough for a third of the number value */
-            if (prime > num / 3) {
-                break;
-            }
         }
         if (isPrime(num) || num == 1) {
             return false;
