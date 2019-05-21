@@ -96,7 +96,7 @@ public class Prime {
                 break;
             }
         }
-        if (isPrime(num)) {
+        if (isPrime(num) || num == 1) {
             return false;
         }
         return product == num;
