@@ -36,7 +36,7 @@ public class Prime {
 
     /** Prime setter for the range. */
     public void setNum(int num) {
-        if (num < 0 || num > MAX_NUM) {
+        if (num < 0) {
             throw new IllegalArgumentException(
                     String.format("%d is out of range!", num));
         }
@@ -45,8 +45,15 @@ public class Prime {
 
     /** Prime getter if the number is prime. */
     private boolean isPrime(int num) {
-        for (int i = 2; i < num; i++) { /* exclude divisor of 1 and num */
-            if (num % i == 0) {
+        /* 6k ± 1 optimization */
+        if (num <= 3) {
+            return num > 1;
+        }
+        if (num % 2 == 0 || num % 3 == 0) {
+            return false;
+        }
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
                 return false;
             }
         }
