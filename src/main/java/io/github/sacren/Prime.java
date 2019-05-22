@@ -5,6 +5,7 @@
  * -num:int
  * -count:int
  * -list:int[]
+ * -factors:int[]
  *
  * <p>Constructor:
  * +Prime(num:int)
@@ -27,12 +28,15 @@ public class Prime {
     private int num;
     private int count;
     private int[] list;
+    private int[] factors;
 
     /** Prime constructor. */
     public Prime(int num) {
         setNum(num);
         setCount();
         setList();
+        setFaCount();
+        setFactors();
     }
 
     /** Prime setter for the range. */
@@ -85,6 +89,27 @@ public class Prime {
         }
     }
 
+    /** Prime setter for how many factors. */
+    public void setFaCount() {
+        int count = 0;
+        for (int i = 1; i <= num; i++) {
+            if (getFactor(i)) {
+                count++;
+            }
+        }
+        factors = new int[count];
+    }
+
+    /** Prime setter for the list of prime factors. */
+    public void setFactors() {
+        int count = 0;
+        for (int i = 2; i <= num; i++) {
+            if (getFactor(i)) {
+                factors[count++] = i;
+            }
+        }
+    }
+
     /** Prime getter if it is the product of prime factors. */
     public boolean getFactor(int num) {
         int product = 1;
@@ -103,12 +128,11 @@ public class Prime {
     public String toString() {
         return String.format(
                 "%s%n%n"
-                        + "%d is%s equal to the product of its prime factors of the list%n%n"
+                        + "=== Prime factors ===%n%n%s%n%n"
                         + "Prime number total:   %d%n"
                         + "Prime number percent: %.2f%%",
                 Arrays.toString(list),
-                num,
-                getFactor(num) ? "" : " not",
+                Arrays.toString(factors),
                 list.length,
                 (double) list.length / num * 100);
     }
