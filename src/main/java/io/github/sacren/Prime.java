@@ -3,7 +3,6 @@
  *
  * <p>Private instance data:
  * -num:int
- * -count:int
  * -list:int[]
  * -factors:int[]
  *
@@ -26,7 +25,6 @@ public class Prime {
 
     /* private instance data */
     private int num;
-    private int count;
     private int[] list;
     private int[] factors;
 
@@ -67,7 +65,7 @@ public class Prime {
 
     /** Prime setter for how many prime numbers. */
     public void setCount() {
-        count = 0; /* for 0 and 1 */
+        int count = 0; /* for 0 and 1 */
         if (num > 1) {
             count = 1; /* for 2 and above */
         }
