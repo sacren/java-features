@@ -14,6 +14,7 @@
  * +isPrime(num:int):boolean
  * +setCount():void
  * +setList():void
+ * +getFactor(int num):boolean
  * +toString():String
  */
 import java.util.Arrays;
@@ -85,7 +86,7 @@ public class Prime {
     }
 
     /** Prime getter if it is the product of prime factors. */
-    public boolean getFactor() {
+    public boolean getFactor(int num) {
         int product = 1;
         for (int prime : list) {
             if (num % prime == 0) {
@@ -107,7 +108,7 @@ public class Prime {
                         + "Prime number percent: %.2f%%",
                 Arrays.toString(list),
                 num,
-                getFactor() ? "" : " not",
+                getFactor(num) ? "" : " not",
                 list.length,
                 (double) list.length / num * 100);
     }
