@@ -46,6 +46,11 @@ public class Prime {
         this.num = num;
     }
 
+    /** Prime getter for the instance number. */
+    public int getNum() {
+        return num;
+    }
+
     /** Prime getter if the number is prime. */
     private boolean isPrime(int num) {
         /* 6k ± 1 optimization */
@@ -85,6 +90,11 @@ public class Prime {
                 list[count++] = i;
             }
         }
+    }
+
+    /** Prime getter for the list of prime numbers. */
+    public int[] getList() {
+        return list;
     }
 
     /** Prime setter for how many factors. */
