@@ -36,7 +36,7 @@ public class Prime {
 
     /** Prime setter for the range. */
     public void setNum(int num) {
-        if (num < 0 || num > MAX_NUM) {
+        if (num <= 0 || num > MAX_NUM) {
             throw new IllegalArgumentException(
                     String.format("%d is out of range!", num));
         }
