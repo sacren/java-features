@@ -4,7 +4,6 @@
  * <p>Private instance data:
  * -num:int
  * -list:int[]
- * -factors:int[]
  *
  * <p>Constructor:
  * +Prime(num:int)
@@ -14,7 +13,6 @@
  * +isPrime(num:int):boolean
  * +setCount():void
  * +setList():void
- * +getFactor(int num):boolean
  * +toString():String
  */
 import java.util.Arrays;
@@ -26,15 +24,12 @@ public class Prime {
     /* private instance data */
     private int num;
     private int[] list;
-    private int[] factors;
 
     /** Prime constructor. */
     public Prime(int num) {
         setNum(num);
         setCount();
         setList();
-        setFaCount();
-        setFactors();
     }
 
     /** Prime setter for the range. */
@@ -97,50 +92,13 @@ public class Prime {
         return list;
     }
 
-    /** Prime setter for how many factors. */
-    public void setFaCount() {
-        int count = 0;
-        for (int i = 1; i <= num; i++) {
-            if (getFactor(i)) {
-                count++;
-            }
-        }
-        factors = new int[count];
-    }
-
-    /** Prime setter for the list of prime factors. */
-    public void setFactors() {
-        int count = 0;
-        for (int i = 2; i <= num; i++) {
-            if (getFactor(i)) {
-                factors[count++] = i;
-            }
-        }
-    }
-
-    /** Prime getter if it is the product of prime factors. */
-    public boolean getFactor(int num) {
-        int product = 1;
-        for (int prime : list) {
-            if (num % prime == 0) {
-                product *= prime;
-            }
-        }
-        if (isPrime(num) || num == 1) {
-            return false;
-        }
-        return product == num;
-    }
-
     /** Prime string method. */
     public String toString() {
         return String.format(
                 "%s%n%n"
-                        + "=== Prime factors ===%n%n%s%n%n"
                         + "Prime number total:   %d%n"
                         + "Prime number percent: %.2f%%",
                 Arrays.toString(list),
-                Arrays.toString(factors),
                 list.length,
                 (double) list.length / num * 100);
     }
