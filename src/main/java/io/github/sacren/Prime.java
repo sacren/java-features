@@ -10,9 +10,11 @@
  *
  * <p>Public methods:
  * +setNum(num:int):void
+ * +getNum():int
  * +isPrime(num:int):boolean
  * +setCount():void
  * +setList():void
+ * +getList():int[]
  * +toString():String
  */
 import java.util.Arrays;
