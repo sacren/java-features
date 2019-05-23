@@ -47,7 +47,7 @@ public class Prime {
     }
 
     /** Prime getter if the number is prime. */
-    private boolean isPrime(int num) {
+    public boolean isPrime(int num) {
         /* 6k ± 1 optimization */
         if (num <= 3) {
             return num > 1;
