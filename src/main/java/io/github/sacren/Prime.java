@@ -12,7 +12,7 @@
  * +setNum(num:int):void
  * +getNum():int
  * +isPrime(num:int):boolean
- * +setCount():void
+ * +setSize():void
  * +setList():void
  * +getList():int[]
  * +toString():String
@@ -30,7 +30,7 @@ public class Prime {
     /** Prime constructor. */
     public Prime(int num) {
         setNum(num);
-        setCount();
+        setSize();
         setList();
     }
 
@@ -66,25 +66,25 @@ public class Prime {
     }
 
     /** Prime setter for how many prime numbers. */
-    public void setCount() {
-        int count = 0; /* for 0 and 1 */
+    public void setSize() {
+        int size = 0; /* for 0 and 1 */
         if (num > 1) {
-            count = 1; /* for 2 and above */
+            size = 1; /* for 2 and above */
         }
         for (int i = 3; i <= num; i += 2) { /* from 3 and odd numbers */
             if (isPrime(i)) {
-                count++;
+                size++;
             }
         }
-        list = new int[count];
+        list = new int[size];
     }
 
     /** Prime setter for the list of prime numbers. */
     public void setList() {
-        int count = 0;
+        int size = 0;
         for (int i = 2; i <= num; i++) {
             if (isPrime(i)) {
-                list[count++] = i;
+                list[size++] = i;
             }
         }
     }

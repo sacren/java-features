@@ -9,9 +9,9 @@
  * +Factor(num:int)
  *
  * <p>Public methods:
- * +setCount():void
+ * +setSize():void
  * +setList():void
- * +getFactor(int num):boolean
+ * +isFactor(int num):boolean
  * +toString():String
  */
 import java.util.Arrays;
@@ -24,33 +24,33 @@ public class Factor {
     /** Factor constructor. */
     public Factor(int num) {
         prime = new Prime(num);
-        setCount();
+        setSize();
         setList();
     }
 
     /** Factor setter for how many factors. */
-    public void setCount() {
-        int count = 0;
+    public void setSize() {
+        int size = 0;
         for (int i = 1; i <= prime.getNum(); i++) {
-            if (getFactor(i)) {
-                count++;
+            if (isFactor(i)) {
+                size++;
             }
         }
-        list = new int[count];
+        list = new int[size];
     }
 
     /** Factor setter for the list of prime factors. */
     public void setList() {
-        int count = 0;
+        int size = 0;
         for (int i = 2; i <= prime.getNum(); i++) {
-            if (getFactor(i)) {
-                list[count++] = i;
+            if (isFactor(i)) {
+                list[size++] = i;
             }
         }
     }
 
     /** Factor getter if it is the product of prime factors. */
-    public boolean getFactor(int num) {
+    public boolean isFactor(int num) {
         int product = 1;
         for (int n : prime.getList()) {
             if (num % n == 0) {
