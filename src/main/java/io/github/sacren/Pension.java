@@ -27,11 +27,6 @@
  * +toString():String
  */
 public class Pension {
-    /* private static data */
-    private static final Point CONTRIB55 = new Point(0.2, 0.17);
-    private static final Point CONTRIB60 = new Point(0.13, 0.13);
-    private static final Point CONTRIB65 = new Point(0.075, 0.09);
-    private static final Point CONTRIB65UP = new Point(0.05, 0.075);
     /* max salary to attract contribution */
     private static final double MAX_ATTR = 6000;
 
@@ -71,18 +66,18 @@ public class Pension {
     /** Pension setter for contribution by age. */
     public void setContribByAge() {
         if (age > 65) {
-            contribByAge = CONTRIB65UP;
+            contribByAge = new Point(0.05, 0.075); /* 65+ */
             return;
         }
         if (age > 60) {
-            contribByAge = CONTRIB65;
+            contribByAge = new Point(0.075, 0.09); /* 60+ to 65 */
             return;
         }
         if (age > 55) {
-            contribByAge = CONTRIB60;
+            contribByAge = new Point(0.13, 0.13); /* 55+ to 60 */
             return;
         }
-        contribByAge = CONTRIB55;
+        contribByAge = new Point(0.2, 0.17); /* 55 and below */
     }
 
     /** Pension getter for employee contribution. */
