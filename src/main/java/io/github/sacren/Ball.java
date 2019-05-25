@@ -1,14 +1,12 @@
 /**
  * Ball class.
  *
- * <p>Private data with default values:
- * -axisX:double
- * -axisY:double
- * -axisXStep:double
- * -axisYStep:double
+ * <p>Private instance data:
+ * -position:Point
+ * -speed:Point
  *
  * <p>Constructor:
- * +Ball(axisX:double, axisY:double, axisXStep:double, axisYStep:double)
+ * +Ball(position:Point, speed:Point)
  *
  * <p>Public methods:
  * +getX():double
@@ -26,95 +24,84 @@
  */
 public class Ball {
     /* private instance data */
-    private double axisX;
-    private double axisY;
-    private double axisXStep;
-    private double axisYStep;
-
-    /** Ball custom constructor. */
-    public Ball(double axisX, double axisY, double axisXStep, double axisYStep) {
-        this.axisX = axisX;
-        this.axisY = axisY;
-        this.axisXStep = axisXStep;
-        this.axisYStep = axisYStep;
-    }
+    private Point position;
+    private Point speed;
 
     /** Ball constructor by Point. */
     public Ball(Point position, Point speed) {
-        axisX = position.getX();
-        axisY = position.getY();
-        axisXStep = speed.getX();
-        axisYStep = speed.getY();
+        this.position = position;
+        this.speed = speed;
     }
 
     /** Ball getter for axisX. */
     public double getX() {
-        return axisX;
+        return position.getX();
     }
 
     /** Ball setter for axisX. */
     public void setX(double axisX) {
-        this.axisX = axisX;
+        position.setX(axisX);
     }
 
     /** Ball getter for axisY. */
     public double getY() {
-        return axisY;
+        return position.getY();
     }
 
     /** Ball setter for axisY. */
     public void setY(double axisY) {
-        this.axisY = axisY;
+        position.setY(axisY);
     }
 
     /** Ball getter for axisXStep. */
     public double getXStep() {
-        return axisXStep;
+        return speed.getX();
     }
 
     /** Ball setter for axisXStep. */
     public void setXStep(double axisXStep) {
-        this.axisXStep = axisXStep;
+        speed.setX(axisXStep);
     }
 
     /** Ball getter for axisYStep. */
     public double getYStep() {
-        return axisYStep;
+        return speed.getY();
     }
 
     /** Ball setter for axisYStep. */
     public void setYStep(double axisYStep) {
-        this.axisYStep = axisYStep;
+        speed.setY(axisYStep);
     }
 
     /** Ball getter for the ball position. */
     public Point getPos() {
-        return new Point(axisX, axisY);
+        return position;
     }
 
-    /** Ball getter for both axisXStep and axisYStep. */
+    /** Ball getter for ball speed. */
     public Point getSpeed() {
-        return new Point(axisXStep, axisYStep);
+        return speed;
     }
 
-    /** Ball instance printout. */
+    /** Ball string method. */
     public String toString() {
         return String.format(
                 "Position: P%s%n"
-                        + "Speed:     (%.2f, %.2f)",
-                getPos(), axisXStep, axisYStep);
+                        + "Speed:     %s",
+                position,
+                speed);
     }
-
     /**
      * Ball public method for making steps.
      *
-     * <p>Move a step by increment axisX by axisXStep and axisY by axisYStep.
+     * <p>Move a step incrementing x-axis by speed on x-axis and y-axis by
+     * speed on y-axis.
      *
      * <p>Return this for chaining.
      */
     public Ball move() {
-        axisX += axisXStep;
-        axisY += axisYStep;
+        position.setX(getX() + getXStep());
+        position.setY(getY() + getYStep());
         return this;
     }
 }
