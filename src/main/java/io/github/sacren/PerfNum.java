@@ -3,19 +3,19 @@
  *
  * <p>Private instance data:
  * -num:int
- * -perfCount:int
- * -defiCount:int
- * -perf:int[]
- * -neither:int[]
+ * -size:int
+ * -defSize:int
+ * -list:int[]
+ * -nList:int[]
  *
  * <p>Constructor:
  * +PerfNum(num:int)
  *
  * <p>Public methods:
- * +isPerfNum(num:int):boolean
- * +isDefiNum(num:int):boolean
- * +count():void
- * +add():void
+ * +isPerf(num:int):boolean
+ * +isDef(num:int):boolean
+ * +setSize():void
+ * +setList():void
  * +toString():String
  */
 import java.util.Arrays;
@@ -23,16 +23,16 @@ import java.util.Arrays;
 public class PerfNum {
     /* private instance data */
     private int num;
-    private int perfCount;
-    private int defiCount;
-    private int[] perf;
-    private int[] neither;
+    private int size;
+    private int defSize;
+    private int[] list;
+    private int[] nList;
 
     /** PerfNum constructor. */
     public PerfNum(int num) {
         setNum(num);
-        count();
-        add();
+        setSize();
+        setList();
     }
 
     /** PerfNum setter for the range. */
@@ -45,7 +45,7 @@ public class PerfNum {
     }
 
     /** PerfNum getter if the number is perfect. */
-    public boolean isPerfNum(int num) {
+    public boolean isPerf(int num) {
         int sum = 0;
         /* proper divisor doesn't go beyond the median of the number. */
         for (int i = 1; i <= num >> 1; i++) {
@@ -53,14 +53,11 @@ public class PerfNum {
                 sum += i;
             }
         }
-        if (sum == num) {
-            return true;
-        }
-        return false;
+        return sum == num;
     }
 
     /** PerfNum getter if the number is deficient. */
-    public boolean isDefiNum(int num) {
+    public boolean isDef(int num) {
         int sum = 0;
         /* proper divisor doesn't go beyond the median of the number. */
         for (int i = 1; i <= num >> 1; i++) {
@@ -68,42 +65,39 @@ public class PerfNum {
                 sum += i;
             }
         }
-        if (sum < num) {
-            return true;
-        }
-        return false;
+        return sum < num;
     }
 
     /** PerfNum setter for perfect number count. */
-    public void count() {
-        perfCount = 0;
-        defiCount = 0;
+    public void setSize() {
+        size = 0;
+        defSize = 0;
         for (int i = 1; i <= num; i++) {
-            if (isPerfNum(i)) {
-                perfCount++;
+            if (isPerf(i)) {
+                size++;
                 continue;
             }
-            if (isDefiNum(i)) {
-                defiCount++;
+            if (isDef(i)) {
+                defSize++;
             }
         }
     }
 
     /** PerfNum setter for perfect number and neither array. */
-    public void add() {
-        perf = new int[perfCount];
-        neither = new int[num - perfCount - defiCount];
-        int count1 = 0;
-        int count2 = 0;
+    public void setList() {
+        list = new int[size];
+        nList = new int[num - size - defSize];
+        int s1 = 0;
+        int s2 = 0;
         for (int i = 1; i <= num; i++) {
-            if (isPerfNum(i)) {
-                perf[count1++] = i;
+            if (isPerf(i)) {
+                list[s1++] = i;
                 continue;
             }
-            if (isDefiNum(i)) {
+            if (isDef(i)) {
                 continue;
             }
-            neither[count2++] = i;
+            nList[s2++] = i;
         }
     }
 
@@ -114,9 +108,9 @@ public class PerfNum {
                         + "Perfect number count: %d (%.2f%%)%n%n"
                         + "List of numbers neither perfect nor deficient:%n%s%n"
                         + "Neither perfect nor deficient count: %d (%.2f%%)",
-                Arrays.toString(perf),
-                perfCount, (double) perfCount / num * 100,
-                Arrays.toString(neither),
-                neither.length, (double) neither.length / num * 100);
+                Arrays.toString(list),
+                size, (double) size / num * 100,
+                Arrays.toString(nList),
+                nList.length, (double) nList.length / num * 100);
     }
 }
