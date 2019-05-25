@@ -13,12 +13,12 @@
  * +setX(axisX:double):void
  * +getY():double
  * +setY(axisY:double):void
- * +getXStep():double
- * +setXStep(axisXStep:double):void
- * +getYStep():double
- * +setYStep(axisYStep:double):void
+ * +getSpdX():double
+ * +setSpdX(spdX:double):void
+ * +getSpdY():double
+ * +setSpdY(spdY:double):void
  * +getPos():Point
- * +getSpeed():Point
+ * +getSpd():Point
  * +toString():String
  * +move():Ball
  */
@@ -53,24 +53,24 @@ public class Ball {
         position.setY(axisY);
     }
 
-    /** Ball getter for axisXStep. */
-    public double getXStep() {
+    /** Ball getter for speed on x-axis. */
+    public double getSpdX() {
         return speed.getX();
     }
 
-    /** Ball setter for axisXStep. */
-    public void setXStep(double axisXStep) {
-        speed.setX(axisXStep);
+    /** Ball setter for speed on x-axis. */
+    public void setSpdX(double spdX) {
+        speed.setX(spdX);
     }
 
-    /** Ball getter for axisYStep. */
-    public double getYStep() {
+    /** Ball getter for speed on y-axis. */
+    public double getSpdY() {
         return speed.getY();
     }
 
-    /** Ball setter for axisYStep. */
-    public void setYStep(double axisYStep) {
-        speed.setY(axisYStep);
+    /** Ball setter for speed on y-axis. */
+    public void setSpdY(double spdY) {
+        speed.setY(spdY);
     }
 
     /** Ball getter for the ball position. */
@@ -79,7 +79,7 @@ public class Ball {
     }
 
     /** Ball getter for ball speed. */
-    public Point getSpeed() {
+    public Point getSpd() {
         return speed;
     }
 
@@ -91,6 +91,7 @@ public class Ball {
                 position,
                 speed);
     }
+
     /**
      * Ball public method for making steps.
      *
@@ -100,8 +101,8 @@ public class Ball {
      * <p>Return this for chaining.
      */
     public Ball move() {
-        position.setX(getX() + getXStep());
-        position.setY(getY() + getYStep());
+        position.setX(getX() + getSpdX());
+        position.setY(getY() + getSpdY());
         return this;
     }
 }

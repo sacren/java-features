@@ -12,41 +12,41 @@ public class TestBall {
         System.out.println(ball);
         System.out.println();
         System.out.printf(
-                "X axis:       %.2f%n"
-                        + "Y axis:       %.2f%n"
-                        + "X axis speed: %.2f%n"
-                        + "Y axis speed: %.2f%n"
+                "X-axis:       %.2f%n"
+                        + "Y-axis:       %.2f%n"
+                        + "X-axis speed: %.2f%n"
+                        + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
                 ball.getX(),
                 ball.getY(),
-                ball.getXStep(),
-                ball.getYStep(),
+                ball.getSpdX(),
+                ball.getSpdY(),
                 ball.getPos(),
-                ball.getSpeed());
+                ball.getSpd());
         /* update Ball instance */
         ball.setX(ball.getX() * 2);
         ball.setY(ball.getY() * 2);
-        ball.setXStep(ball.getXStep() + 1);
-        ball.setYStep(ball.getYStep() + 1);
+        ball.setSpdX(ball.getSpdX() + 1);
+        ball.setSpdY(ball.getSpdY() + 1);
         System.out.println();
         System.out.println("=== Updata ball position and speed ===");
         System.out.println();
         System.out.println(ball);
         System.out.println();
         System.out.printf(
-                "X axis:       %.2f%n"
-                        + "Y axis:       %.2f%n"
-                        + "X axis speed: %.2f%n"
-                        + "Y axis speed: %.2f%n"
+                "X-axis:       %.2f%n"
+                        + "Y-axis:       %.2f%n"
+                        + "X-axis speed: %.2f%n"
+                        + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
                 ball.getX(),
                 ball.getY(),
-                ball.getXStep(),
-                ball.getYStep(),
+                ball.getSpdX(),
+                ball.getSpdY(),
                 ball.getPos(),
-                ball.getSpeed());
+                ball.getSpd());
         System.out.println();
         System.out.println("=== After we make a move ===");
         System.out.println();
