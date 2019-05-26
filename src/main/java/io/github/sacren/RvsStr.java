@@ -23,13 +23,11 @@ public class RvsStr {
         reverse();
     }
 
-    /** RvsStr setter for string character list. */
+    /** RvsStr setter for reversed string. */
     public void reverse() {
         reversed = "";
-        char[] list = str.toCharArray();
-        int size = list.length;
-        for (int i = 0; i < size; i++) {
-            reversed += list[size - 1 - i];
+        for (char c : str.toCharArray()) {
+            reversed = c + reversed;
         }
     }
 
