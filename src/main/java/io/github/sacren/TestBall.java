@@ -5,7 +5,7 @@ public class TestBall {
     /** Ball test driver. */
     public static void main(String[] args) {
         /* Ball instance */
-        Ball ball = new Ball(new Point(1, 2), new Point(11, 12));
+        Ball ball = new Ball(new Point(11, 12), new Point(1, 2));
         System.out.println();
         System.out.println("=== Ball ===");
         System.out.println();
@@ -25,12 +25,12 @@ public class TestBall {
                 ball.getPos(),
                 ball.getSpd());
         /* update Ball instance */
-        ball.setX(ball.getX() * 2);
-        ball.setY(ball.getY() * 2);
+        ball.setX(ball.getX() + 4);
+        ball.setY(ball.getY() + 4);
         ball.setSpdX(ball.getSpdX() + 1);
         ball.setSpdY(ball.getSpdY() + 1);
         System.out.println();
-        System.out.println("=== Updata ball position and speed ===");
+        System.out.println("=== Update ball position and speed ===");
         System.out.println();
         System.out.println(ball);
         System.out.println();
@@ -48,7 +48,7 @@ public class TestBall {
                 ball.getPos(),
                 ball.getSpd());
         System.out.println();
-        System.out.println("=== After we make a move ===");
+        System.out.println("=== Make one move ===");
         System.out.println();
         ball.move();
         System.out.println(ball);
