@@ -1,5 +1,5 @@
 /**
- * Line class by Point begin and Point end.
+ * Line class by two points of begin and end.
  *
  * <p>Private data:
  * -begin:Point
@@ -62,47 +62,47 @@ public class Line {
         this.end = end;
     }
 
-    /** Line method for x-axis of Point begin. */
+    /** Line getter for x-axis of begin point. */
     public double getBeginX() {
         return begin.getX();
     }
 
-    /** Line method to set x-axis of Point begin. */
+    /** Line setter for x-axis of begin point. */
     public void setBeginX(double axisX) {
         begin.setX(axisX);
     }
 
-    /** Line method for y-axis of Point begin. */
+    /** Line getter for y-axis of begin point. */
     public double getBeginY() {
         return begin.getY();
     }
 
-    /** Line method to set y-axis of Point begin. */
+    /** Line setter for y-axis of begin point. */
     public void setBeginY(double axisY) {
         begin.setY(axisY);
     }
 
-    /** Line method for x-axis of Point end. */
+    /** Line getter for x-axis of end point. */
     public double getEndX() {
         return end.getX();
     }
 
-    /** Line method to set x-axis of Point end. */
+    /** Line setter for x-axis of end point. */
     public void setEndX(double axisX) {
         end.setX(axisX);
     }
 
-    /** Line method for y-axis of Point end. */
+    /** Line getter for y-axis of end point. */
     public double getEndY() {
         return end.getY();
     }
 
-    /** Line method to set y-axis of Point end. */
+    /** Line setter for y-axis of end point. */
     public void setEndY(double axisY) {
         end.setY(axisY);
     }
 
-    /** Line length from begin to end. */
+    /** Line length from begin point to end point. */
     public double getLength() {
         return begin.distance(end);
     }
