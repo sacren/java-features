@@ -2,9 +2,9 @@
 
 ## What is Java Features?
 
-Java Features intends to explore all the features of Java SE and OpenJDK LTS
-via real-world applications.  Java Features embraces AdoptOpenJDK project.
-Apache Maven is employed to automate Java Features.
+Java Features explores many features of Java SE and OpenJDK LTS through
+application examples.  Java Features embraces AdoptOpenJDK project.  Apache
+Maven is employed for build and test automation.
 
 ## Prerequisite
 
