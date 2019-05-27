@@ -95,8 +95,7 @@ public class Ball {
     /**
      * Ball public method for making steps.
      *
-     * <p>Move a step incrementing x-axis by speed on x-axis and y-axis by
-     * speed on y-axis.
+     * <p>Move a step by adding speed on x-axis and on y-axis to the position.
      *
      * <p>Return this for chaining.
      */
