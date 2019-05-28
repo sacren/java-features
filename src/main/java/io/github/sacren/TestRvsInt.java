@@ -8,7 +8,7 @@ public class TestRvsInt {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int num;
-        System.out.print("Enter an integer: ");
+        System.out.print("Enter a non-negative integer: ");
         num = in.nextInt();
         in.close();
         System.out.println();
