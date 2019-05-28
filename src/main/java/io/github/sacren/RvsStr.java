@@ -3,7 +3,7 @@
  *
  * <p>Private instance data:
  * -str:String
- * -reversed:String
+ * -rvs:StringBuffer
  *
  * <p>Constructor:
  * +RvsStr(str:String)
@@ -15,7 +15,7 @@
 public class RvsStr {
     /* private instance data */
     private String str;
-    private String reversed;
+    private StringBuffer rvs;
 
     /** RvsStr constructor. */
     public RvsStr(String str) {
@@ -25,9 +25,9 @@ public class RvsStr {
 
     /** RvsStr setter for reversed string. */
     public void reverse() {
-        reversed = "";
+        rvs = new StringBuffer();
         for (char c : str.toCharArray()) {
-            reversed = c + reversed;
+            rvs.insert(0, c);
         }
     }
 
@@ -37,6 +37,6 @@ public class RvsStr {
                 "User input: %s%n"
                         + "Reversed:   %s",
                 str,
-                reversed);
+                rvs);
     }
 }
