@@ -8,7 +8,7 @@
  * +RvsStr(str:String)
  *
  * <p>Public methods:
- * +getRvs():StringBuffer
+ * +getRvs():String
  * +toString():String
  */
 public class RvsStr {
@@ -21,8 +21,8 @@ public class RvsStr {
     }
 
     /** RvsStr getter for reversed string. */
-    public StringBuffer getRvs() {
-        return new StringBuffer(str).reverse();
+    public String getRvs() {
+        return new StringBuffer(str).reverse().toString();
     }
 
     /** RvsStr string method. */
