@@ -9,6 +9,7 @@
  *
  * <p>Public methods:
  * +getRvs():int
+ * +getSum():int
  * +toString():String
  */
 public class RvsInt {
@@ -26,12 +27,23 @@ public class RvsInt {
         return Integer.parseUnsignedInt(sb.reverse().toString());
     }
 
+    /** RvsInt getter for sum of digits. */
+    public int getSum() {
+        int sum = 0;
+        for (char c : Integer.toString(num).toCharArray()) {
+            sum += Integer.parseUnsignedInt(Character.toString(c));
+        }
+        return sum;
+    }
+
     /** RvsInt string method. */
     public String toString() {
         return String.format(
                           "Original input: %d%n"
-                        + "Reversed:       %d",
+                        + "Reversed:       %d%n"
+                        + "Sum of digits:  %d",
                 num,
-                getRvs());
+                getRvs(),
+                getSum());
     }
 }
