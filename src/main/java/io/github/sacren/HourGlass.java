@@ -1,7 +1,7 @@
 /**
  * HourGlass class for the pattern of hourglass.
  *
- * <p>Private data:
+ * <p>Private instance data:
  * -height:int
  * -width:int
  *
@@ -9,7 +9,7 @@
  * +HourGlass()
  *
  * <p>Public methods:
- * +pattern():String
+ * +getPattern():String
  * +toString():String
  *
  * <p># # # # # # #
@@ -39,30 +39,29 @@ public class HourGlass {
         width = WIDTH;
     }
 
-    /** HourGlass method for hourglass pattern. */
-    public String pattern() {
+    /** HourGlass getter for hourglass pattern. */
+    public String getPattern() {
         final int rowColAlignment = (height - width) / 2;
         final int firstCount = 1;
         boolean crossed = false;
-        String s = "";
-
+        StringBuffer sb = new StringBuffer();
         for (int row = firstCount; row <= height; row++) {
             for (int col = firstCount; col <= width; col++) {
                 if (row % height < 2) {
                     if (col == width) {
-                        s += String.format("#%n");
+                        sb.append(String.format("#%n"));
                         break;
                     }
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
                 if (row % height <= rowColAlignment || row % height >= height - rowColAlignment) {
                     if (col == width) {
-                        s += String.format("#%n");
+                        sb.append(String.format("#%n"));
                         break;
                     }
                     if (col == firstCount) {
-                        s += String.format("# ");
+                        sb.append("# ");
                         continue;
                     }
                 }
@@ -72,28 +71,28 @@ public class HourGlass {
                 }
                 if (col == row - rowColAlignment) {
                     if (crossed) {
-                        s += String.format("#%n");
+                        sb.append(String.format("#%n"));
                         break;
                     }
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
                 if (col == height - row + 1 - rowColAlignment) {
                     if (crossed) {
-                        s += String.format("# ");
+                        sb.append("# ");
                         continue;
                     }
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("  ");
+                sb.append("  ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
-    /** HourGlass instance in console. */
+    /** HourGlass string method. */
     public String toString() {
-        return String.format("%s", pattern());
+        return getPattern();
     }
 }
