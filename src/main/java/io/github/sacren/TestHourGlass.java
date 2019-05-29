@@ -14,10 +14,11 @@
  *    # # # # # # #
  */
 public class TestHourGlass {
-    /** Test driver for hourglass pattern. */
+    /** HourGlass test driver. */
     public static void main(String[] args) {
-        HourGlass hg = new HourGlass();
         System.out.println();
-        System.out.print(hg);
+        System.out.println("=== Hourglass ===");
+        System.out.println();
+        System.out.print(new HourGlass());
     }
 }
