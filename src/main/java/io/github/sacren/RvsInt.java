@@ -39,7 +39,7 @@ public class RvsInt {
     /** RvsInt string method. */
     public String toString() {
         return String.format(
-                          "Original input: %d%n"
+                "Original input: %d%n"
                         + "Reversed:       %d%n"
                         + "Sum of digits:  %d",
                 num,

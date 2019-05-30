@@ -15,5 +15,9 @@ public class TestRvsInt {
         System.out.println("=== Reverse integer ===");
         System.out.println();
         System.out.println(new RvsInt(num));
+        System.out.println();
+        System.out.println("=== Reverse integer by operation ===");
+        System.out.println();
+        System.out.println(new RvsIntOp(num));
     }
 }
