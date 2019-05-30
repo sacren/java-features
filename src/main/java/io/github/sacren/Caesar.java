@@ -10,16 +10,14 @@
  * <p>Private instance data:
  * -usrStr:String
  * -encrypted:String
- * -decrypted:String
- * -swapped:String
  *
  * <p>Constructor:
  * +Caesar(usrStr:String)
  *
  * <p>Public methods:
- * +cipher():void
- * +decipher():void
- * +swap():void
+ * +setEncrypt():void
+ * +getDecrypt():String
+ * +getCipher():String
  * +toString():String
  */
 public class Caesar {
@@ -32,19 +30,15 @@ public class Caesar {
     /* private instance data */
     private String usrStr;
     private String encrypted;
-    private String decrypted;
-    private String swapped;
 
     /** Caesar constructor. */
     public Caesar(String usrStr) {
         this.usrStr = usrStr;
-        cipher();
-        decipher();
-        swap();
+        setEncrypt();
     }
 
-    /** Caesar method for encryption. */
-    public void cipher() {
+    /** Caesar setter for encryption. */
+    public void setEncrypt() {
         int tmp;
         StringBuffer sb = new StringBuffer();
         /* loop for cipher and for character validation at the same time */
@@ -64,10 +58,10 @@ public class Caesar {
         encrypted = sb.toString();
     }
 
-    /** Caesar method for decryption. */
-    public void decipher() {
+    /** Caesar getter for decrypted text. */
+    public String getDecrypt() {
         int tmp;
-        decrypted = "";
+        StringBuffer sb = new StringBuffer();
         for (char c: encrypted.toCharArray()) {
             /* use character numeric value to calculate for decipher */
             tmp = Character.getNumericValue(c);
@@ -75,25 +69,27 @@ public class Caesar {
                 tmp += ALPHABET;
             }
             c = Character.forDigit(tmp - CIPHER_KEY, CHAR_MAX + 1);
-            decrypted += Character.toString(Character.toUpperCase(c));
+            sb.append(Character.toString(Character.toUpperCase(c)));
         }
+        return sb.toString();
     }
 
-    /** Caesar method for cipher text. */
-    public void swap() {
+    /** Caesar getter for cipher text. */
+    public String getCipher() {
         int tmp;
-        swapped = "";
+        StringBuffer sb = new StringBuffer();
         /* 'A' + 'Z' and 'B' + 'Y'... are all equal. */
         final int A = Character.getNumericValue('A');
         final int Z = Character.getNumericValue('Z');
         for (char c : usrStr.toUpperCase().toCharArray()) {
             tmp = Character.getNumericValue(c);
             c = Character.forDigit(A + Z - tmp, CHAR_MAX + 1);
-            swapped += Character.toString(Character.toUpperCase(c));
+            sb.append(Character.toString(Character.toUpperCase(c)));
         }
+        return sb.toString();
     }
 
-    /** Caesar instance printout. */
+    /** Caesar string method. */
     public String toString() {
         return String.format(
                 "Plain text:     %s%n"
@@ -102,7 +98,7 @@ public class Caesar {
                         + "Cipher text:    %s",
                 usrStr,
                 encrypted,
-                decrypted,
-                swapped);
+                getDecrypt(),
+                getCipher());
     }
 }
