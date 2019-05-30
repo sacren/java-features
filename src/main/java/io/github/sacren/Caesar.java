@@ -46,7 +46,7 @@ public class Caesar {
     /** Caesar method for encryption. */
     public void cipher() {
         int tmp;
-        encrypted = "";
+        StringBuffer sb = new StringBuffer();
         /* loop for cipher and for character validation at the same time */
         for (char c: usrStr.toCharArray()) {
             if (!Character.isLetter(c)) {
@@ -59,8 +59,9 @@ public class Caesar {
                 tmp -= ALPHABET;
             }
             c = Character.forDigit(tmp + CIPHER_KEY, CHAR_MAX + 1);
-            encrypted += Character.toString(Character.toUpperCase(c));
+            sb.append(Character.toString(Character.toUpperCase(c)));
         }
+        encrypted = sb.toString();
     }
 
     /** Caesar method for decryption. */
