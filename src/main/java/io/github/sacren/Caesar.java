@@ -53,7 +53,7 @@ public class Caesar {
                 tmp -= ALPHABET;
             }
             c = Character.forDigit(tmp + CIPHER_KEY, CHAR_MAX + 1);
-            sb.append(Character.toString(Character.toUpperCase(c)));
+            sb.append(Character.toUpperCase(c));
         }
         encrypted = sb.toString();
     }
@@ -69,7 +69,7 @@ public class Caesar {
                 tmp += ALPHABET;
             }
             c = Character.forDigit(tmp - CIPHER_KEY, CHAR_MAX + 1);
-            sb.append(Character.toString(Character.toUpperCase(c)));
+            sb.append(Character.toUpperCase(c));
         }
         return sb.toString();
     }
@@ -84,7 +84,7 @@ public class Caesar {
         for (char c : str.toUpperCase().toCharArray()) {
             tmp = Character.getNumericValue(c);
             c = Character.forDigit(A + Z - tmp, CHAR_MAX + 1);
-            sb.append(Character.toString(Character.toUpperCase(c)));
+            sb.append(Character.toUpperCase(c));
         }
         return sb.toString();
     }
