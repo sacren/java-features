@@ -11,7 +11,7 @@
  *
  * <p>Public methods:
  * +set(str:String):void
- * +getPhNum():String
+ * +getPhone():String
  * +toString():String
  */
 public class KeyPad {
@@ -35,56 +35,56 @@ public class KeyPad {
     }
 
     /** KeyPad getter for phone number in digits. */
-    public String getPhNum() {
-        String phNum = "";
+    public String getPhone() {
+        StringBuffer sb = new StringBuffer();
         for (char c : str.toLowerCase().toCharArray()) {
             switch (c) {
                 case 'a':
                 case 'b':
                 case 'c':
-                    phNum += 2;
+                    sb.append(2);
                     break;
                 case 'd':
                 case 'e':
                 case 'f':
-                    phNum += 3;
+                    sb.append(3);
                     break;
                 case 'g':
                 case 'h':
                 case 'i':
-                    phNum += 4;
+                    sb.append(4);
                     break;
                 case 'j':
                 case 'k':
                 case 'l':
-                    phNum += 5;
+                    sb.append(5);
                     break;
                 case 'm':
                 case 'n':
                 case 'o':
-                    phNum += 6;
+                    sb.append(6);
                     break;
                 case 'p':
                 case 'q':
                 case 'r':
                 case 's':
-                    phNum += 7;
+                    sb.append(7);
                     break;
                 case 't':
                 case 'u':
                 case 'v':
-                    phNum += 8;
+                    sb.append(8);
                     break;
                 case 'w':
                 case 'x':
                 case 'y':
                 case 'z':
-                    phNum += 9;
+                    sb.append(9);
                     break;
                 default:
             }
         }
-        return phNum;
+        return sb.toString();
     }
 
     /** KeyPad string method. */
@@ -93,6 +93,6 @@ public class KeyPad {
                 "Input string: %s%n"
                         + "Phone number: %s",
                 str,
-                getPhNum());
+                getPhone());
     }
 }
