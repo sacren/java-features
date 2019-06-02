@@ -26,6 +26,7 @@
  * +SymTri(size:int)
  *
  * <p>Public methods:
+ * +setSize(size:int):void
  * +getId(id:char):String
  * +getTriangle():String
  * +getRvsTri():String
@@ -37,6 +38,15 @@ public class SymTri {
 
     /** SymTri constructor. */
     public SymTri(int size) {
+        setSize(size);
+    }
+
+    /** SymTri setter for the size of symmetric triangles. */
+    public void setSize(int size) {
+        if (size < 0) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid!", size));
+        }
         this.size = size;
     }
 
