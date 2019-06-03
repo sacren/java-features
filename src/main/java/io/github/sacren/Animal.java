@@ -1,81 +1,64 @@
 /**
  * Animal class.
  *
- * <p>Private data:
- * -animal:String
- *
- * <p>Constructor:
- * +Animal()
- *
- * <p>Animal methods:
- * +draw():void
- * +toString():String
- *
  *           <p>'__'
  *              (oo)
  *      +========\/
  *     / || %%% ||
  *    *  ||-----||
  *       ""     ""
+ *
+ * <p>Animal method:
+ * +toString():String
  */
 public class Animal {
-    /* private instance data */
-    private String animal;
-
-    /** Animal constructor. */
-    public Animal() {
-        animal = "";
-        draw();
-    }
-
-    public void draw() {
-        addChar(' ', 3);
-        addChar(' ', 10);
-        animal += String.format("%c", '\'');
-        addChar('_', 2);
-        animal += String.format("%c%n", '\'');
-        addChar(' ', 3);
-        addChar(' ', 10);
-        animal += String.format("%c", '(');
-        addChar('o', 2);
-        animal += String.format("%c", ')');
-        animal += String.format("%n");
-        addChar(' ', 3);
-        addChar(' ', 2);
-        animal += String.format("%c", '+');
-        addChar('=', 8);
-        animal += String.format("%c%c%n", '\\', '/');
-        addChar(' ', 3);
-        animal += String.format("%c%c%c", ' ', '/', ' ');
-        addChar('|', 2);
-        animal += String.format("%c", ' ');
-        addChar('%', 3);
-        animal += String.format("%c", ' ');
-        addChar('|', 2);
-        animal += String.format("%n");
-        addChar(' ', 3);
-        animal += String.format("%c", '*');
-        addChar(' ', 2);
-        addChar('|', 2);
-        addChar('-', 5);
-        addChar('|', 2);
-        animal += String.format("%n");
-        addChar(' ', 3);
-        addChar(' ', 3);
-        addChar('"', 2);
-        addChar(' ', 5);
-        addChar('"', 2);
-    }
-
-    /* helper for animal formatting */
-    private void addChar(final char c, final int count) {
+    /* helper for repetitive characters. */
+    private static String add(char c, int count) {
+        StringBuffer sb = new StringBuffer();
         for (int i = 0; i < count; i++) {
-            animal += String.format("%c", c);
+            sb.append(c);
         }
+        return sb.toString();
     }
 
-    /** Animal instance printout. */
+    /** Animal string method. */
     public String toString() {
-        return animal;
+        StringBuffer sb = new StringBuffer();
+        sb.append(add(' ', 3));
+        sb.append(add(' ', 10));
+        sb.append('\'');
+        sb.append(add('_', 2));
+        sb.append(String.format("%c%n", '\''));
+        sb.append(add(' ', 3));
+        sb.append(add(' ', 10));
+        sb.append('(');
+        sb.append(add('o', 2));
+        sb.append(String.format("%c%n", ')'));
+        sb.append(add(' ', 3));
+        sb.append(add(' ', 2));
+        sb.append('+');
+        sb.append(add('=', 8));
+        sb.append(String.format("%c%c%n", '\\', '/'));
+        sb.append(add(' ', 3));
+        sb.append(" / ");
+        sb.append(add('|', 2));
+        sb.append(' ');
+        sb.append(add('%', 3));
+        sb.append(' ');
+        sb.append(add('|', 2));
+        sb.append(String.format("%n"));
+        sb.append(add(' ', 3));
+        sb.append('*');
+        sb.append(add(' ', 2));
+        sb.append(add('|', 2));
+        sb.append(add('-', 5));
+        sb.append(add('|', 2));
+        sb.append(String.format("%n"));
+        sb.append(add(' ', 3));
+        sb.append(add(' ', 3));
+        sb.append(add('"', 2));
+        sb.append(add(' ', 5));
+        sb.append(add('"', 2));
+        return sb.toString();
     }
 }
