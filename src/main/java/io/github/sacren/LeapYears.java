@@ -2,14 +2,13 @@
  * LeapYears class for all the leap years between AD1 and AD2020.
  *
  * <p>Private instance data:
- * -list:String
  * -count:int
  *
  * <p>Constructor:
  * +LeapYears()
  *
  * <p>Public methods:
- * +calc():void
+ * +getLeap():String
  * +toString():String
  */
 public class LeapYears {
@@ -18,26 +17,25 @@ public class LeapYears {
     private static final int END = 2020;
 
     /* private instance data */
-    private String list;
     private int count;
 
     /** LeapYears constructor. */
     public LeapYears() {
-        calc();
+        count = 0;
     }
 
-    /** LeapYears method for list of leap years. */
-    public void calc() {
-        list = "";
-        count = 0;
+    /** LeapYears getter for leap years in the range. */
+    public String getLeap() {
+        StringBuffer sb = new StringBuffer();
         for (int year = BEGIN; year <= END; year++) {
             if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-                list += String.format("%5d", year);
+                sb.append(String.format("%5d", year));
                 if (++count % 10 == 0) {
-                    list += String.format("%n");
+                    sb.append(String.format("%n"));
                 }
             }
         }
+        return sb.toString();
     }
 
     /** LeapYears instance printout. */
@@ -45,7 +43,7 @@ public class LeapYears {
         return String.format(
                 "%s%n"
                         + "Total leap years: %d",
-                list,
+                getLeap(),
                 count);
     }
 }
