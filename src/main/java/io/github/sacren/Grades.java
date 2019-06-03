@@ -152,53 +152,55 @@ public class Grades {
 
     /** Grades method for vertical histogram. */
     public String vertHisto() {
-        String astGraph = "";
+        StringBuffer sb = new StringBuffer();
         int i = 0;
         for (int count : bins) {
-            astGraph += String.format(
-                    "%2d - %3d: %s",
-                    i * 10,
-                    i == 9 ? i * 10 + 10 : i * 10 + 9,
-                    addAsterisk(count));
+            sb.append(
+                    String.format(
+                        "%2d - %3d: %s",
+                        i * 10,
+                        i == 9 ? i * 10 + 10 : i * 10 + 9,
+                        addAsterisk(count)));
             if (++i < bins.length) {
-                astGraph += String.format("%n");
+                sb.append(String.format("%n"));
             }
         }
-        return astGraph;
+        return sb.toString();
     }
 
     /* helper for horizontal asterisks */
     private static String addAsterisk(int count) {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         /* 0 count: the check and loop are skipped.
          * 1 count: loop is skipped.
          * 2 and above: loop through.
          */
         if (count > 0) {
-            s = "*";
+            sb.append("*");
         }
         for (int i = 1; i < count; i++) {
-            s += " *";
+            sb.append(" *");
         }
-        return s;
+        return sb.toString();
     }
 
     /** Grades method for horizontal histogram. */
     public String flatHisto() {
-        String astGraph = stackAsterisk();
+        StringBuffer sb = new StringBuffer(stackAsterisk());
         int size = bins.length;
         for (int i = 0; i < size; i++) {
-            astGraph += String.format(
-                    i == 0 ? "%d-%-2d" : "%2d-%-3d",
-                    i * 10,
-                    i == size - 1 ? i * 10 + 10 : i * 10 + 9);
+            sb.append(
+                    String.format(
+                        i == 0 ? "%d-%-2d" : "%2d-%-3d",
+                        i * 10,
+                        i == size - 1 ? i * 10 + 10 : i * 10 + 9));
         }
-        return astGraph;
+        return sb.toString();
     }
 
     /** Grades method for vertical graph of asterisks. */
     public String stackAsterisk() {
-        String astGraph = "";
+        StringBuffer sb = new StringBuffer();
         int column;
         for (int row = 0; row < binsMax; row++) {
             /* inner loop for column */
@@ -206,22 +208,22 @@ public class Grades {
             for (int count : bins) {
                 if (count >= binsMax - row) {
                     if (column == 0) {
-                        astGraph += String.format("%2c%2c", '*', ' ');
+                        sb.append(String.format("%2c%2c", '*', ' '));
                     } else {
-                        astGraph += String.format("%3c%3c", '*', ' ');
+                        sb.append(String.format("%3c%3c", '*', ' '));
                     }
                 } else {
                     if (column == 0) {
-                        astGraph += String.format("%4c", ' ');
+                        sb.append(String.format("%4c", ' '));
                     } else {
-                        astGraph += String.format("%6c", ' ');
+                        sb.append(String.format("%6c", ' '));
                     }
                 }
                 if (++column == bins.length) {
-                    astGraph += String.format("%n");
+                    sb.append(String.format("%n"));
                 }
             }
         }
-        return astGraph;
+        return sb.toString();
     }
 }
