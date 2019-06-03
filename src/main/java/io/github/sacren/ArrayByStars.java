@@ -21,16 +21,17 @@ public class ArrayByStars {
         this.array = array;
     }
 
-    /** ArrayByStars instance printout. */
+    /** ArrayByStars string method. */
     public String toString() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = 0; row < array.length; row++) {
-            s += String.format("%d: ", row);
+            sb.append(row + 1);
+            sb.append(": ");
             for (int col = 0; col < array[row]; col++) {
-                s += String.format("%c", '*');
+                sb.append('*');
             }
-            s += String.format("(%d)%n", array[row]);
+            sb.append(String.format("(%d)%n", array[row]));
         }
-        return s;
+        return sb.toString();
     }
 }
