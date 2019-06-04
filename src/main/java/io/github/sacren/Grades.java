@@ -4,8 +4,6 @@
  * <p>Private data:
  * -count:int
  * -grades:int[]
- * -sum:double
- * -sqSum:double
  * -average:double
  * -stdDevi:double
  * -bins:int[]
@@ -16,6 +14,8 @@
  * +Grades(count:int)
  *
  * <p>Public methods:
+ * +getSum():double
+ * +getSqSum():double
  * +toString():String
  */
 import java.util.Arrays;
@@ -24,8 +24,6 @@ public class Grades {
     /* private instance data */
     private int count;
     private int[] grades;
-    private double sum;
-    private double sqSum;
     private double average;
     private double stdDevi;
     private int[] bins;
@@ -58,24 +56,32 @@ public class Grades {
         grades[index] = grade;
     }
 
-    /** Grades method for the sum and square sum of grades. */
-    public void sum() {
-        sum = 0;
-        sqSum = 0;
+    /** Grades getter for the sum of grades. */
+    public double getSum() {
+        int sum = 0;
         for (int grade : grades) {
             sum += grade;
-            sqSum += grade * grade;
         }
+        return sum;
+    }
+
+    /** Grades getter for square sum of grades. */
+    public double getSqSum() {
+        int sum = 0;
+        for (int grade : grades) {
+            sum += grade * grade;
+        }
+        return sum;
     }
 
     /** Grades method for average of grades. */
     public void average() {
-        average = sum / count;
+        average = getSum() / count;
     }
 
     /** Grades method for standard deviation of grades. */
     public void stdDevi() {
-        stdDevi = Math.sqrt(sqSum / count - average * average);
+        stdDevi = Math.sqrt(getSqSum() / count - average * average);
     }
 
     /** Grades method for bins of grades. */
@@ -122,7 +128,6 @@ public class Grades {
 
     /** Grades helper for instance data. */
     public void init() {
-        this.sum();
         this.average();
         this.stdDevi();
         this.bins();
