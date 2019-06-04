@@ -16,6 +16,7 @@
  * +getSqSum():double
  * +getAverage():double
  * +getStdDevi():double
+ * +setBins():void
  * +toString():String
  */
 import java.util.Arrays;
@@ -33,7 +34,6 @@ public class Grades {
     public Grades(int count) {
         stuCount(count);
         grades = new int[count];
-        bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
     }
 
     /** Grades setter for student count. */
@@ -72,7 +72,7 @@ public class Grades {
         return sum;
     }
 
-    /** Grades method for average of grades. */
+    /** Grades getter for average of grades. */
     public double getAverage() {
         return getSum() / count;
     }
@@ -82,14 +82,15 @@ public class Grades {
         return Math.sqrt(getSqSum() / count - getAverage() * getAverage());
     }
 
-    /** Grades method for bins of grades. */
-    public void bins() {
+    /** Grades setter for bins of grades. */
+    public void setBins() {
+        bins = new int[10]; /* 0..9, 10..19, ... 90..100 */
         for (int grade : grades) {
             if (grade == 100) {
                 grade = 90; /* 100 belongs to 90..99 group */
             }
             grade /= 10;
-            bins[grade]++; /* Initial values are all 0's, then increment. */
+            bins[grade]++; /* initial values are all 0's, then increment. */
         }
     }
 
@@ -126,7 +127,7 @@ public class Grades {
 
     /** Grades helper for instance data. */
     public void init() {
-        this.bins();
+        setBins();
         this.binsMax();
         this.max();
         this.min();
