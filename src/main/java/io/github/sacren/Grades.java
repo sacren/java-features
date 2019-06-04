@@ -4,7 +4,6 @@
  * <p>Private data:
  * -count:int
  * -grades:int[]
- * -average:double
  * -stdDevi:double
  * -bins:int[]
  * -max:int
@@ -16,6 +15,7 @@
  * <p>Public methods:
  * +getSum():double
  * +getSqSum():double
+ * +getAverage():double
  * +toString():String
  */
 import java.util.Arrays;
@@ -24,7 +24,6 @@ public class Grades {
     /* private instance data */
     private int count;
     private int[] grades;
-    private double average;
     private double stdDevi;
     private int[] bins;
     private int binsMax;
@@ -75,13 +74,13 @@ public class Grades {
     }
 
     /** Grades method for average of grades. */
-    public void average() {
-        average = getSum() / count;
+    public double getAverage() {
+        return getSum() / count;
     }
 
     /** Grades method for standard deviation of grades. */
     public void stdDevi() {
-        stdDevi = Math.sqrt(getSqSum() / count - average * average);
+        stdDevi = Math.sqrt(getSqSum() / count - getAverage() * getAverage());
     }
 
     /** Grades method for bins of grades. */
@@ -128,7 +127,6 @@ public class Grades {
 
     /** Grades helper for instance data. */
     public void init() {
-        this.average();
         this.stdDevi();
         this.bins();
         this.binsMax();
@@ -148,7 +146,7 @@ public class Grades {
                         + "Bins of grades:               %s",
                 count,
                 Arrays.toString(grades),
-                average,
+                getAverage(),
                 max,
                 min,
                 stdDevi,
