@@ -17,6 +17,7 @@
  * +getAverage():double
  * +getStdDevi():double
  * +setBins():void
+ * +getBinsMax():int
  * +toString():String
  */
 import java.util.Arrays;
@@ -26,7 +27,6 @@ public class Grades {
     private int count;
     private int[] grades;
     private int[] bins;
-    private int binsMax;
     private int max;
     private int min;
 
@@ -99,9 +99,9 @@ public class Grades {
         max = intMax(grades);
     }
 
-    /** Grades method for max of bins. */
-    public void binsMax() {
-        binsMax = intMax(bins);
+    /** Grades getter for max of bins. */
+    public int getBinsMax() {
+        return intMax(bins);
     }
 
     /* helper for max of integer array */
@@ -128,7 +128,6 @@ public class Grades {
     /** Grades helper for instance data. */
     public void init() {
         setBins();
-        this.binsMax();
         this.max();
         this.min();
     }
@@ -204,11 +203,11 @@ public class Grades {
     public String stackAsterisk() {
         StringBuffer sb = new StringBuffer();
         int column;
-        for (int row = 0; row < binsMax; row++) {
+        for (int row = 0; row < getBinsMax(); row++) {
             /* inner loop for column */
             column = 0;
             for (int count : bins) {
-                if (count >= binsMax - row) {
+                if (count >= getBinsMax() - row) {
                     if (column == 0) {
                         sb.append(String.format("%2c%2c", '*', ' '));
                     } else {
