@@ -17,7 +17,10 @@
  * +setBins():void
  * +getBinsMax():int
  * +getMax():int
- * -getMin():int
+ * +getMin():int
+ * +vertHisto():String
+ * +stackAsterisk():String
+ * +flatHisto():String
  * +toString():String
  */
 import java.util.Arrays;
@@ -92,16 +95,6 @@ public class Grades {
         }
     }
 
-    /** Grades getter for the max of grades. */
-    public int getMax() {
-        return intMax(grades);
-    }
-
-    /** Grades getter for max of bins. */
-    public int getBinsMax() {
-        return intMax(bins);
-    }
-
     /* helper for max of integer array */
     private static int intMax(int[] a) {
         int max = a[0];
@@ -111,6 +104,16 @@ public class Grades {
             }
         }
         return max;
+    }
+
+    /** Grades getter for the max of grades. */
+    public int getMax() {
+        return intMax(grades);
+    }
+
+    /** Grades getter for max of bins. */
+    public int getBinsMax() {
+        return intMax(bins);
     }
 
     /** Grades getter for the min of grades. */
@@ -124,23 +127,20 @@ public class Grades {
         return min;
     }
 
-    /** Grades instance description. */
-    public String toString() {
-        return String.format(
-                "Number of students:           %d%n"
-                        + "List of grades:               %s%n"
-                        + "Average of grades:            %.2f%n"
-                        + "Max of grades:                %d%n"
-                        + "Min of grades:                %d%n"
-                        + "Standard deviation of grades: %.2f%n"
-                        + "Bins of grades:               %s",
-                count,
-                Arrays.toString(grades),
-                getAverage(),
-                getMax(),
-                getMin(),
-                getStdDevi(),
-                Arrays.toString(bins));
+    /* helper for horizontal asterisks */
+    private static String addAsterisk(int count) {
+        StringBuffer sb = new StringBuffer();
+        /* 0 count: the check and loop are skipped.
+         * 1 count: loop is skipped.
+         * 2 and above: loop through.
+         */
+        if (count > 0) {
+            sb.append("*");
+        }
+        for (int i = 1; i < count; i++) {
+            sb.append(" *");
+        }
+        return sb.toString();
     }
 
     /** Grades method for vertical histogram. */
@@ -161,37 +161,7 @@ public class Grades {
         return sb.toString();
     }
 
-    /* helper for horizontal asterisks */
-    private static String addAsterisk(int count) {
-        StringBuffer sb = new StringBuffer();
-        /* 0 count: the check and loop are skipped.
-         * 1 count: loop is skipped.
-         * 2 and above: loop through.
-         */
-        if (count > 0) {
-            sb.append("*");
-        }
-        for (int i = 1; i < count; i++) {
-            sb.append(" *");
-        }
-        return sb.toString();
-    }
-
-    /** Grades method for horizontal histogram. */
-    public String flatHisto() {
-        StringBuffer sb = new StringBuffer(stackAsterisk());
-        int size = bins.length;
-        for (int i = 0; i < size; i++) {
-            sb.append(
-                    String.format(
-                        i == 0 ? "%d-%-2d" : "%2d-%-3d",
-                        i * 10,
-                        i == size - 1 ? i * 10 + 10 : i * 10 + 9));
-        }
-        return sb.toString();
-    }
-
-    /** Grades method for vertical graph of asterisks. */
+    /** Grades getter for vertical graph of asterisks. */
     public String stackAsterisk() {
         StringBuffer sb = new StringBuffer();
         int column;
@@ -218,5 +188,38 @@ public class Grades {
             }
         }
         return sb.toString();
+    }
+
+    /** Grades getter for horizontal histogram. */
+    public String flatHisto() {
+        StringBuffer sb = new StringBuffer(stackAsterisk());
+        int size = bins.length;
+        for (int i = 0; i < size; i++) {
+            sb.append(
+                    String.format(
+                        i == 0 ? "%d-%-2d" : "%2d-%-3d",
+                        i * 10,
+                        i == size - 1 ? i * 10 + 10 : i * 10 + 9));
+        }
+        return sb.toString();
+    }
+
+    /** Grades string method. */
+    public String toString() {
+        return String.format(
+                "Number of students:           %d%n"
+                        + "List of grades:               %s%n"
+                        + "Average of grades:            %.2f%n"
+                        + "Max of grades:                %d%n"
+                        + "Min of grades:                %d%n"
+                        + "Standard deviation of grades: %.2f%n"
+                        + "Bins of grades:               %s",
+                count,
+                Arrays.toString(grades),
+                getAverage(),
+                getMax(),
+                getMin(),
+                getStdDevi(),
+                Arrays.toString(bins));
     }
 }
