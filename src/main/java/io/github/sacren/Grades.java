@@ -5,7 +5,6 @@
  * -count:int
  * -grades:int[]
  * -bins:int[]
- * -min:int
  *
  * <p>Constructor:
  * +Grades(count:int)
@@ -18,6 +17,7 @@
  * +setBins():void
  * +getBinsMax():int
  * +getMax():int
+ * -getMin():int
  * +toString():String
  */
 import java.util.Arrays;
@@ -27,7 +27,6 @@ public class Grades {
     private int count;
     private int[] grades;
     private int[] bins;
-    private int min;
 
     /** Grades constructor. */
     public Grades(int count) {
@@ -114,20 +113,15 @@ public class Grades {
         return max;
     }
 
-    /** Grades method for min of grades. */
-    public void min() {
-        min = grades[0];
+    /** Grades getter for the min of grades. */
+    public int getMin() {
+        int min = grades[0];
         for (int grade : grades) {
             if (min > grade) {
                 min = grade;
             }
         }
-    }
-
-    /** Grades helper for instance data. */
-    public void init() {
-        setBins();
-        this.min();
+        return min;
     }
 
     /** Grades instance description. */
@@ -144,7 +138,7 @@ public class Grades {
                 Arrays.toString(grades),
                 getAverage(),
                 getMax(),
-                min,
+                getMin(),
                 getStdDevi(),
                 Arrays.toString(bins));
     }

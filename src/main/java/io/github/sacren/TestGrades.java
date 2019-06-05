@@ -15,7 +15,7 @@ public class TestGrades {
             grades.addGrade(i, in.nextInt()); /* add grades one by one */
         }
         in.close();
-        grades.init();
+        grades.setBins();
         System.out.println();
         System.out.println(grades);
         System.out.println();
