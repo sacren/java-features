@@ -3,64 +3,39 @@
  *
  * <p>Coza replaces multiple of 3, Loza of 5, Woza of 7 and CozaLoza of 3 and 5.
  *
- * <p>Private instance data:
- * -str:String
- *
- * <p>Constructor:
- * +PattCoza()
- *
- * <p>Public methods:
- * +filter():void
+ * <p>Public method:
  * +toString():String
  */
 public class PattCoza {
-    /* private static data */
-    private static String COZA = "Coza";
-    private static String LOZA = "Loza";
-    private static String WOZA = "Woza";
-    private static String COZALOZA = "CozaLoza";
-
-    /* private instance data */
-    private String str;
-
-    /** PattCoza constructor. */
-    public PattCoza() {
-        filter();
-    }
-
-    /** PattCoza method to filter with patterns. */
-    public void filter() {
-        str = "";
+    /** PattCoza string method. */
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
         for (int i = 1; i <= 110; i++) {
             if (i > 1) {
                 if (i % 10 == 1) {
-                    str += String.format("%n");
+                    sb.append(String.format("%n"));
                 } else {
-                    str += " ";
+                    sb.append(" ");
                 }
             }
             if (i % 3 == 0 && i % 5 == 0) {
-                str += String.format("%s", COZALOZA);
+                sb.append("CozaLoza");
                 continue;
             }
             if (i % 3 == 0) {
-                str += String.format("%s", COZA);
+                sb.append("Coza");
                 continue;
             }
             if (i % 5 == 0) {
-                str += String.format("%s", LOZA);
+                sb.append("Loza");
                 continue;
             }
             if (i % 7 == 0) {
-                str += String.format("%s", WOZA);
+                sb.append("Woza");
                 continue;
             }
-            str += String.format("%d", i);
+            sb.append(i);
         }
-    }
-
-    /** PattCoza instance printout. */
-    public String toString() {
-        return str;
+        return sb.toString();
     }
 }
