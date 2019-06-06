@@ -137,141 +137,141 @@ public class Patt2D {
 
     /** Patt2D getter for pattern of square with empty center. */
     public String getEmptySq() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (row % SIZE > 1 && col % SIZE > 1) {
-                    s += String.format("  ");
+                    sb.append("  ");
                     continue;
                 }
                 if (col == SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     continue;
                 }
-                s += String.format("# ");
+                sb.append("# ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for right triangle at bottom left. */
     public String getTriBotL() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (col == row) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("# ");
+                sb.append("# ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for right triangle at top left. */
     public String getTriTopL() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (col + row > SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("# ");
+                sb.append("# ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for right triangle at top right. */
     public String getTriTopR() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (col == SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
                 if (row > col) {
-                    s += String.format("  ");
+                    sb.append("  ");
                     continue;
                 }
-                s += String.format("# ");
+                sb.append("# ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for right triangle at bottom right. */
     public String getTriBotR() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (col == SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
                 if (col + row <= SIZE) {
-                    s += String.format("  ");
+                    sb.append("  ");
                     continue;
                 }
-                s += String.format("# ");
+                sb.append("# ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for mirrored letter Z. */
     public String getMirrorZ() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (row % SIZE < 2 && col != SIZE) {
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
                 if (col == row || col == SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("  ");
+                sb.append("  ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for pattern of letter Z. */
     public String getLetterZ() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (row % SIZE < 2 && col != SIZE) {
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
                 if (col == SIZE - row + 1 || col == SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("  ");
+                sb.append("  ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for pattern of hourglass. */
     public String getHrGlass() {
         boolean crossed = false;
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (row % SIZE < 2) {
                     if (col == SIZE) {
-                        s += String.format("#%n");
+                        sb.append(String.format("#%n"));
                         break;
                     }
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
                 /* SIZE / 2 + 1 for both odd and even numbers. */
@@ -280,66 +280,66 @@ public class Patt2D {
                 }
                 if (col == row) {
                     if (crossed) {
-                        s += String.format("#%n");
+                        sb.append(String.format("#%n"));
                         break;
                     }
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
                 if (col == SIZE - row + 1) {
                     if (crossed) {
-                        s += String.format("# ");
+                        sb.append("# ");
                         continue;
                     }
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("  ");
+                sb.append("  ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for pattern of hourglass inside a box. */
     public String getHrGlBox() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (col == FIRST_COUNT) {
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
                 if (col == SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
                 if (row % SIZE < 2 || col == row || col == SIZE - row + 1) {
-                    s += String.format("# ");
+                    sb.append("# ");
                     continue;
                 }
-                s += String.format("  ");
+                sb.append("  ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for pattern of parallelogram. */
     public String getParall() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             /* add leading spaces to the row */
             for (int sp = 0; sp < SIZE - row; sp++) {
-                s += String.format(" ");
+                sb.append(" ");
             }
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (SIZE == col) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("# ");
+                sb.append("# ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /**
@@ -349,32 +349,32 @@ public class Patt2D {
      * more or less adding extension to it.
      */
     public String getSolidSq() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
                 if (col == SIZE) {
-                    s += String.format("#%n");
+                    sb.append(String.format("#%n"));
                     break;
                 }
-                s += String.format("# ");
+                sb.append("# ");
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D getter for pattern of checker board. */
     public String getChecker() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             if (row % 2 == 0) {
-                s += String.format(" ");
+                sb.append(" ");
             }
             for (int col = FIRST_COUNT; col < SIZE; col++) {
-                s += String.format("# ");
+                sb.append("# ");
             }
-            s += String.format("#%n");
+            sb.append(String.format("#%n"));
         }
-        return s;
+        return sb.toString();
     }
 
     /** Patt2D string method. */
