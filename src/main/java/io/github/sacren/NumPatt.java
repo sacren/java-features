@@ -51,87 +51,88 @@ public class NumPatt {
 
     /** NumPatt getter for bottom-left pattern. */
     public String getBotLeft() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             for (int col = FIRST_COUNT; col <= row; col++) {
                 if (col == row) {
-                    s += String.format("%3d%n", col);
+                    sb.append(String.format("%3d%n", col));
                     break;
                 }
-                s += String.format("%3d", col);
+                sb.append(String.format("%3d", col));
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** NumPatt getter for top-right pattern. */
     public String getTopRight() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         int width;
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             width = SIZE - row + 1;
             for (int col = FIRST_COUNT; col < row; col++) {
-                s += String.format("%3c", ' ');
+                sb.append(String.format("%3c", ' '));
             }
             for (int col = FIRST_COUNT; col <= width; col++) {
                 if (col == width) {
-                    s += String.format("%3d%n", col);
+                    sb.append(String.format("%3d%n", col));
                     break;
                 }
-                s += String.format("%3d", col);
+                sb.append(String.format("%3d", col));
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** NumPatt getter for bottom-right pattern. */
     public String getBotRight() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         int width;
-        int number;
+        int num;
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             width = SIZE - row + 1;
             for (int col = FIRST_COUNT; col < width; col++) {
-                s += String.format("%3c", ' ');
+                sb.append(String.format("%3c", ' '));
             }
             for (int col = FIRST_COUNT; col <= row; col++) {
-                number = row - col + 1;
+                num = row - col + 1;
                 if (col == row) {
-                    s += String.format("%3d%n", number);
+                    sb.append(String.format("%3d%n", num));
                     break;
                 }
-                s += String.format("%3d", number);
+                sb.append(String.format("%3d", num));
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** NumPatt getter for top-left pattern. */
     public String getTopLeft() {
-        String s = "";
+        StringBuffer sb = new StringBuffer();
         int sentinel;
-        int number;
+        int num;
         for (int row = FIRST_COUNT; row <= SIZE; row++) {
             sentinel = SIZE - row + 1;
             for (int col = FIRST_COUNT; col <= SIZE; col++) {
-                number = sentinel - col + 1;
+                num = sentinel - col + 1;
                 if (col == sentinel) {
-                    s += String.format("%3d%n", number);
+                    sb.append(String.format("%3d%n", num));
                     break;
                 }
-                s += String.format("%3d", number);
+                sb.append(String.format("%3d", num));
             }
         }
-        return s;
+        return sb.toString();
     }
 
     /** NumPatt getter for centered ID. */
     public String getId(char id) {
-        String s = String.format("(%c)%n", id);
+        StringBuffer sb = new StringBuffer();
         for (int i = 0; i < SIZE / 2; i++) {
-            s = String.format("%3c", ' ') + s;
+            sb.append(String.format("%3c", ' '));
         }
-        return s;
+        sb.append(String.format("(%c)%n", id));
+        return sb.toString();
     }
 
     /** NumPatt instance string method. */
