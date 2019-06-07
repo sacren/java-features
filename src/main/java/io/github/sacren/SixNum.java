@@ -12,8 +12,16 @@
 import java.util.Arrays;
 
 public class SixNum {
-    /* private static data */
-    private static final int[] LIST = {11, 22, 33, 44, 55, 66};
+    /* public static data */
+    public static final int[] LIST = {11, 22, 33, 44, 55, 66};
+
+    /* private instance data */
+    private int[] nums;
+
+    /** SixNum constructor. */
+    public SixNum(int[] nums) {
+        this.nums = nums;
+    }
 
     /** SixNum getter for the sum of numbers. */
     public int getSum() {
