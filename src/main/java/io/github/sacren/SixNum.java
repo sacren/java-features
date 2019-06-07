@@ -41,14 +41,43 @@ public class SixNum {
         return product;
     }
 
+    /** SixNum getter for the max of user input. */
+    public int getMax() {
+        int max = nums[0];
+        for (int i : nums) {
+            if (max < i) {
+                max = i;
+            }
+        }
+        return max;
+    }
+
+    /** SixNum getter for the min of user input. */
+    public int getMin() {
+        int min = nums[0];
+        for (int i : nums) {
+            if (min > i) {
+                min = i;
+            }
+        }
+        return min;
+    }
+
     /** SixNum string method. */
     public String toString() {
         return String.format(
                 "List:    %s%n%n"
                         + "Sum:     %d%n"
-                        + "Product: %d",
+                        + "Product: %d%n%n"
+                        + "=== User input ===%n%n"
+                        + "List:    %s%n%n"
+                        + "Max:     %d%n"
+                        + "Min:     %d",
                 Arrays.toString(LIST),
                 getSum(),
-                getProd());
+                getProd(),
+                Arrays.toString(nums),
+                getMax(),
+                getMin());
     }
 }
