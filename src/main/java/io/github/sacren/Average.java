@@ -8,8 +8,8 @@
  * +Average(scores:double[])
  *
  * <p>Public methods:
- * +check();
- * +average():double
+ * +check(scores:double[]);
+ * +getAverage():double
  * +toString():String
  */
 public class Average {
@@ -21,22 +21,22 @@ public class Average {
 
     /** Average constructor. */
     public Average(double[] scores) {
-        this.scores = scores;
-        check();
+        check(scores);
     }
 
-    /** Average method to check for valid score. */
-    public void check() {
+    /** Average method to validate the scores. */
+    public void check(double[] scores) {
         for (double score : scores) {
             if (score < 0 || score > 100) {
                 throw new IllegalArgumentException(
                         String.format("%f is invalid!", score));
             }
         }
+        this.scores = scores;
     }
 
-    /** Average method for the average score. */
-    public double average() {
+    /** Average getter for the average score. */
+    public double getAverage() {
         double sum = 0;
         for (double score : scores) {
             sum += score;
@@ -44,10 +44,10 @@ public class Average {
         return sum / STUDENT_COUNT;
     }
 
-    /** Average instance printout. */
+    /** Average string method. */
     public String toString() {
         return String.format(
                 "Average score: %.2f",
-                average());
+                getAverage());
     }
 }
