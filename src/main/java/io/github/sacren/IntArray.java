@@ -6,10 +6,10 @@
  * <p>Search int array for element of array length value.
  *
  * <p>Private instance data:
- * -intArray:int[]
+ * -list:int[]
  *
  * <p>Constructor:
- * +IntArray(intArray:int[])
+ * +IntArray(list:int[])
  *
  * <p>Public methods:
  * +check():void
@@ -24,30 +24,30 @@ import java.util.Arrays;
 
 public class IntArray {
     /* private instance data */
-    private int[] intArray;
+    private int[] list;
 
     /** IntArray constructor. */
-    public IntArray(int[] intArray) {
-        this.intArray = intArray;
+    public IntArray(int[] list) {
+        this.list = list;
         check();
     }
 
     /** IntArray method to validate array items. */
     public void check() {
-        for (int num : intArray) {
+        for (int num : list) {
             if (num < 0) {
                 throw new IllegalArgumentException(
                         String.format(
                             "%s is invalid!",
-                            Arrays.toString(intArray)));
+                            Arrays.toString(list)));
             }
         }
     }
 
     /** IntArray method for array length value. */
     public boolean hasInt() {
-        for (int n : intArray) {
-            if (n == intArray.length) {
+        for (int num : list) {
+            if (num == list.length) {
                 return true;
             }
         }
@@ -56,10 +56,10 @@ public class IntArray {
 
     /** IntArray getter for double array. */
     public double[] getDbl() {
-        double[] a = new double[intArray.length];
+        double[] a = new double[list.length];
         int i = 0;
-        for (double n : intArray) {
-            a[i++] = n * Math.E;
+        for (double num : list) {
+            a[i++] = num * Math.E;
         }
         return a;
     }
@@ -91,11 +91,11 @@ public class IntArray {
                         + "Double array:  %s%n%n"
                         + "=== Another approach ===%n%n"
                         + "%s",
-                toStr(intArray),
-                toStr(intArray),
+                toStr(list),
+                toStr(list),
                 hasInt() ? "has" : "doesn't have",
-                intArray.length,
+                list.length,
                 toStr(getDbl()),
-                toStr(intArray, getDbl()));
+                toStr(list, getDbl()));
     }
 }
