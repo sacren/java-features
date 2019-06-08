@@ -14,6 +14,7 @@
  * <p>Private instance data:
  * -salary:double
  * -age:int
+ * -contribByAge:Point
  *
  * <p>Constructor:
  * +Pension(salary:double, age:int)
@@ -93,7 +94,7 @@ public class Pension {
     /** Pension string method. */
     public String toString() {
         return String.format(
-                "Monthly salary:        %.2f%n"
+                "Attracting salary:     %.2f%n"
                         + "Employee age:          %d%n"
                         + "Employee contribution: %.2f%n"
                         + "Employer contribution: %.2f%n"
