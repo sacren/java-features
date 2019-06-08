@@ -12,7 +12,7 @@
  * +IntArray(list:int[])
  *
  * <p>Public methods:
- * +check():void
+ * +check(list:int[]):void
  * +hasInt():boolean
  * +getDbl():double[]
  * +toStr(a:int[]):String
@@ -28,12 +28,11 @@ public class IntArray {
 
     /** IntArray constructor. */
     public IntArray(int[] list) {
-        this.list = list;
-        check();
+        check(list);
     }
 
     /** IntArray method to validate array items. */
-    public void check() {
+    public void check(int[] list) {
         for (int num : list) {
             if (num < 0) {
                 throw new IllegalArgumentException(
@@ -42,6 +41,7 @@ public class IntArray {
                             Arrays.toString(list)));
             }
         }
+        this.list = list;
     }
 
     /** IntArray method for array length value. */
