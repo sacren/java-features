@@ -2,27 +2,19 @@
  * Sum up the individual digits of a positive integer in command line.
  */
 public class TestSumDigits {
-    /** Show the effect of command argument. */
+    /** SumDigits test driver. */
     public static void main(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Missing argument!");
+        if (args.length != 1) {
+            throw new IllegalArgumentException(
+                    "Invalid argument!");
         }
         if (Integer.parseInt(args[0]) < 0) {
-            throw new IllegalArgumentException("Argument can't be negative number!");
+            throw new IllegalArgumentException(
+                    "Can't have negative number!");
         }
-        char[] charArray = args[0].toCharArray();
-        int sum;
-        sum = Character.digit(charArray[0], 10);
-        String digitString;
-        digitString = Character.toString(charArray[0]);
-        int index = 0;
-        for (char c: charArray) {
-            if (index++ == 0) {
-                continue;
-            }
-            sum += Character.digit(c, 10);
-            digitString += " + " + Character.toString(c);
-        }
-        System.out.printf("Sum of digits: %s = %d%n", digitString, sum);
+        System.out.println();
+        System.out.println("=== Sum of digits ===");
+        System.out.println();
+        System.out.println(new SumDigits(args[0].toCharArray()));
     }
 }
