@@ -10,6 +10,8 @@
  * -oddAvg:double
  * -divSum:int
  * -divAvg:double
+ * -divSum7:int
+ * -divAvg7:double
  * -sqSum:int
  *
  * <p>Public methods:
@@ -22,6 +24,8 @@ public class Sum {
     private double oddAvg;
     private int divSum;
     private double divAvg;
+    private int divSum7;
+    private double divAvg7;
     private int sqSum;
 
     /** Sum constructor. */
@@ -33,6 +37,7 @@ public class Sum {
     public void setSum() {
         int count1 = 0;
         int count2 = 0;
+        int count3 = 0;
         oddSum = 0;
         divSum = 0;
         sqSum = 0;
@@ -47,8 +52,14 @@ public class Sum {
             }
             sqSum += i * i;
         }
+        /* anther way for division by 7 and count */
+        for (int i = 7; i <= 100; i += 7) {
+            divSum7 += i;
+            count3++;
+        }
         oddAvg = (double) oddSum / count1;
         divAvg = (double) divSum / count2;
+        divAvg7 = (double) divSum7 / count3;
     }
 
     /** Sum string method. */
@@ -58,11 +69,15 @@ public class Sum {
                         + "Average:            %.2f%n"
                         + "Sum of division:    %d%n"
                         + "Average:            %.2f%n"
+                        + "Sum of division:    %d%n"
+                        + "Average:            %.2f%n"
                         + "Sum of squares:     %d",
                 oddSum,
                 oddAvg,
                 divSum,
                 divAvg,
+                divSum7,
+                divAvg7,
                 sqSum);
     }
 }
