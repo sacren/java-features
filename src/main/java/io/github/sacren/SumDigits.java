@@ -2,29 +2,28 @@
  * SumDigits class for the sum of individual digits.
  *
  * <p>Private instance data:
- * -list:char[]
+ * -expr:String
+ * -sum:int
  *
  * <p>Constructor:
- * +SumDigits()
+ * +SumDigits(list:char[])
  *
  * <p>Public methods:
- * +set():void
+ * +set(list:char[]):void
  * +toString():String
  */
 public class SumDigits {
     /* private instance data */
-    private char[] list;
     private String expr;
     private int sum;
 
     /** SumDigits constructor. */
     public SumDigits(char[] list) {
-        this.list = list;
-        set();
+        set(list);
     }
 
     /** SumDigits setter for the sum and characters of array. */
-    public void set() {
+    public void set(char[] list) {
         StringBuffer sb = new StringBuffer();
         sum = 0;
         for (char c : list) {
