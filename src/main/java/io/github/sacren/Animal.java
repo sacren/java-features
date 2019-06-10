@@ -8,10 +8,24 @@
  *    *  ||-----||
  *       ""     ""
  *
+ * <p>Private static data:
+ * -count:int
+ *
+ * <p>Constructor:
+ * +Animal()
+ *
  * <p>Animal method:
  * +toString():String
  */
 public class Animal {
+    /* private static data */
+    private static int count;
+
+    /** Animal constructor. */
+    public Animal() {
+        count++;
+    }
+
     /* helper for repetitive characters. */
     private static String add(char c, int count) {
         StringBuffer sb = new StringBuffer();
@@ -24,6 +38,7 @@ public class Animal {
     /** Animal string method. */
     public String toString() {
         StringBuffer sb = new StringBuffer();
+        sb.append(String.format("(%d)%n", count));
         sb.append(add(' ', 3));
         sb.append(add(' ', 10));
         sb.append('\'');
