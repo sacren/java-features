@@ -43,7 +43,7 @@ public class HourGlass {
         final int rowColAlignment = (height - width) / 2;
         final int firstCount = 1;
         boolean crossed = false;
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int row = firstCount; row <= height; row++) {
             for (int col = firstCount; col <= width; col++) {
                 if (row % height < 2) {
