@@ -1,17 +1,6 @@
 /**
  * HourGlass class for the pattern of hourglass.
  *
- * <p>Private instance data:
- * -height:int
- * -width:int
- *
- * <p>Constructor:
- * +HourGlass()
- *
- * <p>Public methods:
- * +getPattern():String
- * +toString():String
- *
  * <p># # # # # # #
  *    #           #
  *    #           #
@@ -23,6 +12,16 @@
  *    #           #
  *    #           #
  *    # # # # # # #
+ *
+ * <p>Private instance data:
+ * -height:int
+ * -width:int
+ *
+ * <p>Constructor:
+ * +HourGlass()
+ *
+ * <p>Public methods:
+ * +toString():String
  */
 public class HourGlass {
     /* private static data */
@@ -39,8 +38,8 @@ public class HourGlass {
         width = WIDTH;
     }
 
-    /** HourGlass getter for hourglass pattern. */
-    public String getPattern() {
+    /** HourGlass string method. */
+    public String toString() {
         final int rowColAlignment = (height - width) / 2;
         final int firstCount = 1;
         boolean crossed = false;
@@ -89,10 +88,5 @@ public class HourGlass {
             }
         }
         return sb.toString();
-    }
-
-    /** HourGlass string method. */
-    public String toString() {
-        return getPattern();
     }
 }
