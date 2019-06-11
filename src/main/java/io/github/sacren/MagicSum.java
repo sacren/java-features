@@ -17,11 +17,6 @@ public class MagicSum {
     /* private instance data */
     private int sum;
 
-    /** MagicSum constructor. */
-    public MagicSum() {
-        sum = 0;
-    }
-
     /** MagicSum method to add to sum. */
     public void add(int num) {
         if (num < 0) {
