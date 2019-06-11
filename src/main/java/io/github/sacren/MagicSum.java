@@ -17,7 +17,7 @@ public class MagicSum {
     /* private instance data */
     private int sum;
 
-    /** MagicSum method to add to sum. */
+    /** MagicSum setter for the sum. */
     public void add(int num) {
         if (num < 0) {
             throw new IllegalArgumentException(
