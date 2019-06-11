@@ -10,6 +10,7 @@
  * <p>Public methods:
  * +add(num:int):void
  * +hasMagic():boolean
+ * +isMagic():boolean
  * +toString():String
  */
 public class MagicSum {
@@ -45,11 +46,23 @@ public class MagicSum {
         return true;
     }
 
-    /** MagicSum instance printout. */
+    /** Magic getter if there is digit 8. */
+    public boolean isMagic() {
+        for (char c : Integer.toString(sum).toCharArray()) {
+            if (Integer.parseUnsignedInt(Character.toString(c)) == 8) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** MagicSum string method. */
     public String toString() {
         return String.format(
-                "%d is%s a magic sum",
+                "Magic sum %d: %s%n"
+                        + "Magic sum %1$d: %s",
                 sum,
-                hasMagic() ? "" : " not");
+                isMagic() ? "TRUE" : "FALSE",
+                hasMagic() ? "TRUE" : "FALSE");
     }
 }
