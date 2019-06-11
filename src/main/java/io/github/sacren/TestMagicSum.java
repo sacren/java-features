@@ -10,9 +10,9 @@ public class TestMagicSum {
         Scanner in = new Scanner(System.in);
         MagicSum sum = new MagicSum();
         for ( ; ; ) {
-            System.out.print("Enter an integer(-1 to quit): ");
+            System.out.print("Enter a positive integer (0 to quit): ");
             num = in.nextInt();
-            if (num == -1) {
+            if (num == 0) {
                 break;
             }
             sum.add(num);
