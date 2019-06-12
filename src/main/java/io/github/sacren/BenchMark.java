@@ -10,6 +10,7 @@
  * <p>Public methods:
  * +set()
  * +getTimeString():long
+ * +getTimeStrBuff():long
  * +toString():String
  */
 public class BenchMark {
@@ -48,10 +49,24 @@ public class BenchMark {
         return estimate;
     }
 
+    /** BenchMark getter for StringBuffer. */
+    public long getTimeStrBuff() {
+        long start;
+        long estimate;
+        String reversed;
+        start = System.nanoTime();
+        StringBuffer sb = new StringBuffer(original);
+        reversed = sb.reverse().toString();
+        estimate = System.nanoTime() - start;
+        return estimate;
+    }
+
     /** BenchMark string method. */
     public String toString() {
         return String.format(
-                "Time: %d usec (String)",
-                getTimeString() / 1000);
+                "Time: %d usec (String)%n"
+                        + "Time: %d usec (StringBuffer)",
+                getTimeString() / 1000,
+                getTimeStrBuff() / 1000);
     }
 }
