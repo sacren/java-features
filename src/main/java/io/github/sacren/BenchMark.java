@@ -11,6 +11,7 @@
  * +set()
  * +getTimeString():long
  * +getTimeStrBuff():long
+ * +getTimeStrBld():long
  * +toString():String
  */
 public class BenchMark {
@@ -61,12 +62,26 @@ public class BenchMark {
         return estimate;
     }
 
+    /** BenchMark getter for StringBuilder. */
+    public long getTimeStrBld() {
+        long start;
+        long estimate;
+        String reversed;
+        start = System.nanoTime();
+        StringBuilder sb = new StringBuilder(original);
+        reversed = sb.reverse().toString();
+        estimate = System.nanoTime() - start;
+        return estimate;
+    }
+
     /** BenchMark string method. */
     public String toString() {
         return String.format(
                 "Time: %d usec (String)%n"
-                        + "Time: %d usec (StringBuffer)",
+                        + "Time: %d usec (StringBuffer)%n"
+                        + "Time: %d usec (StringBuilder)",
                 getTimeString() / 1000,
-                getTimeStrBuff() / 1000);
+                getTimeStrBuff() / 1000,
+                getTimeStrBld() / 1000);
     }
 }
