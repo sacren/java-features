@@ -9,8 +9,9 @@
  *
  * <p>Public methods:
  * +add(num:int):void
- * +hasMagic():boolean
- * +isMagic():boolean
+ * +isMagic1():boolean
+ * +isMagic2():boolean
+ * +isMagic3():boolean
  * +toString():String
  */
 public class MagicSum {
@@ -26,8 +27,8 @@ public class MagicSum {
         sum += num;
     }
 
-    /** MagicSum getter for digit 8. */
-    public boolean hasMagic() {
+    /** MagicSum getter v1 for digit 8. */
+    public boolean isMagic1() {
         int num = sum;
         for ( ; ; ) {
             if (num == 0) { /* All the digits are dropped */
@@ -41,8 +42,8 @@ public class MagicSum {
         return true;
     }
 
-    /** Magic getter if there is digit 8. */
-    public boolean isMagic() {
+    /** Magic getter v2 for digit 8. */
+    public boolean isMagic2() {
         for (char c : Integer.toString(sum).toCharArray()) {
             if (Integer.parseUnsignedInt(Character.toString(c)) == 8) {
                 return true;
@@ -51,13 +52,24 @@ public class MagicSum {
         return false;
     }
 
+    /** Magic getter v3 for digit 8. */
+    public boolean isMagic3() {
+        StringBuilder sb = new StringBuilder(Integer.toString(sum));
+        if (sb.indexOf("8") == -1) {
+            return false;
+        }
+        return true;
+    }
+
     /** MagicSum string method. */
     public String toString() {
         return String.format(
                 "Magic sum %d: %s%n"
+                        + "Magic sum %1$d: %s%n"
                         + "Magic sum %1$d: %s",
                 sum,
-                isMagic() ? "TRUE" : "FALSE",
-                hasMagic() ? "TRUE" : "FALSE");
+                isMagic1() ? "TRUE" : "FALSE",
+                isMagic2() ? "TRUE" : "FALSE",
+                isMagic3() ? "TRUE" : "FALSE");
     }
 }
