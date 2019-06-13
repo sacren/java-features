@@ -11,6 +11,7 @@
  * +set()
  * +getTimeStrIdx():long
  * +getTimeString():long
+ * +getTimeStrBuffIdx():long
  * +getTimeStrBuff():long
  * +getTimeStrBld():long
  * +toString():String
@@ -66,6 +67,20 @@ public class BenchMark {
         return estimate;
     }
 
+    /** BenchMark getter for StringBuffer by array. */
+    public long getTimeStrBuffIdx() {
+        long start;
+        String reversed;
+        start = System.nanoTime();
+        StringBuffer sb = new StringBuffer();
+        for (char c : original.toCharArray()) {
+            sb.append(c);
+        }
+        reversed = sb.toString();
+        long estimate = System.nanoTime() - start;
+        return estimate;
+    }
+
     /** BenchMark getter for StringBuffer. */
     public long getTimeStrBuff() {
         long start;
@@ -95,10 +110,12 @@ public class BenchMark {
         return String.format(
                 "Time: %d usec (String Loop)%n"
                         + "Time: %d usec (String Array)%n"
+                        + "Time: %d usec (StringBuffer Loop)%n"
                         + "Time: %d usec (StringBuffer)%n"
                         + "Time: %d usec (StringBuilder)",
                 getTimeStrIdx() / 1000,
                 getTimeString() / 1000,
+                getTimeStrBuffIdx() / 1000,
                 getTimeStrBuff() / 1000,
                 getTimeStrBld() / 1000);
     }
