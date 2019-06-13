@@ -9,6 +9,7 @@
  *
  * <p>Public methods:
  * +set()
+ * +getTimeStrIdx():long
  * +getTimeString():long
  * +getTimeStrBuff():long
  * +getTimeStrBld():long
@@ -37,7 +38,22 @@ public class BenchMark {
         original = sb.toString();
     }
 
-    /** BenchMark getter for String. */
+    /** BenchMark getter for String by loop. */
+    public long getTimeStrIdx() {
+        long start;
+        long estimate;
+        String reversed = "";
+        int size = original.length();
+        char[] list = original.toCharArray();
+        start = System.nanoTime();
+        for (int i = 0; i < size; i++) {
+            reversed += list[size - i - 1];
+        }
+        estimate = System.nanoTime() - start;
+        return estimate;
+    }
+
+    /** BenchMark getter for String by array. */
     public long getTimeString() {
         long start;
         long estimate;
@@ -77,9 +93,11 @@ public class BenchMark {
     /** BenchMark string method. */
     public String toString() {
         return String.format(
-                "Time: %d usec (String)%n"
+                "Time: %d usec (String Loop)%n"
+                        + "Time: %d usec (String Array)%n"
                         + "Time: %d usec (StringBuffer)%n"
                         + "Time: %d usec (StringBuilder)",
+                getTimeStrIdx() / 1000,
                 getTimeString() / 1000,
                 getTimeStrBuff() / 1000,
                 getTimeStrBld() / 1000);
