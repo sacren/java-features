@@ -18,6 +18,10 @@
  * +toString():String
  */
 public class BenchMark {
+    /* private static data */
+    private static final int CHAR_MIN = 10;
+    private static final int CHAR_MAX = 35;
+
     /* private instance data */
     private String original;
 
@@ -29,12 +33,12 @@ public class BenchMark {
     /** BenchMark setter for the long string. */
     public void set() {
         int size = 16536;
-        char ch = 'a';
+        char ch = Character.forDigit(CHAR_MIN, CHAR_MIN + 1);
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < size; i++) {
-            if (Character.getNumericValue(ch) == 35) {
+            if (Character.getNumericValue(ch) == CHAR_MAX) {
                 sb.append(ch);
-                ch = 'a';
+                ch = Character.forDigit(CHAR_MIN, CHAR_MIN + 1);
                 continue;
             }
             sb.append(ch++);
