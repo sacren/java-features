@@ -33,15 +33,13 @@ public class BenchMark {
     /** BenchMark setter for the long string. */
     public void set() {
         int size = 16536;
-        char ch = Character.forDigit(CHAR_MIN, CHAR_MIN + 1);
+        int numeric = CHAR_MIN;
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < size; i++) {
-            if (Character.getNumericValue(ch) == CHAR_MAX) {
-                sb.append(ch);
-                ch = Character.forDigit(CHAR_MIN, CHAR_MIN + 1);
-                continue;
+            sb.append(Character.forDigit(numeric++, CHAR_MAX + 1));
+            if (numeric > CHAR_MAX) {
+                numeric = CHAR_MIN;
             }
-            sb.append(ch++);
         }
         original = sb.toString();
     }
