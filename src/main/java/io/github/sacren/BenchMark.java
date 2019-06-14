@@ -29,13 +29,15 @@ public class BenchMark {
     /** BenchMark setter for the long string. */
     public void set() {
         int size = 16536;
-        char c = 'a';
+        char ch = 'a';
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < size; i++) {
-            if (Character.getNumericValue(c) > 35) {
-                c = 'a';
+            if (Character.getNumericValue(ch) == 35) {
+                sb.append(ch);
+                ch = 'a';
+                continue;
             }
-            sb.append(c++);
+            sb.append(ch++);
         }
         original = sb.toString();
     }
