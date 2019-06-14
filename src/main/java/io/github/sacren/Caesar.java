@@ -8,14 +8,14 @@
  * -ALPHABET:int = 26
  *
  * <p>Private instance data:
- * -str:String
- * -encrypted:String
+ * -plain:String
+ * -crypt:String
  *
  * <p>Constructor:
- * +Caesar(str:String)
+ * +Caesar(plain:String)
  *
  * <p>Public methods:
- * +setEncrypt():void
+ * +setCrypt():void
  * +getDecrypt():String
  * +getCipher():String
  * +toString():String
@@ -28,63 +28,63 @@ public class Caesar {
     private static final int ALPHABET = 26;
 
     /* private instance data */
-    private String str;
-    private String encrypted;
+    private String plain;
+    private String crypt;
 
     /** Caesar constructor. */
-    public Caesar(String str) {
-        this.str = str;
-        setEncrypt();
+    public Caesar(String plain) {
+        this.plain = plain;
+        setCrypt();
     }
 
     /** Caesar setter for encryption. */
-    public void setEncrypt() {
-        int tmp;
+    public void setCrypt() {
+        int numeric;
         StringBuffer sb = new StringBuffer();
         /* loop for cipher and for character validation at the same time */
-        for (char c: str.toCharArray()) {
-            if (!Character.isLetter(c)) {
+        for (char ch : plain.toCharArray()) {
+            if (!Character.isLetter(ch)) {
                 throw new IllegalArgumentException(
-                        String.format("\"%s\" is invalid!", str));
+                        String.format("\"%s\" is invalid!", plain));
             }
             /* use character numeric value to calculate for cipher */
-            tmp = Character.getNumericValue(c);
-            if (tmp > CHAR_MAX - CIPHER_KEY) {
-                tmp -= ALPHABET;
+            numeric = Character.getNumericValue(ch);
+            if (numeric > CHAR_MAX - CIPHER_KEY) {
+                numeric -= ALPHABET;
             }
-            c = Character.forDigit(tmp + CIPHER_KEY, CHAR_MAX + 1);
-            sb.append(Character.toUpperCase(c));
+            ch = Character.forDigit(numeric + CIPHER_KEY, CHAR_MAX + 1);
+            sb.append(Character.toUpperCase(ch));
         }
-        encrypted = sb.toString();
+        crypt = sb.toString();
     }
 
     /** Caesar getter for decrypted text. */
     public String getDecrypt() {
-        int tmp;
+        int numeric;
         StringBuffer sb = new StringBuffer();
-        for (char c: encrypted.toCharArray()) {
+        for (char ch : crypt.toCharArray()) {
             /* use character numeric value to calculate for decipher */
-            tmp = Character.getNumericValue(c);
-            if (tmp < CHAR_MIN + CIPHER_KEY) {
-                tmp += ALPHABET;
+            numeric = Character.getNumericValue(ch);
+            if (numeric < CHAR_MIN + CIPHER_KEY) {
+                numeric += ALPHABET;
             }
-            c = Character.forDigit(tmp - CIPHER_KEY, CHAR_MAX + 1);
-            sb.append(Character.toUpperCase(c));
+            ch = Character.forDigit(numeric - CIPHER_KEY, CHAR_MAX + 1);
+            sb.append(Character.toUpperCase(ch));
         }
         return sb.toString();
     }
 
     /** Caesar getter for cipher text. */
     public String getCipher() {
-        int tmp;
+        int numeric;
         StringBuffer sb = new StringBuffer();
         /* 'A' + 'Z' and 'B' + 'Y'... are all equal. */
         final int A = Character.getNumericValue('A');
         final int Z = Character.getNumericValue('Z');
-        for (char c : str.toUpperCase().toCharArray()) {
-            tmp = Character.getNumericValue(c);
-            c = Character.forDigit(A + Z - tmp, CHAR_MAX + 1);
-            sb.append(Character.toUpperCase(c));
+        for (char ch : plain.toCharArray()) {
+            numeric = Character.getNumericValue(ch);
+            ch = Character.forDigit(A + Z - numeric, CHAR_MAX + 1);
+            sb.append(Character.toUpperCase(ch));
         }
         return sb.toString();
     }
@@ -96,8 +96,8 @@ public class Caesar {
                         + "Encrypted text: %s%n"
                         + "Decrypted text: %s%n"
                         + "Cipher text:    %s",
-                str,
-                encrypted,
+                plain,
+                crypt,
                 getDecrypt(),
                 getCipher());
     }
