@@ -54,9 +54,10 @@ public class Token {
         StringBuilder sb1 = new StringBuilder();
         StringBuilder sb2 = new StringBuilder();
         StringTokenizer st = new StringTokenizer(week);
-        String token;
+        StringBuffer token = new StringBuffer();
         while (st.hasMoreTokens()) {
-            token = st.nextToken();
+            token.delete(0, token.length());
+            token.append(st.nextToken());
             sb1.append(token);
             sb1.append(String.format("%n"));
             sb2.insert(0, String.format("%n"));
