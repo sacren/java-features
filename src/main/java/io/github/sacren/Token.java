@@ -14,6 +14,7 @@
  * +tokenize():void
  * +toString():String
  */
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Token {
@@ -67,6 +68,11 @@ public class Token {
         reversed = sb2.deleteCharAt(sb2.length() - 1).toString();
     }
 
+    /** Token getter for the week array in reverse. */
+    public String[] getRvsList() {
+        return reversed.split(String.format("%n"));
+    }
+
     /** Token string method. */
     public String toString() {
         return String.format(
@@ -75,9 +81,12 @@ public class Token {
                         + "List of days:%n%n"
                         + "%s%n%n"
                         + "Reversed:%n%n"
+                        + "%s%n%n"
+                        + "Reversed array:%n%n"
                         + "%s",
                 week,
                 list,
-                reversed);
+                reversed,
+                Arrays.toString(getRvsList()));
     }
 }
