@@ -46,7 +46,7 @@ public class Token {
             sb.append(name);
             sb.append(" ");
         }
-        week = sb.delete(sb.length() - 1, sb.length()).toString();
+        week = sb.deleteCharAt(sb.length() - 1).toString();
     }
 
     /** Token getter for names of the week. */
@@ -63,8 +63,8 @@ public class Token {
             sb2.insert(0, String.format("%n"));
             sb2.insert(0, token);
         }
-        list = sb1.delete(sb1.length() - 1, sb1.length()).toString();
-        reversed = sb2.delete(sb2.length() - 1, sb2.length()).toString();
+        list = sb1.deleteCharAt(sb1.length() - 1).toString();
+        reversed = sb2.deleteCharAt(sb2.length() - 1).toString();
     }
 
     /** Token string method. */
