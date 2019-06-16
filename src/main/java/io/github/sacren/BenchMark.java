@@ -4,9 +4,6 @@
  * <p>Private instance data:
  * -original:String
  *
- * <p>Constructor:
- * +BenchMark()
- *
  * <p>Public methods:
  * +getTimeBuild()
  * +getTimeRvsLp():long
@@ -25,11 +22,7 @@ public class BenchMark {
     /* private instance data */
     private String original;
 
-    /** BenchMark constructor. */
-    public BenchMark() {
-    }
-
-    /** BenchMark setter for the long string. */
+    /** BenchMark getter for build time of long string. */
     public long getTimeBuild() {
         long start;
         int size = 16536;
@@ -43,14 +36,12 @@ public class BenchMark {
             }
         }
         original = sb.toString();
-        long estimate = System.nanoTime() - start;
-        return estimate;
+        return System.nanoTime() - start;
     }
 
     /** BenchMark getter for String by loop. */
     public long getTimeRvsLp() {
         long start;
-        long estimate;
         String reversed = "";
         int size = original.length();
         char[] list = original.toCharArray();
@@ -58,21 +49,18 @@ public class BenchMark {
         for (int i = 0; i < size; i++) {
             reversed += list[size - i - 1];
         }
-        estimate = System.nanoTime() - start;
-        return estimate;
+        return System.nanoTime() - start;
     }
 
     /** BenchMark getter for String by array. */
     public long getTimeRvsArray() {
         long start;
-        long estimate;
         String reversed = "";
         start = System.nanoTime();
         for (char c : original.toCharArray()) {
             reversed = c + reversed;
         }
-        estimate = System.nanoTime() - start;
-        return estimate;
+        return System.nanoTime() - start;
     }
 
     /** BenchMark getter for StringBuffer by array. */
@@ -85,20 +73,17 @@ public class BenchMark {
             sb.insert(0, c);
         }
         reversed = sb.toString();
-        long estimate = System.nanoTime() - start;
-        return estimate;
+        return System.nanoTime() - start;
     }
 
     /** BenchMark getter for StringBuffer. */
     public long getTimeSf() {
         long start;
-        long estimate;
         String reversed;
         start = System.nanoTime();
         StringBuffer sb = new StringBuffer(original);
         reversed = sb.reverse().toString();
-        estimate = System.nanoTime() - start;
-        return estimate;
+        return System.nanoTime() - start;
     }
 
     /** BenchMark getter for StringBuilder by loop. */
@@ -111,20 +96,17 @@ public class BenchMark {
             sb.insert(0, c);
         }
         reversed = sb.toString();
-        long estimate = System.nanoTime() - start;
-        return estimate;
+        return System.nanoTime() - start;
     }
 
     /** BenchMark getter for StringBuilder. */
     public long getTimeSb() {
         long start;
-        long estimate;
         String reversed;
         start = System.nanoTime();
         StringBuilder sb = new StringBuilder(original);
         reversed = sb.reverse().toString();
-        estimate = System.nanoTime() - start;
-        return estimate;
+        return System.nanoTime() - start;
     }
 
     /** BenchMark string method. */
