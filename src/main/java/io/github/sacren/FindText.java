@@ -35,8 +35,12 @@ public class FindText {
         /* test if it matches */
         StringBuilder sb = new StringBuilder();
         while (m.find()) {
-            sb.append("Found: ");
+            sb.append("Found: \"");
             sb.append(m.group());
+            sb.append("\" starting at ");
+            sb.append(m.start());
+            sb.append(" and ending at ");
+            sb.append(m.end());
             sb.append(String.format("%n"));
         }
         if (sb.length() > 0) {
