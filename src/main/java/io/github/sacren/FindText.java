@@ -35,7 +35,7 @@ public class FindText {
         /* test if it matches */
         StringBuilder sb = new StringBuilder();
         while (m.find()) {
-            sb.append("Found: \"");
+            sb.append("First: \"");
             sb.append(m.group());
             sb.append("\" starting at ");
             sb.append(m.start());
@@ -43,9 +43,18 @@ public class FindText {
             sb.append(m.end());
             sb.append(String.format("%n"));
         }
-        if (sb.length() > 0) {
-            sb.deleteCharAt(sb.length() - 1);
+        /* start all over */
+        m.reset();
+        while (m.find()) {
+            sb.append("Second: \"");
+            sb.append(m.group());
+            sb.append("\" starting at ");
+            sb.append(m.start());
+            sb.append(" and ending at ");
+            sb.append(m.end());
+            sb.append(String.format("%n"));
         }
+        sb.deleteCharAt(sb.length() - 1);
         match = sb.toString();
     }
 
