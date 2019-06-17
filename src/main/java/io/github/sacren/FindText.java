@@ -16,39 +16,37 @@ import java.util.regex.Pattern;
 
 public class FindText {
     /* private static data */
-    private static String STR = "This is an apple. These are 33 (thirty-three) apples.";
-    private static String REGEX = "Th";
+    private static String TEXT = "This is an apple. These are 33 (thirty-three) apples.";
 
     /* private instance data */
-    private StringBuilder sb;
+    private String match;
 
     /** FindText constructor. */
     public FindText() {
-        sb = new StringBuilder();
         search();
     }
 
     /** FindText setter for match regex. */
     public void search() {
-        /* compile regex for a Pattern object */
-        Pattern pattern = Pattern.compile(REGEX);
+        /* compile regex and allocate a matching engine */
+        Pattern p = Pattern.compile("Th");
+        Matcher m = p.matcher(TEXT);
 
-        /* allocate a matching engine. */
-        Matcher matcher = pattern.matcher(STR);
-
-        /* perform matching */
-        while (matcher.find()) {
+        /* test if it matches */
+        StringBuilder sb = new StringBuilder();
+        while (m.find()) {
             sb.append("Found: ");
-            sb.append(matcher.group());
+            sb.append(m.group());
             sb.append(String.format("%n"));
         }
+        if (sb.length() > 0) {
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        match = sb.toString();
     }
 
     /** FindText string mathod. */
     public String toString() {
-        if (sb.length() > 0) {
-            sb.deleteCharAt(sb.length() - 1);
-        }
-        return sb.toString();
+        return match;
     }
 }
