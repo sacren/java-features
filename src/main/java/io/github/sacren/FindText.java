@@ -66,6 +66,18 @@ public class FindText {
         } else {
             sb.append("Matches nothing at all!");
         }
+        /* test for lookingAt() */
+        sb.append(String.format("%n"));
+        if (m.lookingAt()) {
+            sb.append("Look for \"");
+            sb.append(m.group());
+            sb.append("\" starting at ");
+            sb.append(m.start());
+            sb.append(" and ending at ");
+            sb.append(m.end());
+        } else {
+            sb.append("Found nothing at all!");
+        }
         msg = sb.toString();
     }
 
