@@ -10,6 +10,7 @@
  * <p>Public methods:
  * +search():void
  * +getWord():String
+ * +getNum():String
  * +toString():String
  */
 import java.util.regex.Matcher;
@@ -100,13 +101,34 @@ public class FindText {
         return sb.toString();
     }
 
+    /** FindText getter for the number and its index. */
+    public String getNum() {
+        StringBuilder sb = new StringBuilder();
+        Pattern p = Pattern.compile("\\b[1-9][0-9]*\\b");
+        Matcher m = p.matcher(TEXT);
+        while (m.find()) {
+            sb.append("\"");
+            sb.append(m.group());
+            sb.append("\" starting at ");
+            sb.append(m.start());
+            sb.append(" and ending at ");
+            sb.append(m.end());
+            sb.append(String.format("%n"));
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
+
     /** FindText string mathod. */
     public String toString() {
         return String.format(
                 "%s%n%n"
                         + "=== Word and index ===%n%n"
+                        + "%s%n%n"
+                        + "=== Number and index ===%n%n"
                         + "%s",
                 msg,
-                getWord());
+                getWord(),
+                getNum());
     }
 }
