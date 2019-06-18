@@ -19,7 +19,7 @@ public class FindText {
     private static String TEXT = "This is an apple. These are 33 (thirty-three) apples.";
 
     /* private instance data */
-    private String match;
+    private String msg;
 
     /** FindText constructor. */
     public FindText() {
@@ -32,7 +32,7 @@ public class FindText {
         Pattern p = Pattern.compile("Th");
         Matcher m = p.matcher(TEXT);
 
-        /* test if it matches */
+        /* test if it finds regex */
         StringBuilder sb = new StringBuilder();
         while (m.find()) {
             sb.append("First: \"");
@@ -54,12 +54,23 @@ public class FindText {
             sb.append(m.end());
             sb.append(String.format("%n"));
         }
-        sb.deleteCharAt(sb.length() - 1);
-        match = sb.toString();
+        /* test if it matches regex */
+        if (m.matches()) {
+            sb.append("Matches \"");
+            sb.append(m.group());
+            sb.append("\" starting at ");
+            sb.append(m.start());
+            sb.append(" and ending at ");
+            sb.append(m.end());
+            sb.append(String.format("%n"));
+        } else {
+            sb.append("Matches nothing at all!");
+        }
+        msg = sb.toString();
     }
 
     /** FindText string mathod. */
     public String toString() {
-        return match;
+        return msg;
     }
 }
