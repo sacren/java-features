@@ -26,13 +26,13 @@ public class Animal {
         count++;
     }
 
-    /* helper for repetitive characters. */
-    private static String add(char c, int count) {
+    /* static helper for repetitive characters */
+    private static StringBuffer add(char ch, int size) {
         StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < count; i++) {
-            sb.append(c);
+        for (int i = 0; i < size; i++) {
+            sb.append(ch);
         }
-        return sb.toString();
+        return sb;
     }
 
     /** Animal string method. */
