@@ -1,14 +1,14 @@
 /**
- * FindText class.
+ * FindText class for regular expression.
  *
  * <p>Private instance data:
- * -sb:StringBuilder
+ * -text:String
  *
  * <p>Constructor:
  * +FindText()
  *
  * <p>Public methods:
- * +search():void
+ * +getRegEx():String
  * +getWord():String
  * +getNum():String
  * +toString():String
@@ -17,22 +17,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FindText {
-    /* private static data */
-    private static String TEXT = "This is an apple. These are 33 (thirty-three) apples.";
-
     /* private instance data */
-    private String msg;
+    private String text;
 
     /** FindText constructor. */
     public FindText() {
-        search();
+        text = "This is an apple. These are 33 (thirty-three) apples.";
     }
 
-    /** FindText setter for match regex. */
-    public void search() {
+    /** FindText getter for match regex. */
+    public String getRegEx() {
         /* compile regex and allocate a matching engine */
         Pattern p = Pattern.compile("Th");
-        Matcher m = p.matcher(TEXT);
+        Matcher m = p.matcher(text);
 
         /* test if it finds regex */
         StringBuilder sb = new StringBuilder();
@@ -80,14 +77,14 @@ public class FindText {
         } else {
             sb.append("Found nothing at all!");
         }
-        msg = sb.toString();
+        return sb.toString();
     }
 
     /** FindText getter for the word and its index. */
     public String getWord() {
         StringBuilder sb = new StringBuilder();
         Pattern p = Pattern.compile("\\w+");
-        Matcher m = p.matcher(TEXT);
+        Matcher m = p.matcher(text);
         while (m.find()) {
             sb.append("\"");
             sb.append(m.group());
@@ -105,7 +102,7 @@ public class FindText {
     public String getNum() {
         StringBuilder sb = new StringBuilder();
         Pattern p = Pattern.compile("\\b[1-9][0-9]*\\b");
-        Matcher m = p.matcher(TEXT);
+        Matcher m = p.matcher(text);
         while (m.find()) {
             sb.append("\"");
             sb.append(m.group());
@@ -127,7 +124,7 @@ public class FindText {
                         + "%s%n%n"
                         + "=== Number and index ===%n%n"
                         + "%s",
-                msg,
+                getRegEx(),
                 getWord(),
                 getNum());
     }
