@@ -11,6 +11,7 @@
  * +getRegEx():String
  * +getWord():String
  * +getNum():String
+ * +getReplace():String
  * +toString():String
  */
 import java.util.regex.Matcher;
@@ -116,6 +117,13 @@ public class FindText {
         return sb.toString();
     }
 
+    /** FindText getter for all-replaced text. */
+    public String getReplace() {
+        Pattern p = Pattern.compile("apple");
+        Matcher m = p.matcher(text);
+        return m.replaceAll("orange").toString();
+    }
+
     /** FindText string mathod. */
     public String toString() {
         return String.format(
@@ -123,9 +131,14 @@ public class FindText {
                         + "=== Word and index ===%n%n"
                         + "%s%n%n"
                         + "=== Number and index ===%n%n"
+                        + "%s%n%n"
+                        + "=== Replace all ===%n%n"
+                        + "%s%n"
                         + "%s",
                 getRegEx(),
                 getWord(),
-                getNum());
+                getNum(),
+                text,
+                getReplace());
     }
 }
