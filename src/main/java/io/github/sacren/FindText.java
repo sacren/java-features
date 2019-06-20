@@ -11,8 +11,7 @@
  * +getRegEx():String
  * +getWord():String
  * +getNum():String
- * +getReplace():String
- * +getFirstRpl():String
+ * +replace():void
  * +toString():String
  */
 import java.util.regex.Matcher;
@@ -21,10 +20,13 @@ import java.util.regex.Pattern;
 public class FindText {
     /* private instance data */
     private String text;
+    private String replaceAll;
+    private String replaceFirst;
 
     /** FindText constructor. */
     public FindText() {
         text = "This is an apple. These are 33 (thirty-three) apples.";
+        replace();
     }
 
     /** FindText getter for match regex. */
@@ -118,18 +120,12 @@ public class FindText {
         return sb.toString();
     }
 
-    /** FindText getter for all-replaced text. */
-    public String getReplace() {
+    /** FindText setter for replaced text. */
+    public void replace() {
         Pattern p = Pattern.compile("apple");
         Matcher m = p.matcher(text);
-        return m.replaceAll("orange").toString();
-    }
-
-    /** FindText getter for first-replaced text. */
-    public String getFirstRpl() {
-        Pattern p = Pattern.compile("apple");
-        Matcher m = p.matcher(text);
-        return m.replaceFirst("orange").toString();
+        replaceAll = m.replaceAll("orange").toString();
+        replaceFirst = m.replaceFirst("orange").toString();
     }
 
     /** FindText string mathod. */
@@ -140,15 +136,17 @@ public class FindText {
                         + "%s%n%n"
                         + "=== Number and index ===%n%n"
                         + "%s%n%n"
-                        + "=== Replace all and first ===%n%n"
+                        + "=== Replace all ===%n%n"
                         + "%s%n"
-                        + "%s%n"
+                        + "%s%n%n"
+                        + "=== Replace first ===%n%n"
+                        + "%4$s%n"
                         + "%s",
                 getRegEx(),
                 getWord(),
                 getNum(),
                 text,
-                getReplace(),
-                getFirstRpl());
+                replaceAll,
+                replaceFirst);
     }
 }
