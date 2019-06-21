@@ -45,6 +45,14 @@ public class BackRef {
             sb.append(String.format("%n"));
             sb.append("Group count: ");
             sb.append(m.groupCount());
+            sb.append(String.format("%n%n"));
+            for (int i = 0; i < m.groupCount(); i++) {
+                sb.append("Group count ");
+                sb.append(i);
+                sb.append(" :");
+                sb.append(m.group(i));
+                sb.append(String.format("%n"));
+            }
         }
         tokens = sb.toString();
     }
