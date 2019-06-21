@@ -42,6 +42,9 @@ public class BackRef {
             sb.append(m.start());
             sb.append(" and ending at ");
             sb.append(m.end());
+            sb.append(String.format("%n"));
+            sb.append("Group count: ");
+            sb.append(m.groupCount());
         }
         tokens = sb.toString();
     }
