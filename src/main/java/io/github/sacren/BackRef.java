@@ -32,7 +32,7 @@ public class BackRef {
     public void reverse() {
         Pattern p = Pattern.compile("(.+):(.+):(.+):(.+)");
         Matcher m = p.matcher(text);
-        reversed = m.replaceAll("$4+$3+$2+$1").toString();
+        reversed = m.replaceAll("$4+$3+$2+$1");
         /* for all the text */
         m.reset(); /* reset() before find() for the counter */
         StringBuilder sb = new StringBuilder();
@@ -42,9 +42,8 @@ public class BackRef {
             sb.append(m.start());
             sb.append(" and ending at ");
             sb.append(m.end());
-            sb.append(String.format("%n"));
         }
-        tokens = sb.deleteCharAt(sb.length() - 1).toString();
+        tokens = sb.toString();
     }
 
     /** BackRef string method. */

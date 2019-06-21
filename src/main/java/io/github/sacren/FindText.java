@@ -124,8 +124,8 @@ public class FindText {
     public void replace() {
         Pattern p = Pattern.compile("apple");
         Matcher m = p.matcher(text);
-        replaceAll = m.replaceAll("orange").toString();
-        replaceFirst = m.replaceFirst("orange").toString();
+        replaceAll = m.replaceAll("orange");
+        replaceFirst = m.replaceFirst("orange");
     }
 
     /** FindText string mathod. */
