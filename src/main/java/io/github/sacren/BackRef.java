@@ -46,7 +46,7 @@ public class BackRef {
             sb.append("Group count: ");
             sb.append(m.groupCount());
             sb.append(String.format("%n%n"));
-            for (int i = 0; i < m.groupCount(); i++) {
+            for (int i = 0; i <= m.groupCount(); i++) {
                 sb.append("Group count ");
                 sb.append(i);
                 sb.append(": ");
