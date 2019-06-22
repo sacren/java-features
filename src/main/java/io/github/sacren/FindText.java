@@ -2,7 +2,7 @@
  * FindText class for regular expression.
  *
  * <p>Private instance data:
- * -text:String
+ * -input:String
  *
  * <p>Constructor:
  * +FindText()
@@ -19,13 +19,13 @@ import java.util.regex.Pattern;
 
 public class FindText {
     /* private instance data */
-    private String text;
+    private String input;
     private String replaceAll;
     private String replaceFirst;
 
     /** FindText constructor. */
     public FindText() {
-        text = "This is an apple. These are 33 (thirty-three) apples.";
+        input = "This is an apple. These are 33 (thirty-three) apples.";
         replace();
     }
 
@@ -33,7 +33,7 @@ public class FindText {
     public String getRegEx() {
         /* compile regex and allocate a matching engine */
         Pattern p = Pattern.compile("Th");
-        Matcher m = p.matcher(text);
+        Matcher m = p.matcher(input);
 
         /* test if it finds regex */
         StringBuilder sb = new StringBuilder();
@@ -88,7 +88,7 @@ public class FindText {
     public String getWord() {
         StringBuilder sb = new StringBuilder();
         Pattern p = Pattern.compile("\\w+");
-        Matcher m = p.matcher(text);
+        Matcher m = p.matcher(input);
         while (m.find()) {
             sb.append("\"");
             sb.append(m.group());
@@ -106,7 +106,7 @@ public class FindText {
     public String getNum() {
         StringBuilder sb = new StringBuilder();
         Pattern p = Pattern.compile("\\b[1-9][0-9]*\\b");
-        Matcher m = p.matcher(text);
+        Matcher m = p.matcher(input);
         while (m.find()) {
             sb.append("\"");
             sb.append(m.group());
@@ -123,7 +123,7 @@ public class FindText {
     /** FindText setter for replaced text. */
     public void replace() {
         Pattern p = Pattern.compile("apple");
-        Matcher m = p.matcher(text);
+        Matcher m = p.matcher(input);
         replaceAll = m.replaceAll("orange");
         replaceFirst = m.replaceFirst("orange");
     }
@@ -145,7 +145,7 @@ public class FindText {
                 getRegEx(),
                 getWord(),
                 getNum(),
-                text,
+                input,
                 replaceAll,
                 replaceFirst);
     }
