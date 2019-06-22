@@ -42,19 +42,19 @@ public class BackRef {
             sb.append(m.start());
             sb.append(" and ending at ");
             sb.append(m.end());
-            sb.append(String.format("%n"));
+            sb.append(String.format("%n%n"));
             sb.append("Group count: ");
             sb.append(m.groupCount());
             sb.append(String.format("%n%n"));
             for (int i = 0; i < m.groupCount(); i++) {
                 sb.append("Group count ");
                 sb.append(i);
-                sb.append(" :");
+                sb.append(": ");
                 sb.append(m.group(i));
                 sb.append(String.format("%n"));
             }
         }
-        tokens = sb.toString();
+        tokens = sb.deleteCharAt(sb.length() - 1).toString();
     }
 
     /** BackRef string method. */
