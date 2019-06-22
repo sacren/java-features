@@ -51,6 +51,10 @@ public class BackRef {
                 sb.append(i);
                 sb.append(": ");
                 sb.append(m.group(i));
+                sb.append(", starting at ");
+                sb.append(m.start(i));
+                sb.append(" ending at ");
+                sb.append(m.end(i));
                 sb.append(String.format("%n"));
             }
         }
