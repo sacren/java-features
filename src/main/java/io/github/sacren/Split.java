@@ -29,7 +29,7 @@ public class Split {
     /** Split setter to tokenize string. */
     public void set() {
         StringBuilder sb = new StringBuilder();
-        for (String token : input.split("(\\s|-|\\.|\\(|\\))+")) {
+        for (String token : input.split("\\W+")) {
             sb.append(token);
             sb.append(String.format("%n"));
         }
