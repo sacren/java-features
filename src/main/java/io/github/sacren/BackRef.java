@@ -49,11 +49,11 @@ public class BackRef {
             for (int i = 0; i <= m.groupCount(); i++) {
                 sb.append("Group count ");
                 sb.append(i);
-                sb.append(": ");
+                sb.append(": subsequence=\"");
                 sb.append(m.group(i));
-                sb.append(", starting at ");
+                sb.append("\", start @ ");
                 sb.append(m.start(i));
-                sb.append(" ending at ");
+                sb.append(", end @ ");
                 sb.append(m.end(i));
                 sb.append(String.format("%n"));
             }
