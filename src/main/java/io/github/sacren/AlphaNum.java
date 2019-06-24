@@ -2,43 +2,43 @@
  * AlphaNum class for number of vowels and digits.
  *
  * <p>Private instance data:
- * -usrStr:String
+ * -input:String
  * -vowels:int
  * -digits:int
  *
  * <p>Constructor:
- * +AlphaNum(usrStr:String)
+ * +AlphaNum(input:String)
  *
  * <p>Public methods:
- * +set(usrStr:String):void
+ * +set(input:String):void
  * +count():void
  * +rate(num:int):double
  * +toString():String
  */
 public class AlphaNum {
     /* private instance data */
-    private String usrStr;
+    private String input;
     private int vowels;
     private int digits;
 
     /** AlphaNum constructor. */
-    public AlphaNum(String usrStr) {
-        set(usrStr);
+    public AlphaNum(String input) {
+        set(input);
         count();
     }
 
     /** AlphaNum setter for input string. */
-    public void set(String usrStr) {
-        if (usrStr.length() == 0) {
+    public void set(String input) {
+        if (input.length() == 0) {
             throw new IllegalArgumentException(
-                    String.format("\"%s\" for input is invalid!", usrStr));
+                    String.format("\"%s\" for input is invalid!", input));
         }
-        this.usrStr = usrStr;
+        this.input = input;
     }
 
     /** AlphaNum method to count vowels and digits. */
     public void count() {
-        for (char c : usrStr.toLowerCase().toCharArray()) {
+        for (char c : input.toLowerCase().toCharArray()) {
             if (Character.isDigit(c)) {
                 digits++;
                 continue;
@@ -58,7 +58,7 @@ public class AlphaNum {
 
     /** AlphaNum method for the percent of vowels or digits. */
     public double rate(int num) {
-        return (double) num * 100 / usrStr.length();
+        return (double) num * 100 / input.length();
     }
 
     /** AlphaNum instance printout. */
