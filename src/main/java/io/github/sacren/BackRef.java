@@ -68,9 +68,9 @@ public class BackRef {
 
     /** BackRef method to swap words. */
     public void swap() {
-        Pattern p = Pattern.compile("(\\w+) (\\w+)");
+        Pattern p = Pattern.compile("(\\w+)(\\W+)(\\w+)");
         Matcher m = p.matcher(input2);
-        swapped = m.replaceFirst("$2 $1");
+        swapped = m.replaceFirst("$3$2$1");
     }
 
     /** BackRef string method. */
