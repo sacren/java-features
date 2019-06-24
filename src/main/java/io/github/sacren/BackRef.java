@@ -2,7 +2,8 @@
  * BackRef class for regex back reference.
  *
  * <p>Private instance data:
- * -input:String
+ * -input1:String
+ * -input2:String
  * -reversed:String
  * -tokens:String
  *
@@ -18,20 +19,24 @@ import java.util.regex.Pattern;
 
 public class BackRef {
     /* private instance data */
-    private String input;
+    private String input1;
+    private String input2;
     private String reversed;
+    private String swapped;
     private String tokens;
 
     /** BackRef constructor. */
     public BackRef() {
-        input = "one:two:three:four";
+        input1 = "one:two:three:four";
+        input2 = "apple orange";
         reverse();
+        swap();
     }
 
     /** BackRef setter for backward reference. */
     public void reverse() {
         Pattern p = Pattern.compile("(.+):(.+):(.+):(.+)");
-        Matcher m = p.matcher(input);
+        Matcher m = p.matcher(input1);
         reversed = m.replaceAll("$4+$3+$2+$1");
         /* for all the text */
         m.reset(); /* reset() before find() for the counter */
@@ -61,15 +66,26 @@ public class BackRef {
         tokens = sb.deleteCharAt(sb.length() - 1).toString();
     }
 
+    /** BackRef method to swap words. */
+    public void swap() {
+        Pattern p = Pattern.compile("(\\w+) (\\w+)");
+        Matcher m = p.matcher(input2);
+        swapped = m.replaceFirst("$2 $1");
+    }
+
     /** BackRef string method. */
     public String toString() {
         return String.format(
                 "Original text: %s%n"
                         + "Reversed text: %s%n%n"
+                        + "Original text: %s%n"
+                        + "Replaced text: %s%n%n"
                         + "=== Tokens ===%n%n"
                         + "%s",
-                input,
+                input1,
                 reversed,
+                input2,
+                swapped,
                 tokens);
     }
 }
