@@ -95,7 +95,7 @@ public class Prime {
         size = 0;
         for (int i = 2; i <= num; i++) {
             if (isPrime(i)) {
-                sb.append(String.format("%7d", i));
+                sb.append(String.format("%-7d", i));
                 sb.append(' ');
                 if (++size % 10 == 0) {
                     sb.deleteCharAt(sb.length() - 1);
