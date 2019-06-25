@@ -4,6 +4,7 @@
  * <p>Private instance data:
  * -num:int
  * -list:int[]
+ * -size:int
  *
  * <p>Constructor:
  * +Prime(num:int)
@@ -17,8 +18,6 @@
  * +getList():int[]
  * +toString():String
  */
-import java.util.Arrays;
-
 public class Prime {
     /* private static data */
     private static final int MAX_NUM = 1000000;
@@ -26,6 +25,7 @@ public class Prime {
     /* private instance data */
     private int num;
     private int[] list;
+    private int size;
 
     /** Prime constructor. */
     public Prime(int num) {
@@ -89,6 +89,23 @@ public class Prime {
         }
     }
 
+    /** Prime getter for the formatted list of prime numbers. */
+    public String listPrime() {
+        StringBuilder sb = new StringBuilder();
+        size = 0;
+        for (int i = 2; i <= num; i++) {
+            if (isPrime(i)) {
+                sb.append(String.format("%7d", i));
+                sb.append(' ');
+                if (++size % 10 == 0) {
+                    sb.deleteCharAt(sb.length() - 1);
+                    sb.append(String.format("%n"));
+                }
+            }
+        }
+        return sb.toString();
+    }
+
     /** Prime getter for the list of prime numbers. */
     public int[] getList() {
         return list;
@@ -100,8 +117,8 @@ public class Prime {
                 "%s%n%n"
                         + "Prime number total:   %d%n"
                         + "Prime number percent: %.2f%%",
-                Arrays.toString(list),
-                list.length,
-                (double) list.length / num * 100);
+                listPrime(),
+                size,
+                (double) size / num * 100);
     }
 }
