@@ -5,6 +5,7 @@
  * -num:int
  * -list:int[]
  * -size:int
+ * -primes:String
  *
  * <p>Constructor:
  * +Prime(num:int)
@@ -16,6 +17,7 @@
  * +setSize():void
  * +setList():void
  * +getList():int[]
+ * +setPrime():void
  * +toString():String
  */
 public class Prime {
@@ -26,12 +28,14 @@ public class Prime {
     private int num;
     private int[] list;
     private int size;
+    private String primes;
 
     /** Prime constructor. */
     public Prime(int num) {
         setNum(num);
         setSize();
         setList();
+        setPrime();
     }
 
     /** Prime setter for the range. */
@@ -90,7 +94,7 @@ public class Prime {
     }
 
     /** Prime getter for the formatted list of prime numbers. */
-    public String listPrime() {
+    public void setPrime() {
         StringBuilder sb = new StringBuilder();
         size = 0;
         for (int i = 2; i <= num; i++) {
@@ -103,7 +107,7 @@ public class Prime {
                 }
             }
         }
-        return sb.toString();
+        primes = sb.toString();
     }
 
     /** Prime getter for the list of prime numbers. */
@@ -117,7 +121,7 @@ public class Prime {
                 "%s%n%n"
                         + "Prime number total:   %d%n"
                         + "Prime number percent: %.2f%%",
-                listPrime(),
+                primes,
                 size,
                 (double) size / num * 100);
     }
