@@ -64,8 +64,13 @@ public class AlphaNum {
     /** AlphaNum instance printout. */
     public String toString() {
         return String.format(
-                "Number of vowels: %d (%.2f%%)%n"
+                "=== Input string ===%n%n"
+                        + "%s%n%n"
+                        + "Length:           %d%n"
+                        + "Number of vowels: %d (%.2f%%)%n"
                         + "Number of digits: %d (%.2f%%)",
+                input,
+                input.length(),
                 vowels, rate(vowels),
                 digits, rate(digits));
     }

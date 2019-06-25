@@ -12,8 +12,6 @@ public class TestAlphaNum {
         usrStr = inStream.nextLine();
         inStream.close();
         System.out.println();
-        System.out.println("=== Count vowels and digits ===");
-        System.out.println();
         System.out.println(new AlphaNum(usrStr));
     }
 }
