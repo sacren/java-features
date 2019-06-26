@@ -71,7 +71,7 @@ public class Prime {
 
     /** Prime setter for how many prime numbers. */
     public void setSize() {
-        int size = 0; /* for 0 and 1 */
+        size = 0; /* for 0 and 1 */
         if (num > 1) {
             size = 1; /* for 2 and above */
         }
@@ -96,7 +96,7 @@ public class Prime {
     /** Prime setter for the formatted list of prime numbers. */
     public void setFormat() {
         StringBuilder sb = new StringBuilder();
-        size = 0;
+        int size = 0;
         for (int prime : list) {
             sb.append(String.format("%-7d", prime));
             sb.append(' ');
