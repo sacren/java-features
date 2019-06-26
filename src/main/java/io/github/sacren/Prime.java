@@ -97,6 +97,10 @@ public class Prime {
     public void setFormat() {
         StringBuilder sb = new StringBuilder();
         int size = 0;
+        if (list.length == 0) {
+            primes = "No prime number";
+            return;
+        }
         for (int prime : list) {
             sb.append(String.format("%-7d", prime));
             sb.append(' ');
