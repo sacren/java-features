@@ -17,7 +17,7 @@
  * +setSize():void
  * +setList():void
  * +getList():int[]
- * +setPrime():void
+ * +setFormat():void
  * +toString():String
  */
 public class Prime {
@@ -35,7 +35,7 @@ public class Prime {
         setNum(num);
         setSize();
         setList();
-        setPrime();
+        setFormat();
     }
 
     /** Prime setter for the range. */
@@ -93,18 +93,16 @@ public class Prime {
         }
     }
 
-    /** Prime getter for the formatted list of prime numbers. */
-    public void setPrime() {
+    /** Prime setter for the formatted list of prime numbers. */
+    public void setFormat() {
         StringBuilder sb = new StringBuilder();
         size = 0;
-        for (int i = 2; i <= num; i++) {
-            if (isPrime(i)) {
-                sb.append(String.format("%-7d", i));
-                sb.append(' ');
-                if (++size % 10 == 0) {
-                    sb.deleteCharAt(sb.length() - 1);
-                    sb.append(String.format("%n"));
-                }
+        for (int prime : list) {
+            sb.append(String.format("%-7d", prime));
+            sb.append(' ');
+            if (++size % 10 == 0) {
+                sb.deleteCharAt(sb.length() - 1);
+                sb.append(String.format("%n"));
             }
         }
         primes = sb.toString();
