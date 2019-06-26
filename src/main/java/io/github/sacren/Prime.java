@@ -100,9 +100,10 @@ public class Prime {
         for (int prime : list) {
             sb.append(String.format("%-7d", prime));
             sb.append(' ');
-            if (++size % 10 == 0) {
+            if (++size == 10) {
                 sb.deleteCharAt(sb.length() - 1);
                 sb.append(String.format("%n"));
+                size = 0;
             }
         }
         primes = sb.toString();
