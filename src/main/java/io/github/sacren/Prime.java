@@ -86,7 +86,12 @@ public class Prime {
     /** Prime setter for the list of prime numbers. */
     public void setList() {
         int size = 0;
-        for (int i = 2; i <= num; i++) {
+        if (num == 2) {
+            list[size] = 2;
+            return;
+        }
+        list[size++] = 2; /* special treatment of even prime */
+        for (int i = 3; i <= num; i += 2) { /* odd numbers */
             if (isPrime(i)) {
                 list[size++] = i;
             }
