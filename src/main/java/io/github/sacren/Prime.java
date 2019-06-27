@@ -86,6 +86,9 @@ public class Prime {
     /** Prime setter for the list of prime numbers. */
     public void setList() {
         int size = 0;
+        if (num == 1) { /* empty list of prime numbers */
+            return;
+        }
         if (num == 2) {
             list[size] = 2;
             return;
