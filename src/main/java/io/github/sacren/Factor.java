@@ -6,7 +6,7 @@
  * -prime:Prime
  *
  * <p>Constructor:
- * +Factor(num:int)
+ * +Factor(bound:int)
  *
  * <p>Public methods:
  * +setSize():void
@@ -22,8 +22,8 @@ public class Factor {
     private Prime prime;
 
     /** Factor constructor. */
-    public Factor(int num) {
-        prime = new Prime(num);
+    public Factor(int bound) {
+        prime = new Prime(bound);
         setSize();
         setList();
     }

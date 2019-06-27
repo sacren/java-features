@@ -2,16 +2,16 @@
  * Prime class for a list of prime numbers.
  *
  * <p>Private instance data:
- * -num:int
+ * -bound:int
  * -list:int[]
  * -size:int
  * -primes:String
  *
  * <p>Constructor:
- * +Prime(num:int)
+ * +Prime(bound:int)
  *
  * <p>Public methods:
- * +setNum(num:int):void
+ * +setBound(bound:int):void
  * +getNum():int
  * +isPrime(num:int):boolean
  * +setSize():void
@@ -25,31 +25,31 @@ public class Prime {
     private static final int MAX_NUM = 1000000;
 
     /* private instance data */
-    private int num;
+    private int bound;
     private int[] list;
     private int size;
     private String primes;
 
     /** Prime constructor. */
-    public Prime(int num) {
-        setNum(num);
+    public Prime(int bound) {
+        setBound(bound);
         setSize();
         setList();
         setFormat();
     }
 
     /** Prime setter for the range. */
-    public void setNum(int num) {
-        if (num <= 0 || num > MAX_NUM) {
+    public void setBound(int bound) {
+        if (bound <= 0 || bound > MAX_NUM) {
             throw new IllegalArgumentException(
-                    String.format("%d is out of range!", num));
+                    String.format("%d is out of range!", bound));
         }
-        this.num = num;
+        this.bound = bound;
     }
 
     /** Prime getter for the instance number. */
     public int getNum() {
-        return num;
+        return bound;
     }
 
     /** Prime getter if the number is prime. */
@@ -72,10 +72,10 @@ public class Prime {
     /** Prime setter for how many prime numbers. */
     public void setSize() {
         size = 0; /* for 0 and 1 */
-        if (num > 1) {
+        if (bound > 1) {
             size = 1; /* for 2 and above */
         }
-        for (int i = 3; i <= num; i += 2) { /* from 3 and odd numbers */
+        for (int i = 3; i <= bound; i += 2) { /* from 3 and odd numbers */
             if (isPrime(i)) {
                 size++;
             }
@@ -86,15 +86,15 @@ public class Prime {
     /** Prime setter for the list of prime numbers. */
     public void setList() {
         int size = 0;
-        if (num == 1) { /* empty list of prime numbers */
+        if (bound == 1) { /* empty list of prime numbers */
             return;
         }
-        if (num == 2) {
+        if (bound == 2) {
             list[size] = 2;
             return;
         }
         list[size++] = 2; /* special treatment of even prime */
-        for (int i = 3; i <= num; i += 2) { /* odd numbers */
+        for (int i = 3; i <= bound; i += 2) { /* odd numbers */
             if (isPrime(i)) {
                 list[size++] = i;
             }
@@ -134,6 +134,6 @@ public class Prime {
                         + "Prime number percent: %.2f%%",
                 primes,
                 size,
-                (double) size / num * 100);
+                (double) size / bound * 100);
     }
 }
