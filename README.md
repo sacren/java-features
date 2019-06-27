@@ -23,7 +23,7 @@ Maven is employed for build and test automation.
         $ git clone git://github.com/sacren/java-features.git java-features
         $ cd java-features
 
-2. Build and test:
+2. Build and run:
 
         $ mvn clean package
         $ java -cp target/java-features-1.0.jar TestShape
