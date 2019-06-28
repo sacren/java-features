@@ -22,10 +22,11 @@ public class WaterMonster extends Monster {
                 getName());
     }
 
-    /** WaterMonster instance printout. */
+    /** WaterMonster string method. */
     public String toString() {
         return String.format(
-                "=== Water Monster %s ===",
+                "=== Water Monster ===%n%n"
+                        + "Name: %s",
                 getName());
     }
 }

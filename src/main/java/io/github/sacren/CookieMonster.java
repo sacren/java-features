@@ -22,10 +22,11 @@ public class CookieMonster extends Monster {
                 getName());
     }
 
-    /** CookieMonster instance printout. */
+    /** CookieMonster string method. */
     public String toString() {
         return String.format(
-                "=== Cookie Monster %s ===",
+                "=== Cookie Monster ===%n%n"
+                        + "Name: %s",
                 getName());
     }
 }

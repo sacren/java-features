@@ -22,10 +22,11 @@ public class FireMonster extends Monster {
                 getName());
     }
 
-    /** FireMonster instance printout. */
+    /** FireMonster string method. */
     public String toString() {
         return String.format(
-                "=== Fire Monster %s ===",
+                "=== Fire Monster ===%n%n"
+                        + "Name: %s",
                 getName());
     }
 }
