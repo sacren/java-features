@@ -12,7 +12,7 @@
  *
  * <p>Public methods:
  * +setBound(bound:int):void
- * +getNum():int
+ * +getBound():int
  * +isPrime(num:int):boolean
  * +setSize():void
  * +setList():void
@@ -48,7 +48,7 @@ public class Prime {
     }
 
     /** Prime getter for the instance number. */
-    public int getNum() {
+    public int getBound() {
         return bound;
     }
 

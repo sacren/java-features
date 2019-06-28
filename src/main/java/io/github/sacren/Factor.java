@@ -31,7 +31,7 @@ public class Factor {
     /** Factor setter for how many factors. */
     public void setSize() {
         int size = 0;
-        for (int i = 1; i <= prime.getNum(); i++) {
+        for (int i = 1; i <= prime.getBound(); i++) {
             if (isFactor(i)) {
                 size++;
             }
@@ -42,7 +42,7 @@ public class Factor {
     /** Factor setter for the list of prime factors. */
     public void setList() {
         int size = 0;
-        for (int i = 2; i <= prime.getNum(); i++) {
+        for (int i = 2; i <= prime.getBound(); i++) {
             if (isFactor(i)) {
                 list[size++] = i;
             }
@@ -71,6 +71,6 @@ public class Factor {
                         + "Factor percent: %.2f%%",
                 Arrays.toString(list),
                 list.length,
-                (double) list.length / prime.getNum() * 100);
+                (double) list.length / prime.getBound() * 100);
     }
 }
