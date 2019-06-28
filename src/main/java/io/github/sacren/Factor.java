@@ -14,18 +14,18 @@
  * +isFactor(int num):boolean
  * +toString():String
  */
-import java.util.Arrays;
-
 public class Factor {
     /* private instance data */
     private int[] list;
     private Prime prime;
+    private String factors;
 
     /** Factor constructor. */
     public Factor(int bound) {
         prime = new Prime(bound);
         setSize();
         setList();
+        setFormat();
     }
 
     /** Factor setter for how many factors. */
@@ -63,13 +63,33 @@ public class Factor {
         return product == num;
     }
 
+    /** Factor setter for the formatted list of factors. */
+    public void setFormat() {
+        StringBuilder sb = new StringBuilder();
+        int size = 0;
+        if (list.length == 0) {
+            factors = "No prime factor";
+            return;
+        }
+        for (int factor : list) {
+            sb.append(String.format("%-7d", factor));
+            sb.append(' ');
+            if (++size == 10) {
+                sb.deleteCharAt(sb.length() - 1);
+                sb.append(String.format("%n"));
+                size = 0;
+            }
+        }
+        factors = sb.toString();
+    }
+
     /** Factor string method. */
     public String toString() {
         return String.format(
                 "%s%n%n"
                         + "Factor total:   %d%n"
                         + "Factor percent: %.2f%%",
-                Arrays.toString(list),
+                factors,
                 list.length,
                 (double) list.length / prime.getBound() * 100);
     }
