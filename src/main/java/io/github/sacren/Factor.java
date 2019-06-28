@@ -2,8 +2,10 @@
  * Factor class for a list of prime factors.
  *
  * <p>Private instance data:
+ * -size:int
  * -list:int[]
  * -prime:Prime
+ * -factors:String
  *
  * <p>Constructor:
  * +Factor(bound:int)
@@ -16,6 +18,7 @@
  */
 public class Factor {
     /* private instance data */
+    private int size;
     private int[] list;
     private Prime prime;
     private String factors;
@@ -28,9 +31,9 @@ public class Factor {
         setFormat();
     }
 
-    /** Factor setter for how many factors. */
+    /** Factor setter for the number of prime factors. */
     public void setSize() {
-        int size = 0;
+        size = 0;
         for (int i = 1; i <= prime.getBound(); i++) {
             if (isFactor(i)) {
                 size++;
@@ -90,7 +93,7 @@ public class Factor {
                         + "Factor total:   %d%n"
                         + "Factor percent: %.2f%%",
                 factors,
-                list.length,
-                (double) list.length / prime.getBound() * 100);
+                size,
+                (double) size / prime.getBound() * 100);
     }
 }
