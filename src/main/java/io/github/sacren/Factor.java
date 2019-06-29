@@ -70,7 +70,7 @@ public class Factor {
     public void setFormat() {
         StringBuilder sb = new StringBuilder();
         int column = 1;
-        if (list.length == 0) {
+        if (size == 0) {
             factors = "No prime factor";
             return;
         }
