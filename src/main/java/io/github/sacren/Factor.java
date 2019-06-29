@@ -71,7 +71,7 @@ public class Factor {
         StringBuilder sb = new StringBuilder();
         int column = 1;
         if (size == 0) {
-            factors = "No prime factor";
+            factors = "No product of prime factors";
             return;
         }
         for (int factor : list) {
@@ -89,9 +89,10 @@ public class Factor {
     /** Factor string method. */
     public String toString() {
         return String.format(
-                "%s%n%n"
-                        + "Factor total:   %d%n"
-                        + "Factor percent: %.2f%%",
+                "=== Product of prime factors ===%n%n"
+                        + "%s%n%n"
+                        + "Product total:   %d%n"
+                        + "Product percent: %.2f%%",
                 factors,
                 size,
                 (double) size / prime.getBound() * 100);

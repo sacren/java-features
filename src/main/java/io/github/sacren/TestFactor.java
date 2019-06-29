@@ -12,8 +12,6 @@ public class TestFactor {
         num = in.nextInt();
         in.close();
         System.out.println();
-        System.out.println("=== Prime factors ===");
-        System.out.println();
         System.out.println(new Factor(num));
     }
 }
