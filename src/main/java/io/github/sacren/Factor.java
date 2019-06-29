@@ -11,12 +11,16 @@
  * +Factor(bound:int)
  *
  * <p>Public methods:
+ * +setBound(bound:int):void
  * +setSize():void
  * +setList():void
- * +isFactor(int num):boolean
+ * +isFactor(num:int):boolean
  * +toString():String
  */
 public class Factor {
+    /* private static data */
+    private static final int MAX_NUM = 10000;
+
     /* private instance data */
     private int size;
     private int[] list;
@@ -25,10 +29,19 @@ public class Factor {
 
     /** Factor constructor. */
     public Factor(int bound) {
-        prime = new Prime(bound);
+        setBound(bound);
         setSize();
         setList();
         setFormat();
+    }
+
+    /** Factor setter for the bound. */
+    public void setBound(int bound) {
+        if (bound > MAX_NUM) {
+            throw new IllegalArgumentException(
+                    String.format("%d is out of boundary!", bound));
+        }
+        prime = new Prime(bound);
     }
 
     /** Factor setter for the number of prime factors. */
@@ -75,8 +88,7 @@ public class Factor {
             return;
         }
         for (int factor : list) {
-            sb.append(String.format("%-7d", factor));
-            sb.append(' ');
+            sb.append(String.format("%-6d", factor));
             if (column++ == 10) {
                 sb.deleteCharAt(sb.length() - 1);
                 sb.append(String.format("%n"));
