@@ -69,7 +69,7 @@ public class Factor {
     /** Factor setter for the formatted list of factors. */
     public void setFormat() {
         StringBuilder sb = new StringBuilder();
-        int size = 0;
+        int column = 1;
         if (list.length == 0) {
             factors = "No prime factor";
             return;
@@ -77,10 +77,10 @@ public class Factor {
         for (int factor : list) {
             sb.append(String.format("%-7d", factor));
             sb.append(' ');
-            if (++size == 10) {
+            if (column++ == 10) {
                 sb.deleteCharAt(sb.length() - 1);
                 sb.append(String.format("%n"));
-                size = 0;
+                column = 1;
             }
         }
         factors = sb.toString();
