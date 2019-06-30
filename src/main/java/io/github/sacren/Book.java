@@ -1,7 +1,7 @@
 /**
  * Book class composed of Author class.
  *
- * <p>Private data:
+ * <p>Private instance data:
  * -title:String
  * -author:Author
  * -price:double
@@ -11,7 +11,7 @@
  * +Book(title:String, author:Author, price:double, sales:int)
  *
  * <p>Public methods:
- * +getBookTitle():String
+ * +getTitle():String
  * +getAuthor():Author
  * +getPrice():double
  * +setPrice(price:double):void
@@ -26,7 +26,7 @@ public class Book {
     private double price;
     private int sales;
 
-    /** Custom constructor. */
+    /** Book constructor. */
     public Book(String title, Author author, double price, int sales) {
         this.title = title;
         this.author = author;
@@ -34,43 +34,43 @@ public class Book {
         this.sales = sales;
     }
 
-    /** Public accessor for book title. */
-    public String getBookTitle() {
+    /** Book getter for the book title. */
+    public String getTitle() {
         return title;
     }
 
-    /** Public accessor for Author instance. */
+    /** Book getter for author info. */
     public Author getAuthor() {
         return author;
     }
 
-    /** Publice accessor for book price. */
+    /** Book getter for the book price. */
     public double getPrice() {
         return price;
     }
 
-    /** Public mutator for book price. */
+    /** Book setter for book price. */
     public void setPrice(double price) {
         this.price = price;
     }
 
-    /** Public accessor for book sales. */
+    /** Book getter for book sales. */
     public int getSales() {
         return sales;
     }
 
-    /** Public setter for book sales. */
+    /** Book setter for book sales. */
     public void setSales(int sales) {
         this.sales = sales;
     }
 
-    /** Book description. */
+    /** Book string method. */
     public String toString() {
         return String.format(
-                "%s%n"
+                "Book title:    %s%n"
                         + "%s%n"
-                        + "Price: %.2f%n"
-                        + "Sales: %d",
+                        + "Price:         %.2f%n"
+                        + "Sales:         %d",
                 title,
                 author,
                 price,
