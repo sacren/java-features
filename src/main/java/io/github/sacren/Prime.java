@@ -110,10 +110,24 @@ public class Prime {
             return;
         }
         for (int prime : list) {
-            sb.append(String.format("%-7d", prime));
-            sb.append(' ');
+            sb.append(String.format("%-8d", prime));
             if (++size == 10) {
-                sb.deleteCharAt(sb.length() - 1);
+                if (prime < 100) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+                if (prime < 1000) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+                if (prime < 10000) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+                if (prime < 100000) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+                if (prime < 10000) {
+                    sb.deleteCharAt(sb.length() - 1);
+                    sb.deleteCharAt(sb.length() - 1);
+                }
                 sb.append(String.format("%n"));
                 size = 0;
             }

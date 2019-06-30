@@ -90,7 +90,16 @@ public class Factor {
         for (int factor : list) {
             sb.append(String.format("%-6d", factor));
             if (column++ == 10) {
-                sb.deleteCharAt(sb.length() - 1);
+                if (factor < 100) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+                if (factor < 1000) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+                if (factor < 10000) {
+                    sb.deleteCharAt(sb.length() - 1);
+                    sb.deleteCharAt(sb.length() - 1);
+                }
                 sb.append(String.format("%n"));
                 column = 1;
             }
