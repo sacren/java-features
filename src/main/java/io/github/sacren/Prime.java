@@ -104,14 +104,14 @@ public class Prime {
     /** Prime setter for the formatted list of prime numbers. */
     public void setFormat() {
         StringBuilder sb = new StringBuilder();
-        int size = 0;
+        int column = 1;
         if (list.length == 0) {
             primes = "No prime number";
             return;
         }
         for (int prime : list) {
             sb.append(String.format("%-8d", prime));
-            if (++size == 10) {
+            if (column++ == 10) {
                 if (prime < 100) {
                     sb.deleteCharAt(sb.length() - 1);
                 }
@@ -129,7 +129,7 @@ public class Prime {
                     sb.deleteCharAt(sb.length() - 1);
                 }
                 sb.append(String.format("%n"));
-                size = 0;
+                column = 1;
             }
         }
         primes = sb.toString();
