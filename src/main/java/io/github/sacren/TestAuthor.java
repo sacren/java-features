@@ -4,29 +4,31 @@
 public class TestAuthor {
     /** Test driver for Author. */
     public static void main(String[] args) {
+        /* Author class */
         String name = "Dennis Ritchie";
         String email = "dmr@bell-labs.com";
-        final char gender = 'M';
-        Author author = new Author(name, email, gender);
+        Author dennis = new Author(name, email, 'M');
         System.out.println();
-        System.out.println(author);
+        System.out.println("=== Author class ===");
+        System.out.println();
+        System.out.println(dennis);
         System.out.println();
         System.out.printf(
                 "The C Programming Language is authored by %s.%n"
                         + "Send email to %s for questions.%n",
-                author.getAuthorName(),
-                author.getEmail());
-        /* reset author email */
-        author.setEmail(null);
+                dennis.getName(),
+                dennis.getEmail());
+        /* delete author email */
+        dennis.setEmail(null);
         System.out.println();
         System.out.println("=== After deleting email address ===");
         System.out.println();
-        System.out.println(author);
+        System.out.println(dennis);
         /* restore author email */
-        author.setEmail(email);
+        dennis.setEmail(email);
         System.out.println();
         System.out.println("=== After restoring email address ===");
         System.out.println();
-        System.out.println(author);
+        System.out.println(dennis);
     }
 }
