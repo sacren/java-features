@@ -23,6 +23,7 @@
  * +getEndY():double
  * +setEndY(axisY):void
  * +getLength():double
+ * +getGradient():double
  * +toString():String
  */
 public class Line {
@@ -107,16 +108,23 @@ public class Line {
         return begin.distance(end);
     }
 
+    /** Line getter for the gradient of this line. */
+    public double getGradient() {
+        return (end.getY() - begin.getY()) / (end.getX() - begin.getX());
+    }
+
     /** Line string method. */
     public String toString() {
         return String.format(
                 "From %s to %s%n" /* invoke Point's toString() */
                         + "Start point: %s%n"
                         + "End point:   %s%n"
-                        + "Line length: %.2f",
+                        + "Line length: %.2f%n"
+                        + "Gradient:    %.2f",
                 begin, end,
                 begin,
                 end,
-                getLength());
+                getLength(),
+                getGradient());
     }
 }
