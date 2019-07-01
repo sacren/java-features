@@ -39,7 +39,9 @@ public class TestLine {
         System.out.println();
         System.out.println("=== Line by 2 points ===");
         System.out.println();
-        Line line2 = new Line(new Point(beginX, beginY), new Point(endX, endY));
+        Point begin = new Point(beginX, beginY);
+        Point end = new Point(endX, endY);
+        Line line2 = new Line(begin, end);
         System.out.println(line2);
         /* update line points. */
         line2.setBegin(new Point(line2.getBeginX() + 1, line2.getBeginY() - 1));

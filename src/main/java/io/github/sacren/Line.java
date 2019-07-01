@@ -1,20 +1,19 @@
 /**
  * Line class by two points of begin and end.
  *
- * <p>Private data:
+ * <p>Private instance data:
  * -begin:Point
  * -end:Point
  *
  * <p>Constructor:
- * +Line(beginX:double, beginY:double, endX:double, endY:double)
  * +Line(begin:Point, end:Point)
+ * +Line(beginX:double, beginY:double, endX:double, endY:double)
  *
  * <p>Public methods:
  * +getBegin():Point
  * +setBegin(begin:Point):void
  * +getEnd():Point
  * +setEnd(end:Point):void
- * +toString():String
  * +getBeginX():double
  * +setBeginX(axisX:double):void
  * +getBeginY():double
@@ -24,6 +23,7 @@
  * +getEndY():double
  * +setEndY(axisY):void
  * +getLength():double
+ * +toString():String
  */
 public class Line {
     /* private instance data */
@@ -102,18 +102,18 @@ public class Line {
         end.setY(axisY);
     }
 
-    /** Line length from begin point to end point. */
+    /** Line getter for length from begin point to end point. */
     public double getLength() {
         return begin.distance(end);
     }
 
-    /** Line instance printout. */
+    /** Line string method. */
     public String toString() {
         return String.format(
-                "From P%s to P%s%n" /* invoke Point's toString() */
-                        + "Start point: P%s%n"
-                        + "End point:   P%s%n"
-                        + "Line length is %.2f",
+                "From %s to %s%n" /* invoke Point's toString() */
+                        + "Start point: %s%n"
+                        + "End point:   %s%n"
+                        + "Line length: %.2f",
                 begin, end,
                 begin,
                 end,
