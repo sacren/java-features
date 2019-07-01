@@ -20,18 +20,14 @@
  * +distance():double
  */
 public class Point {
-    /* private static data */
-    private static final double DEFAULT_X = 0;
-    private static final double DEFAULT_Y = 0;
-
     /* private instance data */
     private double axisX;
     private double axisY;
 
     /** Point default constructor. */
     public Point() {
-        axisX = DEFAULT_X;
-        axisY = DEFAULT_Y;
+        axisX = 0;
+        axisY = 0;
     }
 
     /** Point custom constructor. */
@@ -60,28 +56,28 @@ public class Point {
         this.axisY = axisY;
     }
 
-    /** Point instance printout. */
+    /** Point string method. */
     public String toString() {
         return String.format(
                 "(%.2f, %.2f)",
                 axisX, axisY);
     }
 
-    /** Point method for distance from this point to P(axisX, axisY). */
+    /** Point getter for distance from this point to Point (axisX, axisY). */
     public double distance(double axisX, double axisY) {
         return Math.sqrt((double) (
                     Math.abs(axisX - this.axisX) * Math.abs(axisX - this.axisX)
                     + Math.abs(axisY - this.axisY) * Math.abs(axisY - this.axisY)));
     }
 
-    /** Point method for distance from this point to another. */
+    /** Point getter for distance from this point to another. */
     public double distance(Point p) {
         return Math.sqrt((double) (
                     Math.abs(p.getX() - axisX) * Math.abs(p.getX() - axisX)
                     + Math.abs(p.getY() - axisY) * Math.abs(p.getY() - axisY)));
     }
 
-    /** Point method for distance from this point to P(0, 0). */
+    /** Point getter for distance from this point to Point (0, 0). */
     public double distance() {
         return Math.sqrt((double) (
                     Math.abs(axisX) * Math.abs(axisX)
