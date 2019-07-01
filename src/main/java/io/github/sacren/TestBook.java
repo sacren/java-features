@@ -38,5 +38,15 @@ public class TestBook {
                 dennis,
                 langC.getPrice(),
                 langC.getSales());
+        /* use anonymous Author instance */
+        Book dummy = new Book(
+                "Java for Dummies",
+                new Author("Peter Pan", "pan@nowhere.net", 'M'),
+                19.99,
+                9000);
+        System.out.println();
+        System.out.println("=== Book of anonymous Author instance ===");
+        System.out.println();
+        System.out.println(dummy);
     }
 }
