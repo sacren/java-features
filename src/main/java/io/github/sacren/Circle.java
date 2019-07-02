@@ -1,6 +1,6 @@
 /**
- * Circle class composed of Point class
- * Circle subclass extends Shape superclass
+ * Circle class is composed of Point class.
+ * Circle subclass extends Shape superclass.
  *
  * <p>Private data with default values:
  * -center:Point = {0, 0}
@@ -17,7 +17,8 @@
  * +getRadius():double
  * +setRadius(radius:double):void
  * +getDiameter():double
- * +getCircumference():double
+ * +getCircum():double
+ * +getPerimeter():double
  * +getArea():double
  * +getCenter():Point
  * +setCenter(center:Point):void
@@ -63,26 +64,26 @@ public class Circle extends Shape {
         setRadius(radius);
     }
 
-    /** Circle constructor directly using Point. */
+    /** Circle constructor using Point. */
     public Circle(Point center, double radius) {
         super(DEFAULT_COLOR);
         this.center = center;
         setRadius(radius);
     }
 
-    /** Circle custom constructor with center, color and radisu. */
+    /** Circle constructor with center, color and radisu. */
     public Circle(Point center, double radius, String color) {
         super(color);
         this.center = center;
         setRadius(radius);
     }
 
-    /** getter for Circle radius. */
+    /** Circle getter for the radius of circle. */
     public double getRadius() {
         return radius;
     }
 
-    /** setter of Circle radius. */
+    /** Circle setter for the radius of circle. */
     public void setRadius(double radius) {
         if (radius < 0) {
             throw new IllegalArgumentException(
@@ -91,34 +92,39 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    /** Circle public method for circle diameter. */
+    /** Circle getter for circle diameter. */
     public double getDiameter() {
         return radius * 2;
     }
 
-    /** Circle public method for circle perimeter. */
+    /** Circle getter for circle circumference. */
+    public double getCircum() {
+        return getPerimeter();
+    }
+
+    /** Circle getter for circle perimeter. */
     @Override
     public double getPerimeter() {
         return radius * 2 * Math.PI;
     }
 
-    /** Circle public method for circle area. */
+    /** Circle getter for circle area. */
     @Override
     public double getArea() {
         return Math.PI * radius * radius;
     }
 
-    /** getter for Circle center Point data. */
+    /** Circle getter for the center of circle. */
     public Point getCenter() {
         return center;
     }
 
-    /** setter for Circle center Point data. */
+    /** Circle setter for the center of circle. */
     public void setCenter(Point center) {
         this.center = center;
     }
 
-    /** Circle description. */
+    /** Circle string method. */
     public String toString() {
         return String.format(
                 "[Circle (Radius=%.2f, Color=%s, Center=%s)]",
