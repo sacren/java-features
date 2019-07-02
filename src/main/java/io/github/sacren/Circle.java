@@ -127,7 +127,11 @@ public class Circle extends Shape {
     /** Circle string method. */
     public String toString() {
         return String.format(
-                "[Circle (Radius=%.2f, Color=%s, Center=%s)]",
-                radius, getColor(), center);
+                "Radius: %.2f%n"
+                        + "Color:  %s%n"
+                        + "Center: %s",
+                radius,
+                getColor(),
+                center);
     }
 }
