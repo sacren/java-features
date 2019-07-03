@@ -33,6 +33,12 @@ public class TestCircle {
         System.out.println();
         Shape c2 = new Circle(98);
         System.out.println(c2);
+        /* downcast to Circle */
+        System.out.println();
+        System.out.println("=== Downcast to Circle ===");
+        System.out.println();
+        Circle c3 = (Circle) c2;
+        System.out.println(c3);
         System.out.println();
         System.out.println("=== Calling custom circle methods ===");
         System.out.println();
@@ -44,7 +50,7 @@ public class TestCircle {
                 c2.getArea(),
                 c2.getPerimeter(),
                 c2.getColor(),
-                ((Circle)c2).getCenter());
+                c3.getCenter());
         System.out.println();
         System.out.println("=== A pink circle ===");
         System.out.println();
