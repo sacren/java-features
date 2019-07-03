@@ -13,7 +13,7 @@
  * +getArea():double
  * +getPerimeter():double
  *
- * <p>Public method:
+ * <p>Public methods:
  * +getColor():String
  * +setColor(color:String):void
  */

@@ -1,8 +1,9 @@
 /**
  * Circle class is composed of Point class.
- * Circle subclass extends Shape superclass.
  *
- * <p>Private data with default values:
+ * <p>Circle subclass extends Shape superclass.
+ *
+ * <p>Private instance data with default values:
  * -center:Point = {0, 0}
  * -radius:double = 1.0
  *
@@ -44,13 +45,13 @@ public class Circle extends Shape {
         radius = DEFAULT_RADIUS;
     }
 
-    /** Circle constructor with customized radius. */
+    /** Circle constructor with custom radius only. */
     public Circle(double radius) {
         this();
         setRadius(radius);
     }
 
-    /** Circle constructor with customized color and radisu. */
+    /** Circle constructor with custom color and radius. */
     public Circle(double radius, String color) {
         super(color);
         center = DEFAULT_CENTER;
@@ -71,7 +72,7 @@ public class Circle extends Shape {
         setRadius(radius);
     }
 
-    /** Circle constructor with center, color and radisu. */
+    /** Circle constructor with center, color and radius. */
     public Circle(Point center, double radius, String color) {
         super(color);
         this.center = center;
