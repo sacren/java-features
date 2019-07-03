@@ -27,6 +27,24 @@ public class TestCircle {
                 c1.getPerimeter(),
                 c1.getColor(),
                 ((Circle)c1).getCenter());
+        /* circle with custom radius */
+        System.out.println();
+        System.out.println("=== Circle with radius ===");
+        System.out.println();
+        Shape c2 = new Circle(98);
+        System.out.println(c2);
+        System.out.println();
+        System.out.println("=== Calling custom circle methods ===");
+        System.out.println();
+        System.out.printf(
+                "Circle area:          %.2f%n"
+                        + "Circle circumference: %.2f%n"
+                        + "Circle color:         %s%n"
+                        + "Circle center:        %s%n",
+                c2.getArea(),
+                c2.getPerimeter(),
+                c2.getColor(),
+                ((Circle)c2).getCenter());
         System.out.println();
         System.out.println("=== A pink circle ===");
         System.out.println();
