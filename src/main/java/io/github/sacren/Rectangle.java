@@ -113,7 +113,15 @@ public class Rectangle extends Shape {
     /** Rectangle instance printout. */
     public String toString() {
         return String.format(
-                "[Rectangle (Color=%s, Length=%.2f, Width=%.2f)]",
-                getColor(), length, width);
+                "Color:     %s%n"
+                        + "Length:    %.2f%n"
+                        + "Width:     %.2f%n"
+                        + "Area:      %.2f%n"
+                        + "Perimeter: %.2f",
+                getColor(),
+                length,
+                width,
+                getArea(),
+                getPerimeter());
     }
 }
