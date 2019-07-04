@@ -128,10 +128,16 @@ public class Circle extends Shape {
     /** Circle string method. */
     public String toString() {
         return String.format(
-                "Radius: %.2f%n"
-                        + "Color:  %s%n"
-                        + "Center: %s",
+                "Radius:        %.2f%n"
+                        + "Diameter:      %.2f%n"
+                        + "Circumference: %.2f%n"
+                        + "Area:          %.2f%n"
+                        + "Color:         %s%n"
+                        + "Center:        %s",
                 radius,
+                getDiameter(),
+                getCircum(),
+                getArea(),
                 getColor(),
                 center);
     }
