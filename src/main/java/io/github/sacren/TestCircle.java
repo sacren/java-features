@@ -56,6 +56,13 @@ public class TestCircle {
         System.out.println();
         /* circle with custom center, radius and color */
         Point center = new Point(45, 101);
-        System.out.println(new Circle(center, 6, "pink"));
+        Circle c4 = new Circle(center, 6, "pink");
+        System.out.println(c4);
+        System.out.println();
+        System.out.println("=== Update pink circle ===");
+        System.out.println();
+        c4.setCenter(new Point(center.getX(), 202));
+        c4.setRadius(7);
+        System.out.println(c4);
     }
 }
