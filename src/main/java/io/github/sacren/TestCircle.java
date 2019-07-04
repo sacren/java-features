@@ -64,5 +64,21 @@ public class TestCircle {
         c4.setCenter(new Point(center.getX(), 202));
         c4.setRadius(7);
         System.out.println(c4);
+        System.out.println();
+        System.out.println("=== Calling circle methods after update ===");
+        System.out.println();
+        System.out.printf(
+                "Circle radius:        %.2f%n"
+                        + "Circle diameter:      %.2f%n"
+                        + "Circle circumference: %.2f%n"
+                        + "Circle area:          %.2f%n"
+                        + "Circle color:         %s%n"
+                        + "Circle center:        %s",
+                c4.getRadius(),
+                c4.getDiameter(),
+                c4.getCircum(),
+                c4.getArea(),
+                c4.getColor(),
+                c4.getCenter());
     }
 }
