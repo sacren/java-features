@@ -1,5 +1,5 @@
 /**
- * Rectangle subclass extends Shape superclass
+ * Rectangle subclass extends Shape superclass.
  *
  * <p>Private instance data with default values:
  * -length:double = 2.0f
@@ -20,9 +20,6 @@
  * +getArea():double
  * +getPerimeter():double
  * +toString():String
- *
- * <p>Private helper methods:
- * -setLengthWidth(length:double, width:double):void
  */
 public class Rectangle extends Shape {
     /* private static data */
@@ -46,19 +43,19 @@ public class Rectangle extends Shape {
         this();
     }
 
-    /** Rectangle constructor initializing length only. */
+    /** Rectangle constructor with length only. */
     public Rectangle(double length) {
         this();
         setLength(length);
     }
 
-    /** Rectangle constructor initializing both length and width. */
+    /** Rectangle constructor with length and width. */
     public Rectangle(double length, double width) {
         super(DEFAULT_COLOR);
         setLengthWidth(length, width);
     }
 
-    /** Rectangle constructor initializing color, lenght and width. */
+    /** Rectangle constructor with color, lenghth and width. */
     public Rectangle(String color, double length, double width) {
         super(color);
         setLengthWidth(length, width);
