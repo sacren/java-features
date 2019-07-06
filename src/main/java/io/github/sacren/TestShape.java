@@ -33,19 +33,6 @@ public class TestShape {
                 defRectangle.getArea(),
                 defRectangle.getPerimeter(),
                 defRectangle.getColor());
-        /* Rectangle instance with null parameter */
-        Shape nullRectangle = new Rectangle(null);
-        System.out.println();
-        System.out.println("=== Rectangle with null parameter  ===");
-        System.out.println();
-        System.out.println(nullRectangle);
-        System.out.printf(
-                "The null rectangle area is %.2f%n"
-                        + "The null rectangle perimeter is %.2f%n"
-                        + "The null rectangle color is %s%n",
-                nullRectangle.getArea(),
-                nullRectangle.getPerimeter(),
-                nullRectangle.getColor());
         /* custom Rectangle instance with length */
         Shape lengthRectangle = new Rectangle(length);
         System.out.println();

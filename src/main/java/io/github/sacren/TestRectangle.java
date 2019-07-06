@@ -15,8 +15,6 @@ public class TestRectangle {
         System.out.println();
         System.out.println(new Rectangle(r1));
         System.out.println();
-        System.out.println(new Rectangle(null));
-        System.out.println();
         Shape s = new Rectangle();
         System.out.println(new Rectangle((Rectangle) s));
         Rectangle r2 = new Rectangle(10);
@@ -32,9 +30,15 @@ public class TestRectangle {
         System.out.println();
         System.out.println(r3);
         System.out.println();
-        System.out.println("=== Rectangle with color, length and width ===");
-        Rectangle r4 = new Rectangle("orange", 102, 5);
+        System.out.println("=== Rectangle with Point for length and width ===");
         System.out.println();
+        Point p = new Point(r3.getLength(), r3.getWidth());
+        Rectangle r4 = new Rectangle(p);
         System.out.println(r4);
+        System.out.println();
+        System.out.println("=== Rectangle with color, length and width ===");
+        Rectangle r5 = new Rectangle("orange", 102, 5);
+        System.out.println();
+        System.out.println(r5);
     }
 }
