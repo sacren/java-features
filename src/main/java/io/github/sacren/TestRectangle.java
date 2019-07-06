@@ -26,5 +26,10 @@ public class TestRectangle {
         System.out.println("=== Rectangle with length ===");
         System.out.println();
         System.out.println(r2);
+        System.out.println();
+        System.out.println("=== Rectangle with length and width ===");
+        Rectangle r3 = new Rectangle(22, 4);
+        System.out.println();
+        System.out.println(r3);
     }
 }
