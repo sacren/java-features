@@ -2,8 +2,7 @@
  * Rectangle subclass extends Shape superclass.
  *
  * <p>Private instance data with default values:
- * -length:double = 2.0f
- * -width:double = 1.0f
+ * -sides:Point = {2.0f, 1.0f}
  *
  * <p>Constructor:
  * +Rectangle()
@@ -27,18 +26,14 @@
 public class Rectangle extends Shape {
     /* private static data */
     private static String DEFAULT_COLOR = "cyan";
-    private static final double DEFAULT_LENGTH = 2.0f;
-    private static final double DEFAULT_WIDTH = 1.0f;
 
     /* private instance data */
-    private double length;
-    private double width;
+    private Point sides;
 
     /** Rectangle default constructor. */
     public Rectangle() {
         super(DEFAULT_COLOR);
-        length = DEFAULT_LENGTH;
-        width = DEFAULT_WIDTH;
+        sides = new Point(2.0f, 1.0f);
     }
 
     /** Rectangle default constructor with parameter place holder. */
@@ -54,31 +49,33 @@ public class Rectangle extends Shape {
 
     /** Rectangle constructor with length and width. */
     public Rectangle(double length, double width) {
-        super(DEFAULT_COLOR);
+        this();
         setSides(length, width);
     }
 
     /** Rectangle constructor with Point instance. */
     public Rectangle(Point p) {
-        super(DEFAULT_COLOR);
+        this();
         setSides(p.getX(), p.getY());
     }
 
     /** Rectangle constructor with color, lenghth and width. */
     public Rectangle(String color, double length, double width) {
-        super(color);
+        this();
+        setColor(color);
         setSides(length, width);
     }
 
     /** Rectangle constructor with color and Point instance. */
     public Rectangle(String color, Point p) {
-        super(color);
+        this();
+        setColor(color);
         setSides(p.getX(), p.getY());
     }
 
     /** Rectangle getter for length. */
     public double getLength() {
-        return length;
+        return sides.getX();
     }
 
     /** Rectangle setter for length. */
@@ -87,12 +84,12 @@ public class Rectangle extends Shape {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", length));
         }
-        this.length = length;
+        sides.setX(length);
     }
 
     /** Rectangle getter for width. */
     public double getWidth() {
-        return width;
+        return sides.getY();
     }
 
     /** Rectangle setter for width. */
@@ -101,7 +98,7 @@ public class Rectangle extends Shape {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", width));
         }
-        this.width = width;
+        sides.setY(width);
     }
 
     /** Rectangle setter for both sides. */
@@ -113,13 +110,13 @@ public class Rectangle extends Shape {
     /** Rectangle method for area. */
     @Override
     public double getArea() {
-        return length * width;
+        return sides.getX() * sides.getY();
     }
 
     /** Rectangle method for perimeter. */
     @Override
     public double getPerimeter() {
-        return (length + width) * 2;
+        return (sides.getX() + sides.getY()) * 2;
     }
 
     /** Rectangle instance printout. */
@@ -131,8 +128,8 @@ public class Rectangle extends Shape {
                         + "Area:      %.2f%n"
                         + "Perimeter: %.2f",
                 getColor(),
-                length,
-                width,
+                getLength(),
+                getWidth(),
                 getArea(),
                 getPerimeter());
     }
