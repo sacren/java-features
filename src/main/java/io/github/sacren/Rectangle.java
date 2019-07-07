@@ -10,7 +10,9 @@
  * +Rectangle(r:Rectangle)
  * +Rectangle(length:double)
  * +Rectangle(length:double, width:double)
+ * +Rectangle(p:Point)
  * +Rectangle(color:String, length:double, width:double)
+ * +Rectangle(color:String, p:Point)
  *
  * <p>Public methods:
  * +getLength():double
