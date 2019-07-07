@@ -40,5 +40,16 @@ public class TestRectangle {
         Rectangle r5 = new Rectangle("orange", 102, 5);
         System.out.println();
         System.out.println(r5);
+        r5.setLength(r5.getLength() + 1);
+        r5.setWidth(r5.getWidth() + 1);
+        System.out.println();
+        System.out.println(r5);
+        System.out.println();
+        System.out.println("=== Rectangle with color and Point ===");
+        Point p2 = new Point(r5.getLength(), r5.getWidth());
+        Rectangle r6 = new Rectangle("orange", p2);
+        r6.setColor("grey");
+        System.out.println();
+        System.out.println(r6);
     }
 }

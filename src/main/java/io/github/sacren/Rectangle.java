@@ -68,6 +68,12 @@ public class Rectangle extends Shape {
         setSides(length, width);
     }
 
+    /** Rectangle constructor with color and Point instance. */
+    public Rectangle(String color, Point p) {
+        super(color);
+        setSides(p.getX(), p.getY());
+    }
+
     /** Rectangle getter for length. */
     public double getLength() {
         return length;
