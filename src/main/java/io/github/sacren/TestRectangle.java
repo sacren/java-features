@@ -56,5 +56,9 @@ public class TestRectangle {
         Rectangle r6 = new Rectangle("orange", p2);
         r6.setColor("grey");
         System.out.println(r6);
+        Point p3 = new Point(r5.getLength() + 1, r5.getWidth() + 1);
+        r6.setSides(p3);
+        System.out.println();
+        System.out.println(r6);
     }
 }
