@@ -19,6 +19,7 @@
  * +getWidth():double
  * +setWidth(width:double):void
  * +setSides(length:double, width:double):void
+ * +setSides(sides:Point):void
  * +getArea():double
  * +getPerimeter():double
  * +toString():String
@@ -112,16 +113,16 @@ public class Rectangle extends Shape {
         setSides(p.getX(), p.getY());
     }
 
-    /** Rectangle method for area. */
+    /** Rectangle getter for area. */
     @Override
     public double getArea() {
-        return sides.getX() * sides.getY();
+        return getLength() * getWidth();
     }
 
-    /** Rectangle method for perimeter. */
+    /** Rectangle getter for perimeter. */
     @Override
     public double getPerimeter() {
-        return (sides.getX() + sides.getY()) * 2;
+        return (getLength() + getWidth()) * 2;
     }
 
     /** Rectangle instance printout. */
