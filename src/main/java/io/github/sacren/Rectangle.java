@@ -109,7 +109,7 @@ public class Rectangle extends Shape {
 
     /** Rectangle setter using Point for both sides. */
     public void setSides(Point p) {
-        sides = p;
+        setSides(p.getX(), p.getY());
     }
 
     /** Rectangle method for area. */
