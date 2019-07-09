@@ -61,8 +61,9 @@ public class TestCircle {
         System.out.println();
         System.out.println("=== Update pink circle ===");
         System.out.println();
-        c4.setCenter(new Point(center.getX(), 202));
-        c4.setRadius(7);
+        c4.setCenter(new Point(center.getX(), center.getY() + 1));
+        c4.setRadius(c4.getRadius() + 1);
+        c4.setColor("white");
         System.out.println(c4);
         System.out.println();
         System.out.println("=== Calling circle methods after update ===");
