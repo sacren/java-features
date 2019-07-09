@@ -13,6 +13,7 @@
  * +Circle(radius:double, color:String)
  * +Circle(centerX:int, centerY:int, radius:double)
  * +Circle(center:Point, radius:double)
+ * +Circle(center:Point, radius:double, color:String)
  *
  * <p>Public methods:
  * +getRadius():double
@@ -30,9 +31,7 @@ public class Circle extends Shape {
     public static final String FAVORITE_COLOR = "pink";
 
     /* private static data */
-    private static final double DEFAULT_RADIUS = 1.0;
     private static final String DEFAULT_COLOR = "green";
-    private static final Point DEFAULT_CENTER = new Point(0, 0);
 
     /* private instance data */
     private Point center;
@@ -41,8 +40,8 @@ public class Circle extends Shape {
     /** Circle constructor with default data. */
     public Circle() {
         super(DEFAULT_COLOR);
-        center = DEFAULT_CENTER;
-        radius = DEFAULT_RADIUS;
+        center = new Point(0, 0);
+        radius = 1;
     }
 
     /** Circle constructor with custom radius only. */
@@ -53,30 +52,25 @@ public class Circle extends Shape {
 
     /** Circle constructor with custom color and radius. */
     public Circle(double radius, String color) {
-        super(color);
-        center = DEFAULT_CENTER;
-        setRadius(radius);
-    }
-
-    /** Circle constructor with int pair for Point data. */
-    public Circle(int centerX, int centerY, double radius) {
-        super(DEFAULT_COLOR);
-        center = new Point(centerX, centerY);
-        setRadius(radius);
+        this(radius);
+        setColor(color);
     }
 
     /** Circle constructor using Point. */
     public Circle(Point center, double radius) {
-        super(DEFAULT_COLOR);
+        this(radius);
         this.center = center;
-        setRadius(radius);
+    }
+
+    /** Circle constructor with int pair for Point. */
+    public Circle(int centerX, int centerY, double radius) {
+        this(new Point(centerX, centerY), radius);
     }
 
     /** Circle constructor with center, color and radius. */
     public Circle(Point center, double radius, String color) {
-        super(color);
-        this.center = center;
-        setRadius(radius);
+        this(center, radius);
+        setColor(color);
     }
 
     /** Circle getter for the radius of circle. */
