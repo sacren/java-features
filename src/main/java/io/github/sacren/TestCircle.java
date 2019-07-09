@@ -73,7 +73,7 @@ public class TestCircle {
                         + "Circle circumference: %.2f%n"
                         + "Circle area:          %.2f%n"
                         + "Circle color:         %s%n"
-                        + "Circle center:        %s",
+                        + "Circle center:        %s%n",
                 c4.getRadius(),
                 c4.getDiameter(),
                 c4.getCircum(),
