@@ -96,13 +96,6 @@ public class Triangle extends Shape {
         setSideC(sideC);
     }
 
-    /** Triangle instance printout. */
-    public String toString() {
-        return String.format(
-                "[Triangle (Color=%s, Side A=%.2f, Side B=%.2f, Side C=%.2f)]",
-                getColor(), sideA, sideB, sideC);
-    }
-
     /** Triangle method for area. */
     @Override
     public double getArea() {
@@ -114,5 +107,22 @@ public class Triangle extends Shape {
     @Override
     public double getPerimeter() {
         return sideA + sideB + sideC;
+    }
+
+    /** Triangle string method. */
+    public String toString() {
+        return String.format(
+                "Side A:    %.2f%n"
+                        + "Side B:    %.2f%n"
+                        + "Side C:    %.2f%n"
+                        + "Area:      %.2f%n"
+                        + "Perimeter: %.2f%n"
+                        + "Color:     %s",
+                sideA,
+                sideB,
+                sideC,
+                getArea(),
+                getPerimeter(),
+                getColor());
     }
 }
