@@ -2,125 +2,98 @@
  * Triangle subclass extends Shape superclass.
  *
  * <p>Private instance data:
- * -sideA:double
- * -sideB:double
- * -sideC:double
  *
  * <p>Constructor:
  * +Triangle()
- * +Triangle(sideA:double, sideB:double, sideC:double)
  *
  * <p>Public methods:
- * +getSideA():double
- * +setSideA(sideA:double):void
- * +getSideB():double
- * +setSideB(sideB:double):void
- * +getSideC():double
- * +setSideC(sideC:double):void
- * +getArea():double
- * +getPerimeter():double
+ * +getBase():double
+ * +setBase(base:double):void
+ * +getHeight():double
+ * +setHeight(height:double):void
+ * +setBaseHeight(base:double, height:double):void
+ * +setBaseHeight(p:Point):void
  * +toString():String
  */
 public class Triangle extends Shape {
     /* private static data */
-    private static final double DEFAULT_SIDE_A = 4;
-    private static final double DEFAULT_SIDE_B = 5;
-    private static final double DEFAULT_SIDE_C = 6;
     private static final String DEFAULT_COLOR = "brown";
 
     /* private instance data */
-    private double sideA;
-    private double sideB;
-    private double sideC;
+    private Point bh = new Point();
 
     /** Triangle default constructor. */
     public Triangle() {
         super(DEFAULT_COLOR);
-        sideA = DEFAULT_SIDE_A;
-        sideB = DEFAULT_SIDE_B;
-        sideC = DEFAULT_SIDE_C;
+        setBaseHeight(new Point(3, 4));
     }
 
-    /** Triangle constructor with color and 3 sides. */
-    public Triangle(String color, double sideA, double sideB, double sideC) {
-        super(color);
-        setSides(sideA, sideB, sideC);
+    /** Triangle getter for the base. */
+    public double getBase() {
+        return bh.getX();
     }
 
-    /** Triangle getter for side A. */
-    public double getSideA() {
-        return sideA;
-    }
-
-    /** Triangle setter for side A. */
-    public void setSideA(double sideA) {
-        if (sideA <= 0) {
+    /** Triangle setter for the base. */
+    public void setBase(double base) {
+        if (base <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%f is invalid!", sideA));
+                    String.format("%f is invalid!", base));
         }
-        this.sideA = sideA;
+        bh.setX(base);
     }
 
-    /** Triangle getter for side B. */
-    public double getSideB() {
-        return sideB;
+    /** Triangle getter for the height. */
+    public double getHeight() {
+        return bh.getY();
     }
 
-    /** Triangle setter for side B. */
-    public void setSideB(double sideB) {
-        if (sideB <= 0) {
+    /** Triangle setter for the height. */
+    public void setHeight(double height) {
+        if (height <= 0) {
             throw new IllegalArgumentException(
-                    String.format("%f is invalid!", sideB));
+                    String.format("%f is invalid!", height));
         }
-        this.sideB = sideB;
+        bh.setY(height);
     }
 
-    /** Triangle getter for side C. */
-    public double getSideC() {
-        return sideC;
+    /** Triangle setter for both base and height. */
+    public void setBaseHeight(double base, double height) {
+        setBase(base);
+        setHeight(height);
     }
 
-    /** Triangle setter for side C. */
-    public void setSideC(double sideC) {
-        if (sideC <= 0) {
-            throw new IllegalArgumentException(
-                    String.format("%f is invalid!", sideC));
-        }
-        this.sideC = sideC;
+    /** Triangle setter using Point for base and height. */
+    public void setBaseHeight(Point p) {
+        setBaseHeight(p.getX(), p.getY());
     }
 
-    /* helper for setting all 3 sides */
-    private void setSides(double sideA, double sideB, double sideC) {
-        setSideA(sideA);
-        setSideB(sideB);
-        setSideC(sideC);
-    }
-
-    /** Triangle method for area. */
+    /** Triangle getter for the area. */
     @Override
     public double getArea() {
-        final double halfP = getPerimeter() / 2;
-        return Math.sqrt(halfP * (halfP - sideA) * (halfP - sideB) * (halfP - sideC));
+        return getBase() * getHeight() / 2;
     }
 
-    /** Triangle method for perimeter. */
+    /**
+     * Triangle getter for the perimeter.
+     *
+     * <p>With given base and height, the perimeter is indeterministic.  The
+     * calculation gives the smallest value.
+     */
     @Override
     public double getPerimeter() {
-        return sideA + sideB + sideC;
+        return Math.hypot(bh.getX() / 2, bh.getY()) * 2 + bh.getX();
     }
 
     /** Triangle string method. */
     public String toString() {
         return String.format(
-                "Side A:    %.2f%n"
-                        + "Side B:    %.2f%n"
-                        + "Side C:    %.2f%n"
+                "Base:      %.2f%n"
+                        + "Height:    %.2f%n"
                         + "Area:      %.2f%n"
                         + "Perimeter: %.2f%n"
                         + "Color:     %s",
-                sideA,
-                sideB,
-                sideC,
+                getBase(),
+                getHeight(),
                 getArea(),
                 getPerimeter(),
                 getColor());
