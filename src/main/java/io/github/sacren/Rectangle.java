@@ -29,12 +29,12 @@ public class Rectangle extends Shape {
     private static String DEFAULT_COLOR = "cyan";
 
     /* private instance data */
-    private Point sides;
+    private Point sides = new Point();
 
     /** Rectangle default constructor. */
     public Rectangle() {
         super(DEFAULT_COLOR);
-        sides = new Point(2.0f, 1.0f);
+        setSides(new Point(2.0f, 1.0f));
     }
 
     /** Rectangle default constructor with parameter place holder. */
