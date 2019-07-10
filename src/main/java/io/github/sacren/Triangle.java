@@ -5,6 +5,7 @@
  *
  * <p>Constructor:
  * +Triangle()
+ * +Triangle(p:Point)
  *
  * <p>Public methods:
  * +getBase():double
@@ -26,6 +27,12 @@ public class Triangle extends Shape {
     public Triangle() {
         super(DEFAULT_COLOR);
         setBaseHeight(new Point(3, 4));
+    }
+
+    /** Triangle constructor with Point. */
+    public Triangle(Point p) {
+        this();
+        setBaseHeight(p);
     }
 
     /** Triangle getter for the base. */
