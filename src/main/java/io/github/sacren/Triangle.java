@@ -21,7 +21,7 @@ public class Triangle extends Shape {
     private static final String DEFAULT_COLOR = "brown";
 
     /* private instance data */
-    private Point bh = new Point();
+    private Point bh;
 
     /** Triangle default constructor. */
     public Triangle() {
@@ -65,6 +65,7 @@ public class Triangle extends Shape {
 
     /** Triangle setter for both base and height. */
     public void setBaseHeight(double base, double height) {
+        bh = new Point();
         setBase(base);
         setHeight(height);
     }
