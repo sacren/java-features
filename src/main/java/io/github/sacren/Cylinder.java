@@ -18,16 +18,13 @@
  * +toString():String
  */
 public class Cylinder extends Circle {
-    /* private static data */
-    private static final double DEFAULT_HEIGHT = 1.0;
-
     /* private instance data */
     private double height;
 
     /** Cylinder default constructor. */
     public Cylinder() {
         super();
-        height = DEFAULT_HEIGHT;
+        height = 1;
     }
 
     /** Custom constructor for cylinder. */
@@ -72,10 +69,20 @@ public class Cylinder extends Circle {
         return getBaseArea() * height;
     }
 
-    /** Cylinder instance description. */
+    /** Cylinder string method. */
     public String toString() {
         return String.format(
-                "[Cylinder (Radius=%.2f, Height=%.2f, Color=%s)]",
-                getRadius(), height, getColor());
+                "Radius:       %.2f%n"
+                        + "Height:       %.2f%n"
+                        + "Color:        %s%n"
+                        + "Base area:    %.2f%n"
+                        + "Surface area: %.2f%n"
+                        + "Volume:       %.2f",
+                getRadius(),
+                getHeight(),
+                getColor(),
+                getBaseArea(),
+                getArea(),
+                getVolume());
     }
 }
