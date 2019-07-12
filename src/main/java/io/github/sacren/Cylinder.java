@@ -84,6 +84,7 @@ public class Cylinder extends Circle {
     }
 
     /** Cylinder string method. */
+    @Override
     public String toString() {
         return String.format(
                 "Radius:       %.2f%n"
