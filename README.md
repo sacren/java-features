@@ -10,7 +10,7 @@ Maven is employed for build and test automation.
 
 1. Verify prebuilt OpenJDK 11 (LTS) is installed:
 
-        $ java-config --java-version
+        $ java -version
 
 2. Verify Apache Maven 3.6.1 and above is installed:
 
@@ -26,8 +26,9 @@ Maven is employed for build and test automation.
 2. Build and run:
 
         $ mvn clean package
-        $ java -cp target/java-features-1.0.jar TestShape
         $ java -cp target/java-features-1.0.jar TestBall
+        $ java -cp target/java-features-1.0.jar TestPension
+        $ java -cp target/java-features-1.0.jar TestCylinder
         ...
 
 ### Explore Java SE and have fun.
