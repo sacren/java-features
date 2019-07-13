@@ -1,7 +1,5 @@
 /**
- * Circle class is composed of Point class.
- *
- * <p>Circle subclass extends Shape superclass.
+ * Circle is composed of Point and extends Shape.
  *
  * <p>Private instance data with default values:
  * -center:Point = {0, 0}
