@@ -24,5 +24,16 @@ public class TestCylinder {
         /* default Cylinder by Shape */
         Shape c2 = new Cylinder();
         System.out.println(c2);
+        System.out.println();
+        System.out.println("=== Update cylinder of Shape ===");
+        System.out.println();
+        /* polymorphism */
+        c2.setColor("white");
+        /*
+         * this breaks:
+         *
+         * c2.setHeight(c2.getHeight() + 1);
+         */
+        System.out.println(c2);
     }
 }
