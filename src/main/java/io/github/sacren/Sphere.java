@@ -41,11 +41,23 @@ public class Sphere extends Circle {
         return FAVORITE_COLOR; /* hide Circle FAVORITE_COLOR */
     }
 
-    /** Sphere instance description. */
+    /** Sphere string method. */
     @Override
     public String toString() {
         return String.format(
-                "[Sphere (Radius=%.2f, Area=%.2f, Volume=%.2f, Color=%s)]",
-                getRadius(), getArea(), getVolume(), getColor());
+                "Radius:        %.2f%n"
+                        + "Diameter:      %.2f%n"
+                        + "Circumference: %.2f%n"
+                        + "Area:          %.2f%n"
+                        + "Volume:        %.2f%n"
+                        + "Color:         %s%n"
+                        + "Center:        %s",
+                getRadius(),
+                getDiameter(),
+                getCircum(),
+                getArea(),
+                getVolume(),
+                getColor(),
+                getCenter());
     }
 }
