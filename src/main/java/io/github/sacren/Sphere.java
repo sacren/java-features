@@ -1,5 +1,5 @@
 /**
- * Sphere extends Circle.
+ * Sphere class extends Circle.
  *
  * <p>Constructor:
  * +Sphere()
@@ -8,36 +8,37 @@
  * <p>Public methods:
  * +getArea():double
  * +getVolume():double
+ * +getFavColor():String
  * +toString():String
  */
 public class Sphere extends Circle {
     /* public static data */
     public static final String FAVORITE_COLOR = "blue";
 
-    /** Default constructor by inheritance. */
+    /** Sphere default constructor. */
     public Sphere() {
         /* super(); */
         /* above automatically inserted */
     }
 
-    /** Custom constructor by inheritance. */
+    /** Sphere constructor with radius. */
     public Sphere(double radius) {
         super(radius);
     }
 
-    /** Public method for sphere surface area. */
+    /** Sphere getter for surface area. */
     @Override
     public double getArea() { /* hide getArea() in Circle superclass */
         return super.getArea() * 4; /* use getArea() from Circle superclass */
     }
 
-    /** Public method using inheritance. */
+    /** Sphere getter for volume. */
     public double getVolume() {
         return Math.PI * getRadius() * getRadius() * getRadius() * 4 / 3;
     }
 
-    /** Sphere instance favorite color. */
-    public String getFavoriteColor() {
+    /** Sphere getter for favorite color. */
+    public String getFavColor() {
         return FAVORITE_COLOR; /* hide Circle FAVORITE_COLOR */
     }
 
