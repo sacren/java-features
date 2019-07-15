@@ -5,28 +5,34 @@ public class TestMonster {
     /** Monster test driver for various monsters. */
     public static void main(String[] args) {
         /* fire monster */
-        Monster fireMon = new FireMonster("Escalante");
+        Monster heat = new FireMonster("Fiery");
         System.out.println();
-        System.out.println(fireMon);
+        System.out.println(heat);
         System.out.println();
-        System.out.println(fireMon.attack());
+        System.out.println(heat.attack());
         /* water monster */
-        Monster water = new WaterMonster("Aquaphonia");
+        Monster water = new WaterMonster("Wetty");
         System.out.println();
         System.out.println(water);
         System.out.println();
         System.out.println(water.attack());
         /* cookie monster */
-        Monster cookieMon = new CookieMonster("Tasty");
+        Monster cookie1 = new CookieMonster("Tasty");
         System.out.println();
-        System.out.println(cookieMon);
+        System.out.println(cookie1);
         System.out.println();
-        System.out.println(cookieMon.attack());
-        /* declared as CookieMonster */
-        CookieMonster ugly = new CookieMonster("Abominable");
+        System.out.println(cookie1.attack());
+        /* 
+         * this doesn't compile:
+         *
+         * Monster m = new Monster("Baddy");
+         *
+         * next is not substituted but works perfectly
+         */
+        CookieMonster cookie2 = new CookieMonster("Bittery");
         System.out.println();
-        System.out.println(ugly);
+        System.out.println(cookie2);
         System.out.println();
-        System.out.println(ugly.attack());
+        System.out.println(cookie2.attack());
     }
 }
