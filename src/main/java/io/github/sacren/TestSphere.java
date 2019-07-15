@@ -30,5 +30,21 @@ public class TestSphere {
         sp3.setColor("scarlet");
         sp3.setCenter(new Point(3, 4));
         System.out.println(sp3);
+        System.out.println();
+        System.out.println("=== Favorite colors ===");
+        System.out.println();
+        Circle c = new Circle();
+        Sphere s = new Sphere();
+        System.out.printf(
+                "Circle default color:  %s%n"
+                        + "Circle favorite color: %s%n"
+                        + "Sphere default color:  %s%n"
+                        + "Sphere favorite color: %s%n"
+                        + "Sphere favorite color: %s%n",
+                c.getColor(),
+                Circle.FAVORITE_COLOR,
+                s.getColor(),
+                Sphere.FAVORITE_COLOR,
+                s.getFavColor());
     }
 }
