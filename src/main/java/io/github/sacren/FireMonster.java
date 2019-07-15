@@ -26,7 +26,7 @@ public class FireMonster extends Monster {
     public String toString() {
         return String.format(
                 "=== Fire Monster ===%n%n"
-                        + "Name: %s",
-                getName());
+                        + "%s",
+                attack());
     }
 }

@@ -26,7 +26,7 @@ public class CookieMonster extends Monster {
     public String toString() {
         return String.format(
                 "=== Cookie Monster ===%n%n"
-                        + "Name: %s",
-                getName());
+                        + "%s",
+                attack());
     }
 }

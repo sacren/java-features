@@ -26,7 +26,7 @@ public class WaterMonster extends Monster {
     public String toString() {
         return String.format(
                 "=== Water Monster ===%n%n"
-                        + "Name: %s",
-                getName());
+                        + "%s",
+                attack());
     }
 }
