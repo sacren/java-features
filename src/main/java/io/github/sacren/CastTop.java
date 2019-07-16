@@ -4,15 +4,16 @@
  * <p>Constructor:
  * +CastTop()
  *
- * <p>Public methods:
+ * <p>Public method:
  * +toString():String
  */
 public class CastTop {
     /** CastTop default constructor. */
-    public CastTop() { }
+    public CastTop() {
+    }
 
-    /** CastTop description. */
+    /** CastTop string method. */
     public String toString() {
-        return "This is Top superclass.";
+        return "Top";
     }
 }

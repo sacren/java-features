@@ -4,7 +4,7 @@
  * <p>Constructor:
  * +CastMiddle()
  *
- * <p>Public methods:
+ * <p>Public method:
  * +toString():String
  */
 public class CastBottom extends CastMiddle {
@@ -13,9 +13,9 @@ public class CastBottom extends CastMiddle {
         super();
     }
 
-    /** CastBottom description. */
+    /** CastBottom string method. */
     @Override
     public String toString() {
-        return "This is CastBottom subclass.";
+        return "Bottom";
     }
 }
