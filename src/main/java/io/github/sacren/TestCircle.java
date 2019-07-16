@@ -8,30 +8,30 @@ public class TestCircle {
         System.out.println("=== Default circle ===");
         System.out.println();
         /* default circle */
-        System.out.println(new Circle());
+        Circle dc = new Circle();
+        System.out.println(dc);
         /* default circle by Shape */
         System.out.println();
-        System.out.println("=== Default circle by Shape ===");
+        System.out.println("=== Default circle substituted to Shape ===");
         System.out.println();
         Shape c1 = new Circle();
         System.out.println(c1);
         System.out.println();
-        System.out.println("=== Calling default circle methods ===");
+        System.out.println("=== Calling Circle methods ===");
         System.out.println();
+        /* availabe in Shape */
         System.out.printf(
                 "Circle area:          %.2f%n"
                         + "Circle circumference: %.2f%n"
-                        + "Circle color:         %s%n"
-                        + "Circle center:        %s%n",
+                        + "Circle color:         %s%n",
                 c1.getArea(),
                 c1.getPerimeter(),
-                c1.getColor(),
-                ((Circle)c1).getCenter());
+                c1.getColor());
         /* circle with custom radius */
         System.out.println();
         System.out.println("=== Circle with radius ===");
         System.out.println();
-        Shape c2 = new Circle(98);
+        Shape c2 = new Circle(dc.getRadius() + 4);
         System.out.println(c2);
         /* downcast to Circle */
         System.out.println();
@@ -40,16 +40,20 @@ public class TestCircle {
         Circle c3 = (Circle) c2;
         System.out.println(c3);
         System.out.println();
-        System.out.println("=== Calling custom circle methods ===");
+        System.out.println("=== Calling Circle methods ===");
         System.out.println();
         System.out.printf(
-                "Circle area:          %.2f%n"
+                "Circle radius:        %.2f%n"
+                        + "Circle diameter:      %.2f%n"
                         + "Circle circumference: %.2f%n"
+                        + "Circle area:          %.2f%n"
                         + "Circle color:         %s%n"
                         + "Circle center:        %s%n",
-                c2.getArea(),
-                c2.getPerimeter(),
-                c2.getColor(),
+                c3.getRadius(),
+                c3.getDiameter(),
+                c2.getPerimeter(), /* overridden */
+                c2.getArea(), /* overridden */
+                c2.getColor(), /* Shape method */
                 c3.getCenter());
         System.out.println();
         System.out.println("=== A pink circle ===");
@@ -66,7 +70,7 @@ public class TestCircle {
         c4.setColor("white");
         System.out.println(c4);
         System.out.println();
-        System.out.println("=== Calling circle methods after update ===");
+        System.out.println("=== Calling Circle methods after update ===");
         System.out.println();
         System.out.printf(
                 "Circle radius:        %.2f%n"
