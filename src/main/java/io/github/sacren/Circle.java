@@ -98,7 +98,7 @@ public class Circle extends Shape {
     /** Circle getter for circle perimeter. */
     @Override
     public double getPerimeter() {
-        return radius * 2 * Math.PI;
+        return Math.PI * getDiameter();
     }
 
     /** Circle getter for circle area. */
