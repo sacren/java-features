@@ -24,5 +24,9 @@ public class TestTriangle {
         t3.setBase(t3.getBase() + 1);
         t2.setColor("orange");
         System.out.println(t2);
+        System.out.println();
+        System.out.println("=== Different reference but same instance ===");
+        System.out.println();
+        System.out.println(t3);
     }
 }
