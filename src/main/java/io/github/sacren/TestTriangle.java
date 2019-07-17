@@ -15,12 +15,13 @@ public class TestTriangle {
         System.out.println();
         /* custom triangle */
         Point p = new Point(t1.getBase() + 1, t1.getHeight());
-        Triangle t2 = new Triangle(p);
+        Shape t2 = new Triangle(p);
         System.out.println(t2);
         System.out.println();
         System.out.println("=== Update triangle ===");
         System.out.println();
-        t2.setBase(t2.getBase() + 1);
+        Triangle t3 = (Triangle) t2;
+        t3.setBase(t3.getBase() + 1);
         t2.setColor("orange");
         System.out.println(t2);
     }
