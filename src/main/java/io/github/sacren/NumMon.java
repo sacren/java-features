@@ -8,10 +8,11 @@
  * +NumMon(num:int)
  *
  * <p>Public methods:
- * +getMonth():String
  * +check():void
  * +toString():String
  */
+import java.time.Month;
+
 public class NumMon {
     /* private instance data */
     private int num;
@@ -31,58 +32,12 @@ public class NumMon {
         }
     }
 
-    /** NumMon getter for the name of the month. */
-    public String getMonth() {
-        String month = "december";
-        switch (num) {
-            case 1:
-                month = "january";
-                break;
-            case 2:
-                month = "february";
-                break;
-            case 3:
-                month = "march";
-                break;
-            case 4:
-                month = "april";
-                break;
-            case 5:
-                month = "may";
-                break;
-            case 6:
-                month = "june";
-                break;
-            case 7:
-                month = "july";
-                break;
-            case 8:
-                month = "august";
-                break;
-            case 9:
-                month = "september";
-                break;
-            case 10:
-                month = "october";
-                break;
-            case 11:
-                month = "november";
-                break;
-            case 12:
-                /* month has been initialized. */
-                break;
-            default:
-                /* Nothing to do. */
-        }
-        return month.toUpperCase();
-    }
-
     /** NumMon instance string. */
     public String toString() {
         return String.format(
                 "Number: %d%n%n"
-                        + "Month: %s",
+                        + "Month: %TB",
                 num,
-                getMonth());
+                Month.of(num));
     }
 }
