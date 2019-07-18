@@ -8,6 +8,7 @@
  * +CardDeck()
  *
  * <p>Public methods:
+ * +set():void
  * +shuffle():void
  * +toString():String
  */
@@ -21,6 +22,11 @@ public class CardDeck {
 
     /** CardDeck constructor. */
     public CardDeck() {
+        set();
+    }
+
+    /** CardDeck setter for the whole deck. */
+    public void set() {
         deck = new ArrayList<Card>();
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
