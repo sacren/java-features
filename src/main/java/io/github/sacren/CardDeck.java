@@ -1,5 +1,5 @@
 /**
- * CardDeck class.
+ * CardDeck class for a whole deck of cards.
  *
  * <p>Private instance data:
  * -deck:List<Card>
@@ -47,7 +47,6 @@ public class CardDeck {
             sb.append(card);
             sb.append(String.format("%n"));
         }
-        sb.deleteCharAt(sb.length() - 1);
-        return sb.toString();
+        return sb.deleteCharAt(sb.length() - 1).toString();
     }
 }
