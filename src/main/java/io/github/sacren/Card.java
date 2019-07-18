@@ -36,6 +36,6 @@ public class Card { /* a single card */
 
     /** Card string method. */
     public String toString() {
-        return String.format("%s %s", suit, rank);
+        return String.format("%-8s%s", suit, rank);
     }
 }
