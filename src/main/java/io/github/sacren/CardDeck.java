@@ -27,7 +27,7 @@ public class CardDeck {
 
     /** CardDeck setter for the whole deck. */
     public void set() {
-        deck = new ArrayList<Card>();
+        deck = Collections.synchronizedList(new ArrayList<Card>());
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
                 deck.add(new Card(suit, rank));
