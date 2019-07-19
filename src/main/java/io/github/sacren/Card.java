@@ -1,5 +1,5 @@
 /**
- * Card class.
+ * Card class for individual card with suit and rank.
  *
  * <p>Private instance data:
  * -suit:Suit
