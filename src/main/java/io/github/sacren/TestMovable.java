@@ -4,7 +4,9 @@
 public class TestMovable {
     /** Movable interface test driver. */
     public static void main(String[] args) {
-        Movable p = new MovablePoint(1, 2);
+        Movable p = new MovablePoint(new Point(1, 2));
+        System.out.println();
+        System.out.println("=== Start point ===");
         System.out.println();
         System.out.println(p);
         System.out.println();

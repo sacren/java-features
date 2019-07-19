@@ -1,12 +1,11 @@
 /**
- * MovablePoint subclass implements Movable interface.
+ * MovablePoint subclass by Movable interface.
  *
  * <p>Private data:
- * -axisX:int
- * -axisY:int
+ * -mp:Point
  *
  * <p>Constructor:
- * +MovablePoint(axisX:int, axisY:int)
+ * +MovablePoint(mp:Point)
  *
  * <p>Public methods:
  * +moveUp():void
@@ -17,43 +16,39 @@
  */
 public class MovablePoint implements Movable {
     /* private instance data */
-    private int axisX;
-    private int axisY;
+    private Point mp;
 
     /** MovablePoint constructor. */
-    public MovablePoint(int axisX, int axisY) {
-        this.axisX = axisX;
-        this.axisY = axisY;
+    public MovablePoint(Point mp) {
+        this.mp = mp;
     }
 
-    /** MovablePoint method to implement moving point up. */
+    /** MovablePoint method to move up the point. */
     @Override
     public void moveUp() {
-        axisY++;
+        mp.setY(mp.getY() + 1);
     }
 
-    /** MovablePoint method to implement moving point down. */
+    /** MovablePoint method to move down the point. */
     @Override
     public void moveDown() {
-        axisY--;
+        mp.setY(mp.getY() - 1);
     }
 
-    /** MovablePoint method to implement moving point left. */
+    /** MovablePoint method to move the point left. */
     @Override
     public void moveLeft() {
-        axisX--;
+        mp.setX(mp.getX() - 1);
     }
 
-    /** MovablePoint method to implement moving point right. */
+    /** MovablePoint method to move the point right. */
     @Override
     public void moveRight() {
-        axisX++;
+        mp.setX(mp.getX() + 1);
     }
 
-    /** MovablePoint instance printout. */
+    /** MovablePoint string method. */
     public String toString() {
-        return String.format(
-                "Movable P(%d, %d)",
-                axisX, axisY);
+        return String.format("%s", mp);
     }
 }
