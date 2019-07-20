@@ -3,10 +3,11 @@
  *
  * <p>Private data:
  * -ball:Point = {10, 20}
+ * -kick:Point = {1, 2}
  *
  * <p>Constructor:
  * +KickBall()
- * +KickBall(ball:Point)
+ * +KickBall(ball:Point, kick:Point)
  *
  * <p>Public methods:
  * +moveUp():void
@@ -16,20 +17,20 @@
  * +toString():String
  */
 public class KickBall implements Movable {
-    /* privata static data */
-    private static final Point kick = new Point(1, 2);
-
     /* private instance data */
     private Point ball;
+    private Point kick;
 
     /** KickBall default constructor. */
     public KickBall() {
         ball = new Point(10, 20);
+        kick = new Point(1, 2);
     }
 
     /** KickBall custom constructor. */
-    public KickBall(Point ball) {
+    public KickBall(Point ball, Point kick) {
         this.ball = ball;
+        this.kick = kick;
     }
 
     /** KickBall method to move up the point. */
