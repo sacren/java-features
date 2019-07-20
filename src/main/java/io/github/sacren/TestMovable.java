@@ -4,7 +4,8 @@
 public class TestMovable {
     /** Movable interface test driver. */
     public static void main(String[] args) {
-        Movable p = new MovablePoint(new Point(1, 2));
+        /* default MovablePoint */
+        Movable p = new MovablePoint();
         System.out.println();
         System.out.println("=== Start point ===");
         System.out.println();
@@ -19,16 +20,22 @@ public class TestMovable {
         System.out.println();
         p.moveRight();
         System.out.println(p);
+        /* custom MovablePoint */
+        Movable p4 = new MovablePoint(new Point(1, 2));
+        System.out.println();
+        System.out.println("=== Start point ===");
+        System.out.println();
+        System.out.println(p4);
         System.out.println();
         System.out.println("=== Move down ===");
         System.out.println();
-        p.moveDown();
-        System.out.println(p);
+        p4.moveDown();
+        System.out.println(p4);
         System.out.println();
         System.out.println("=== Move left ===");
         System.out.println();
-        p.moveLeft();
-        System.out.println(p);
+        p4.moveLeft();
+        System.out.println(p4);
         /* downcast to MovablePoint */
         MovablePoint p1 = (MovablePoint)p;
         System.out.println();

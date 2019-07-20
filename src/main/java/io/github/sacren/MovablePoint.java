@@ -5,6 +5,7 @@
  * -mp:Point
  *
  * <p>Constructor:
+ * +MovablePoint()
  * +MovablePoint(mp:Point)
  *
  * <p>Public methods:
@@ -18,7 +19,12 @@ public class MovablePoint implements Movable {
     /* private instance data */
     private Point mp;
 
-    /** MovablePoint constructor. */
+    /** MovablePoint default constructor. */
+    public MovablePoint() {
+        mp = new Point();
+    }
+
+    /** MovablePoint custom constructor. */
     public MovablePoint(Point mp) {
         this.mp = mp;
     }
