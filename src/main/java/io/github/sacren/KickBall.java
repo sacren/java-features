@@ -33,25 +33,25 @@ public class KickBall implements Movable {
         this.kick = kick;
     }
 
-    /** KickBall method to move up the point. */
+    /** KickBall method to move up ball in y-axis direction. */
     @Override
     public void moveUp() {
         ball.setY(ball.getY() + kick.getY());
     }
 
-    /** KickBall method to move down the point. */
+    /** KickBall method to move down ball in y-axis direction. */
     @Override
     public void moveDown() {
         ball.setY(ball.getY() - kick.getY());
     }
 
-    /** KickBall method to move the point left. */
+    /** KickBall method to move ball left in x-axis direction. */
     @Override
     public void moveLeft() {
         ball.setX(ball.getX() - kick.getX());
     }
 
-    /** KickBall method to move the point right. */
+    /** KickBall method to move ball right in x-axis direction. */
     @Override
     public void moveRight() {
         ball.setX(ball.getX() + kick.getX());
