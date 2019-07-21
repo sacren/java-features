@@ -59,6 +59,6 @@ public class KickBall implements Movable {
 
     /** KickBall string method. */
     public String toString() {
-        return String.format("%s", ball);
+        return ball.toString();
     }
 }
