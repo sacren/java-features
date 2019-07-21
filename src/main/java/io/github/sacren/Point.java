@@ -56,31 +56,23 @@ public class Point {
         this.axisY = axisY;
     }
 
-    /** Point string method. */
-    public String toString() {
-        return String.format(
-                "(%.2f, %.2f)",
-                axisX, axisY);
-    }
-
     /** Point getter for distance from this point to Point (axisX, axisY). */
     public double distance(double axisX, double axisY) {
-        return Math.sqrt((double) (
-                    Math.abs(axisX - this.axisX) * Math.abs(axisX - this.axisX)
-                    + Math.abs(axisY - this.axisY) * Math.abs(axisY - this.axisY)));
+        return Math.hypot(axisX - this.axisX, axisY - this.axisY);
     }
 
     /** Point getter for distance from this point to another. */
     public double distance(Point p) {
-        return Math.sqrt((double) (
-                    Math.abs(p.getX() - axisX) * Math.abs(p.getX() - axisX)
-                    + Math.abs(p.getY() - axisY) * Math.abs(p.getY() - axisY)));
+        return Math.hypot(p.getX() - axisX, p.getY() - axisY);
     }
 
     /** Point getter for distance from this point to Point (0, 0). */
     public double distance() {
-        return Math.sqrt((double) (
-                    Math.abs(axisX) * Math.abs(axisX)
-                    + Math.abs(axisY) * Math.abs(axisY)));
+        return Math.hypot(axisX, axisY);
+    }
+
+    /** Point string method. */
+    public String toString() {
+        return String.format("(%.2f, %.2f)", axisX, axisY);
     }
 }
