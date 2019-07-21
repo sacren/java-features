@@ -56,14 +56,14 @@ public class Point {
         this.axisY = axisY;
     }
 
-    /** Point getter for distance from this point to Point (axisX, axisY). */
-    public double distance(double axisX, double axisY) {
-        return Math.hypot(axisX - this.axisX, axisY - this.axisY);
-    }
-
     /** Point getter for distance from this point to another. */
     public double distance(Point p) {
         return Math.hypot(p.getX() - axisX, p.getY() - axisY);
+    }
+
+    /** Point getter for distance with different arguments. */
+    public double distance(double axisX, double axisY) {
+        return Math.hypot(axisX - this.axisX, axisY - this.axisY);
     }
 
     /** Point getter for distance from this point to Point (0, 0). */
