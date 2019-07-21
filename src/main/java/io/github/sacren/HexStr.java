@@ -26,7 +26,8 @@ public class HexStr {
     public String toString() {
         int i = Integer.parseUnsignedInt(hex, RADIX);
         return String.format(
-                "Hex string:    %s%n"
+                "=== Hex string ===%n%n"
+                        + "Hex string:    %s%n"
                         + "Binary string: %s%n"
                         + "Octal string:  %s%n"
                         + "Decimal value: %d",

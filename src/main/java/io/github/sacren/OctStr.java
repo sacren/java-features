@@ -26,7 +26,8 @@ public class OctStr {
     public String toString() {
         int i = Integer.parseUnsignedInt(octStr, RADIX);
         return String.format(
-                "Octal string:  %s%n"
+                "=== Octal string ===%n%n"
+                        + "Octal string:  %s%n"
                         + "Binary string: %s%n"
                         + "Hex string:    %s%n"
                         + "Decimal value: %d",

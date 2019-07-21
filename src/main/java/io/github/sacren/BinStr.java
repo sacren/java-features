@@ -26,7 +26,8 @@ public class BinStr {
     public String toString() {
         int i = Integer.parseUnsignedInt(binStr, RADIX);
         return String.format(
-                "Binary string: %s%n"
+                "=== Binary string ===%n%n"
+                        + "Binary string: %s%n"
                         + "Octal string:  %s%n"
                         + "Hex string:    %s%n"
                         + "Decimal value: %d",
