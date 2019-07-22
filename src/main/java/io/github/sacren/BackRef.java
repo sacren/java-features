@@ -4,13 +4,12 @@
  * <p>Private instance data:
  * -input1:String
  * -input2:String
- * -reversed:String
  *
  * <p>Constructor:
  * +BackRef()
  *
  * <p>Public methods:
- * +reverse():void
+ * +getReverse():String
  * +getMatches():String
  * +getGroups():String
  * +toString():String
@@ -22,22 +21,20 @@ public class BackRef {
     /* private instance data */
     private String input1;
     private String input2;
-    private String reversed;
     private String swapped;
 
     /** BackRef constructor. */
     public BackRef() {
         input1 = "one:two:three:four";
         input2 = "apple orange";
-        reverse();
         swap();
     }
 
     /** BackRef setter for backward reference. */
-    public void reverse() {
+    public String getReverse() {
         Pattern p = Pattern.compile("(.+):(.+):(.+):(.+)");
         Matcher m = p.matcher(input1);
-        reversed = m.replaceAll("$4+$3+$2+$1");
+        return m.replaceAll("$4+$3+$2+$1");
     }
 
     /** BackRef getter for matched text. */
@@ -95,7 +92,7 @@ public class BackRef {
                         + "=== Groups ===%n%n"
                         + "%s",
                 input1,
-                reversed,
+                getReverse(),
                 input2,
                 swapped,
                 getMatches(),
