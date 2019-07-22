@@ -12,6 +12,7 @@
  *
  * <p>Public methods:
  * +reverse():void
+ * +getGroups():String
  * +toString():String
  */
 import java.util.regex.Matcher;
@@ -50,9 +51,18 @@ public class BackRef {
             sb.append(String.format("%n%n"));
             sb.append("Group count: ");
             sb.append(m.groupCount());
-            sb.append(String.format("%n%n"));
+        }
+        tokens = sb.toString();
+    }
+
+    /** BackRef getter for group info. */
+    public String getGroups() {
+        Pattern p = Pattern.compile("(.+):(.+):(.+):(.+)");
+        Matcher m = p.matcher(input1);
+        StringBuilder sb = new StringBuilder();
+        while (m.find()) {
             for (int i = 0; i <= m.groupCount(); i++) {
-                sb.append("Group count ");
+                sb.append("Group ");
                 sb.append(i);
                 sb.append(": subsequence=\"");
                 sb.append(m.group(i));
@@ -63,7 +73,7 @@ public class BackRef {
                 sb.append(String.format("%n"));
             }
         }
-        tokens = sb.deleteCharAt(sb.length() - 1).toString();
+        return sb.deleteCharAt(sb.length() - 1).toString();
     }
 
     /** BackRef method to swap words. */
@@ -81,11 +91,14 @@ public class BackRef {
                         + "Original text: %s%n"
                         + "Replaced text: %s%n%n"
                         + "=== Tokens ===%n%n"
+                        + "%s%n%n"
+                        + "=== Groups ===%n%n"
                         + "%s",
                 input1,
                 reversed,
                 input2,
                 swapped,
-                tokens);
+                tokens,
+                getGroups());
     }
 }
