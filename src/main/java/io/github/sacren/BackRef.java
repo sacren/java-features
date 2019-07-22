@@ -12,6 +12,7 @@
  * +getReverse():String
  * +getMatches():String
  * +getGroups():String
+ * +getSwap():String
  * +toString():String
  */
 import java.util.regex.Matcher;
@@ -21,13 +22,11 @@ public class BackRef {
     /* private instance data */
     private String input1;
     private String input2;
-    private String swapped;
 
     /** BackRef constructor. */
     public BackRef() {
         input1 = "one:two:three:four";
         input2 = "apple orange";
-        swap();
     }
 
     /** BackRef setter for backward reference. */
@@ -73,11 +72,11 @@ public class BackRef {
         return sb.deleteCharAt(sb.length() - 1).toString();
     }
 
-    /** BackRef method to swap words. */
-    public void swap() {
+    /** BackRef getter for swapped text. */
+    public String getSwap() {
         Pattern p = Pattern.compile("(\\w+)(\\W+)(\\w+)");
         Matcher m = p.matcher(input2);
-        swapped = m.replaceFirst("$3$2$1");
+        return m.replaceFirst("$3$2$1");
     }
 
     /** BackRef string method. */
@@ -86,7 +85,7 @@ public class BackRef {
                 "Original text: %s%n"
                         + "Reversed text: %s%n%n"
                         + "Original text: %s%n"
-                        + "Replaced text: %s%n%n"
+                        + "Swapped text:  %s%n%n"
                         + "=== Matches ===%n%n"
                         + "%s%n%n"
                         + "=== Groups ===%n%n"
@@ -94,7 +93,7 @@ public class BackRef {
                 input1,
                 getReverse(),
                 input2,
-                swapped,
+                getSwap(),
                 getMatches(),
                 getGroups());
     }
