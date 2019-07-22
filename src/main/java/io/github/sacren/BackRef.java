@@ -5,13 +5,13 @@
  * -input1:String
  * -input2:String
  * -reversed:String
- * -tokens:String
  *
  * <p>Constructor:
  * +BackRef()
  *
  * <p>Public methods:
  * +reverse():void
+ * +getMatches():String
  * +getGroups():String
  * +toString():String
  */
@@ -24,7 +24,6 @@ public class BackRef {
     private String input2;
     private String reversed;
     private String swapped;
-    private String tokens;
 
     /** BackRef constructor. */
     public BackRef() {
@@ -39,8 +38,12 @@ public class BackRef {
         Pattern p = Pattern.compile("(.+):(.+):(.+):(.+)");
         Matcher m = p.matcher(input1);
         reversed = m.replaceAll("$4+$3+$2+$1");
-        /* for all the text */
-        m.reset(); /* reset() before find() for the counter */
+    }
+
+    /** BackRef getter for matched text. */
+    public String getMatches() {
+        Pattern p = Pattern.compile("(.+):(.+):(.+):(.+)");
+        Matcher m = p.matcher(input1);
         StringBuilder sb = new StringBuilder();
         while (m.find()) {
             sb.append(m.group());
@@ -48,11 +51,8 @@ public class BackRef {
             sb.append(m.start());
             sb.append(" and ending at ");
             sb.append(m.end());
-            sb.append(String.format("%n%n"));
-            sb.append("Group count: ");
-            sb.append(m.groupCount());
         }
-        tokens = sb.toString();
+        return sb.toString();
     }
 
     /** BackRef getter for group info. */
@@ -90,7 +90,7 @@ public class BackRef {
                         + "Reversed text: %s%n%n"
                         + "Original text: %s%n"
                         + "Replaced text: %s%n%n"
-                        + "=== Tokens ===%n%n"
+                        + "=== Matches ===%n%n"
                         + "%s%n%n"
                         + "=== Groups ===%n%n"
                         + "%s",
@@ -98,7 +98,7 @@ public class BackRef {
                 reversed,
                 input2,
                 swapped,
-                tokens,
+                getMatches(),
                 getGroups());
     }
 }
