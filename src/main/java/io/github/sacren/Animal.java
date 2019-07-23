@@ -14,7 +14,8 @@
  * <p>Constructor:
  * +Animal()
  *
- * <p>Animal method:
+ * <p>Public methods:
+ * +add(ch:char, size:int):StringBuffer
  * +toString():String
  */
 public class Animal {
@@ -26,8 +27,8 @@ public class Animal {
         count++;
     }
 
-    /* static helper for repetitive characters */
-    private static StringBuffer add(char ch, int size) {
+    /** Animal method for repetitive characters. */
+    public StringBuffer add(char ch, int size) {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < size; i++) {
             sb.append(ch);
