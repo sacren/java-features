@@ -82,7 +82,8 @@ public class BackRef {
     /** BackRef string method. */
     public String toString() {
         return String.format(
-                "Original text: %s%n"
+                "=== Back reference ===%n%n"
+                        + "Original text: %s%n"
                         + "Reversed text: %s%n%n"
                         + "Original text: %s%n"
                         + "Swapped text:  %s%n%n"
