@@ -30,6 +30,7 @@ public class Circle extends Shape {
 
     /* private static data */
     private static final String DEFAULT_COLOR = "green";
+    private static int count;
 
     /* private instance data */
     private Point center;
@@ -40,6 +41,7 @@ public class Circle extends Shape {
         super(DEFAULT_COLOR);
         center = new Point(0, 0);
         radius = 1;
+        count++;
     }
 
     /** Circle constructor with custom radius only. */
@@ -120,12 +122,14 @@ public class Circle extends Shape {
     /** Circle string method. */
     public String toString() {
         return String.format(
-                "Radius:        %.2f%n"
-                        + "Diameter:      %.2f%n"
-                        + "Circumference: %.2f%n"
-                        + "Area:          %.2f%n"
-                        + "Color:         %s%n"
-                        + "Center:        %s",
+                "Instance count: %d%n"
+                        + "Radius:         %.2f%n"
+                        + "Diameter:       %.2f%n"
+                        + "Circumference:  %.2f%n"
+                        + "Area:           %.2f%n"
+                        + "Color:          %s%n"
+                        + "Center:         %s",
+                count,
                 radius,
                 getDiameter(),
                 getCircum(),
