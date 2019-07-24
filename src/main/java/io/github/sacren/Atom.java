@@ -25,6 +25,11 @@ public class Atom {
         return atomicNumber;
     }
 
+    /** Atom static getter for origin info. */
+    public static String getOrigin() {
+        return "From Atom!";
+    }
+
     /** Atome setter for atomic number. */
     public void set(int atomicNumber) {
         if (atomicNumber < 1 || atomicNumber > 118) {

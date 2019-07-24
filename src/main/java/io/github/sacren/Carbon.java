@@ -16,6 +16,11 @@ public class Carbon extends Atom {
         super(CARBON_ATOMIC_NUMBER);
     }
 
+    /** Carbon static getter for origin info. */
+    public static String getOrigin() {
+        return "From Carbon!";
+    }
+
     /** Carbon string method. */
     public String toString() {
         return String.format("Carbon:   %d", get());

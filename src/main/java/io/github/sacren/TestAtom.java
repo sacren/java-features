@@ -11,5 +11,12 @@ public class TestAtom {
         System.out.println();
         System.out.println(hydrogen.toString());
         System.out.println(carbon);
+        System.out.println();
+        System.out.println("=== Instance call ===");
+        System.out.println();
+        /* static method doesn't participate in polymorphism */
+        System.out.println(carbon.getOrigin());
+        Carbon graphite = (Carbon) carbon;
+        System.out.println(graphite.getOrigin());
     }
 }
