@@ -18,6 +18,7 @@
  * +getBinsMax():int
  * +getMax():int
  * +getMin():int
+ * +addAsterisk(size:int):String
  * +vertHisto():String
  * +stackAsterisk():String
  * +flatHisto():String
@@ -127,17 +128,17 @@ public class Grades {
         return min;
     }
 
-    /* helper for horizontal asterisks */
-    private static String addAsterisk(int count) {
+    /** Grades getter for horizontal asterisks. */
+    public String addAsterisk(int size) {
         StringBuffer sb = new StringBuffer();
-        /* 0 count: the check and loop are skipped.
-         * 1 count: loop is skipped.
+        /* 0 size: the check and loop are skipped.
+         * 1 size: loop is skipped.
          * 2 and above: loop through.
          */
-        if (count > 0) {
+        if (size > 0) {
             sb.append("*");
         }
-        for (int i = 1; i < count; i++) {
+        for (int i = 1; i < size; i++) {
             sb.append(" *");
         }
         return sb.toString();
