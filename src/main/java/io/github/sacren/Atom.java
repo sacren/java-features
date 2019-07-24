@@ -20,12 +20,12 @@ public class Atom {
         set(atomicNumber);
     }
 
-    /** getter of Atom atomicNumber. */
+    /** Atom getter for atomic number. */
     public int get() {
         return atomicNumber;
     }
 
-    /** setter of Atom atomicNumber. */
+    /** Atome setter for atomic number. */
     public void set(int atomicNumber) {
         if (atomicNumber < 1 || atomicNumber > 118) {
             throw new IllegalArgumentException(

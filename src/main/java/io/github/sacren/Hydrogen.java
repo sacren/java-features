@@ -4,19 +4,19 @@
  * <p>Constructor:
  * +Hydrogen()
  *
- * <p>Public methods:
+ * <p>Public method:
  * +toString():String
  */
 public class Hydrogen extends Atom {
     /* private static data */
     private static final int HYDROGEN_ATOMIC_NUMBER = 1;
 
-    /** Hydrogen custom constructor. */
+    /** Hydrogen constructor. */
     public Hydrogen() {
         super(HYDROGEN_ATOMIC_NUMBER);
     }
 
-    /** Hydrogen instance description. */
+    /** Hydrogen string method. */
     public String toString() {
         return String.format("Hydrogen: %d", get());
     }

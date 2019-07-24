@@ -4,19 +4,19 @@
  * <p>Constructor:
  * +Carbon()
  *
- * <p>Public methods:
+ * <p>Public method:
  * +toString():String
  */
 public class Carbon extends Atom {
     /* private static data */
     private static final int CARBON_ATOMIC_NUMBER = 6;
 
-    /** Carbon custom constructor. */
+    /** Carbon constructor. */
     public Carbon() {
         super(CARBON_ATOMIC_NUMBER);
     }
 
-    /** Carbon instance description. */
+    /** Carbon string method. */
     public String toString() {
         return String.format("Carbon:   %d", get());
     }
