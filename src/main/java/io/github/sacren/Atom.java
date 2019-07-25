@@ -12,6 +12,14 @@
  * +set(atomicNumber:int):void
  */
 public class Atom {
+    /* static data */
+    static int diamond;
+
+    /* static initializer */
+    static {
+        diamond = 12;
+    }
+
     /* private instance data */
     private int atomicNumber;
 
