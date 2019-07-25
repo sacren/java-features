@@ -23,5 +23,10 @@ public class TestAtom {
         System.out.println();
         System.out.println(Atom.getOrigin());
         System.out.println(Carbon.getOrigin());
+        System.out.println();
+        System.out.println("=== Inheritance of static method ===");
+        System.out.println();
+        System.out.println(carbon.getAtom());
+        System.out.println(graphite.getAtom());
     }
 }

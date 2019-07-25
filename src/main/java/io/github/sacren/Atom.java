@@ -30,6 +30,11 @@ public class Atom {
         return "From Atom!";
     }
 
+    /** Atom static getter for Atom info. */
+    public static String getAtom() {
+        return "From Atom!";
+    }
+
     /** Atome setter for atomic number. */
     public void set(int atomicNumber) {
         if (atomicNumber < 1 || atomicNumber > 118) {
