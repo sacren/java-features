@@ -18,7 +18,11 @@ public class Atom {
     /* static initializer */
     static {
         diamond = 12;
+        charcoal = 12;
     }
+
+    /* public static data */
+    public static int charcoal = 60;
 
     /* private instance data */
     private int atomicNumber;

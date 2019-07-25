@@ -32,8 +32,11 @@ public class TestAtom {
         System.out.println("=== Static initializer ===");
         System.out.println();
         System.out.println(Atom.diamond);
+        System.out.println(carbon.diamond);
         System.out.println(Carbon.diamond);
         System.out.println(Hydrogen.diamond);
         System.out.println(graphite.diamond);
+        System.out.println(Atom.charcoal);
+        System.out.println(graphite.charcoal);
     }
 }
