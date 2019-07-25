@@ -18,5 +18,10 @@ public class TestAtom {
         System.out.println(carbon.getOrigin());
         Carbon graphite = (Carbon) carbon;
         System.out.println(graphite.getOrigin());
+        System.out.println();
+        System.out.println("=== Class call ===");
+        System.out.println();
+        System.out.println(Atom.getOrigin());
+        System.out.println(Carbon.getOrigin());
     }
 }
