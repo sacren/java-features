@@ -17,7 +17,6 @@ public class CharMath {
     /** CharMath getter for characters in increment. */
     public StringBuilder getIncre() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%n=== Character increment ===%n%n"));
         for (char ch = 'a'; ch <= 'z'; ch++) {
             sb.append(ch);
         }
@@ -27,7 +26,6 @@ public class CharMath {
     /** CharMath getter for characters in decrement. */
     public StringBuilder getDecre() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%n%n=== Character decrement ===%n%n"));
         for (char ch = 'Z'; ch >= 'A'; ch--) {
             sb.append(ch);
         }
@@ -42,7 +40,6 @@ public class CharMath {
         char c4 = 75;
         c4 = (char) (c4 - 1); /* Promote to int for calculation */
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%n%n=== Characters ===%n%n"));
         sb.append(String.format("%c%n", C1)); /* show '0' by char */
         sb.append(String.format("%c%n", C2)); /* show 'A' by char */
         sb.append(String.format("%c%n", 'A')); /* show 'A' by literal char */
@@ -59,8 +56,11 @@ public class CharMath {
     /** CharMath string method. */
     public String toString() {
         StringBuffer sb = new StringBuffer();
+        sb.append(String.format("%n=== Character increment ===%n%n"));
         sb.append(getIncre());
+        sb.append(String.format("%n%n=== Character decrement ===%n%n"));
         sb.append(getDecre());
+        sb.append(String.format("%n%n=== Characters ===%n%n"));
         sb.append(getChars());
         return sb.toString();
     }
