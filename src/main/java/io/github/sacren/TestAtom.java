@@ -38,5 +38,9 @@ public class TestAtom {
         System.out.println(graphite.diamond);
         System.out.println(Atom.charcoal);
         System.out.println(graphite.charcoal);
+        System.out.println();
+        System.out.println("=== Instance initializer ===");
+        System.out.println();
+        System.out.println(graphite.getIso());
     }
 }

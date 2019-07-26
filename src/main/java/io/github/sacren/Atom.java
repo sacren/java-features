@@ -26,6 +26,11 @@ public class Atom {
 
     /* private instance data */
     private int atomicNumber;
+    private int isotope;
+
+    {
+        isotope = 13;
+    }
 
     /** Atom custom constructor. */
     public Atom(int atomicNumber) {
@@ -35,6 +40,11 @@ public class Atom {
     /** Atom getter for atomic number. */
     public int get() {
         return atomicNumber;
+    }
+
+    /** Atom getter for isotope. */
+    public int getIso() {
+        return isotope;
     }
 
     /** Atom static getter for origin info. */
