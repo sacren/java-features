@@ -3,16 +3,10 @@
  *
  * <p>Character operation through arithmetic.
  *
- * <p>Private instance data:
- * -str:String
- *
- * <p>Constructor:
- * +CharMath()
- *
  * <p>Public methods:
- * +increment():void
- * +decrement():void
- * +show():void
+ * +getIncre():StringBuilder
+ * +getDecre():StringBuilder
+ * +getChars():StringBuilder
  * +toString():String
  */
 public class CharMath {
@@ -20,64 +14,54 @@ public class CharMath {
     private static final char C1 = '0'; /* initialize character with char */
     private static final char C2 = 'A';
 
-    /* private instance data */
-    private String str;
-
-    /** CharMath constructor. */
-    public CharMath() {
-        increment();
-        decrement();
-        show();
+    /** CharMath getter for characters in increment. */
+    public StringBuilder getIncre() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%n=== Character increment ===%n%n"));
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            sb.append(ch);
+        }
+        return sb;
     }
 
-    /** CharMath method of character increment. */
-    public void increment() {
-        str = String.format("%n=== Character increment ===%n%n");
-        for (char c = 'a'; c <= 'z'; c++) {
-            str += Character.toString(c);
+    /** CharMath getter for characters in decrement. */
+    public StringBuilder getDecre() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%n%n=== Character decrement ===%n%n"));
+        for (char ch = 'Z'; ch >= 'A'; ch--) {
+            sb.append(ch);
         }
-    }
-
-    /** CharMath method of character decrement. */
-    public void decrement() {
-        str += String.format("%n%n=== Character decrement ===%n%n");
-        for (char c = 'Z'; c >= 'A'; c--) {
-            str += Character.toString(c);
-        }
+        return sb;
     }
 
     /** CharMath method to display various characters. */
-    public void show() {
+    public StringBuilder getChars() {
         char c3 = 98; /* initilize character with int */
         c3 -= 44; /* character as int */
         c3 += 44; /* restore original value */
         char c4 = 75;
         c4 = (char) (c4 - 1); /* Promote to int for calculation */
-        str += String.format(
-                "%n%n=== Characters ===%n%n"
-                        + "%c%n" /* show '0' by char */
-                        + "%c%n" /* show 'A' by char */
-                        + "%c%n" /* show 'A' by literal char */
-                        + "%c%n" /* show 'b' by casting char to int */
-                        + "%c%n" /* show 'J' by literal int */
-                        + "%c" /* show 'J' by int operation */
-                        + "%n%n=== Characters with cast ===%n%n"
-                        + "%d%n" /* show integer casting from char */
-                        + "%d%n" /* show integer casting from char */
-                        + "%c", /* show 'b' by char */
-                C1,
-                C2,
-                'A',
-                c3,
-                74,
-                c4,
-                (int) C1,
-                (int) C2,
-                (int) c3);
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%n%n=== Characters ===%n%n"));
+        sb.append(String.format("%c%n", C1)); /* show '0' by char */
+        sb.append(String.format("%c%n", C2)); /* show 'A' by char */
+        sb.append(String.format("%c%n", 'A')); /* show 'A' by literal char */
+        sb.append(String.format("%c%n", c3)); /* show 'b' by casting char to int */
+        sb.append(String.format("%c%n", 74)); /* show 'J' by literal int */
+        sb.append(String.format("%c", c4)); /* show 'J' by int operation */
+        sb.append(String.format("%n%n=== Characters with cast ===%n%n"));
+        sb.append(String.format("%d%n", (int) C1)); /* show integer casting from char */
+        sb.append(String.format("%d%n", (int) C2)); /* show integer casting from char */
+        sb.append((int) c3); /* show 'b' by char */
+        return sb;
     }
 
-    /** CharMath instance printout. */
+    /** CharMath string method. */
     public String toString() {
-        return str;
+        StringBuffer sb = new StringBuffer();
+        sb.append(getIncre());
+        sb.append(getDecre());
+        sb.append(getChars());
+        return sb.toString();
     }
 }
