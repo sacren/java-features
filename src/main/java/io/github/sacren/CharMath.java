@@ -3,6 +3,10 @@
  *
  * <p>Character operation through arithmetic.
  *
+ * <p>Private instance data:
+ * -c1:char
+ * -c2:char
+ *
  * <p>Public methods:
  * +getIncre():StringBuilder
  * +getDecre():StringBuilder
@@ -10,9 +14,15 @@
  * +toString():String
  */
 public class CharMath {
-    /* private static data */
-    private static final char C1 = '0'; /* initialize character with char */
-    private static final char C2 = 'A';
+    /* private instance data */
+    private final char c1;
+    private final char c2;
+
+    /* initialize instance character */
+    {
+        c1 = '0';
+        c2 = 'A';
+    }
 
     /** CharMath getter for characters in increment. */
     public StringBuilder getIncre() {
@@ -40,15 +50,15 @@ public class CharMath {
         char c4 = 75;
         c4 = (char) (c4 - 1); /* Promote to int for calculation */
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%c%n", C1)); /* show '0' by char */
-        sb.append(String.format("%c%n", C2)); /* show 'A' by char */
+        sb.append(String.format("%c%n", c1)); /* show '0' by char */
+        sb.append(String.format("%c%n", c2)); /* show 'A' by char */
         sb.append(String.format("%c%n", 'A')); /* show 'A' by literal char */
         sb.append(String.format("%c%n", c3)); /* show 'b' by casting char to int */
         sb.append(String.format("%c%n", 74)); /* show 'J' by literal int */
         sb.append(String.format("%c", c4)); /* show 'J' by int operation */
         sb.append(String.format("%n%n=== Characters with cast ===%n%n"));
-        sb.append(String.format("%d%n", (int) C1)); /* show integer casting from char */
-        sb.append(String.format("%d%n", (int) C2)); /* show integer casting from char */
+        sb.append(String.format("%d%n", (int) c1)); /* show integer casting from char */
+        sb.append(String.format("%d%n", (int) c2)); /* show integer casting from char */
         sb.append((int) c3); /* show 'b' by char */
         return sb;
     }
