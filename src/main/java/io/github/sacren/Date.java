@@ -21,21 +21,26 @@
  * +toString():String
  */
 public class Date {
-    /* private static data */
-    private static final int DEFAULT_YEAR = 1776;
-    private static final int DEFAULT_MONTH = 7;
-    private static final int DEFAULT_DAY = 4;
-
     /* private instance data */
     private int year;
     private int month;
     private int day;
+    private final int defYear;
+    private final int defMonth;
+    private final int defDay;
+
+    /* initialize instance data */
+    {
+        defYear = 1776;
+        defMonth = 7;
+        defDay = 4;
+    }
 
     /** Date default constructor. */
     public Date() {
-        this.year = DEFAULT_YEAR;
-        this.month = DEFAULT_MONTH;
-        this.day = DEFAULT_DAY;
+        year = defYear;
+        month = defMonth;
+        day = defDay;
     }
 
     /** Date custom constructor. */
