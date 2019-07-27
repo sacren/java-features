@@ -94,12 +94,14 @@ public class Date {
         setDay(day);
     }
 
-    /** Date instance printout. */
+    /** Date string method. */
     public String toString() {
         return String.format(
-                "[%02d/%02d/%04d]",
-                day,
+                "Year:  %04d%n"
+                        + "Month: %02d%n"
+                        + "Day:   %02d",
+                year,
                 month,
-                year);
+                day);
     }
 }
