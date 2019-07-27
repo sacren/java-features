@@ -6,16 +6,17 @@ import java.util.Scanner;
 public class TestAdd2Int {
     /** Add2Int test driver. */
     public static void main(String[] args) {
-        Scanner inStream = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
+        int num1;
         System.out.print("Enter the first integer: ");
-        final int n1 = inStream.nextInt();
+        num1 = in.nextInt();
+        int num2;
         System.out.print("Enter the second integer: ");
-        final int n2 = inStream.nextInt();
-        inStream.close();
-        Add2Int add2 = new Add2Int(n1, n2);
+        num2 = in.nextInt();
+        in.close();
         System.out.println();
         System.out.println("=== Add 2 integers ===");
         System.out.println();
-        System.out.println(add2);
+        System.out.println(new Add2Int(num1, num2));
     }
 }

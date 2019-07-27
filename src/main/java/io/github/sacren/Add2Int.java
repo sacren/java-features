@@ -2,30 +2,30 @@
  * Add2Int class.
  *
  * <p>Private data:
- * -n1:int
- * -n2:int
+ * -num1:int
+ * -num2:int
  *
  * <p>Constructor:
- * +Add2Int(n1:int, n2:int)
+ * +Add2Int(num1:int, num2:int)
  *
  * <p>Public methods:
  * +toString():String
  */
 public class Add2Int {
     /* private instance data */
-    private int n1;
-    private int n2;
+    private int num1;
+    private int num2;
 
     /** Add2int custom constructor. */
-    public Add2Int(int n1, int n2) {
-        this.n1 = n1;
-        this.n2 = n2;
+    public Add2Int(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
     }
 
     /** Add2Int instance printout. */
     public String toString() {
         return String.format(
                 "%d + %d = %d",
-                n1, n2, n1 + n2);
+                num1, num2, num1 + num2);
     }
 }
