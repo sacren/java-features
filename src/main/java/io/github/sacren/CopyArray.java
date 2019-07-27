@@ -8,6 +8,7 @@
  * +CopyArray(origin:int[])
  *
  * <p>Public methods:
+ * +getCopy():int[]
  * +toString():String
  */
 import java.util.Arrays;
@@ -21,12 +22,17 @@ public class CopyArray {
         this.origin = origin;
     }
 
+    /** CopyArray getter for a copy of integer array. */
+    public int[] getCopy() {
+        return Arrays.copyOf(origin, origin.length);
+    }
+
     /** CopyArray instance printout. */
     public String toString() {
         return String.format(
                 "Origin: %s%n"
                         + "Copy:   %s",
                 Arrays.toString(origin),
-                Arrays.toString(Arrays.copyOf(origin, origin.length)));
+                Arrays.toString(getCopy()));
     }
 }
