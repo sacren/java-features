@@ -25,22 +25,16 @@ public class Date {
     private int year;
     private int month;
     private int day;
-    private final int defYear;
-    private final int defMonth;
-    private final int defDay;
 
     /* initialize instance data */
     {
-        defYear = 1776;
-        defMonth = 7;
-        defDay = 4;
+        year = 1776;
+        month = 7;
+        day = 4;
     }
 
     /** Date default constructor. */
     public Date() {
-        year = defYear;
-        month = defMonth;
-        day = defDay;
     }
 
     /** Date custom constructor. */
