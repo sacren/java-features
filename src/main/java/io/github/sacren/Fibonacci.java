@@ -12,7 +12,6 @@
  * +Fibonacci()
  *
  * <p>Public methods:
- * +init():void
  * +average():void
  * +toString():String
  */
@@ -23,14 +22,8 @@ public class Fibonacci {
     private int[] fibo;
     private double average;
 
-    /** Fibonacci constructor. */
-    public Fibonacci() {
-        init();
-        average();
-    }
-
-    /** Fibonacci method to initialize first 20 fibonacci numbers. */
-    public void init() {
+    /* instance initializer for first 20 fibonacci numbers */
+    {
         fibo = new int[20];
         fibo[0] = 1;
         fibo[1] = 1;
@@ -41,6 +34,11 @@ public class Fibonacci {
             }
             i++;
         }
+    }
+
+    /** Fibonacci constructor. */
+    public Fibonacci() {
+        average();
     }
 
     /** Fibonacci method for average. */
