@@ -12,7 +12,7 @@
  * +Fibonacci()
  *
  * <p>Public methods:
- * +average():void
+ * +getAverage():double
  * +toString():String
  */
 import java.util.Arrays;
@@ -20,7 +20,6 @@ import java.util.Arrays;
 public class Fibonacci {
     /* private instance data */
     private int[] fibo;
-    private double average;
 
     /* instance initializer for first 20 fibonacci numbers */
     {
@@ -38,24 +37,23 @@ public class Fibonacci {
 
     /** Fibonacci constructor. */
     public Fibonacci() {
-        average();
     }
 
-    /** Fibonacci method for average. */
-    public void average() {
-        average = 0;
-        for (int n : fibo) {
-            average += n;
+    /** Fibonacci getter for average. */
+    public double getAverage() {
+        double sum = 0;
+        for (int num : fibo) {
+            sum += num;
         }
-        average /= fibo.length;
+        return sum / fibo.length;
     }
 
-    /** Fibonacci instance printout. */
+    /** Fibonacci string method. */
     public String toString() {
         return String.format(
                 "Fibonacci: %s%n"
                         + "Average:   %.2f",
                 Arrays.toString(fibo),
-                average);
+                getAverage());
     }
 }
