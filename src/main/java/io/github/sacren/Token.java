@@ -43,11 +43,16 @@ public class Token {
     /** Token setter for the string of week names. */
     public void set() {
         StringBuilder sb = new StringBuilder();
+        boolean once = true;
         for (String name : WEEK) {
-            sb.append(name);
-            sb.append(" ");
+            if (once) {
+                once = false;
+                sb.append(name);
+                continue;
+            }
+            sb.append(" ").append(name);
         }
-        week = sb.deleteCharAt(sb.length() - 1).toString();
+        week = sb.toString();
     }
 
     /** Token getter for names of the week. */
@@ -60,13 +65,15 @@ public class Token {
             token.delete(0, token.length());
             token.append(st.nextToken());
             sb1.append(token);
-            sb1.append(String.format("%n"));
+            if (st.hasMoreTokens()) {
+                sb1.append(String.format("%n"));
+            }
             sb2.insert(0, token);
             if (st.hasMoreTokens()) {
                 sb2.insert(0, String.format("%n"));
             }
         }
-        list = sb1.deleteCharAt(sb1.length() - 1).toString();
+        list = sb1.toString();
         reversed = sb2.toString();
     }
 
