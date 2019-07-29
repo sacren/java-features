@@ -61,11 +61,13 @@ public class Token {
             token.append(st.nextToken());
             sb1.append(token);
             sb1.append(String.format("%n"));
-            sb2.insert(0, String.format("%n"));
             sb2.insert(0, token);
+            if (st.hasMoreTokens()) {
+                sb2.insert(0, String.format("%n"));
+            }
         }
         list = sb1.deleteCharAt(sb1.length() - 1).toString();
-        reversed = sb2.deleteCharAt(sb2.length() - 1).toString();
+        reversed = sb2.toString();
     }
 
     /** Token getter for the week array in reverse. */
