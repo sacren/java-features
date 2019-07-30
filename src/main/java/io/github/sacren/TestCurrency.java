@@ -7,8 +7,6 @@ public class TestCurrency {
     /** Currency test driver. */
     public static void main(String[] args) {
         out.println();
-        out.println("=== Currency format ===");
-        out.println();
         out.println(new Currency());
     }
 }
