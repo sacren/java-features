@@ -3,13 +3,13 @@
  *
  * <p>Private instance data:
  * -locales:Locale[]
+ * -fmt:double
  *
  * <p>Constructor:
  * +Currency()
  *
  * <p>Public methods:
- * +getNumFmt():String
- * +getCurrency():String
+ * +setFmt():void
  * +toString():String
  */
 import java.text.NumberFormat;
@@ -17,46 +17,39 @@ import java.util.Locale;
 
 public class Currency {
     /* private instance data */
+    private final double fmt = 1234567890.1234;
     private Locale[] locales = {
         Locale.US,
         Locale.FRANCE,
         Locale.JAPAN
     };
+    private String numFmt;
+    private String curFmt;
 
     /** Currency constructor. */
     public Currency() {
+        setFmt();
     }
 
-    /** Currency getter for general-purpose number format. */
-    public String getNumFmt() {
+    /** Currency setter for various formats. */
+    public void setFmt() {
         boolean once = true;
-        StringBuilder sb = new StringBuilder();
+        StringBuilder number = new StringBuilder();
+        StringBuilder currency = new StringBuilder();
         for (Locale loc : locales) {
             if (once) {
                 once = false;
             } else {
-                sb.append(String.format("%n"));
+                number.append(String.format("%n"));
+                currency.append(String.format("%n"));
             }
-            sb.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getInstance(loc).format(1234567890.1234));
+            number.append(String.format("%13s: ", loc.getDisplayCountry()))
+                .append(NumberFormat.getInstance(loc).format(fmt));
+            currency.append(String.format("%13s: ", loc.getDisplayCountry()))
+                .append(NumberFormat.getCurrencyInstance(loc).format(fmt));
         }
-        return sb.toString();
-    }
-
-    /** Currency getter for general-purpose currency format. */
-    public String getCurrency() {
-        boolean once = true;
-        StringBuilder sb = new StringBuilder();
-        for (Locale loc : locales) {
-            if (once) {
-                once = false;
-            } else {
-                sb.append(String.format("%n"));
-            }
-            sb.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getCurrencyInstance(loc).format(1234567890.1234));
-        }
-        return sb.toString();
+        numFmt = number.toString();
+        curFmt = currency.toString();
     }
 
     /** Currency string method. */
@@ -66,7 +59,7 @@ public class Currency {
                         + "%s%n%n"
                         + "=== Currency of locale ===%n%n"
                         + "%s",
-                getNumFmt(),
-                getCurrency());
+                numFmt,
+                curFmt);
     }
 }
