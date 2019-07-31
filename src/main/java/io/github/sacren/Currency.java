@@ -2,8 +2,11 @@
  * Currency class.
  *
  * <p>Private instance data:
- * -locales:Locale[]
  * -fmt:double
+ * -locales:Locale[]
+ * -numFmt:String
+ * -curFmt:String
+ * -allFmt:String
  *
  * <p>Constructor:
  * +Currency()
@@ -29,6 +32,7 @@ public class Currency {
     };
     private String numFmt;
     private String curFmt;
+    private String allFmt;
 
     /** Currency constructor. */
     public Currency() {
@@ -54,6 +58,19 @@ public class Currency {
         }
         numFmt = number.toString();
         curFmt = currency.toString();
+        /* all available locales */
+        StringBuilder sb = new StringBuilder();
+        once = true;
+        for (Locale loc : NumberFormat.getAvailableLocales()) {
+            if (once) {
+                once = false;
+            } else {
+                sb.append(String.format("%n"));
+            }
+            sb.append(String.format("%22s: ", loc.getDisplayCountry()))
+                .append(NumberFormat.getCurrencyInstance(loc).format(fmt));
+        }
+        allFmt = sb.toString();
     }
 
     /** Currency string method. */
@@ -62,8 +79,11 @@ public class Currency {
                 "=== Number of locale ===%n%n"
                         + "%s%n%n"
                         + "=== Currency of locale ===%n%n"
+                        + "%s%n%n"
+                        + "=== Currency of available locales ===%n%n"
                         + "%s",
                 numFmt,
-                curFmt);
+                curFmt,
+                allFmt);
     }
 }
