@@ -19,7 +19,11 @@ public class Currency {
     /* private instance data */
     private final double fmt = 1234567890.1234;
     private Locale[] locales = {
+        Locale.GERMANY,
         Locale.US,
+        Locale.ITALY,
+        Locale.KOREA,
+        Locale.CHINA,
         Locale.FRANCE,
         Locale.JAPAN
     };
