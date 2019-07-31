@@ -62,6 +62,10 @@ public class Currency {
         StringBuilder sb = new StringBuilder();
         once = true;
         for (Locale loc : NumberFormat.getAvailableLocales()) {
+            /* skip if no country locale */
+            if (loc.getCountry().isEmpty()) {
+                continue;
+            }
             if (once) {
                 once = false;
             } else {
