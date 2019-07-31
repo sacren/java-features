@@ -6,6 +6,7 @@
  * -locales:Locale[]
  * -numFmt:String
  * -curFmt:String
+ * -intFmt:String
  * -allFmt:String
  *
  * <p>Constructor:
@@ -32,6 +33,7 @@ public class Currency {
     };
     private String numFmt;
     private String curFmt;
+    private String intFmt;
     private String allFmt;
 
     /** Currency constructor. */
@@ -44,20 +46,25 @@ public class Currency {
         boolean once = true;
         StringBuilder number = new StringBuilder();
         StringBuilder currency = new StringBuilder();
+        StringBuilder integer = new StringBuilder();
         for (Locale loc : locales) {
             if (once) {
                 once = false;
             } else {
                 number.append(String.format("%n"));
                 currency.append(String.format("%n"));
+                integer.append(String.format("%n"));
             }
             number.append(String.format("%13s: ", loc.getDisplayCountry()))
                 .append(NumberFormat.getInstance(loc).format(fmt));
             currency.append(String.format("%13s: ", loc.getDisplayCountry()))
                 .append(NumberFormat.getCurrencyInstance(loc).format(fmt));
+            integer.append(String.format("%13s: ", loc.getDisplayCountry()))
+                .append(NumberFormat.getIntegerInstance(loc).format((int) fmt));
         }
         numFmt = number.toString();
         curFmt = currency.toString();
+        intFmt = integer.toString();
         /* all available locales */
         StringBuilder sb = new StringBuilder();
         once = true;
@@ -84,10 +91,13 @@ public class Currency {
                         + "%s%n%n"
                         + "=== Currency of locale ===%n%n"
                         + "%s%n%n"
+                        + "=== Currency of integer locale ===%n%n"
+                        + "%s%n%n"
                         + "=== Currency of available locales ===%n%n"
                         + "%s",
                 numFmt,
                 curFmt,
+                intFmt,
                 allFmt);
     }
 }
