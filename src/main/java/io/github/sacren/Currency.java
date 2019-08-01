@@ -7,6 +7,7 @@
  * -numFmt:String
  * -curFmt:String
  * -intFmt:String
+ * -perFmt:String
  * -allFmt:String
  *
  * <p>Constructor:
@@ -34,6 +35,7 @@ public class Currency {
     private String numFmt;
     private String curFmt;
     private String intFmt;
+    private String perFmt;
     private String allFmt;
 
     /** Currency constructor. */
@@ -47,6 +49,7 @@ public class Currency {
         StringBuilder number = new StringBuilder();
         StringBuilder currency = new StringBuilder();
         StringBuilder integer = new StringBuilder();
+        StringBuilder percent = new StringBuilder();
         for (Locale loc : locales) {
             if (once) {
                 once = false;
@@ -54,6 +57,7 @@ public class Currency {
                 number.append(String.format("%n"));
                 currency.append(String.format("%n"));
                 integer.append(String.format("%n"));
+                percent.append(String.format("%n"));
             }
             number.append(String.format("%13s: ", loc.getDisplayCountry()))
                 .append(NumberFormat.getInstance(loc).format(fmt));
@@ -61,10 +65,13 @@ public class Currency {
                 .append(NumberFormat.getCurrencyInstance(loc).format(fmt));
             integer.append(String.format("%13s: ", loc.getDisplayCountry()))
                 .append(NumberFormat.getIntegerInstance(loc).format((int) fmt));
+            percent.append(String.format("%13s: ", loc.getDisplayCountry()))
+                .append(NumberFormat.getPercentInstance(loc).format(fmt));
         }
         numFmt = number.toString();
         curFmt = currency.toString();
         intFmt = integer.toString();
+        perFmt = percent.toString();
         /* all available locales */
         StringBuilder sb = new StringBuilder();
         once = true;
@@ -93,11 +100,14 @@ public class Currency {
                         + "%s%n%n"
                         + "=== Currency of integer locale ===%n%n"
                         + "%s%n%n"
+                        + "=== Currency of percent locale ===%n%n"
+                        + "%s%n%n"
                         + "=== Currency of available locales ===%n%n"
                         + "%s",
                 numFmt,
                 curFmt,
                 intFmt,
+                perFmt,
                 allFmt);
     }
 }
