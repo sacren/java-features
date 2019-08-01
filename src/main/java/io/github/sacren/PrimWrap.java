@@ -2,8 +2,8 @@
  * PrimWrap class.
  *
  * <p>Private instance data:
- * -i:int
- * -s:String
+ * -num:int
+ * -str:String
  *
  * <p>Constructor:
  * +PrimWrap()
@@ -13,19 +13,20 @@
  * +getIntStr():Integer
  * +toString():String
  */
+
 public class PrimWrap {
     /* private instance data */
-    private final int i = 5566;
-    private String s = "5566";
+    private final int num = 5566;
+    private String str = "5566";
 
     /** PrimWrap getter for integer object. */
     public Integer getInt() {
-        return new Integer(i);
+        return new Integer(num);
     }
 
     /** PrimWrap getter for integer object by string. */
     public Integer getIntStr() {
-        return new Integer(s);
+        return new Integer(str);
     }
 
     /** PrimWrap string method. */
