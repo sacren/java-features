@@ -18,6 +18,14 @@ public class PrimWrap {
     /* private instance data */
     private final int num = 5566;
     private String str = "5566";
+    private Integer intObj;
+    private Integer strObj;
+
+    /** PrimWrap constructor. */
+    public PrimWrap() {
+        intObj = new Integer(num);
+        strObj = new Integer(str);
+    }
 
     /** PrimWrap getter for integer object. */
     public Integer getInt() {
@@ -34,7 +42,7 @@ public class PrimWrap {
         return String.format(
                 "Integer object by int:    %d%n"
                         + "Integer object by string: %d",
-                getInt(),
-                getIntStr());
+                intObj,
+                strObj);
     }
 }
