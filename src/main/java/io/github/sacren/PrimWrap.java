@@ -3,10 +3,12 @@
  *
  * <p>Private instance data:
  * -intObj:Integer
- * -strObj:Integer
+ * -intObjStr:Integer
  * -dblObj:Double
+ * -dblObjStr:Double
  * -charObj:Character
  * -boolObj:Boolean
+ * -boolObjStr:Boolean
  *
  * <p>Constructor:
  * +PrimWrap()
@@ -18,32 +20,40 @@
 public class PrimWrap {
     /* private instance data */
     private Integer intObj;
-    private Integer strObj;
+    private Integer intObjStr;
     private Double dblObj;
+    private Double dblObjStr;
     private Character charObj;
     private Boolean boolObj;
+    private Boolean boolObjStr;
 
     /** PrimWrap constructor. */
     public PrimWrap() {
         intObj = new Integer(2019);
-        strObj = new Integer("2019");
+        intObjStr = new Integer("2019");
         dblObj = new Double(Math.PI);
+        dblObjStr = new Double(dblObj.toString());
         charObj = new Character('X');
         boolObj = new Boolean(true);
+        boolObjStr = new Boolean(boolObj.toString());
     }
 
     /** PrimWrap string method. */
     public String toString() {
         return String.format(
-                "Integer object (int):    %d%n"
-                        + "Integer object (String): %d%n"
-                        + "Double object:           %f%n"
-                        + "Character object:        %c%n"
-                        + "Boolean object:          %b",
+                "Integer object (int):     %d%n"
+                        + "Integer object (String):  %d%n"
+                        + "Double object (double):   %f%n"
+                        + "Double object (String):   %f%n"
+                        + "Character object:         %c%n"
+                        + "Boolean object (boolean): %b%n"
+                        + "Boolean object (String):  %b",
                 intObj,
-                strObj,
+                intObjStr,
                 dblObj,
+                dblObjStr,
                 charObj,
-                boolObj);
+                boolObj,
+                boolObjStr);
     }
 }
