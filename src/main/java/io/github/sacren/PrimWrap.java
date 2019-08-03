@@ -8,6 +8,9 @@
  * -shortObjStr:Short
  * -intObj:Integer
  * -intObjStr:Integer
+ * -floatObj:Float
+ * -floatObjDbl:Float
+ * -floatObjStr:Float
  * -dblObj:Double
  * -dblObjStr:Double
  * -charObj:Character
@@ -29,6 +32,9 @@ public class PrimWrap {
     private Short shortObjStr;
     private Integer intObj;
     private Integer intObjStr;
+    private Float floatObj;
+    private Float floatObjDbl;
+    private Float floatObjStr;
     private Double dblObj;
     private Double dblObjStr;
     private Character charObj;
@@ -43,6 +49,9 @@ public class PrimWrap {
         shortObjStr = new Short(shortObj.toString());
         intObj = new Integer(2019);
         intObjStr = new Integer("2019");
+        floatObj = new Float(Float.MAX_VALUE);
+        floatObjDbl = new Float(Math.E);
+        floatObjStr = new Float(floatObj.toString());
         dblObj = new Double(Math.PI);
         dblObjStr = new Double(dblObj.toString());
         charObj = new Character('X');
@@ -59,6 +68,9 @@ public class PrimWrap {
                         + "Short object (String):    %d%n"
                         + "Integer object (int):     %d%n"
                         + "Integer object (String):  %d%n"
+                        + "Float object (float):     %f%n"
+                        + "Float object (double):    %f%n"
+                        + "Float object (String):    %f%n"
                         + "Double object (double):   %f%n"
                         + "Double object (String):   %f%n"
                         + "Character object:         %c%n"
@@ -70,6 +82,9 @@ public class PrimWrap {
                 shortObjStr,
                 intObj,
                 intObjStr,
+                floatObj,
+                floatObjDbl,
+                floatObjStr,
                 dblObj,
                 dblObjStr,
                 charObj,
