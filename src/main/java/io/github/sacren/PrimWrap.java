@@ -7,6 +7,8 @@
  * -dblObj:Double
  * -dblObjStr:Double
  * -charObj:Character
+ * -byteObj:Byte
+ * -byteObjStr:Byte
  * -boolObj:Boolean
  * -boolObjStr:Boolean
  *
@@ -16,6 +18,7 @@
  * <p>Public methods:
  * +toString():String
  */
+import static java.lang.Byte.MAX_VALUE;
 
 public class PrimWrap {
     /* private instance data */
@@ -24,6 +27,8 @@ public class PrimWrap {
     private Double dblObj;
     private Double dblObjStr;
     private Character charObj;
+    private Byte byteObj;
+    private Byte byteObjStr;
     private Boolean boolObj;
     private Boolean boolObjStr;
 
@@ -34,6 +39,8 @@ public class PrimWrap {
         dblObj = new Double(Math.PI);
         dblObjStr = new Double(dblObj.toString());
         charObj = new Character('X');
+        byteObj = new Byte(MAX_VALUE);
+        byteObjStr = new Byte(byteObj.toString());
         boolObj = new Boolean(true);
         boolObjStr = new Boolean(boolObj.toString());
     }
@@ -46,6 +53,8 @@ public class PrimWrap {
                         + "Double object (double):   %f%n"
                         + "Double object (String):   %f%n"
                         + "Character object:         %c%n"
+                        + "Byte object (byte):       %d%n"
+                        + "Byte object (String):     %d%n"
                         + "Boolean object (boolean): %b%n"
                         + "Boolean object (String):  %b",
                 intObj,
@@ -53,6 +62,8 @@ public class PrimWrap {
                 dblObj,
                 dblObjStr,
                 charObj,
+                byteObj,
+                byteObjStr,
                 boolObj,
                 boolObjStr);
     }
