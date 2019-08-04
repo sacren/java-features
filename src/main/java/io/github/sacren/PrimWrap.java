@@ -70,35 +70,51 @@ public class PrimWrap {
         return String.format(
                 "Byte object (byte):       %d%n"
                         + "Byte object (String):     %d%n"
+                        + "Byte object value:        %d%n"
                         + "Short object (short):     %d%n"
                         + "Short object (String):    %d%n"
+                        + "Short object value:       %d%n"
                         + "Integer object (int):     %d%n"
                         + "Integer object (String):  %d%n"
+                        + "Integer object value:     %d%n"
                         + "Long object (long):       %d%n"
                         + "Long object (String):     %d%n"
+                        + "Long object value:        %d%n"
                         + "Float object (float):     %f%n"
                         + "Float object (double):    %f%n"
                         + "Float object (String):    %f%n"
+                        + "Float object value:       %f%n"
                         + "Double object (double):   %f%n"
                         + "Double object (String):   %f%n"
+                        + "Double object value:      %f%n"
                         + "Character object:         %c%n"
+                        + "Character object value:   %c%n"
                         + "Boolean object (boolean): %b%n"
-                        + "Boolean object (String):  %b",
+                        + "Boolean object (String):  %b%n"
+                        + "Boolean object value:     %b",
                 byteObj,
                 byteObjStr,
+                byteObj.byteValue(),
                 shortObj,
                 shortObjStr,
+                shortObj.shortValue(),
                 intObj,
                 intObjStr,
+                intObj.intValue(),
                 longObj,
                 longObjStr,
+                longObj.longValue(),
                 floatObj,
                 floatObjDbl,
                 floatObjStr,
+                floatObj.floatValue(),
                 dblObj,
                 dblObjStr,
+                dblObj.doubleValue(),
                 charObj,
+                charObj.charValue(),
                 boolObj,
-                boolObjStr);
+                boolObjStr,
+                boolObj.booleanValue());
     }
 }
