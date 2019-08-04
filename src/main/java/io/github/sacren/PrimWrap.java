@@ -62,9 +62,9 @@ public class PrimWrap {
     /** PrimWrap string method. */
     public String toString() {
         return String.format(
-                "Byte object (int):        %d%n"
+                "Byte object (byte):       %d%n"
                         + "Byte object (String):     %d%n"
-                        + "Short object (int):       %d%n"
+                        + "Short object (short):     %d%n"
                         + "Short object (String):    %d%n"
                         + "Integer object (int):     %d%n"
                         + "Integer object (String):  %d%n"
