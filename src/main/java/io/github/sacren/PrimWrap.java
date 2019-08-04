@@ -8,6 +8,8 @@
  * -shortObjStr:Short
  * -intObj:Integer
  * -intObjStr:Integer
+ * -longObj:Long
+ * -longObjStr:Long
  * -floatObj:Float
  * -floatObjDbl:Float
  * -floatObjStr:Float
@@ -32,6 +34,8 @@ public class PrimWrap {
     private Short shortObjStr;
     private Integer intObj;
     private Integer intObjStr;
+    private Long longObj;
+    private Long longObjStr;
     private Float floatObj;
     private Float floatObjDbl;
     private Float floatObjStr;
@@ -49,6 +53,8 @@ public class PrimWrap {
         shortObjStr = new Short(shortObj.toString());
         intObj = new Integer(2019);
         intObjStr = new Integer("2019");
+        longObj = new Long(Long.MAX_VALUE);
+        longObjStr = new Long(longObj.toString());
         floatObj = new Float(Float.MAX_VALUE);
         floatObjDbl = new Float(Math.E);
         floatObjStr = new Float(floatObj.toString());
@@ -68,6 +74,8 @@ public class PrimWrap {
                         + "Short object (String):    %d%n"
                         + "Integer object (int):     %d%n"
                         + "Integer object (String):  %d%n"
+                        + "Long object (long):       %d%n"
+                        + "Long object (String):     %d%n"
                         + "Float object (float):     %f%n"
                         + "Float object (double):    %f%n"
                         + "Float object (String):    %f%n"
@@ -82,6 +90,8 @@ public class PrimWrap {
                 shortObjStr,
                 intObj,
                 intObjStr,
+                longObj,
+                longObjStr,
                 floatObj,
                 floatObjDbl,
                 floatObjStr,
