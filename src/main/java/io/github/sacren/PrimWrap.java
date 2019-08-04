@@ -51,14 +51,14 @@ public class PrimWrap {
         byteObjStr = new Byte(byteObj.toString());
         shortObj = new Short(Short.MAX_VALUE);
         shortObjStr = new Short(shortObj.toString());
-        intObj = new Integer(2019);
-        intObjStr = new Integer("2019");
+        intObj = new Integer(Integer.MAX_VALUE);
+        intObjStr = new Integer(intObj.toString());
         longObj = new Long(Long.MAX_VALUE);
         longObjStr = new Long(longObj.toString());
         floatObj = new Float(Float.MAX_VALUE);
         floatObjDbl = new Float(Math.E);
         floatObjStr = new Float(floatObj.toString());
-        dblObj = new Double(Math.PI);
+        dblObj = new Double(Double.MAX_VALUE);
         dblObjStr = new Double(dblObj.toString());
         charObj = new Character('X');
         boolObj = new Boolean(true);
