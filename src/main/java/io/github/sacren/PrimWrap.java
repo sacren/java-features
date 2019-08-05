@@ -57,7 +57,8 @@ public class PrimWrap {
     /** PrimWrap string method. */
     public String toString() {
         return String.format(
-                "Byte object:            %d%n"
+                "=== Wrapper classes for primitive types ===%n%n"
+                        + "Byte object:            %d%n"
                         + "Byte object value:      %d%n"
                         + "Short object:           %d%n"
                         + "Short object value:     %d%n"
