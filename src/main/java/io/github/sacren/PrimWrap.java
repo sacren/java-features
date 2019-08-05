@@ -16,6 +16,7 @@
  *
  * <p>Public methods:
  * +set():void
+ * +getByte():byte
  * +toString():String
  */
 
@@ -47,6 +48,12 @@ public class PrimWrap {
         boolObj = new Boolean(true);
     }
 
+    /** PrimWrap getter for Byte object. */
+    public byte getByte() {
+        Number num = new Byte(byteObj.toString());
+        return num.byteValue();
+    }
+
     /** PrimWrap string method. */
     public String toString() {
         return String.format(
@@ -65,7 +72,9 @@ public class PrimWrap {
                         + "Character object:       %c%n"
                         + "Character object value: %c%n"
                         + "Boolean object:         %b%n"
-                        + "Boolean object value:   %b",
+                        + "Boolean object value:   %b%n%n"
+                        + "=== Number and Byte wrappers ===%n%n"
+                        + "Number object in Byte value: %d",
                 byteObj,
                 byteObj.byteValue(),
                 shortObj,
@@ -81,6 +90,7 @@ public class PrimWrap {
                 charObj,
                 charObj.charValue(),
                 boolObj,
-                boolObj.booleanValue());
+                boolObj.booleanValue(),
+                getByte());
     }
 }
