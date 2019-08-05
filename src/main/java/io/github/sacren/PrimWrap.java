@@ -59,39 +59,23 @@ public class PrimWrap {
         return String.format(
                 "=== Wrapper classes for primitive types ===%n%n"
                         + "Byte object:            %d%n"
-                        + "Byte object value:      %d%n"
                         + "Short object:           %d%n"
-                        + "Short object value:     %d%n"
                         + "Integer object:         %d%n"
-                        + "Integer object value:   %d%n"
                         + "Long object:            %d%n"
-                        + "Long object value:      %d%n"
                         + "Float object:           %f%n"
-                        + "Float object value:     %f%n"
                         + "Double object:          %f%n"
-                        + "Double object value:    %f%n"
                         + "Character object:       %c%n"
-                        + "Character object value: %c%n"
-                        + "Boolean object:         %b%n"
-                        + "Boolean object value:   %b%n%n"
+                        + "Boolean object:         %b%n%n"
                         + "=== Number and Byte wrappers ===%n%n"
                         + "Number object in Byte value: %d",
                 byteObj,
-                byteObj.byteValue(),
                 shortObj,
-                shortObj.shortValue(),
                 intObj,
-                intObj.intValue(),
                 longObj,
-                longObj.longValue(),
                 floatObj,
-                floatObj.floatValue(),
                 dblObj,
-                dblObj.doubleValue(),
                 charObj,
-                charObj.charValue(),
                 boolObj,
-                boolObj.booleanValue(),
                 getByte());
     }
 }
