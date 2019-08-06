@@ -38,20 +38,20 @@ public class PrimWrap {
 
     /** PrimWrap setter of instance data. */
     public void set() {
-        byteObj = Byte.MAX_VALUE;
-        shortObj = Short.MAX_VALUE;
-        intObj = Integer.MAX_VALUE;
-        longObj = Long.MAX_VALUE;
-        floatObj = Float.MAX_VALUE;
-        dblObj = Double.MAX_VALUE;
-        charObj = 'X';
-        boolObj = true;
+        byteObj = Byte.MAX_VALUE; /* auto-box from byte to Byte */
+        shortObj = Short.MAX_VALUE; /* auto-box from short to Short */
+        intObj = Integer.MAX_VALUE; /* auto-box from int to Integer */
+        longObj = Long.MAX_VALUE; /* auto-box from long to Long */
+        floatObj = Float.MAX_VALUE; /* auto-box from float to Float */
+        dblObj = Double.MAX_VALUE; /* auto-box from double to Double */
+        charObj = 'X'; /* auto-box from char to Character */
+        boolObj = true; /* auto-box from boolean to Boolean */
     }
 
     /** PrimWrap getter for Byte object. */
     public Byte getByte() {
         Number num = byteObj;
-        return num.byteValue(); /* auto-box to Byte */
+        return num.byteValue(); /* auto-box from byte to Byte */
     }
 
     /** PrimWrap string method. */
