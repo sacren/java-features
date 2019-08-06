@@ -49,9 +49,9 @@ public class PrimWrap {
     }
 
     /** PrimWrap getter for Byte object. */
-    public byte getByte() {
+    public Byte getByte() {
         Number num = new Byte(byteObj.toString());
-        return num.byteValue();
+        return num.byteValue(); /* auto-box to Byte */
     }
 
     /** PrimWrap string method. */
