@@ -38,19 +38,19 @@ public class PrimWrap {
 
     /** PrimWrap setter of instance data. */
     public void set() {
-        byteObj = new Byte(Byte.MAX_VALUE);
-        shortObj = new Short(Short.MAX_VALUE);
-        intObj = new Integer(Integer.MAX_VALUE);
-        longObj = new Long(Long.MAX_VALUE);
-        floatObj = new Float(Float.MAX_VALUE);
-        dblObj = new Double(Double.MAX_VALUE);
-        charObj = new Character('X');
-        boolObj = new Boolean(true);
+        byteObj = Byte.MAX_VALUE;
+        shortObj = Short.MAX_VALUE;
+        intObj = Integer.MAX_VALUE;
+        longObj = Long.MAX_VALUE;
+        floatObj = Float.MAX_VALUE;
+        dblObj = Double.MAX_VALUE;
+        charObj = 'X';
+        boolObj = true;
     }
 
     /** PrimWrap getter for Byte object. */
     public Byte getByte() {
-        Number num = new Byte(byteObj.toString());
+        Number num = byteObj;
         return num.byteValue(); /* auto-box to Byte */
     }
 
