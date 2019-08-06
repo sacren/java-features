@@ -67,7 +67,9 @@ public class PrimWrap {
                         + "Character object:       %c%n"
                         + "Boolean object:         %b%n%n"
                         + "=== Number and Byte wrappers ===%n%n"
-                        + "Number object in Byte value: %d",
+                        + "Number object in Byte value: %d%n%n"
+                        + "=== Parse Byte string ===%n%n"
+                        + "%d",
                 byteObj,
                 shortObj,
                 intObj,
@@ -76,6 +78,7 @@ public class PrimWrap {
                 dblObj,
                 charObj,
                 boolObj,
-                getByte());
+                getByte(),
+                Byte.parseByte(byteObj.toString()));
     }
 }
