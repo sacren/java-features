@@ -16,7 +16,8 @@
  *
  * <p>Public methods:
  * +set():void
- * +getByte():byte
+ * +getByte():Byte
+ * +getChar():char
  * +toString():String
  */
 
@@ -54,6 +55,11 @@ public class PrimWrap {
         return num.byteValue(); /* auto-box from byte to Byte */
     }
 
+    /** PrimWrap getter for char type. */
+    public char getChar() {
+        return charObj; /* auto-unboxing */
+    }
+
     /** PrimWrap string method. */
     public String toString() {
         return String.format(
@@ -68,6 +74,8 @@ public class PrimWrap {
                         + "Boolean object:         %b%n%n"
                         + "=== Number and Byte wrappers ===%n%n"
                         + "Number object in Byte value: %d%n%n"
+                        + "=== Character to char ===%n%n"
+                        + "%c%n%n"
                         + "=== Parse Byte string ===%n%n"
                         + "%d",
                 byteObj,
@@ -79,6 +87,7 @@ public class PrimWrap {
                 charObj,
                 boolObj,
                 getByte(),
+                getChar(),
                 Byte.parseByte(byteObj.toString()));
     }
 }
