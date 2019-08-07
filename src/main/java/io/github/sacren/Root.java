@@ -2,7 +2,7 @@
  * Root class using Object.
  *
  * <p>Private instance data:
- * -any:Object
+ * -bool:Object
  *
  * <p>Constructor:
  * +Root()
@@ -13,15 +13,18 @@
 
 public class Root {
     /* private instance data */
-    private Object any;
+    private Object bool;
 
     /** Root constructor. */
     public Root() {
-        any = Boolean.TRUE;
+        bool = Boolean.FALSE;
     }
 
     /** Root string method. */
     public String toString() {
-        return any.toString();
+        return String.format(
+                "=== Object class examples ===%n%n"
+                        + "Boolean object: %s",
+                bool.toString());
     }
 }
