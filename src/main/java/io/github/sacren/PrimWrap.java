@@ -17,6 +17,7 @@
  * <p>Public methods:
  * +set():void
  * +getByte():Byte
+ * +getShort():Short
  * +getChar():char
  * +toString():String
  */
@@ -55,6 +56,11 @@ public class PrimWrap {
         return num.byteValue(); /* auto-box from byte to Byte */
     }
 
+    /** PrimWrap getter for Short object. */
+    public Short getShort() {
+        return Short.parseShort(shortObj.toString());
+    }
+
     /** PrimWrap getter for char type. */
     public char getChar() {
         return charObj; /* auto-unboxing */
@@ -76,7 +82,7 @@ public class PrimWrap {
                         + "Number object in Byte value: %d%n%n"
                         + "=== Character to char ===%n%n"
                         + "%c%n%n"
-                        + "=== Parse Byte string ===%n%n"
+                        + "=== Parse Short string ===%n%n"
                         + "%d",
                 byteObj,
                 shortObj,
@@ -88,6 +94,6 @@ public class PrimWrap {
                 boolObj,
                 getByte(),
                 getChar(),
-                Byte.parseByte(byteObj.toString()));
+                getShort());
     }
 }
