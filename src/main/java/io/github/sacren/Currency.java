@@ -2,9 +2,9 @@
  * Currency class.
  *
  * <p>Private instance data:
- * -fmt:double
+ * -num:double
  * -locales:Locale[]
- * -gnlFmt:String
+ * -fmt:String
  * -curFmt:String
  * -numFmt:String
  * -perFmt:String
@@ -22,7 +22,7 @@ import java.util.Locale;
 
 public class Currency {
     /* private instance data */
-    private final double fmt = 1234567890.1234;
+    private final double num = 1234567890.1234;
     private Locale[] locales = {
         Locale.GERMANY,
         Locale.US,
@@ -32,7 +32,7 @@ public class Currency {
         Locale.FRANCE,
         Locale.JAPAN
     };
-    private String gnlFmt;
+    private String fmt;
     private String curFmt;
     private String numFmt;
     private String perFmt;
@@ -60,15 +60,15 @@ public class Currency {
                 percent.append(String.format("%n"));
             }
             generic.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getInstance(loc).format(fmt));
+                .append(NumberFormat.getInstance(loc).format(num));
             currency.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getCurrencyInstance(loc).format(fmt));
+                .append(NumberFormat.getCurrencyInstance(loc).format(num));
             number.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getNumberInstance(loc).format(fmt));
+                .append(NumberFormat.getNumberInstance(loc).format(num));
             percent.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getPercentInstance(loc).format(fmt));
+                .append(NumberFormat.getPercentInstance(loc).format(num));
         }
-        gnlFmt = generic.toString();
+        fmt = generic.toString();
         curFmt = currency.toString();
         numFmt = number.toString();
         perFmt = percent.toString();
@@ -86,7 +86,7 @@ public class Currency {
                 sb.append(String.format("%n"));
             }
             sb.append(String.format("%22s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getCurrencyInstance(loc).format(fmt));
+                .append(NumberFormat.getCurrencyInstance(loc).format(num));
         }
         allFmt = sb.toString();
     }
@@ -104,7 +104,7 @@ public class Currency {
                         + "%s%n%n"
                         + "=== Locale for currency of available countries ===%n%n"
                         + "%s",
-                gnlFmt,
+                fmt,
                 curFmt,
                 numFmt,
                 perFmt,
