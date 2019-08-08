@@ -45,12 +45,20 @@ public class Currency {
 
     /** Currency setter for various formats. */
     public void setFmt() {
+        NumberFormat f;
+        NumberFormat cf;
+        NumberFormat nf;
+        NumberFormat pf;
         boolean once = true;
         StringBuilder generic = new StringBuilder();
         StringBuilder currency = new StringBuilder();
         StringBuilder number = new StringBuilder();
         StringBuilder percent = new StringBuilder();
         for (Locale loc : locales) {
+            f = NumberFormat.getInstance(loc);
+            cf = NumberFormat.getCurrencyInstance(loc);
+            nf = NumberFormat.getNumberInstance(loc);
+            pf = NumberFormat.getPercentInstance(loc);
             if (once) {
                 once = false;
             } else {
@@ -60,13 +68,13 @@ public class Currency {
                 percent.append(String.format("%n"));
             }
             generic.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getInstance(loc).format(num));
+                .append(f.format(num));
             currency.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getCurrencyInstance(loc).format(num));
+                .append(cf.format(num));
             number.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getNumberInstance(loc).format(num));
+                .append(nf.format(num));
             percent.append(String.format("%13s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getPercentInstance(loc).format(num));
+                .append(pf.format(num));
         }
         fmt = generic.toString();
         curFmt = currency.toString();
@@ -94,20 +102,20 @@ public class Currency {
     /** Currency string method. */
     public String toString() {
         return String.format(
-                "=== Locale for general-purpose number ===%n%n"
+                "=== Currency format of available countries ===%n%n"
                         + "%s%n%n"
-                        + "=== Locale for currency ===%n%n"
+                        + "=== Currency format of selected countries ===%n%n"
                         + "%s%n%n"
-                        + "=== Locale for number ===%n%n"
+                        + "=== Number format of selected countries ===%n%n"
                         + "%s%n%n"
-                        + "=== Locale for percent ===%n%n"
+                        + "=== Percent format of selected countries ===%n%n"
                         + "%s%n%n"
-                        + "=== Locale for currency of available countries ===%n%n"
+                        + "=== General-purpose number format of selected countries ===%n%n"
                         + "%s",
-                fmt,
+                allFmt,
                 curFmt,
                 numFmt,
                 perFmt,
-                allFmt);
+                fmt);
     }
 }
