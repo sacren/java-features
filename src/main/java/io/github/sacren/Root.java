@@ -9,6 +9,7 @@
  *
  * <p>Public methods:
  * +getName():String
+ * +getHash():int
  * +toString():String
  */
 
@@ -26,13 +27,20 @@ public class Root {
         return bool.getClass().getName();
     }
 
+    /** Root getter for the hash of the object. */
+    public int getHash() {
+        return bool.hashCode();
+    }
+
     /** Root string method. */
     public String toString() {
         return String.format(
                 "=== Object class examples ===%n%n"
                         + "Boolean object: %s%n"
-                        + "Name:           %s",
+                        + "Name:           %s%n"
+                        + "Hash:           %d",
                 bool.toString(),
-                getName());
+                getName(),
+                getHash());
     }
 }
