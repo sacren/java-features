@@ -1,131 +1,102 @@
 /**
  * Time class.
  *
- * <p>Private data with default values:
- * -originalSecond:int
- * -originalMinute:int
- * -originalHour:int
- * -second:int = 0
- * -minute:int = 0
- * -hour:int = 0
+ * <p>Private instance data:
+ * -time:Point3D
+ * -st:Point3D
  *
  * <p>Constructor:
  * +Time()
- * +Time(second:int, minute:int, hour:int)
+ * +Time(time:Point3D)
  *
  * <p>Public methods:
  * +getSecond():int
- * +setSecond(second:int):void
  * +getMinute():int
- * +setMinute(minute:int):void
  * +getHour():int
- * +setHour(hour:int):void
- * +setTime(second:int, minute:int, hour:int):void
+ * +setTime(time:Point3D):void
  * +nextSecond():Time
  * +toString():String
  */
 public class Time {
     /* public static data */
-    public static final int DEFAULT_SECOND = 0;
-    public static final int DEFAULT_MINUTE = 0;
-    public static final int DEFAULT_HOUR = 0;
     public static final Point3D DEFAULT_TIME = new Point3D(0, 0, 0);
 
     /* private instance data */
-    private int originalSecond;
-    private int originalMinute;
-    private int originalHour;
-    private int second;
-    private int minute;
-    private int hour;
+    private Point3D time;
+    private Point3D st;
 
     /** Default constructor. */
     public Time() {
-        this.second = DEFAULT_SECOND;
-        this.minute = DEFAULT_MINUTE;
-        this.hour = DEFAULT_HOUR;
+        time = DEFAULT_TIME;
+        st = DEFAULT_TIME;
     }
 
     /** Custom constructor. */
     public Time(Point3D time) {
         setTime(time);
-        this.originalSecond = second;
-        this.originalMinute = minute;
-        this.originalHour = hour;
-    }
-
-    /** Public accessor for second. */
-    public int getSecond() {
-        return second;
-    }
-
-    /** Public mutator for second. */
-    public void setSecond(int second) {
-        if (second < 0 || second >= 60) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid value for second!", second));
-        }
-        this.second = second;
-    }
-
-    /** Public accessor for minute. */
-    public int getMinute() {
-        return minute;
-    }
-
-    /** Public mutator for minute. */
-    public void setMinute(int minute) {
-        if (minute < 0 || minute >= 60) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid value for minute!", minute));
-        }
-        this.minute = minute;
-    }
-
-    /** Public accessor for hour. */
-    public int getHour() {
-        return hour;
-    }
-
-    /** Public mutator for hour. */
-    public void setHour(int hour) {
-        if (hour < 0 || hour >= 24) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid value for hour!", hour));
-        }
-        this.hour = hour;
+        st = new Point3D(time.getX(), time.getY(), time.getZ());
     }
 
     /** Public setter for specific time. */
-    public void setTime(Point3D t) {
-        setHour((int) t.getZ());
-        setMinute((int) t.getY());
-        setSecond((int) t.getZ());
+    public void setTime(Point3D time) {
+        if (time.getX() < 0 || time.getX() >= 60) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid value for second!", (int) time.getX()));
+        }
+        if (time.getY() < 0 || time.getY() >= 60) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid value for minute!", (int) time.getY()));
+        }
+        if (time.getZ() < 0 || time.getZ() >= 24) {
+            throw new IllegalArgumentException(
+                    String.format("%d is invalid value for hour!", (int) time.getZ()));
+        }
+        this.time = time;
     }
 
-    /** Public method to advance time by one second. */
+    /** Public getter for second. */
+    public int getSecond() {
+        return (int) time.getX();
+    }
+
+    /** Public getter for minute. */
+    public int getMinute() {
+        return (int) time.getY();
+    }
+
+    /** Public getter for hour. */
+    public int getHour() {
+        return (int) time.getZ();
+    }
+
+    /** Public getter for time by one second. */
     public Time nextSecond() {
-        if (++second == 60) {
-            second = 0;
-            if (++minute == 60) {
-                minute = 0;
-                if (++hour == 24) {
-                    hour = 0;
-                }
-            }
+        time.setX(time.getX() + 1);
+        if (time.getX() == 60) {
+            time.setX(0);
+            time.setY(time.getY() + 1);
+        }
+        if (time.getY() == 60) {
+            time.setY(0);
+            time.setZ(time.getZ() + 1);
+        }
+        if (time.getZ() == 24) {
+            time.setZ(0);
         }
         return this;
     }
 
-    /** Restore instance to the original state. */
+    /** Restore time to the original state. */
     public void setOriginalState() {
-        second = originalSecond;
-        minute = originalMinute;
-        hour = originalHour;
+        time = st;
     }
 
-    /** Time description. */
+    /** Time string method. */
     public String toString() {
-        return String.format("[%02d:%02d:%02d]", hour, minute, second);
+        return String.format(
+                "[%02d:%02d:%02d]",
+                (int) time.getZ(),
+                (int) time.getY(),
+                (int) time.getX());
     }
 }
