@@ -29,6 +29,7 @@ public class Time {
     public static final int DEFAULT_SECOND = 0;
     public static final int DEFAULT_MINUTE = 0;
     public static final int DEFAULT_HOUR = 0;
+    public static final Point3D DEFAULT_TIME = new Point3D(0, 0, 0);
 
     /* private instance data */
     private int originalSecond;
@@ -46,8 +47,8 @@ public class Time {
     }
 
     /** Custom constructor. */
-    public Time(int second, int minute, int hour) {
-        setTime(second, minute, hour);
+    public Time(Point3D time) {
+        setTime(time);
         this.originalSecond = second;
         this.originalMinute = minute;
         this.originalHour = hour;
@@ -95,11 +96,11 @@ public class Time {
         this.hour = hour;
     }
 
-    /** Public method to set time. */
-    public void setTime(int second, int minute, int hour) {
-        setHour(hour);
-        setMinute(minute);
-        setSecond(second);
+    /** Public setter for specific time. */
+    public void setTime(Point3D t) {
+        setHour((int) t.getZ());
+        setMinute((int) t.getY());
+        setSecond((int) t.getZ());
     }
 
     /** Public method to advance time by one second. */

@@ -17,7 +17,7 @@ public class TestTime {
         System.out.print("Enter the second: ");
         second = inStream.nextInt();
         inStream.close();
-        Time currentTime = new Time(second, minute, hour);
+        Time currentTime = new Time(new Point3D(second, minute, hour));
         System.out.println();
         System.out.println(currentTime);
         System.out.printf(
@@ -36,7 +36,7 @@ public class TestTime {
                 currentTime.getSecond());
         /* Reset time to zero hour by default values. */
         System.out.printf("Reset time to zero hour.%n%n");
-        currentTime.setTime(Time.DEFAULT_SECOND, Time.DEFAULT_MINUTE, Time.DEFAULT_HOUR);
+        currentTime.setTime(Time.DEFAULT_TIME);
         System.out.println(currentTime);
         System.out.printf(
                 "Current time is %02d:%02d:%02d%n%n",
