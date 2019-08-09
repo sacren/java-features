@@ -55,10 +55,6 @@ public class Currency {
         StringBuilder number = new StringBuilder();
         StringBuilder percent = new StringBuilder();
         for (Locale loc : locales) {
-            f = NumberFormat.getInstance(loc);
-            cf = NumberFormat.getCurrencyInstance(loc);
-            nf = NumberFormat.getNumberInstance(loc);
-            pf = NumberFormat.getPercentInstance(loc);
             if (once) {
                 once = false;
             } else {
@@ -67,6 +63,10 @@ public class Currency {
                 number.append(String.format("%n"));
                 percent.append(String.format("%n"));
             }
+            f = NumberFormat.getInstance(loc);
+            cf = NumberFormat.getCurrencyInstance(loc);
+            nf = NumberFormat.getNumberInstance(loc);
+            pf = NumberFormat.getPercentInstance(loc);
             generic.append(String.format("%13s: ", loc.getDisplayCountry()))
                 .append(f.format(num));
             currency.append(String.format("%13s: ", loc.getDisplayCountry()))
@@ -93,8 +93,9 @@ public class Currency {
             } else {
                 sb.append(String.format("%n"));
             }
+            cf = NumberFormat.getCurrencyInstance(loc);
             sb.append(String.format("%22s: ", loc.getDisplayCountry()))
-                .append(NumberFormat.getCurrencyInstance(loc).format(num));
+                .append(cf.format(num));
         }
         allFmt = sb.toString();
     }
