@@ -4,32 +4,32 @@
  * <p>String with radix to decimal number.
  *
  * <p>Private instance data:
- * -usrStr:String
+ * -num:String
  * -radix:int
  *
  * <p>Constructor:
- * +ToDecimal(usrStr:String, radix:int)
+ * +ToDecimal(num:String, radix:int)
  *
  * <p>Public method:
  * +toString():String
  */
 public class ToDecimal {
     /* private instance data */
-    private String usrStr;
+    private String num;
     private int radix;
 
     /** ToDecimal constructor. */
-    public ToDecimal(String usrStr, int radix) {
-        this.usrStr = usrStr;
+    public ToDecimal(String num, int radix) {
+        this.num = num;
         this.radix = radix;
     }
 
-    /** ToDecimal instance printout. */
+    /** ToDecimal string method. */
     public String toString() {
         return String.format(
                 "Input string:  %s%n"
                         + "Decimal value: %d",
-                usrStr,
-                Integer.parseInt(usrStr, radix));
+                num,
+                Integer.parseInt(num, radix));
     }
 }
