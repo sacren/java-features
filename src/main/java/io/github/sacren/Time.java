@@ -94,7 +94,7 @@ public class Time {
     /** Time string method. */
     public String toString() {
         return String.format(
-                "[%02d:%02d:%02d]",
+                "Current time: %02d:%02d:%02d",
                 (int) time.getZ(),
                 (int) time.getY(),
                 (int) time.getX());
