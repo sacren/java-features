@@ -10,9 +10,6 @@
  * +Time(time:Point3D)
  *
  * <p>Public methods:
- * +getSecond():int
- * +getMinute():int
- * +getHour():int
  * +setTime(time:Point3D):void
  * +nextSecond():Time
  * +toString():String
@@ -52,21 +49,6 @@ public class Time {
                     String.format("%d is invalid value for hour!", (int) time.getZ()));
         }
         this.time = time;
-    }
-
-    /** Public getter for second. */
-    public int getSecond() {
-        return (int) time.getX();
-    }
-
-    /** Public getter for minute. */
-    public int getMinute() {
-        return (int) time.getY();
-    }
-
-    /** Public getter for hour. */
-    public int getHour() {
-        return (int) time.getZ();
     }
 
     /** Public getter for time by one second. */
