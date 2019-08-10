@@ -29,7 +29,7 @@ public class TestTime {
         System.out.println();
         System.out.println(currentTime);
         /* reset time to zero hour by default values. */
-        currentTime.setTime(Time.DEFAULT_TIME);
+        currentTime.setDefTime();
         System.out.println();
         System.out.println("=== Reset time to zero hour ===");
         System.out.println();

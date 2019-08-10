@@ -16,17 +16,14 @@
  * +toString():String
  */
 public class Time {
-    /* public static data */
-    public static final Point3D DEFAULT_TIME = new Point3D(0, 0, 0);
-
     /* private instance data */
     private Point3D time;
     private Point3D st;
 
     /** Default constructor. */
     public Time() {
-        time = DEFAULT_TIME;
-        st = DEFAULT_TIME;
+        setTime(new Point3D(0, 0, 0));
+        setStartTime();
     }
 
     /** Custom constructor. */
@@ -50,6 +47,11 @@ public class Time {
                     String.format("%d is invalid value for hour!", (int) time.getZ()));
         }
         this.time = time;
+    }
+
+    /** Time setter for default time. */
+    public void setDefTime() {
+        setTime(new Point3D(0, 0, 0));
     }
 
     /** Public setter for start time. */
