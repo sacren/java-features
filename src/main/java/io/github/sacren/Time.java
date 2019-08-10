@@ -11,6 +11,7 @@
  *
  * <p>Public methods:
  * +setTime(time:Point3D):void
+ * +setStartTime():void
  * +nextSecond():Time
  * +toString():String
  */
@@ -31,7 +32,7 @@ public class Time {
     /** Custom constructor. */
     public Time(Point3D time) {
         setTime(time);
-        st = new Point3D(time.getX(), time.getY(), time.getZ());
+        setStartTime();
     }
 
     /** Public setter for specific time. */
@@ -49,6 +50,11 @@ public class Time {
                     String.format("%d is invalid value for hour!", (int) time.getZ()));
         }
         this.time = time;
+    }
+
+    /** Public setter for start time. */
+    public void setStartTime() {
+        st = new Point3D(time.getX(), time.getY(), time.getZ());
     }
 
     /** Public getter for time by one second. */
