@@ -22,7 +22,7 @@ public class Time {
 
     /** Default constructor. */
     public Time() {
-        setTime(new Point3D(0, 0, 0));
+        setDefTime();
         setStartTime();
     }
 
@@ -30,6 +30,11 @@ public class Time {
     public Time(Point3D time) {
         setTime(time);
         setStartTime();
+    }
+
+    /** Time setter for default time. */
+    public void setDefTime() {
+        time = new Point3D(0, 0, 0);
     }
 
     /** Public setter for specific time. */
@@ -47,11 +52,6 @@ public class Time {
                     String.format("%d is invalid value for hour!", (int) time.getZ()));
         }
         this.time = time;
-    }
-
-    /** Time setter for default time. */
-    public void setDefTime() {
-        setTime(new Point3D(0, 0, 0));
     }
 
     /** Public setter for start time. */
