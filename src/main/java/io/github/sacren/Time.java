@@ -21,13 +21,13 @@ public class Time {
     private Point3D time;
     private Point3D st;
 
-    /** Default constructor. */
+    /** Time default constructor. */
     public Time() {
         setDefTime();
         setStartTime();
     }
 
-    /** Custom constructor. */
+    /** Time custom constructor. */
     public Time(Point3D time) {
         setTime(time);
         setStartTime();
@@ -38,7 +38,7 @@ public class Time {
         time = new Point3D(0, 0, 0);
     }
 
-    /** Public setter for specific time. */
+    /** Time setter for specific time. */
     public void setTime(Point3D time) {
         if (time.getX() < 0 || time.getX() >= 60) {
             throw new IllegalArgumentException(
@@ -55,12 +55,12 @@ public class Time {
         this.time = time;
     }
 
-    /** Public setter for start time. */
+    /** Time setter for start time. */
     public void setStartTime() {
         st = new Point3D(time.getX(), time.getY(), time.getZ());
     }
 
-    /** Public getter for time by one second. */
+    /** Time getter for time by one second increment. */
     public Time nextSecond() {
         time.setX(time.getX() + 1);
         if (time.getX() == 60) {
