@@ -35,7 +35,7 @@ public class TestTime {
         System.out.println();
         System.out.println(currentTime);
         /* restore private attributes to original values */
-        currentTime.setOriginalState();
+        currentTime.restoreTime();
         System.out.println();
         System.out.println("=== Restore to start time ===");
         System.out.println();

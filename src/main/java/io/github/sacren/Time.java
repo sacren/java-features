@@ -13,6 +13,7 @@
  * +setTime(time:Point3D):void
  * +setStartTime():void
  * +nextSecond():Time
+ * +restoreTime():void
  * +toString():String
  */
 public class Time {
@@ -76,8 +77,8 @@ public class Time {
         return this;
     }
 
-    /** Restore time to the original state. */
-    public void setOriginalState() {
+    /** Restore time to the start value. */
+    public void restoreTime() {
         time = st;
     }
 
