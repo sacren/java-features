@@ -17,7 +17,7 @@ public class TestTime {
         System.out.print("Enter the second: ");
         second = inStream.nextInt();
         inStream.close();
-        Time currentTime = new Time(new Point3D(second, minute, hour));
+        Time currentTime = new Time(new Cube(second, minute, hour));
         System.out.println();
         System.out.println("=== What time is it? ===");
         System.out.println();

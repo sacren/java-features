@@ -2,15 +2,15 @@
  * Time class.
  *
  * <p>Private instance data:
- * -time:Point3D
- * -st:Point3D
+ * -time:Cube
+ * -st:Cube
  *
  * <p>Constructor:
  * +Time()
- * +Time(time:Point3D)
+ * +Time(time:Cube)
  *
  * <p>Public methods:
- * +setTime(time:Point3D):void
+ * +setTime(time:Cube):void
  * +setStartTime():void
  * +nextSecond():Time
  * +restoreTime():void
@@ -18,8 +18,8 @@
  */
 public class Time {
     /* private instance data */
-    private Point3D time;
-    private Point3D st;
+    private Cube time;
+    private Cube st;
 
     /** Time default constructor. */
     public Time() {
@@ -28,18 +28,18 @@ public class Time {
     }
 
     /** Time custom constructor. */
-    public Time(Point3D time) {
+    public Time(Cube time) {
         setTime(time);
         setStartTime();
     }
 
     /** Time setter for default time. */
     public void setDefTime() {
-        time = new Point3D(0, 0, 0);
+        time = new Cube(0, 0, 0);
     }
 
     /** Time setter for specific time. */
-    public void setTime(Point3D time) {
+    public void setTime(Cube time) {
         if (time.getX() < 0 || time.getX() >= 60) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid value for second!", (int) time.getX()));
@@ -57,7 +57,7 @@ public class Time {
 
     /** Time setter for start time. */
     public void setStartTime() {
-        st = new Point3D(time.getX(), time.getY(), time.getZ());
+        st = new Cube(time.getX(), time.getY(), time.getZ());
     }
 
     /** Time getter for time by one second increment. */

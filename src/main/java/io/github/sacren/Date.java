@@ -2,11 +2,11 @@
  * Date class.
  *
  * <p>Private instance data:
- * -date:Point3D
+ * -date:Cube
  *
  * <p>Constructor:
  * +Date()
- * +Date(date:Point3D)
+ * +Date(date:Cube)
  *
  * <p>Public methods:
  * +getYear():int
@@ -15,16 +15,16 @@
  * +setMonth(month:int):void
  * +getDay():int
  * +setDay(day:int):void
- * +setDate(date:Point3D):void
+ * +setDate(date:Cube):void
  * +toString():String
  */
 public class Date {
     /* private instance data */
-    private Point3D date;
+    private Cube date;
 
     /* initialize instance data */
     {
-        date = new Point3D(1776, 7, 4); /* Independence Day */
+        date = new Cube(1776, 7, 4); /* Independence Day */
     }
 
     /** Date default constructor. */
@@ -32,7 +32,7 @@ public class Date {
     }
 
     /** Date custom constructor. */
-    public Date(Point3D date) {
+    public Date(Cube date) {
         this.date = date;
     }
 
@@ -79,7 +79,7 @@ public class Date {
     }
 
     /** Date setter for the date. */
-    public void setDate(Point3D date) {
+    public void setDate(Cube date) {
         this.date = date;
     }
 
