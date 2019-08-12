@@ -1,6 +1,9 @@
 /**
  * Point class.
  *
+ * <p>We identify Point object by (axisX, axisY).  Broadly the pair could be
+ * used for any object.  See Pension class for details.
+ *
  * <p>Private data with default values:
  * -axisX:double = 0
  * -axisY:double = 0

@@ -1,6 +1,9 @@
 /**
  * Cube class extends Point class.
  *
+ * <p>We use Cube for 3-D pointers.  Broadly Cube could represent any object
+ * that requires conceptual three dimensions.  See Time class for details.
+ *
  * <p>Private data with default value:
  * -axisZ:double = 0
  *
