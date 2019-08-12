@@ -17,6 +17,7 @@
  * +setFmt():void
  * +toString():String
  */
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -49,6 +50,7 @@ public class Currency {
         NumberFormat cf;
         NumberFormat nf;
         NumberFormat pf;
+        DecimalFormat df;
         boolean once = true;
         StringBuilder generic = new StringBuilder();
         StringBuilder currency = new StringBuilder();
@@ -75,6 +77,9 @@ public class Currency {
                 .append(nf.format(num));
             percent.append(String.format("%13s: ", loc.getDisplayCountry()))
                 .append(pf.format(num));
+            df = (DecimalFormat) f;
+            df.applyPattern("#,###.000#");
+            generic.append(String.format("%n%15s", " ")).append(df.format(num));
         }
         fmt = generic.toString();
         curFmt = currency.toString();
