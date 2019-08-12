@@ -1,8 +1,8 @@
 /**
- * Test driver for Point and Point3D classes.
+ * Test driver for Point and Cube classes.
  */
 public class TestPoint3D {
-    /** Point3D test driver. */
+    /** Cube test driver. */
     public static void main(String[] args) {
         /* point in 2-D */
         Point p2D = new Point();
@@ -16,7 +16,7 @@ public class TestPoint3D {
                 p2D.getX(),
                 p2D.getY());
         /* point in 3-D */
-        Point3D p3D = new Point3D();
+        Cube p3D = new Cube();
         System.out.println();
         System.out.println("=== Point in 3-D ===");
         System.out.println();
@@ -31,7 +31,7 @@ public class TestPoint3D {
         System.out.println();
         System.out.println("=== Custom 3-D point ===");
         System.out.println();
-        Point3D custP3D = new Point3D(1, 2, 3);
+        Cube custP3D = new Cube(1, 2, 3);
         System.out.printf(
                 "Custom 3-D point: P%s%n%n"
                         + "Custom 3-D point: P(%.2f, %.2f, %.2f)%n",
