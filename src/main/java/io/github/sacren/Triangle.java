@@ -2,6 +2,7 @@
  * Triangle subclass extends Shape superclass.
  *
  * <p>Private instance data:
+ * -bh:Point
  *
  * <p>Constructor:
  * +Triangle()
