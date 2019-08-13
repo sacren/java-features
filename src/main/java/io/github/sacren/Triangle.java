@@ -24,7 +24,7 @@ public class Triangle extends Shape {
     /** Triangle default constructor. */
     public Triangle() {
         super("brown"); /* triangle instance default color */
-        setBaseHeight(new Point(3, 4));
+        bh = new Point(3, 4);
     }
 
     /** Triangle constructor with Point. */
@@ -63,7 +63,6 @@ public class Triangle extends Shape {
 
     /** Triangle setter for both base and height. */
     public void setBaseHeight(double base, double height) {
-        bh = new Point();
         setBase(base);
         setHeight(height);
     }
