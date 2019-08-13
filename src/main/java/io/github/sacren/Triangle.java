@@ -17,15 +17,12 @@
  * +toString():String
  */
 public class Triangle extends Shape {
-    /* private static data */
-    private static final String DEFAULT_COLOR = "brown";
-
     /* private instance data */
     private Point bh;
 
     /** Triangle default constructor. */
     public Triangle() {
-        super(DEFAULT_COLOR);
+        super("brown"); /* triangle instance default color */
         setBaseHeight(new Point(3, 4));
     }
 

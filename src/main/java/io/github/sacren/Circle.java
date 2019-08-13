@@ -29,7 +29,6 @@ public class Circle extends Shape {
     public static final String FAVORITE_COLOR = "pink";
 
     /* private static data */
-    private static final String DEFAULT_COLOR = "green";
     private static int count;
 
     /* private instance data */
@@ -38,7 +37,7 @@ public class Circle extends Shape {
 
     /** Circle constructor with default data. */
     public Circle() {
-        super(DEFAULT_COLOR);
+        super("green"); /* circle instance default color */
         center = new Point(0, 0);
         radius = 1;
         count++;

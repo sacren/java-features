@@ -25,15 +25,12 @@
  * +toString():String
  */
 public class Rectangle extends Shape {
-    /* private static data */
-    private static String DEFAULT_COLOR = "cyan";
-
     /* private instance data */
     private Point sides = new Point();
 
     /** Rectangle default constructor. */
     public Rectangle() {
-        super(DEFAULT_COLOR);
+        super("cyan"); /* rectangle instance default color */
         setSides(new Point(2.0f, 1.0f));
     }
 
