@@ -6,7 +6,7 @@
  *
  * <p>Constructor:
  * +Triangle()
- * +Triangle(p:Point)
+ * +Triangle(bh:Point)
  *
  * <p>Public methods:
  * +getBase():double
@@ -14,7 +14,7 @@
  * +getHeight():double
  * +setHeight(height:double):void
  * +setBaseHeight(base:double, height:double):void
- * +setBaseHeight(p:Point):void
+ * +setBaseHeight(bh:Point):void
  * +toString():String
  */
 public class Triangle extends Shape {
@@ -28,9 +28,9 @@ public class Triangle extends Shape {
     }
 
     /** Triangle constructor with Point. */
-    public Triangle(Point p) {
+    public Triangle(Point bh) {
         this();
-        setBaseHeight(p);
+        setBaseHeight(bh);
     }
 
     /** Triangle getter for the base. */
@@ -68,8 +68,8 @@ public class Triangle extends Shape {
     }
 
     /** Triangle setter using Point for base and height. */
-    public void setBaseHeight(Point p) {
-        setBaseHeight(p.getX(), p.getY());
+    public void setBaseHeight(Point bh) {
+        setBaseHeight(bh.getX(), bh.getY());
     }
 
     /** Triangle getter for the area. */
