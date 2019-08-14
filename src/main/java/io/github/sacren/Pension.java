@@ -9,6 +9,8 @@
  *
  * <p>Age 65+: employee 5%, employer 7.5%.
  *
+ * <p>Minimum age: 18.
+ *
  * <p>Max salary to attract contribution: 6000.
  *
  * <p>Private instance data:
@@ -57,7 +59,7 @@ public class Pension {
 
     /** Pension setter for age. */
     public void setAge(int age) {
-        if (age < 20) {
+        if (age < 18) {
             throw new IllegalArgumentException(
                     String.format("%d years old is too young!", age));
         }
