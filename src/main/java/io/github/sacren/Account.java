@@ -1,7 +1,7 @@
 /**
  * Account class.
  *
- * <p>Private data with default values:
+ * <p>Private instance data with default values:
  * -acctNum:int = Integer.MAX_VALUE
  * -balance:double = 0.0
  *
@@ -19,18 +19,14 @@
  * +toString():String
  */
 public class Account {
-    /* private static data */
-    private static final int DEFAULT_ACCOUNT = Integer.MAX_VALUE;
-    private static final double DEFAULT_BALANCE = 0;
-
     /* private instance data */
     private int acctNum;
     private double balance;
 
     /** Account default constructor. */
     public Account() {
-        this.acctNum = DEFAULT_ACCOUNT;
-        this.balance = DEFAULT_BALANCE;
+        this.acctNum = Integer.MAX_VALUE;
+        this.balance = 0;
     }
 
     /** Account custom constructor. */
@@ -67,12 +63,12 @@ public class Account {
         this.balance = balance;
     }
 
-    /** Account method for credit to the account. */
+    /** Account setter for credit added to the account. */
     public void credit(double amount) {
         balance += amount;
     }
 
-    /** Account method for debit from the account. */
+    /** Account setter for debit withdrawn from the account. */
     public void debit(double amount) {
         if (amount > balance) {
             throw new IllegalArgumentException(
@@ -83,7 +79,7 @@ public class Account {
         balance -= amount;
     }
 
-    /** Account instance printout. */
+    /** Account string method. */
     public String toString() {
         return String.format(
                 "Account number: %d%n"
