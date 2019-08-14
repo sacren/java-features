@@ -13,8 +13,8 @@
  * +setBase(base:double):void
  * +getHeight():double
  * +setHeight(height:double):void
- * +setBaseHeight(base:double, height:double):void
- * +setBaseHeight(bh:Point):void
+ * +setTriangle(base:double, height:double):void
+ * +setTriangle(bh:Point):void
  * +toString():String
  */
 public class Triangle extends Shape {
@@ -30,7 +30,7 @@ public class Triangle extends Shape {
     /** Triangle constructor with Point. */
     public Triangle(Point bh) {
         this();
-        setBaseHeight(bh);
+        setTriangle(bh);
     }
 
     /** Triangle getter for the base. */
@@ -62,14 +62,14 @@ public class Triangle extends Shape {
     }
 
     /** Triangle setter for both base and height. */
-    public void setBaseHeight(double base, double height) {
+    public void setTriangle(double base, double height) {
         setBase(base);
         setHeight(height);
     }
 
     /** Triangle setter using Point for base and height. */
-    public void setBaseHeight(Point bh) {
-        setBaseHeight(bh.getX(), bh.getY());
+    public void setTriangle(Point bh) {
+        setTriangle(bh.getX(), bh.getY());
     }
 
     /** Triangle getter for the area. */
