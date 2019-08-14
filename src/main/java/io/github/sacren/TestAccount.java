@@ -53,9 +53,9 @@ public class TestAccount {
         acct.credit(100);
         System.out.println(acct);
         System.out.println();
-        System.out.println("=== Withdraw $101.00 ===");
+        System.out.println("=== Withdraw $98.00 ===");
         System.out.println();
-        acct.debit(101);
+        acct.debit(98);
         System.out.println(acct);
     }
 }
