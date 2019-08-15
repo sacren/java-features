@@ -20,17 +20,13 @@ public class Exception {
     private File name = new File("/timbuktu");
 
     /** Exception constructor. */
-    public Exception() {
+    public Exception() throws FileNotFoundException {
         handleExp();
     }
 
     /** Exception method to handle exception. */
-    public void handleExp() {
-        try {
-            Scanner in = new Scanner(name);
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
+    public void handleExp() throws FileNotFoundException {
+        Scanner in = new Scanner(name);
     }
 
     /** Exception string method. */
