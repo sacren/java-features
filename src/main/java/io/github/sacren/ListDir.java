@@ -16,14 +16,19 @@ import java.io.File;
 public class ListDir {
     /* private instance data */
     private File dir;
+    private String path;
 
     /** ListDir constructor. */
     public ListDir() {
-        dir = new File("/tmp");
+        path = "/tmp";
+        dir = new File(path);
     }
 
     /** ListDir getter for directory contents. */
     public String getList() {
+        if (!dir.isDirectory()) {
+            return String.format("%s: No such file or directory", path);
+        }
         StringBuilder sb = new StringBuilder();
         boolean once = true;
         for (String name : dir.list()) {
