@@ -31,6 +31,6 @@ public class HndlExcp {
 
     /** HndlExcp string method. */
     public String toString() {
-        return  String.format("%nException handling");
+        return  String.format("Exception handling");
     }
 }

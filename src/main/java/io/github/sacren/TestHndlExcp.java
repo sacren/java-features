@@ -14,6 +14,9 @@ public class TestHndlExcp {
             out.println(excp);
         } catch (FileNotFoundException fnf) {
             fnf.printStackTrace();
+        } finally {
+            out.println();
+            out.println("The End");
         }
     }
 }
