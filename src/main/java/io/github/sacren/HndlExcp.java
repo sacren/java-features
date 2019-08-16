@@ -1,35 +1,35 @@
 /**
- * Exception class for exception handling.
+ * HndlExcp class for exception handling.
  *
  * <p>Private instance data:
  * -name:File
  *
  * <p>Constructor:
- * +Exception()
+ * +HndlExcp()
  *
  * <p>Public methods:
- * +handleExp():void
+ * +set():void
  * +toString():String
  */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Exception {
+public class HndlExcp {
     /* private instance data */
     private File name = new File("/timbuktu");
 
-    /** Exception constructor. */
-    public Exception() throws FileNotFoundException {
-        handleExp();
+    /** HndlExcp constructor. */
+    public HndlExcp() throws FileNotFoundException {
+        set();
     }
 
-    /** Exception method to handle exception. */
-    public void handleExp() throws FileNotFoundException {
+    /** HndlExcp setter for exception handling. */
+    public void set() throws FileNotFoundException {
         Scanner in = new Scanner(name);
     }
 
-    /** Exception string method. */
+    /** HndlExcp string method. */
     public String toString() {
         return  String.format("%nException handling");
     }
