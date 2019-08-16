@@ -13,12 +13,16 @@ public class TestHndlExcp {
             HndlExcp excp = new HndlExcp();
             out.println(excp);
         } catch (FileNotFoundException fnf) {
+            out.println("=== The catch block ===");
+            out.println();
             fnf.printStackTrace();
+            out.println();
+            out.println(fnf.getMessage());
         } finally {
             out.println();
-            out.println("The finally block");
+            out.println("=== The finally block ===");
         }
         out.println();
-        out.println("Outside try-catch-finally block");
+        out.println("=== Outside try-catch-finally ===");
     }
 }
