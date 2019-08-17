@@ -18,6 +18,8 @@ public class TestHndlExcp {
             fnf.printStackTrace();
             out.println();
             out.println(fnf.getMessage());
+            out.println();
+            out.println(fnf.toString());
         } finally {
             out.println();
             out.println("=== The finally block ===");
