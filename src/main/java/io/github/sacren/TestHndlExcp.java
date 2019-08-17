@@ -10,8 +10,8 @@ public class TestHndlExcp {
     public static void main(String[] args) {
         out.println();
         try {
-            HndlExcp excp = new HndlExcp();
-            out.println(excp);
+            HndlExcp hndl = new HndlExcp();
+            out.println(hndl);
         } catch (FileNotFoundException fnf) {
             out.println("=== The catch block ===");
             out.println();
