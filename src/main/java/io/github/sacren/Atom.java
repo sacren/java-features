@@ -1,14 +1,16 @@
 /**
  * Atom superclass.
  *
- * <p>Private data:
+ * <p>Private instance data:
  * -atomicNumber:int
+ * -isotope:int
  *
  * <p>Constructor:
  * +Atom(atomicNumber:int)
  *
  * <p>Public methods:
  * +get():int
+ * +getIso():int
  * +set(atomicNumber:int):void
  */
 public class Atom {
@@ -57,7 +59,7 @@ public class Atom {
         return "From Atom!";
     }
 
-    /** Atome setter for atomic number. */
+    /** Atom setter for atomic number. */
     public void set(int atomicNumber) {
         if (atomicNumber < 1 || atomicNumber > 118) {
             throw new IllegalArgumentException(
