@@ -8,12 +8,9 @@
  * +toString():String
  */
 public class Carbon extends Atom {
-    /* private static data */
-    private static final int CARBON_ATOMIC_NUMBER = 6;
-
     /** Carbon constructor. */
     public Carbon() {
-        super(CARBON_ATOMIC_NUMBER);
+        super(6);
     }
 
     /** Carbon static getter for origin info. */

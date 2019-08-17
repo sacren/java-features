@@ -8,12 +8,9 @@
  * +toString():String
  */
 public class Hydrogen extends Atom {
-    /* private static data */
-    private static final int HYDROGEN_ATOMIC_NUMBER = 1;
-
     /** Hydrogen constructor. */
     public Hydrogen() {
-        super(HYDROGEN_ATOMIC_NUMBER);
+        super(1);
     }
 
     /** Hydrogen string method. */
