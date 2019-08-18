@@ -6,8 +6,8 @@
  *
  * <p>Public methods:
  * +methodA():void
- * +methodA():void
- * +methodA():void
+ * +methodB():void
+ * +methodC():void
  * +toString():String
  */
 public class CallStack {
@@ -20,21 +20,21 @@ public class CallStack {
         methodA();
     }
 
-    /** CallStack method for methodA. */
+    /** CallStack methodA. */
     public void methodA() {
         msg.append(String.format("Enter method A%n"));
         methodB();
         msg.append("Exit method A");
     }
 
-    /** CallStack method for methodB. */
+    /** CallStack methodB. */
     public void methodB() {
         msg.append(String.format("Enter method B%n"));
         methodC();
         msg.append(String.format("Exit method B%n"));
     }
 
-    /** CallStack method for methodC. */
+    /** CallStack methodC. */
     public void methodC() {
         msg.append(String.format("Enter method C%n"));
         msg.append(String.format("Exit method C%n"));
