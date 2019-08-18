@@ -9,6 +9,8 @@ public class TestCallStack {
         out.println();
         out.println("=== Call stack ===");
         out.println();
-        out.println(new CallStack());
+        out.println("Enter main");
+        CallStack cs = new CallStack();
+        out.println("Exit main");
     }
 }

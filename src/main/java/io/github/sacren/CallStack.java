@@ -10,34 +10,35 @@
  * +methodC():void
  * +toString():String
  */
+import static java.lang.System.out;
+
 public class CallStack {
     /* private data */
     private StringBuilder msg;
 
     /** CallStack constructor. */
     public CallStack() {
-        msg = new StringBuilder();
         methodA();
     }
 
     /** CallStack methodA. */
     public void methodA() {
-        msg.append(String.format("Enter method A%n"));
+        out.println("Enter method A");
         methodB();
-        msg.append("Exit method A");
+        out.println("Exit method A");
     }
 
     /** CallStack methodB. */
     public void methodB() {
-        msg.append(String.format("Enter method B%n"));
+        out.println("Enter method B");
         methodC();
-        msg.append(String.format("Exit method B%n"));
+        out.println("Exit method B");
     }
 
     /** CallStack methodC. */
     public void methodC() {
-        msg.append(String.format("Enter method C%n"));
-        msg.append(String.format("Exit method C%n"));
+        out.println("Enter method C");
+        out.println("Exit method C");
     }
 
     /** CallStack string method. */
