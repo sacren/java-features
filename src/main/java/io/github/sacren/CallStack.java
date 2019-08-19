@@ -38,6 +38,7 @@ public class CallStack {
     /** CallStack methodC. */
     public void methodC() {
         out.println("Enter method C");
+        int div = 1 / 0;
         out.println("Exit method C");
     }
 
