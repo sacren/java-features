@@ -17,26 +17,26 @@ public class CallStack {
     private StringBuilder msg;
 
     /** CallStack constructor. */
-    public CallStack() {
+    public CallStack() throws ArithmeticException {
         methodA();
     }
 
     /** CallStack methodA. */
-    public void methodA() {
+    public void methodA() throws ArithmeticException {
         out.println("Enter method A");
         methodB();
         out.println("Exit method A");
     }
 
     /** CallStack methodB. */
-    public void methodB() {
+    public void methodB() throws ArithmeticException {
         out.println("Enter method B");
         methodC();
         out.println("Exit method B");
     }
 
     /** CallStack methodC. */
-    public void methodC() {
+    public void methodC() throws ArithmeticException {
         out.println("Enter method C");
         int div = 1 / 0;
         out.println("Exit method C");

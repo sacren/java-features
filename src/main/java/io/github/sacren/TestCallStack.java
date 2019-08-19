@@ -10,7 +10,11 @@ public class TestCallStack {
         out.println("=== Call stack ===");
         out.println();
         out.println("Enter main");
-        CallStack cs = new CallStack();
+        try {
+            CallStack cs = new CallStack();
+        } catch (ArithmeticException excp) {
+            excp.printStackTrace();
+        }
         out.println("Exit main");
     }
 }
