@@ -14,6 +14,8 @@ public class TestCallStack {
             CallStack cs = new CallStack();
         } catch (ArithmeticException excp) {
             excp.printStackTrace();
+        } catch (Exception excp) {
+            out.println(excp.getMessage());
         }
         out.println("Exit main");
     }
