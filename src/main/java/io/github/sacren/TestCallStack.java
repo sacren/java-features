@@ -16,6 +16,10 @@ public class TestCallStack {
             excp.printStackTrace();
         } catch (Exception excp) {
             out.println(excp.getMessage());
+        } finally {
+            out.println();
+            out.println("=== Exception or not, finally block is certain to execute! ===");
+            out.println();
         }
         out.println("Exit main");
     }
