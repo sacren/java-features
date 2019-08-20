@@ -39,7 +39,7 @@ public class Triangle extends Shape {
     }
 
     /** Triangle setter for the base. */
-    public void setBase(double base) throws IllegalArgumentException {
+    public void setBase(double base) {
         if (base <= 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", base));
@@ -53,7 +53,7 @@ public class Triangle extends Shape {
     }
 
     /** Triangle setter for the height. */
-    public void setHeight(double height) throws IllegalArgumentException {
+    public void setHeight(double height) {
         if (height <= 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", height));
