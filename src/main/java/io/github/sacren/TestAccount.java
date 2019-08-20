@@ -48,7 +48,12 @@ public class TestAccount {
             System.out.println();
             System.out.println("=== Withdraw $98.00 ===");
             System.out.println();
-            acct.debit(98);
+            try {
+                acct.debit(98);
+            } catch (IllegalArgumentException ia) {
+                System.out.println(ia.getMessage());
+                System.out.println();
+            }
             System.out.println(acct);
         } catch (IllegalArgumentException ia) {
             ia.printStackTrace();
