@@ -29,33 +29,29 @@ public class TestAccount {
                         + "Default account balance: %.2f%n",
                 defAcct.getAcctNum(),
                 defAcct.getBalance());
-        Account acct = new Account(acctNum, balance);
-        System.out.println();
-        System.out.println("=== Custom Account ===");
-        System.out.println();
-        System.out.println(acct);
-        System.out.println();
-        System.out.println("=== Use getter for account ===");
-        System.out.println();
-        System.out.printf(
-                "Account number: %d%n"
-                        + "Balance:        %.2f%n",
-                acct.getAcctNum(),
-                acct.getBalance());
-        System.out.println();
-        System.out.println("=== Reset balance to 0 ===");
-        System.out.println();
-        acct.setBalance(0);
-        System.out.println(acct);
-        System.out.println();
-        System.out.println("=== Deposit $100.00 ===");
-        System.out.println();
-        acct.credit(100);
-        System.out.println(acct);
-        System.out.println();
-        System.out.println("=== Withdraw $98.00 ===");
-        System.out.println();
-        acct.debit(98);
-        System.out.println(acct);
+        try {
+            Account acct = new Account(acctNum, balance);
+            System.out.println();
+            System.out.println("=== Custom Account ===");
+            System.out.println();
+            System.out.println(acct);
+            System.out.println();
+            System.out.println("=== Reset balance to 0 ===");
+            System.out.println();
+            acct.setBalance(0);
+            System.out.println(acct);
+            System.out.println();
+            System.out.println("=== Deposit $100.00 ===");
+            System.out.println();
+            acct.credit(100);
+            System.out.println(acct);
+            System.out.println();
+            System.out.println("=== Withdraw $98.00 ===");
+            System.out.println();
+            acct.debit(98);
+            System.out.println(acct);
+        } catch (IllegalArgumentException ia) {
+            ia.printStackTrace();
+        }
     }
 }
