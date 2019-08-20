@@ -21,7 +21,15 @@ public class TestTriangle {
         System.out.println("=== Update triangle ===");
         System.out.println();
         Triangle t3 = (Triangle) t2;
-        t3.setBase(t3.getBase() + 1);
+        try {
+            t3.setBase(t3.getBase() + 1);
+            t3.setHeight(t3.getHeight() + 12);
+        } catch (IllegalArgumentException excp) {
+            excp.printStackTrace();
+            System.out.println();
+            System.out.println("=== Skip update ===");
+            System.out.println();
+        }
         t2.setColor("orange");
         System.out.println(t2);
         System.out.println();
