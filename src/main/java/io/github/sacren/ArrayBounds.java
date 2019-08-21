@@ -16,11 +16,11 @@ public class ArrayBounds {
 
     /** ArrayBounds constructor. */
     public ArrayBounds() {
-        intArray[8] = 1;
+        intArray[intArray.length] = 1;
     }
 
     /** ArrayBounds string method. */
     public String toString() {
-        return String.format("%d", intArray[0]);
+        return "ArrayIndexOutOfBoundsException";
     }
 }
