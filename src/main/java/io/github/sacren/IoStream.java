@@ -42,6 +42,8 @@ public class IoStream {
             try {
                 in.close();
                 out.close();
+            } catch (NullPointerException ex) {
+                ex.printStackTrace();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
