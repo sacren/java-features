@@ -1,6 +1,8 @@
 /**
  * Test driver for Account.
  */
+import static java.lang.System.out;
+
 import java.util.Scanner;
 
 public class TestAccount {
@@ -9,54 +11,54 @@ public class TestAccount {
         /* user input */
         Scanner in = new Scanner(System.in);
         int acctNum;
-        System.out.print("Enter the account number: ");
+        out.print("Enter the account number: ");
         acctNum = in.nextInt();
         double balance;
-        System.out.print("Enter the balance: ");
+        out.print("Enter the balance: ");
         balance = in.nextDouble();
         in.close();
         /* account activities and balance */
         Account defAcct = new Account();
-        System.out.println();
-        System.out.println("=== Default Account ===");
-        System.out.println();
-        System.out.println(defAcct);
-        System.out.println();
-        System.out.println("=== Use getter for default account ===");
-        System.out.println();
-        System.out.printf(
+        out.println();
+        out.println("=== Default Account ===");
+        out.println();
+        out.println(defAcct);
+        out.println();
+        out.println("=== Use getter for default account ===");
+        out.println();
+        out.printf(
                 "Default account number:  %d%n"
                         + "Default account balance: %.2f%n",
                 defAcct.getAcctNum(),
                 defAcct.getBalance());
         try {
             Account acct = new Account(acctNum, balance);
-            System.out.println();
-            System.out.println("=== Custom Account ===");
-            System.out.println();
-            System.out.println(acct);
-            System.out.println();
-            System.out.println("=== Reset balance to 0 ===");
-            System.out.println();
+            out.println();
+            out.println("=== Custom Account ===");
+            out.println();
+            out.println(acct);
+            out.println();
+            out.println("=== Reset balance to 0 ===");
+            out.println();
             acct.setBalance(0);
-            System.out.println(acct);
-            System.out.println();
-            System.out.println("=== Deposit $100.00 ===");
-            System.out.println();
+            out.println(acct);
+            out.println();
+            out.println("=== Deposit $100.00 ===");
+            out.println();
             acct.credit(100);
-            System.out.println(acct);
-            System.out.println();
-            System.out.println("=== Withdraw $98.00 ===");
-            System.out.println();
+            out.println(acct);
+            out.println();
+            out.println("=== Withdraw $98.00 ===");
+            out.println();
             try {
                 acct.debit(98);
-            } catch (IllegalArgumentException ia) {
-                System.out.println(ia.getMessage());
-                System.out.println();
+            } catch (IllegalArgumentException ex) {
+                out.println(ex.getMessage());
+                out.println();
             }
-            System.out.println(acct);
-        } catch (IllegalArgumentException ia) {
-            ia.printStackTrace();
+            out.println(acct);
+        } catch (IllegalArgumentException ex) {
+            ex.printStackTrace();
         }
     }
 }
