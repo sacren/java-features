@@ -21,11 +21,13 @@ public class IoStream {
 
     /** IoStream method to copy the file. */
     public void copy() {
+        String inFile = "/tmp/foo";
+        String outFile = "/tmp/bar";
         FileInputStream in = null;
         FileOutputStream out = null;
         try {
-            in = new FileInputStream("/tmp/foo");
-            out = new FileOutputStream("/tmp/bar");
+            in = new FileInputStream(inFile);
+            out = new FileOutputStream(outFile);
             int oneByte;
             for ( ; ; ) {
                 oneByte = in.read();
