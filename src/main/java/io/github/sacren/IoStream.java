@@ -14,6 +14,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class IoStream {
+    /* private instance data */
+    String inFile = "/tmp/foo";
+    String outFile = "/tmp/bar";
+    FileInputStream in = null;
+    FileOutputStream out = null;
+
     /** IoStream constructor. */
     public IoStream() {
         copy();
@@ -21,10 +27,6 @@ public class IoStream {
 
     /** IoStream method to copy the file. */
     public void copy() {
-        String inFile = "/tmp/foo";
-        String outFile = "/tmp/bar";
-        FileInputStream in = null;
-        FileOutputStream out = null;
         try {
             in = new FileInputStream(inFile);
             out = new FileOutputStream(outFile);
