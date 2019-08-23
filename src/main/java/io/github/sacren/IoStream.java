@@ -15,8 +15,8 @@ import java.io.IOException;
 
 public class IoStream {
     /* private instance data */
-    String inFile = "/tmp/foo";
-    String outFile = "/tmp/bar";
+    private String inFile = "/tmp/foo";
+    private String outFile = "/tmp/bar";
 
     /** IoStream constructor. */
     public IoStream() {
