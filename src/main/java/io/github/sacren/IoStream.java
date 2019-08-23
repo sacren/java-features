@@ -17,8 +17,6 @@ public class IoStream {
     /* private instance data */
     String inFile = "/tmp/foo";
     String outFile = "/tmp/bar";
-    FileInputStream in = null;
-    FileOutputStream out = null;
 
     /** IoStream constructor. */
     public IoStream() {
@@ -27,9 +25,8 @@ public class IoStream {
 
     /** IoStream method to copy the file. */
     public void copy() {
-        try {
-            in = new FileInputStream(inFile);
-            out = new FileOutputStream(outFile);
+        try (FileInputStream in = new FileInputStream(inFile);
+             FileOutputStream out = new FileOutputStream(outFile)) {
             int oneByte;
             for ( ; ; ) {
                 oneByte = in.read();
@@ -42,15 +39,6 @@ public class IoStream {
             ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
-        } finally {
-            try {
-                in.close();
-                out.close();
-            } catch (NullPointerException ex) {
-                ex.printStackTrace();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
         }
     }
 
