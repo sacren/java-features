@@ -2,27 +2,21 @@
  * RvsStr class for the reverse of a string.
  *
  * <p>Private instance data:
- * -str:String
+ * -sb:StringBuilder
  *
  * <p>Constructor:
  * +RvsStr(str:String)
  *
  * <p>Public methods:
- * +getRvs():String
  * +toString():String
  */
 public class RvsStr {
     /* private instance data */
-    private String str;
+    private StringBuilder sb;
 
     /** RvsStr constructor. */
     public RvsStr(String str) {
-        this.str = str;
-    }
-
-    /** RvsStr getter for reversed string. */
-    public String getRvs() {
-        return new StringBuffer(str).reverse().toString();
+        sb = new StringBuilder(str);
     }
 
     /** RvsStr string method. */
@@ -30,7 +24,7 @@ public class RvsStr {
         return String.format(
                 "User input: %s%n"
                         + "Reversed:   %s",
-                str,
-                getRvs());
+                sb.toString(),
+                sb.reverse().toString());
     }
 }
