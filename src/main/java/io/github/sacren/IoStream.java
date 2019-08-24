@@ -52,6 +52,12 @@ public class IoStream {
 
     /** IoStream string method. */
     public String toString() {
-        return String.format("Copy %d bytes.", getFileSize());
+        return String.format(
+                "Input file:      %s%n"
+                    + "Output file:     %s%n"
+                    + "Copy:            %d bytes",
+                inFile,
+                outFile,
+                getFileSize());
     }
 }
