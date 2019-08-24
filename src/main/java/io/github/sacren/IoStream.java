@@ -6,8 +6,10 @@
  *
  * Public methods:
  * +copy():void
+ * +getFileSize():long
  * +toString():String
  */
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -42,8 +44,14 @@ public class IoStream {
         }
     }
 
+    /** IoStream getter for file size. */
+    public long getFileSize() {
+        File file = new File(inFile);
+        return file.length();
+    }
+
     /** IoStream string method. */
     public String toString() {
-        return "Copy file.";
+        return String.format("Copy %d bytes.", getFileSize());
     }
 }
