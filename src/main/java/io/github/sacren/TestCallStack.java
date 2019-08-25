@@ -10,17 +10,7 @@ public class TestCallStack {
         out.println("=== Call stack ===");
         out.println();
         out.println("Enter main");
-        try {
-            CallStack cs = new CallStack();
-        } catch (ArithmeticException excp) {
-            excp.printStackTrace();
-        } catch (Exception excp) {
-            out.println(excp.getMessage());
-        } finally {
-            out.println();
-            out.println("=== Exception or not, finally block is certain to execute! ===");
-            out.println();
-        }
+        CallStack cs = new CallStack();
         out.println("Exit main");
     }
 }
