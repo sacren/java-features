@@ -23,7 +23,7 @@ public class RvsInt {
 
     /** RvsInt getter for the reversed integer. */
     public int getRvs() {
-        StringBuffer sb = new StringBuffer(Integer.toString(num));
+        StringBuilder sb = new StringBuilder(Integer.toString(num));
         return Integer.parseUnsignedInt(sb.reverse().toString());
     }
 
