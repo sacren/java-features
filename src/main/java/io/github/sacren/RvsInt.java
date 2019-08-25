@@ -8,6 +8,7 @@
  * +RvsInt(num:int)
  *
  * <p>Public methods:
+ * +set(num:int):void
  * +getRvs():int
  * +getSum():int
  * +toString():String
@@ -17,7 +18,16 @@ public class RvsInt {
     private int num;
 
     /** RvsInt constructor. */
-    public RvsInt(int num) {
+    public RvsInt(int num) throws IllegalArgumentException {
+        set(num);
+    }
+
+    /** RvsInt setter for the instance data. */
+    public void set(int num) throws IllegalArgumentException {
+        if (num < 0) {
+            throw new IllegalArgumentException(
+                    String.format("No negative number: %d is a negative number!", num));
+        }
         this.num = num;
     }
 

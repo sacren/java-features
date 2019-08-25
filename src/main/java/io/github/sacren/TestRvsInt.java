@@ -11,13 +11,17 @@ public class TestRvsInt {
         System.out.print("Enter a non-negative integer: ");
         num = in.nextInt();
         in.close();
-        System.out.println();
-        System.out.println("=== Reverse integer ===");
-        System.out.println();
-        System.out.println(new RvsInt(num));
-        System.out.println();
-        System.out.println("=== Reverse integer by operation ===");
-        System.out.println();
-        System.out.println(new RvsIntOp(num));
+        try {
+            System.out.println();
+            System.out.println("=== Reverse integer ===");
+            System.out.println();
+            System.out.println(new RvsInt(num));
+            System.out.println();
+            System.out.println("=== Reverse integer by operation ===");
+            System.out.println();
+            System.out.println(new RvsIntOp(num));
+        } catch (IllegalArgumentException ex) {
+            ex.printStackTrace();
+        }
     }
 }
