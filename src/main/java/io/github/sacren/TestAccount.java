@@ -31,34 +31,25 @@ public class TestAccount {
                         + "Default account balance: %.2f%n",
                 defAcct.getAcctNum(),
                 defAcct.getBalance());
-        try {
-            Account acct = new Account(acctNum, balance);
-            out.println();
-            out.println("=== Custom Account ===");
-            out.println();
-            out.println(acct);
-            out.println();
-            out.println("=== Reset balance to 0 ===");
-            out.println();
-            acct.setBalance(0);
-            out.println(acct);
-            out.println();
-            out.println("=== Deposit $100.00 ===");
-            out.println();
-            acct.credit(100);
-            out.println(acct);
-            out.println();
-            out.println("=== Withdraw $98.00 ===");
-            out.println();
-            try {
-                acct.debit(98);
-            } catch (IllegalArgumentException ex) {
-                out.println(ex.getMessage());
-                out.println();
-            }
-            out.println(acct);
-        } catch (IllegalArgumentException ex) {
-            ex.printStackTrace();
-        }
+        Account acct = new Account(acctNum, balance);
+        out.println();
+        out.println("=== Custom Account ===");
+        out.println();
+        out.println(acct);
+        out.println();
+        out.println("=== Reset balance to 0 ===");
+        out.println();
+        acct.setBalance(0);
+        out.println(acct);
+        out.println();
+        out.println("=== Deposit $100.00 ===");
+        out.println();
+        acct.credit(100);
+        out.println(acct);
+        out.println();
+        out.println("=== Withdraw $98.00 ===");
+        out.println();
+        acct.debit(98);
+        out.println(acct);
     }
 }
