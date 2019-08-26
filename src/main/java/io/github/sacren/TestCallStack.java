@@ -16,7 +16,8 @@ public class TestCallStack {
         try {
             CallStack cs = new CallStack();
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            out.println("Execution path diverges at this point...");
+            out.println(ex.getMessage());
         } finally {
             out.println("Do cleanup in finally block");
         }
