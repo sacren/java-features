@@ -7,6 +7,7 @@ public class TestListDir {
     /** ListDir test driver. */
     public static void main(String[] args) {
         out.println();
-        out.println(new ListDir());
+        /* random string for fake path name */
+        out.println(new ListDir("Eip1aemi"));
     }
 }

@@ -18,8 +18,8 @@ public class ListDir {
     private File dir;
 
     /** ListDir constructor. */
-    public ListDir() {
-        dir = new File("Eip1aemi"); /* random string for fake path name */
+    public ListDir(String path) {
+        dir = new File(path);
     }
 
     /** ListDir getter for directory contents. */
