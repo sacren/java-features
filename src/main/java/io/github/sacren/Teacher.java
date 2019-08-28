@@ -1,5 +1,5 @@
 /**
- * Teacher: subclass under Person.
+ * Teacher subclass extends Person superclass.
  *
  * <p>Private data with default values:
  * -numberOfCourses:int = 0
@@ -16,7 +16,7 @@
  * +removeCourse(course:String):boolean
  */
 public class Teacher extends Person {
-    /* public static data */
+    /* private static data */
     private static final int INIT_NUMBER_OF_COURSES = 0;
     private static final int MAX_COURSES = 5;
 
@@ -40,12 +40,12 @@ public class Teacher extends Person {
                 getName(), getAddress());
     }
 
-    /** getter for Teacher courses array. */
+    /** Teacher getter for courses array. */
     public String[] getCourses() {
         return courses;
     }
 
-    /** getter for Teacher number of courses. */
+    /** Teacher getter for number of courses. */
     public int getNumberOfCourses() {
         return numberOfCourses;
     }
