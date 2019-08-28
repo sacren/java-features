@@ -2,8 +2,13 @@
  * Test driver for Person.
  */
 public class TestPerson {
-    /** Instantiate and run Person object. */
+    /** Person test driver. */
     public static void main(String[] args) {
+        System.out.println();
+        System.out.println("=== Person with default name and address ===");
+        System.out.println();
+        System.out.print(new Person());
+        System.out.println();
         String name = "Charlie Smith";
         String address = "24 College Drive, Anytown, Anystate";
         Person person = new Person(name, address);
