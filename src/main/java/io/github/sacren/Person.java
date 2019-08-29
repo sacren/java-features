@@ -1,18 +1,19 @@
 /**
- * Person: superclass over Student and Teacher.
+ * Person superclass over Student and Teacher subclasses.
  *
  * <p>Private data:
  * -name:String
  * -address:String
  *
  * <p>Constructor:
- * +person(name:String, address:String)
+ * +Person()
+ * +Person(name:String, address:String)
  *
  * <p>Public methods:
- * +getName():String
- * +getAddress():String
  * +setName(name:String):void
  * +setAddress(address:String):void
+ * +getName():String
+ * +getAddress():String
  * +toString():String
  */
 public class Person {
@@ -26,20 +27,10 @@ public class Person {
         setAddress("123 Main St., Anytown, Anystate");
     }
 
-    /** Person constructor with name and address. */
+    /** Person custom constructor. */
     public Person(String name, String address) {
-        this.name = name;
-        this.address = address;
-    }
-
-    /** getter for Person name. */
-    public String getName() {
-        return name;
-    }
-
-    /** getter for Person address. */
-    public String getAddress() {
-        return address;
+        setName(name);
+        setAddress(address);
     }
 
     /** Person setter for name. */
@@ -47,16 +38,27 @@ public class Person {
         this.name = name;
     }
 
-    /** setter for Person address. */
+    /** Person setter for address. */
     public void setAddress(String address) {
         this.address = address;
     }
 
-    /** Person description. */
+    /** Person getter for name. */
+    public String getName() {
+        return name;
+    }
+
+    /** Person getter for address. */
+    public String getAddress() {
+        return address;
+    }
+
+    /** Person instance printout. */
     public String toString() {
         return String.format(
                 "Name: %s%n"
                         + "Address: %s%n",
-                name, address);
+                name,
+                address);
     }
 }
