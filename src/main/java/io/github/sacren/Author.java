@@ -1,5 +1,5 @@
 /**
- * Author class.
+ * Author class is used in Book class (reuse by composition).
  *
  * <p>Private instance data:
  * -name:String
