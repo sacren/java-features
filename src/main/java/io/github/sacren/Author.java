@@ -10,9 +10,11 @@
  * +Author(name:String, email:String, gender:char)
  *
  * <p>Public methods:
+ * +setName(name:String):void
+ * +setEmail(email:String):void
+ * +setGender(gender:char):void
  * +getName():String
  * +getEmail():String
- * +setEmail(email:String):void
  * +getGender():char
  * +toString():String
  */
@@ -24,8 +26,23 @@ public class Author {
 
     /** Author constructor. */
     public Author(String name, String email, char gender) {
+        setName(name);
+        setEmail(email);
+        setGender(gender);
+    }
+
+    /** Author setter for author name. */
+    public void setName(String name) {
         this.name = name;
+    }
+
+    /** Author setter for author email. */
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    /** Author setter for author gender. */
+    public void setGender(char gender) {
         this.gender = gender;
     }
 
@@ -37,11 +54,6 @@ public class Author {
     /** Author getter for author email. */
     public String getEmail() {
         return email;
-    }
-
-    /** Author setter of author email. */
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     /** Author getter for author gender. */
