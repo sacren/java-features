@@ -18,16 +18,20 @@ public class TestAuthor {
                         + "Send email to %s for questions.%n",
                 dennis.getName(),
                 dennis.getEmail());
-        /* delete author email */
+        /* delete Author instance private data */
+        dennis.setName(null);
         dennis.setEmail(null);
+        dennis.setGender(' ');
         System.out.println();
-        System.out.println("=== After deleting email address ===");
+        System.out.println("=== After deleting Auther instance private data ===");
         System.out.println();
         System.out.println(dennis);
-        /* restore author email */
+        /* restore Author instance private data */
+        dennis.setName(name);
         dennis.setEmail(email);
+        dennis.setGender('M');
         System.out.println();
-        System.out.println("=== After restoring email address ===");
+        System.out.println("=== After restoring Author instance private data ===");
         System.out.println();
         System.out.println(dennis);
     }
