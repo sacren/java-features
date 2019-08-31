@@ -64,7 +64,7 @@ public class Book {
         this.sales = sales;
     }
 
-    /** Book string method. */
+    /** Book instance printout. */
     public String toString() {
         return String.format(
                 "Book title:    %s%n"

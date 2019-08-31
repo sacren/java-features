@@ -61,7 +61,7 @@ public class Author {
         return gender;
     }
 
-    /** Author string method. */
+    /** Author instance printout. */
     public String toString() {
         return String.format(
                 "Author name:   %s%n"
