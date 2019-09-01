@@ -7,7 +7,8 @@ public class TestAuthor {
         /* Author class */
         String name = "Dennis Ritchie";
         String email = "dmr@bell-labs.com";
-        Author dennis = new Author(name, email, 'M');
+        char gender = 'M';
+        Author dennis = new Author(name, email, gender);
         System.out.println();
         System.out.println("=== Author class ===");
         System.out.println();
@@ -29,7 +30,7 @@ public class TestAuthor {
         /* restore Author instance private data */
         dennis.setName(name);
         dennis.setEmail(email);
-        dennis.setGender('M');
+        dennis.setGender(gender);
         System.out.println();
         System.out.println("=== After restoring Author instance private data ===");
         System.out.println();
