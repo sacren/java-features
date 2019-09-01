@@ -11,12 +11,14 @@
  * +Book(title:String, author:Author, price:double, sales:int)
  *
  * <p>Public methods:
+ * +setTitle(title:String):void
+ * +setAuthor(author:Author):void
+ * +setPrice(price:double):void
+ * +setSales(sales:int):void
  * +getTitle():String
  * +getAuthor():Author
  * +getPrice():double
- * +setPrice(price:double):void
  * +getSales():int
- * +setSales(sales:int):void
  * +toString():String
  */
 public class Book {
@@ -28,9 +30,29 @@ public class Book {
 
     /** Book constructor. */
     public Book(String title, Author author, double price, int sales) {
+        setTitle(title);
+        setAuthor(author);
+        setPrice(price);
+        setSales(sales);
+    }
+
+    /** Book setter for book title. */
+    public void setTitle(String title) {
         this.title = title;
+    }
+
+    /** Book setter for book author. */
+    public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    /** Book setter for book price. */
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    /** Book setter for book sales. */
+    public void setSales(int sales) {
         this.sales = sales;
     }
 
@@ -49,19 +71,9 @@ public class Book {
         return price;
     }
 
-    /** Book setter for book price. */
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     /** Book getter for book sales. */
     public int getSales() {
         return sales;
-    }
-
-    /** Book setter for book sales. */
-    public void setSales(int sales) {
-        this.sales = sales;
     }
 
     /** Book instance printout. */
