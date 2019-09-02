@@ -1,5 +1,7 @@
 /**
- * Book class composed of Author class.
+ * Book class models a book with one and only one author.
+ *
+ * <p>The author is an instance of Author class.
  *
  * <p>Private instance data:
  * -title:String
@@ -22,13 +24,13 @@
  * +toString():String
  */
 public class Book {
-    /* private instance data */
+    /* private instance variables */
     private String title;
     private Author author;
     private double price;
     private int sales;
 
-    /** Book constructor. */
+    /** Book class custom constructor. */
     public Book(String title, Author author, double price, int sales) {
         setTitle(title);
         setAuthor(author);
@@ -76,7 +78,7 @@ public class Book {
         return sales;
     }
 
-    /** Book instance printout. */
+    /** Book instance formatted string. */
     public String toString() {
         return String.format(
                 "Book title:    %s%n"
