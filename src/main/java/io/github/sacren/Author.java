@@ -61,12 +61,12 @@ public class Author {
         return gender;
     }
 
-    /** Author instance printout. */
+    /** Author instance formatted string. */
     public String toString() {
         return String.format(
                 "Author name:   %s%n"
-                        + "Contact email: %s%n"
-                        + "Gender:        %c",
+                        + "Author email:  %s%n"
+                        + "Author gender: %c",
                 name,
                 email,
                 gender);
