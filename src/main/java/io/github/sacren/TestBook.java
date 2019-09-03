@@ -5,39 +5,39 @@ public class TestBook {
     /** Book test driver. */
     public static void main(String[] args) {
         /* Book class */
-        Author dennis = new Author("Dennis Ritchie", "dmr@bell-labs.com", 'M');
-        String title = "The C Programming Language";
-        Book langC = new Book(title, dennis, 29.99, 90000);
+        Author author = new Author("Dennis Ritchie", "dmr@bell-labs.com", 'M');
+        String name = "The C Programming Language";
+        Book book = new Book(name, author, 29.99, 90000);
         System.out.println();
         System.out.println("=== Book class ===");
         System.out.println();
-        System.out.println(langC);
+        System.out.println(book);
         System.out.println();
         System.out.printf(
                 "Book Title:    %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n%n",
-                langC.getTitle(),
-                dennis,
-                langC.getPrice(),
-                langC.getSales());
+                book.getTitle(),
+                author,
+                book.getPrice(),
+                book.getSales());
         /* update book */
         System.out.println("=== After update book price and sales ===");
         System.out.println();
-        langC.setPrice(69.99);
-        langC.setSales(1900);
-        System.out.println(langC);
+        book.setPrice(69.99);
+        book.setSales(1900);
+        System.out.println(book);
         System.out.println();
         System.out.printf(
                 "Book Title:    %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n",
-                langC.getTitle(),
-                dennis,
-                langC.getPrice(),
-                langC.getSales());
+                book.getTitle(),
+                author,
+                book.getPrice(),
+                book.getSales());
         /* use anonymous Author instance */
         Book dummy = new Book(
                 "Java for Dummies",
