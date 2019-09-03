@@ -14,11 +14,11 @@ public class TestBook {
         System.out.println(book);
         System.out.println();
         System.out.printf(
-                "Book Title:    %s%n"
+                "Book name:    %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n%n",
-                book.getTitle(),
+                book.getName(),
                 author,
                 book.getPrice(),
                 book.getSales());
@@ -30,11 +30,11 @@ public class TestBook {
         System.out.println(book);
         System.out.println();
         System.out.printf(
-                "Book Title:    %s%n"
+                "Book name:    %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n",
-                book.getTitle(),
+                book.getName(),
                 author,
                 book.getPrice(),
                 book.getSales());
