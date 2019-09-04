@@ -8,32 +8,32 @@ public class TestAuthor {
         String name = "Dennis Ritchie";
         String email = "dmr@bell-labs.com";
         char gender = 'M';
-        Author dennis = new Author(name, email, gender);
+        Author author = new Author(name, email, gender);
         System.out.println();
         System.out.println("=== Author class ===");
         System.out.println();
-        System.out.println(dennis);
+        System.out.println(author);
         System.out.println();
         System.out.printf(
                 "The C Programming Language is authored by %s.%n"
                         + "Send email to %s for questions.%n",
-                dennis.getName(),
-                dennis.getEmail());
+                author.getName(),
+                author.getEmail());
         /* delete Author instance private data */
-        dennis.setName(null);
-        dennis.setEmail(null);
-        dennis.setGender(' ');
+        author.setName(null);
+        author.setEmail(null);
+        author.setGender(' ');
         System.out.println();
         System.out.println("=== After deleting Auther instance private data ===");
         System.out.println();
-        System.out.println(dennis);
+        System.out.println(author);
         /* restore Author instance private data */
-        dennis.setName(name);
-        dennis.setEmail(email);
-        dennis.setGender(gender);
+        author.setName(name);
+        author.setEmail(email);
+        author.setGender(gender);
         System.out.println();
         System.out.println("=== After restoring Author instance private data ===");
         System.out.println();
-        System.out.println(dennis);
+        System.out.println(author);
     }
 }
