@@ -81,7 +81,7 @@ public class Book {
     /** Book instance formatted string. */
     public String toString() {
         return String.format(
-                "Book name:    %s%n"
+                "Book name:     %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d",
