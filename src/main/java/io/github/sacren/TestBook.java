@@ -38,6 +38,13 @@ public class TestBook {
                 author,
                 book.getPrice(),
                 book.getSales());
+        /* another book */
+        Author anotherAuthor = new Author("Charlie Brown", "chuck@nowhare.net", 'M');
+        Book anotherBook = new Book("Java for Dummies", anotherAuthor, 9.99);
+        System.out.println();
+        System.out.println("=== Another book ===");
+        System.out.println();
+        System.out.println(anotherBook);
         /* use anonymous Author instance */
         Book dummy = new Book(
                 "Java for Dummies",

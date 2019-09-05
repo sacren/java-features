@@ -30,7 +30,14 @@ public class Book {
     private double price;
     private int sales;
 
-    /** Book class custom constructor. */
+    /** Book constructor with name, author and price. */
+    public Book(String name, Author author, double price) {
+        setName(name);
+        setAuthor(author);
+        setPrice(price);
+    }
+
+    /** Book constructor with additional sales quantity. */
     public Book(String name, Author author, double price, int sales) {
         setName(name);
         setAuthor(author);
