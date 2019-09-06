@@ -47,5 +47,13 @@ public class TestBook {
         System.out.println("=== Book of anonymous Author instance ===");
         System.out.println();
         System.out.println(dummy);
+        System.out.println();
+        System.out.println("=== Anonymous Author instance ===");
+        System.out.println();
+        System.out.printf(
+                "Author name:  %s%n"
+                        + "Author email: %s%n",
+                dummy.getAuthor().getName(),
+                dummy.getAuthor().getEmail());
     }
 }
