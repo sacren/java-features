@@ -70,7 +70,7 @@ public class Book {
         return name;
     }
 
-    /** Book getter for author info. */
+    /** Book getter for Author instance. */
     public Author getAuthor() {
         return author;
     }
