@@ -53,11 +53,13 @@ public class TestBook {
         System.out.printf(
                 "Author name:   %s%n"
                         + "Author email:  %s%n"
+                        + "Author gender: %c%n"
                         + "Author name:   %s%n"
                         + "Author email:  %s%n"
                         + "Author gender: %c%n",
                 dummy.getAuthor().getName(),
                 dummy.getAuthor().getEmail(),
+                dummy.getAuthor().getGender(),
                 dummy.getAuthorName(),
                 dummy.getAuthorEmail(),
                 dummy.getAuthorGender());
