@@ -21,6 +21,9 @@
  * +getAuthor():Author
  * +getPrice():double
  * +getSales():int
+ * +getAuthorName():String
+ * +getAuthorEmail():String
+ * +getAuthorGender():char
  * +toString():String
  */
 public class Book {
@@ -83,6 +86,21 @@ public class Book {
     /** Book getter for book sales. */
     public int getSales() {
         return sales;
+    }
+
+    /** Book getter for Author name. */
+    public String getAuthorName() {
+        return author.getName();
+    }
+
+    /** Book getter for Author email address. */
+    public String getAuthorEmail() {
+        return author.getEmail();
+    }
+
+    /** Book getter for Author gender. */
+    public char getAuthorGender() {
+        return author.getGender();
     }
 
     /** Book instance formatted string. */
