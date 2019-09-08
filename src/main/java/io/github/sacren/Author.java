@@ -24,6 +24,11 @@ public class Author {
     private String email;
     private char gender;
 
+    /** Author default constructor. */
+    public Author() {
+        setGender('F');
+    }
+
     /** Author constructor. */
     public Author(String name, String email, char gender) {
         setName(name);

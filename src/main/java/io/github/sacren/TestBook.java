@@ -63,5 +63,9 @@ public class TestBook {
                 dummy.getAuthorName(),
                 dummy.getAuthorEmail(),
                 dummy.getAuthorGender());
+        System.out.println();
+        System.out.println("=== Book default constructor ===");
+        System.out.println();
+        System.out.println(new Book());
     }
 }

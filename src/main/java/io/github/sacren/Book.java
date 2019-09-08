@@ -33,6 +33,11 @@ public class Book {
     private double price;
     private int sales;
 
+    /** Book default constructor. */
+    public Book() {
+        setAuthor(new Author());
+    }
+
     /** Book constructor with name, author and price. */
     public Book(String name, Author author, double price) {
         setName(name);
