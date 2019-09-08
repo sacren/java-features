@@ -4,6 +4,11 @@
 public class TestBook {
     /** Book test driver. */
     public static void main(String[] args) {
+        /* Book default constructor */
+        System.out.println();
+        System.out.println("=== Book default constructor ===");
+        System.out.println();
+        System.out.println(new Book());
         /* Book class */
         Author author = new Author("Dennis Ritchie", "dmr@bell-labs.com", 'M');
         String name = "The C Programming Language";
@@ -63,9 +68,5 @@ public class TestBook {
                 dummy.getAuthorName(),
                 dummy.getAuthorEmail(),
                 dummy.getAuthorGender());
-        System.out.println();
-        System.out.println("=== Book default constructor ===");
-        System.out.println();
-        System.out.println(new Book());
     }
 }
