@@ -6,15 +6,19 @@
  * <p>Private instance data:
  * -name:String
  * -author:Author
+ * -authors:Author[]
  * -price:double
  * -sales:int
  *
  * <p>Constructor:
+ * +Book()
  * +Book(name:String, author:Author, price:double, sales:int)
+ * +Book(name:String, author:Author, authors:Author[] price:double, sales:int)
  *
  * <p>Public methods:
  * +setName(name:String):void
  * +setAuthor(author:Author):void
+ * +setAuthors(authors:Author[]):void
  * +setPrice(price:double):void
  * +setSales(sales:int):void
  * +getName():String
