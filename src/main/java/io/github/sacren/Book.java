@@ -30,25 +30,32 @@ public class Book {
     /* private instance variables */
     private String name;
     private Author author;
+    private Author[] authors = new Author[2];
     private double price;
     private int sales;
 
     /** Book default constructor. */
     public Book() {
+        Author[] authors = new Author[2];
+        authors[0] = new Author();
+        authors[1] = new Author();
         setAuthor(new Author());
+        setAuthors(authors);
     }
 
     /** Book constructor with name, author and price. */
-    public Book(String name, Author author, double price) {
+    public Book(String name, Author author, Author[] authors, double price) {
         setName(name);
         setAuthor(author);
+        setAuthors(authors);
         setPrice(price);
     }
 
     /** Book constructor with additional sales quantity. */
-    public Book(String name, Author author, double price, int sales) {
+    public Book(String name, Author author, Author[] authors, double price, int sales) {
         setName(name);
         setAuthor(author);
+        setAuthors(authors);
         setPrice(price);
         setSales(sales);
     }
@@ -61,6 +68,12 @@ public class Book {
     /** Book setter for book author. */
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    /** Book setter for book authors. */
+    public void setAuthors(Author[] authors) {
+        this.authors[0] = authors[0];
+        this.authors[1] = authors[1];
     }
 
     /** Book setter for book price. */
@@ -113,10 +126,14 @@ public class Book {
         return String.format(
                 "Book name:     %s%n"
                         + "%s%n"
+                        + "%s%n"
+                        + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d",
                 name,
                 author,
+                authors[0],
+                authors[1],
                 price,
                 sales);
     }
