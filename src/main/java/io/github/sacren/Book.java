@@ -23,6 +23,7 @@
  * +setSales(sales:int):void
  * +getName():String
  * +getAuthor():Author
+ * +getAuthors():Author[]
  * +getPrice():double
  * +getSales():int
  * +getAuthorName():String
@@ -98,6 +99,11 @@ public class Book {
     /** Book getter for Author instance. */
     public Author getAuthor() {
         return author;
+    }
+
+    /** Book getter for Author array. */
+    public Author[] getAuthors() {
+        return authors;
     }
 
     /** Book getter for the book price. */

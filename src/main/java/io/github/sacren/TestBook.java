@@ -25,12 +25,16 @@ public class TestBook {
                 "Book name:     %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
-                        + "Sales:         %d%n%n",
+                        + "Sales:         %d%n%n"
+                        + "First author:%n"
+                        + "%s%n",
                 book.getName(),
                 author,
                 book.getPrice(),
-                book.getSales());
+                book.getSales(),
+                book.getAuthors()[0]);
         /* update book */
+        System.out.println();
         System.out.println("=== After update book price and sales ===");
         System.out.println();
         book.setPrice(69.99);
