@@ -6,7 +6,7 @@ public class TestBook {
     public static void main(String[] args) {
         /* Book default constructor */
         System.out.println();
-        System.out.println("=== Book default constructor ===");
+        System.out.println("=== Book instance using default constructor ===");
         System.out.println();
         System.out.println(new Book());
         /* Book class */
@@ -17,7 +17,7 @@ public class TestBook {
         String name = "The C Programming Language";
         Book book = new Book(name, author, authors, 29.99, 90000);
         System.out.println();
-        System.out.println("=== Book class ===");
+        System.out.println("=== Book instance using custom constructor ===");
         System.out.println();
         System.out.println(book);
         System.out.println();

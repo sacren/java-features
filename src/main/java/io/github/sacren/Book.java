@@ -1,5 +1,5 @@
 /**
- * Book class models a book with one and only one author.
+ * Book class models a book with one or two authors.
  *
  * <p>The author is an instance of Author class.
  *
