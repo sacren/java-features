@@ -136,15 +136,15 @@ public class Book {
         return String.format(
                 "Book name:     %s%n"
                         + "%s%n"
-                        + "%s%n"
-                        + "%s%n"
                         + "Price:         %.2f%n"
-                        + "Sales:         %d",
+                        + "Sales:         %d%n%n"
+                        + "%s%n"
+                        + "%s",
                 name,
                 author,
-                authors[0],
-                authors[1],
                 price,
-                sales);
+                sales,
+                authors[0],
+                authors[1]);
     }
 }
