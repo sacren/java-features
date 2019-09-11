@@ -12,8 +12,8 @@ public class TestBook {
         /* Book class */
         Author author = new Author("Dennis Ritchie", "dmr@bell-labs.com", 'M');
         Author[] authors = new Author[2];
-        authors[0] = new Author("Dennis Ritchie", "dmr@bell-labs.com", 'M');
-        authors[1] = new Author("Brian Kernighan", "bwk@bell-labs.com", 'M');
+        authors[0] = new Author("Brian Kernighan", "bwk@bell-labs.com", 'M');
+        authors[1] = new Author("Dennis Ritchie", "dmr@bell-labs.com", 'M');
         String name = "The C Programming Language";
         Book book = new Book(name, author, authors, 29.99, 90000);
         System.out.println();
