@@ -1,12 +1,13 @@
 /**
- * Author class is used in Book class (reuse by composition).
+ * Author instance is used in Book class (reuse by composition).
  *
- * <p>Private instance data:
+ * <p>Private instance variables:
  * -name:String
  * -email:String
  * -gender:char
  *
  * <p>Constructor:
+ * +Author()
  * +Author(name:String, email:String, gender:char)
  *
  * <p>Public methods:
@@ -19,7 +20,7 @@
  * +toString():String
  */
 public class Author {
-    /* private instance data */
+    /* private instance variables */
     private String name;
     private String email;
     private char gender;
@@ -29,7 +30,7 @@ public class Author {
         setGender('F');
     }
 
-    /** Author constructor. */
+    /** Author custome constructor. */
     public Author(String name, String email, char gender) {
         setName(name);
         setEmail(email);
