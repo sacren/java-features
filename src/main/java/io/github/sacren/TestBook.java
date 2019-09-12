@@ -51,10 +51,13 @@ public class TestBook {
                 book.getPrice(),
                 book.getSales());
         /* use anonymous Author instance excluding sales */
+        Author[] dummyAuthors = new Author[2];
+        dummyAuthors[0] = new Author("Peter Pan1", "pan1@nowhere.net", 'M');
+        dummyAuthors[1] = new Author("Peter Pan2", "pan2@nowhere.net", 'M');
         Book dummy = new Book(
                 "Java for Dummies",
                 new Author("Peter Pan", "pan@nowhere.net", 'M'),
-                authors,
+                dummyAuthors,
                 19.99);
         System.out.println();
         System.out.println("=== Book of anonymous Author instance ===");
