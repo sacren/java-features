@@ -35,7 +35,7 @@ public class Book {
     /* private instance variables */
     private String name;
     private Author author;
-    private Author[] authors = new Author[2];
+    private Author[] authors;
     private double price;
     private int sales;
 
@@ -77,6 +77,7 @@ public class Book {
 
     /** Book setter for book authors. */
     public void setAuthors(Author[] authors) {
+        this.authors = new Author[2];
         this.authors[0] = authors[0];
         this.authors[1] = authors[1];
     }
