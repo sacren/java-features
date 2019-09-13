@@ -134,18 +134,22 @@ public class Book {
 
     /** Book instance formatted string. */
     public String toString() {
+        String str = String.format(
+                "%s%n"
+                        + "%s",
+                authors[0],
+                authors[1]);
+
         return String.format(
                 "Book name:     %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n%n"
-                        + "%s%n"
                         + "%s",
                 name,
                 author,
                 price,
                 sales,
-                authors[0],
-                authors[1]);
+                str);
     }
 }
