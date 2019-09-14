@@ -77,9 +77,10 @@ public class Book {
 
     /** Book setter for book authors. */
     public void setAuthors(Author[] authors) {
-        this.authors = new Author[2];
-        this.authors[0] = authors[0];
-        this.authors[1] = authors[1];
+        this.authors = new Author[authors.length];
+        for (int i = 0; i < authors.length; i++) {
+            this.authors[i] = authors[i];
+        }
     }
 
     /** Book setter for book price. */
