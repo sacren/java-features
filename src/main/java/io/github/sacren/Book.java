@@ -134,11 +134,12 @@ public class Book {
 
     /** Book instance formatted string. */
     public String toString() {
-        String str = String.format(
-                "%s%n"
-                        + "%s",
-                authors[0],
-                authors[1]);
+        int end = authors.length - 1;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < end; i++) { /* last author excluded */
+            sb.append(String.format("%s%n", authors[i]));
+        }
+        sb.append(authors[end]);
 
         return String.format(
                 "Book name:     %s%n"
@@ -150,6 +151,6 @@ public class Book {
                 author,
                 price,
                 sales,
-                str);
+                sb.toString());
     }
 }
