@@ -48,7 +48,7 @@ public class Book {
         setAuthors(authors);
     }
 
-    /** Book constructor with name, author and price. */
+    /** Book constructor with name, list of authors and price. */
     public Book(String name, Author author, Author[] authors, double price) {
         setName(name);
         setAuthor(author);
