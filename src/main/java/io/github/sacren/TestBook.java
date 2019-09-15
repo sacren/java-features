@@ -50,10 +50,11 @@ public class TestBook {
                 author,
                 book.getPrice(),
                 book.getSales());
-        /* use anonymous Author instance excluding sales */
-        Author[] dummyAuthors = new Author[2];
-        dummyAuthors[0] = new Author("Peter Pan1", "pan1@nowhere.net", 'M');
-        dummyAuthors[1] = new Author("Peter Pan2", "pan2@nowhere.net", 'M');
+        /* use Author instance excluding sales */
+        Author[] dummyAuthors = new Author[3];
+        dummyAuthors[0] = new Author("Peter Pan", "peter@never.land", 'M');
+        dummyAuthors[1] = new Author("Wendy", "wendy@never.land", 'F');
+        dummyAuthors[2] = new Author("Tinker Bell", "tinker@never.land", 'F');
         Book dummy = new Book(
                 "Java for Dummies",
                 new Author("Peter Pan", "pan@nowhere.net", 'M'),
@@ -64,20 +65,18 @@ public class TestBook {
         System.out.println();
         System.out.println(dummy);
         System.out.println();
-        System.out.println("=== Anonymous Author instance ===");
+        System.out.println("=== Author instance array ===");
         System.out.println();
-        System.out.printf(
-                "Author name:   %s%n"
-                        + "Author email:  %s%n"
-                        + "Author gender: %c%n"
-                        + "Author name:   %s%n"
-                        + "Author email:  %s%n"
-                        + "Author gender: %c%n",
-                dummy.getAuthor().getName(),
-                dummy.getAuthor().getEmail(),
-                dummy.getAuthor().getGender(),
-                dummy.getAuthorName(),
-                dummy.getAuthorEmail(),
-                dummy.getAuthorGender());
+        StringBuilder fmtAuth = new StringBuilder();
+        for (Author a : dummyAuthors) {
+            fmtAuth.append(String.format(
+                        "Author name:   %s%n"
+                                + "Author email:  %s%n"
+                                + "Author gender: %c%n",
+                        a.getName(),
+                        a.getEmail(),
+                        a.getGender()));
+        }
+        System.out.print(fmtAuth.toString());
     }
 }
