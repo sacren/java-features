@@ -65,10 +65,10 @@ public class TestBook {
         System.out.println();
         System.out.println(dummy);
         System.out.println();
-        System.out.println("=== Author instance array ===");
+        System.out.println("=== Info of list of Author instances via Book ===");
         System.out.println();
         StringBuilder fmtAuth = new StringBuilder();
-        for (Author a : dummyAuthors) {
+        for (Author a : dummy.getAuthors()) {
             fmtAuth.append(String.format(
                         "Author name:   %s%n"
                                 + "Author email:  %s%n"
