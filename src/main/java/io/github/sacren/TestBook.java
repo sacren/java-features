@@ -78,5 +78,11 @@ public class TestBook {
                         a.getGender()));
         }
         System.out.print(fmtAuth.toString());
+        /* use Book constructor with no single author */
+        Book neverland = new Book("Never Land", dummyAuthors, 19.99);
+        System.out.println();
+        System.out.println("=== Book constructor excluding single Author ===");
+        System.out.println();
+        System.out.println(neverland);
     }
 }

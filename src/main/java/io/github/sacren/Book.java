@@ -65,6 +65,21 @@ public class Book {
         setSales(sales);
     }
 
+    /** Book constructor with name, list of authors and price. */
+    public Book(String name, Author[] authors, double price) {
+        setName(name);
+        setAuthors(authors);
+        setPrice(price);
+    }
+
+    /** Book constructor with additional sales quantity. */
+    public Book(String name, Author[] authors, double price, int sales) {
+        setName(name);
+        setAuthors(authors);
+        setPrice(price);
+        setSales(sales);
+    }
+
     /** Book setter for book name. */
     public void setName(String name) {
         this.name = name;
@@ -146,12 +161,10 @@ public class Book {
                 "Book name:     %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
-                        + "Sales:         %d%n%n"
-                        + "%s",
+                        + "Sales:         %d",
                 name,
-                author,
+                sb.toString(),
                 price,
-                sales,
-                sb.toString());
+                sales);
     }
 }
