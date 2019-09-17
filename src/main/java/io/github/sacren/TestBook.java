@@ -29,7 +29,7 @@ public class TestBook {
                         + "First author:%n"
                         + "%s%n",
                 book.getName(),
-                author,
+                book.getAuthor(),
                 book.getPrice(),
                 book.getSales(),
                 book.getAuthors()[0]);
@@ -47,7 +47,7 @@ public class TestBook {
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n",
                 book.getName(),
-                author,
+                book.getAuthor(),
                 book.getPrice(),
                 book.getSales());
         /* use Author instance excluding sales */
