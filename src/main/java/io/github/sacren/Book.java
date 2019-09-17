@@ -151,11 +151,11 @@ public class Book {
     /** Book instance formatted string. */
     public String toString() {
         int end = authors.length - 1;
-        StringBuilder sb = new StringBuilder();
+        StringBuilder fmtAuth = new StringBuilder();
         for (int i = 0; i < end; i++) { /* last author excluded */
-            sb.append(String.format("%s%n", authors[i]));
+            fmtAuth.append(String.format("%s%n", authors[i]));
         }
-        sb.append(authors[end]);
+        fmtAuth.append(authors[end]);
 
         return String.format(
                 "Book name:     %s%n"
@@ -163,7 +163,7 @@ public class Book {
                         + "Price:         %.2f%n"
                         + "Sales:         %d",
                 name,
-                sb.toString(),
+                fmtAuth.toString(),
                 price,
                 sales);
     }
