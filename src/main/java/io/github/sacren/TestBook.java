@@ -25,14 +25,11 @@ public class TestBook {
                 "Book name:     %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
-                        + "Sales:         %d%n%n"
-                        + "First author:%n"
-                        + "%s%n",
+                        + "Sales:         %d%n",
                 book.getName(),
-                book.getAuthor(),
+                book.getAllAuthors(),
                 book.getPrice(),
-                book.getSales(),
-                book.getAuthors()[0]);
+                book.getSales());
         /* update book */
         System.out.println();
         System.out.println("=== After update book price and sales ===");
@@ -47,7 +44,7 @@ public class TestBook {
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n",
                 book.getName(),
-                book.getAuthor(),
+                book.getAllAuthors(),
                 book.getPrice(),
                 book.getSales());
         /* use Author instance excluding sales */
