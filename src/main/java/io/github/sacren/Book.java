@@ -148,22 +148,26 @@ public class Book {
         return author.getGender();
     }
 
-    /** Book instance formatted string. */
-    public String toString() {
+    /** Book getter for all authers. */
+    public String getAllAuthors() {
         int end = authors.length - 1;
         StringBuilder fmtAuth = new StringBuilder();
         for (int i = 0; i < end; i++) { /* last author excluded */
             fmtAuth.append(String.format("%s%n", authors[i]));
         }
         fmtAuth.append(authors[end]);
+        return fmtAuth.toString();
+    }
 
+    /** Book instance formatted string. */
+    public String toString() {
         return String.format(
                 "Book name:     %s%n"
                         + "%s%n"
                         + "Price:         %.2f%n"
                         + "Sales:         %d",
                 name,
-                fmtAuth.toString(),
+                getAllAuthors(),
                 price,
                 sales);
     }
