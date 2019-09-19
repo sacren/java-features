@@ -64,17 +64,7 @@ public class TestBook {
         System.out.println();
         System.out.println("=== Info of list of Author instances via Book ===");
         System.out.println();
-        StringBuilder fmtAuth = new StringBuilder();
-        for (Author a : dummy.getAuthors()) {
-            fmtAuth.append(String.format(
-                        "Author name:   %s%n"
-                                + "Author email:  %s%n"
-                                + "Author gender: %c%n",
-                        a.getName(),
-                        a.getEmail(),
-                        a.getGender()));
-        }
-        System.out.print(fmtAuth.toString());
+        System.out.println(dummy.getAllAuthors());
         /* use Book constructor with no single author */
         Book neverland = new Book("Never Land", dummyAuthors, 19.99);
         System.out.println();
