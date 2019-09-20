@@ -26,7 +26,7 @@ public class TestBook {
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n",
                 book.getName(),
-                book.getAllAuthors(),
+                book.getAllAuthInfo(),
                 book.getPrice(),
                 book.getSales());
         /* update book */
@@ -43,7 +43,7 @@ public class TestBook {
                         + "Price:         %.2f%n"
                         + "Sales:         %d%n",
                 book.getName(),
-                book.getAllAuthors(),
+                book.getAllAuthInfo(),
                 book.getPrice(),
                 book.getSales());
         /* use a list of Author instances but exclude sales */
@@ -59,6 +59,6 @@ public class TestBook {
         System.out.println();
         System.out.println("=== Info of list of Author instances via Book ===");
         System.out.println();
-        System.out.println(dummy.getAllAuthors());
+        System.out.println(dummy.getAllAuthInfo());
     }
 }

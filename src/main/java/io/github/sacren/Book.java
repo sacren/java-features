@@ -148,8 +148,8 @@ public class Book {
         return author.getGender();
     }
 
-    /** Book getter for all authers. */
-    public String getAllAuthors() {
+    /** Book getter for info of all authers. */
+    public String getAllAuthInfo() {
         int end = authors.length - 1;
         StringBuilder fmtAuth = new StringBuilder();
         for (int i = 0; i < end; i++) { /* last author excluded */
@@ -167,7 +167,7 @@ public class Book {
                         + "Price:         %.2f%n"
                         + "Sales:         %d",
                 name,
-                getAllAuthors(),
+                getAllAuthInfo(),
                 price,
                 sales);
     }
