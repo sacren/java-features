@@ -46,28 +46,19 @@ public class TestBook {
                 book.getAllAuthors(),
                 book.getPrice(),
                 book.getSales());
-        /* use Author instance excluding sales */
+        /* use a list of Author instances but exclude sales */
         Author[] dummyAuthors = new Author[3];
         dummyAuthors[0] = new Author("Peter Pan", "peter@never.land", 'M');
         dummyAuthors[1] = new Author("Wendy", "wendy@never.land", 'F');
         dummyAuthors[2] = new Author("Tinker Bell", "tinker@never.land", 'F');
-        Book dummy = new Book(
-                "Java for Dummies",
-                dummyAuthors,
-                19.99);
+        Book dummy = new Book("Java for Dummies", dummyAuthors, 19.99);
         System.out.println();
-        System.out.println("=== Book of anonymous Author instance ===");
+        System.out.println("=== Book of a list of Author instances ===");
         System.out.println();
         System.out.println(dummy);
         System.out.println();
         System.out.println("=== Info of list of Author instances via Book ===");
         System.out.println();
         System.out.println(dummy.getAllAuthors());
-        /* use Book constructor with no single author */
-        Book neverland = new Book("Never Land", dummyAuthors, 19.99);
-        System.out.println();
-        System.out.println("=== Book constructor excluding single Author ===");
-        System.out.println();
-        System.out.println(neverland);
     }
 }
