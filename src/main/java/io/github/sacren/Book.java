@@ -118,7 +118,7 @@ public class Book {
         return sales;
     }
 
-    /** Book getter for info of all authers. */
+    /** Book getter for info of all authors. */
     public String getAllAuthInfo() {
         int end = authors.length - 1;
         StringBuilder fmtAuth = new StringBuilder();
