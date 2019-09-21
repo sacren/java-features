@@ -22,13 +22,8 @@
  * +setPrice(price:double):void
  * +setSales(sales:int):void
  * +getName():String
- * +getAuthor():Author
- * +getAuthors():Author[]
  * +getPrice():double
  * +getSales():int
- * +getAuthorName():String
- * +getAuthorEmail():String
- * +getAuthorGender():char
  * +toString():String
  */
 public class Book {
@@ -113,16 +108,6 @@ public class Book {
         return name;
     }
 
-    /** Book getter for Author instance. */
-    public Author getAuthor() {
-        return author;
-    }
-
-    /** Book getter for Author array. */
-    public Author[] getAuthors() {
-        return authors;
-    }
-
     /** Book getter for the book price. */
     public double getPrice() {
         return price;
@@ -131,21 +116,6 @@ public class Book {
     /** Book getter for book sales. */
     public int getSales() {
         return sales;
-    }
-
-    /** Book getter for Author name. */
-    public String getAuthorName() {
-        return author.getName();
-    }
-
-    /** Book getter for Author email address. */
-    public String getAuthorEmail() {
-        return author.getEmail();
-    }
-
-    /** Book getter for Author gender. */
-    public char getAuthorGender() {
-        return author.getGender();
     }
 
     /** Book getter for info of all authers. */
