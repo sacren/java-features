@@ -1,9 +1,9 @@
 /**
- * Book class models a book with one or two authors.
+ * Book class models a book with any number of authors.
  *
  * <p>The author is an instance of Author class.
  *
- * <p>Private instance data:
+ * <p>Private instance variables:
  * -name:String
  * -authors:Author[]
  * -price:double
@@ -11,6 +11,7 @@
  *
  * <p>Constructor:
  * +Book()
+ * +Book(name:String, authors:Author[] price:double)
  * +Book(name:String, authors:Author[] price:double, sales:int)
  *
  * <p>Public methods:
@@ -21,6 +22,7 @@
  * +getName():String
  * +getPrice():double
  * +getSales():int
+ * +getAllAuthInfo():String
  * +toString():String
  */
 public class Book {
