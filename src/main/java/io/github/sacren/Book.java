@@ -5,19 +5,16 @@
  *
  * <p>Private instance data:
  * -name:String
- * -author:Author
  * -authors:Author[]
  * -price:double
  * -sales:int
  *
  * <p>Constructor:
  * +Book()
- * +Book(name:String, author:Author, price:double, sales:int)
- * +Book(name:String, author:Author, authors:Author[] price:double, sales:int)
+ * +Book(name:String, authors:Author[] price:double, sales:int)
  *
  * <p>Public methods:
  * +setName(name:String):void
- * +setAuthor(author:Author):void
  * +setAuthors(authors:Author[]):void
  * +setPrice(price:double):void
  * +setSales(sales:int):void
@@ -29,7 +26,6 @@
 public class Book {
     /* private instance variables */
     private String name;
-    private Author author;
     private Author[] authors;
     private double price;
     private int sales;
@@ -39,25 +35,7 @@ public class Book {
         Author[] authors = new Author[2];
         authors[0] = new Author();
         authors[1] = new Author();
-        setAuthor(new Author());
         setAuthors(authors);
-    }
-
-    /** Book constructor with name, list of authors and price. */
-    public Book(String name, Author author, Author[] authors, double price) {
-        setName(name);
-        setAuthor(author);
-        setAuthors(authors);
-        setPrice(price);
-    }
-
-    /** Book constructor with additional sales quantity. */
-    public Book(String name, Author author, Author[] authors, double price, int sales) {
-        setName(name);
-        setAuthor(author);
-        setAuthors(authors);
-        setPrice(price);
-        setSales(sales);
     }
 
     /** Book constructor with name, list of authors and price. */
@@ -78,11 +56,6 @@ public class Book {
     /** Book setter for book name. */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /** Book setter for book author. */
-    public void setAuthor(Author author) {
-        this.author = author;
     }
 
     /** Book setter for book authors. */
