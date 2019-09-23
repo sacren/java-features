@@ -9,6 +9,14 @@ public class TestBook {
         System.out.println("=== Book instance using default constructor ===");
         System.out.println();
         System.out.println(new Book());
+        /* Book by one author */
+        Author[] oneAuth = new Author[1];
+        oneAuth[0] = new Author("Bjarne Stroustrup", "bjarne@stroustrup.com", 'M');
+        Book cppBook = new Book("The C++ Programming Language", oneAuth, 99.99, 59000);
+        System.out.println();
+        System.out.println("=== Book by one author ===");
+        System.out.println();
+        System.out.println(cppBook);
         /* Book class */
         Author[] authors = new Author[2];
         authors[0] = new Author("Brian Kernighan", "bwk@bell-labs.com", 'M');
