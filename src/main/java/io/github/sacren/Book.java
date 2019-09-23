@@ -34,9 +34,8 @@ public class Book {
 
     /** Book default constructor. */
     public Book() {
-        Author[] authors = new Author[2];
+        Author[] authors = new Author[1];
         authors[0] = new Author();
-        authors[1] = new Author();
         setAuthors(authors);
     }
 
