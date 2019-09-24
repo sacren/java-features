@@ -7,7 +7,7 @@ public class TestAuthor {
         /* Author class */
         String name = "Dennis Ritchie";
         String email = "dmr@bell-labs.com";
-        char gender = 'M';
+        Gender gender = new Gender('M');
         Author author = new Author(name, email, gender);
         System.out.println();
         System.out.println("=== Author class ===");
@@ -22,7 +22,7 @@ public class TestAuthor {
         /* delete Author instance private data */
         author.setName(null);
         author.setEmail(null);
-        author.setGender(' ');
+        author.setGender(new Gender());
         System.out.println();
         System.out.println("=== After deleting Auther instance private data ===");
         System.out.println();
