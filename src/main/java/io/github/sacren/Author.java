@@ -5,15 +5,18 @@
  * -name:String
  * -email:String
  * -gender:char
+ * -genderObj:Gender
  *
  * <p>Constructor:
  * +Author()
  * +Author(name:String, email:String, gender:char)
+ * +Author(name:String, email:String, genderObj:Gender)
  *
  * <p>Public methods:
  * +setName(name:String):void
  * +setEmail(email:String):void
  * +setGender(gender:char):void
+ * +setGender(genderObj:Gender):void
  * +getName():String
  * +getEmail():String
  * +getGender():char
@@ -24,10 +27,11 @@ public class Author {
     private String name;
     private String email;
     private char gender;
+    private Gender genderObj;
 
     /** Author default constructor. */
     public Author() {
-        setGender('F');
+        setGender();
     }
 
     /** Author custome constructor. */
@@ -35,6 +39,13 @@ public class Author {
         setName(name);
         setEmail(email);
         setGender(gender);
+    }
+
+    /** Author custome constructor with Gender instance. */
+    public Author(String name, String email, Gender gender) {
+        setName(name);
+        setEmail(email);
+        this.genderObj = gender;
     }
 
     /** Author setter for author name. */
@@ -48,8 +59,18 @@ public class Author {
     }
 
     /** Author setter for author gender. */
+    public void setGender() {
+        this.genderObj = new Gender();
+    }
+
+    /** Author setter for author gender. */
     public void setGender(char gender) {
         this.gender = gender;
+    }
+
+    /** Author setter for author gender. */
+    public void setGender(Gender gender) {
+        this.genderObj = gender;
     }
 
     /** Author getter for author name. */
@@ -72,9 +93,9 @@ public class Author {
         return String.format(
                 "Author name:   %s%n"
                         + "Author email:  %s%n"
-                        + "Author gender: %c",
+                        + "%s",
                 name,
                 email,
-                gender);
+                genderObj);
     }
 }
