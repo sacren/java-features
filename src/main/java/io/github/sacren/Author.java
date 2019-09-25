@@ -20,6 +20,7 @@
  * +getName():String
  * +getEmail():String
  * +getGender():char
+ * +getGenderObj():Gender
  * +toString():String
  */
 public class Author {
@@ -86,6 +87,11 @@ public class Author {
     /** Author getter for author gender. */
     public char getGender() {
         return gender;
+    }
+
+    /** Author getter for author gender. */
+    public Gender getGenderObj() {
+        return genderObj;
     }
 
     /** Author instance formatted string. */

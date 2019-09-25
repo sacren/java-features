@@ -15,10 +15,12 @@ public class TestAuthor {
         System.out.println(author);
         System.out.println();
         System.out.printf(
-                "The C Programming Language is authored by %s.%n"
-                        + "Send email to %s for questions.%n",
+                "Author name:   %s%n"
+                        + "Author email:  %s%n"
+                        + "%s%n",
                 author.getName(),
-                author.getEmail());
+                author.getEmail(),
+                author.getGenderObj());
         /* delete Author instance private data */
         author.setName(null);
         author.setEmail(null);
