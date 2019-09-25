@@ -4,12 +4,10 @@
  * <p>Private instance variables:
  * -name:String
  * -email:String
- * -gender:char
  * -genderObj:Gender
  *
  * <p>Constructor:
  * +Author()
- * +Author(name:String, email:String, gender:char)
  * +Author(name:String, email:String, genderObj:Gender)
  *
  * <p>Public methods:
@@ -27,19 +25,11 @@ public class Author {
     /* private instance variables */
     private String name;
     private String email;
-    private char gender;
     private Gender genderObj;
 
     /** Author default constructor. */
     public Author() {
         setGender();
-    }
-
-    /** Author custome constructor. */
-    public Author(String name, String email, char gender) {
-        setName(name);
-        setEmail(email);
-        setGender(gender);
     }
 
     /** Author custome constructor with Gender instance. */
@@ -65,11 +55,6 @@ public class Author {
     }
 
     /** Author setter for author gender. */
-    public void setGender(char gender) {
-        this.gender = gender;
-    }
-
-    /** Author setter for author gender. */
     public void setGender(Gender gender) {
         this.genderObj = gender;
     }
@@ -82,11 +67,6 @@ public class Author {
     /** Author getter for author email. */
     public String getEmail() {
         return email;
-    }
-
-    /** Author getter for author gender. */
-    public char getGender() {
-        return gender;
     }
 
     /** Author getter for author gender. */
