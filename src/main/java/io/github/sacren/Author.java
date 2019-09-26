@@ -17,8 +17,7 @@
  * +setGender(gender:Gender):void
  * +getName():String
  * +getEmail():String
- * +getGender():char
- * +getGenderObj():Gender
+ * +getGender():Gender
  * +toString():String
  */
 public class Author {
@@ -70,7 +69,7 @@ public class Author {
     }
 
     /** Author getter for author gender. */
-    public Gender getGenderObj() {
+    public Gender getGender() {
         return gender;
     }
 

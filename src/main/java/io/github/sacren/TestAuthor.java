@@ -20,7 +20,7 @@ public class TestAuthor {
                         + "%s%n",
                 author.getName(),
                 author.getEmail(),
-                author.getGenderObj());
+                author.getGender());
         /* delete Author instance private data */
         author.setName(null);
         author.setEmail(null);
