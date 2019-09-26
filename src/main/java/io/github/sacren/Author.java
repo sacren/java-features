@@ -4,17 +4,17 @@
  * <p>Private instance variables:
  * -name:String
  * -email:String
- * -genderObj:Gender
+ * -gender:Gender
  *
  * <p>Constructor:
  * +Author()
- * +Author(name:String, email:String, genderObj:Gender)
+ * +Author(name:String, email:String, gender:Gender)
  *
  * <p>Public methods:
  * +setName(name:String):void
  * +setEmail(email:String):void
- * +setGender(gender:char):void
- * +setGender(genderObj:Gender):void
+ * +setGender():void
+ * +setGender(gender:Gender):void
  * +getName():String
  * +getEmail():String
  * +getGender():char
@@ -25,7 +25,7 @@ public class Author {
     /* private instance variables */
     private String name;
     private String email;
-    private Gender genderObj;
+    private Gender gender;
 
     /** Author default constructor. */
     public Author() {
@@ -36,7 +36,7 @@ public class Author {
     public Author(String name, String email, Gender gender) {
         setName(name);
         setEmail(email);
-        this.genderObj = gender;
+        this.gender = gender;
     }
 
     /** Author setter for author name. */
@@ -51,12 +51,12 @@ public class Author {
 
     /** Author setter for author gender. */
     public void setGender() {
-        this.genderObj = new Gender();
+        this.gender = new Gender();
     }
 
     /** Author setter for author gender. */
     public void setGender(Gender gender) {
-        this.genderObj = gender;
+        this.gender = gender;
     }
 
     /** Author getter for author name. */
@@ -71,7 +71,7 @@ public class Author {
 
     /** Author getter for author gender. */
     public Gender getGenderObj() {
-        return genderObj;
+        return gender;
     }
 
     /** Author instance formatted string. */
@@ -82,6 +82,6 @@ public class Author {
                         + "%s",
                 name,
                 email,
-                genderObj);
+                gender);
     }
 }
