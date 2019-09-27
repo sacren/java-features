@@ -27,7 +27,7 @@ public class Gender {
 
     /** Gender setter for the gender by character. */
     public void setGender(char gender) {
-        this.gender = Character.toString(gender);
+        setGender(Character.toString(gender));
     }
 
     /** Gender instance formatted string. */
