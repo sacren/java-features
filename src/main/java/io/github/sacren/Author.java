@@ -31,11 +31,11 @@ public class Author {
         setGender();
     }
 
-    /** Author custome constructor with Gender instance. */
+    /** Author custom constructor. */
     public Author(String name, String email, Gender gender) {
         setName(name);
         setEmail(email);
-        this.gender = gender;
+        setGender(gender);
     }
 
     /** Author setter for author name. */
