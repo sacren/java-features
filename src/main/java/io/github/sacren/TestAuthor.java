@@ -24,7 +24,7 @@ public class TestAuthor {
         /* delete Author instance private data */
         author.setName(null);
         author.setEmail(null);
-        author.setGender(new Gender());
+        author.setGender();
         System.out.println();
         System.out.println("=== After deleting Auther instance private data ===");
         System.out.println();
