@@ -11,7 +11,8 @@ public class TestBook {
         System.out.println(new Book());
         /* Book by one author */
         Author[] oneAuth = new Author[1];
-        oneAuth[0] = new Author("Bjarne Stroustrup", "bjarne@stroustrup.com", new Gender('M'));
+        char male = 'M';
+        oneAuth[0] = new Author("Bjarne Stroustrup", "bjarne@stroustrup.com", new Gender(male));
         Book cppBook = new Book("The C++ Programming Language", oneAuth, 99.99, 59000);
         System.out.println();
         System.out.println("=== Book by one author ===");
@@ -19,8 +20,8 @@ public class TestBook {
         System.out.println(cppBook);
         /* Book class */
         Author[] authors = new Author[2];
-        authors[0] = new Author("Brian Kernighan", "bwk@bell-labs.com", new Gender('M'));
-        authors[1] = new Author("Dennis Ritchie", "dmr@bell-labs.com", new Gender('M'));
+        authors[0] = new Author("Brian Kernighan", "bwk@bell-labs.com", new Gender(male));
+        authors[1] = new Author("Dennis Ritchie", "dmr@bell-labs.com", new Gender(male));
         String name = "The C Programming Language";
         Book book = new Book(name, authors, 29.99, 90000);
         System.out.println();
@@ -56,9 +57,10 @@ public class TestBook {
                 book.getSales());
         /* use a list of Author instances but exclude sales */
         Author[] dummyAuthors = new Author[3];
-        dummyAuthors[0] = new Author("Peter Pan", "peter@never.land", new Gender('M'));
-        dummyAuthors[1] = new Author("Wendy", "wendy@never.land", new Gender('F'));
-        dummyAuthors[2] = new Author("Tinker Bell", "tinker@never.land", new Gender('F'));
+        char female = 'F';
+        dummyAuthors[0] = new Author("Peter Pan", "peter@never.land", new Gender(male));
+        dummyAuthors[1] = new Author("Wendy", "wendy@never.land", new Gender(female));
+        dummyAuthors[2] = new Author("Tinker Bell", "tinker@never.land", new Gender(female));
         Book dummy = new Book("Java for Dummies", dummyAuthors, 19.99);
         System.out.println();
         System.out.println("=== Book of a list of Author instances ===");
