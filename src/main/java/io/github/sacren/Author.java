@@ -78,7 +78,7 @@ public class Author {
         return String.format(
                 "Author name:   %s%n"
                         + "Author email:  %s%n"
-                        + "%s",
+                        + "Author gender: %s",
                 name,
                 email,
                 gender);

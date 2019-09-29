@@ -17,7 +17,7 @@ public class TestAuthor {
         System.out.printf(
                 "Author name:   %s%n"
                         + "Author email:  %s%n"
-                        + "%s%n",
+                        + "Author gender: %s%n",
                 author.getName(),
                 author.getEmail(),
                 author.getGender());

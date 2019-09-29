@@ -32,6 +32,6 @@ public class Gender {
 
     /** Gender instance formatted string. */
     public String toString() {
-        return String.format("Author gender: %s", gender);
+        return gender;
     }
 }
