@@ -1,10 +1,10 @@
 /**
- * Point class.
+ * Point class for object with a pair of variables.
  *
  * <p>We identify Point object by (axisX, axisY).  Broadly the pair could be
  * used for any object.  See Pension class for details.
  *
- * <p>Private data with default values:
+ * <p>Private instance variables with default values:
  * -axisX:double = 0
  * -axisY:double = 0
  *
@@ -13,50 +13,50 @@
  * +Point(axisX:double, axisY:double)
  *
  * <p>Public methods:
- * +getX():double
  * +setX(axisX:double):void
- * +getY():double
  * +setY(axisY:double):void
- * +toString():String
+ * +getX():double
+ * +getY():double
  * +distance(axisX:double, axisY:double):double
  * +distance(p:Point):double
  * +distance():double
+ * +toString():String
  */
 public class Point {
-    /* private instance data */
+    /* private instance variables */
     private double axisX;
     private double axisY;
 
     /** Point default constructor. */
     public Point() {
-        axisX = 0;
-        axisY = 0;
+        setX(0);
+        setY(0);
     }
 
     /** Point custom constructor. */
     public Point(double axisX, double axisY) {
-        this.axisX = axisX;
-        this.axisY = axisY;
+        setX(axisX);
+        setY(axisY);
     }
 
-    /** Point getter for axisX. */
-    public double getX() {
-        return axisX;
-    }
-
-    /** Point setter for axisX. */
+    /** Point setter for variable on X-axis. */
     public void setX(double axisX) {
         this.axisX = axisX;
     }
 
-    /** Point getter for axisY. */
-    public double getY() {
-        return axisY;
-    }
-
-    /** Point setter for axisY. */
+    /** Point setter for variable on Y-axis. */
     public void setY(double axisY) {
         this.axisY = axisY;
+    }
+
+    /** Point getter for variable on X-axis. */
+    public double getX() {
+        return axisX;
+    }
+
+    /** Point getter for variable on Y-axis. */
+    public double getY() {
+        return axisY;
     }
 
     /** Point getter for distance from this point to another. */
@@ -74,7 +74,7 @@ public class Point {
         return Math.hypot(axisX, axisY);
     }
 
-    /** Point string method. */
+    /** Point instance formatted string. */
     public String toString() {
         return String.format("(%.2f, %.2f)", axisX, axisY);
     }
