@@ -1,7 +1,7 @@
 /**
- * Date class.
+ * Date class models the year, the month and the day of the date.
  *
- * <p>Private instance data:
+ * <p>Private instance variable:
  * -date:Cube
  *
  * <p>Constructor:
@@ -19,7 +19,7 @@
  * +toString():String
  */
 public class Date {
-    /* private instance data */
+    /* private instance variable */
     private Cube date;
 
     /* initialize instance data */
@@ -85,7 +85,7 @@ public class Date {
         return (int) date.getZ();
     }
 
-    /** Date string method. */
+    /** Date instance formatted string. */
     public String toString() {
         return String.format(
                 "Year:  %04d%n"
