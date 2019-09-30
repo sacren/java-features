@@ -9,13 +9,13 @@
  * +Date(date:Cube)
  *
  * <p>Public methods:
- * +getYear():int
- * +setYear(year:int):void
- * +getMonth():int
- * +setMonth(month:int):void
- * +getDay():int
- * +setDay(day:int):void
  * +setDate(date:Cube):void
+ * +setYear(year:int):void
+ * +setMonth(month:int):void
+ * +setDay(day:int):void
+ * +getYear():int
+ * +getMonth():int
+ * +getDay():int
  * +toString():String
  */
 public class Date {
@@ -33,12 +33,14 @@ public class Date {
 
     /** Date custom constructor. */
     public Date(Cube date) {
-        this.date = date;
+        setDate(date);
     }
 
-    /** Date getter for the year. */
-    public int getYear() {
-        return (int) date.getX();
+    /** Date setter for the date. */
+    public void setDate(Cube date) {
+        setYear((int) date.getX());
+        setMonth((int) date.getY());
+        setDay((int) date.getZ());
     }
 
     /** Date setter for the year. */
@@ -50,11 +52,6 @@ public class Date {
         date.setX(year);
     }
 
-    /** Date getter for the month. */
-    public int getMonth() {
-        return (int) date.getY();
-    }
-
     /** Date setter for the month. */
     public void setMonth(int month) {
         if (month <= 0 || month > 12) {
@@ -62,11 +59,6 @@ public class Date {
                     String.format("%d is invalid!", month));
         }
         date.setY(month);
-    }
-
-    /** Date getter for the day. */
-    public int getDay() {
-        return (int) date.getZ();
     }
 
     /** Date setter for the day. */
@@ -78,9 +70,19 @@ public class Date {
         date.setZ(day);
     }
 
-    /** Date setter for the date. */
-    public void setDate(Cube date) {
-        this.date = date;
+    /** Date getter for the year. */
+    public int getYear() {
+        return (int) date.getX();
+    }
+
+    /** Date getter for the month. */
+    public int getMonth() {
+        return (int) date.getY();
+    }
+
+    /** Date getter for the day. */
+    public int getDay() {
+        return (int) date.getZ();
     }
 
     /** Date string method. */
