@@ -12,6 +12,9 @@
  * <p>Public methods:
  * +setTime(time:Cube):void
  * +setStartTime():void
+ * +setSecond(second:int):void
+ * +setMinute(minute:int):void
+ * +setHour(hour:int):void
  * +nextSecond():Time
  * +restoreTime():void
  * +toString():String
@@ -40,19 +43,37 @@ public class Time {
 
     /** Time setter for specific time. */
     public void setTime(Cube time) {
-        if (time.getX() < 0 || time.getX() >= 60) {
+        this.time = new Cube();
+        setSecond((int) time.getX());
+        setMinute((int) time.getY());
+        setHour((int) time.getZ());
+    }
+
+    /** Time setter for the second. */
+    public void setSecond(int second) {
+        if (second < 0 || second >= 60) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid value for second!", (int) time.getX()));
+                    String.format("%d is invalid value for second!", second));
         }
-        if (time.getY() < 0 || time.getY() >= 60) {
+        time.setX(second);
+    }
+
+    /** Time setter for the minute. */
+    public void setMinute(int minute) {
+        if (minute < 0 || minute >= 60) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid value for minute!", (int) time.getY()));
+                    String.format("%d is invalid value for minute!", minute));
         }
-        if (time.getZ() < 0 || time.getZ() >= 24) {
+        time.setY(minute);
+    }
+
+    /** Time setter for the hour. */
+    public void setHour(int hour) {
+        if (hour < 0 || hour >= 24) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid value for hour!", (int) time.getZ()));
+                    String.format("%d is invalid value for hour!", hour));
         }
-        this.time = time;
+        time.setZ(hour);
     }
 
     /** Time setter for start time. */
