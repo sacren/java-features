@@ -17,6 +17,9 @@
  * +setHour(hour:int):void
  * +nextSecond():Time
  * +restoreTime():void
+ * +getSecond():int
+ * +getMinute():int
+ * +getHour():int
  * +toString():String
  */
 public class Time {
@@ -103,12 +106,27 @@ public class Time {
         time = st;
     }
 
+    /** Time getter for the second. */
+    public int getSecond() {
+        return (int) time.getX();
+    }
+
+    /** Time getter for the minute. */
+    public int getMinute() {
+        return (int) time.getY();
+    }
+
+    /** Time getter for the hour. */
+    public int getHour() {
+        return (int) time.getZ();
+    }
+
     /** Time string method. */
     public String toString() {
         return String.format(
                 "Current time: %02d:%02d:%02d",
-                (int) time.getZ(),
-                (int) time.getY(),
-                (int) time.getX());
+                getHour(),
+                getMinute(),
+                getSecond());
     }
 }
