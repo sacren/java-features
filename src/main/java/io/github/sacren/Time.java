@@ -86,18 +86,27 @@ public class Time {
 
     /** Time getter for time by one second increment. */
     public Time nextSecond() {
-        time.setX(time.getX() + 1);
-        if (time.getX() == 60) {
-            time.setX(0);
-            time.setY(time.getY() + 1);
+        int second = getSecond();
+        int minute = getMinute();
+        int hour = getHour();
+
+        if (++second == 60) {
+            second = 0;
+            minute++;
         }
-        if (time.getY() == 60) {
-            time.setY(0);
-            time.setZ(time.getZ() + 1);
+
+        if (minute == 60) {
+            minute = 0;
+            hour++;
         }
-        if (time.getZ() == 24) {
-            time.setZ(0);
+
+        if (hour == 24) {
+            hour = 0;
         }
+
+        setSecond(second);
+        setMinute(minute);
+        setHour(hour);
         return this;
     }
 
