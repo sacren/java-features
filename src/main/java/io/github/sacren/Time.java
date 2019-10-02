@@ -112,7 +112,9 @@ public class Time {
 
     /** Restore time to the start value. */
     public void restoreTime() {
-        time = st;
+        setSecond((int) st.getX());
+        setMinute((int) st.getY());
+        setHour((int) st.getZ());
     }
 
     /** Time getter for the second. */
