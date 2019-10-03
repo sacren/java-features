@@ -22,19 +22,19 @@ public class TestTime {
         System.out.println("=== What time is it? ===");
         System.out.println();
         System.out.println(currentTime);
-        /* advance one second. */
+        /* advance one second */
         currentTime.nextSecond();
         System.out.println();
         System.out.println("=== Advance to the next second ===");
         System.out.println();
         System.out.println(currentTime);
-        /* reset time to zero hour by default values. */
+        /* reset time to zero hour of default values */
         currentTime.setDefTime();
         System.out.println();
-        System.out.println("=== Reset time to zero hour ===");
+        System.out.println("=== Reset time to zero hour of default value ===");
         System.out.println();
         System.out.println(currentTime);
-        /* restore private attributes to original values */
+        /* restore Time instance to original state */
         currentTime.restoreTime();
         System.out.println();
         System.out.println("=== Restore to start time ===");
@@ -44,6 +44,12 @@ public class TestTime {
         currentTime.nextSecond().nextSecond();
         System.out.println();
         System.out.println("=== Advance to the next next second ===");
+        System.out.println();
+        System.out.println(currentTime);
+        /* restore Time instance to original state again */
+        currentTime.restoreTime();
+        System.out.println();
+        System.out.println("=== Restore to start time again ===");
         System.out.println();
         System.out.println(currentTime);
     }
