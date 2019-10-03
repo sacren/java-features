@@ -23,9 +23,14 @@
  * +toString():String
  */
 public class Time {
-    /* private instance data */
+    /* declare private instance variables */
     private Cube time;
     private Cube st;
+
+    /* initialize private instance variable */
+    {
+        time = new Cube();
+    }
 
     /** Time default constructor. */
     public Time() {
@@ -46,7 +51,6 @@ public class Time {
 
     /** Time setter for specific time. */
     public void setTime(Cube time) {
-        this.time = new Cube();
         setSecond((int) time.getX());
         setMinute((int) time.getY());
         setHour((int) time.getZ());
