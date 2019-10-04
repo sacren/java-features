@@ -108,9 +108,7 @@ public class Time {
             hour = 0;
         }
 
-        setSecond(second);
-        setMinute(minute);
-        setHour(hour);
+        setTime(new Cube(second, minute, hour));
         return this;
     }
 
