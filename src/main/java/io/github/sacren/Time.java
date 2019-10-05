@@ -10,6 +10,7 @@
  * +Time(time:Cube)
  *
  * <p>Public methods:
+ * +setTime():void
  * +setTime(time:Cube):void
  * +setStartTime():void
  * +setSecond(second:int):void
@@ -34,7 +35,7 @@ public class Time {
 
     /** Time default constructor. */
     public Time() {
-        setTime(new Cube(0, 0, 0));
+        setTime();
         setStartTime();
     }
 
@@ -49,6 +50,11 @@ public class Time {
         setSecond((int) time.getX());
         setMinute((int) time.getY());
         setHour((int) time.getZ());
+    }
+
+    /** Time setter for zero hour. */
+    public void setTime() {
+        setTime(new Cube(0, 0, 0));
     }
 
     /** Time setter for the second. */

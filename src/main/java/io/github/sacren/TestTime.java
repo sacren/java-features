@@ -29,7 +29,7 @@ public class TestTime {
         System.out.println();
         System.out.println(currentTime);
         /* reset time to zero hour */
-        currentTime.setTime(new Cube(0, 0, 0));
+        currentTime.setTime();
         System.out.println();
         System.out.println("=== Reset time to zero hour ===");
         System.out.println();
