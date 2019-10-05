@@ -28,10 +28,10 @@ public class TestTime {
         System.out.println("=== Advance to the next second ===");
         System.out.println();
         System.out.println(currentTime);
-        /* reset time to zero hour of default values */
-        currentTime.setDefTime();
+        /* reset time to zero hour */
+        currentTime.setTime(new Cube(0, 0, 0));
         System.out.println();
-        System.out.println("=== Reset time to zero hour of default value ===");
+        System.out.println("=== Reset time to zero hour ===");
         System.out.println();
         System.out.println(currentTime);
         /* restore Time instance to original state */

@@ -34,7 +34,7 @@ public class Time {
 
     /** Time default constructor. */
     public Time() {
-        setDefTime();
+        setTime(new Cube(0, 0, 0));
         setStartTime();
     }
 
@@ -42,11 +42,6 @@ public class Time {
     public Time(Cube time) {
         setTime(time);
         setStartTime();
-    }
-
-    /** Time setter for default time. */
-    public void setDefTime() {
-        time = new Cube(0, 0, 0);
     }
 
     /** Time setter for specific time. */
