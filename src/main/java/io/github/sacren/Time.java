@@ -113,7 +113,7 @@ public class Time {
         return this;
     }
 
-    /** Restore time to the start value. */
+    /** Restore Time instance to the start state. */
     public void restoreTime() {
         setTime(st);
     }
