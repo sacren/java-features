@@ -13,14 +13,20 @@
  * +Duo(doubleX:double, doubleY:double)
  *
  * <p>Public methods:
- * +setDoubleX(doubleX:double):void
- * +setDoubleY(doubleY:double):void
+ * +setX(intX:int):void
+ * +setX(doubleX:double):void
+ * +setY(intY:int):void
+ * +setY(doubleY:double):void
+ * +getIntX():int
+ * +getIntY():int
  * +getX():double
  * +getY():double
  * +toString():String
  */
 public class Duo {
     /* private instance variables */
+    private int intX;
+    private int intY;
     private double doubleX;
     private double doubleY;
 
@@ -30,10 +36,21 @@ public class Duo {
         setY(0);
     }
 
+    /** Duo custom constructor for int. */
+    public Duo(int intX, int intY) {
+        setX(intX);
+        setY(intY);
+    }
+
     /** Duo custom constructor. */
     public Duo(double doubleX, double doubleY) {
         setX(doubleX);
         setY(doubleY);
+    }
+
+    /** Duo setter for integer variable on X-axis. */
+    public void setX(int intX) {
+        this.intX = intX;
     }
 
     /** Duo setter for variable on X-axis. */
@@ -41,9 +58,24 @@ public class Duo {
         this.doubleX = doubleX;
     }
 
+    /** Duo setter for integer variable on Y-axis. */
+    public void setY(int intY) {
+        this.intY = intY;
+    }
+
     /** Duo setter for variable on Y-axis. */
     public void setY(double doubleY) {
         this.doubleY = doubleY;
+    }
+
+    /** Duo getter for integer variable on X-axis. */
+    public int getIntX() {
+        return intX;
+    }
+
+    /** Duo getter for integer variable on Y-axis. */
+    public int getIntY() {
+        return intY;
     }
 
     /** Duo getter for variable on X-axis. */
