@@ -10,6 +10,7 @@
  *
  * <p>Constructor:
  * +Duo()
+ * +Duo(intX:int, intY:int)
  * +Duo(doubleX:double, doubleY:double)
  *
  * <p>Public methods:
@@ -19,8 +20,8 @@
  * +setY(doubleY:double):void
  * +getIntX():int
  * +getIntY():int
- * +getX():double
- * +getY():double
+ * +getDoubleX():double
+ * +getDoubleY():double
  * +toString():String
  */
 public class Duo {
@@ -78,13 +79,13 @@ public class Duo {
         return intY;
     }
 
-    /** Duo getter for variable on X-axis. */
-    public double getX() {
+    /** Duo getter for double variable on X-axis. */
+    public double getDoubleX() {
         return doubleX;
     }
 
-    /** Duo getter for variable on Y-axis. */
-    public double getY() {
+    /** Duo getter for double variable on Y-axis. */
+    public double getDoubleY() {
         return doubleY;
     }
 
