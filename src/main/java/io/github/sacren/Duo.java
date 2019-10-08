@@ -32,6 +32,7 @@ public class Duo {
     private int intY;
     private double doubleX;
     private double doubleY;
+    private int which;
 
     /** Duo default constructor. */
     public Duo() {
@@ -43,12 +44,14 @@ public class Duo {
     public Duo(int intX, int intY) {
         setX(intX);
         setY(intY);
+        which = 1;
     }
 
     /** Duo custom constructor. */
     public Duo(double doubleX, double doubleY) {
         setX(doubleX);
         setY(doubleY);
+        which = 0;
     }
 
     /** Duo setter for integer variable on X-axis. */
@@ -107,6 +110,15 @@ public class Duo {
 
     /** Duo instance formatted string. */
     public String toString() {
-        return String.format("(%.2f, %.2f)", doubleX, doubleY);
+        StringBuilder duo = new StringBuilder();
+        switch (which) {
+            case 1:
+                duo.append(getIntDuo());
+                break;
+            default:
+                duo.append(getDoubleDuo());
+                break;
+        }
+        return duo.toString();
     }
 }
