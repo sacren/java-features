@@ -22,6 +22,8 @@
  * +getIntY():int
  * +getDoubleX():double
  * +getDoubleY():double
+ * +getIntDuo():String
+ * +getDoubleDuo():String
  * +toString():String
  */
 public class Duo {
@@ -87,6 +89,20 @@ public class Duo {
     /** Duo getter for double variable on Y-axis. */
     public double getDoubleY() {
         return doubleY;
+    }
+
+    /** Duo getter for integer string. */
+    public String getIntDuo() {
+        StringBuilder duo = new StringBuilder();
+        duo.append(String.format("(%02d, %02d)", intX, intY));
+        return duo.toString();
+    }
+
+    /** Duo getter for double string. */
+    public String getDoubleDuo() {
+        StringBuilder duo = new StringBuilder();
+        duo.append(String.format("(%.2f, %.2f)", doubleX, doubleY));
+        return duo.toString();
     }
 
     /** Duo instance formatted string. */
