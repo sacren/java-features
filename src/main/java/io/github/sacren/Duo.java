@@ -96,16 +96,12 @@ public class Duo {
 
     /** Duo getter for integer string. */
     public String getIntDuo() {
-        StringBuilder duo = new StringBuilder();
-        duo.append(String.format("(%02d, %02d)", intX, intY));
-        return duo.toString();
+        return String.format("(%02d, %02d)", intX, intY);
     }
 
     /** Duo getter for double string. */
     public String getDoubleDuo() {
-        StringBuilder duo = new StringBuilder();
-        duo.append(String.format("(%.2f, %.2f)", doubleX, doubleY));
-        return duo.toString();
+        return String.format("(%.2f, %.2f)", doubleX, doubleY);
     }
 
     /** Duo instance formatted string. */
