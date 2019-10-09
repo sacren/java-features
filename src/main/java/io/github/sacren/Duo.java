@@ -1,107 +1,107 @@
 /**
  * Duo class for object with a pair of variables.
  *
- * <p>We identify Duo object by (doubleX, doubleY).  Broadly the pair could be
+ * <p>We identify Duo object by (firstDbl, secondDbl).  Broadly the pair could be
  * used for any object of two variables.  See Pension class for details.
  *
  * <p>Private instance variables with default values:
- * -doubleX:double = 0
- * -doubleY:double = 0
+ * -firstDbl:double = 0
+ * -secondDbl:double = 0
  *
  * <p>Constructor:
  * +Duo()
- * +Duo(intX:int, intY:int)
- * +Duo(doubleX:double, doubleY:double)
+ * +Duo(firstInt:int, secondInt:int)
+ * +Duo(firstDbl:double, secondDbl:double)
  *
  * <p>Public methods:
- * +setX(intX:int):void
- * +setX(doubleX:double):void
- * +setY(intY:int):void
- * +setY(doubleY:double):void
- * +getIntX():int
- * +getIntY():int
- * +getDoubleX():double
- * +getDoubleY():double
+ * +setFirst(firstInt:int):void
+ * +setFirst(firstDbl:double):void
+ * +setSecond(secondInt:int):void
+ * +setSecond(secondDbl:double):void
+ * +getFirstInt():int
+ * +getSecondInt():int
+ * +getFirstDbl():double
+ * +getSecondDbl():double
  * +getIntDuo():String
  * +getDoubleDuo():String
  * +toString():String
  */
 public class Duo {
     /* private instance variables */
-    private int intX;
-    private int intY;
-    private double doubleX;
-    private double doubleY;
+    private int firstInt;
+    private int secondInt;
+    private double firstDbl;
+    private double secondDbl;
     private int which;
 
     /** Duo default constructor. */
     public Duo() {
-        setX(0);
-        setY(0);
+        setFirst(0);
+        setSecond(0);
     }
 
     /** Duo custom constructor for int. */
-    public Duo(int intX, int intY) {
-        setX(intX);
-        setY(intY);
+    public Duo(int firstInt, int secondInt) {
+        setFirst(firstInt);
+        setSecond(secondInt);
         which = 1;
     }
 
     /** Duo custom constructor. */
-    public Duo(double doubleX, double doubleY) {
-        setX(doubleX);
-        setY(doubleY);
+    public Duo(double firstDbl, double secondDbl) {
+        setFirst(firstDbl);
+        setSecond(secondDbl);
         which = 0;
     }
 
-    /** Duo setter for integer variable on X-axis. */
-    public void setX(int intX) {
-        this.intX = intX;
+    /** Duo setter for the first integer variable. */
+    public void setFirst(int firstInt) {
+        this.firstInt = firstInt;
     }
 
-    /** Duo setter for variable on X-axis. */
-    public void setX(double doubleX) {
-        this.doubleX = doubleX;
+    /** Duo setter for the first double variable. */
+    public void setFirst(double firstDbl) {
+        this.firstDbl = firstDbl;
     }
 
     /** Duo setter for integer variable on Y-axis. */
-    public void setY(int intY) {
-        this.intY = intY;
+    public void setSecond(int secondInt) {
+        this.secondInt = secondInt;
     }
 
     /** Duo setter for variable on Y-axis. */
-    public void setY(double doubleY) {
-        this.doubleY = doubleY;
+    public void setSecond(double secondDbl) {
+        this.secondDbl = secondDbl;
     }
 
-    /** Duo getter for integer variable on X-axis. */
-    public int getIntX() {
-        return intX;
+    /** Duo getter for the first integer variable. */
+    public int getFirstInt() {
+        return firstInt;
     }
 
-    /** Duo getter for integer variable on Y-axis. */
-    public int getIntY() {
-        return intY;
+    /** Duo getter for the second integer variable. */
+    public int getSecondInt() {
+        return secondInt;
     }
 
-    /** Duo getter for double variable on X-axis. */
-    public double getDoubleX() {
-        return doubleX;
+    /** Duo getter for the first double variable. */
+    public double getFirstDbl() {
+        return firstDbl;
     }
 
-    /** Duo getter for double variable on Y-axis. */
-    public double getDoubleY() {
-        return doubleY;
+    /** Duo getter for the second double variable. */
+    public double getSecondDbl() {
+        return secondDbl;
     }
 
     /** Duo getter for integer string. */
     public String getIntDuo() {
-        return String.format("(%02d, %02d)", intX, intY);
+        return String.format("(%02d, %02d)", firstInt, secondInt);
     }
 
     /** Duo getter for double string. */
     public String getDoubleDuo() {
-        return String.format("(%.2f, %.2f)", doubleX, doubleY);
+        return String.format("(%.2f, %.2f)", firstDbl, secondDbl);
     }
 
     /** Duo instance formatted string. */
