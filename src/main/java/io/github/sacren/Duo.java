@@ -5,8 +5,10 @@
  * used for any object of two variables.  See Pension class for details.
  *
  * <p>Private instance variables with default values:
- * -firstDbl:double = 0
- * -secondDbl:double = 0
+ * -firstInt:int = 0
+ * -secondInt:int = 0
+ * -firstDbl:double
+ * -secondDbl:double
  *
  * <p>Constructor:
  * +Duo()
