@@ -42,14 +42,14 @@ public class Duo {
         setSecond(0);
     }
 
-    /** Duo custom constructor for int. */
+    /** Duo custom constructor for int instance variables. */
     public Duo(int firstInt, int secondInt) {
         setFirst(firstInt);
         setSecond(secondInt);
         which = 1;
     }
 
-    /** Duo custom constructor. */
+    /** Duo custom constructor for double instance variables. */
     public Duo(double firstDbl, double secondDbl) {
         setFirst(firstDbl);
         setSecond(secondDbl);
