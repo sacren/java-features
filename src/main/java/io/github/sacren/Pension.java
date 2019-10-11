@@ -16,7 +16,7 @@
  * <p>Private instance data:
  * -salary:double
  * -age:int
- * -contribByAge:Point
+ * -contribByAge:Duo
  *
  * <p>Constructor:
  * +Pension(salary:double, age:int)
@@ -36,7 +36,7 @@ public class Pension {
     /* private instance data */
     private double salary;
     private int age;
-    private Point contribByAge;
+    private Duo contribByAge;
 
     /** Pension constructor. */
     public Pension(double salary, int age) {
@@ -69,28 +69,28 @@ public class Pension {
     /** Pension setter for contribution by age. */
     public void setContribByAge() {
         if (age > 65) {
-            contribByAge = new Point(0.05, 0.075); /* 65+ */
+            contribByAge = new Duo(0.05, 0.075); /* 65+ */
             return;
         }
         if (age > 60) {
-            contribByAge = new Point(0.075, 0.09); /* 60+ to 65 */
+            contribByAge = new Duo(0.075, 0.09); /* 60+ to 65 */
             return;
         }
         if (age > 55) {
-            contribByAge = new Point(0.13, 0.13); /* 55+ to 60 */
+            contribByAge = new Duo(0.13, 0.13); /* 55+ to 60 */
             return;
         }
-        contribByAge = new Point(0.2, 0.17); /* 55 and below */
+        contribByAge = new Duo(0.2, 0.17); /* 55 and below */
     }
 
     /** Pension getter for employee contribution. */
     public double getEeContrib() {
-        return salary * contribByAge.getX();
+        return salary * contribByAge.getFirstDbl();
     }
 
     /** Pension getter for employer contribution. */
     public double getErContrib() {
-        return salary * contribByAge.getY();
+        return salary * contribByAge.getSecondDbl();
     }
 
     /** Pension string method. */
