@@ -56,7 +56,7 @@ public class Duo {
         which = 0;
     }
 
-    /** Duo setter for the first integer variable. */
+    /** Duo setter for the first int variable. */
     public void setFirst(int firstInt) {
         this.firstInt = firstInt;
     }
@@ -66,22 +66,22 @@ public class Duo {
         this.firstDbl = firstDbl;
     }
 
-    /** Duo setter for integer variable on Y-axis. */
+    /** Duo setter for the second int variable. */
     public void setSecond(int secondInt) {
         this.secondInt = secondInt;
     }
 
-    /** Duo setter for variable on Y-axis. */
+    /** Duo setter for the second double variable . */
     public void setSecond(double secondDbl) {
         this.secondDbl = secondDbl;
     }
 
-    /** Duo getter for the first integer variable. */
+    /** Duo getter for the first int variable. */
     public int getFirstInt() {
         return firstInt;
     }
 
-    /** Duo getter for the second integer variable. */
+    /** Duo getter for the second int variable. */
     public int getSecondInt() {
         return secondInt;
     }
@@ -96,7 +96,7 @@ public class Duo {
         return secondDbl;
     }
 
-    /** Duo getter for integer string. */
+    /** Duo getter for int string. */
     public String getIntDuo() {
         return String.format("(%02d, %02d)", firstInt, secondInt);
     }
