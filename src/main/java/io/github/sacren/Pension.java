@@ -13,10 +13,10 @@
  *
  * <p>Max salary to attract contribution: 6000.
  *
- * <p>Private instance data:
+ * <p>Private instance variables:
  * -salary:double
  * -age:int
- * -contribByAge:Duo
+ * -contrib:Duo
  *
  * <p>Constructor:
  * +Pension(salary:double, age:int)
@@ -24,7 +24,7 @@
  * <p>Public methods:
  * +setSalary(salary:double):void
  * +setAge(age:int):void
- * +setContribByAge():void
+ * +setContrib():void
  * +getEeContrib():double
  * +getErContrib():double
  * +toString():String
@@ -36,13 +36,13 @@ public class Pension {
     /* private instance data */
     private double salary;
     private int age;
-    private Duo contribByAge;
+    private Duo contrib;
 
     /** Pension constructor. */
     public Pension(double salary, int age) {
         setSalary(salary);
         setAge(age);
-        setContribByAge();
+        setContrib();
     }
 
     /** Pension setter for salary. */
@@ -66,31 +66,31 @@ public class Pension {
         this.age = age;
     }
 
-    /** Pension setter for contribution by age. */
-    public void setContribByAge() {
+    /** Pension setter for contrib by age of employee. */
+    public void setContrib() {
         if (age > 65) {
-            contribByAge = new Duo(0.05, 0.075); /* 65+ */
+            contrib = new Duo(0.05, 0.075); /* 65+ */
             return;
         }
         if (age > 60) {
-            contribByAge = new Duo(0.075, 0.09); /* 60+ to 65 */
+            contrib = new Duo(0.075, 0.09); /* 60+ to 65 */
             return;
         }
         if (age > 55) {
-            contribByAge = new Duo(0.13, 0.13); /* 55+ to 60 */
+            contrib = new Duo(0.13, 0.13); /* 55+ to 60 */
             return;
         }
-        contribByAge = new Duo(0.2, 0.17); /* 55 and below */
+        contrib = new Duo(0.2, 0.17); /* 55 and below */
     }
 
     /** Pension getter for employee contribution. */
     public double getEeContrib() {
-        return salary * contribByAge.getFirstDbl();
+        return salary * contrib.getFirstDbl();
     }
 
     /** Pension getter for employer contribution. */
     public double getErContrib() {
-        return salary * contribByAge.getSecondDbl();
+        return salary * contrib.getSecondDbl();
     }
 
     /** Pension string method. */
