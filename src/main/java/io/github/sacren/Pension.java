@@ -95,6 +95,8 @@ public class Pension {
 
     /** Pension string method. */
     public String toString() {
+        double eeContrib = getEeContrib();
+        double erContrib = getErContrib();
         return String.format(
                 "Attracting salary:     %.2f%n"
                         + "Employee age:          %d%n"
@@ -103,8 +105,8 @@ public class Pension {
                         + "Total contribution:    %.2f",
                 salary,
                 age,
-                getEeContrib(),
-                getErContrib(),
-                getEeContrib() + getErContrib());
+                eeContrib,
+                erContrib,
+                eeContrib + erContrib);
     }
 }
