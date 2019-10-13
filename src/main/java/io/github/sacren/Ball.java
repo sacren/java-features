@@ -1,7 +1,7 @@
 /**
  * Ball class.
  *
- * <p>Private instance data:
+ * <p>Private instance variables:
  * -position:Point
  * -speed:Point
  *
@@ -25,7 +25,7 @@
  * +move():Ball
  */
 public class Ball {
-    /* private instance data */
+    /* private instance variables */
     private Point position;
     private Point speed;
 
@@ -35,12 +35,12 @@ public class Ball {
         setInitSpd(speed);
     }
 
-    /** Ball setter for ball position. */
+    /** Ball setter for ball initial position. */
     public void setInitPos(Point position) {
         this.position = new Point(position.getX(), position.getY());
     }
 
-    /** Ball setter for ball speed. */
+    /** Ball setter for ball initial speed. */
     public void setInitSpd(Point speed) {
         this.speed = new Point(speed.getX(), speed.getY());
     }
@@ -95,7 +95,7 @@ public class Ball {
         return speed;
     }
 
-    /** Ball string method. */
+    /** Ball formatted string. */
     public String toString() {
         return String.format(
                 "Position: P%s%n"
