@@ -9,6 +9,8 @@
  * +Ball(position:Point, speed:Point)
  *
  * <p>Public methods:
+ * +setInitPos(position:Point):void
+ * +setInitSpd(speed:Duo):void
  * +getX():double
  * +setX(axisX:double):void
  * +getY():double
@@ -29,8 +31,18 @@ public class Ball {
 
     /** Ball constructor by Point. */
     public Ball(Point position, Point speed) {
-        this.position = position;
-        this.speed = speed;
+        setInitPos(position);
+        setInitSpd(speed);
+    }
+
+    /** Ball setter for ball position. */
+    public void setInitPos(Point position) {
+        this.position = new Point(position.getX(), position.getY());
+    }
+
+    /** Ball setter for ball speed. */
+    public void setInitSpd(Point speed) {
+        this.speed = new Point(speed.getX(), speed.getY());
     }
 
     /** Ball getter for axisX. */
