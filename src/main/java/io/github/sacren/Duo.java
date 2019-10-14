@@ -25,7 +25,7 @@
  * +getFirstDbl():double
  * +getSecondDbl():double
  * +getIntDuo():String
- * +getDoubleDuo():String
+ * +getDblDuo():String
  * +toString():String
  */
 public class Duo {
@@ -42,14 +42,14 @@ public class Duo {
         setSecond(0);
     }
 
-    /** Duo custom constructor for int instance variables. */
+    /** Duo constructor for int instance variables. */
     public Duo(int firstInt, int secondInt) {
         setFirst(firstInt);
         setSecond(secondInt);
         which = 1;
     }
 
-    /** Duo custom constructor for double instance variables. */
+    /** Duo constructor for double instance variables. */
     public Duo(double firstDbl, double secondDbl) {
         setFirst(firstDbl);
         setSecond(secondDbl);
@@ -102,7 +102,7 @@ public class Duo {
     }
 
     /** Duo getter for double string. */
-    public String getDoubleDuo() {
+    public String getDblDuo() {
         return String.format("(%.2f, %.2f)", firstDbl, secondDbl);
     }
 
@@ -114,7 +114,7 @@ public class Duo {
                 duo.append(getIntDuo());
                 break;
             default:
-                duo.append(getDoubleDuo());
+                duo.append(getDblDuo());
                 break;
         }
         return duo.toString();
