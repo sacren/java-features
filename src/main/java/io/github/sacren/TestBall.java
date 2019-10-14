@@ -18,15 +18,15 @@ public class TestBall {
                         + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
-                ball.getX(),
-                ball.getY(),
+                ball.getPosX(),
+                ball.getPosY(),
                 ball.getSpdX(),
                 ball.getSpdY(),
-                ball.getPos(),
-                ball.getSpd());
+                ball.getPosition(),
+                ball.getSpeed());
         /* update Ball instance */
-        ball.setX(ball.getX() + 4);
-        ball.setY(ball.getY() + 4);
+        ball.setPosX(ball.getPosX() + 4);
+        ball.setPosY(ball.getPosY() + 4);
         ball.setSpdX(ball.getSpdX() + 1);
         ball.setSpdY(ball.getSpdY() + 1);
         System.out.println();
@@ -41,12 +41,12 @@ public class TestBall {
                         + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
-                ball.getX(),
-                ball.getY(),
+                ball.getPosX(),
+                ball.getPosY(),
                 ball.getSpdX(),
                 ball.getSpdY(),
-                ball.getPos(),
-                ball.getSpd());
+                ball.getPosition(),
+                ball.getSpeed());
         System.out.println();
         System.out.println("=== Make one move ===");
         System.out.println();

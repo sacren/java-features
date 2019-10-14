@@ -11,16 +11,16 @@
  * <p>Public methods:
  * +setInitPos(position:Point):void
  * +setInitSpd(speed:Duo):void
- * +getX():double
- * +setX(axisX:double):void
- * +getY():double
- * +setY(axisY:double):void
+ * +getPosX():double
+ * +setPosX(posX:double):void
+ * +getPosY():double
+ * +setPosY(posY:double):void
  * +getSpdX():double
  * +setSpdX(spdX:double):void
  * +getSpdY():double
  * +setSpdY(spdY:double):void
- * +getPos():Point
- * +getSpd():Point
+ * +getPosition():Point
+ * +getSpeed():Point
  * +toString():String
  * +move():Ball
  */
@@ -45,53 +45,53 @@ public class Ball {
         this.speed = new Point(speed.getX(), speed.getY());
     }
 
-    /** Ball getter for axisX. */
-    public double getX() {
+    /** Ball getter for ball position on X-axis. */
+    public double getPosX() {
         return position.getX();
     }
 
-    /** Ball setter for axisX. */
-    public void setX(double axisX) {
-        position.setX(axisX);
+    /** Ball setter for ball position on X-axis. */
+    public void setPosX(double posX) {
+        position.setX(posX);
     }
 
-    /** Ball getter for axisY. */
-    public double getY() {
+    /** Ball getter for ball position on Y-axis. */
+    public double getPosY() {
         return position.getY();
     }
 
-    /** Ball setter for axisY. */
-    public void setY(double axisY) {
-        position.setY(axisY);
+    /** Ball setter for position on Y-axis. */
+    public void setPosY(double posY) {
+        position.setY(posY);
     }
 
-    /** Ball getter for speed on x-axis. */
+    /** Ball getter for speed on X-axis. */
     public double getSpdX() {
         return speed.getX();
     }
 
-    /** Ball setter for speed on x-axis. */
+    /** Ball setter for speed on X-axis. */
     public void setSpdX(double spdX) {
         speed.setX(spdX);
     }
 
-    /** Ball getter for speed on y-axis. */
+    /** Ball getter for speed on Y-axis. */
     public double getSpdY() {
         return speed.getY();
     }
 
-    /** Ball setter for speed on y-axis. */
+    /** Ball setter for speed on Y-axis. */
     public void setSpdY(double spdY) {
         speed.setY(spdY);
     }
 
     /** Ball getter for the ball position. */
-    public Point getPos() {
+    public Point getPosition() {
         return position;
     }
 
-    /** Ball getter for ball speed. */
-    public Point getSpd() {
+    /** Ball getter for the ball speed. */
+    public Point getSpeed() {
         return speed;
     }
 
@@ -107,13 +107,13 @@ public class Ball {
     /**
      * Ball public method for making steps.
      *
-     * <p>Move a step by adding speed on x-axis and on y-axis to the position.
+     * <p>Move a step by adding speed on X-axis and on Y-axis to the position.
      *
-     * <p>Return this for chaining.
+     * <p>Return the updated object for chaining.
      */
     public Ball move() {
-        position.setX(getX() + getSpdX());
-        position.setY(getY() + getSpdY());
+        position.setX(getPosX() + getSpdX());
+        position.setY(getPosY() + getSpdY());
         return this;
     }
 }
