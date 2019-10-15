@@ -1,5 +1,5 @@
 /**
- * Pension class for employee and employer contribution.
+ * Pension class calculates employee and employer contributions.
  *
  * <p>Age 55 and below: employee 20%, employer 17%.
  *
@@ -33,7 +33,7 @@ public class Pension {
     /* max salary to attract contribution */
     private static final double MAX_ATTR = 6000;
 
-    /* private instance data */
+    /* private instance variables */
     private double salary;
     private int age;
     private Duo contrib;
@@ -93,7 +93,7 @@ public class Pension {
         return salary * contrib.getSecondDbl();
     }
 
-    /** Pension string method. */
+    /** Pension instance formatted string. */
     public String toString() {
         double eeContrib = getEeContrib();
         double erContrib = getErContrib();
