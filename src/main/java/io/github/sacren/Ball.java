@@ -3,10 +3,10 @@
  *
  * <p>Private instance variables:
  * -position:Point
- * -speed:Point
+ * -speed:Duo
  *
  * <p>Constructor:
- * +Ball(position:Point, speed:Point)
+ * +Ball(position:Point, speed:Duo)
  *
  * <p>Public methods:
  * +setInitPos(position:Point):void
@@ -20,17 +20,17 @@
  * +getSpdY():double
  * +setSpdY(spdY:double):void
  * +getPosition():Point
- * +getSpeed():Point
+ * +getSpeed():Duo
  * +toString():String
  * +move():Ball
  */
 public class Ball {
     /* private instance variables */
     private Point position;
-    private Point speed;
+    private Duo speed;
 
     /** Ball constructor by Point. */
-    public Ball(Point position, Point speed) {
+    public Ball(Point position, Duo speed) {
         setInitPos(position);
         setInitSpd(speed);
     }
@@ -41,8 +41,8 @@ public class Ball {
     }
 
     /** Ball setter for ball initial speed. */
-    public void setInitSpd(Point speed) {
-        this.speed = new Point(speed.getX(), speed.getY());
+    public void setInitSpd(Duo speed) {
+        this.speed = new Duo(speed.getFirstDbl(), speed.getSecondDbl());
     }
 
     /** Ball getter for ball position on X-axis. */
@@ -67,22 +67,22 @@ public class Ball {
 
     /** Ball getter for speed on X-axis. */
     public double getSpdX() {
-        return speed.getX();
+        return speed.getFirstDbl();
     }
 
     /** Ball setter for speed on X-axis. */
     public void setSpdX(double spdX) {
-        speed.setX(spdX);
+        speed.setFirst(spdX);
     }
 
     /** Ball getter for speed on Y-axis. */
     public double getSpdY() {
-        return speed.getY();
+        return speed.getSecondDbl();
     }
 
     /** Ball setter for speed on Y-axis. */
     public void setSpdY(double spdY) {
-        speed.setY(spdY);
+        speed.setSecond(spdY);
     }
 
     /** Ball getter for the ball position. */
@@ -91,7 +91,7 @@ public class Ball {
     }
 
     /** Ball getter for the ball speed. */
-    public Point getSpeed() {
+    public Duo getSpeed() {
         return speed;
     }
 
