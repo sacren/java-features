@@ -5,8 +5,7 @@
  * used for any object.  See Pension class for details.
  *
  * <p>Private instance variables with default values:
- * -axisX:double = 0
- * -axisY:double = 0
+ * -point:Duo = {0, 0}
  *
  * <p>Constructor:
  * +Point()
@@ -23,59 +22,56 @@
  * +toString():String
  */
 public class Point {
-    /* private instance variables */
-    private double axisX;
-    private double axisY;
+    /* private instance variable */
+    private Duo point;
 
     /** Point default constructor. */
     public Point() {
-        setX(0);
-        setY(0);
+        point = new Duo();
     }
 
     /** Point custom constructor. */
     public Point(double axisX, double axisY) {
-        setX(axisX);
-        setY(axisY);
+        point = new Duo(axisX, axisY);
     }
 
     /** Point setter for variable on X-axis. */
     public void setX(double axisX) {
-        this.axisX = axisX;
+        point.setFirst(axisX);
     }
 
     /** Point setter for variable on Y-axis. */
     public void setY(double axisY) {
-        this.axisY = axisY;
+        point.setSecond(axisY);
     }
 
     /** Point getter for variable on X-axis. */
     public double getX() {
-        return axisX;
+        return point.getFirstDbl();
     }
 
     /** Point getter for variable on Y-axis. */
     public double getY() {
-        return axisY;
+        return point.getSecondDbl();
     }
 
     /** Point getter for distance from this point to another. */
     public double distance(Point p) {
-        return Math.hypot(p.getX() - axisX, p.getY() - axisY);
+        return Math.hypot(p.getX() - point.getFirstDbl(), p.getY() - point.getSecondDbl());
     }
 
     /** Point getter for distance with different arguments. */
     public double distance(double axisX, double axisY) {
-        return Math.hypot(axisX - this.axisX, axisY - this.axisY);
+        return Math.hypot(axisX - point.getFirstDbl(), axisY - point.getSecondDbl());
     }
 
     /** Point getter for distance from this point to Point (0, 0). */
     public double distance() {
-        return Math.hypot(axisX, axisY);
+        return Math.hypot(point.getFirstDbl(), point.getSecondDbl());
     }
 
     /** Point instance formatted string. */
     public String toString() {
-        return String.format("(%.2f, %.2f)", axisX, axisY);
+        return String.format("(%.2f, %.2f)", point.getFirstDbl(), point.getSecondDbl());
     }
 }
