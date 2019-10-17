@@ -98,12 +98,12 @@ public class Duo {
 
     /** Duo getter for int string. */
     public String getIntDuo() {
-        return String.format("(%02d, %02d)", firstInt, secondInt);
+        return String.format("%02d, %02d", firstInt, secondInt);
     }
 
     /** Duo getter for double string. */
     public String getDblDuo() {
-        return String.format("(%.2f, %.2f)", firstDbl, secondDbl);
+        return String.format("%.2f, %.2f", firstDbl, secondDbl);
     }
 
     /** Duo instance formatted string. */
@@ -111,10 +111,10 @@ public class Duo {
         StringBuilder duo = new StringBuilder();
         switch (which) {
             case 1:
-                duo.append(getIntDuo());
+                duo.append("(").append(getIntDuo()).append(")");
                 break;
             default:
-                duo.append(getDblDuo());
+                duo.append("(").append(getDblDuo()).append(")");
                 break;
         }
         return duo.toString();
