@@ -6,7 +6,8 @@
  *
  * <p>Private instance variables with default value:
  * -thirdInt:int = 0
- * -thirdDbl:double = 0
+ * -thirdDbl:double
+ * -which:int
  *
  * <p>Constructor:
  * +Trio()
@@ -19,12 +20,15 @@
  * +setThird(thirdDbl:double):void
  * +getThirdInt():int
  * +getThirdDbl():double
+ * +getIntTrio():String
+ * +getDblTrio():String
  * +toString():String
  */
 public class Trio extends Duo {
     /* private instance variables */
     private int thirdInt;
     private double thirdDbl;
+    private int which;
 
     /** Trio default constructor. */
     public Trio() {
@@ -48,12 +52,13 @@ public class Trio extends Duo {
     /** Trio setter for default instance variables. */
     public void setThird() {
         thirdInt = 0;
-        thirdDbl = 0;
+        which = 1;
     }
 
     /** Trio setter for int instance variable. */
     public void setThird(int thirdInt) {
         this.thirdInt = thirdInt;
+        which = 1;
     }
 
     /** Trio setter for double instance variable. */
@@ -71,11 +76,28 @@ public class Trio extends Duo {
         return thirdDbl;
     }
 
+    /** Trio getter for int string. */
+    public String getIntTrio() {
+        return String.format("%s, %02d", getIntDuo(), thirdInt);
+    }
+
+    /** Trio getter for double string. */
+    public String getDblTrio() {
+        return String.format("%s, %.2f", getDblDuo(), thirdDbl);
+    }
+
     /** Trio instance formatted string. */
     @Override
     public String toString() {
-        return String.format(
-                "(%.2f, %.2f, %.2f)",
-                getFirstDbl(), getSecondDbl(), thirdDbl);
+        StringBuilder trio = new StringBuilder();
+        switch (which) {
+            case 1:
+                trio.append("(").append(getIntTrio()).append(")");
+                break;
+            default:
+                trio.append("(").append(getDblTrio()).append(")");
+                break;
+        }
+        return trio.toString();
     }
 }
