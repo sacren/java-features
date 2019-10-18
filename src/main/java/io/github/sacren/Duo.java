@@ -40,6 +40,7 @@ public class Duo {
     public Duo() {
         setFirst(0);
         setSecond(0);
+        which = 1;
     }
 
     /** Duo constructor for int instance variables. */
