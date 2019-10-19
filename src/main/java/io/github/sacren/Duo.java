@@ -25,6 +25,7 @@
  * +getSecondInt():int
  * +getFirstDbl():double
  * +getSecondDbl():double
+ * +getWhich():int
  * +getIntDuo():String
  * +getDblDuo():String
  * +toString():String
@@ -96,6 +97,11 @@ public class Duo {
     /** Duo getter for the second double variable. */
     public double getSecondDbl() {
         return secondDbl;
+    }
+
+    /** Duo getter for which int value for formatted string. */
+    public int getWhich() {
+        return which;
     }
 
     /** Duo getter for int string. */

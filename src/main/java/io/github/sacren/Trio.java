@@ -7,7 +7,6 @@
  * <p>Private instance variables with default value:
  * -thirdInt:int = 0
  * -thirdDbl:double
- * -which:int
  *
  * <p>Constructor:
  * +Trio()
@@ -28,7 +27,6 @@ public class Trio extends Duo {
     /* private instance variables */
     private int thirdInt;
     private double thirdDbl;
-    private int which;
 
     /** Trio default constructor. */
     public Trio() {
@@ -52,13 +50,11 @@ public class Trio extends Duo {
     /** Trio setter for default instance variables. */
     public void setThird() {
         thirdInt = 0;
-        which = 1;
     }
 
     /** Trio setter for int instance variable. */
     public void setThird(int thirdInt) {
         this.thirdInt = thirdInt;
-        which = 1;
     }
 
     /** Trio setter for double instance variable. */
@@ -90,7 +86,7 @@ public class Trio extends Duo {
     @Override
     public String toString() {
         StringBuilder trio = new StringBuilder();
-        switch (which) {
+        switch (getWhich()) {
             case 1:
                 trio.append("(").append(getIntTrio()).append(")");
                 break;
