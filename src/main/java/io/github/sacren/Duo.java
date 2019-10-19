@@ -1,14 +1,15 @@
 /**
  * Duo class for object with a pair of variables.
  *
- * <p>We identify Duo object by (firstDbl, secondDbl).  Broadly the pair could be
- * used for any object of two variables.  See Pension class for details.
+ * <p>We identify Duo object by (firstVal, secondVal).  Broadly the pair could
+ * be used for any object of two variables.  See Pension class for details.
  *
  * <p>Private instance variables with default values:
  * -firstInt:int = 0
  * -secondInt:int = 0
  * -firstDbl:double
  * -secondDbl:double
+ * -which:int
  *
  * <p>Constructor:
  * +Duo()
