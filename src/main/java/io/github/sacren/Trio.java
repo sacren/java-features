@@ -63,7 +63,7 @@ public class Trio extends Duo {
     }
 
     /** Trio getter for int instance variable. */
-    public double getThirdInt() {
+    public int getThirdInt() {
         return thirdInt;
     }
 
