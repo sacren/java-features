@@ -2,14 +2,14 @@
  * Date class models the year, the month and the day of the date.
  *
  * <p>Private instance variable:
- * -date:Cube
+ * -date:Trio
  *
  * <p>Constructor:
  * +Date()
- * +Date(date:Cube)
+ * +Date(date:Trio)
  *
  * <p>Public methods:
- * +setDate(date:Cube):void
+ * +setDate(date:Trio):void
  * +setYear(year:int):void
  * +setMonth(month:int):void
  * +setDay(day:int):void
@@ -20,11 +20,11 @@
  */
 public class Date {
     /* private instance variable */
-    private Cube date;
+    private Trio date;
 
     /* initialize instance data */
     {
-        date = new Cube(1776, 7, 4); /* Independence Day */
+        date = new Trio(1776, 7, 4); /* Independence Day */
     }
 
     /** Date default constructor. */
@@ -32,15 +32,15 @@ public class Date {
     }
 
     /** Date custom constructor. */
-    public Date(Cube date) {
+    public Date(Trio date) {
         setDate(date);
     }
 
     /** Date setter for the date. */
-    public void setDate(Cube date) {
-        setYear((int) date.getX());
-        setMonth((int) date.getY());
-        setDay((int) date.getZ());
+    public void setDate(Trio date) {
+        setYear(date.getFirstInt());
+        setMonth(date.getSecondInt());
+        setDay(date.getThirdInt());
     }
 
     /** Date setter for the year. */
@@ -49,7 +49,7 @@ public class Date {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", year));
         }
-        date.setX(year);
+        date.setFirst(year);
     }
 
     /** Date setter for the month. */
@@ -58,7 +58,7 @@ public class Date {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", month));
         }
-        date.setY(month);
+        date.setSecond(month);
     }
 
     /** Date setter for the day. */
@@ -67,22 +67,22 @@ public class Date {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", day));
         }
-        date.setZ(day);
+        date.setThird(day);
     }
 
     /** Date getter for the year. */
     public int getYear() {
-        return (int) date.getX();
+        return date.getFirstInt();
     }
 
     /** Date getter for the month. */
     public int getMonth() {
-        return (int) date.getY();
+        return date.getSecondInt();
     }
 
     /** Date getter for the day. */
     public int getDay() {
-        return (int) date.getZ();
+        return date.getThirdInt();
     }
 
     /** Date instance formatted string. */

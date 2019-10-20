@@ -11,7 +11,7 @@ public class TestDate {
         System.out.println();
         System.out.println("=== Arbitrary Date ===");
         System.out.println();
-        Date date = new Date(new Cube(1994, 11, 24));
+        Date date = new Date(new Trio(1994, 11, 24));
         System.out.println(date);
         System.out.println();
         System.out.println("=== Change to an arbitrary date ===");
@@ -23,7 +23,7 @@ public class TestDate {
         System.out.println();
         System.out.println("=== Change to another arbitrary date ===");
         System.out.println();
-        date.setDate(new Cube(4798, 1, 1));
+        date.setDate(new Trio(4798, 1, 1));
         System.out.println(date);
     }
 }
