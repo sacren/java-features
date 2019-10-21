@@ -2,16 +2,16 @@
  * Time class.
  *
  * <p>Private instance data:
- * -time:Cube
- * -st:Cube
+ * -time:Trio
+ * -st:Trio
  *
  * <p>Constructor:
  * +Time()
- * +Time(time:Cube)
+ * +Time(time:Trio)
  *
  * <p>Public methods:
  * +setTime():void
- * +setTime(time:Cube):void
+ * +setTime(time:Trio):void
  * +setStartTime():void
  * +setSecond(second:int):void
  * +setMinute(minute:int):void
@@ -25,12 +25,12 @@
  */
 public class Time {
     /* declare private instance variables */
-    private Cube time;
-    private Cube st;
+    private Trio time;
+    private Trio st;
 
     /* initialize private instance variable */
     {
-        time = new Cube();
+        time = new Trio();
     }
 
     /** Time default constructor. */
@@ -40,21 +40,21 @@ public class Time {
     }
 
     /** Time custom constructor. */
-    public Time(Cube time) {
+    public Time(Trio time) {
         setTime(time);
         setStartTime();
     }
 
     /** Time setter for specific time. */
-    public void setTime(Cube time) {
-        setSecond((int) time.getX());
-        setMinute((int) time.getY());
-        setHour((int) time.getZ());
+    public void setTime(Trio time) {
+        setSecond(time.getFirstInt());
+        setMinute(time.getSecondInt());
+        setHour(time.getThirdInt());
     }
 
     /** Time setter for zero hour. */
     public void setTime() {
-        setTime(new Cube(0, 0, 0));
+        setTime(new Trio(0, 0, 0));
     }
 
     /** Time setter for the second. */
@@ -63,7 +63,7 @@ public class Time {
             throw new IllegalArgumentException(
                     String.format("%d is invalid value for second!", second));
         }
-        time.setX(second);
+        time.setFirst(second);
     }
 
     /** Time setter for the minute. */
@@ -72,7 +72,7 @@ public class Time {
             throw new IllegalArgumentException(
                     String.format("%d is invalid value for minute!", minute));
         }
-        time.setY(minute);
+        time.setSecond(minute);
     }
 
     /** Time setter for the hour. */
@@ -81,12 +81,12 @@ public class Time {
             throw new IllegalArgumentException(
                     String.format("%d is invalid value for hour!", hour));
         }
-        time.setZ(hour);
+        time.setThird(hour);
     }
 
     /** Time setter for start time. */
     public void setStartTime() {
-        st = new Cube(time.getX(), time.getY(), time.getZ());
+        st = new Trio(time.getFirstInt(), time.getSecondInt(), time.getThirdInt());
     }
 
     /** Time getter for time by one second increment. */
@@ -109,7 +109,7 @@ public class Time {
             hour = 0;
         }
 
-        setTime(new Cube(second, minute, hour));
+        setTime(new Trio(second, minute, hour));
         return this;
     }
 
@@ -120,17 +120,17 @@ public class Time {
 
     /** Time getter for the second. */
     public int getSecond() {
-        return (int) time.getX();
+        return time.getFirstInt();
     }
 
     /** Time getter for the minute. */
     public int getMinute() {
-        return (int) time.getY();
+        return time.getSecondInt();
     }
 
     /** Time getter for the hour. */
     public int getHour() {
-        return (int) time.getZ();
+        return time.getThirdInt();
     }
 
     /** Time string method. */
