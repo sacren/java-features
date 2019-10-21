@@ -22,7 +22,7 @@ public class Date {
     /* private instance variable */
     private Trio date;
 
-    /* initialize instance data */
+    /* initialize instance variable to default value */
     {
         date = new Trio(1776, 7, 4); /* Independence Day */
     }
