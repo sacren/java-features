@@ -52,5 +52,9 @@ public class TestTime {
         System.out.println("=== Restore to start time again ===");
         System.out.println();
         System.out.println(currentTime);
+        System.out.println();
+        System.out.println("=== Default time ===");
+        System.out.println();
+        System.out.println(new Time());
     }
 }
