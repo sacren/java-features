@@ -55,6 +55,13 @@ public class TestTime {
         System.out.println();
         System.out.println("=== Default time ===");
         System.out.println();
-        System.out.println(new Time());
+        Time defTime = new Time();
+        System.out.println(defTime);
+        /* restore to default start time */
+        defTime.restoreTime();
+        System.out.println();
+        System.out.println("=== Restore to default start time ===");
+        System.out.println();
+        System.out.println(defTime);
     }
 }
