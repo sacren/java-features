@@ -35,7 +35,6 @@ public class Time {
 
     /** Time default constructor. */
     public Time() {
-        setTime();
         setStartTime();
     }
 
