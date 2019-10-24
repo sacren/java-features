@@ -53,7 +53,7 @@ public class Time {
 
     /** Time setter for zero hour. */
     public void setTime() {
-        setTime(new Trio());
+        time = new Trio();
     }
 
     /** Time setter for the second. */
