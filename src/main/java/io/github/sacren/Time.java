@@ -1,7 +1,7 @@
 /**
- * Time class.
+ * Time class models the hour, the minute and the second of time.
  *
- * <p>Private instance data:
+ * <p>Private instance variables:
  * -time:Trio
  * -st:Trio
  *
@@ -38,7 +38,7 @@ public class Time {
         setStartTime();
     }
 
-    /** Time custom constructor. */
+    /** Time constructor with Trio object for parameter. */
     public Time(Trio time) {
         setTime(time);
         setStartTime();
@@ -132,7 +132,7 @@ public class Time {
         return time.getThirdInt();
     }
 
-    /** Time string method. */
+    /** Time instance formatted string. */
     public String toString() {
         return String.format(
                 "Current time: %02d:%02d:%02d",
