@@ -17,7 +17,7 @@ public class TestTime {
         System.out.print("Enter the second: ");
         second = inStream.nextInt();
         inStream.close();
-        Time currentTime = new Time(new Trio(second, minute, hour));
+        Time currentTime = new Time(new Trio(hour, minute, second));
         System.out.println();
         System.out.println("=== What time is it? ===");
         System.out.println();

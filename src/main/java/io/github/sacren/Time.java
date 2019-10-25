@@ -13,9 +13,9 @@
  * +setTime():void
  * +setTime(time:Trio):void
  * +setStartTime():void
- * +setSecond(second:int):void
- * +setMinute(minute:int):void
  * +setHour(hour:int):void
+ * +setMinute(minute:int):void
+ * +setSecond(second:int):void
  * +nextSecond():Time
  * +restoreTime():void
  * +getSecond():int
@@ -48,18 +48,18 @@ public class Time {
     /** Time setter for specific time. */
     public void setTime(Trio time) {
         setTime();
-        setSecond(time.getFirstInt());
+        setHour(time.getFirstInt());
         setMinute(time.getSecondInt());
-        setHour(time.getThirdInt());
+        setSecond(time.getThirdInt());
     }
 
-    /** Time setter for the second. */
-    public void setSecond(int second) {
-        if (second < 0 || second >= 60) {
+    /** Time setter for the hour. */
+    public void setHour(int hour) {
+        if (hour < 0 || hour >= 24) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid value for second!", second));
+                    String.format("%d is invalid value for hour!", hour));
         }
-        time.setFirst(second);
+        time.setFirst(hour);
     }
 
     /** Time setter for the minute. */
@@ -71,13 +71,13 @@ public class Time {
         time.setSecond(minute);
     }
 
-    /** Time setter for the hour. */
-    public void setHour(int hour) {
-        if (hour < 0 || hour >= 24) {
+    /** Time setter for the second. */
+    public void setSecond(int second) {
+        if (second < 0 || second >= 60) {
             throw new IllegalArgumentException(
-                    String.format("%d is invalid value for hour!", hour));
+                    String.format("%d is invalid value for second!", second));
         }
-        time.setThird(hour);
+        time.setThird(second);
     }
 
     /** Time setter for start time. */
@@ -105,7 +105,7 @@ public class Time {
             hour = 0;
         }
 
-        setTime(new Trio(second, minute, hour));
+        setTime(new Trio(hour, minute, second));
         return this;
     }
 
@@ -114,8 +114,8 @@ public class Time {
         setTime(st);
     }
 
-    /** Time getter for the second. */
-    public int getSecond() {
+    /** Time getter for the hour. */
+    public int getHour() {
         return time.getFirstInt();
     }
 
@@ -124,8 +124,8 @@ public class Time {
         return time.getSecondInt();
     }
 
-    /** Time getter for the hour. */
-    public int getHour() {
+    /** Time getter for the second. */
+    public int getSecond() {
         return time.getThirdInt();
     }
 
