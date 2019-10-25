@@ -28,13 +28,9 @@ public class Time {
     private Trio time;
     private Trio st;
 
-    /* initialize private instance variable */
-    {
-        time = new Trio();
-    }
-
     /** Time default constructor. */
     public Time() {
+        setTime();
         setStartTime();
     }
 
@@ -44,16 +40,17 @@ public class Time {
         setStartTime();
     }
 
-    /** Time setter for specific time. */
-    public void setTime(Trio time) {
-        setSecond(time.getFirstInt());
-        setMinute(time.getSecondInt());
-        setHour(time.getThirdInt());
-    }
-
     /** Time setter for zero hour. */
     public void setTime() {
         time = new Trio();
+    }
+
+    /** Time setter for specific time. */
+    public void setTime(Trio time) {
+        setTime();
+        setSecond(time.getFirstInt());
+        setMinute(time.getSecondInt());
+        setHour(time.getThirdInt());
     }
 
     /** Time setter for the second. */
