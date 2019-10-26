@@ -9,6 +9,7 @@
  * +Date(date:Trio)
  *
  * <p>Public methods:
+ * +setDate():void
  * +setDate(date:Trio):void
  * +setYear(year:int):void
  * +setMonth(month:int):void
@@ -22,18 +23,21 @@ public class Date {
     /* private instance variable */
     private Trio date;
 
-    /* initialize instance variable to default value */
-    {
-        date = new Trio(1776, 7, 4); /* Independence Day */
-    }
-
-    /** Date default constructor. */
+    /** Date default constructor of Independence Day. */
     public Date() {
+        setDate();
+        setDate(new Trio(1776, 7, 4));
     }
 
-    /** Date custom constructor. */
+    /** Date constructor for any date. */
     public Date(Trio date) {
+        setDate();
         setDate(date);
+    }
+
+    /** Date setter for date initialization. */
+    public void setDate() {
+        date = new Trio();
     }
 
     /** Date setter for the date. */
