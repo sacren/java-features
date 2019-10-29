@@ -1,8 +1,5 @@
 /**
- * Point class for object with a pair of variables.
- *
- * <p>We identify Point object by (axisX, axisY).  Broadly the pair could be
- * used for any object.  See Pension class for details.
+ * Point class uses Duo object for the point.
  *
  * <p>Private instance variables with default values:
  * -point:Duo = {0, 0}
@@ -30,7 +27,7 @@ public class Point {
         point = new Duo();
     }
 
-    /** Point custom constructor. */
+    /** Point constructor with a pair of numbers for point. */
     public Point(double axisX, double axisY) {
         point = new Duo(axisX, axisY);
     }
