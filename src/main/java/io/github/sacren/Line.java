@@ -1,7 +1,7 @@
 /**
- * Line class by two points of begin and end.
+ * Line class is composed of begin and end two points.
  *
- * <p>Private instance data:
+ * <p>Private instance variables:
  * -begin:Point
  * -end:Point
  *
@@ -27,11 +27,11 @@
  * +toString():String
  */
 public class Line {
-    /* private instance data */
+    /* private instance variables */
     private Point begin;
     private Point end;
 
-    /** Line constructor by 4 integers. */
+    /** Line constructor by 4 numbers. */
     public Line(double beginX, double beginY, double endX, double endY) {
         begin = new Point(beginX, beginY);
         end = new Point(endX, endY);
@@ -63,42 +63,42 @@ public class Line {
         this.end = end;
     }
 
-    /** Line getter for x-axis of begin point. */
+    /** Line getter for value on X-axis of begin point. */
     public double getBeginX() {
         return begin.getX();
     }
 
-    /** Line setter for x-axis of begin point. */
+    /** Line setter for value on X-axis of begin point. */
     public void setBeginX(double axisX) {
         begin.setX(axisX);
     }
 
-    /** Line getter for y-axis of begin point. */
+    /** Line getter for value on Y-axis of begin point. */
     public double getBeginY() {
         return begin.getY();
     }
 
-    /** Line setter for y-axis of begin point. */
+    /** Line setter for value on Y-axis of begin point. */
     public void setBeginY(double axisY) {
         begin.setY(axisY);
     }
 
-    /** Line getter for x-axis of end point. */
+    /** Line getter for value on X-axis of end point. */
     public double getEndX() {
         return end.getX();
     }
 
-    /** Line setter for x-axis of end point. */
+    /** Line setter for value on X-axis of end point. */
     public void setEndX(double axisX) {
         end.setX(axisX);
     }
 
-    /** Line getter for y-axis of end point. */
+    /** Line getter for value on Y-axis of end point. */
     public double getEndY() {
         return end.getY();
     }
 
-    /** Line setter for y-axis of end point. */
+    /** Line setter for value on Y-axis of end point. */
     public void setEndY(double axisY) {
         end.setY(axisY);
     }
@@ -108,12 +108,12 @@ public class Line {
         return begin.distance(end);
     }
 
-    /** Line getter for the gradient of this line. */
+    /** Line getter for the gradient of Line object. */
     public double getGradient() {
         return (end.getY() - begin.getY()) / (end.getX() - begin.getX());
     }
 
-    /** Line string method. */
+    /** Line instance formatted string. */
     public String toString() {
         return String.format(
                 "From %s to %s%n" /* invoke Point's toString() */
