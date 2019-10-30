@@ -54,21 +54,21 @@ public class Point {
 
     /** Point getter for distance from this point to another. */
     public double distance(Point p) {
-        return Math.hypot(p.getX() - point.getFirstDbl(), p.getY() - point.getSecondDbl());
+        return Math.hypot(p.getX() - getX(), p.getY() - getY());
     }
 
     /** Point getter for distance with different arguments. */
     public double distance(double axisX, double axisY) {
-        return Math.hypot(axisX - point.getFirstDbl(), axisY - point.getSecondDbl());
+        return Math.hypot(axisX - getX(), axisY - getY());
     }
 
     /** Point getter for distance from this point to Point (0, 0). */
     public double distance() {
-        return Math.hypot(point.getFirstDbl(), point.getSecondDbl());
+        return Math.hypot(getX(), getY());
     }
 
     /** Point instance formatted string. */
     public String toString() {
-        return String.format("(%.2f, %.2f)", point.getFirstDbl(), point.getSecondDbl());
+        return String.format("(%.2f, %.2f)", getX(), getY());
     }
 }
