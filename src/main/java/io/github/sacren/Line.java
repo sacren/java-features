@@ -10,18 +10,19 @@
  * +Line(beginX:double, beginY:double, endX:double, endY:double)
  *
  * <p>Public methods:
+ * +setPoints():void
+ * +setBeginX(axisX:double):void
+ * +setBeginY(axisY:double):void
  * +setBegin(begin:Point):void
+ * +setEndX(axisX):void
+ * +setEndY(axisY):void
  * +setEnd(end:Point):void
  * +getBegin():Point
  * +getEnd():Point
  * +getBeginX():double
- * +setBeginX(axisX:double):void
  * +getBeginY():double
- * +setBeginY(axisY:double):void
  * +getEndX():double
- * +setEndX(axisX):void
  * +getEndY():double
- * +setEndY(axisY):void
  * +getLength():double
  * +getGradient():double
  * +toString():String
@@ -33,24 +34,54 @@ public class Line {
 
     /** Line constructor by begin and end points. */
     public Line(Point begin, Point end) {
+        setPoints();
         setBegin(begin);
         setEnd(end);
     }
 
     /** Line constructor by 4 numbers. */
     public Line(double beginX, double beginY, double endX, double endY) {
+        setPoints();
         setBegin(new Point(beginX, beginY));
         setEnd(new Point(endX, endY));
     }
 
+    /** Line setter to initialize begin and end points. */
+    public void setPoints() {
+        begin = new Point();
+        end = new Point();
+    }
+
+    /** Line setter for value on X-axis of begin point. */
+    public void setBeginX(double axisX) {
+        begin.setX(axisX);
+    }
+
+    /** Line setter for value on Y-axis of begin point. */
+    public void setBeginY(double axisY) {
+        begin.setY(axisY);
+    }
+
     /** Line setter for begin point. */
     public void setBegin(Point begin) {
-        this.begin = new Point(begin.getX(), begin.getY());
+        setBeginX(begin.getX());
+        setBeginY(begin.getY());
+    }
+
+    /** Line setter for value on X-axis of end point. */
+    public void setEndX(double axisX) {
+        end.setX(axisX);
+    }
+
+    /** Line setter for value on Y-axis of end point. */
+    public void setEndY(double axisY) {
+        end.setY(axisY);
     }
 
     /** Line setter for end point. */
     public void setEnd(Point end) {
-        this.end = new Point(end.getX(), end.getY());
+        setEndX(end.getX());
+        setEndY(end.getY());
     }
 
     /** Line getter for begin point. */
@@ -68,19 +99,9 @@ public class Line {
         return begin.getX();
     }
 
-    /** Line setter for value on X-axis of begin point. */
-    public void setBeginX(double axisX) {
-        begin.setX(axisX);
-    }
-
     /** Line getter for value on Y-axis of begin point. */
     public double getBeginY() {
         return begin.getY();
-    }
-
-    /** Line setter for value on Y-axis of begin point. */
-    public void setBeginY(double axisY) {
-        begin.setY(axisY);
     }
 
     /** Line getter for value on X-axis of end point. */
@@ -88,19 +109,9 @@ public class Line {
         return end.getX();
     }
 
-    /** Line setter for value on X-axis of end point. */
-    public void setEndX(double axisX) {
-        end.setX(axisX);
-    }
-
     /** Line getter for value on Y-axis of end point. */
     public double getEndY() {
         return end.getY();
-    }
-
-    /** Line setter for value on Y-axis of end point. */
-    public void setEndY(double axisY) {
-        end.setY(axisY);
     }
 
     /** Line getter for length from begin point to end point. */
