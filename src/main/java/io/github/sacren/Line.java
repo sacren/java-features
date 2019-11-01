@@ -10,10 +10,10 @@
  * +Line(beginX:double, beginY:double, endX:double, endY:double)
  *
  * <p>Public methods:
- * +getBegin():Point
  * +setBegin(begin:Point):void
- * +getEnd():Point
  * +setEnd(end:Point):void
+ * +getBegin():Point
+ * +getEnd():Point
  * +getBeginX():double
  * +setBeginX(axisX:double):void
  * +getBeginY():double
@@ -31,16 +31,16 @@ public class Line {
     private Point begin;
     private Point end;
 
-    /** Line constructor by 4 numbers. */
-    public Line(double beginX, double beginY, double endX, double endY) {
-        begin = new Point(beginX, beginY);
-        end = new Point(endX, endY);
-    }
-
     /** Line constructor by begin and end points. */
     public Line(Point begin, Point end) {
         setBegin(begin);
         setEnd(end);
+    }
+
+    /** Line constructor by 4 numbers. */
+    public Line(double beginX, double beginY, double endX, double endY) {
+        setBegin(new Point(beginX, beginY));
+        setEnd(new Point(endX, endY));
     }
 
     /** Line setter for begin point. */
