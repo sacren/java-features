@@ -62,6 +62,9 @@ public class Line {
     public void setBegin(Point begin) {
         setBeginX(begin.getX());
         setBeginY(begin.getY());
+        if (begin.getX() == end.getX() && begin.getY() == end.getY()) {
+            throw new IllegalArgumentException("Begin and end points must be different!");
+        }
     }
 
     /** Line setter for value on X-axis of end point. */
@@ -78,6 +81,9 @@ public class Line {
     public void setEnd(Point end) {
         setEndX(end.getX());
         setEndY(end.getY());
+        if (begin.getX() == end.getX() && begin.getY() == end.getY()) {
+            throw new IllegalArgumentException("Begin and end points must be different!");
+        }
     }
 
     /** Line getter for begin point. */
