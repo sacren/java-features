@@ -19,10 +19,6 @@
  * +setEnd(end:Point):void
  * +getBegin():Point
  * +getEnd():Point
- * +getBeginX():double
- * +getBeginY():double
- * +getEndX():double
- * +getEndY():double
  * +getLength():double
  * +getGradient():double
  * +toString():String
@@ -92,26 +88,6 @@ public class Line {
     /** Line getter for end point. */
     public Point getEnd() {
         return end;
-    }
-
-    /** Line getter for value on X-axis of begin point. */
-    public double getBeginX() {
-        return begin.getX();
-    }
-
-    /** Line getter for value on Y-axis of begin point. */
-    public double getBeginY() {
-        return begin.getY();
-    }
-
-    /** Line getter for value on X-axis of end point. */
-    public double getEndX() {
-        return end.getX();
-    }
-
-    /** Line getter for value on Y-axis of end point. */
-    public double getEndY() {
-        return end.getY();
     }
 
     /** Line getter for length from begin point to end point. */
