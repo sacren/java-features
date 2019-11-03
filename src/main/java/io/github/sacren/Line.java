@@ -13,9 +13,11 @@
  * +setPoints():void
  * +setBeginX(axisX:double):void
  * +setBeginY(axisY:double):void
+ * +chkWithEnd(point:Point):void
  * +setBegin(begin:Point):void
  * +setEndX(axisX):void
  * +setEndY(axisY):void
+ * +chkWithBegin(point:Point):void
  * +setEnd(end:Point):void
  * +getBegin():Point
  * +getEnd():Point
@@ -58,13 +60,21 @@ public class Line {
         begin.setY(axisY);
     }
 
+    /** Line checker with given point against end point. */
+    public void chkWithEnd(Point point) {
+        if (point.getX() == end.getX() && point.getY() == end.getY()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                        "Begin %s and End %s can't be the same!",
+                        point, end));
+        }
+    }
+
     /** Line setter for begin point. */
     public void setBegin(Point begin) {
+        chkWithEnd(begin);
         setBeginX(begin.getX());
         setBeginY(begin.getY());
-        if (begin.getX() == end.getX() && begin.getY() == end.getY()) {
-            throw new IllegalArgumentException("Begin and end points must be different!");
-        }
     }
 
     /** Line setter for value on X-axis of end point. */
@@ -77,13 +87,21 @@ public class Line {
         end.setY(axisY);
     }
 
+    /** Line checker with given point against begin point. */
+    public void chkWithBegin(Point point) {
+        if (point.getX() == begin.getX() && point.getY() == begin.getY()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                        "End %s and Begin %s can't be the same!",
+                        point, begin));
+        }
+    }
+
     /** Line setter for end point. */
     public void setEnd(Point end) {
+        chkWithBegin(end);
         setEndX(end.getX());
         setEndY(end.getY());
-        if (begin.getX() == end.getX() && begin.getY() == end.getY()) {
-            throw new IllegalArgumentException("Begin and end points must be different!");
-        }
     }
 
     /** Line getter for begin point. */

@@ -44,10 +44,12 @@ public class TestLine {
         Line line2 = new Line(begin, end);
         System.out.println(line2);
         /* update line points. */
-        line2.setBeginX(line2.getBegin().getX() + 1);
-        line2.setBeginY(line2.getBegin().getY() - 1);
-        line2.setEndX(line2.getEnd().getX() - 1);
-        line2.setEndY(line2.getEnd().getY() + 1);
+        beginX = line2.getBegin().getX() + 1;
+        beginY = line2.getBegin().getY() - 1;
+        endX = line2.getEnd().getX() - 1;
+        endY = line2.getEnd().getY() + 1;
+        line2.setBegin(new Point(beginX, beginY));
+        line2.setEnd(new Point(endX, endY));
         System.out.println();
         System.out.println("=== Update line points ===");
         System.out.println();
