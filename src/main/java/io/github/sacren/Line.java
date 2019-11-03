@@ -121,7 +121,7 @@ public class Line {
 
     /** Line getter for the gradient of Line object. */
     public double getGradient() {
-        return (end.getY() - begin.getY()) / (end.getX() - begin.getX());
+        return Math.atan2(end.getY() - begin.getY(), end.getX() - begin.getX());
     }
 
     /** Line instance formatted string. */
