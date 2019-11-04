@@ -13,9 +13,9 @@
  * +setY(axisY:double):void
  * +getX():double
  * +getY():double
- * +distance(axisX:double, axisY:double):double
- * +distance(p:Point):double
- * +distance():double
+ * +getDist(axisX:double, axisY:double):double
+ * +getDist(p:Point):double
+ * +getDist():double
  * +toString():String
  */
 public class Point {
@@ -53,17 +53,17 @@ public class Point {
     }
 
     /** Point getter for distance from this point to another. */
-    public double distance(Point p) {
+    public double getDist(Point p) {
         return Math.hypot(p.getX() - getX(), p.getY() - getY());
     }
 
-    /** Point getter for distance with different arguments. */
-    public double distance(double axisX, double axisY) {
+    /** Point getter for distance to the point by a pair of numbers. */
+    public double getDist(double axisX, double axisY) {
         return Math.hypot(axisX - getX(), axisY - getY());
     }
 
-    /** Point getter for distance from this point to Point (0, 0). */
-    public double distance() {
+    /** Point getter for distance to the point of (0, 0). */
+    public double getDist() {
         return Math.hypot(getX(), getY());
     }
 

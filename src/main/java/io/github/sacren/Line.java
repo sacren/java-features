@@ -116,7 +116,7 @@ public class Line {
 
     /** Line getter for length from begin point to end point. */
     public double getLength() {
-        return begin.distance(end);
+        return begin.getDist(end);
     }
 
     /** Line getter for the gradient of Line object. */
