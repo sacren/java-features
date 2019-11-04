@@ -21,7 +21,7 @@
  * +setEnd(end:Point):void
  * +getBegin():Point
  * +getEnd():Point
- * +getLength():double
+ * +getDist():double
  * +getGradient():double
  * +toString():String
  */
@@ -115,7 +115,7 @@ public class Line {
     }
 
     /** Line getter for length from begin point to end point. */
-    public double getLength() {
+    public double getDist() {
         return begin.getDist(end);
     }
 
@@ -135,7 +135,7 @@ public class Line {
                 begin, end,
                 begin,
                 end,
-                getLength(),
+                getDist(),
                 getGradient());
     }
 }
