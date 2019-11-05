@@ -38,7 +38,7 @@ public class Circle extends Shape {
     /** Circle constructor with default data. */
     public Circle() {
         super("green"); /* circle instance default color */
-        center = new Point(0, 0);
+        center = new Point();
         radius = 1;
         count++;
     }
