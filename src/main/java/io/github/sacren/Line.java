@@ -130,7 +130,7 @@ public class Line {
                 "From %s to %s%n" /* invoke Point's toString() */
                         + "Start point: %s%n"
                         + "End point:   %s%n"
-                        + "Line length: %.2f%n"
+                        + "Distance:    %.2f%n"
                         + "Gradient:    %.2f",
                 begin, end,
                 begin,
