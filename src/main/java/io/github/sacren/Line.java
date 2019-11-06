@@ -23,6 +23,7 @@
  * +getEnd():Point
  * +getDist():double
  * +getGradient():double
+ * +getDistToLine():double
  * +toString():String
  */
 public class Line {
@@ -122,6 +123,21 @@ public class Line {
     /** Line getter for the gradient of Line object. */
     public double getGradient() {
         return Math.atan2(end.getY() - begin.getY(), end.getX() - begin.getX());
+    }
+
+    /**
+     * Line getter for the distance from given point to the line.
+     *
+     * <p>D = ρ * sin (φ - φ')
+     *
+     * <p>D: distance from the given point to the line
+     * ρ: distance from begin to the given point
+     * φ: gradient of the line
+     * φ': gradient of the line from begin to the given point
+     */
+    public double getDistToLine(Point p) {
+        double gradient = Math.atan2(p.getY() - begin.getY(), p.getX() - begin.getX());
+        return begin.getDist(p) * Math.abs(Math.sin(Math.abs(getGradient() - gradient)));
     }
 
     /** Line instance formatted string. */
