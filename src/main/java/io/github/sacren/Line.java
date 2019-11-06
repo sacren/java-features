@@ -114,7 +114,7 @@ public class Line {
         return end;
     }
 
-    /** Line getter for length from begin point to end point. */
+    /** Line getter for distance from begin point to end point. */
     public double getDist() {
         return begin.getDist(end);
     }
