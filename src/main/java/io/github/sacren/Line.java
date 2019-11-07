@@ -137,7 +137,7 @@ public class Line {
      */
     public double getDistToLine(Point p) {
         double gradient = Math.atan2(p.getY() - begin.getY(), p.getX() - begin.getX());
-        return begin.getDist(p) * Math.abs(Math.sin(Math.abs(getGradient() - gradient)));
+        return begin.getDist(p) * Math.abs(Math.sin(getGradient() - gradient));
     }
 
     /** Line instance formatted string. */
