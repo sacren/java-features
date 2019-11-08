@@ -37,6 +37,7 @@ public class TestLine {
         line1.setBeginY(0);
         line1.setEndX(1);
         line1.setEndY(1);
+        line1.chkBeginEnd();
         System.out.println();
         System.out.println("=== Reset points to 0's and 1's ===");
         System.out.println();
@@ -56,6 +57,7 @@ public class TestLine {
         endY = line2.getEnd().getY() + 1;
         line2.setBegin(new Point(beginX, beginY));
         line2.setEnd(new Point(endX, endY));
+        line2.chkBeginEnd();
         System.out.println();
         System.out.println("=== Update line points ===");
         System.out.println();
@@ -63,6 +65,7 @@ public class TestLine {
         /* reset line points to 1's and 0's */
         line2.setBegin(new Point(1, 1));
         line2.setEnd(new Point(0, 0));
+        line2.chkBeginEnd();
         System.out.println();
         System.out.println("=== Reset begin and end points to 1's and 0's ===");
         System.out.println();

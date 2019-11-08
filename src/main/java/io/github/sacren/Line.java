@@ -13,12 +13,11 @@
  * +setPoints():void
  * +setBeginX(axisX:double):void
  * +setBeginY(axisY:double):void
- * +chkWithEnd(point:Point):void
  * +setBegin(begin:Point):void
  * +setEndX(axisX):void
  * +setEndY(axisY):void
- * +chkWithBegin(point:Point):void
  * +setEnd(end:Point):void
+ * +chkBeginEnd():void
  * +getBegin():Point
  * +getEnd():Point
  * +getDist():double
@@ -36,6 +35,7 @@ public class Line {
         setPoints();
         setBegin(begin);
         setEnd(end);
+        chkBeginEnd();
     }
 
     /** Line constructor by 4 numbers. */
@@ -43,6 +43,7 @@ public class Line {
         setPoints();
         setBegin(new Point(beginX, beginY));
         setEnd(new Point(endX, endY));
+        chkBeginEnd();
     }
 
     /** Line setter to initialize begin and end points. */
@@ -61,19 +62,8 @@ public class Line {
         begin.setY(axisY);
     }
 
-    /** Line checker with given point against end point. */
-    public void chkWithEnd(Point point) {
-        if (point.getX() == end.getX() && point.getY() == end.getY()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                        "Begin %s and End %s can't be the same!",
-                        point, end));
-        }
-    }
-
     /** Line setter for begin point. */
     public void setBegin(Point begin) {
-        chkWithEnd(begin);
         setBeginX(begin.getX());
         setBeginY(begin.getY());
     }
@@ -88,21 +78,20 @@ public class Line {
         end.setY(axisY);
     }
 
-    /** Line checker with given point against begin point. */
-    public void chkWithBegin(Point point) {
-        if (point.getX() == begin.getX() && point.getY() == begin.getY()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                        "End %s and Begin %s can't be the same!",
-                        point, begin));
-        }
-    }
-
     /** Line setter for end point. */
     public void setEnd(Point end) {
-        chkWithBegin(end);
         setEndX(end.getX());
         setEndY(end.getY());
+    }
+
+    /** Line checker for different begin and end points. */
+    public void chkBeginEnd() {
+        if (begin.getX() == end.getX() && begin.getY() == end.getY()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                        "Begin %s and End %s can't be the same!",
+                        begin, end));
+        }
     }
 
     /** Line getter for begin point. */
