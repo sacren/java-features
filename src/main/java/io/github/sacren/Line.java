@@ -40,10 +40,7 @@ public class Line {
 
     /** Line constructor by 4 numbers. */
     public Line(double beginX, double beginY, double endX, double endY) {
-        setPoints();
-        setBegin(new Point(beginX, beginY));
-        setEnd(new Point(endX, endY));
-        chkBeginEnd();
+        this(new Point(beginX, beginY), new Point(endX, endY));
     }
 
     /** Line setter to initialize begin and end points. */
