@@ -33,11 +33,7 @@ public class TestLine {
                 "Distance:    %.2f%n",
                 line1.getDistToLine(new Point(20, 16)));
         /* reset line points to 0's and 1's. */
-        line1.setBeginX(0);
-        line1.setBeginY(0);
-        line1.setEndX(1);
-        line1.setEndY(1);
-        line1.chkBeginEnd();
+        line1.setBeginEnd(new Point(0, 0), new Point(1, 1));
         System.out.println();
         System.out.println("=== Reset points to 0's and 1's ===");
         System.out.println();
@@ -55,17 +51,13 @@ public class TestLine {
         beginY = line2.getBegin().getY() - 1;
         endX = line2.getEnd().getX() - 1;
         endY = line2.getEnd().getY() + 1;
-        line2.setBegin(new Point(beginX, beginY));
-        line2.setEnd(new Point(endX, endY));
-        line2.chkBeginEnd();
+        line2.setBeginEnd(new Point(beginX, beginY), new Point(endX, endY));
         System.out.println();
         System.out.println("=== Update line points ===");
         System.out.println();
         System.out.println(line2);
         /* reset line points to 1's and 0's */
-        line2.setBegin(new Point(1, 1));
-        line2.setEnd(new Point(0, 0));
-        line2.chkBeginEnd();
+        line2.setBeginEnd(new Point(1, 1), new Point(0, 0));
         System.out.println();
         System.out.println("=== Reset begin and end points to 1's and 0's ===");
         System.out.println();
