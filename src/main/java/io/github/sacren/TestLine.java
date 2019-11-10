@@ -26,12 +26,6 @@ public class TestLine {
         System.out.println();
         Line line1 = new Line(beginX, beginY, endX, endY);
         System.out.println(line1);
-        System.out.println();
-        System.out.println("=== Distance of given point to the line ===");
-        System.out.println();
-        System.out.printf(
-                "Distance:    %.2f%n",
-                line1.getDistToLine(new Point(20, 16)));
         /* reset line points to 0's and 1's. */
         line1.setBeginEnd(new Point(0, 0), new Point(1, 1));
         System.out.println();
