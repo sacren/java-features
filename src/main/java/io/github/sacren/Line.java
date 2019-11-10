@@ -27,6 +27,9 @@
  * +toString():String
  */
 public class Line {
+    /* private static constant */
+    private static final Point GIVEN_POINT = new Point(20, 16);
+
     /* private instance variables */
     private Point begin;
     private Point end;
@@ -136,14 +139,16 @@ public class Line {
     public String toString() {
         return String.format(
                 "From %s to %s%n" /* invoke Point's toString() */
-                        + "Start point: %s%n"
-                        + "End point:   %s%n"
-                        + "Distance:    %.2f%n"
-                        + "Gradient:    %.2f",
+                        + "Start point:      %s%n"
+                        + "End point:        %s%n"
+                        + "Point distance:   %.2f%n"
+                        + "Gradient:         %.2f%n"
+                        + "Distance to line: %.2f",
                 begin, end,
                 begin,
                 end,
                 getDist(),
-                getGradient());
+                getGradient(),
+                getDistToLine(GIVEN_POINT));
     }
 }
