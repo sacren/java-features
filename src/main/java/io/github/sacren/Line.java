@@ -23,8 +23,8 @@
  * +getEnd():Point
  * +getDist():double
  * +getGradient():double
- * +getDistToLine(p:Point):double
- * +getDistToLine(axisX:double, axisY:double):double
+ * +distToLine(p:Point):double
+ * +distToLine(axisX:double, axisY:double):double
  * +toString():String
  */
 public class Line {
@@ -122,7 +122,7 @@ public class Line {
     }
 
     /**
-     * Line getter for the distance from given point to the line.
+     * Line distance from given point to the line.
      *
      * <p>D = ρ * sin (φ - φ')
      *
@@ -131,14 +131,14 @@ public class Line {
      * φ: gradient of the line
      * φ': gradient of the line from begin to the given point
      */
-    public double getDistToLine(Point p) {
+    public double distToLine(Point p) {
         double gradient = Math.atan2(p.getY() - begin.getY(), p.getX() - begin.getX());
         return begin.getDist(p) * Math.abs(Math.sin(getGradient() - gradient));
     }
 
-    /** Line distance from given point to line by numbers. */
-    public double getDistToLine(double axisX, double axisY) {
-        return getDistToLine(new Point(axisX, axisY));
+    /** Line distance from given point to the line by pair of numbers. */
+    public double distToLine(double axisX, double axisY) {
+        return distToLine(new Point(axisX, axisY));
     }
 
     /** Line instance formatted string. */
@@ -156,7 +156,7 @@ public class Line {
                 end,
                 getDist(),
                 getGradient(),
-                getDistToLine(GIVEN_POINT),
-                getDistToLine(GIVEN_POINT.getX(), GIVEN_POINT.getY()));
+                distToLine(GIVEN_POINT),
+                distToLine(GIVEN_POINT.getX(), GIVEN_POINT.getY()));
     }
 }
