@@ -23,7 +23,8 @@
  * +getEnd():Point
  * +getDist():double
  * +getGradient():double
- * +getDistToLine():double
+ * +getDistToLine(p:Point):double
+ * +getDistToLine(axisX:double, axisY:double):double
  * +toString():String
  */
 public class Line {
@@ -135,6 +136,11 @@ public class Line {
         return begin.getDist(p) * Math.abs(Math.sin(getGradient() - gradient));
     }
 
+    /** Line distance from given point to line by numbers. */
+    public double getDistToLine(double axisX, double axisY) {
+        return getDistToLine(new Point(axisX, axisY));
+    }
+
     /** Line instance formatted string. */
     public String toString() {
         return String.format(
@@ -143,12 +149,14 @@ public class Line {
                         + "End point:        %s%n"
                         + "Point distance:   %.2f%n"
                         + "Gradient:         %.2f%n"
+                        + "Distance to line: %.2f%n"
                         + "Distance to line: %.2f",
                 begin, end,
                 begin,
                 end,
                 getDist(),
                 getGradient(),
-                getDistToLine(GIVEN_POINT));
+                getDistToLine(GIVEN_POINT),
+                getDistToLine(GIVEN_POINT.getX(), GIVEN_POINT.getY()));
     }
 }
