@@ -25,6 +25,7 @@
  * +getGradient():double
  * +distToLine(p:Point):double
  * +distToLine(axisX:double, axisY:double):double
+ * +hasIntersect(l:Line):boolean
  * +toString():String
  */
 public class Line {
@@ -139,6 +140,11 @@ public class Line {
     /** Line distance from given point to the line by pair of numbers. */
     public double distToLine(double axisX, double axisY) {
         return distToLine(new Point(axisX, axisY));
+    }
+
+    /** Line checker if this line intersects with the given line. */
+    public boolean hasIntersect(Line l) {
+        return getGradient() != l.getGradient();
     }
 
     /** Line instance formatted string. */
