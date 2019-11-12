@@ -145,7 +145,7 @@ public class Line {
     public String toString() {
         return String.format(
                 "From %s to %s%n" /* invoke Point's toString() */
-                        + "Start point:      %s%n"
+                        + "Begin point:      %s%n"
                         + "End point:        %s%n"
                         + "Point distance:   %.2f%n"
                         + "Gradient:         %.2f%n"
