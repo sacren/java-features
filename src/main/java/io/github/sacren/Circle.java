@@ -1,7 +1,7 @@
 /**
- * Circle is composed of Point and extends Shape.
+ * Circle is composed of Point object and extends Shape.
  *
- * <p>Private instance data with default values:
+ * <p>Private instance variables with default value:
  * -center:Point = {0, 0}
  * -radius:double = 1.0
  *
@@ -25,17 +25,17 @@
  * +toString():String
  */
 public class Circle extends Shape {
-    /* public static data */
+    /* public static variable */
     public static final String FAVORITE_COLOR = "pink";
 
-    /* private static data */
+    /* private static variable */
     private static int count;
 
-    /* private instance data */
+    /* private instance variables */
     private Point center;
     private double radius;
 
-    /** Circle constructor with default data. */
+    /** Circle default constructor. */
     public Circle() {
         super("green"); /* circle instance default color */
         center = new Point();
@@ -43,19 +43,19 @@ public class Circle extends Shape {
         count++;
     }
 
-    /** Circle constructor with custom radius only. */
+    /** Circle constructor with radius for parameter. */
     public Circle(double radius) {
         this();
         setRadius(radius);
     }
 
-    /** Circle constructor with custom color and radius. */
+    /** Circle constructor with color and radius for parameters. */
     public Circle(double radius, String color) {
         this(radius);
         setColor(color);
     }
 
-    /** Circle constructor using Point. */
+    /** Circle constructor using Point object. */
     public Circle(Point center, double radius) {
         this(radius);
         this.center = center;
@@ -118,7 +118,7 @@ public class Circle extends Shape {
         this.center = center;
     }
 
-    /** Circle string method. */
+    /** Circle instance formatted string. */
     public String toString() {
         return String.format(
                 "Instance count: %d%n"
