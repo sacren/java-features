@@ -31,6 +31,7 @@
 public class Line {
     /* private static constant */
     private static final Point GIVEN_POINT = new Point(20, 16);
+    private static final Line GIVEN_LINE = new Line(new Point(1, 1), GIVEN_POINT);
 
     /* private instance variables */
     private Point begin;
@@ -156,13 +157,15 @@ public class Line {
                         + "Point distance:   %.2f%n"
                         + "Gradient:         %.2f%n"
                         + "Distance to line: %.2f%n"
-                        + "Distance to line: %.2f",
+                        + "Distance to line: %.2f%n"
+                        + "Intersects with:  %s",
                 begin, end,
                 begin,
                 end,
                 getDist(),
                 getGradient(),
                 distToLine(GIVEN_POINT),
-                distToLine(GIVEN_POINT.getX(), GIVEN_POINT.getY()));
+                distToLine(GIVEN_POINT.getX(), GIVEN_POINT.getY()),
+                hasIntersect(GIVEN_LINE));
     }
 }
