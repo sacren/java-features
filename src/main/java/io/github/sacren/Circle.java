@@ -14,6 +14,7 @@
  * +Circle(center:Point, radius:double, color:String)
  *
  * <p>Public methods:
+ * +setCenter():void
  * +setCenter(center:Point):void
  * +getRadius():double
  * +setRadius(radius:double):void
@@ -38,7 +39,7 @@ public class Circle extends Shape {
     /** Circle default constructor. */
     public Circle() {
         super("green"); /* circle instance default color */
-        center = new Point();
+        setCenter();
         radius = 1;
         count++;
     }
@@ -70,6 +71,11 @@ public class Circle extends Shape {
     public Circle(Point center, double radius, String color) {
         this(center, radius);
         setColor(color);
+    }
+
+    /** Circle setter for the default center of circle. */
+    public void setCenter() {
+        center = new Point();
     }
 
     /** Circle setter for the center of circle. */
