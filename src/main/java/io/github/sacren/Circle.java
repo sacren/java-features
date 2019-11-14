@@ -14,6 +14,7 @@
  * +Circle(center:Point, radius:double, color:String)
  *
  * <p>Public methods:
+ * +setCenter(center:Point):void
  * +getRadius():double
  * +setRadius(radius:double):void
  * +getDiameter():double
@@ -21,7 +22,6 @@
  * +getPerimeter():double
  * +getArea():double
  * +getCenter():Point
- * +setCenter(center:Point):void
  * +toString():String
  */
 public class Circle extends Shape {
@@ -72,6 +72,11 @@ public class Circle extends Shape {
         setColor(color);
     }
 
+    /** Circle setter for the center of circle. */
+    public void setCenter(Point center) {
+        this.center = new Point(center.getX(), center.getY());
+    }
+
     /** Circle getter for the radius of circle. */
     public double getRadius() {
         return radius;
@@ -111,11 +116,6 @@ public class Circle extends Shape {
     /** Circle getter for the center of circle. */
     public Point getCenter() {
         return center;
-    }
-
-    /** Circle setter for the center of circle. */
-    public void setCenter(Point center) {
-        this.center = center;
     }
 
     /** Circle instance formatted string. */
