@@ -16,8 +16,8 @@
  * <p>Public methods:
  * +setCenter():void
  * +setCenter(center:Point):void
- * +getRadius():double
  * +setRadius(radius:double):void
+ * +getRadius():double
  * +getDiameter():double
  * +getCircum():double
  * +getPerimeter():double
@@ -83,18 +83,18 @@ public class Circle extends Shape {
         this.center = new Point(center.getX(), center.getY());
     }
 
-    /** Circle getter for the radius of circle. */
-    public double getRadius() {
-        return radius;
-    }
-
     /** Circle setter for the radius of circle. */
     public void setRadius(double radius) {
-        if (radius < 0) {
+        if (radius <= 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", radius));
         }
         this.radius = radius;
+    }
+
+    /** Circle getter for the radius of circle. */
+    public double getRadius() {
+        return radius;
     }
 
     /** Circle getter for circle diameter. */
