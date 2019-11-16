@@ -24,6 +24,7 @@
  * +getPerimeter():double
  * +getArea():double
  * +getCenter():Point
+ * +distance(another:Circle):double
  * +toString():String
  */
 public class Circle extends Shape {
@@ -128,6 +129,12 @@ public class Circle extends Shape {
     /** Circle getter for the center of circle. */
     public Point getCenter() {
         return center;
+    }
+
+    /** Circle method for distance from this circle to another. */
+    public double distance(Circle another) {
+        Line toAnother = new Line(center, another.getCenter());
+        return toAnother.getDist();
     }
 
     /** Circle instance formatted string. */
