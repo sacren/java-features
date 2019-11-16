@@ -52,5 +52,13 @@ public class TestCircle {
         c4.setRadius(c4.getRadius() + 1);
         c4.setColor("white");
         System.out.println(c4);
+        System.out.println();
+        System.out.println("=== Distance between circles ===");
+        System.out.println();
+        System.out.printf(
+                "Green to White:   %.2f%n"
+                        + "White to default: %.2f%n",
+                c3.distance(c4),
+                c4.distance(c1));
     }
 }
