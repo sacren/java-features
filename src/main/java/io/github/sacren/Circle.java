@@ -133,8 +133,7 @@ public class Circle extends Shape {
 
     /** Circle method for distance from this circle to another. */
     public double distance(Circle another) {
-        Line toAnother = new Line(center, another.center);
-        return toAnother.getDist();
+        return center.getDist(another.center);
     }
 
     /** Circle instance formatted string. */
