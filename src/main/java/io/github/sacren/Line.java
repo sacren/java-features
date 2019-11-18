@@ -21,8 +21,8 @@
  * +setBeginEnd(begin:Point, end:Point):void
  * +getBegin():Point
  * +getEnd():Point
- * +getDist():double
- * +getGradient():double
+ * +distance():double
+ * +gradient():double
  * +distToLine(p:Point):double
  * +distToLine(axisX:double, axisY:double):double
  * +hasIntersect(l:Line):boolean
@@ -113,18 +113,18 @@ public class Line {
         return end;
     }
 
-    /** Line getter for distance from begin point to end point. */
-    public double getDist() {
-        return begin.getDist(end);
+    /** Line method for distance from begin point to end point. */
+    public double distance() {
+        return begin.distance(end);
     }
 
-    /** Line getter for the gradient of Line object. */
-    public double getGradient() {
+    /** Line method for gradient of Line object. */
+    public double gradient() {
         return Math.atan2(end.getY() - begin.getY(), end.getX() - begin.getX());
     }
 
     /**
-     * Line distance from given point to the line.
+     * Line method for distance from given point to this line.
      *
      * <p>D = ρ * sin (φ - φ')
      *
@@ -135,7 +135,7 @@ public class Line {
      */
     public double distToLine(Point p) {
         double gradient = Math.atan2(p.getY() - begin.getY(), p.getX() - begin.getX());
-        return begin.getDist(p) * Math.abs(Math.sin(getGradient() - gradient));
+        return begin.distance(p) * Math.abs(Math.sin(gradient() - gradient));
     }
 
     /** Line distance from given point to the line by pair of numbers. */
@@ -145,7 +145,7 @@ public class Line {
 
     /** Line checker if this line intersects with the given line. */
     public boolean hasIntersect(Line l) {
-        return getGradient() != l.getGradient();
+        return gradient() != l.gradient();
     }
 
     /** Line instance formatted string. */
@@ -162,8 +162,8 @@ public class Line {
                 begin, end,
                 begin,
                 end,
-                getDist(),
-                getGradient(),
+                distance(),
+                gradient(),
                 distToLine(GIVEN_POINT),
                 distToLine(GIVEN_POINT.getX(), GIVEN_POINT.getY()),
                 hasIntersect(GIVEN_LINE));
