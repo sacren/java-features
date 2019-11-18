@@ -19,11 +19,11 @@
  * +setRadius():void
  * +setRadius(radius:double):void
  * +getRadius():double
- * +getDiameter():double
- * +getCircum():double
- * +getPerimeter():double
- * +getArea():double
  * +getCenter():Point
+ * +diameter():double
+ * +circumference():double
+ * +perimeter():double
+ * +area():double
  * +distance(another:Circle):double
  * +toString():String
  */
@@ -104,31 +104,31 @@ public class Circle extends Shape {
         return radius;
     }
 
-    /** Circle getter for circle diameter. */
-    public double getDiameter() {
-        return radius * 2;
-    }
-
-    /** Circle getter for circle circumference. */
-    public double getCircum() {
-        return getPerimeter();
-    }
-
-    /** Circle getter for circle perimeter. */
-    @Override
-    public double getPerimeter() {
-        return Math.PI * getDiameter();
-    }
-
-    /** Circle getter for circle area. */
-    @Override
-    public double getArea() {
-        return Math.PI * radius * radius;
-    }
-
     /** Circle getter for the center of circle. */
     public Point getCenter() {
         return center;
+    }
+
+    /** Circle method for circle diameter. */
+    public double diameter() {
+        return radius * 2;
+    }
+
+    /** Circle method for circle circumference. */
+    public double circumference() {
+        return perimeter();
+    }
+
+    /** Circle method for circle circumference by diameter. */
+    @Override
+    public double perimeter() {
+        return Math.PI * diameter();
+    }
+
+    /** Circle method for circle area. */
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
     }
 
     /** Circle method for distance from this circle to another. */
@@ -148,9 +148,9 @@ public class Circle extends Shape {
                         + "Center:         %s",
                 count,
                 radius,
-                getDiameter(),
-                getCircum(),
-                getArea(),
+                diameter(),
+                circumference(),
+                area(),
                 getColor(),
                 center);
     }

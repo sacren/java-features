@@ -22,7 +22,7 @@ public class TestSubstitute {
                         + "The substituted circle area is %.2f%n",
                 circle.getRadius(),
                 substituteCircle.getRadius(),
-                circle.getArea(),
-                substituteCircle.getArea());
+                circle.area(),
+                substituteCircle.area());
     }
 }

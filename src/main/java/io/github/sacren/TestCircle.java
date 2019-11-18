@@ -33,9 +33,9 @@ public class TestCircle {
                         + "Circle color:         %s%n"
                         + "Circle center:        %s%n",
                 c3.getRadius(),
-                c3.getDiameter(),
-                c2.getPerimeter(), /* overridden */
-                c2.getArea(), /* overridden */
+                c3.diameter(),
+                c2.perimeter(), /* overridden */
+                c2.area(), /* overridden */
                 c2.getColor(), /* Shape method */
                 c3.getCenter());
         System.out.println();

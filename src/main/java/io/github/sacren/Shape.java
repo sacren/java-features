@@ -10,8 +10,8 @@
  * +Shape(color:String)
  *
  * <p>Abstract methods:
- * +getArea():double
- * +getPerimeter():double
+ * +area():double
+ * +perimeter():double
  *
  * <p>Public methods:
  * +getColor():String
@@ -37,8 +37,8 @@ public abstract class Shape {
     }
 
     /** Shape interface for area of shapes. */
-    public abstract double getArea();
+    public abstract double area();
 
     /** Shape interface for perimeter of shapes. */
-    public abstract double getPerimeter();
+    public abstract double perimeter();
 }

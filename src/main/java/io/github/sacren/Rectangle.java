@@ -20,8 +20,8 @@
  * +setWidth(width:double):void
  * +setSides(length:double, width:double):void
  * +setSides(sides:Point):void
- * +getArea():double
- * +getPerimeter():double
+ * +area():double
+ * +perimeter():double
  * +toString():String
  */
 public class Rectangle extends Shape {
@@ -110,15 +110,15 @@ public class Rectangle extends Shape {
         setSides(p.getX(), p.getY());
     }
 
-    /** Rectangle getter for area. */
+    /** Rectangle method for rectangle area. */
     @Override
-    public double getArea() {
+    public double area() {
         return getLength() * getWidth();
     }
 
-    /** Rectangle getter for perimeter. */
+    /** Rectangle method for rectangle perimeter. */
     @Override
-    public double getPerimeter() {
+    public double perimeter() {
         return (getLength() + getWidth()) * 2;
     }
 
@@ -133,7 +133,7 @@ public class Rectangle extends Shape {
                 getColor(),
                 getLength(),
                 getWidth(),
-                getArea(),
-                getPerimeter());
+                area(),
+                perimeter());
     }
 }

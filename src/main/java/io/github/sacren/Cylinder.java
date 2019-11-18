@@ -15,7 +15,7 @@
  * +getHeight():double
  * +setHeight(height:double):void
  * +getBaseArea():double
- * +getArea():double
+ * +area():double
  * +getVolume():double
  * +toString():String
  */
@@ -67,15 +67,15 @@ public class Cylinder extends Circle {
         this.height = height;
     }
 
-    /** Cylinder getter for base area. */
+    /** Cylinder method for base area. */
     public double getBaseArea() {
-        return super.getArea();
+        return super.area();
     }
 
-    /** Cylinder getter for surface area. */
+    /** Cylinder method for surface area. */
     @Override
-    public double getArea() {
-        return getBaseArea() * 2 + getPerimeter() * height;
+    public double area() {
+        return getBaseArea() * 2 + perimeter() * height;
     }
 
     /** Cylinder getter for volume. */
@@ -97,7 +97,7 @@ public class Cylinder extends Circle {
                 getHeight(),
                 getColor(),
                 getBaseArea(),
-                getArea(),
+                area(),
                 getVolume());
     }
 }

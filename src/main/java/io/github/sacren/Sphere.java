@@ -6,7 +6,7 @@
  * +Sphere(radius:double)
  *
  * <p>Public methods:
- * +getArea():double
+ * +area():double
  * +getVolume():double
  * +getFavColor():String
  * +toString():String
@@ -26,10 +26,10 @@ public class Sphere extends Circle {
         super(radius);
     }
 
-    /** Sphere getter for surface area. */
+    /** Sphere method for sphere surface area. */
     @Override
-    public double getArea() { /* hide getArea() in Circle superclass */
-        return super.getArea() * 4; /* use getArea() from Circle superclass */
+    public double area() { /* hide area() in Circle superclass */
+        return super.area() * 4; /* use area() from Circle superclass */
     }
 
     /** Sphere getter for volume. */
@@ -54,9 +54,9 @@ public class Sphere extends Circle {
                         + "Color:         %s%n"
                         + "Center:        %s",
                 getRadius(),
-                getDiameter(),
-                getCircum(),
-                getArea(),
+                diameter(),
+                circumference(),
+                area(),
                 getVolume(),
                 getColor(),
                 getCenter());

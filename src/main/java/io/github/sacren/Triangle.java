@@ -72,20 +72,20 @@ public class Triangle extends Shape {
         setTriangle(bh.getX(), bh.getY());
     }
 
-    /** Triangle getter for the area. */
+    /** Triangle method for triangle area. */
     @Override
-    public double getArea() {
+    public double area() {
         return getBase() * getHeight() / 2;
     }
 
     /**
-     * Triangle getter for the perimeter.
+     * Triangle method for triangle perimeter.
      *
      * <p>With given base and height, the perimeter is indeterministic.  The
      * calculation gives the smallest value.
      */
     @Override
-    public double getPerimeter() {
+    public double perimeter() {
         return Math.hypot(bh.getX() / 2, bh.getY()) * 2 + bh.getX();
     }
 
@@ -99,8 +99,8 @@ public class Triangle extends Shape {
                         + "Color:     %s",
                 getBase(),
                 getHeight(),
-                getArea(),
-                getPerimeter(),
+                area(),
+                perimeter(),
                 getColor());
     }
 }
