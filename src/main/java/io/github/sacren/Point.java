@@ -13,8 +13,8 @@
  * +setY(axisY:double):void
  * +getX():double
  * +getY():double
+ * +distance(another:Point):double
  * +distance(axisX:double, axisY:double):double
- * +distance(p:Point):double
  * +distance():double
  * +toString():String
  */
