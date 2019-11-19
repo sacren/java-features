@@ -59,12 +59,12 @@ public class Point {
 
     /** Point method for distance to the point by a pair of numbers. */
     public double distance(double axisX, double axisY) {
-        return Math.hypot(axisX - getX(), axisY - getY());
+        return distance(new Point(axisX, axisY));
     }
 
     /** Point method for distance to the point of (0, 0). */
     public double distance() {
-        return Math.hypot(getX(), getY());
+        return distance(0, 0);
     }
 
     /** Point instance formatted string. */
