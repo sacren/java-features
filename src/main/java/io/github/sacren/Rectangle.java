@@ -25,7 +25,7 @@
  * +toString():String
  */
 public class Rectangle extends Shape {
-    /* private instance data */
+    /* private instance variable */
     private Duo sides = new Duo();
 
     /** Rectangle default constructor. */
@@ -45,13 +45,13 @@ public class Rectangle extends Shape {
         setLength(length);
     }
 
-    /** Rectangle constructor with length and width. */
+    /** Rectangle constructor with both length and width. */
     public Rectangle(double length, double width) {
         this();
         setSides(length, width);
     }
 
-    /** Rectangle constructor with Duo instance. */
+    /** Rectangle constructor with Duo object. */
     public Rectangle(Duo sides) {
         this();
         setSides(sides);
@@ -64,7 +64,7 @@ public class Rectangle extends Shape {
         setSides(length, width);
     }
 
-    /** Rectangle constructor with color and Duo instance. */
+    /** Rectangle constructor with color and Duo object. */
     public Rectangle(String color, Duo sides) {
         this();
         setColor(color);
@@ -122,7 +122,7 @@ public class Rectangle extends Shape {
         return (getLength() + getWidth()) * 2;
     }
 
-    /** Rectangle instance printout. */
+    /** Rectangle instance formatted string. */
     public String toString() {
         return String.format(
                 "Color:     %s%n"
