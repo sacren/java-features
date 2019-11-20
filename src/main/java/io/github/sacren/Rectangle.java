@@ -2,16 +2,16 @@
  * Rectangle subclass extends Shape superclass.
  *
  * <p>Private instance data with default values:
- * -sides:Point = {2.0f, 1.0f}
+ * -sides:Duo = {2.0f, 1.0f}
  *
  * <p>Constructor:
  * +Rectangle()
  * +Rectangle(r:Rectangle)
  * +Rectangle(length:double)
  * +Rectangle(length:double, width:double)
- * +Rectangle(p:Point)
+ * +Rectangle(sides:Duo)
  * +Rectangle(color:String, length:double, width:double)
- * +Rectangle(color:String, p:Point)
+ * +Rectangle(color:String, sides:Duo)
  *
  * <p>Public methods:
  * +getLength():double
@@ -19,19 +19,19 @@
  * +getWidth():double
  * +setWidth(width:double):void
  * +setSides(length:double, width:double):void
- * +setSides(sides:Point):void
+ * +setSides(sides:Duo):void
  * +area():double
  * +perimeter():double
  * +toString():String
  */
 public class Rectangle extends Shape {
     /* private instance data */
-    private Point sides = new Point();
+    private Duo sides = new Duo();
 
     /** Rectangle default constructor. */
     public Rectangle() {
         super("cyan"); /* rectangle instance default color */
-        setSides(new Point(2.0f, 1.0f));
+        setSides(new Duo(2.0f, 1.0f));
     }
 
     /** Rectangle default constructor with parameter place holder. */
@@ -51,10 +51,10 @@ public class Rectangle extends Shape {
         setSides(length, width);
     }
 
-    /** Rectangle constructor with Point instance. */
-    public Rectangle(Point p) {
+    /** Rectangle constructor with Duo instance. */
+    public Rectangle(Duo sides) {
         this();
-        setSides(p);
+        setSides(sides);
     }
 
     /** Rectangle constructor with color, lenghth and width. */
@@ -64,39 +64,39 @@ public class Rectangle extends Shape {
         setSides(length, width);
     }
 
-    /** Rectangle constructor with color and Point instance. */
-    public Rectangle(String color, Point p) {
+    /** Rectangle constructor with color and Duo instance. */
+    public Rectangle(String color, Duo sides) {
         this();
         setColor(color);
-        setSides(p);
+        setSides(sides);
     }
 
-    /** Rectangle getter for length. */
+    /** Rectangle getter for rectangle length. */
     public double getLength() {
-        return sides.getX();
+        return sides.getFirstDbl();
     }
 
-    /** Rectangle setter for length. */
+    /** Rectangle setter for rectangle length. */
     public void setLength(double length) {
         if (length <= 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", length));
         }
-        sides.setX(length);
+        sides.setFirst(length);
     }
 
-    /** Rectangle getter for width. */
+    /** Rectangle getter for rectangle width. */
     public double getWidth() {
-        return sides.getY();
+        return sides.getSecondDbl();
     }
 
-    /** Rectangle setter for width. */
+    /** Rectangle setter for rectangle width. */
     public void setWidth(double width) {
         if (width <= 0) {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", width));
         }
-        sides.setY(width);
+        sides.setSecond(width);
     }
 
     /** Rectangle setter for both sides. */
@@ -105,9 +105,9 @@ public class Rectangle extends Shape {
         setWidth(width);
     }
 
-    /** Rectangle setter using Point for both sides. */
-    public void setSides(Point p) {
-        setSides(p.getX(), p.getY());
+    /** Rectangle setter using Duo for both sides. */
+    public void setSides(Duo sides) {
+        setSides(sides.getFirstDbl(), sides.getSecondDbl());
     }
 
     /** Rectangle method for rectangle area. */

@@ -33,9 +33,9 @@ public class TestRectangle {
         Rectangle r3 = new Rectangle(22, 4);
         System.out.println(r3);
         System.out.println();
-        System.out.println("=== Rectangle with Point for length and width ===");
+        System.out.println("=== Rectangle with Duo for length and width ===");
         System.out.println();
-        Point p1 = new Point(r3.getLength(), r3.getWidth());
+        Duo p1 = new Duo(r3.getLength(), r3.getWidth());
         Rectangle r4 = new Rectangle(p1);
         System.out.println(r4);
         System.out.println();
@@ -49,14 +49,14 @@ public class TestRectangle {
         System.out.println();
         System.out.println(r5);
         System.out.println();
-        System.out.println("=== Rectangle with color and Point ===");
+        System.out.println("=== Rectangle with color and Duo ===");
         System.out.println();
-        /* rectangle with color and Point */
-        Point p2 = new Point(r5.getLength(), r5.getWidth());
+        /* rectangle with color and Duo */
+        Duo p2 = new Duo(r5.getLength(), r5.getWidth());
         Rectangle r6 = new Rectangle("orange", p2);
         r6.setColor("grey");
         System.out.println(r6);
-        Point p3 = new Point(r5.getLength() + 1, r5.getWidth() + 1);
+        Duo p3 = new Duo(r5.getLength() + 1, r5.getWidth() + 1);
         r6.setSides(p3);
         System.out.println();
         System.out.println(r6);
