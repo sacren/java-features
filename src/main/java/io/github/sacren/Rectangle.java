@@ -14,12 +14,12 @@
  * +Rectangle(color:String, sides:Duo)
  *
  * <p>Public methods:
- * +getLength():double
  * +setLength(length:double):void
- * +getWidth():double
  * +setWidth(width:double):void
- * +setSides(length:double, width:double):void
  * +setSides(sides:Duo):void
+ * +setSides(length:double, width:double):void
+ * +getLength():double
+ * +getWidth():double
  * +area():double
  * +perimeter():double
  * +toString():String
@@ -71,11 +71,6 @@ public class Rectangle extends Shape {
         setSides(sides);
     }
 
-    /** Rectangle getter for rectangle length. */
-    public double getLength() {
-        return sides.getFirstDbl();
-    }
-
     /** Rectangle setter for rectangle length. */
     public void setLength(double length) {
         if (length <= 0) {
@@ -83,11 +78,6 @@ public class Rectangle extends Shape {
                     String.format("%f is invalid!", length));
         }
         sides.setFirst(length);
-    }
-
-    /** Rectangle getter for rectangle width. */
-    public double getWidth() {
-        return sides.getSecondDbl();
     }
 
     /** Rectangle setter for rectangle width. */
@@ -99,15 +89,25 @@ public class Rectangle extends Shape {
         sides.setSecond(width);
     }
 
-    /** Rectangle setter for both sides. */
-    public void setSides(double length, double width) {
-        setLength(length);
-        setWidth(width);
+    /** Rectangle setter for both sides by Duo object. */
+    public void setSides(Duo sides) {
+        setLength(sides.getFirstDbl());
+        setWidth(sides.getSecondDbl());
     }
 
-    /** Rectangle setter using Duo for both sides. */
-    public void setSides(Duo sides) {
-        setSides(sides.getFirstDbl(), sides.getSecondDbl());
+    /** Rectangle setter for both sides by two numbers. */
+    public void setSides(double length, double width) {
+        setSides(new Duo(length, width));
+    }
+
+    /** Rectangle getter for rectangle length. */
+    public double getLength() {
+        return sides.getFirstDbl();
+    }
+
+    /** Rectangle getter for rectangle width. */
+    public double getWidth() {
+        return sides.getSecondDbl();
     }
 
     /** Rectangle method for rectangle area. */
