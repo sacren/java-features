@@ -26,11 +26,12 @@
  */
 public class Rectangle extends Shape {
     /* private instance variable */
-    private Duo sides = new Duo();
+    private Duo sides;
 
     /** Rectangle default constructor. */
     public Rectangle() {
         super("cyan"); /* rectangle instance default color */
+        setSides();
         setSides(new Duo(2.0f, 1.0f));
     }
 
@@ -87,6 +88,11 @@ public class Rectangle extends Shape {
                     String.format("%f is invalid!", width));
         }
         sides.setSecond(width);
+    }
+
+    /** Rectangle setter for initial value of length and width. */
+    public void setSides() {
+        sides = new Duo();
     }
 
     /** Rectangle setter for both sides by Duo object. */
