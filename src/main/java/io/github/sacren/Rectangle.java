@@ -46,30 +46,28 @@ public class Rectangle extends Shape {
         setLength(length);
     }
 
-    /** Rectangle constructor with both length and width. */
-    public Rectangle(double length, double width) {
-        this();
-        setSides(length, width);
-    }
-
     /** Rectangle constructor with Duo object. */
     public Rectangle(Duo sides) {
-        this();
+        super("navy");
+        setSides();
         setSides(sides);
+    }
+
+    /** Rectangle constructor with both length and width. */
+    public Rectangle(double length, double width) {
+        this(new Duo(length, width));
     }
 
     /** Rectangle constructor with color, lenghth and width. */
     public Rectangle(String color, double length, double width) {
-        this();
+        this(length, width);
         setColor(color);
-        setSides(length, width);
     }
 
     /** Rectangle constructor with color and Duo object. */
     public Rectangle(String color, Duo sides) {
-        this();
+        this(sides);
         setColor(color);
-        setSides(sides);
     }
 
     /** Rectangle setter for rectangle length. */
