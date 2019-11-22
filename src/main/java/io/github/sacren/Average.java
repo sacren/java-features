@@ -2,34 +2,35 @@
  * Average class for average score of 3 students.
  *
  * <p>Private instance data:
- * -scores:double[]
+ * -scores:int[]
  *
  * <p>Constructor:
- * +Average(scores:double[])
+ * +Average(scores:int[])
  *
  * <p>Public methods:
- * +check(scores:double[]);
+ * +check(scores:int[]);
  * +getAverage():double
  * +toString():String
  */
 public class Average {
     /* private static data */
     public static final int STUDENT_COUNT = 3;
+    public static final String[] STUDENT_LIST = {"One", "Two", "Three"};
 
     /* private instance data */
-    private double[] scores;
+    private int[] scores;
 
     /** Average constructor. */
-    public Average(double[] scores) {
+    public Average(int[] scores) {
         check(scores);
     }
 
     /** Average method to validate the scores. */
-    public void check(double[] scores) {
-        for (double score : scores) {
+    public void check(int[] scores) {
+        for (int score : scores) {
             if (score < 0 || score > 100) {
                 throw new IllegalArgumentException(
-                        String.format("%f is invalid!", score));
+                        String.format("%d is invalid!", score));
             }
         }
         this.scores = scores;
@@ -38,7 +39,7 @@ public class Average {
     /** Average getter for the average score. */
     public double getAverage() {
         double sum = 0;
-        for (double score : scores) {
+        for (int score : scores) {
             sum += score;
         }
         return sum / STUDENT_COUNT;

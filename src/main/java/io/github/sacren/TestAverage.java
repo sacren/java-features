@@ -6,11 +6,13 @@ import java.util.Scanner;
 public class TestAverage {
     /** Average test driver. */
     public static void main(String[] args) {
-        double[] scores = new double[Average.STUDENT_COUNT];
+        int[] scores = new int[Average.STUDENT_COUNT];
         Scanner in = new Scanner(System.in);
         for (int i = 0; i < Average.STUDENT_COUNT; i++) {
-            System.out.printf("Enter the score of Student %d: ", i + 1);
-            scores[i] = in.nextDouble();
+            System.out.printf(
+                    "Enter the score of Student %s: ",
+                    Average.STUDENT_LIST[i]);
+            scores[i] = in.nextInt();
         }
         in.close();
         System.out.println();
