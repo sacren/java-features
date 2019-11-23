@@ -10,7 +10,7 @@
  * <p>Public methods:
  * +setScores():void
  * +setScores(scores:int[]):void;
- * +getAverage():double
+ * +average():double
  * +toString():String
  */
 public class Average {
@@ -44,8 +44,8 @@ public class Average {
         }
     }
 
-    /** Average getter for the average score. */
-    public double getAverage() {
+    /** Average method for the average of all scores. */
+    public double average() {
         double sum = 0;
         for (int score : scores) {
             sum += score;
@@ -57,6 +57,6 @@ public class Average {
     public String toString() {
         return String.format(
                 "Average score: %.2f",
-                getAverage());
+                average());
     }
 }
