@@ -1,39 +1,47 @@
 /**
  * Average class for average score of 3 students.
  *
- * <p>Private instance data:
+ * <p>Private instance variable:
  * -scores:int[]
  *
  * <p>Constructor:
  * +Average(scores:int[])
  *
  * <p>Public methods:
- * +check(scores:int[]);
+ * +setScores():void
+ * +setScores(scores:int[]):void;
  * +getAverage():double
  * +toString():String
  */
 public class Average {
-    /* private static data */
+    /* private static constants */
     public static final int STUDENT_COUNT = 3;
     public static final String[] STUDENT_LIST = {"One", "Two", "Three"};
 
-    /* private instance data */
+    /* private instance variable */
     private int[] scores;
 
     /** Average constructor. */
     public Average(int[] scores) {
-        check(scores);
+        setScores();
+        setScores(scores);
     }
 
-    /** Average method to validate the scores. */
-    public void check(int[] scores) {
+    /** Average setter for the size of scores array. */
+    public void setScores() {
+        scores = new int[STUDENT_COUNT];
+    }
+
+    /** Average setter for the individual value of scores array. */
+    public void setScores(int[] scores) {
+        int i = 0;
         for (int score : scores) {
             if (score < 0 || score > 100) {
                 throw new IllegalArgumentException(
                         String.format("%d is invalid!", score));
             }
+            this.scores[i++] = score;
         }
-        this.scores = scores;
     }
 
     /** Average getter for the average score. */
@@ -45,7 +53,7 @@ public class Average {
         return sum / STUDENT_COUNT;
     }
 
-    /** Average string method. */
+    /** Average instance formatted string. */
     public String toString() {
         return String.format(
                 "Average score: %.2f",
