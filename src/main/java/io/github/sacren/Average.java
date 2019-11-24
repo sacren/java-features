@@ -14,7 +14,7 @@
  * +toString():String
  */
 public class Average {
-    /* private static constants */
+    /* public static constants */
     public static final int STUDENT_COUNT = 3;
     public static final String[] STUDENT_LIST = {"One", "Two", "Three"};
 
