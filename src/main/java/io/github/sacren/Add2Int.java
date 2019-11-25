@@ -10,6 +10,7 @@
  * <p>Public methods:
  * +setNumbers():void
  * +setNumbers(num1:int, num2:int):void
+ * +sum():int
  * +toString():String
  */
 public class Add2Int {
@@ -33,12 +34,23 @@ public class Add2Int {
         numbers.setSecond(num2);
     }
 
-    /** Add2Int instance formatted string. */
-    public String toString() {
+    /** Add2Int method for the sum of two numbers. */
+    public int sum() {
         int num1 = numbers.getFirstInt();
         int num2 = numbers.getSecondInt();
+        if (num1 > 0 && num2 > 0 && Integer.MAX_VALUE - num1 < num2
+                || num1 < 0 && num2 < 0 && Integer.MIN_VALUE - num1 > num2) {
+            throw new IllegalArgumentException("Out of range!");
+        }
+        return Integer.sum(num1, num2);
+    }
+
+    /** Add2Int instance formatted string. */
+    public String toString() {
         return String.format(
                 "%d + %d = %d",
-                num1, num2, num1 + num2);
+                numbers.getFirstInt(),
+                numbers.getSecondInt(),
+                sum());
     }
 }
