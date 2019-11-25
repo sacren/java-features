@@ -1,5 +1,18 @@
 /**
  * Gender instance is used in Author class by method overloading.
+ *
+ * <p>Private instance variable:
+ * -gender:String
+ *
+ * <p>Constructor:
+ * +Gender()
+ * +Gender(gender:char)
+ * +Gender(gender:String)
+ *
+ * <p>Public methods:
+ * +setGender(gender:String)
+ * +setGender(gender:char)
+ * +toString()
  */
 public class Gender {
     /** Priviate instance variable. */
@@ -30,7 +43,7 @@ public class Gender {
         setGender(Character.toString(gender));
     }
 
-    /** Gender instance formatted string. */
+    /** Gender instance string. */
     public String toString() {
         return gender;
     }
