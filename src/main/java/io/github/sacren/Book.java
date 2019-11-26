@@ -22,7 +22,7 @@
  * +getName():String
  * +getPrice():double
  * +getSales():int
- * +getAllAuthInfo():String
+ * +allAuthInfo():String
  * +toString():String
  */
 public class Book {
@@ -99,8 +99,8 @@ public class Book {
         return sales;
     }
 
-    /** Book getter for info of all authors. */
-    public String getAllAuthInfo() {
+    /** Book method for info of all the authors. */
+    public String allAuthInfo() {
         int end = authors.length - 1;
         StringBuilder fmtAuth = new StringBuilder();
         for (int i = 0; i < end; i++) { /* last author excluded */
@@ -118,7 +118,7 @@ public class Book {
                         + "Price:         %.2f%n"
                         + "Sales:         %d",
                 name,
-                getAllAuthInfo(),
+                allAuthInfo(),
                 price,
                 sales);
     }
