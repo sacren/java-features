@@ -62,8 +62,15 @@ public class Book {
     /** Book setter for book authors. */
     public void setAuthors(Author[] authors) {
         this.authors = new Author[authors.length];
-        for (int i = 0; i < authors.length; i++) {
-            this.authors[i] = authors[i];
+        int i = 0;
+        String name;
+        String email;
+        String gender;
+        for (Author author : authors) {
+            name = author.getName();
+            email = author.getEmail();
+            gender = author.getGender().toString();
+            this.authors[i++] = new Author(name, email, new Gender(gender));
         }
     }
 
