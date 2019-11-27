@@ -139,19 +139,19 @@ public class Circle extends Shape {
     /** Circle instance formatted string. */
     public String toString() {
         return String.format(
-                "Instance count: %d%n"
+                "Center:         %s%n"
                         + "Radius:         %.2f%n"
                         + "Diameter:       %.2f%n"
                         + "Circumference:  %.2f%n"
                         + "Area:           %.2f%n"
                         + "Color:          %s%n"
-                        + "Center:         %s",
-                count,
+                        + "Instance count: %d",
+                center,
                 radius,
                 diameter(),
                 circumference(),
                 area(),
                 getColor(),
-                center);
+                count);
     }
 }
