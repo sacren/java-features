@@ -19,8 +19,8 @@
  * +setThird(thirdDbl:double):void
  * +getThirdInt():int
  * +getThirdDbl():double
- * +getIntTrio():String
- * +getDblTrio():String
+ * +trioIntStr():String
+ * +trioDblStr():String
  * +toString():String
  */
 public class Trio extends Duo {
@@ -72,14 +72,14 @@ public class Trio extends Duo {
         return thirdDbl;
     }
 
-    /** Trio getter for int string. */
-    public String getIntTrio() {
-        return String.format("%s, %02d", getIntDuo(), thirdInt);
+    /** Trio method for int string. */
+    public String trioIntStr() {
+        return String.format("%s, %02d", duoIntStr(), thirdInt);
     }
 
-    /** Trio getter for double string. */
-    public String getDblTrio() {
-        return String.format("%s, %.2f", getDblDuo(), thirdDbl);
+    /** Trio method for double string. */
+    public String trioDblStr() {
+        return String.format("%s, %.2f", duoDblStr(), thirdDbl);
     }
 
     /** Trio instance formatted string. */
@@ -88,10 +88,10 @@ public class Trio extends Duo {
         StringBuilder trio = new StringBuilder();
         switch (getWhich()) {
             case 1:
-                trio.append("(").append(getIntTrio()).append(")");
+                trio.append("(").append(trioIntStr()).append(")");
                 break;
             default:
-                trio.append("(").append(getDblTrio()).append(")");
+                trio.append("(").append(trioDblStr()).append(")");
                 break;
         }
         return trio.toString();

@@ -26,8 +26,8 @@
  * +getFirstDbl():double
  * +getSecondDbl():double
  * +getWhich():int
- * +getIntDuo():String
- * +getDblDuo():String
+ * +duoIntStr():String
+ * +duoDblStr():String
  * +toString():String
  */
 public class Duo {
@@ -104,13 +104,13 @@ public class Duo {
         return which;
     }
 
-    /** Duo getter for int string. */
-    public String getIntDuo() {
+    /** Duo method for int string. */
+    public String duoIntStr() {
         return String.format("%02d, %02d", firstInt, secondInt);
     }
 
-    /** Duo getter for double string. */
-    public String getDblDuo() {
+    /** Duo method for double string. */
+    public String duoDblStr() {
         return String.format("%.2f, %.2f", firstDbl, secondDbl);
     }
 
@@ -119,10 +119,10 @@ public class Duo {
         StringBuilder duo = new StringBuilder();
         switch (which) {
             case 1:
-                duo.append("(").append(getIntDuo()).append(")");
+                duo.append("(").append(duoIntStr()).append(")");
                 break;
             default:
-                duo.append("(").append(getDblDuo()).append(")");
+                duo.append("(").append(duoDblStr()).append(")");
                 break;
         }
         return duo.toString();

@@ -19,8 +19,8 @@
  * +setFourth(fourthDbl:double):void
  * +getFourthInt():int
  * +getFourthDbl():double
- * +getIntQuad():String
- * +getDblQuad():String
+ * +quadIntStr():String
+ * +quadDblStr():String
  * +toString():String
  */
 public class Quad extends Trio {
@@ -72,14 +72,14 @@ public class Quad extends Trio {
         return fourthDbl;
     }
 
-    /** Quad getter for int string. */
-    public String getIntQuad() {
-        return String.format("%s, %02d", getIntTrio(), fourthInt);
+    /** Quad method for int string. */
+    public String quadIntStr() {
+        return String.format("%s, %02d", trioIntStr(), fourthInt);
     }
 
     /** Quad getter for double string. */
-    public String getDblQuad() {
-        return String.format("%s, %.2f", getDblTrio(), fourthDbl);
+    public String quadDblStr() {
+        return String.format("%s, %.2f", trioDblStr(), fourthDbl);
     }
 
     /** Quad instance formatted string. */
@@ -88,10 +88,10 @@ public class Quad extends Trio {
         StringBuilder quad = new StringBuilder();
         switch (getWhich()) {
             case 1:
-                quad.append("(").append(getIntQuad()).append(")");
+                quad.append("(").append(quadIntStr()).append(")");
                 break;
             default:
-                quad.append("(").append(getDblQuad()).append(")");
+                quad.append("(").append(quadDblStr()).append(")");
                 break;
         }
         return quad.toString();
