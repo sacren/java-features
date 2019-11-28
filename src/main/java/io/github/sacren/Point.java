@@ -69,6 +69,6 @@ public class Point {
 
     /** Point instance formatted string. */
     public String toString() {
-        return String.format("(%.2f, %.2f)", getX(), getY());
+        return String.format("%s", point);
     }
 }
