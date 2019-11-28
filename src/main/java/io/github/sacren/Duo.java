@@ -106,7 +106,7 @@ public class Duo {
 
     /** Duo method for int string. */
     public String duoIntStr() {
-        return String.format("%02d, %02d", firstInt, secondInt);
+        return String.format("%d, %d", firstInt, secondInt);
     }
 
     /** Duo method for double string. */
