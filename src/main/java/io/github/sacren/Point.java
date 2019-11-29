@@ -6,6 +6,7 @@
  *
  * <p>Constructor:
  * +Point()
+ * +Point(axisX:int, axisY:int)
  * +Point(axisX:double, axisY:double)
  *
  * <p>Public methods:
@@ -27,7 +28,12 @@ public class Point {
         point = new Duo();
     }
 
-    /** Point constructor with a pair of numbers for point. */
+    /** Point constructor with a pair of integers for point. */
+    public Point(int axisX, int axisY) {
+        point = new Duo(axisX, axisY);
+    }
+
+    /** Point constructor with a pair of doubles for point. */
     public Point(double axisX, double axisY) {
         point = new Duo(axisX, axisY);
     }
