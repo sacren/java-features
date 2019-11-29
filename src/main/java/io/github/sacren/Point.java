@@ -14,8 +14,9 @@
  * +setY(axisY:double):void
  * +getX():double
  * +getY():double
- * +distance(another:Point):double
+ * +distance(axisX:int, axisY:int):double
  * +distance(axisX:double, axisY:double):double
+ * +distance(another:Point):double
  * +distance():double
  * +toString():String
  */
@@ -58,14 +59,33 @@ public class Point {
         return point.getSecondDbl();
     }
 
-    /** Point method for distance from this point to another. */
-    public double distance(Point another) {
-        return Math.hypot(another.getX() - getX(), another.getY() - getY());
+    /** Point method for distance to the point by a pair of integers. */
+    public double distance(int axisX, int axisY) {
+        return Math.hypot(axisX - point.getFirstInt(), axisY - point.getSecondInt());
     }
 
-    /** Point method for distance to the point by a pair of numbers. */
+    /** Point method for distance to the point by a pair of doubles. */
     public double distance(double axisX, double axisY) {
-        return distance(new Point(axisX, axisY));
+        return Math.hypot(axisX - getX(), axisY - getY());
+    }
+
+    /** Point method for distance from this point to another. */
+    public double distance(Point another) {
+        double distance;
+        Duo point = another.point;
+        int which = point.getWhich();
+        if (which != this.point.getWhich()) {
+            throw new IllegalArgumentException("Point element type mismatch!");
+        }
+        switch (which) {
+            case 1:
+                distance = distance(point.getFirstInt(), point.getSecondInt());
+                break;
+            default:
+                distance = distance(point.getFirstDbl(), point.getSecondDbl());
+                break;
+        }
+        return distance;
     }
 
     /** Point method for distance to the point of (0, 0). */
