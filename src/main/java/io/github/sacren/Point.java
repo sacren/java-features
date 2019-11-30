@@ -10,6 +10,8 @@
  * +Point(axisX:double, axisY:double)
  *
  * <p>Public methods:
+ * +setX(axisX:int):void
+ * +setY(axisY:int):void
  * +setX(axisX:double):void
  * +setY(axisY:double):void
  * +getX():double
@@ -31,7 +33,9 @@ public class Point {
 
     /** Point constructor with a pair of integers for point. */
     public Point(int axisX, int axisY) {
-        point = new Duo(axisX, axisY);
+        this();
+        setX(axisX);
+        setY(axisY);
     }
 
     /** Point constructor with a pair of doubles for point. */
@@ -39,12 +43,22 @@ public class Point {
         point = new Duo(axisX, axisY);
     }
 
-    /** Point setter for variable on X-axis. */
+    /** Point setter for int variable on X-axis. */
+    public void setX(int axisX) {
+        point.setFirst(axisX);
+    }
+
+    /** Point setter for double variable on X-axis. */
     public void setX(double axisX) {
         point.setFirst(axisX);
     }
 
-    /** Point setter for variable on Y-axis. */
+    /** Point setter for int variable on Y-axis. */
+    public void setY(int axisY) {
+        point.setSecond(axisY);
+    }
+
+    /** Point setter for double variable on Y-axis. */
     public void setY(double axisY) {
         point.setSecond(axisY);
     }
