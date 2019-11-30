@@ -11,8 +11,8 @@
  *
  * <p>Public methods:
  * +setX(axisX:int):void
- * +setY(axisY:int):void
  * +setX(axisX:double):void
+ * +setY(axisY:int):void
  * +setY(axisY:double):void
  * +getX():double
  * +getY():double
