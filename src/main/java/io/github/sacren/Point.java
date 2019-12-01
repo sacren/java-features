@@ -63,6 +63,16 @@ public class Point {
         point.setSecond(axisY);
     }
 
+    /** Point getter for int variable on X-axis. */
+    public double getIntX() {
+        return point.getFirstInt();
+    }
+
+    /** Point getter for int variable on Y-axis. */
+    public double getIntY() {
+        return point.getSecondInt();
+    }
+
     /** Point getter for variable on X-axis. */
     public double getX() {
         return point.getFirstDbl();
@@ -75,7 +85,7 @@ public class Point {
 
     /** Point method for distance to the point by a pair of integers. */
     public double distance(int axisX, int axisY) {
-        return Math.hypot(axisX - point.getFirstInt(), axisY - point.getSecondInt());
+        return Math.hypot(axisX - getIntX(), axisY - getIntY());
     }
 
     /** Point method for distance to the point by a pair of doubles. */
