@@ -97,11 +97,11 @@ public class Point {
     public double distance(Point another) {
         double distance;
         Duo point = another.point;
-        int which = point.getWhich();
-        if (which != this.point.getWhich()) {
+        int type = point.getType();
+        if (type != this.point.getType()) {
             throw new IllegalArgumentException("Point element type mismatch!");
         }
-        switch (which) {
+        switch (type) {
             case 1:
                 distance = distance(point.getFirstInt(), point.getSecondInt());
                 break;

@@ -9,7 +9,7 @@
  * -secondInt:int = 0
  * -firstDbl:double
  * -secondDbl:double
- * -which:int
+ * -type:int
  *
  * <p>Constructor:
  * +Duo()
@@ -25,7 +25,7 @@
  * +getSecondInt():int
  * +getFirstDbl():double
  * +getSecondDbl():double
- * +getWhich():int
+ * +getType():int
  * +duoIntStr():String
  * +duoDblStr():String
  * +toString():String
@@ -36,27 +36,27 @@ public class Duo {
     private int secondInt;
     private double firstDbl;
     private double secondDbl;
-    private int which;
+    private int type;
 
     /** Duo default constructor. */
     public Duo() {
         setFirst(0);
         setSecond(0);
-        which = 1;
+        type = 1;
     }
 
     /** Duo constructor for int instance variables. */
     public Duo(int firstInt, int secondInt) {
         setFirst(firstInt);
         setSecond(secondInt);
-        which = 1;
+        type = 1;
     }
 
     /** Duo constructor for double instance variables. */
     public Duo(double firstDbl, double secondDbl) {
         setFirst(firstDbl);
         setSecond(secondDbl);
-        which = 0;
+        type = 0;
     }
 
     /** Duo setter for the first int variable. */
@@ -100,8 +100,8 @@ public class Duo {
     }
 
     /** Duo getter for which int value for formatted string. */
-    public int getWhich() {
-        return which;
+    public int getType() {
+        return type;
     }
 
     /** Duo method for int string. */
@@ -117,7 +117,7 @@ public class Duo {
     /** Duo instance formatted string. */
     public String toString() {
         StringBuilder duo = new StringBuilder();
-        switch (which) {
+        switch (type) {
             case 1:
                 duo.append("(").append(duoIntStr()).append(")");
                 break;

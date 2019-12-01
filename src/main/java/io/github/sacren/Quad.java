@@ -86,7 +86,7 @@ public class Quad extends Trio {
     @Override
     public String toString() {
         StringBuilder quad = new StringBuilder();
-        switch (getWhich()) {
+        switch (getType()) {
             case 1:
                 quad.append("(").append(quadIntStr()).append(")");
                 break;

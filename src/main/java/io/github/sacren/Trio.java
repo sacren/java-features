@@ -86,7 +86,7 @@ public class Trio extends Duo {
     @Override
     public String toString() {
         StringBuilder trio = new StringBuilder();
-        switch (getWhich()) {
+        switch (getType()) {
             case 1:
                 trio.append("(").append(trioIntStr()).append(")");
                 break;
