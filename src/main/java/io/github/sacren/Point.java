@@ -16,6 +16,8 @@
  * +setY(axisY:double):void
  * +getX():double
  * +getY():double
+ * +getIntX():double
+ * +getIntY():double
  * +distance(axisX:int, axisY:int):double
  * +distance(axisX:double, axisY:double):double
  * +distance(another:Point):double
