@@ -74,7 +74,7 @@ public class Trio extends Duo {
 
     /** Trio method for int string. */
     public String trioIntStr() {
-        return String.format("%s, %02d", duoIntStr(), thirdInt);
+        return String.format("%s, %d", duoIntStr(), thirdInt);
     }
 
     /** Trio method for double string. */

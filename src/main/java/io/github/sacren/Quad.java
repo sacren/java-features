@@ -74,7 +74,7 @@ public class Quad extends Trio {
 
     /** Quad method for int string. */
     public String quadIntStr() {
-        return String.format("%s, %02d", trioIntStr(), fourthInt);
+        return String.format("%s, %d", trioIntStr(), fourthInt);
     }
 
     /** Quad getter for double string. */
