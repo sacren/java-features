@@ -59,6 +59,16 @@ public class Duo {
         type = 0;
     }
 
+    /** Duo constructor with mixed int and double input variables. */
+    public Duo(int firstInt, double secondDbl) {
+        this((double) firstInt, secondDbl);
+    }
+
+    /** Duo constructor with mixed double and int input variables. */
+    public Duo(double firstDbl, int secondInt) {
+        this(firstDbl, (double) secondInt);
+    }
+
     /** Duo setter for the first int variable. */
     public void setFirst(int firstInt) {
         this.firstInt = firstInt;
