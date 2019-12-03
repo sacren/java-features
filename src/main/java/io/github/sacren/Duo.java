@@ -61,12 +61,16 @@ public class Duo {
 
     /** Duo constructor with mixed int and double input variables. */
     public Duo(int firstInt, double secondDbl) {
-        this((double) firstInt, secondDbl);
+        setFirst(firstInt);
+        setSecond(secondDbl);
+        type = 2;
     }
 
     /** Duo constructor with mixed double and int input variables. */
     public Duo(double firstDbl, int secondInt) {
-        this(firstDbl, (double) secondInt);
+        setFirst(firstDbl);
+        setSecond(secondInt);
+        type = 3;
     }
 
     /** Duo setter for the first int variable. */
@@ -124,12 +128,28 @@ public class Duo {
         return String.format("%.2f, %.2f", firstDbl, secondDbl);
     }
 
+    /** Duo method for int and double string. */
+    public String intDblStr() {
+        return String.format("%d, %.2f", firstInt, secondDbl);
+    }
+
+    /** Duo method for double and int string. */
+    public String dblIntStr() {
+        return String.format("%.2f, %d", firstDbl, secondInt);
+    }
+
     /** Duo instance formatted string. */
     public String toString() {
         StringBuilder duo = new StringBuilder();
         switch (type) {
             case 1:
                 duo.append("(").append(duoIntStr()).append(")");
+                break;
+            case 2:
+                duo.append("(").append(intDblStr()).append(")");
+                break;
+            case 3:
+                duo.append("(").append(dblIntStr()).append(")");
                 break;
             default:
                 duo.append("(").append(duoDblStr()).append(")");
