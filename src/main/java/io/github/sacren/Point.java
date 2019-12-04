@@ -85,6 +85,12 @@ public class Point {
         return point.getSecondDbl();
     }
 
+    /** Point method for distance from this point to another. */
+    public double distance(Point another) {
+        return Math.hypot(another.point.getFirstDbl() - point.getFirstDbl(),
+                another.point.getSecondDbl() - point.getSecondDbl());
+    }
+
     /** Point method for distance to the point by a pair of integers. */
     public double distance(int axisX, int axisY) {
         return Math.hypot(axisX - getIntX(), axisY - getIntY());
@@ -93,25 +99,6 @@ public class Point {
     /** Point method for distance to the point by a pair of doubles. */
     public double distance(double axisX, double axisY) {
         return Math.hypot(axisX - getX(), axisY - getY());
-    }
-
-    /** Point method for distance from this point to another. */
-    public double distance(Point another) {
-        double distance;
-        Duo point = another.point;
-        int type = point.getType();
-        if (type != this.point.getType()) {
-            throw new IllegalArgumentException("Point element type mismatch!");
-        }
-        switch (type) {
-            case 1:
-                distance = distance(point.getFirstInt(), point.getSecondInt());
-                break;
-            default:
-                distance = distance(point.getFirstDbl(), point.getSecondDbl());
-                break;
-        }
-        return distance;
     }
 
     /** Point method for distance to the point of (0, 0). */
