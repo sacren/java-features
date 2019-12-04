@@ -142,6 +142,9 @@ public class Duo {
     public String toString() {
         StringBuilder duo = new StringBuilder();
         switch (type) {
+            case 0:
+                duo.append("(").append(duoDblStr()).append(")");
+                break;
             case 1:
                 duo.append("(").append(duoIntStr()).append(")");
                 break;
@@ -152,7 +155,7 @@ public class Duo {
                 duo.append("(").append(dblIntStr()).append(")");
                 break;
             default:
-                duo.append("(").append(duoDblStr()).append(")");
+                duo.append("Invalid input!");
                 break;
         }
         return duo.toString();
