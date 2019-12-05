@@ -65,6 +65,11 @@ public class Point {
         point.setSecond(axisY);
     }
 
+    /** Point getter for the point. */
+    public Duo getPoint() {
+        return point;
+    }
+
     /** Point getter for int variable on X-axis. */
     public double getIntX() {
         return point.getFirstInt();

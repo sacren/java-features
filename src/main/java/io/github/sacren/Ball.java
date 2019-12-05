@@ -37,7 +37,9 @@ public class Ball {
 
     /** Ball setter for ball initial position. */
     public void setInitPos(Point position) {
-        this.position = new Point(position.getX(), position.getY());
+        double abscissa = position.getPoint().getFirstDbl();
+        double ordinate = position.getPoint().getSecondDbl();
+        this.position = new Point(abscissa, ordinate);
     }
 
     /** Ball setter for ball initial speed. */
