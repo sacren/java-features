@@ -97,10 +97,8 @@ public class Line {
 
     /** Line setter for both begin and end points. */
     public void setBeginEnd(Point begin, Point end) {
-        setPoints();
-        setBegin(begin);
-        setEnd(end);
-        chkBeginEnd();
+        this.begin = begin;
+        this.end = end;
     }
 
     /** Line getter for begin point. */
