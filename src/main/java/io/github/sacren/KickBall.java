@@ -29,8 +29,8 @@ public class KickBall implements Movable {
 
     /** KickBall custom constructor. */
     public KickBall(Point ball, Point kick) {
-        this.ball = ball;
-        this.kick = kick;
+        this.ball = new Point(ball.getPoint().getFirstDbl(), ball.getPoint().getSecondDbl());
+        this.kick = new Point(kick.getPoint().getFirstDbl(), kick.getPoint().getSecondDbl());
     }
 
     /** KickBall method to move up ball in y-axis direction. */
