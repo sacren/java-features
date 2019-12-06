@@ -23,8 +23,8 @@ public class KickBall implements Movable {
 
     /** KickBall default constructor. */
     public KickBall() {
-        ball = new Point(10, 20);
-        kick = new Point(1, 2);
+        ball = new Point((double) 10, (double) 20);
+        kick = new Point((double) 1, (double) 2);
     }
 
     /** KickBall custom constructor. */
