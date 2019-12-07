@@ -35,9 +35,7 @@ public class Point {
 
     /** Point constructor with a pair of integers for point. */
     public Point(int axisX, int axisY) {
-        this();
-        setX(axisX);
-        setY(axisY);
+        point = new Duo((double) axisX, (double) axisY);
     }
 
     /** Point constructor with a pair of doubles for point. */
