@@ -45,6 +45,12 @@ public class Point {
         point = new Duo(axisX, axisY);
     }
 
+    /** Point setter using Duo object. */
+    public void setPoint(Duo point) {
+        this.point.setFirst(point.getFirstDbl());
+        this.point.setSecond(point.getSecondDbl());
+    }
+
     /** Point setter for int variable on X-axis. */
     public void setX(int axisX) {
         point.setFirst(axisX);
