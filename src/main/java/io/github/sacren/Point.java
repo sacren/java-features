@@ -112,7 +112,7 @@ public class Point {
 
     /** Point method for distance to the point of (0, 0). */
     public double distance() {
-        return distance(0, 0);
+        return distance(new Point());
     }
 
     /** Point instance formatted string. */
