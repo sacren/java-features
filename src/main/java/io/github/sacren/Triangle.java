@@ -2,11 +2,11 @@
  * Triangle subclass extends Shape superclass.
  *
  * <p>Private instance data:
- * -bh:Point
+ * -bh:Duo
  *
  * <p>Constructor:
  * +Triangle()
- * +Triangle(bh:Point)
+ * +Triangle(bh:Duo)
  *
  * <p>Public methods:
  * +getBase():double
@@ -14,28 +14,28 @@
  * +getHeight():double
  * +setHeight(height:double):void
  * +setTriangle(base:double, height:double):void
- * +setTriangle(bh:Point):void
+ * +setTriangle(bh:Duo):void
  * +toString():String
  */
 public class Triangle extends Shape {
     /* private instance data */
-    private Point bh;
+    private Duo bh;
 
     /** Triangle default constructor. */
     public Triangle() {
         super("brown"); /* triangle instance default color */
-        bh = new Point(3, 4);
+        bh = new Duo((double) 3, (double) 4);
     }
 
-    /** Triangle constructor with Point. */
-    public Triangle(Point bh) {
+    /** Triangle constructor with Duo object for parameter. */
+    public Triangle(Duo bh) {
         this();
         setTriangle(bh);
     }
 
     /** Triangle getter for the base. */
     public double getBase() {
-        return bh.getX();
+        return bh.getFirstDbl();
     }
 
     /** Triangle setter for the base. */
@@ -44,12 +44,12 @@ public class Triangle extends Shape {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", base));
         }
-        bh.setX(base);
+        bh.setFirst(base);
     }
 
     /** Triangle getter for the height. */
     public double getHeight() {
-        return bh.getY();
+        return bh.getSecondDbl();
     }
 
     /** Triangle setter for the height. */
@@ -58,7 +58,7 @@ public class Triangle extends Shape {
             throw new IllegalArgumentException(
                     String.format("%f is invalid!", height));
         }
-        bh.setY(height);
+        bh.setSecond(height);
     }
 
     /** Triangle setter for both base and height. */
@@ -67,9 +67,9 @@ public class Triangle extends Shape {
         setHeight(height);
     }
 
-    /** Triangle setter using Point for base and height. */
-    public void setTriangle(Point bh) {
-        setTriangle(bh.getX(), bh.getY());
+    /** Triangle setter using Duo object for base and height. */
+    public void setTriangle(Duo bh) {
+        setTriangle(bh.getFirstDbl(), bh.getSecondDbl());
     }
 
     /** Triangle method for triangle area. */
@@ -86,7 +86,7 @@ public class Triangle extends Shape {
      */
     @Override
     public double perimeter() {
-        return Math.hypot(bh.getX() / 2, bh.getY()) * 2 + bh.getX();
+        return Math.hypot(bh.getFirstDbl() / 2, bh.getSecondDbl()) * 2 + bh.getFirstDbl();
     }
 
     /** Triangle string method. */

@@ -14,7 +14,7 @@ public class TestTriangle {
         System.out.println("=== Triangle with Point instance ===");
         System.out.println();
         /* custom triangle */
-        Point p = new Point(t1.getBase() + 1, t1.getHeight());
+        Duo p = new Duo(t1.getBase() + 1, t1.getHeight());
         Shape t2 = new Triangle(p);
         System.out.println(t2);
         System.out.println();
