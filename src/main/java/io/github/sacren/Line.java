@@ -18,7 +18,7 @@
  * +setEndY(axisY):void
  * +setEnd(end:Point):void
  * +chkBeginEnd():void
- * +setBeginEnd(begin:Point, end:Point):void
+ * +setPoints(begin:Point, end:Point):void
  * +getBegin():Point
  * +getEnd():Point
  * +distance():double
@@ -40,7 +40,7 @@ public class Line {
     /** Line constructor by begin and end points. */
     public Line(Point begin, Point end) {
         setPoints();
-        setBeginEnd(begin, end);
+        setPoints(begin, end);
     }
 
     /** Line constructor by 4 numbers. */
@@ -95,7 +95,7 @@ public class Line {
     }
 
     /** Line setter for both begin and end points. */
-    public void setBeginEnd(Point begin, Point end) {
+    public void setPoints(Point begin, Point end) {
         setBegin(begin);
         setEnd(end);
     }
