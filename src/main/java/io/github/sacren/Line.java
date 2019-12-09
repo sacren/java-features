@@ -39,6 +39,7 @@ public class Line {
 
     /** Line constructor by begin and end points. */
     public Line(Point begin, Point end) {
+        setPoints();
         setBeginEnd(begin, end);
     }
 
@@ -49,8 +50,8 @@ public class Line {
 
     /** Line setter to initialize begin and end points. */
     public void setPoints() {
-        begin = new Point();
-        end = new Point();
+        begin = new Point((double) 0, (double) 0);
+        end = new Point((double) 0, (double) 0);
     }
 
     /** Line setter for value on X-axis of begin point. */
@@ -65,8 +66,7 @@ public class Line {
 
     /** Line setter for begin point. */
     public void setBegin(Point begin) {
-        setBeginX(begin.getX());
-        setBeginY(begin.getY());
+        this.begin.setPoint(begin.getPoint());
     }
 
     /** Line setter for value on X-axis of end point. */
@@ -81,8 +81,7 @@ public class Line {
 
     /** Line setter for end point. */
     public void setEnd(Point end) {
-        setEndX(end.getX());
-        setEndY(end.getY());
+        this.end.setPoint(end.getPoint());
     }
 
     /** Line checker for different begin and end points. */
@@ -97,8 +96,8 @@ public class Line {
 
     /** Line setter for both begin and end points. */
     public void setBeginEnd(Point begin, Point end) {
-        this.begin = begin;
-        this.end = end;
+        setBegin(begin);
+        setEnd(end);
     }
 
     /** Line getter for begin point. */
