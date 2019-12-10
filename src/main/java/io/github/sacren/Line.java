@@ -49,6 +49,12 @@ public class Line {
         end = new Point((double) 0, (double) 0);
     }
 
+    /** Line setter for both begin and end points. */
+    public void setPoints(Point begin, Point end) {
+        setBegin(begin);
+        setEnd(end);
+    }
+
     /** Line setter for begin point. */
     public void setBegin(Point begin) {
         this.begin.setPoint(begin.getPoint());
@@ -57,12 +63,6 @@ public class Line {
     /** Line setter for end point. */
     public void setEnd(Point end) {
         this.end.setPoint(end.getPoint());
-    }
-
-    /** Line setter for both begin and end points. */
-    public void setPoints(Point begin, Point end) {
-        setBegin(begin);
-        setEnd(end);
     }
 
     /** Line getter for begin point. */
@@ -82,7 +82,8 @@ public class Line {
 
     /** Line method for gradient of Line object. */
     public double gradient() {
-        return Math.atan2(end.getY() - begin.getY(), end.getX() - begin.getX());
+        return Math.atan2(end.getPoint().getSecondDbl() - begin.getPoint().getSecondDbl(),
+                end.getPoint().getFirstDbl() - begin.getPoint().getFirstDbl());
     }
 
     /**
@@ -96,7 +97,8 @@ public class Line {
      * φ': gradient of the line from begin to the given point
      */
     public double distToLine(Point p) {
-        double gradient = Math.atan2(p.getY() - begin.getY(), p.getX() - begin.getX());
+        double gradient = Math.atan2(p.getPoint().getSecondDbl() - begin.getPoint().getSecondDbl(),
+                p.getPoint().getFirstDbl() - begin.getPoint().getFirstDbl());
         return begin.distance(p) * Math.abs(Math.sin(gradient() - gradient));
     }
 
@@ -127,7 +129,8 @@ public class Line {
                 distance(),
                 gradient(),
                 distToLine(GIVEN_POINT),
-                distToLine(GIVEN_POINT.getX(), GIVEN_POINT.getY()),
+                distToLine(GIVEN_POINT.getPoint().getFirstDbl(),
+                    GIVEN_POINT.getPoint().getSecondDbl()),
                 hasIntersect(GIVEN_LINE));
     }
 }
