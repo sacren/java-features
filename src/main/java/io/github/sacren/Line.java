@@ -11,13 +11,8 @@
  *
  * <p>Public methods:
  * +setPoints():void
- * +setBeginX(axisX:double):void
- * +setBeginY(axisY:double):void
  * +setBegin(begin:Point):void
- * +setEndX(axisX):void
- * +setEndY(axisY):void
  * +setEnd(end:Point):void
- * +chkBeginEnd():void
  * +setPoints(begin:Point, end:Point):void
  * +getBegin():Point
  * +getEnd():Point
@@ -54,44 +49,14 @@ public class Line {
         end = new Point((double) 0, (double) 0);
     }
 
-    /** Line setter for value on X-axis of begin point. */
-    public void setBeginX(double axisX) {
-        begin.setX(axisX);
-    }
-
-    /** Line setter for value on Y-axis of begin point. */
-    public void setBeginY(double axisY) {
-        begin.setY(axisY);
-    }
-
     /** Line setter for begin point. */
     public void setBegin(Point begin) {
         this.begin.setPoint(begin.getPoint());
     }
 
-    /** Line setter for value on X-axis of end point. */
-    public void setEndX(double axisX) {
-        end.setX(axisX);
-    }
-
-    /** Line setter for value on Y-axis of end point. */
-    public void setEndY(double axisY) {
-        end.setY(axisY);
-    }
-
     /** Line setter for end point. */
     public void setEnd(Point end) {
         this.end.setPoint(end.getPoint());
-    }
-
-    /** Line checker for different begin and end points. */
-    public void chkBeginEnd() {
-        if (begin.getX() == end.getX() && begin.getY() == end.getY()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                        "Begin %s and End %s can't be the same!",
-                        begin, end));
-        }
     }
 
     /** Line setter for both begin and end points. */
