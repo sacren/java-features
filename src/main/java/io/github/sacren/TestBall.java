@@ -18,17 +18,17 @@ public class TestBall {
                         + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
-                ball.getPosX(),
-                ball.getPosY(),
-                ball.getSpdX(),
-                ball.getSpdY(),
+                ball.getPosition().getPoint().getFirstDbl(),
+                ball.getPosition().getPoint().getSecondDbl(),
+                ball.getSpeed().getFirstDbl(),
+                ball.getSpeed().getSecondDbl(),
                 ball.getPosition(),
                 ball.getSpeed());
         /* update Ball instance */
-        ball.setPosX(ball.getPosX() + 4);
-        ball.setPosY(ball.getPosY() + 4);
-        ball.setSpdX(ball.getSpdX() + 1);
-        ball.setSpdY(ball.getSpdY() + 1);
+        ball.setPosX(ball.getPosition().getPoint().getFirstDbl() + 4);
+        ball.setPosY(ball.getPosition().getPoint().getSecondDbl() + 4);
+        ball.setSpdX(ball.getSpeed().getFirstDbl() + 1);
+        ball.setSpdY(ball.getSpeed().getSecondDbl() + 1);
         System.out.println();
         System.out.println("=== Update ball position and speed ===");
         System.out.println();
@@ -41,10 +41,10 @@ public class TestBall {
                         + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
-                ball.getPosX(),
-                ball.getPosY(),
-                ball.getSpdX(),
-                ball.getSpdY(),
+                ball.getPosition().getPoint().getFirstDbl(),
+                ball.getPosition().getPoint().getSecondDbl(),
+                ball.getSpeed().getFirstDbl(),
+                ball.getSpeed().getSecondDbl(),
                 ball.getPosition(),
                 ball.getSpeed());
         System.out.println();

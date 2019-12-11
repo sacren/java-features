@@ -11,13 +11,9 @@
  * <p>Public methods:
  * +setInitPos(position:Point):void
  * +setInitSpd(speed:Duo):void
- * +getPosX():double
  * +setPosX(posX:double):void
- * +getPosY():double
  * +setPosY(posY:double):void
- * +getSpdX():double
  * +setSpdX(spdX:double):void
- * +getSpdY():double
  * +setSpdY(spdY:double):void
  * +getPosition():Point
  * +getSpeed():Duo
@@ -47,19 +43,9 @@ public class Ball {
         this.speed = new Duo(speed.getFirstDbl(), speed.getSecondDbl());
     }
 
-    /** Ball getter for ball position on X-axis. */
-    public double getPosX() {
-        return position.getX();
-    }
-
     /** Ball setter for ball position on X-axis. */
     public void setPosX(double posX) {
         position.setX(posX);
-    }
-
-    /** Ball getter for ball position on Y-axis. */
-    public double getPosY() {
-        return position.getY();
     }
 
     /** Ball setter for position on Y-axis. */
@@ -67,19 +53,9 @@ public class Ball {
         position.setY(posY);
     }
 
-    /** Ball getter for speed on X-axis. */
-    public double getSpdX() {
-        return speed.getFirstDbl();
-    }
-
     /** Ball setter for speed on X-axis. */
     public void setSpdX(double spdX) {
         speed.setFirst(spdX);
-    }
-
-    /** Ball getter for speed on Y-axis. */
-    public double getSpdY() {
-        return speed.getSecondDbl();
     }
 
     /** Ball setter for speed on Y-axis. */
@@ -114,8 +90,8 @@ public class Ball {
      * <p>Return the updated object for chaining.
      */
     public Ball move() {
-        position.setX(getPosX() + getSpdX());
-        position.setY(getPosY() + getSpdY());
+        position.setX(position.getPoint().getFirstDbl() + speed.getFirstDbl());
+        position.setY(position.getPoint().getSecondDbl() + speed.getSecondDbl());
         return this;
     }
 }
