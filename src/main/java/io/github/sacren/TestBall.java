@@ -25,10 +25,12 @@ public class TestBall {
                 ball.getPosition(),
                 ball.getSpeed());
         /* update Ball instance */
-        ball.setPosX(ball.getPosition().getPoint().getFirstDbl() + 4);
-        ball.setPosY(ball.getPosition().getPoint().getSecondDbl() + 4);
-        ball.setSpdX(ball.getSpeed().getFirstDbl() + 1);
-        ball.setSpdY(ball.getSpeed().getSecondDbl() + 1);
+        double positionX = ball.getPosition().getPoint().getFirstDbl() + 4;
+        double positionY = ball.getPosition().getPoint().getSecondDbl() + 4;
+        ball.setPosition(new Point(positionX, positionY));
+        double speedX = ball.getSpeed().getFirstDbl() + 1;
+        double speedY = ball.getSpeed().getSecondDbl() + 1;
+        ball.setSpeed(new Duo(speedX, speedY));
         System.out.println();
         System.out.println("=== Update ball position and speed ===");
         System.out.println();

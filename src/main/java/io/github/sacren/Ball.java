@@ -9,8 +9,10 @@
  * +Ball(position:Point, speed:Duo)
  *
  * <p>Public methods:
- * +setInitPos(position:Point):void
- * +setInitSpd(speed:Duo):void
+ * +setPosition():void
+ * +setPosition(position:Point):void
+ * +setSpeed():void
+ * +setSpeed(speed:Duo):void
  * +setPosX(posX:double):void
  * +setPosY(posY:double):void
  * +setSpdX(spdX:double):void
@@ -27,20 +29,33 @@ public class Ball {
 
     /** Ball constructor by Point. */
     public Ball(Point position, Duo speed) {
-        setInitPos(position);
-        setInitSpd(speed);
+        setPosition();
+        setPosition(position);
+        setSpeed();
+        setSpeed(speed);
     }
 
-    /** Ball setter for ball initial position. */
-    public void setInitPos(Point position) {
+    /** Ball setter for initial ball position. */
+    public void setPosition() {
+        position = new Point(0, 0);
+    }
+
+    /** Ball setter to update ball position. */
+    public void setPosition(Point position) {
         double abscissa = position.getPoint().getFirstDbl();
         double ordinate = position.getPoint().getSecondDbl();
-        this.position = new Point(abscissa, ordinate);
+        this.position.setPoint(new Duo(abscissa, ordinate));
     }
 
-    /** Ball setter for ball initial speed. */
-    public void setInitSpd(Duo speed) {
-        this.speed = new Duo(speed.getFirstDbl(), speed.getSecondDbl());
+    /** Ball setter for initial ball speed. */
+    public void setSpeed() {
+        speed = new Duo((double) 0, (double) 0);
+    }
+
+    /** Ball setter to update ball speed. */
+    public void setSpeed(Duo speed) {
+        this.speed.setFirst(speed.getFirstDbl());
+        this.speed.setSecond(speed.getSecondDbl());
     }
 
     /** Ball setter for ball position on X-axis. */
