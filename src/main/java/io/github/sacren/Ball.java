@@ -13,10 +13,6 @@
  * +setPosition(position:Point):void
  * +setSpeed():void
  * +setSpeed(speed:Duo):void
- * +setPosX(posX:double):void
- * +setPosY(posY:double):void
- * +setSpdX(spdX:double):void
- * +setSpdY(spdY:double):void
  * +getPosition():Point
  * +getSpeed():Duo
  * +toString():String
@@ -56,26 +52,6 @@ public class Ball {
     public void setSpeed(Duo speed) {
         this.speed.setFirst(speed.getFirstDbl());
         this.speed.setSecond(speed.getSecondDbl());
-    }
-
-    /** Ball setter for ball position on X-axis. */
-    public void setPosX(double posX) {
-        position.setX(posX);
-    }
-
-    /** Ball setter for position on Y-axis. */
-    public void setPosY(double posY) {
-        position.setY(posY);
-    }
-
-    /** Ball setter for speed on X-axis. */
-    public void setSpdX(double spdX) {
-        speed.setFirst(spdX);
-    }
-
-    /** Ball setter for speed on Y-axis. */
-    public void setSpdY(double spdY) {
-        speed.setSecond(spdY);
     }
 
     /** Ball getter for the ball position. */
