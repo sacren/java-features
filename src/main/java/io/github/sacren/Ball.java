@@ -81,8 +81,9 @@ public class Ball {
      * <p>Return the updated object for chaining.
      */
     public Ball move() {
-        position.setX(position.getPoint().getFirstDbl() + speed.getFirstDbl());
-        position.setY(position.getPoint().getSecondDbl() + speed.getSecondDbl());
+        double abscissa = position.getPoint().getFirstDbl() + speed.getFirstDbl();
+        double ordinate = position.getPoint().getSecondDbl() + speed.getSecondDbl();
+        position.setPoint(new Duo(abscissa, ordinate));
         return this;
     }
 }
