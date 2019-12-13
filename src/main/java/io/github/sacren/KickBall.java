@@ -10,6 +10,10 @@
  * +KickBall(ball:Point, kick:Point)
  *
  * <p>Public methods:
+ * +setBall():void
+ * +setBall(ball:Point):void
+ * +setKick():void
+ * +setKick(kick:Point):void
  * +moveUp():void
  * +movdeDown():void
  * +moveLeft():void
@@ -23,14 +27,41 @@ public class KickBall implements Movable {
 
     /** KickBall default constructor. */
     public KickBall() {
-        ball = new Point((double) 10, (double) 20);
+        setBall();
+        setBall(new Point(10, 20));
         kick = new Point((double) 1, (double) 2);
     }
 
     /** KickBall custom constructor. */
     public KickBall(Point ball, Point kick) {
-        this.ball = new Point(ball.getPoint().getFirstDbl(), ball.getPoint().getSecondDbl());
-        this.kick = new Point(kick.getPoint().getFirstDbl(), kick.getPoint().getSecondDbl());
+        setBall();
+        setBall(ball);
+        setKick();
+        setKick(kick);
+    }
+
+    /** KickBall setter for the ball. */
+    public void setBall() {
+        ball = new Point(0, 0);
+    }
+
+    /** KickBall setter for the ball with parameter. */
+    public void setBall(Point ball) {
+        double abscissa = ball.getPoint().getFirstDbl();
+        double ordinate = ball.getPoint().getSecondDbl();
+        this.ball.setPoint(new Duo(abscissa, ordinate));
+    }
+
+    /** KickBall setter for the kick. */
+    public void setKick() {
+        kick = new Point(0, 0);
+    }
+
+    /** KickBall setter for the kick with parameter. */
+    public void setKick(Point kick) {
+        double abscissa = kick.getPoint().getFirstDbl();
+        double ordinate = kick.getPoint().getSecondDbl();
+        this.kick.setPoint(new Duo(abscissa, ordinate));
     }
 
     /** KickBall method to move up ball in y-axis direction. */
