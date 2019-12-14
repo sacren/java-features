@@ -30,7 +30,7 @@ public class TestKickBall {
         System.out.println();
         ball.moveLeft();
         System.out.println(ball);
-        Movable another = new KickBall(new Point((double) 3, (double) 4), new Point());
+        Movable another = new KickBall(new Point(3, 4), new Duo((double) 0, (double) 0));
         System.out.println();
         System.out.println("=== Another Ball ===");
         System.out.println();
