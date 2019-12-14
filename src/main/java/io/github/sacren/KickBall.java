@@ -67,25 +67,33 @@ public class KickBall implements Movable {
     /** KickBall method to move up ball in y-axis direction. */
     @Override
     public void moveUp() {
-        ball.setY(ball.getY() + kick.getY());
+        double abscissa = ball.getPoint().getFirstDbl();
+        double ordinate = ball.getPoint().getSecondDbl() + kick.getPoint().getSecondDbl();
+        ball.setPoint(new Duo(abscissa, ordinate));
     }
 
     /** KickBall method to move down ball in y-axis direction. */
     @Override
     public void moveDown() {
-        ball.setY(ball.getY() - kick.getY());
+        double abscissa = ball.getPoint().getFirstDbl();
+        double ordinate = ball.getPoint().getSecondDbl() - kick.getPoint().getSecondDbl();
+        ball.setPoint(new Duo(abscissa, ordinate));
     }
 
     /** KickBall method to move ball left in x-axis direction. */
     @Override
     public void moveLeft() {
-        ball.setX(ball.getX() - kick.getX());
+        double abscissa = ball.getPoint().getFirstDbl() - kick.getPoint().getFirstDbl();
+        double ordinate = ball.getPoint().getSecondDbl();
+        ball.setPoint(new Duo(abscissa, ordinate));
     }
 
     /** KickBall method to move ball right in x-axis direction. */
     @Override
     public void moveRight() {
-        ball.setX(ball.getX() + kick.getX());
+        double abscissa = ball.getPoint().getFirstDbl() + kick.getPoint().getFirstDbl();
+        double ordinate = ball.getPoint().getSecondDbl();
+        ball.setPoint(new Duo(abscissa, ordinate));
     }
 
     /** KickBall string method. */
