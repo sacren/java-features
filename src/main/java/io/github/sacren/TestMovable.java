@@ -21,7 +21,7 @@ public class TestMovable {
         p.moveRight();
         System.out.println(p);
         /* custom MovablePoint */
-        Movable p4 = new MovablePoint(new Point(1, 2));
+        Movable p4 = new MovablePoint(new Duo(1, 2));
         System.out.println();
         System.out.println("=== Start point ===");
         System.out.println();
