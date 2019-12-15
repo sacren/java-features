@@ -27,8 +27,7 @@ public class KickBall implements Movable {
 
     /** KickBall default constructor. */
     public KickBall() {
-        setBall();
-        setBall(new Point(10, 20));
+        ball = new Point(10, 20);
         kick = new Duo((double) 1, (double) 2);
     }
 
