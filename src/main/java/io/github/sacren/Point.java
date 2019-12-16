@@ -1,8 +1,5 @@
 /**
- * Point class uses Duo object for the point.
- *
- * <p>Private instance variables with default values:
- * -point:Duo = {0, 0}
+ * Point is the subclass of Duo class.
  *
  * <p>Constructor:
  * +Point()
@@ -24,80 +21,77 @@
  * +distance():double
  * +toString():String
  */
-public class Point {
-    /* private instance variable */
-    private Duo point;
-
+public class Point extends Duo {
     /** Point default constructor. */
     public Point() {
-        point = new Duo();
+        super();
     }
 
     /** Point constructor with a pair of integers for point. */
     public Point(int axisX, int axisY) {
-        point = new Duo((double) axisX, (double) axisY);
+        super((double) axisX, (double) axisY);
     }
 
     /** Point constructor with a pair of doubles for point. */
     public Point(double axisX, double axisY) {
-        point = new Duo(axisX, axisY);
+        super(axisX, axisY);
     }
 
     /** Point setter using Duo object. */
     public void setPoint(Duo point) {
-        this.point.setFirst(point.getFirstDbl());
-        this.point.setSecond(point.getSecondDbl());
+        setFirst(point.getFirstDbl());
+        setSecond(point.getSecondDbl());
     }
 
     /** Point setter for int variable on X-axis. */
     public void setX(int axisX) {
-        point.setFirst(axisX);
+        setFirst(axisX);
     }
 
     /** Point setter for double variable on X-axis. */
     public void setX(double axisX) {
-        point.setFirst(axisX);
+        setFirst(axisX);
     }
 
     /** Point setter for int variable on Y-axis. */
     public void setY(int axisY) {
-        point.setSecond(axisY);
+        setSecond(axisY);
     }
 
     /** Point setter for double variable on Y-axis. */
     public void setY(double axisY) {
-        point.setSecond(axisY);
+        setSecond(axisY);
     }
 
     /** Point getter for the point. */
-    public Duo getPoint() {
-        return point;
+    public Point getPoint() {
+        return this;
     }
 
     /** Point getter for int variable on X-axis. */
     public double getIntX() {
-        return point.getFirstInt();
+        return getFirstInt();
     }
 
     /** Point getter for int variable on Y-axis. */
     public double getIntY() {
-        return point.getSecondInt();
+        return getSecondInt();
     }
 
     /** Point getter for variable on X-axis. */
     public double getX() {
-        return point.getFirstDbl();
+        return getFirstDbl();
     }
 
     /** Point getter for variable on Y-axis. */
     public double getY() {
-        return point.getSecondDbl();
+        return getSecondDbl();
     }
 
     /** Point method for distance from this point to another. */
     public double distance(Point another) {
-        return Math.hypot(another.point.getFirstDbl() - point.getFirstDbl(),
-                another.point.getSecondDbl() - point.getSecondDbl());
+        return Math.hypot(another.getFirstDbl() - getFirstDbl(),
+                another.getSecondDbl() - getSecondDbl());
     }
 
     /** Point method for distance to the point by a pair of integers. */
@@ -117,6 +111,6 @@ public class Point {
 
     /** Point instance formatted string. */
     public String toString() {
-        return String.format("%s", point);
+        return String.format("(%.2f, %.2f)", getFirstDbl(), getSecondDbl());
     }
 }
