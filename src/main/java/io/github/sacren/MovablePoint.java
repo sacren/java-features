@@ -9,6 +9,7 @@
  * +MovablePoint(mp:Duo)
  *
  * <p>Public methods:
+ * +setMovablePoint(mp:Duo):void
  * +moveUp():void
  * +movdeDown():void
  * +moveLeft():void
@@ -26,7 +27,14 @@ public class MovablePoint implements Movable {
 
     /** MovablePoint custom constructor. */
     public MovablePoint(Duo mp) {
-        this.mp = mp;
+        this();
+        setMovablePoint(mp);
+    }
+
+    /** MovalbePoint setter for mp. */
+    public void setMovablePoint(Duo mp) {
+        this.mp.setFirst(mp.getFirstInt());
+        this.mp.setSecond(mp.getSecondInt());
     }
 
     /** MovablePoint method to move up the point. */
