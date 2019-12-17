@@ -38,9 +38,8 @@ public class Ball {
 
     /** Ball setter to update ball position. */
     public void setPosition(Point position) {
-        double abscissa = position.getPoint().getFirstDbl();
-        double ordinate = position.getPoint().getSecondDbl();
-        this.position.setPoint(new Duo(abscissa, ordinate));
+        this.position.setFirst(position.getFirstDbl());
+        this.position.setSecond(position.getSecondDbl());
     }
 
     /** Ball setter for initial ball speed. */
@@ -81,9 +80,8 @@ public class Ball {
      * <p>Return the updated object for chaining.
      */
     public Ball move() {
-        double abscissa = position.getPoint().getFirstDbl() + speed.getFirstDbl();
-        double ordinate = position.getPoint().getSecondDbl() + speed.getSecondDbl();
-        position.setPoint(new Duo(abscissa, ordinate));
+        position.setFirst(position.getFirstDbl() + speed.getFirstDbl());
+        position.setSecond(position.getSecondDbl() + speed.getSecondDbl());
         return this;
     }
 }

@@ -18,15 +18,15 @@ public class TestBall {
                         + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
-                ball.getPosition().getPoint().getFirstDbl(),
-                ball.getPosition().getPoint().getSecondDbl(),
+                ball.getPosition().getFirstDbl(),
+                ball.getPosition().getSecondDbl(),
                 ball.getSpeed().getFirstDbl(),
                 ball.getSpeed().getSecondDbl(),
                 ball.getPosition(),
                 ball.getSpeed());
         /* update Ball instance */
-        double positionX = ball.getPosition().getPoint().getFirstDbl() + 4;
-        double positionY = ball.getPosition().getPoint().getSecondDbl() + 4;
+        double positionX = ball.getPosition().getFirstDbl() + 4;
+        double positionY = ball.getPosition().getSecondDbl() + 4;
         ball.setPosition(new Point(positionX, positionY));
         double speedX = ball.getSpeed().getFirstDbl() + 1;
         double speedY = ball.getSpeed().getSecondDbl() + 1;
@@ -43,8 +43,8 @@ public class TestBall {
                         + "Y-axis speed: %.2f%n"
                         + "Position:     P%s%n"
                         + "Speed:         %s%n",
-                ball.getPosition().getPoint().getFirstDbl(),
-                ball.getPosition().getPoint().getSecondDbl(),
+                ball.getPosition().getFirstDbl(),
+                ball.getPosition().getSecondDbl(),
                 ball.getSpeed().getFirstDbl(),
                 ball.getSpeed().getSecondDbl(),
                 ball.getPosition(),
