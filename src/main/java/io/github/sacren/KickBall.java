@@ -46,9 +46,8 @@ public class KickBall implements Movable {
 
     /** KickBall setter for the ball with parameter. */
     public void setBall(Point ball) {
-        double abscissa = ball.getPoint().getFirstDbl();
-        double ordinate = ball.getPoint().getSecondDbl();
-        this.ball.setPoint(new Duo(abscissa, ordinate));
+        this.ball.setFirst(ball.getFirstDbl());
+        this.ball.setSecond(ball.getSecondDbl());
     }
 
     /** KickBall setter for the kick. */
@@ -65,33 +64,25 @@ public class KickBall implements Movable {
     /** KickBall method to move up ball in y-axis direction. */
     @Override
     public void moveUp() {
-        double abscissa = ball.getPoint().getFirstDbl();
-        double ordinate = ball.getPoint().getSecondDbl() + kick.getSecondDbl();
-        ball.setPoint(new Duo(abscissa, ordinate));
+        ball.setSecond(ball.getSecondDbl() + kick.getSecondDbl());
     }
 
     /** KickBall method to move down ball in y-axis direction. */
     @Override
     public void moveDown() {
-        double abscissa = ball.getPoint().getFirstDbl();
-        double ordinate = ball.getPoint().getSecondDbl() - kick.getSecondDbl();
-        ball.setPoint(new Duo(abscissa, ordinate));
+        ball.setSecond(ball.getSecondDbl() - kick.getSecondDbl());
     }
 
     /** KickBall method to move ball left in x-axis direction. */
     @Override
     public void moveLeft() {
-        double abscissa = ball.getPoint().getFirstDbl() - kick.getFirstDbl();
-        double ordinate = ball.getPoint().getSecondDbl();
-        ball.setPoint(new Duo(abscissa, ordinate));
+        ball.setFirst(ball.getFirstDbl() - kick.getFirstDbl());
     }
 
     /** KickBall method to move ball right in x-axis direction. */
     @Override
     public void moveRight() {
-        double abscissa = ball.getPoint().getFirstDbl() + kick.getFirstDbl();
-        double ordinate = ball.getPoint().getSecondDbl();
-        ball.setPoint(new Duo(abscissa, ordinate));
+        ball.setFirst(ball.getFirstDbl() + kick.getFirstDbl());
     }
 
     /** KickBall string method. */
