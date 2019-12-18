@@ -57,12 +57,14 @@ public class Line {
 
     /** Line setter for begin point. */
     public void setBegin(Point begin) {
-        this.begin.setPoint(begin.getPoint());
+        this.begin.setFirst(begin.getFirstDbl());
+        this.begin.setSecond(begin.getSecondDbl());
     }
 
     /** Line setter for end point. */
     public void setEnd(Point end) {
-        this.end.setPoint(end.getPoint());
+        this.end.setFirst(end.getFirstDbl());
+        this.end.setSecond(end.getSecondDbl());
     }
 
     /** Line getter for begin point. */
@@ -82,8 +84,8 @@ public class Line {
 
     /** Line method for gradient of Line object. */
     public double gradient() {
-        return Math.atan2(end.getPoint().getSecondDbl() - begin.getPoint().getSecondDbl(),
-                end.getPoint().getFirstDbl() - begin.getPoint().getFirstDbl());
+        return Math.atan2(end.getSecondDbl() - begin.getSecondDbl(),
+                end.getFirstDbl() - begin.getFirstDbl());
     }
 
     /**
@@ -97,8 +99,8 @@ public class Line {
      * φ': gradient of the line from begin to the given point
      */
     public double distToLine(Point p) {
-        double gradient = Math.atan2(p.getPoint().getSecondDbl() - begin.getPoint().getSecondDbl(),
-                p.getPoint().getFirstDbl() - begin.getPoint().getFirstDbl());
+        double gradient = Math.atan2(p.getSecondDbl() - begin.getSecondDbl(),
+                p.getFirstDbl() - begin.getFirstDbl());
         return begin.distance(p) * Math.abs(Math.sin(gradient() - gradient));
     }
 
@@ -129,8 +131,7 @@ public class Line {
                 distance(),
                 gradient(),
                 distToLine(GIVEN_POINT),
-                distToLine(GIVEN_POINT.getPoint().getFirstDbl(),
-                    GIVEN_POINT.getPoint().getSecondDbl()),
+                distToLine(GIVEN_POINT.getFirstDbl(), GIVEN_POINT.getSecondDbl()),
                 hasIntersect(GIVEN_LINE));
     }
 }
