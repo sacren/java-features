@@ -37,12 +37,6 @@ public class Point extends Duo {
         super(axisX, axisY);
     }
 
-    /** Point setter using Duo object. */
-    public void setPoint(Duo point) {
-        setFirst(point.getFirstDbl());
-        setSecond(point.getSecondDbl());
-    }
-
     /** Point setter for int variable on X-axis. */
     public void setX(int axisX) {
         setFirst(axisX);
