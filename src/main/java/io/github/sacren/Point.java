@@ -57,11 +57,6 @@ public class Point extends Duo {
         setSecond(axisY);
     }
 
-    /** Point getter for the point. */
-    public Point getPoint() {
-        return this;
-    }
-
     /** Point getter for int variable on X-axis. */
     public double getIntX() {
         return getFirstInt();
