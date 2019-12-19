@@ -37,26 +37,6 @@ public class Point extends Duo {
         super(axisX, axisY);
     }
 
-    /** Point setter for int variable on X-axis. */
-    public void setX(int axisX) {
-        setFirst(axisX);
-    }
-
-    /** Point setter for double variable on X-axis. */
-    public void setX(double axisX) {
-        setFirst(axisX);
-    }
-
-    /** Point setter for int variable on Y-axis. */
-    public void setY(int axisY) {
-        setSecond(axisY);
-    }
-
-    /** Point setter for double variable on Y-axis. */
-    public void setY(double axisY) {
-        setSecond(axisY);
-    }
-
     /** Point getter for int variable on X-axis. */
     public double getIntX() {
         return getFirstInt();
