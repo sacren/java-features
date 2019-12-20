@@ -77,12 +77,13 @@ public class Circle extends Shape {
 
     /** Circle setter for the default center of circle. */
     public void setCenter() {
-        center = new Point();
+        center = new Point(0, 0);
     }
 
     /** Circle setter for the center of circle. */
     public void setCenter(Point center) {
-        this.center = new Point(center.getX(), center.getY());
+        this.center.setFirst(center.getFirstDbl());
+        this.center.setSecond(center.getSecondDbl());
     }
 
     /** Circle setter for the defaul radius of circle. */
