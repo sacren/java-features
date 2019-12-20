@@ -7,12 +7,6 @@
  * +Point(axisX:double, axisY:double)
  *
  * <p>Public methods:
- * +setX(axisX:int):void
- * +setX(axisX:double):void
- * +setY(axisY:int):void
- * +setY(axisY:double):void
- * +getX():double
- * +getY():double
  * +getIntX():double
  * +getIntY():double
  * +distance(axisX:int, axisY:int):double
@@ -47,16 +41,6 @@ public class Point extends Duo {
         return getSecondInt();
     }
 
-    /** Point getter for variable on X-axis. */
-    public double getX() {
-        return getFirstDbl();
-    }
-
-    /** Point getter for variable on Y-axis. */
-    public double getY() {
-        return getSecondDbl();
-    }
-
     /** Point method for distance from this point to another. */
     public double distance(Point another) {
         return Math.hypot(another.getFirstDbl() - getFirstDbl(),
@@ -70,7 +54,7 @@ public class Point extends Duo {
 
     /** Point method for distance to the point by a pair of doubles. */
     public double distance(double axisX, double axisY) {
-        return Math.hypot(axisX - getX(), axisY - getY());
+        return Math.hypot(axisX - getFirstDbl(), axisY - getSecondDbl());
     }
 
     /** Point method for distance to the point of (0, 0). */
