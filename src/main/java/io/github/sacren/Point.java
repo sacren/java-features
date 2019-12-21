@@ -3,8 +3,8 @@
  *
  * <p>Constructor:
  * +Point()
- * +Point(axisX:int, axisY:int)
  * +Point(axisX:double, axisY:double)
+ * +Point(axisX:int, axisY:int)
  *
  * <p>Public methods:
  * +distance(axisX:double, axisY:double):double
@@ -19,14 +19,14 @@ public class Point extends Duo {
         super();
     }
 
-    /** Point constructor with a pair of integers for point. */
-    public Point(int axisX, int axisY) {
-        super((double) axisX, (double) axisY);
-    }
-
-    /** Point constructor with a pair of doubles for point. */
+    /** Point constructor for point of a pair of double numbers. */
     public Point(double axisX, double axisY) {
         super(axisX, axisY);
+    }
+
+    /** Point constructor for point derived from a pair of integers. */
+    public Point(int axisX, int axisY) {
+        this((double) axisX, (double) axisY);
     }
 
     /** Point method for distance from this point to another. */
