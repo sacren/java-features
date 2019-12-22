@@ -7,9 +7,9 @@
  * +Point(axisX:int, axisY:int)
  *
  * <p>Public methods:
+ * +distance(another:Point):double
  * +distance(axisX:double, axisY:double):double
  * +distance(axisX:int, axisY:int):double
- * +distance(another:Point):double
  * +distance():double
  * +toString():String
  */
@@ -35,9 +35,9 @@ public class Point extends Duo {
                 another.getSecondDbl() - getSecondDbl());
     }
 
-    /** Point method for distance to the point by a pair of doubles. */
+    /** Point method for distance to the point by a pair of double numbers. */
     public double distance(double axisX, double axisY) {
-        return Math.hypot(axisX - getFirstDbl(), axisY - getSecondDbl());
+        return distance(new Point(axisX, axisY));
     }
 
     /** Point method for distance to the point by a pair of integers. */
