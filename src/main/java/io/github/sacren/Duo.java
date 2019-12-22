@@ -140,24 +140,24 @@ public class Duo {
 
     /** Duo instance formatted string. */
     public String toString() {
-        StringBuilder duo = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         switch (type) {
             case 0:
-                duo.append("(").append(duoDblStr()).append(")");
+                sb.append("(").append(duoDblStr()).append(")");
                 break;
             case 1:
-                duo.append("(").append(duoIntStr()).append(")");
+                sb.append("(").append(duoIntStr()).append(")");
                 break;
             case 2:
-                duo.append("(").append(intDblStr()).append(")");
+                sb.append("(").append(intDblStr()).append(")");
                 break;
             case 3:
-                duo.append("(").append(dblIntStr()).append(")");
+                sb.append("(").append(dblIntStr()).append(")");
                 break;
             default:
-                duo.append("Invalid input!");
+                sb.append("Invalid input!");
                 break;
         }
-        return duo.toString();
+        return sb.toString();
     }
 }
