@@ -77,7 +77,7 @@ public class Circle extends Shape {
 
     /** Circle setter for the default center of circle. */
     public void setCenter() {
-        center = new Point(0, 0);
+        center = new Point();
     }
 
     /** Circle setter for the center of circle. */
