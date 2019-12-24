@@ -16,7 +16,6 @@
  * <p>Public methods:
  * +setCenter():void
  * +setCenter(center:Point):void
- * +setRadius():void
  * +setRadius(radius:double):void
  * +getRadius():double
  * +getCenter():Point
@@ -42,7 +41,7 @@ public class Circle extends Shape {
     public Circle() {
         super("green"); /* circle instance default color */
         setCenter();
-        setRadius();
+        setRadius(1);
         count++;
     }
 
@@ -84,11 +83,6 @@ public class Circle extends Shape {
     public void setCenter(Point center) {
         this.center.setFirst(center.getFirstDbl());
         this.center.setSecond(center.getSecondDbl());
-    }
-
-    /** Circle setter for the defaul radius of circle. */
-    public void setRadius() {
-        radius = 1;
     }
 
     /** Circle setter for the radius of circle. */
