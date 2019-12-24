@@ -10,6 +10,11 @@ public class TestCircle {
         System.out.println();
         Circle c1 = new Circle();
         System.out.println(c1);
+        System.out.println();
+        System.out.println("=== Update default circle center ===");
+        System.out.println();
+        c1.setCenter(new Point(-3, 16));
+        System.out.println(c1);
         /* circle with custom radius */
         System.out.println();
         System.out.println("=== Circle with radius ===");
