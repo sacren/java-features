@@ -60,7 +60,7 @@ public class Circle extends Shape {
     /** Circle constructor using Point object. */
     public Circle(Point center, double radius) {
         this(radius);
-        this.center = center;
+        setCenter(center);
     }
 
     /** Circle constructor with int pair for Point. */
