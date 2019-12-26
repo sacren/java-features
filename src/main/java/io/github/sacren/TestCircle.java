@@ -26,6 +26,7 @@ public class TestCircle {
         System.out.println("=== Downcast to Circle ===");
         System.out.println();
         Circle c3 = (Circle) c2;
+        c3.setColor("yellow");
         System.out.println(c3);
         System.out.println();
         System.out.println("=== Calling Circle methods ===");
