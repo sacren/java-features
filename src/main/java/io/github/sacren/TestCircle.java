@@ -65,11 +65,11 @@ public class TestCircle {
         System.out.printf(
                 "%s to %s: %.2f%n"
                         + "%s to %s: %.2f%n",
-                c3.getColor().toUpperCase(),
-                c4.getColor().toUpperCase(),
+                c3.getColor(),
+                c4.getColor(),
                 c3.distance(c4),
-                c4.getColor().toUpperCase(),
-                c1.getColor().toUpperCase(),
+                c4.getColor(),
+                c1.getColor(),
                 c4.distance(c1));
     }
 }

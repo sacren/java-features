@@ -28,7 +28,10 @@ public abstract class Shape {
 
     /** Shape getter for color of shapes. */
     public String getColor() {
-        return color;
+        char firstChar = Character.toUpperCase(color.charAt(0));
+        StringBuilder sb = new StringBuilder();
+        sb.append(Character.toString(firstChar)).append(color.substring(1));
+        return sb.toString();
     }
 
     /** Shape setter for color of shapes. */
