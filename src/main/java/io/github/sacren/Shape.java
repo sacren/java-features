@@ -1,9 +1,9 @@
 /**
- * Shape abstract superclass
+ * Shape abstract superclass for Triangle, Circle, Rectangle, etc.
  *
  * <p>Shape superclass provides the common properties of all shapes.
  *
- * <p>Private instance data:
+ * <p>Private instance variable:
  * -color:String
  *
  * <p>Constructor:
@@ -18,12 +18,12 @@
  * +setColor(color:String):void
  */
 public abstract class Shape {
-    /* private instance data */
+    /* private instance variable */
     private String color;
 
     /** Shape custom constructor. */
     public Shape(String color) {
-        this.color = color;
+        setColor(color);
     }
 
     /** Shape getter for color of shapes. */
