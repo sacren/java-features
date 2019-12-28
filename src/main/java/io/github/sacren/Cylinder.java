@@ -1,7 +1,7 @@
 /**
  * Cylinder subclass extends Circle superclass.
  *
- * <p>Private instance data with default value:
+ * <p>Private instance variable with default value:
  * -height:double = 1.0
  *
  * <p>Constructor:
@@ -14,13 +14,13 @@
  * <p>Public methods:
  * +getHeight():double
  * +setHeight(height:double):void
- * +getBaseArea():double
+ * +circleArea():double
  * +area():double
  * +getVolume():double
  * +toString():String
  */
 public class Cylinder extends Circle {
-    /* private instance data */
+    /* private instance variable */
     private double height;
 
     /** Cylinder default constructor. */
@@ -67,20 +67,20 @@ public class Cylinder extends Circle {
         this.height = height;
     }
 
-    /** Cylinder method for base area. */
-    public double getBaseArea() {
+    /** Cylinder method for cylinder circle area. */
+    public double circleArea() {
         return super.area();
     }
 
     /** Cylinder method for surface area. */
     @Override
     public double area() {
-        return getBaseArea() * 2 + perimeter() * height;
+        return circleArea() * 2 + perimeter() * height;
     }
 
     /** Cylinder getter for volume. */
     public double getVolume() {
-        return getBaseArea() * height;
+        return circleArea() * height;
     }
 
     /** Cylinder string method. */
@@ -96,7 +96,7 @@ public class Cylinder extends Circle {
                 getRadius(),
                 getHeight(),
                 getColor(),
-                getBaseArea(),
+                circleArea(),
                 area(),
                 getVolume());
     }
