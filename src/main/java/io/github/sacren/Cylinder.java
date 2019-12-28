@@ -16,7 +16,7 @@
  * +setHeight(height:double):void
  * +circleArea():double
  * +area():double
- * +getVolume():double
+ * +volume():double
  * +toString():String
  */
 public class Cylinder extends Circle {
@@ -79,7 +79,7 @@ public class Cylinder extends Circle {
     }
 
     /** Cylinder getter for volume. */
-    public double getVolume() {
+    public double volume() {
         return circleArea() * height;
     }
 
@@ -98,6 +98,6 @@ public class Cylinder extends Circle {
                 getColor(),
                 circleArea(),
                 area(),
-                getVolume());
+                volume());
     }
 }
