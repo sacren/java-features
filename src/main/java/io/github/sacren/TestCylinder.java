@@ -19,6 +19,10 @@ public class TestCylinder {
         c1.setColor("black");
         System.out.println(c1);
         System.out.println();
+        System.out.println("=== Show cylinder base area ===");
+        System.out.println();
+        System.out.printf("Cylinder base area: %.2f%n", c1.circleArea());
+        System.out.println();
         System.out.println("=== Default cylinder of Shape ===");
         System.out.println();
         /* default Cylinder by Shape */
