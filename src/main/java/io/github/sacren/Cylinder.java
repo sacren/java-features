@@ -26,19 +26,19 @@ public class Cylinder extends Circle {
     /** Cylinder default constructor. */
     public Cylinder() {
         super();
-        height = 1;
+        setHeight(1);
     }
 
     /** Cylinder constructor with radius. */
     public Cylinder(double radius) {
         super(radius); /* execute Circle(radius) */
-        height = 1;
+        setHeight(1);
     }
 
     /** Cylinder constructor with radius and color. */
     public Cylinder(double radius, String color) {
         super(radius, color);
-        height = 1;
+        setHeight(1);
     }
 
     /** Cylinder constructor with radius and height. */
