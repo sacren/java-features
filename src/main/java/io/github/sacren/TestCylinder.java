@@ -43,5 +43,11 @@ public class TestCylinder {
         Cylinder c3 = (Cylinder) c2;
         c3.setHeight(c3.getHeight() + 1);
         System.out.println(c2);
+        System.out.println();
+        System.out.println("=== Override ===");
+        System.out.println();
+        Circle c4 = (Circle) c2;
+        System.out.printf("Cylinder area by Circle: %.2f%n", c4.area());
+        System.out.printf("Cylinder area by Cylinder: %.2f%n", c2.area());
     }
 }
