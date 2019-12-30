@@ -34,10 +34,14 @@ public class TestCylinder {
         /* polymorphism */
         c2.setColor("white");
         /*
-         * this breaks:
+         * This doesn't compile at all:
          *
          * c2.setHeight(c2.getHeight() + 1);
+         *
+         * But the following works due to polymorphism.
          */
+        Cylinder c3 = (Cylinder) c2;
+        c3.setHeight(c3.getHeight() + 1);
         System.out.println(c2);
     }
 }
