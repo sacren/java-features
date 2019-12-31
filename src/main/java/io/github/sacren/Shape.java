@@ -1,7 +1,6 @@
 /**
- * Shape abstract superclass for Triangle, Circle, Rectangle, etc.
- *
- * <p>Shape superclass provides the common properties of all shapes.
+ * Shape abstract superclass provides the common properties of Rectangle,
+ * Triangle, Circle, etc.
  *
  * <p>Private instance variable:
  * -color:String
@@ -26,7 +25,7 @@ public abstract class Shape {
         setColor(color);
     }
 
-    /** Shape getter for color of shapes. */
+    /** Shape getter for color of Rectangle, Triangle, Circle, etc. */
     public String getColor() {
         char firstChar = Character.toUpperCase(color.charAt(0));
         StringBuilder sb = new StringBuilder();
@@ -34,14 +33,14 @@ public abstract class Shape {
         return sb.toString();
     }
 
-    /** Shape setter for color of shapes. */
+    /** Shape setter for color of Rectangle, Triangle, Circle, etc. */
     public void setColor(String color) {
         this.color = color;
     }
 
-    /** Shape interface for area of shapes. */
+    /** Shape interface for area of Rectangle, Triangle, Circle, etc. */
     public abstract double area();
 
-    /** Shape interface for perimeter of shapes. */
+    /** Shape interface for perimeter of Rectangle, Triangle, Circle, etc. */
     public abstract double perimeter();
 }
