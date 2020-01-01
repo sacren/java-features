@@ -7,7 +7,7 @@
  *
  * <p>Public methods:
  * +area():double
- * +getVolume():double
+ * +volume():double
  * +getFavColor():String
  * +toString():String
  */
@@ -32,8 +32,8 @@ public class Sphere extends Circle {
         return super.area() * 4; /* use area() from Circle superclass */
     }
 
-    /** Sphere getter for volume. */
-    public double getVolume() {
+    /** Sphere method for sphere volume. */
+    public double volume() {
         return Math.PI * getRadius() * getRadius() * getRadius() * 4 / 3;
     }
 
@@ -57,7 +57,7 @@ public class Sphere extends Circle {
                 diameter(),
                 circumference(),
                 area(),
-                getVolume(),
+                volume(),
                 getColor(),
                 getCenter());
     }
