@@ -45,6 +45,6 @@ public class TestSphere {
                 Circle.FAVORITE_COLOR,
                 s.getColor(),
                 Sphere.FAVORITE_COLOR,
-                s.getFavColor());
+                s.favColor());
     }
 }

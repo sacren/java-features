@@ -8,7 +8,7 @@
  * <p>Public methods:
  * +area():double
  * +volume():double
- * +getFavColor():String
+ * +favColor():String
  * +toString():String
  */
 public class Sphere extends Circle {
@@ -38,8 +38,12 @@ public class Sphere extends Circle {
     }
 
     /** Sphere getter for favorite color. */
-    public String getFavColor() {
-        return FAVORITE_COLOR; /* hide Circle FAVORITE_COLOR */
+    public String favColor() {
+        /* hide Circle FAVORITE_COLOR */
+        char firstChar = Character.toUpperCase(FAVORITE_COLOR.charAt(0));
+        StringBuilder sb = new StringBuilder();
+        sb.append(Character.toString(firstChar)).append(FAVORITE_COLOR.substring(1));
+        return sb.toString();
     }
 
     /** Sphere string method. */
