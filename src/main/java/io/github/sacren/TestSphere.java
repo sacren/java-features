@@ -37,9 +37,9 @@ public class TestSphere {
         Sphere s = new Sphere();
         System.out.printf(
                 "Circle default color:  %s%n"
-                        + "Circle favorite color: %s%n"
+                        + "Circle favorite color: %S%n"
                         + "Sphere default color:  %s%n"
-                        + "Sphere favorite color: %s%n"
+                        + "Sphere favorite color: %S%n"
                         + "Sphere favorite color: %s%n",
                 c.getColor(),
                 Circle.FAVORITE_COLOR,
