@@ -21,8 +21,18 @@ public class Equal {
 
     /** Equal constructor. */
     public Equal(int[] array1, int[] array2) {
-        this.array1 = array1;
-        this.array2 = array2;
+        this.array1 = new int[array1.length];
+        this.array2 = new int[array2.length];
+        setArray(array1, this.array1);
+        setArray(array2, this.array2);
+    }
+
+    /** Equal setter for both intance arrays. */
+    public void setArray(int[] from, int[] to) {
+        int i = 0;
+        for (int n : from) {
+            to[i++] = n;
+        }
     }
 
     /** Equal method to see if arrays are equal. */
