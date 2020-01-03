@@ -1,15 +1,15 @@
 /**
- * Equal class checks if two arrays are equal.
+ * Equal class shows if two integer arrays are equal.
  *
  * <p>Private instance data:
  * -array1:int[]
  * -array2:int[]
  *
  * <p>Equal constructor:
- * +Equal()
+ * +Equal(array1:int[], array2:int[])
  *
  * <p>Public methods:
- * +isEqual():boolean
+ * +setArray():void
  * +toString():String
  */
 import java.util.Arrays;
@@ -27,7 +27,7 @@ public class Equal {
         setArray(array2, this.array2);
     }
 
-    /** Equal setter for both intance arrays. */
+    /** Equal setter for both instance arrays. */
     public void setArray(int[] from, int[] to) {
         int i = 0;
         for (int n : from) {
@@ -35,26 +35,12 @@ public class Equal {
         }
     }
 
-    /** Equal method to see if arrays are equal. */
-    public boolean isEqual() {
-        int index = 0;
-        if (array1.length != array2.length) {
-            return false;
-        }
-        for (int number : array1) {
-            if (number != array2[index++]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /** Equal instance printout. */
+    /** Equal instance formatted string. */
     public String toString() {
         return String.format(
                 "%s %s %s",
                 Arrays.toString(array1),
-                isEqual() ? "equals" : "doesn't equal",
+                Arrays.equals(array1, array2) ? "equals" : "doesn't equal",
                 Arrays.toString(array2));
     }
 }
