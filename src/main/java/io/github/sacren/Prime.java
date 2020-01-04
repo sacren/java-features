@@ -1,7 +1,7 @@
 /**
  * Prime class for a list of prime numbers.
  *
- * <p>Private instance data:
+ * <p>Private instance variables:
  * -bound:int
  * -list:int[]
  * -primes:String
@@ -11,19 +11,19 @@
  *
  * <p>Public methods:
  * +setBound(bound:int):void
+ * +setList():void
  * +getBound():int
+ * +getList():int[]
  * +isPrime(num:int):boolean
  * +primeCount():int
- * +setList():void
- * +getList():int[]
  * +setFormat():void
  * +toString():String
  */
 public class Prime {
-    /* private static data */
+    /* private static constant */
     private static final int MAX_NUM = 1000000;
 
-    /* private instance data */
+    /* private instance variables */
     private int bound;
     private int[] list;
     private String primes;
@@ -44,12 +44,36 @@ public class Prime {
         this.bound = bound;
     }
 
+    /** Prime setter for the list of prime numbers. */
+    public void setList() {
+        int size = 0;
+        list = new int[primeCount()];
+        if (bound == 1) { /* empty list of prime numbers */
+            return;
+        }
+        if (bound == 2) {
+            list[size] = 2;
+            return;
+        }
+        list[size++] = 2; /* special treatment of even prime */
+        for (int i = 3; i <= bound; i += 2) { /* odd numbers */
+            if (isPrime(i)) {
+                list[size++] = i;
+            }
+        }
+    }
+
     /** Prime getter for the instance number. */
     public int getBound() {
         return bound;
     }
 
-    /** Prime getter if the number is prime. */
+    /** Prime getter for the list of prime numbers. */
+    public int[] getList() {
+        return list;
+    }
+
+    /** Prime method checks if the number is prime. */
     public boolean isPrime(int num) {
         /* 6k ± 1 optimization */
         if (num <= 3) {
@@ -78,25 +102,6 @@ public class Prime {
             }
         }
         return count;
-    }
-
-    /** Prime setter for the list of prime numbers. */
-    public void setList() {
-        int size = 0;
-        list = new int[primeCount()];
-        if (bound == 1) { /* empty list of prime numbers */
-            return;
-        }
-        if (bound == 2) {
-            list[size] = 2;
-            return;
-        }
-        list[size++] = 2; /* special treatment of even prime */
-        for (int i = 3; i <= bound; i += 2) { /* odd numbers */
-            if (isPrime(i)) {
-                list[size++] = i;
-            }
-        }
     }
 
     /** Prime setter for the formatted list of prime numbers. */
@@ -131,11 +136,6 @@ public class Prime {
             }
         }
         primes = sb.toString();
-    }
-
-    /** Prime getter for the list of prime numbers. */
-    public int[] getList() {
-        return list;
     }
 
     /** Prime string method. */
