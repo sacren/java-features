@@ -4,7 +4,6 @@
  * <p>Private instance data:
  * -bound:int
  * -list:int[]
- * -size:int
  * -primes:String
  *
  * <p>Constructor:
@@ -14,7 +13,7 @@
  * +setBound(bound:int):void
  * +getBound():int
  * +isPrime(num:int):boolean
- * +setSize():void
+ * +primeCount():int
  * +setList():void
  * +getList():int[]
  * +setFormat():void
@@ -27,13 +26,11 @@ public class Prime {
     /* private instance data */
     private int bound;
     private int[] list;
-    private int size;
     private String primes;
 
     /** Prime constructor. */
     public Prime(int bound) {
         setBound(bound);
-        setSize();
         setList();
         setFormat();
     }
@@ -69,23 +66,24 @@ public class Prime {
         return true;
     }
 
-    /** Prime setter for how many prime numbers. */
-    public void setSize() {
-        size = 0; /* for 0 and 1 */
+    /** Prime method for the count of prime numbers. */
+    public int primeCount() {
+        int count = 0; /* for 0 and 1 */
         if (bound > 1) {
-            size = 1; /* for 2 and above */
+            count = 1; /* for 2 and above */
         }
         for (int i = 3; i <= bound; i += 2) { /* from 3 and odd numbers */
             if (isPrime(i)) {
-                size++;
+                count++;
             }
         }
-        list = new int[size];
+        return count;
     }
 
     /** Prime setter for the list of prime numbers. */
     public void setList() {
         int size = 0;
+        list = new int[primeCount()];
         if (bound == 1) { /* empty list of prime numbers */
             return;
         }
@@ -147,7 +145,7 @@ public class Prime {
                         + "Prime number total:   %d%n"
                         + "Prime number percent: %.2f%%",
                 primes,
-                size,
-                (double) size / bound * 100);
+                primeCount(),
+                (double) primeCount() / bound * 100);
     }
 }
