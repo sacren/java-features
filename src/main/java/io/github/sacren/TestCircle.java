@@ -64,10 +64,22 @@ public class TestCircle {
         System.out.println();
         System.out.printf(
                 "%s to %s: %.2f%n"
+                        + "%s to %s: %.2f%n"
+                        + "%s to %s: %.2f%n"
+                        + "%s to %s: %.2f%n"
                         + "%s to %s: %.2f%n",
                 c3.getColor(),
                 c4.getColor(),
                 c3.distance(c4),
+                c4.getColor(),
+                c3.getColor(),
+                c4.distance(c3),
+                c3.getColor(),
+                c3.getColor(),
+                c3.distance(c3),
+                c4.getColor(),
+                c4.getColor(),
+                c4.distance(c4),
                 c4.getColor(),
                 c1.getColor(),
                 c4.distance(c1));
