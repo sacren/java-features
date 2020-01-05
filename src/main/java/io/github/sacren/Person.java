@@ -1,7 +1,7 @@
 /**
  * Person superclass over Student and Teacher subclasses.
  *
- * <p>Private data:
+ * <p>Private variables:
  * -name:String
  * -address:String
  *
@@ -17,7 +17,7 @@
  * +toString():String
  */
 public class Person {
-    /* private instance data */
+    /* private instance variables */
     private String name;
     private String address;
 
@@ -35,12 +35,12 @@ public class Person {
 
     /** Person setter for name. */
     public void setName(String name) {
-        this.name = name;
+        this.name = new String(name);
     }
 
     /** Person setter for address. */
     public void setAddress(String address) {
-        this.address = address;
+        this.address = new String(address);
     }
 
     /** Person getter for name. */
