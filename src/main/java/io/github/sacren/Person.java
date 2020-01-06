@@ -35,12 +35,12 @@ public class Person {
 
     /** Person setter for name. */
     public void setName(String name) {
-        this.name = new String(name);
+        this.name = name;
     }
 
     /** Person setter for address. */
     public void setAddress(String address) {
-        this.address = new String(address);
+        this.address = address;
     }
 
     /** Person getter for name. */
