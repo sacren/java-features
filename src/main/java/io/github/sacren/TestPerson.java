@@ -15,6 +15,8 @@ public class TestPerson {
         String address = "24 College Drive, Anytown, Anystate";
         Person person = new Person(name, address);
         System.out.print(person);
+        name = "Jack Frost";
+        address = "46 University Ave., Anytown, Anystate";
         System.out.println();
         System.out.println("=== Use Person methods ===");
         System.out.println();
@@ -26,8 +28,8 @@ public class TestPerson {
         System.out.println();
         System.out.println("=== After updating Person instance ===");
         System.out.println();
-        person.setName("Jack Frost");
-        person.setAddress("46 University Ave., Anytown, Anystate");
+        person.setName(name);
+        person.setAddress(address);
         System.out.print(person);
     }
 }
