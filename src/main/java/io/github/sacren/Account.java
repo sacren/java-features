@@ -16,6 +16,7 @@
  * +getBalance():double
  * +credit(amount:double):void
  * +debit(amount:double):void
+ * +transact(another:Account, amount:double):void
  * +toString():String
  */
 public class Account {
@@ -62,12 +63,12 @@ public class Account {
         return balance;
     }
 
-    /** Account setter for credit added to the account. */
+    /** Account method credits to the account. */
     public void credit(double amount) {
         balance += amount;
     }
 
-    /** Account setter for debit withdrawn from the account. */
+    /** Account method debits from the account. */
     public void debit(double amount) {
         if (amount > balance) {
             throw new IllegalArgumentException(
@@ -76,6 +77,12 @@ public class Account {
                         amount, balance));
         }
         balance -= amount;
+    }
+
+    /** Account method transfers given amount to another account. */
+    public void transact(Account another, double amount) {
+        debit(amount);
+        another.credit(amount);
     }
 
     /** Account string method. */
