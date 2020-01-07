@@ -10,10 +10,10 @@
  * +Account(acctNum:int, balance:double)
  *
  * <p>Public methods:
- * +getAcctNum():int
  * +setAcctNum(acctNum:int):void
- * +getBalance():double
  * +setBalance(balance:double):void
+ * +getAcctNum():int
+ * +getBalance():double
  * +credit(amount:double):void
  * +debit(amount:double):void
  * +toString():String
@@ -25,19 +25,13 @@ public class Account {
 
     /** Account default constructor. */
     public Account() {
-        this.acctNum = Integer.MAX_VALUE;
-        this.balance = 0;
+        this(Integer.MAX_VALUE, 0);
     }
 
     /** Account custom constructor. */
     public Account(int acctNum, double balance) {
         setAcctNum(acctNum);
         setBalance(balance);
-    }
-
-    /** Account getter for account number. */
-    public int getAcctNum() {
-        return acctNum;
     }
 
     /** Account setter for account number. */
@@ -49,11 +43,6 @@ public class Account {
         this.acctNum = acctNum;
     }
 
-    /** Account getter for account balance. */
-    public double getBalance() {
-        return balance;
-    }
-
     /** Account setter for account balance. */
     public void setBalance(double balance) {
         if (balance < 0) {
@@ -61,6 +50,16 @@ public class Account {
                     String.format("%f is invalid!", balance));
         }
         this.balance = balance;
+    }
+
+    /** Account getter for account number. */
+    public int getAcctNum() {
+        return acctNum;
+    }
+
+    /** Account getter for account balance. */
+    public double getBalance() {
+        return balance;
     }
 
     /** Account setter for credit added to the account. */
