@@ -55,7 +55,11 @@ public class TestAccount {
         System.out.println("=== Transfer $50 to another account ===");
         System.out.println();
         acct.credit(50);
+        System.out.println(acct);
+        System.out.println();
         acct.transact(defAcct, 50);
         System.out.println(defAcct);
+        System.out.println();
+        System.out.println(acct);
     }
 }
