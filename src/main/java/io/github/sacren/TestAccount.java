@@ -42,7 +42,10 @@ public class TestAccount {
         System.out.println();
         System.out.println("=== Deposit $100.00 ===");
         System.out.println();
+        defAcct.credit(100);
         acct.credit(100);
+        System.out.println(defAcct);
+        System.out.println();
         System.out.println(acct);
         System.out.println();
         System.out.println("=== Withdraw $98.00 ===");
@@ -50,12 +53,9 @@ public class TestAccount {
         acct.debit(98);
         System.out.println(acct);
         System.out.println();
-        System.out.println("=== Transfer $50 to another account ===");
+        System.out.println("=== Transfer $100.00 to another account ===");
         System.out.println();
-        acct.credit(50);
-        System.out.println(acct);
-        System.out.println();
-        acct.transact(defAcct, 50);
+        defAcct.transact(acct, 100);
         System.out.println(defAcct);
         System.out.println();
         System.out.println(acct);
