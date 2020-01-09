@@ -1,7 +1,7 @@
 /**
- * Account class.
+ * Account class for a bank account.
  *
- * <p>Private instance data with default values:
+ * <p>Private instance variables with default values:
  * -acctNum:int = Integer.MAX_VALUE
  * -balance:double = 0.0
  *
@@ -20,7 +20,7 @@
  * +toString():String
  */
 public class Account {
-    /* private instance data */
+    /* private instance variables */
     private int acctNum;
     private double balance;
 
@@ -85,7 +85,7 @@ public class Account {
         another.credit(amount);
     }
 
-    /** Account string method. */
+    /** Account instance formatted string. */
     public String toString() {
         return String.format(
                 "Account number: %d%n"
