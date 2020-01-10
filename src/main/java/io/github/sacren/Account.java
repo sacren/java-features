@@ -16,7 +16,8 @@
  * +getBalance():double
  * +credit(amount:double):void
  * +debit(amount:double):void
- * +transact(another:Account, amount:double):void
+ * +transFrom(another:Account, amount:double):void
+ * +transTo(another:Account, amount:double):void
  * +toString():String
  */
 public class Account {
@@ -79,8 +80,14 @@ public class Account {
         balance -= amount;
     }
 
-    /** Account method transfers given amount to another account. */
-    public void transact(Account another, double amount) {
+    /** Account method transfers amount from another account. */
+    public void transFrom(Account another, double amount) {
+        another.debit(amount);
+        credit(amount);
+    }
+
+    /** Account method transfers amount to another account. */
+    public void transTo(Account another, double amount) {
         debit(amount);
         another.credit(amount);
     }

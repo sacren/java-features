@@ -55,7 +55,7 @@ public class TestAccount {
         System.out.println();
         System.out.println("=== Transfer $100.00 to another account ===");
         System.out.println();
-        defAcct.transact(acct, 100);
+        defAcct.transTo(acct, 100);
         System.out.println(defAcct);
         System.out.println();
         System.out.println(acct);
