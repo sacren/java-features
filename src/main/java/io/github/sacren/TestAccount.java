@@ -59,5 +59,12 @@ public class TestAccount {
         System.out.println(defAcct);
         System.out.println();
         System.out.println(acct);
+        System.out.println();
+        System.out.println("=== Transfer $100.00 from another account ===");
+        System.out.println();
+        defAcct.transFrom(acct, 100);
+        System.out.println(defAcct);
+        System.out.println();
+        System.out.println(acct);
     }
 }
