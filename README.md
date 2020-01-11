@@ -2,9 +2,10 @@
 
 ## What is Java Features?
 
-Java Features explores many features of Java SE and OpenJDK LTS through
-application examples.  Java Features embraces AdoptOpenJDK project.  Apache
-Maven is employed for build and test automation.
+Java Features is my personal project to explore JDK git source hosted on GitHub
+while I delve deep into Java.  I use AdoptOpenJDK and Apache Maven to build,
+run and test the package.  It's an ongoing project that will continue to evolve
+for a long time to come.  Review and comment are always appreciated.
 
 ## Prerequisite
 
@@ -12,11 +13,11 @@ Maven is employed for build and test automation.
 
         $ java -version
 
-2. Verify Apache Maven 3.6.1 and above is installed:
+2. Verify Apache Maven 3.6.2 and above is installed:
 
         $ mvn --version
 
-## Setup and build
+## Set up and build
 
 1. Install java-features:
 
@@ -31,4 +32,4 @@ Maven is employed for build and test automation.
         $ java -cp target/java-features-1.0.jar TestCylinder
         ...
 
-### Explore Java SE and have fun.
+### Explore JDK source and have lots of fun.
