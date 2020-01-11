@@ -14,9 +14,7 @@
  * +setYear(year:int):void
  * +setMonth(month:int):void
  * +setDay(day:int):void
- * +getYear():int
- * +getMonth():int
- * +getDay():int
+ * +getDate():Trio
  * +toString():String
  */
 public class Date {
@@ -74,19 +72,9 @@ public class Date {
         date.setThird(day);
     }
 
-    /** Date getter for the year. */
-    public int getYear() {
-        return date.getFirstInt();
-    }
-
-    /** Date getter for the month. */
-    public int getMonth() {
-        return date.getSecondInt();
-    }
-
-    /** Date getter for the day. */
-    public int getDay() {
-        return date.getThirdInt();
+    /** Date getter for the date. */
+    public Trio getDate() {
+        return date;
     }
 
     /** Date instance formatted string. */
@@ -95,8 +83,8 @@ public class Date {
                 "Year:  %04d%n"
                         + "Month: %02d%n"
                         + "Day:   %02d",
-                getYear(),
-                getMonth(),
-                getDay());
+                date.getFirstInt(),
+                date.getSecondInt(),
+                date.getThirdInt());
     }
 }
