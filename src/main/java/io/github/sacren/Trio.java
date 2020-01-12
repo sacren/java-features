@@ -14,7 +14,6 @@
  * +Trio(firstDbl:double, secondDbl:double, thirdDbl:double)
  *
  * <p>Public methods:
- * +setThird():void
  * +setThird(thirdInt:int):void
  * +setThird(thirdDbl:double):void
  * +getThirdInt():int
@@ -32,7 +31,7 @@ public class Trio extends Duo {
     public Trio() {
         /* super(); */
         /* above implicitly executed for default class */
-        setThird();
+        setThird(0);
     }
 
     /** Trio constructor for int instance variable. */
@@ -45,11 +44,6 @@ public class Trio extends Duo {
     public Trio(double firstDbl, double secondDbl, double thirdDbl) {
         super(firstDbl, secondDbl);
         setThird(thirdDbl);
-    }
-
-    /** Trio setter for default instance variables. */
-    public void setThird() {
-        thirdInt = 0;
     }
 
     /** Trio setter for int instance variable. */
