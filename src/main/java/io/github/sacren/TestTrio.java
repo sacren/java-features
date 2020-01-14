@@ -11,33 +11,33 @@ public class TestTrio {
         System.out.println(defTrio);
         System.out.println();
         System.out.printf(
-                "Default Trio instance: P(%d, %d, %d)%n",
+                "Default Trio instance: (%d, %d, %d)%n",
                 defTrio.getFirstInt(),
                 defTrio.getSecondInt(),
                 defTrio.getThirdInt());
         System.out.println();
         System.out.println("=== Custom Trio instance ===");
         System.out.println();
-        Trio trio = new Trio(1, 2, 3);
+        Trio trio = new Trio((double) 1, 2, (double) 3);
         System.out.println(trio);
         System.out.println();
         System.out.printf(
-                "Trio of int: P(%d, %d, %d)%n",
-                trio.getFirstInt(),
+                "Trio of mixed types: (%.2f, %d, %.2f)%n",
+                trio.getFirstDbl(),
                 trio.getSecondInt(),
-                trio.getThirdInt());
+                trio.getThirdDbl());
         System.out.println();
         System.out.println("=== Update Trio instance ===");
         System.out.println();
-        trio.setFirst(101);
+        trio.setFirst((double) 101);
         trio.setSecond(102);
-        trio.setThird(103);
+        trio.setThird((double) 103);
         System.out.println(trio);
         System.out.println();
         System.out.printf(
-                "Trio of int: P(%d, %d, %d)%n",
-                trio.getFirstInt(),
+                "Trio of mixed types: (%.2f, %d, %.2f)%n",
+                trio.getFirstDbl(),
                 trio.getSecondInt(),
-                trio.getThirdInt());
+                trio.getThirdDbl());
     }
 }
