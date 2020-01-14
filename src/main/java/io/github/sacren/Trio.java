@@ -11,6 +11,12 @@
  * <p>Constructor:
  * +Trio()
  * +Trio(firstInt:int, secondInt:int, thirdInt:int)
+ * +Trio(firstInt:int, secondDbl:double, thirdInt:int)
+ * +Trio(firstDbl:double, secondInt:int, thirdInt:int)
+ * +Trio(firstDbl:double, secondDbl:double, thirdInt:int)
+ * +Trio(firstInt:int, secondInt:int, thirdDbl:double)
+ * +Trio(firstInt:int, secondDbl:double, thirdDbl:double)
+ * +Trio(firstDbl:double, secondInt:int, thirdDbl:double)
  * +Trio(firstDbl:double, secondDbl:double, thirdDbl:double)
  *
  * <p>Public methods:
@@ -26,6 +32,7 @@ public class Trio extends Duo {
     /* private instance variables */
     private int thirdInt;
     private double thirdDbl;
+    private int type;
 
     /** Trio default constructor. */
     public Trio() {
@@ -40,6 +47,42 @@ public class Trio extends Duo {
         setThird(thirdInt);
     }
 
+    /** Trio constructor for int instance variable. */
+    public Trio(int firstInt, double secondDbl, int thirdInt) {
+        super(firstInt, secondDbl);
+        setThird(thirdInt);
+    }
+
+    /** Trio constructor for int instance variable. */
+    public Trio(double firstDbl, int secondInt, int thirdInt) {
+        super(firstDbl, secondInt);
+        setThird(thirdInt);
+    }
+
+    /** Trio constructor for int instance variable. */
+    public Trio(double firstDbl, double secondDbl, int thirdInt) {
+        super(firstDbl, secondDbl);
+        setThird(thirdInt);
+    }
+
+    /** Trio constructor for double instance variable. */
+    public Trio(int firstInt, int secondInt, double thirdDbl) {
+        super(firstInt, secondInt);
+        setThird(thirdDbl);
+    }
+
+    /** Trio constructor for double instance variable. */
+    public Trio(int firstInt, double secondDbl, double thirdDbl) {
+        super(firstInt, secondDbl);
+        setThird(thirdDbl);
+    }
+
+    /** Trio constructor for double instance variable. */
+    public Trio(double firstDbl, int secondInt, double thirdDbl) {
+        super(firstDbl, secondInt);
+        setThird(thirdDbl);
+    }
+
     /** Trio constructor for double instance variable. */
     public Trio(double firstDbl, double secondDbl, double thirdDbl) {
         super(firstDbl, secondDbl);
@@ -49,11 +92,13 @@ public class Trio extends Duo {
     /** Trio setter for int instance variable. */
     public void setThird(int thirdInt) {
         this.thirdInt = thirdInt;
+        type = 0;
     }
 
     /** Trio setter for double instance variable. */
     public void setThird(double thirdDbl) {
         this.thirdDbl = thirdDbl;
+        type = 1;
     }
 
     /** Trio getter for int instance variable. */
@@ -68,24 +113,33 @@ public class Trio extends Duo {
 
     /** Trio method for int string. */
     public String trioIntStr() {
-        return String.format("%s, %d", duoIntStr(), thirdInt);
+        String duo = super.toString();
+        StringBuilder sb = new StringBuilder(duo);
+        sb.deleteCharAt(duo.length() - 1);
+        return String.format("%s, %d)", sb.toString(), thirdInt);
     }
 
     /** Trio method for double string. */
     public String trioDblStr() {
-        return String.format("%s, %.2f", duoDblStr(), thirdDbl);
+        String duo = super.toString();
+        StringBuilder sb = new StringBuilder(duo);
+        sb.deleteCharAt(duo.length() - 1);
+        return String.format("%s, %.2f)", sb.toString(), thirdDbl);
     }
 
     /** Trio instance formatted string. */
     @Override
     public String toString() {
         StringBuilder trio = new StringBuilder();
-        switch (getType()) {
+        switch (type) {
+            case 0:
+                trio.append(trioIntStr());
+                break;
             case 1:
-                trio.append("(").append(trioIntStr()).append(")");
+                trio.append(trioDblStr());
                 break;
             default:
-                trio.append("(").append(trioDblStr()).append(")");
+                trio.append("Invalid input!");
                 break;
         }
         return trio.toString();
