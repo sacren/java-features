@@ -11,7 +11,7 @@ public class TestQuad {
         System.out.println(defQuad);
         System.out.println();
         System.out.printf(
-                "Default Quad instance: P(%d, %d, %d, %d)%n",
+                "Default Quad instance: (%d, %d, %d, %d)%n",
                 defQuad.getFirstInt(),
                 defQuad.getSecondInt(),
                 defQuad.getThirdInt(),
@@ -19,29 +19,29 @@ public class TestQuad {
         System.out.println();
         System.out.println("=== Custom Quad instance ===");
         System.out.println();
-        Quad quad = new Quad(1, 2, 3, 4);
+        Quad quad = new Quad((double) 1, 2, 3, (double) 4);
         System.out.println(quad);
         System.out.println();
         System.out.printf(
-                "Quad of int: P(%d, %d, %d, %d)%n",
-                quad.getFirstInt(),
+                "Quad of mixed types: (%.2f, %d, %d, %.2f)%n",
+                quad.getFirstDbl(),
                 quad.getSecondInt(),
                 quad.getThirdInt(),
-                quad.getFourthInt());
+                quad.getFourthDbl());
         System.out.println();
         System.out.println("=== Update Quad instance ===");
         System.out.println();
-        quad.setFirst(101);
+        quad.setFirst((double) 101);
         quad.setSecond(102);
         quad.setThird(103);
-        quad.setFourth(104);
+        quad.setFourth((double) 104);
         System.out.println(quad);
         System.out.println();
         System.out.printf(
-                "Quad of int: P(%d, %d, %d, %d)%n",
-                quad.getFirstInt(),
+                "Quad of mixed types: (%.2f, %d, %d, %.2f)%n",
+                quad.getFirstDbl(),
                 quad.getSecondInt(),
                 quad.getThirdInt(),
-                quad.getFourthInt());
+                quad.getFourthDbl());
     }
 }
