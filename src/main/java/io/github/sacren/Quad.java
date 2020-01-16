@@ -28,7 +28,6 @@
  * +Quad(firstDbl:double, secondDbl:double, thirdDbl:double, fourthDbl:double)
  *
  * <p>Public methods:
- * +setFourth():void
  * +setFourth(fourthInt:int):void
  * +setFourth(fourthDbl:double):void
  * +getFourthInt():int
@@ -45,7 +44,7 @@ public class Quad extends Trio {
     public Quad() {
         /* super(); */
         /* above implicitly executed for default class */
-        setFourth();
+        setFourth(0);
     }
 
     /** Quad constructor for int instance variable. */
@@ -142,12 +141,6 @@ public class Quad extends Trio {
     public Quad(double firstDbl, double secondDbl, double thirdDbl, double fourthDbl) {
         super(firstDbl, secondDbl, thirdDbl);
         setFourth(fourthDbl);
-    }
-
-    /** Quad setter for default instance variables. */
-    public void setFourth() {
-        fourthInt = 0;
-        type = 0;
     }
 
     /** Quad setter for int instance variable. */
