@@ -187,7 +187,7 @@ public class Quad extends Trio {
                 sb.append(String.format(", %.2f)", fourthDbl));
                 break;
             default:
-                sb.delete(0, len).append("Invalid input!");
+                sb.replace(0, len, "Invalid input!");
                 break;
         }
         return sb.toString();
