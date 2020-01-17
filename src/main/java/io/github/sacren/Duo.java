@@ -14,6 +14,8 @@
  * <p>Constructor:
  * +Duo()
  * +Duo(firstInt:int, secondInt:int)
+ * +Duo(firstInt:int, secondDbl:double)
+ * +Duo(firstDbl:double, secondInt:int)
  * +Duo(firstDbl:double, secondDbl:double)
  *
  * <p>Public methods:
@@ -41,20 +43,13 @@ public class Duo {
     public Duo() {
         setFirst(0);
         setSecond(0);
-        type = 1;
+        type = 0;
     }
 
     /** Duo constructor for int instance variables. */
     public Duo(int firstInt, int secondInt) {
         setFirst(firstInt);
         setSecond(secondInt);
-        type = 1;
-    }
-
-    /** Duo constructor for double instance variables. */
-    public Duo(double firstDbl, double secondDbl) {
-        setFirst(firstDbl);
-        setSecond(secondDbl);
         type = 0;
     }
 
@@ -62,13 +57,20 @@ public class Duo {
     public Duo(int firstInt, double secondDbl) {
         setFirst(firstInt);
         setSecond(secondDbl);
-        type = 2;
+        type = 1;
     }
 
     /** Duo constructor with mixed double and int input variables. */
     public Duo(double firstDbl, int secondInt) {
         setFirst(firstDbl);
         setSecond(secondInt);
+        type = 2;
+    }
+
+    /** Duo constructor for double instance variables. */
+    public Duo(double firstDbl, double secondDbl) {
+        setFirst(firstDbl);
+        setSecond(secondDbl);
         type = 3;
     }
 
@@ -137,16 +139,16 @@ public class Duo {
         StringBuilder sb = new StringBuilder();
         switch (type) {
             case 0:
-                sb.append("(").append(duoDblStr()).append(")");
-                break;
-            case 1:
                 sb.append("(").append(duoIntStr()).append(")");
                 break;
-            case 2:
+            case 1:
                 sb.append("(").append(intDblStr()).append(")");
                 break;
-            case 3:
+            case 2:
                 sb.append("(").append(dblIntStr()).append(")");
+                break;
+            case 3:
+                sb.append("(").append(duoDblStr()).append(")");
                 break;
             default:
                 sb.append("Invalid input!");
