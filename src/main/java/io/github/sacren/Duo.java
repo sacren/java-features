@@ -7,8 +7,8 @@
  * <p>Private instance variables with default values:
  * -firstInt:int = 0
  * -secondInt:int = 0
- * -firstDbl:double
- * -secondDbl:double
+ * -firstDbl:double = 0
+ * -secondDbl:double = 0
  * -type:int
  *
  * <p>Constructor:
@@ -25,7 +25,6 @@
  * +getSecondInt():int
  * +getFirstDbl():double
  * +getSecondDbl():double
- * +getType():int
  * +duoIntStr():String
  * +duoDblStr():String
  * +toString():String
@@ -111,11 +110,6 @@ public class Duo {
     /** Duo getter for the second double variable. */
     public double getSecondDbl() {
         return secondDbl;
-    }
-
-    /** Duo getter for which int value for formatted string. */
-    public int getType() {
-        return type;
     }
 
     /** Duo method for int string. */

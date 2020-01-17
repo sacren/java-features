@@ -6,7 +6,8 @@
  *
  * <p>Private instance variables with default value:
  * -thirdInt:int = 0
- * -thirdDbl:double
+ * -thirdDbl:double = 0
+ * -type:int
  *
  * <p>Constructor:
  * +Trio()

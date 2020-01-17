@@ -6,7 +6,8 @@
  *
  * <p>Private instance variables with default value:
  * -fourthInt:int = 0
- * -fourthDbl:double
+ * -fourthDbl:double = 0
+ * -type:int
  *
  * <p>Constructor:
  * +Quad()
