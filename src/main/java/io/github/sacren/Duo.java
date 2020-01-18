@@ -27,8 +27,6 @@
  * +getSecondInt():int
  * +getFirstDbl():double
  * +getSecondDbl():double
- * +duoIntStr():String
- * +duoDblStr():String
  * +toString():String
  */
 public class Duo {
@@ -114,41 +112,21 @@ public class Duo {
         return secondDbl;
     }
 
-    /** Duo method for int string. */
-    public String duoIntStr() {
-        return String.format("%d, %d", firstInt, secondInt);
-    }
-
-    /** Duo method for double string. */
-    public String duoDblStr() {
-        return String.format("%.2f, %.2f", firstDbl, secondDbl);
-    }
-
-    /** Duo method for int and double string. */
-    public String intDblStr() {
-        return String.format("%d, %.2f", firstInt, secondDbl);
-    }
-
-    /** Duo method for double and int string. */
-    public String dblIntStr() {
-        return String.format("%.2f, %d", firstDbl, secondInt);
-    }
-
     /** Duo instance formatted string. */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         switch (type) {
             case 0:
-                sb.append("(").append(duoIntStr()).append(")");
+                sb.append(String.format("(%d, %d)", firstInt, secondInt));
                 break;
             case 1:
-                sb.append("(").append(intDblStr()).append(")");
+                sb.append(String.format("(%d, %.2f)", firstInt, secondDbl));
                 break;
             case 2:
-                sb.append("(").append(dblIntStr()).append(")");
+                sb.append(String.format("(%.2f, %d)", firstDbl, secondInt));
                 break;
             case 3:
-                sb.append("(").append(duoDblStr()).append(")");
+                sb.append(String.format("(%.2f, %.2f)", firstDbl, secondDbl));
                 break;
             default:
                 sb.append("Invalid input!");

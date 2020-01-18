@@ -27,10 +27,6 @@ public class TestDuo {
                 dbl.getFirstDbl(),
                 dbl.getSecondDbl());
         System.out.println();
-        System.out.println("=== Duo double string ===");
-        System.out.println();
-        System.out.println(dbl.duoDblStr());
-        System.out.println();
         System.out.println("=== All Duo instance variables ===");
         System.out.println();
         Duo duo = new Duo();
