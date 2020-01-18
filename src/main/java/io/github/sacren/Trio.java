@@ -25,8 +25,6 @@
  * +setThird(thirdDbl:double):void
  * +getThirdInt():int
  * +getThirdDbl():double
- * +trioIntStr():String
- * +trioDblStr():String
  * +toString():String
  */
 public class Trio extends Duo {
@@ -112,37 +110,24 @@ public class Trio extends Duo {
         return thirdDbl;
     }
 
-    /** Trio method for int string. */
-    public String trioIntStr() {
-        String duo = super.toString();
-        StringBuilder sb = new StringBuilder(duo);
-        sb.deleteCharAt(duo.length() - 1);
-        return String.format("%s, %d)", sb.toString(), thirdInt);
-    }
-
-    /** Trio method for double string. */
-    public String trioDblStr() {
-        String duo = super.toString();
-        StringBuilder sb = new StringBuilder(duo);
-        sb.deleteCharAt(duo.length() - 1);
-        return String.format("%s, %.2f)", sb.toString(), thirdDbl);
-    }
-
     /** Trio instance formatted string. */
     @Override
     public String toString() {
-        StringBuilder trio = new StringBuilder();
+        String duo = super.toString();
+        int len = duo.length();
+        StringBuilder sb = new StringBuilder(duo);
+        sb.deleteCharAt(len - 1);
         switch (type) {
             case 0:
-                trio.append(trioIntStr());
+                sb.append(String.format(", %d)", thirdInt));
                 break;
             case 1:
-                trio.append(trioDblStr());
+                sb.append(String.format(", %.2f)", thirdDbl));
                 break;
             default:
-                trio.append("Invalid input!");
+                sb.replace(0, len, "Invalid input!");
                 break;
         }
-        return trio.toString();
+        return sb.toString();
     }
 }
