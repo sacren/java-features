@@ -39,16 +39,12 @@ public class Duo {
 
     /** Duo default constructor. */
     public Duo() {
-        setFirst(0);
-        setSecond(0);
-        type = 0;
     }
 
     /** Duo constructor for int instance variables. */
     public Duo(int firstInt, int secondInt) {
         setFirst(firstInt);
         setSecond(secondInt);
-        type = 0;
     }
 
     /** Duo constructor with mixed int and double input variables. */
