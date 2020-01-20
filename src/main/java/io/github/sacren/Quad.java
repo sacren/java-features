@@ -45,7 +45,6 @@ public class Quad extends Trio {
     public Quad() {
         /* super(); */
         /* above implicitly executed for default class */
-        setFourth(0);
     }
 
     /** Quad constructor for int instance variable. */
@@ -147,7 +146,6 @@ public class Quad extends Trio {
     /** Quad setter for int instance variable. */
     public void setFourth(int fourthInt) {
         this.fourthInt = fourthInt;
-        type = 0;
     }
 
     /** Quad setter for double instance variable. */

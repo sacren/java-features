@@ -37,7 +37,6 @@ public class Trio extends Duo {
     public Trio() {
         /* super(); */
         /* above implicitly executed for default class */
-        setThird(0);
     }
 
     /** Trio constructor for int instance variable. */
@@ -91,7 +90,6 @@ public class Trio extends Duo {
     /** Trio setter for int instance variable. */
     public void setThird(int thirdInt) {
         this.thirdInt = thirdInt;
-        type = 0;
     }
 
     /** Trio setter for double instance variable. */
