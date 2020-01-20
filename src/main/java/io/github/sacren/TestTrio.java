@@ -11,20 +11,28 @@ public class TestTrio {
         System.out.println(defTrio);
         System.out.println();
         System.out.printf(
-                "Default Trio instance: (%d, %d, %d)%n",
+                "Default Trio instance: (%d, %d, %d)%n"
+                        + "                       (%.2f, %.2f, %.2f)%n",
                 defTrio.getFirstInt(),
                 defTrio.getSecondInt(),
-                defTrio.getThirdInt());
+                defTrio.getThirdInt(),
+                defTrio.getFirstDbl(),
+                defTrio.getSecondDbl(),
+                defTrio.getThirdDbl());
         System.out.println();
         System.out.println("=== Custom Trio instance ===");
         System.out.println();
-        Trio trio = new Trio((double) 1, 2, (double) 3);
+        Trio trio = new Trio((double) 1, 2, 3);
         System.out.println(trio);
         System.out.println();
         System.out.printf(
-                "Trio of mixed types: (%.2f, %d, %.2f)%n",
-                trio.getFirstDbl(),
+                "Custom Trio instance: (%d, %d, %d)%n"
+                        + "                      (%.2f, %.2f, %.2f)%n",
+                trio.getFirstInt(),
                 trio.getSecondInt(),
+                trio.getThirdInt(),
+                trio.getFirstDbl(),
+                trio.getSecondDbl(),
                 trio.getThirdDbl());
         System.out.println();
         System.out.println("=== Update Trio instance ===");
@@ -35,9 +43,13 @@ public class TestTrio {
         System.out.println(trio);
         System.out.println();
         System.out.printf(
-                "Trio of mixed types: (%.2f, %d, %.2f)%n",
-                trio.getFirstDbl(),
+                "Updated Trio instance: (%d, %d, %d)%n"
+                        + "                       (%.2f, %.2f, %.2f)%n",
+                trio.getFirstInt(),
                 trio.getSecondInt(),
+                trio.getThirdInt(),
+                trio.getFirstDbl(),
+                trio.getSecondDbl(),
                 trio.getThirdDbl());
     }
 }

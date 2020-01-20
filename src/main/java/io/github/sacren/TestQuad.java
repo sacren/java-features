@@ -11,11 +11,16 @@ public class TestQuad {
         System.out.println(defQuad);
         System.out.println();
         System.out.printf(
-                "Default Quad instance: (%d, %d, %d, %d)%n",
+                "Default Quad instance: (%d, %d, %d, %d)%n"
+                        + "                       (%.2f, %.2f, %.2f, %.2f)%n",
                 defQuad.getFirstInt(),
                 defQuad.getSecondInt(),
                 defQuad.getThirdInt(),
-                defQuad.getFourthInt());
+                defQuad.getFourthInt(),
+                defQuad.getFirstDbl(),
+                defQuad.getSecondDbl(),
+                defQuad.getThirdDbl(),
+                defQuad.getFourthDbl());
         System.out.println();
         System.out.println("=== Custom Quad instance ===");
         System.out.println();
@@ -23,10 +28,15 @@ public class TestQuad {
         System.out.println(quad);
         System.out.println();
         System.out.printf(
-                "Quad of mixed types: (%.2f, %d, %d, %.2f)%n",
-                quad.getFirstDbl(),
+                "Quad of mixed types: (%d, %d, %d, %d)%n"
+                        + "                     (%.2f, %.2f, %.2f, %.2f)%n",
+                quad.getFirstInt(),
                 quad.getSecondInt(),
                 quad.getThirdInt(),
+                quad.getFourthInt(),
+                quad.getFirstDbl(),
+                quad.getSecondDbl(),
+                quad.getThirdDbl(),
                 quad.getFourthDbl());
         System.out.println();
         System.out.println("=== Update Quad instance ===");
@@ -38,10 +48,15 @@ public class TestQuad {
         System.out.println(quad);
         System.out.println();
         System.out.printf(
-                "Quad of mixed types: (%.2f, %d, %d, %.2f)%n",
-                quad.getFirstDbl(),
+                "Quad of mixed types: (%d, %d, %d, %d)%n"
+                        + "                     (%.2f, %.2f, %.2f, %.2f)%n",
+                quad.getFirstInt(),
                 quad.getSecondInt(),
                 quad.getThirdInt(),
+                quad.getFourthInt(),
+                quad.getFirstDbl(),
+                quad.getSecondDbl(),
+                quad.getThirdDbl(),
                 quad.getFourthDbl());
     }
 }
