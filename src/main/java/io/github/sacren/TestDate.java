@@ -5,7 +5,7 @@ public class TestDate {
     /** Test driver for Date. */
     public static void main(String[] args) {
         System.out.println();
-        System.out.println("=== Independence Day ===");
+        System.out.println("=== Unix epoch ===");
         System.out.println();
         System.out.println(new Date());
         System.out.println();

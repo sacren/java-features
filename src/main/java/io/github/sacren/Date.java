@@ -1,5 +1,9 @@
 /**
- * Date class models the year, the month and the day of the date.
+ * Date class models the date between 1900 and 9999.
+ *
+ * <p>Day = [1, 31]
+ * Month = [1, 12]
+ * Year = [1900, 9999]
  *
  * <p>Private instance variable:
  * -date:Trio
@@ -9,7 +13,6 @@
  * +Date(date:Trio)
  *
  * <p>Public methods:
- * +setDate():void
  * +setDate(date:Trio):void
  * +setYear(year:int):void
  * +setMonth(month:int):void
@@ -21,21 +24,15 @@ public class Date {
     /* private instance variable */
     private Trio date;
 
-    /** Date default constructor of Independence Day. */
+    /** Date default constructor of Unix epoch. */
     public Date() {
-        setDate();
-        setDate(new Trio(1776, 7, 4));
+        date = new Trio(1970, 1, 1);
     }
 
     /** Date constructor for any date. */
     public Date(Trio date) {
-        setDate();
+        this();
         setDate(date);
-    }
-
-    /** Date setter for date initialization. */
-    public void setDate() {
-        date = new Trio();
     }
 
     /** Date setter for the date. */
@@ -47,7 +44,7 @@ public class Date {
 
     /** Date setter for the year. */
     public void setYear(int year) {
-        if (year <= 0) {
+        if (year < 1900 && year > 9999) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", year));
         }
