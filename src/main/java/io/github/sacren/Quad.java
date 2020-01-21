@@ -4,9 +4,9 @@
  * <p>Broadly Quad could represent any object that contains conceptual four
  * elements.
  *
- * <p>Private instance variables with default value:
- * -fourthInt:int = 0
- * -fourthDbl:double = 0
+ * <p>Private instance variables:
+ * -fourthInt:int
+ * -fourthDbl:double
  * -type:int
  *
  * <p>Constructor:

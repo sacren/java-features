@@ -4,11 +4,11 @@
  * <p>We identify Duo object by (firstVal, secondVal).  Broadly the pair could
  * be used for any object of two variables.  See Pension class for details.
  *
- * <p>Private instance variables with default values:
- * -firstInt:int = 0
- * -secondInt:int = 0
- * -firstDbl:double = 0
- * -secondDbl:double = 0
+ * <p>Private instance variables:
+ * -firstInt:int
+ * -secondInt:int
+ * -firstDbl:double
+ * -secondDbl:double
  * -type:int
  *
  * <p>Constructor:

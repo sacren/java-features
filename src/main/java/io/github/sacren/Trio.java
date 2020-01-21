@@ -4,9 +4,9 @@
  * <p>We use Trio for 3-D pointers.  Broadly Trio could represent any object
  * that requires conceptual three dimensions.  See Time class for details.
  *
- * <p>Private instance variables with default value:
- * -thirdInt:int = 0
- * -thirdDbl:double = 0
+ * <p>Private instance variables:
+ * -thirdInt:int
+ * -thirdDbl:double
  * -type:int
  *
  * <p>Constructor:
