@@ -39,6 +39,11 @@ public class Duo {
 
     /** Duo default constructor. */
     public Duo() {
+        /* firstInt  = 0; */
+        /* secondInt = 0; */
+        /* firstDbl  = 0; */
+        /* secondDbl = 0; */
+        /* type      = 0; */
     }
 
     /** Duo constructor for int instance variables. */

@@ -1,8 +1,8 @@
 /**
  * Quad class extends Trio class.
  *
- * <p>Broadly Quad could represent any object that contains conceptual four
- * elements.
+ * <p>Broadly Quad object could represent any data structure that contains
+ * conceptual four elements.
  *
  * <p>Private instance variables:
  * -fourthInt:int
@@ -43,8 +43,10 @@ public class Quad extends Trio {
 
     /** Quad default constructor. */
     public Quad() {
-        /* super(); */
-        /* above implicitly executed for default class */
+        /* super();       */
+        /* fourthInt = 0; */
+        /* fourthDbl = 0; */
+        /* type      = 0; */
     }
 
     /** Quad constructor for int instance variable. */

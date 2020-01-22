@@ -1,8 +1,8 @@
 /**
  * Trio class extends Duo class.
  *
- * <p>We use Trio for 3-D pointers.  Broadly Trio could represent any object
- * that requires conceptual three dimensions.  See Time class for details.
+ * <p>Broadly Trio object could represent any data structure that contains
+ * conceptual three elements.  See Time class for details.
  *
  * <p>Private instance variables:
  * -thirdInt:int
@@ -35,8 +35,10 @@ public class Trio extends Duo {
 
     /** Trio default constructor. */
     public Trio() {
-        /* super(); */
-        /* above implicitly executed for default class */
+        /* super();      */
+        /* thirdInt = 0; */
+        /* thirdDbl = 0; */
+        /* type     = 0; */
     }
 
     /** Trio constructor for int instance variable. */
