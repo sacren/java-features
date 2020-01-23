@@ -1,67 +1,54 @@
 /**
  * Test driver for Time class.
  */
-import java.util.Scanner;
-
 public class TestTime {
     /** Test driver for Time. */
     public static void main(String[] args) {
-        Scanner inStream = new Scanner(System.in);
-        int hour;
-        System.out.print("Enter the hour: ");
-        hour = inStream.nextInt();
-        int minute;
-        System.out.print("Enter the minute: ");
-        minute = inStream.nextInt();
-        int second;
-        System.out.print("Enter the second: ");
-        second = inStream.nextInt();
-        inStream.close();
-        Time currentTime = new Time(new Trio(hour, minute, second));
+        Time ct = new Time(new Trio(23, 59, 58));
         System.out.println();
         System.out.println("=== What time is it? ===");
         System.out.println();
-        System.out.println(currentTime);
+        System.out.println(ct);
         /* advance one second */
-        currentTime.nextSecond();
+        ct.nextSecond();
         System.out.println();
         System.out.println("=== Advance to the next second ===");
         System.out.println();
-        System.out.println(currentTime);
+        System.out.println(ct);
         /* reset time to zero hour */
-        currentTime.setTime();
+        ct.setTime();
         System.out.println();
         System.out.println("=== Reset time to zero hour ===");
         System.out.println();
-        System.out.println(currentTime);
+        System.out.println(ct);
         /* restore Time instance to original state */
-        currentTime.restoreTime();
+        ct.restoreTime();
         System.out.println();
         System.out.println("=== Restore to start time ===");
         System.out.println();
-        System.out.println(currentTime);
+        System.out.println(ct);
         /* advance two seconds */
-        currentTime.nextSecond().nextSecond();
+        ct.nextSecond().nextSecond();
         System.out.println();
         System.out.println("=== Advance to the next next second ===");
         System.out.println();
-        System.out.println(currentTime);
+        System.out.println(ct);
         /* restore Time instance to original state again */
-        currentTime.restoreTime();
+        ct.restoreTime();
         System.out.println();
         System.out.println("=== Restore to start time again ===");
         System.out.println();
-        System.out.println(currentTime);
+        System.out.println(ct);
         System.out.println();
         System.out.println("=== Default time ===");
         System.out.println();
-        Time defTime = new Time();
-        System.out.println(defTime);
+        Time dt = new Time();
+        System.out.println(dt);
         /* restore to default start time */
-        defTime.restoreTime();
+        dt.restoreTime();
         System.out.println();
         System.out.println("=== Restore to default start time ===");
         System.out.println();
-        System.out.println(defTime);
+        System.out.println(dt);
     }
 }
