@@ -2,10 +2,9 @@
 
 ## What is Java Features?
 
-Java Features is my personal project to explore JDK git source hosted on GitHub
-while I delve deep into Java.  I use AdoptOpenJDK and Apache Maven to build,
-run and test the package.  It's an ongoing project that will continue to evolve
-for a long time to come.  Review and comment are always appreciated.
+Java Features is my personal project where I explore JDK source to delve deep
+into Java.  I use AdoptOpenJDK and Apache Maven to build, run and test the
+package.  I work on it daily as Java and JDK evolve.
 
 ## Prerequisite
 
@@ -27,9 +26,12 @@ for a long time to come.  Review and comment are always appreciated.
 2. Build and run:
 
         $ mvn clean package
+        $ java -cp target/java-features-1.0.jar TestDuo
+        $ java -cp target/java-features-1.0.jar TestTrio
+        $ java -cp target/java-features-1.0.jar TestQuad
         $ java -cp target/java-features-1.0.jar TestBall
         $ java -cp target/java-features-1.0.jar TestPension
         $ java -cp target/java-features-1.0.jar TestCylinder
         ...
 
-### Explore JDK source and have lots of fun.
+### Explore JDK source.  Discover new features.  Have lots of fun.
