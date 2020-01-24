@@ -33,6 +33,7 @@ public class Time {
 
     /** Time constructor with Trio object for parameter. */
     public Time(Trio time) {
+        setTime();
         setTime(time);
         setStartTime();
     }
@@ -44,7 +45,6 @@ public class Time {
 
     /** Time setter for specific time. */
     public void setTime(Trio time) {
-        setTime();
         setHour(time.getFirstInt());
         setMinute(time.getSecondInt());
         setSecond(time.getThirdInt());
