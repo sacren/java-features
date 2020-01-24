@@ -18,9 +18,6 @@
  * +setSecond(second:int):void
  * +nextSecond():Time
  * +restoreTime():void
- * +getSecond():int
- * +getMinute():int
- * +getHour():int
  * +toString():String
  */
 public class Time {
@@ -85,11 +82,11 @@ public class Time {
         st = new Trio(time.getFirstInt(), time.getSecondInt(), time.getThirdInt());
     }
 
-    /** Time getter for time by one second increment. */
+    /** Time method increments time by one second. */
     public Time nextSecond() {
-        int second = getSecond();
-        int minute = getMinute();
-        int hour = getHour();
+        int hour = time.getFirstInt();
+        int minute = time.getSecondInt();
+        int second = time.getThirdInt();
 
         if (++second == 60) {
             second = 0;
@@ -114,27 +111,17 @@ public class Time {
         setTime(st);
     }
 
-    /** Time getter for the hour. */
-    public int getHour() {
-        return time.getFirstInt();
-    }
-
-    /** Time getter for the minute. */
-    public int getMinute() {
-        return time.getSecondInt();
-    }
-
-    /** Time getter for the second. */
-    public int getSecond() {
-        return time.getThirdInt();
+    /** Time getter for the current time. */
+    public Trio getTime() {
+        return time;
     }
 
     /** Time instance formatted string. */
     public String toString() {
         return String.format(
                 "Current time: %02d:%02d:%02d",
-                getHour(),
-                getMinute(),
-                getSecond());
+                time.getFirstInt(),
+                time.getSecondInt(),
+                time.getThirdInt());
     }
 }
