@@ -14,9 +14,13 @@
  * +toString():String
  */
 public class Point extends Duo {
+    /* private Point instance variable */
+    private boolean isOrigin;
+
     /** Point default constructor. */
     public Point() {
         /* super(); */
+        isOrigin = true;
     }
 
     /** Point constructor for point of a pair of double numbers. */
@@ -27,6 +31,11 @@ public class Point extends Duo {
     /** Point constructor for point derived from a pair of integers. */
     public Point(int axisX, int axisY) {
         this((double) axisX, (double) axisY);
+        if (axisX == 0 && axisY == 0) {
+            setFirst(0);
+            setSecond(0);
+            isOrigin = true;
+        }
     }
 
     /** Point method for distance from this point to another. */
@@ -52,6 +61,12 @@ public class Point extends Duo {
 
     /** Point instance formatted string. */
     public String toString() {
-        return String.format("(%.2f, %.2f)", getFirstDbl(), getSecondDbl());
+        StringBuilder sb = new StringBuilder();
+        if (isOrigin) {
+            sb.append(String.format("(%d, %d)", getFirstInt(), getSecondInt()));
+        } else {
+            sb.append(String.format("(%.2f, %.2f)", getFirstDbl(), getSecondDbl()));
+        }
+        return sb.toString();
     }
 }
