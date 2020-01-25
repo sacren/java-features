@@ -1,6 +1,12 @@
 /**
  * Time class models the hour, the minute and the second of time.
  *
+ * <p>Time display format: hh:mm:ss
+ *
+ * <p>Hour = [0, 23]
+ * Minute = [0, 59]
+ * Second = [0, 59]
+ *
  * <p>Private instance variables:
  * -time:Trio
  * -st:Trio
@@ -87,21 +93,17 @@ public class Time {
         int hour = time.getFirstInt();
         int minute = time.getSecondInt();
         int second = time.getThirdInt();
-
         if (++second == 60) {
             second = 0;
             minute++;
         }
-
         if (minute == 60) {
             minute = 0;
             hour++;
         }
-
         if (hour == 24) {
             hour = 0;
         }
-
         setTime(new Trio(hour, minute, second));
         return this;
     }
