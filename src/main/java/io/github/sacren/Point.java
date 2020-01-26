@@ -63,9 +63,9 @@ public class Point extends Duo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (isOrigin) {
-            sb.append(String.format("(%d, %d)", getFirstInt(), getSecondInt()));
+            sb.append("(0, 0)");
         } else {
-            sb.append(String.format("(%.2f, %.2f)", getFirstDbl(), getSecondDbl()));
+            sb.append(super.toString());
         }
         return sb.toString();
     }
