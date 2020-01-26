@@ -16,7 +16,7 @@
 public class Point extends Duo {
     /** Point default constructor. */
     public Point() {
-        super();
+        /* super(); */
     }
 
     /** Point constructor for point of a pair of double numbers. */
