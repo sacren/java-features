@@ -33,8 +33,7 @@ public class Ball {
 
     /** Ball setter for initial ball position. */
     public void setPosition() {
-        /* avoid origin (0, 0) to initialize point */
-        position = new Point(1, 1);
+        position = new Point();
     }
 
     /** Ball setter to update ball position. */
