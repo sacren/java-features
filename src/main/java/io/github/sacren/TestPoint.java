@@ -39,5 +39,13 @@ public class TestPoint {
         for (Point point : points) {
             System.out.println(point);
         }
+        System.out.println();
+        System.out.println("=== Point boolean ===");
+        System.out.println();
+        System.out.printf(
+                "%s %s %s%n"
+                        + "%s %s %s%n",
+                pnt, pnt.isSame(origin) ? "==" : "!=", origin,
+                pnt, pnt.isSame(pnt) ? "==" : "!=", pnt);
     }
 }

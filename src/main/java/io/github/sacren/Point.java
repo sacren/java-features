@@ -9,6 +9,7 @@
  * +distance(another:Point):double
  * +distance(axisX:double, axisY:double):double
  * +distance():double
+ * +isSame(another:Point):boolean
  * +toString():String
  */
 public class Point extends Duo {
@@ -36,6 +37,15 @@ public class Point extends Duo {
     /** Point method for distance to the point of (0, 0). */
     public double distance() {
         return distance(new Point());
+    }
+
+    /** Point method checks if the point is the same as another. */
+    public boolean isSame(Point another) {
+        boolean same = false;
+        if (another.getFirstDbl() == getFirstDbl() && another.getSecondDbl() == getSecondDbl()) {
+            same = true;
+        }
+        return same;
     }
 
     /** Point instance formatted string. */
