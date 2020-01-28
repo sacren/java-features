@@ -4,12 +4,10 @@
  * <p>Constructor:
  * +Point()
  * +Point(axisX:double, axisY:double)
- * +Point(axisX:int, axisY:int)
  *
  * <p>Public methods:
  * +distance(another:Point):double
  * +distance(axisX:double, axisY:double):double
- * +distance(axisX:int, axisY:int):double
  * +distance():double
  * +toString():String
  */
@@ -24,11 +22,6 @@ public class Point extends Duo {
         super(axisX, axisY);
     }
 
-    /** Point constructor for point derived from a pair of integers. */
-    public Point(int axisX, int axisY) {
-        this((double) axisX, (double) axisY);
-    }
-
     /** Point method for distance from this point to another. */
     public double distance(Point another) {
         return Math.hypot(another.getFirstDbl() - getFirstDbl(),
@@ -38,11 +31,6 @@ public class Point extends Duo {
     /** Point method for distance to the point by a pair of double numbers. */
     public double distance(double axisX, double axisY) {
         return distance(new Point(axisX, axisY));
-    }
-
-    /** Point method for distance to the point by a pair of integers. */
-    public double distance(int axisX, int axisY) {
-        return distance((double) axisX, (double) axisY);
     }
 
     /** Point method for distance to the point of (0, 0). */
