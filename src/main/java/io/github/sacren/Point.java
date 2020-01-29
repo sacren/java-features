@@ -41,11 +41,7 @@ public class Point extends Duo {
 
     /** Point method checks if the point is the same as another. */
     public boolean isSame(Point another) {
-        boolean same = false;
-        if (another.getFirstDbl() == getFirstDbl() && another.getSecondDbl() == getSecondDbl()) {
-            same = true;
-        }
-        return same;
+        return another.getFirstDbl() == getFirstDbl() && another.getSecondDbl() == getSecondDbl();
     }
 
     /** Point instance formatted string. */
