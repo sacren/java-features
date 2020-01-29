@@ -49,6 +49,7 @@ public class Point extends Duo {
     }
 
     /** Point instance formatted string. */
+    @Override
     public String toString() {
         return String.format("(%.2f, %.2f)", getFirstDbl(), getSecondDbl());
     }
