@@ -1,5 +1,5 @@
 /**
- * Point is the subclass of Duo class.
+ * Point object is determined by two numbers.  It is the subclass of Duo class.
  *
  * <p>Constructor:
  * +Point()
@@ -18,28 +18,37 @@ public class Point extends Duo {
         /* super(); */
     }
 
-    /** Point constructor for point of a pair of double numbers. */
+    /** Point constructor instantiates the point of two numbers. */
     public Point(double axisX, double axisY) {
         super(axisX, axisY);
     }
 
-    /** Point method for distance from this point to another. */
+    /**
+     * Point distance method calculates the distance from this point to
+     * another.
+     */
     public double distance(Point another) {
         return Math.hypot(another.getFirstDbl() - getFirstDbl(),
                 another.getSecondDbl() - getSecondDbl());
     }
 
-    /** Point method for distance to the point by a pair of double numbers. */
+    /**
+     * Point distance method calculates the distance from this point to
+     * another point by a pair of numbers.
+     */
     public double distance(double axisX, double axisY) {
         return distance(new Point(axisX, axisY));
     }
 
-    /** Point method for distance to the point of (0, 0). */
+    /**
+     * Point distance method calculates the distance from this point to origin
+     * (0, 0).
+     */
     public double distance() {
         return distance(new Point());
     }
 
-    /** Point method checks if the point is the same as another. */
+    /** Point isSame method checks if two points are the same. */
     public boolean isSame(Point another) {
         return another.getFirstDbl() == getFirstDbl() && another.getSecondDbl() == getSecondDbl();
     }
