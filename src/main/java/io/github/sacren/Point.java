@@ -10,12 +10,11 @@
  * +distance(axisX:double, axisY:double):double
  * +distance():double
  * +isSame(another:Point):boolean
- * +toString():String
  */
 public class Point extends Duo {
     /** Point default constructor. */
     public Point() {
-        /* super(); */
+        this(0, 0);
     }
 
     /** Point constructor instantiates the point of two numbers. */
@@ -51,11 +50,5 @@ public class Point extends Duo {
     /** Point isSame method checks if two points are the same. */
     public boolean isSame(Point another) {
         return another.getFirstDbl() == getFirstDbl() && another.getSecondDbl() == getSecondDbl();
-    }
-
-    /** Point instance formatted string. */
-    @Override
-    public String toString() {
-        return String.format("(%.2f, %.2f)", getFirstDbl(), getSecondDbl());
     }
 }
