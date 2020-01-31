@@ -9,12 +9,10 @@ public class TestTime {
         System.out.println("=== What time is it? ===");
         System.out.println();
         System.out.println(ct);
-        /* advance one second */
-        ct.nextSecond();
         System.out.println();
         System.out.println("=== Advance to the next second ===");
         System.out.println();
-        System.out.println(ct);
+        System.out.println(ct.nextSecond());
         /* reset time to zero hour */
         ct.setTime();
         System.out.println();
@@ -27,12 +25,10 @@ public class TestTime {
         System.out.println("=== Restore to start time ===");
         System.out.println();
         System.out.println(ct);
-        /* advance two seconds */
-        ct.nextSecond().nextSecond();
         System.out.println();
         System.out.println("=== Advance to the next next second ===");
         System.out.println();
-        System.out.println(ct);
+        System.out.println(ct.nextSecond().nextSecond());
         /* restore Time instance to original state again */
         ct.restoreTime();
         System.out.println();
