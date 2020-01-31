@@ -23,6 +23,7 @@
  * +setMinute(minute:int):void
  * +setSecond(second:int):void
  * +nextSecond():Time
+ * +prevSecond():Time
  * +restoreTime():void
  * +toString():String
  */
@@ -103,6 +104,26 @@ public class Time {
         }
         if (hour == 24) {
             hour = 0;
+        }
+        setTime(new Trio(hour, minute, second));
+        return this;
+    }
+
+    /** Time prevSecond method decrements time by one second. */
+    public Time prevSecond() {
+        int hour = time.getFirstInt();
+        int minute = time.getSecondInt();
+        int second = time.getThirdInt();
+        if (--second == -1) {
+            second = 59;
+            minute--;
+        }
+        if (minute == -1) {
+            minute = 59;
+            hour--;
+        }
+        if (hour == -1) {
+            hour = 23;
         }
         setTime(new Trio(hour, minute, second));
         return this;
