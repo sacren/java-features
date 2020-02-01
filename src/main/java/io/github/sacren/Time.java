@@ -25,6 +25,7 @@
  * +nextSecond():Time
  * +prevSecond():Time
  * +restoreTime():void
+ * +zeroHour():Time
  * +toString():String
  */
 public class Time {
@@ -132,6 +133,12 @@ public class Time {
     /** Restore Time instance to the start state. */
     public void restoreTime() {
         setTime(st);
+    }
+
+    /** Time zeroHour method resets time to zero hour. */
+    public Time zeroHour() {
+        setTime(new Trio(0, 0, 0));
+        return this;
     }
 
     /** Time getter for the current time. */

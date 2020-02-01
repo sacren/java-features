@@ -13,12 +13,10 @@ public class TestTime {
         System.out.println("=== Advance to the next second ===");
         System.out.println();
         System.out.println(ct.nextSecond());
-        /* reset time to zero hour */
-        ct.setTime();
         System.out.println();
         System.out.println("=== Reset time to zero hour ===");
         System.out.println();
-        System.out.println(ct);
+        System.out.println(ct.zeroHour());
         System.out.println();
         System.out.println("=== Turn time back one second ===");
         System.out.println();
