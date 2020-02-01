@@ -21,32 +21,26 @@ public class TestTime {
         System.out.println("=== Turn time back one second ===");
         System.out.println();
         System.out.println(ct.prevSecond());
-        /* restore Time instance to original state */
-        ct.restoreTime();
         System.out.println();
         System.out.println("=== Restore to start time ===");
         System.out.println();
-        System.out.println(ct);
+        System.out.println(ct.restoreTime());
         System.out.println();
         System.out.println("=== Advance to the next next second ===");
         System.out.println();
         System.out.println(ct.nextSecond().nextSecond());
-        /* restore Time instance to original state again */
-        ct.restoreTime();
         System.out.println();
         System.out.println("=== Restore to start time again ===");
         System.out.println();
-        System.out.println(ct);
+        System.out.println(ct.restoreTime());
         System.out.println();
         System.out.println("=== Default time ===");
         System.out.println();
         Time dt = new Time();
         System.out.println(dt);
-        /* restore to default start time */
-        dt.restoreTime();
         System.out.println();
         System.out.println("=== Restore to default start time ===");
         System.out.println();
-        System.out.println(dt);
+        System.out.println(dt.restoreTime());
     }
 }

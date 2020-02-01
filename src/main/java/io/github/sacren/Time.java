@@ -24,7 +24,7 @@
  * +setSecond(second:int):void
  * +nextSecond():Time
  * +prevSecond():Time
- * +restoreTime():void
+ * +restoreTime():Time
  * +zeroHour():Time
  * +toString():String
  */
@@ -131,8 +131,9 @@ public class Time {
     }
 
     /** Restore Time instance to the start state. */
-    public void restoreTime() {
+    public Time restoreTime() {
         setTime(st);
+        return this;
     }
 
     /** Time zeroHour method resets time to zero hour. */
