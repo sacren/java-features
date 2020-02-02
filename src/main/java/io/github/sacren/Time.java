@@ -138,7 +138,7 @@ public class Time {
 
     /** Time zeroHour method resets time to zero hour. */
     public Time zeroHour() {
-        setTime(new Trio(0, 0, 0));
+        setTime();
         return this;
     }
 
