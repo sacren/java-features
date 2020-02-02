@@ -36,12 +36,11 @@ public class Time {
     /** Time default constructor. */
     public Time() {
         setTime();
-        setStartTime();
     }
 
     /** Time constructor with Trio object for parameter. */
     public Time(Trio time) {
-        setTime();
+        this();
         setTime(time);
         setStartTime();
     }
@@ -49,6 +48,7 @@ public class Time {
     /** Time setter for zero hour. */
     public void setTime() {
         time = new Trio();
+        st = new Trio();
     }
 
     /** Time setter for specific time. */
@@ -87,7 +87,9 @@ public class Time {
 
     /** Time setter for start time. */
     public void setStartTime() {
-        st = new Trio(time.getFirstInt(), time.getSecondInt(), time.getThirdInt());
+        st.setFirst(time.getFirstInt());
+        st.setSecond(time.getSecondInt());
+        st.setThird(time.getThirdInt());
     }
 
     /** Time method increments time by one second. */
@@ -138,7 +140,7 @@ public class Time {
 
     /** Time zeroHour method resets time to zero hour. */
     public Time zeroHour() {
-        setTime();
+        setTime(new Trio(0, 0, 0));
         return this;
     }
 
