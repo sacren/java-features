@@ -16,7 +16,6 @@
  * +Time(time:Trio)
  *
  * <p>Public methods:
- * +setTime():void
  * +setTime(time:Trio):void
  * +setGoodTime(time:Trio):void
  * +setStartTime():void
@@ -36,7 +35,8 @@ public class Time {
 
     /** Time default constructor. */
     public Time() {
-        setTime();
+        time = new Trio();
+        st = new Trio();
     }
 
     /** Time constructor with Trio object for parameter. */
@@ -44,12 +44,6 @@ public class Time {
         this();
         setTime(time);
         setStartTime();
-    }
-
-    /** Time setter for zero hour. */
-    public void setTime() {
-        time = new Trio();
-        st = new Trio();
     }
 
     /** Time setter for specific time. */
