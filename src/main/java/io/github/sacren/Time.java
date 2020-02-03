@@ -18,6 +18,7 @@
  * <p>Public methods:
  * +setTime():void
  * +setTime(time:Trio):void
+ * +setGoodTime(time:Trio):void
  * +setStartTime():void
  * +setHour(hour:int):void
  * +setMinute(minute:int):void
@@ -85,6 +86,13 @@ public class Time {
         time.setThird(second);
     }
 
+    /** Time setGoodTime method resets time with known good value. */
+    public void setGoodTime(Trio time) {
+        this.time.setFirst(time.getFirstInt());
+        this.time.setSecond(time.getSecondInt());
+        this.time.setThird(time.getThirdInt());
+    }
+
     /** Time setter for start time. */
     public void setStartTime() {
         st.setFirst(time.getFirstInt());
@@ -108,7 +116,7 @@ public class Time {
         if (hour == 24) {
             hour = 0;
         }
-        setTime(new Trio(hour, minute, second));
+        setGoodTime(new Trio(hour, minute, second));
         return this;
     }
 
@@ -128,19 +136,19 @@ public class Time {
         if (hour == -1) {
             hour = 23;
         }
-        setTime(new Trio(hour, minute, second));
+        setGoodTime(new Trio(hour, minute, second));
         return this;
     }
 
     /** Restore Time instance to the start state. */
     public Time restoreTime() {
-        setTime(st);
+        setGoodTime(st);
         return this;
     }
 
     /** Time zeroHour method resets time to zero hour. */
     public Time zeroHour() {
-        setTime(new Trio(0, 0, 0));
+        setGoodTime(new Trio(0, 0, 0));
         return this;
     }
 
