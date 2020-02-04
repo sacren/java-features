@@ -1,5 +1,5 @@
 /**
- * Time class models the hour, the minute and the second of time.
+ * Time class models the hour, minute and second of current time.
  *
  * <p>Time display format: hh:mm:ss
  *
@@ -29,7 +29,7 @@
  * +toString():String
  */
 public class Time {
-    /* declare private instance variables */
+    /* private instance variables */
     private Trio time;
     private Trio st;
 
@@ -46,14 +46,14 @@ public class Time {
         setStartTime();
     }
 
-    /** Time setter for specific time. */
+    /** Time setter for the hour, minute and second of current time. */
     public void setTime(Trio time) {
         setHour(time.getFirstInt());
         setMinute(time.getSecondInt());
         setSecond(time.getThirdInt());
     }
 
-    /** Time setter for the hour. */
+    /** Time setter for the hour of current time. */
     public void setHour(int hour) {
         if (hour < 0 || hour >= 24) {
             throw new IllegalArgumentException(
@@ -62,7 +62,7 @@ public class Time {
         time.setFirst(hour);
     }
 
-    /** Time setter for the minute. */
+    /** Time setter for the minute of current time. */
     public void setMinute(int minute) {
         if (minute < 0 || minute >= 60) {
             throw new IllegalArgumentException(
@@ -71,7 +71,7 @@ public class Time {
         time.setSecond(minute);
     }
 
-    /** Time setter for the second. */
+    /** Time setter for the second of current time. */
     public void setSecond(int second) {
         if (second < 0 || second >= 60) {
             throw new IllegalArgumentException(
@@ -87,14 +87,14 @@ public class Time {
         this.time.setThird(time.getThirdInt());
     }
 
-    /** Time setter for start time. */
+    /** Time setStartTime method records the start time. */
     public void setStartTime() {
         st.setFirst(time.getFirstInt());
         st.setSecond(time.getSecondInt());
         st.setThird(time.getThirdInt());
     }
 
-    /** Time method increments time by one second. */
+    /** Time nextSecond method advances time by one second. */
     public Time nextSecond() {
         int hour = time.getFirstInt();
         int minute = time.getSecondInt();
@@ -114,7 +114,7 @@ public class Time {
         return this;
     }
 
-    /** Time prevSecond method decrements time by one second. */
+    /** Time prevSecond method turns back time by one second. */
     public Time prevSecond() {
         int hour = time.getFirstInt();
         int minute = time.getSecondInt();
@@ -134,7 +134,7 @@ public class Time {
         return this;
     }
 
-    /** Restore Time instance to the start state. */
+    /** Time restoreTime method resets time to the start state. */
     public Time restoreTime() {
         setGoodTime(st);
         return this;
@@ -146,12 +146,12 @@ public class Time {
         return this;
     }
 
-    /** Time getter for the current time. */
+    /** Time getter method retrieves the current time. */
     public Trio getTime() {
         return time;
     }
 
-    /** Time instance formatted string. */
+    /** Time String method shows the formatted string of Time instance. */
     public String toString() {
         return String.format(
                 "Current time: %02d:%02d:%02d",
