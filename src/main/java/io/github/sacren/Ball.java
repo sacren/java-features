@@ -6,12 +6,11 @@
  * -speed:Duo
  *
  * <p>Constructor:
+ * +Ball()
  * +Ball(position:Point, speed:Duo)
  *
  * <p>Public methods:
- * +setPosition():void
  * +setPosition(position:Point):void
- * +setSpeed():void
  * +setSpeed(speed:Duo):void
  * +getPosition():Point
  * +getSpeed():Duo
@@ -23,28 +22,23 @@ public class Ball {
     private Point position;
     private Duo speed;
 
-    /** Ball constructor by Point. */
-    public Ball(Point position, Duo speed) {
-        setPosition();
-        setPosition(position);
-        setSpeed();
-        setSpeed(speed);
+    /** Ball default constructor. */
+    public Ball() {
+        position = new Point();
+        speed = new Duo((double) 0, (double) 0);
     }
 
-    /** Ball setter for initial ball position. */
-    public void setPosition() {
-        position = new Point();
+    /** Ball constructor by Point. */
+    public Ball(Point position, Duo speed) {
+        this();
+        setPosition(position);
+        setSpeed(speed);
     }
 
     /** Ball setter to update ball position. */
     public void setPosition(Point position) {
         this.position.setFirst(position.getFirstDbl());
         this.position.setSecond(position.getSecondDbl());
-    }
-
-    /** Ball setter for initial ball speed. */
-    public void setSpeed() {
-        speed = new Duo((double) 0, (double) 0);
     }
 
     /** Ball setter to update ball speed. */
