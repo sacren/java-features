@@ -1,5 +1,6 @@
 /**
- * Ball class.
+ * Ball class shows the position of the ball and the speed at that position.
+ * Position is represented by Point instance and speed by Duo instance.
  *
  * <p>Private instance variables:
  * -position:Point
@@ -14,8 +15,8 @@
  * +setSpeed(speed:Duo):void
  * +getPosition():Point
  * +getSpeed():Duo
- * +toString():String
  * +move():Ball
+ * +toString():String
  */
 public class Ball {
     /* private instance variables */
@@ -28,20 +29,20 @@ public class Ball {
         speed = new Duo((double) 0, (double) 0);
     }
 
-    /** Ball constructor by Point. */
+    /** Ball constructor with Point and Duo parameter. */
     public Ball(Point position, Duo speed) {
         this();
         setPosition(position);
         setSpeed(speed);
     }
 
-    /** Ball setter to update ball position. */
+    /** Ball setPosition method sets new position of the ball. */
     public void setPosition(Point position) {
         this.position.setFirst(position.getFirstDbl());
         this.position.setSecond(position.getSecondDbl());
     }
 
-    /** Ball setter to update ball speed. */
+    /** Ball setSpeed method sets new speed of the ball. */
     public void setSpeed(Duo speed) {
         this.speed.setFirst(speed.getFirstDbl());
         this.speed.setSecond(speed.getSecondDbl());
@@ -57,17 +58,8 @@ public class Ball {
         return speed;
     }
 
-    /** Ball formatted string. */
-    public String toString() {
-        return String.format(
-                "Position: P%s%n"
-                        + "Speed:     %s",
-                position,
-                speed);
-    }
-
     /**
-     * Ball public method for making steps.
+     * Ball move method moves the ball by steps.
      *
      * <p>Move a step by adding speed on X-axis and on Y-axis to the position.
      *
@@ -77,5 +69,14 @@ public class Ball {
         position.setFirst(position.getFirstDbl() + speed.getFirstDbl());
         position.setSecond(position.getSecondDbl() + speed.getSecondDbl());
         return this;
+    }
+
+    /** Ball String method shows the formatted string of Ball instance. */
+    public String toString() {
+        return String.format(
+                "Position: P%s%n"
+                        + "Speed:     %s",
+                position,
+                speed);
     }
 }
