@@ -52,12 +52,10 @@ public class TestBall {
         System.out.println();
         System.out.println("=== Make one move ===");
         System.out.println();
-        ball.move();
-        System.out.println(ball);
+        System.out.println(ball.move());
         System.out.println();
         System.out.println("=== Make two additional moves ===");
         System.out.println();
-        ball.move().move(); /* effect of chaining */
-        System.out.println(ball);
+        System.out.println(ball.move().move()); /* effect of chaining */
     }
 }
