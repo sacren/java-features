@@ -43,6 +43,10 @@ public class TestTime {
         Time dt = new Time();
         System.out.println(dt);
         System.out.println();
+        System.out.println("=== Turn time back by one minute ===");
+        System.out.println();
+        System.out.println(dt.prevMinute());
+        System.out.println();
         System.out.println("=== Restore to default start time ===");
         System.out.println();
         System.out.println(dt.restoreTime());
