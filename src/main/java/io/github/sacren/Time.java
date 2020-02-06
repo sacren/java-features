@@ -24,6 +24,7 @@
  * +setSecond(second:int):void
  * +nextSecond():Time
  * +prevSecond():Time
+ * +nextMinute():Time
  * +restoreTime():Time
  * +zeroHour():Time
  * +toString():String
@@ -129,6 +130,22 @@ public class Time {
         }
         if (hour == -1) {
             hour = 23;
+        }
+        setGoodTime(new Trio(hour, minute, second));
+        return this;
+    }
+
+    /** Time nextMinute method advances time by one minute. */
+    public Time nextMinute() {
+        int hour = time.getFirstInt();
+        int minute = time.getSecondInt();
+        int second = time.getThirdInt();
+        if (++minute == 60) {
+            minute = 0;
+            hour++;
+        }
+        if (hour == 24) {
+            hour = 0;
         }
         setGoodTime(new Trio(hour, minute, second));
         return this;
