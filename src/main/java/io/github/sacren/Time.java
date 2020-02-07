@@ -26,6 +26,7 @@
  * +prevSecond():Time
  * +nextMinute():Time
  * +prevMinute():Time
+ * +nextHour():Time
  * +restoreTime():Time
  * +zeroHour():Time
  * +toString():String
@@ -165,6 +166,16 @@ public class Time {
             hour = 23;
         }
         setGoodTime(new Trio(hour, minute, second));
+        return this;
+    }
+
+    /** Time nextHour method advances time by one hour. */
+    public Time nextHour() {
+        int hour = time.getFirstInt();
+        if (++hour == 24) {
+            hour = 0;
+        }
+        time.setFirst(hour);
         return this;
     }
 
