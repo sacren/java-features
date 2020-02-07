@@ -27,6 +27,7 @@
  * +nextMinute():Time
  * +prevMinute():Time
  * +nextHour():Time
+ * +prevHour():Time
  * +restoreTime():Time
  * +zeroHour():Time
  * +toString():String
@@ -174,6 +175,16 @@ public class Time {
         int hour = time.getFirstInt();
         if (++hour == 24) {
             hour = 0;
+        }
+        time.setFirst(hour);
+        return this;
+    }
+
+    /** Time prevHour method turns time back by one hour. */
+    public Time prevHour() {
+        int hour = time.getFirstInt();
+        if (--hour == -1) {
+            hour = 23;
         }
         time.setFirst(hour);
         return this;

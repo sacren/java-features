@@ -47,6 +47,10 @@ public class TestTime {
         Time dt = new Time();
         System.out.println(dt);
         System.out.println();
+        System.out.println("=== Turn time back by one hour ===");
+        System.out.println();
+        System.out.println(dt.prevHour());
+        System.out.println();
         System.out.println("=== Turn time back by one minute ===");
         System.out.println();
         System.out.println(dt.prevMinute());
