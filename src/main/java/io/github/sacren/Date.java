@@ -21,6 +21,12 @@
  * +toString():String
  */
 public class Date {
+    /** MONTHS static variables of the year. */
+    public static final String[] MONTHS = {
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    };
+
     /* private instance variable */
     private Trio date;
 
@@ -78,10 +84,10 @@ public class Date {
     public String toString() {
         return String.format(
                 "Year:  %04d%n"
-                        + "Month: %02d%n"
+                        + "Month: %s%n"
                         + "Day:   %02d",
                 date.getFirstInt(),
-                date.getSecondInt(),
+                MONTHS[date.getSecondInt() - 1],
                 date.getThirdInt());
     }
 }
