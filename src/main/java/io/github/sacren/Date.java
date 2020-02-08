@@ -1,9 +1,9 @@
 /**
- * Date class models the date between 1900 and 9999.
+ * Date class models the date between 1 and 9999 in Unix date format.
  *
  * <p>Day = [1, 31]
  * Month = [1, 12]
- * Year = [1900, 9999]
+ * Year = [1, 9999]
  *
  * <p>Private instance variable:
  * -date:Trio
@@ -44,7 +44,7 @@ public class Date {
 
     /** Date setter for the year. */
     public void setYear(int year) {
-        if (year < 1900 && year > 9999) {
+        if (year < 1 && year > 9999) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", year));
         }
