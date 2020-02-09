@@ -27,6 +27,14 @@ public class Date {
         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     };
 
+    /**
+     * DAYS_IN_MONTH static variable shows how many days in each month of the
+     * year.
+     */
+    public static final int[] DAYS_IN_MONTH = {
+        31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    };
+
     /* private instance variable */
     private Trio date;
 
@@ -68,7 +76,7 @@ public class Date {
 
     /** Date setter for the day. */
     public void setDay(int day) {
-        if (day <= 0 || day > 31) {
+        if (day < 1 || day > DAYS_IN_MONTH[date.getSecondInt() - 1]) {
             throw new IllegalArgumentException(
                     String.format("%d is invalid!", day));
         }

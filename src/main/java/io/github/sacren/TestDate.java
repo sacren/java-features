@@ -23,7 +23,7 @@ public class TestDate {
         System.out.println();
         System.out.println("=== Change to another arbitrary date ===");
         System.out.println();
-        date.setDate(new Trio(4798, 1, 1));
+        date.setDate(new Trio(4798, 2, 28));
         System.out.println(date);
     }
 }
