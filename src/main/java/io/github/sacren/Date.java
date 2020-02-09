@@ -80,14 +80,14 @@ public class Date {
         return date;
     }
 
-    /** Date instance formatted string. */
+    /**
+     * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
+     */
     public String toString() {
         return String.format(
-                "Year:  %04d%n"
-                        + "Month: %s%n"
-                        + "Day:   %02d",
-                date.getFirstInt(),
+                "%d %s %d",
+                date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
-                date.getThirdInt());
+                date.getFirstInt());
     }
 }
