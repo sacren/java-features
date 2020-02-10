@@ -19,8 +19,12 @@
  * +setDay(day:int):void
  * +getDate():Trio
  * +isLeapYear():boolean
+ * +getDayOfWeek():DayOfWeek
  * +toString():String
  */
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 public class Date {
     /** MONTHS static variables of the year. */
     public static final String[] MONTHS = {
@@ -102,12 +106,22 @@ public class Date {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 
+    /** Date getDayOfWeek method converts the date to day of the week. */
+    public DayOfWeek getDayOfWeek() {
+        return LocalDate.of(
+                date.getFirstInt(),
+                date.getSecondInt(),
+                date.getThirdInt())
+                .getDayOfWeek();
+    }
+
     /**
      * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
      */
     public String toString() {
         return String.format(
-                "%d %s %d",
+                "%s %d %s %d",
+                getDayOfWeek(),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
                 date.getFirstInt());
