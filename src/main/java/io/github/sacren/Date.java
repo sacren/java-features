@@ -18,6 +18,7 @@
  * +setMonth(month:int):void
  * +setDay(day:int):void
  * +getDate():Trio
+ * +isLeapYear():boolean
  * +toString():String
  */
 public class Date {
@@ -74,11 +75,18 @@ public class Date {
         date.setSecond(month);
     }
 
-    /** Date setter for the day. */
+    /** Date setDay method sets the day of Date instance. */
     public void setDay(int day) {
-        if (day < 1 || day > DAYS_IN_MONTH[date.getSecondInt() - 1]) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid!", day));
+        if (isLeapYear() && date.getSecondInt() == 2) {
+            if (day < 1 || day > 29) {
+                throw new IllegalArgumentException(
+                        String.format("%d is invalid!", day));
+            }
+        } else {
+            if (day < 1 || day > DAYS_IN_MONTH[date.getSecondInt() - 1]) {
+                throw new IllegalArgumentException(
+                        String.format("%d is invalid!", day));
+            }
         }
         date.setThird(day);
     }
@@ -86,6 +94,12 @@ public class Date {
     /** Date getter for the date. */
     public Trio getDate() {
         return date;
+    }
+
+    /** Date isLeapYear method checks if it is a leap year. */
+    public boolean isLeapYear() {
+        int year = date.getFirstInt();
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 
     /**
