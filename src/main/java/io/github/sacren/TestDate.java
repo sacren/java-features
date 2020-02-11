@@ -16,14 +16,12 @@ public class TestDate {
         System.out.println();
         System.out.println("=== Change to an arbitrary date ===");
         System.out.println();
-        date.setYear(3567);
-        date.setMonth(4);
-        date.setDay(30);
+        date.setDate(new Trio(3567, 4, 30));
         System.out.println(date);
         System.out.println();
         System.out.println("=== Change to another arbitrary date ===");
         System.out.println();
-        date.setDate(new Trio(4798, 2, 28));
+        date.setDate(new Trio(4400, 2, 29));
         System.out.println(date);
     }
 }
