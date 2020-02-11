@@ -24,6 +24,7 @@
  */
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.GregorianCalendar;
 
 public class Date {
     /** MONTHS static variables of the year. */
@@ -102,8 +103,8 @@ public class Date {
 
     /** Date isLeapYear method checks if it is a leap year. */
     public boolean isLeapYear() {
-        int year = date.getFirstInt();
-        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+        GregorianCalendar gc = new GregorianCalendar();
+        return gc.isLeapYear(date.getFirstInt());
     }
 
     /** Date getDayOfWeek method converts the date to day of the week. */
