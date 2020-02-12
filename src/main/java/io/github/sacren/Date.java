@@ -20,6 +20,7 @@
  * +getDate():Trio
  * +isLeapYear():boolean
  * +getDayOfWeek():DayOfWeek
+ * +getWednesday():DayOfWeek
  * +toString():String
  */
 import java.time.DayOfWeek;
@@ -116,15 +117,22 @@ public class Date {
                 .getDayOfWeek();
     }
 
+    /** Date getWednesday method retrieves Wednesday out of DayOfWeek enum. */
+    public DayOfWeek getWednesday() {
+        return DayOfWeek.WEDNESDAY;
+    }
+
     /**
      * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
      */
     public String toString() {
         return String.format(
-                "%s %d %s %d",
+                "%s %d %s %d%n%n"
+                        + "=== Enums ===%n%n%s",
                 getDayOfWeek(),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
-                date.getFirstInt());
+                date.getFirstInt(),
+                getWednesday());
     }
 }
