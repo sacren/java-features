@@ -21,6 +21,7 @@
  * +isLeapYear():boolean
  * +getDayOfWeek():DayOfWeek
  * +getWednesday():DayOfWeek
+ * +wedToFri():DayOfWeek
  * +toString():String
  */
 import java.time.DayOfWeek;
@@ -122,17 +123,27 @@ public class Date {
         return DayOfWeek.WEDNESDAY;
     }
 
+    /** Date wedToFri method advances from Wednesday to Friday. */
+    public DayOfWeek wedToFri() {
+        DayOfWeek dow = DayOfWeek.WEDNESDAY;
+        dow = dow.plus(2);
+        return dow;
+    }
+
     /**
      * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
      */
     public String toString() {
         return String.format(
                 "%s %d %s %d%n%n"
-                        + "=== Enums ===%n%n%s",
+                        + "=== Enums ===%n%n"
+                        + "It's %s%n"
+                        + "Now it's %s",
                 getDayOfWeek(),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
                 date.getFirstInt(),
-                getWednesday());
+                getWednesday(),
+                wedToFri());
     }
 }
