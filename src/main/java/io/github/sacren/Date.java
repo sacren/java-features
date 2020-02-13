@@ -137,13 +137,13 @@ public class Date {
         return String.format(
                 "%s %d %s %d%n%n"
                         + "=== Enums ===%n%n"
-                        + "It's %s%n"
-                        + "Now it's %s",
+                        + "%s => %d%n"
+                        + "%s => %d",
                 getDayOfWeek(),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
                 date.getFirstInt(),
-                getWednesday(),
-                wedToFri());
+                getWednesday(), getWednesday().getValue(),
+                wedToFri(), wedToFri().getValue());
     }
 }
