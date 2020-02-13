@@ -22,11 +22,14 @@
  * +getDayOfWeek():DayOfWeek
  * +getWednesday():DayOfWeek
  * +wedToFri():DayOfWeek
+ * +printMonday():String
  * +toString():String
  */
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Date {
     /** MONTHS static variables of the year. */
@@ -130,6 +133,17 @@ public class Date {
         return dow;
     }
 
+    /** Date printMonday method prints different formats of Monday. */
+    public String printMonday() {
+        DayOfWeek dow = DayOfWeek.MONDAY;
+        Locale locale = Locale.getDefault();
+        return String.format(
+                "%s, %s, %s",
+                dow.getDisplayName(TextStyle.FULL, locale),
+                dow.getDisplayName(TextStyle.SHORT, locale),
+                dow.getDisplayName(TextStyle.NARROW, locale));
+    }
+
     /**
      * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
      */
@@ -138,12 +152,14 @@ public class Date {
                 "%s %d %s %d%n%n"
                         + "=== Enums ===%n%n"
                         + "%s => %d%n"
-                        + "%s => %d",
+                        + "%s => %d%n"
+                        + "%s",
                 getDayOfWeek(),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
                 date.getFirstInt(),
                 getWednesday(), getWednesday().getValue(),
-                wedToFri(), wedToFri().getValue());
+                wedToFri(), wedToFri().getValue(),
+                printMonday());
     }
 }
