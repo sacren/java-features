@@ -162,7 +162,7 @@ public class Date {
                         + "FULL:    %s%n"
                         + "SHORT:   %s%n"
                         + "NARROW:  %s",
-                getDayOfWeek(),
+                shortDisplayName(getDayOfWeek()),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
                 date.getFirstInt(),
