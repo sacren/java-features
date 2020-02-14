@@ -22,7 +22,9 @@
  * +getDayOfWeek():DayOfWeek
  * +getWednesday():DayOfWeek
  * +wedToFri():DayOfWeek
- * +printMonday():String
+ * +fullDisplayName(dow:DayOfWeek):String
+ * +shortDisplayName(dow:DayOfWeek):String
+ * +narrowDisplayName(dow:DayOfWeek):String
  * +toString():String
  */
 import java.time.DayOfWeek;
@@ -133,15 +135,19 @@ public class Date {
         return dow;
     }
 
-    /** Date printMonday method prints different formats of Monday. */
-    public String printMonday() {
-        DayOfWeek dow = DayOfWeek.MONDAY;
-        Locale locale = Locale.getDefault();
-        return String.format(
-                "%s, %s, %s",
-                dow.getDisplayName(TextStyle.FULL, locale),
-                dow.getDisplayName(TextStyle.SHORT, locale),
-                dow.getDisplayName(TextStyle.NARROW, locale));
+    /** Date fullDisplayName method prints the full name of DayOfWeek. */
+    public String fullDisplayName(DayOfWeek dow) {
+        return dow.getDisplayName(TextStyle.FULL, Locale.getDefault());
+    }
+
+    /** Date shortDisplayName method prints the short name of DayOfWeek. */
+    public String shortDisplayName(DayOfWeek dow) {
+        return dow.getDisplayName(TextStyle.SHORT, Locale.getDefault());
+    }
+
+    /** Date narrowDisplayName method prints the narrow name of DayOfWeek. */
+    public String narrowDisplayName(DayOfWeek dow) {
+        return dow.getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
     /**
@@ -153,13 +159,17 @@ public class Date {
                         + "=== Enums ===%n%n"
                         + "%s => %d%n"
                         + "%s => %d%n"
-                        + "%s",
+                        + "FULL:    %s%n"
+                        + "SHORT:   %s%n"
+                        + "NARROW:  %s",
                 getDayOfWeek(),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
                 date.getFirstInt(),
                 getWednesday(), getWednesday().getValue(),
                 wedToFri(), wedToFri().getValue(),
-                printMonday());
+                fullDisplayName(DayOfWeek.MONDAY),
+                shortDisplayName(DayOfWeek.MONDAY),
+                narrowDisplayName(DayOfWeek.MONDAY));
     }
 }
