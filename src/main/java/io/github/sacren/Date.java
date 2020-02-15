@@ -22,9 +22,9 @@
  * +getDayOfWeek():DayOfWeek
  * +getWednesday():DayOfWeek
  * +wedToFri():DayOfWeek
- * +fullDisplayName(dow:DayOfWeek):String
- * +shortDisplayName(dow:DayOfWeek):String
- * +narrowDisplayName(dow:DayOfWeek):String
+ * +fullDayOfWeek(dow:DayOfWeek):String
+ * +shortDayOfWeek(dow:DayOfWeek):String
+ * +narrowDayOfWeek(dow:DayOfWeek):String
  * +getMonth(month:int):Month
  * +toString():String
  */
@@ -137,18 +137,18 @@ public class Date {
         return dow;
     }
 
-    /** Date fullDisplayName method prints the full name of DayOfWeek. */
-    public String fullDisplayName(DayOfWeek dow) {
+    /** Date fullDayOfWeek method prints the full name of DayOfWeek. */
+    public String fullDayOfWeek(DayOfWeek dow) {
         return dow.getDisplayName(TextStyle.FULL, Locale.getDefault());
     }
 
-    /** Date shortDisplayName method prints the short name of DayOfWeek. */
-    public String shortDisplayName(DayOfWeek dow) {
+    /** Date shortDayOfWeek method prints the short name of DayOfWeek. */
+    public String shortDayOfWeek(DayOfWeek dow) {
         return dow.getDisplayName(TextStyle.SHORT, Locale.getDefault());
     }
 
-    /** Date narrowDisplayName method prints the narrow name of DayOfWeek. */
-    public String narrowDisplayName(DayOfWeek dow) {
+    /** Date narrowDayOfWeek method prints the narrow name of DayOfWeek. */
+    public String narrowDayOfWeek(DayOfWeek dow) {
         return dow.getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
@@ -170,15 +170,15 @@ public class Date {
                         + "SHORT:   %s%n"
                         + "NARROW:  %s%n"
                         + "%s",
-                shortDisplayName(getDayOfWeek()),
+                shortDayOfWeek(getDayOfWeek()),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
                 date.getFirstInt(),
                 getWednesday(), getWednesday().getValue(),
                 wedToFri(), wedToFri().getValue(),
-                fullDisplayName(DayOfWeek.MONDAY),
-                shortDisplayName(DayOfWeek.MONDAY),
-                narrowDisplayName(DayOfWeek.MONDAY),
+                fullDayOfWeek(DayOfWeek.MONDAY),
+                shortDayOfWeek(DayOfWeek.MONDAY),
+                narrowDayOfWeek(DayOfWeek.MONDAY),
                 getMonth(date.getSecondInt()));
     }
 }
