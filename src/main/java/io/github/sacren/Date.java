@@ -25,10 +25,12 @@
  * +fullDisplayName(dow:DayOfWeek):String
  * +shortDisplayName(dow:DayOfWeek):String
  * +narrowDisplayName(dow:DayOfWeek):String
+ * +getMonth(month:int):Month
  * +toString():String
  */
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -150,6 +152,11 @@ public class Date {
         return dow.getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
+    /** Date getMonth method gets the month. */
+    public Month getMonth(int month) {
+        return Month.of(month);
+    }
+
     /**
      * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
      */
@@ -161,7 +168,8 @@ public class Date {
                         + "%s => %d%n"
                         + "FULL:    %s%n"
                         + "SHORT:   %s%n"
-                        + "NARROW:  %s",
+                        + "NARROW:  %s%n"
+                        + "%s",
                 shortDisplayName(getDayOfWeek()),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
@@ -170,6 +178,7 @@ public class Date {
                 wedToFri(), wedToFri().getValue(),
                 fullDisplayName(DayOfWeek.MONDAY),
                 shortDisplayName(DayOfWeek.MONDAY),
-                narrowDisplayName(DayOfWeek.MONDAY));
+                narrowDisplayName(DayOfWeek.MONDAY),
+                getMonth(date.getSecondInt()));
     }
 }
