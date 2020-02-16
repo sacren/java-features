@@ -39,12 +39,6 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class Date {
-    /** MONTHS static variables of the year. */
-    public static final String[] MONTHS = {
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    };
-
     /**
      * DAYS_IN_MONTH static variable shows how many days in each month of the
      * year.
@@ -192,7 +186,7 @@ public class Date {
                         + "NARROW:  %s",
                 shortDayOfWeek(getDayOfWeek()),
                 date.getThirdInt(),
-                MONTHS[date.getSecondInt() - 1],
+                shortMonthName(getMonth(date.getSecondInt())),
                 date.getFirstInt(),
                 getWednesday(), getWednesday().getValue(),
                 wedToFri(), wedToFri().getValue(),
