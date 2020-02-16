@@ -26,6 +26,9 @@
  * +shortDayOfWeek(dow:DayOfWeek):String
  * +narrowDayOfWeek(dow:DayOfWeek):String
  * +getMonth(month:int):Month
+ * +fullMonthName(month:Month):String
+ * +shortMonthName(month:Month):String
+ * +narrowMonthName(month:Month):String
  * +toString():String
  */
 import java.time.DayOfWeek;
@@ -157,6 +160,21 @@ public class Date {
         return Month.of(month);
     }
 
+    /** Date fullMonthName method prints the full name of the month. */
+    public String fullMonthName(Month month) {
+        return month.getDisplayName(TextStyle.FULL, Locale.getDefault());
+    }
+
+    /** Date shortMonthName method prints the short name of the month. */
+    public String shortMonthName(Month month) {
+        return month.getDisplayName(TextStyle.SHORT, Locale.getDefault());
+    }
+
+    /** Date narrowMonthName method prints the narrow name of the month. */
+    public String narrowMonthName(Month month) {
+        return month.getDisplayName(TextStyle.NARROW, Locale.getDefault());
+    }
+
     /**
      * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
      */
@@ -169,7 +187,9 @@ public class Date {
                         + "FULL:    %s%n"
                         + "SHORT:   %s%n"
                         + "NARROW:  %s%n"
-                        + "%s",
+                        + "FULL:    %s%n"
+                        + "SHORT:   %s%n"
+                        + "NARROW:  %s",
                 shortDayOfWeek(getDayOfWeek()),
                 date.getThirdInt(),
                 MONTHS[date.getSecondInt() - 1],
@@ -179,6 +199,8 @@ public class Date {
                 fullDayOfWeek(DayOfWeek.MONDAY),
                 shortDayOfWeek(DayOfWeek.MONDAY),
                 narrowDayOfWeek(DayOfWeek.MONDAY),
-                getMonth(date.getSecondInt()));
+                fullMonthName(getMonth(date.getSecondInt())),
+                shortMonthName(getMonth(date.getSecondInt())),
+                narrowMonthName(getMonth(date.getSecondInt())));
     }
 }
