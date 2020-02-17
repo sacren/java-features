@@ -20,8 +20,6 @@
  * +getDate():Trio
  * +isLeapYear():boolean
  * +getDayOfWeek():DayOfWeek
- * +getWednesday():DayOfWeek
- * +wedToFri():DayOfWeek
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
  * +narrowDayOfWeek(dow:DayOfWeek):String
@@ -121,18 +119,6 @@ public class Date {
                 .getDayOfWeek();
     }
 
-    /** Date getWednesday method retrieves Wednesday out of DayOfWeek enum. */
-    public DayOfWeek getWednesday() {
-        return DayOfWeek.WEDNESDAY;
-    }
-
-    /** Date wedToFri method advances from Wednesday to Friday. */
-    public DayOfWeek wedToFri() {
-        DayOfWeek dow = DayOfWeek.WEDNESDAY;
-        dow = dow.plus(2);
-        return dow;
-    }
-
     /** Date fullDayOfWeek method prints the full name of DayOfWeek. */
     public String fullDayOfWeek(DayOfWeek dow) {
         return dow.getDisplayName(TextStyle.FULL, Locale.getDefault());
@@ -171,7 +157,7 @@ public class Date {
                 "%s %d %s %d%n%n"
                         + "=== Enums ===%n%n"
                         + "%s => %d%n"
-                        + "%s => %d%n"
+                        + "%s    => %d%n"
                         + "FULL:    %s%n"
                         + "SHORT:   %s%n"
                         + "NARROW:  %s%n"
@@ -182,8 +168,8 @@ public class Date {
                 date.getThirdInt(),
                 shortMonthName(Month.of(date.getSecondInt())),
                 date.getFirstInt(),
-                getWednesday(), getWednesday().getValue(),
-                wedToFri(), wedToFri().getValue(),
+                DayOfWeek.WEDNESDAY, DayOfWeek.WEDNESDAY.getValue(),
+                DayOfWeek.WEDNESDAY.plus(2), DayOfWeek.WEDNESDAY.plus(2).getValue(),
                 fullDayOfWeek(DayOfWeek.MONDAY),
                 shortDayOfWeek(DayOfWeek.MONDAY),
                 narrowDayOfWeek(DayOfWeek.MONDAY),
