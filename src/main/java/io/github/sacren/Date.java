@@ -25,7 +25,6 @@
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
  * +narrowDayOfWeek(dow:DayOfWeek):String
- * +getMonth(month:int):Month
  * +fullMonthName(month:Month):String
  * +shortMonthName(month:Month):String
  * +narrowMonthName(month:Month):String
@@ -149,11 +148,6 @@ public class Date {
         return dow.getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
-    /** Date getMonth method gets the month. */
-    public Month getMonth(int month) {
-        return Month.of(month);
-    }
-
     /** Date fullMonthName method prints the full name of the month. */
     public String fullMonthName(Month month) {
         return month.getDisplayName(TextStyle.FULL, Locale.getDefault());
@@ -186,15 +180,15 @@ public class Date {
                         + "NARROW:  %s",
                 shortDayOfWeek(getDayOfWeek()),
                 date.getThirdInt(),
-                shortMonthName(getMonth(date.getSecondInt())),
+                shortMonthName(Month.of(date.getSecondInt())),
                 date.getFirstInt(),
                 getWednesday(), getWednesday().getValue(),
                 wedToFri(), wedToFri().getValue(),
                 fullDayOfWeek(DayOfWeek.MONDAY),
                 shortDayOfWeek(DayOfWeek.MONDAY),
                 narrowDayOfWeek(DayOfWeek.MONDAY),
-                fullMonthName(getMonth(date.getSecondInt())),
-                shortMonthName(getMonth(date.getSecondInt())),
-                narrowMonthName(getMonth(date.getSecondInt())));
+                fullMonthName(Month.of(date.getSecondInt())),
+                shortMonthName(Month.of(date.getSecondInt())),
+                narrowMonthName(Month.of(date.getSecondInt())));
     }
 }
