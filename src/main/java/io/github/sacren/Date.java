@@ -31,8 +31,8 @@
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.YearMonth;
 import java.time.format.TextStyle;
-import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class Date {
@@ -106,8 +106,7 @@ public class Date {
 
     /** Date isLeapYear method checks if it is a leap year. */
     public boolean isLeapYear() {
-        GregorianCalendar gc = new GregorianCalendar();
-        return gc.isLeapYear(date.getFirstInt());
+        return YearMonth.of(date.getFirstInt(), date.getSecondInt()).isLeapYear();
     }
 
     /** Date getDayOfWeek method converts the date to day of the week. */
