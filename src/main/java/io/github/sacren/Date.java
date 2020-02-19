@@ -147,27 +147,10 @@ public class Date {
      */
     public String toString() {
         return String.format(
-                "%s %d %s %d%n%n"
-                        + "=== Enums ===%n%n"
-                        + "%s => %d%n"
-                        + "%s    => %d%n"
-                        + "FULL:    %s%n"
-                        + "SHORT:   %s%n"
-                        + "NARROW:  %s%n"
-                        + "FULL:    %s%n"
-                        + "SHORT:   %s%n"
-                        + "NARROW:  %s",
+                "%s %d %s %d",
                 shortDayOfWeek(getDayOfWeek()),
                 date.getThirdInt(),
                 shortMonthName(Month.of(date.getSecondInt())),
-                date.getFirstInt(),
-                DayOfWeek.WEDNESDAY, DayOfWeek.WEDNESDAY.getValue(),
-                DayOfWeek.WEDNESDAY.plus(2), DayOfWeek.WEDNESDAY.plus(2).getValue(),
-                fullDayOfWeek(DayOfWeek.MONDAY),
-                shortDayOfWeek(DayOfWeek.MONDAY),
-                narrowDayOfWeek(DayOfWeek.MONDAY),
-                fullMonthName(Month.of(date.getSecondInt())),
-                shortMonthName(Month.of(date.getSecondInt())),
-                narrowMonthName(Month.of(date.getSecondInt())));
+                date.getFirstInt());
     }
 }
