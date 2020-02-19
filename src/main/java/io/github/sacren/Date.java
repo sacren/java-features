@@ -18,7 +18,6 @@
  * +setMonth(month:int):void
  * +setDay(day:int):void
  * +getDate():Trio
- * +isLeapYear():boolean
  * +getDayOfWeek():DayOfWeek
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
@@ -85,7 +84,7 @@ public class Date {
 
     /** Date setDay method sets the day of Date instance. */
     public void setDay(int day) {
-        if (isLeapYear() && date.getSecondInt() == 2) {
+        if (Year.isLeap(date.getFirstInt()) && date.getSecondInt() == 2) {
             if (day < 1 || day > 29) {
                 throw new IllegalArgumentException(
                         String.format("%d is invalid!", day));
@@ -102,11 +101,6 @@ public class Date {
     /** Date getter for the date. */
     public Trio getDate() {
         return date;
-    }
-
-    /** Date isLeapYear method checks if it is a leap year. */
-    public boolean isLeapYear() {
-        return Year.isLeap(date.getFirstInt());
     }
 
     /** Date getDayOfWeek method converts the date to day of the week. */
