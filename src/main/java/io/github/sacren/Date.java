@@ -7,6 +7,7 @@
  *
  * <p>Private instance variable:
  * -date:Trio
+ * -localDate:LocalDate
  *
  * <p>Constructor:
  * +Date()
@@ -18,7 +19,6 @@
  * +setMonth(month:int):void
  * +setDay(day:int):void
  * +getDate():Trio
- * +localDate():LocalDate
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
  * +narrowDayOfWeek(dow:DayOfWeek):String
@@ -45,15 +45,17 @@ public class Date {
 
     /* private instance variable */
     private Trio date;
+    private LocalDate localDate;
 
     /** Date default constructor of Unix epoch. */
     public Date() {
         date = new Trio(1970, 1, 1);
+        localDate = LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
     }
 
     /** Date constructor for any date. */
     public Date(Trio date) {
-        this();
+        this.date = new Trio();
         setDate(date);
     }
 
@@ -62,6 +64,7 @@ public class Date {
         setYear(date.getFirstInt());
         setMonth(date.getSecondInt());
         setDay(date.getThirdInt());
+        localDate = LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
     }
 
     /** Date setter for the year. */
@@ -103,11 +106,6 @@ public class Date {
         return date;
     }
 
-    /** Date localDate method converts the date to LocalDate. */
-    public LocalDate localDate() {
-        return LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
-    }
-
     /** Date fullDayOfWeek method prints the full name of DayOfWeek. */
     public String fullDayOfWeek(DayOfWeek dow) {
         return dow.getDisplayName(TextStyle.FULL, Locale.getDefault());
@@ -144,7 +142,7 @@ public class Date {
     public String toString() {
         return String.format(
                 "%s %d %s %d",
-                shortDayOfWeek(localDate().getDayOfWeek()),
+                localDate.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
                 date.getThirdInt(),
                 shortMonthName(Month.of(date.getSecondInt())),
                 date.getFirstInt());
