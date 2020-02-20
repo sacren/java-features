@@ -18,7 +18,7 @@
  * +setMonth(month:int):void
  * +setDay(day:int):void
  * +getDate():Trio
- * +getDayOfWeek():DayOfWeek
+ * +localDate():LocalDate
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
  * +narrowDayOfWeek(dow:DayOfWeek):String
@@ -103,13 +103,9 @@ public class Date {
         return date;
     }
 
-    /** Date getDayOfWeek method converts the date to day of the week. */
-    public DayOfWeek getDayOfWeek() {
-        return LocalDate.of(
-                date.getFirstInt(),
-                date.getSecondInt(),
-                date.getThirdInt())
-                .getDayOfWeek();
+    /** Date localDate method converts the date to LocalDate. */
+    public LocalDate localDate() {
+        return LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
     }
 
     /** Date fullDayOfWeek method prints the full name of DayOfWeek. */
@@ -148,7 +144,7 @@ public class Date {
     public String toString() {
         return String.format(
                 "%s %d %s %d",
-                shortDayOfWeek(getDayOfWeek()),
+                shortDayOfWeek(localDate().getDayOfWeek()),
                 date.getThirdInt(),
                 shortMonthName(Month.of(date.getSecondInt())),
                 date.getFirstInt());
