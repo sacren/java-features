@@ -122,18 +122,18 @@ public class Date {
     }
 
     /** Date fullMonthName method prints the full name of the month. */
-    public String fullMonthName(Month month) {
-        return month.getDisplayName(TextStyle.FULL, Locale.getDefault());
+    public String fullMonthName() {
+        return Month.of(date.getSecondInt()).getDisplayName(TextStyle.FULL, Locale.getDefault());
     }
 
     /** Date shortMonthName method prints the short name of the month. */
-    public String shortMonthName(Month month) {
-        return month.getDisplayName(TextStyle.SHORT, Locale.getDefault());
+    public String shortMonthName() {
+        return Month.of(date.getSecondInt()).getDisplayName(TextStyle.SHORT, Locale.getDefault());
     }
 
     /** Date narrowMonthName method prints the narrow name of the month. */
-    public String narrowMonthName(Month month) {
-        return month.getDisplayName(TextStyle.NARROW, Locale.getDefault());
+    public String narrowMonthName() {
+        return Month.of(date.getSecondInt()).getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
     /**
@@ -144,7 +144,7 @@ public class Date {
                 "%s %d %s %d",
                 shortDayOfWeek(),
                 date.getThirdInt(),
-                shortMonthName(Month.of(date.getSecondInt())),
+                shortMonthName(),
                 date.getFirstInt());
     }
 }
