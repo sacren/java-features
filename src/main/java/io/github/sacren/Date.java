@@ -107,18 +107,18 @@ public class Date {
     }
 
     /** Date fullDayOfWeek method prints the full name of DayOfWeek. */
-    public String fullDayOfWeek(DayOfWeek dow) {
-        return dow.getDisplayName(TextStyle.FULL, Locale.getDefault());
+    public String fullDayOfWeek() {
+        return localDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault());
     }
 
     /** Date shortDayOfWeek method prints the short name of DayOfWeek. */
-    public String shortDayOfWeek(DayOfWeek dow) {
-        return dow.getDisplayName(TextStyle.SHORT, Locale.getDefault());
+    public String shortDayOfWeek() {
+        return localDate.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault());
     }
 
     /** Date narrowDayOfWeek method prints the narrow name of DayOfWeek. */
-    public String narrowDayOfWeek(DayOfWeek dow) {
-        return dow.getDisplayName(TextStyle.NARROW, Locale.getDefault());
+    public String narrowDayOfWeek() {
+        return localDate.getDayOfWeek().getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
     /** Date fullMonthName method prints the full name of the month. */
@@ -137,12 +137,12 @@ public class Date {
     }
 
     /**
-     * Date String method shows the date in Unix format, e.g. Thu 1 Jan 1970.
+     * Date String method prints the date in Unix format, e.g. Thu 1 Jan 1970.
      */
     public String toString() {
         return String.format(
                 "%s %d %s %d",
-                localDate.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
+                shortDayOfWeek(),
                 date.getThirdInt(),
                 shortMonthName(Month.of(date.getSecondInt())),
                 date.getFirstInt());
