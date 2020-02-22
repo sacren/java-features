@@ -1,9 +1,9 @@
 /**
- * Date class models the date between 1 and 9999 in Unix date format.
+ * Date class models the date of Gregorian canlendar in Unix date format.
  *
  * <p>Day = [1, 31]
  * Month = [1, 12]
- * Year = [1, 9999]
+ * Year = [MIN_VALUE, MAX_VALUE]
  *
  * <p>Private instance variable:
  * -date:Trio
@@ -15,9 +15,6 @@
  *
  * <p>Public methods:
  * +setDate(date:Trio):void
- * +setYear(year:int):void
- * +setMonth(month:int):void
- * +setDay(day:int):void
  * +getDate():Trio
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
@@ -61,44 +58,13 @@ public class Date {
 
     /** Date setter for the date. */
     public void setDate(Trio date) {
-        setYear(date.getFirstInt());
-        setMonth(date.getSecondInt());
-        setDay(date.getThirdInt());
-        localDate = LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
-    }
-
-    /** Date setter for the year. */
-    public void setYear(int year) {
-        if (year < 1 && year > 9999) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid!", year));
-        }
-        date.setFirst(year);
-    }
-
-    /** Date setter for the month. */
-    public void setMonth(int month) {
-        if (month <= 0 || month > 12) {
-            throw new IllegalArgumentException(
-                    String.format("%d is invalid!", month));
-        }
-        date.setSecond(month);
-    }
-
-    /** Date setDay method sets the day of Date instance. */
-    public void setDay(int day) {
-        if (Year.isLeap(date.getFirstInt()) && date.getSecondInt() == 2) {
-            if (day < 1 || day > 29) {
-                throw new IllegalArgumentException(
-                        String.format("%d is invalid!", day));
-            }
-        } else {
-            if (day < 1 || day > DAYS_IN_MONTH[date.getSecondInt() - 1]) {
-                throw new IllegalArgumentException(
-                        String.format("%d is invalid!", day));
-            }
-        }
-        date.setThird(day);
+        this.date.setFirst(date.getFirstInt());
+        this.date.setSecond(date.getSecondInt());
+        this.date.setThird(date.getThirdInt());
+        localDate = LocalDate.of(
+                this.date.getFirstInt(),
+                this.date.getSecondInt(),
+                this.date.getThirdInt());
     }
 
     /** Date getter for the date. */
