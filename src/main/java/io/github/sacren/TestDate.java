@@ -23,5 +23,9 @@ public class TestDate {
         System.out.println();
         date.setDate(new Trio(4400, 2, 29));
         System.out.println(date);
+        System.out.println();
+        System.out.println("=== Current date ===");
+        System.out.println();
+        System.out.println(date.dateOfNow());
     }
 }
