@@ -26,6 +26,6 @@ public class TestDate {
         System.out.println();
         System.out.println("=== Current date ===");
         System.out.println();
-        System.out.println(date.dateOfNow());
+        System.out.println(Date.dateOfNow());
     }
 }

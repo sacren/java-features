@@ -8,7 +8,6 @@
  * <p>Private instance variable:
  * -date:Trio
  * -localDate:LocalDate
- * -currentDate:LocalDate
  *
  * <p>Constructor:
  * +Date()
@@ -45,13 +44,11 @@ public class Date {
     /* private instance variables */
     private Trio date;
     private LocalDate localDate;
-    private LocalDate currentDate;
 
     /** Date default constructor of Unix epoch. */
     public Date() {
         date = new Trio(1970, 1, 1);
         localDate = LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
-        currentDate = LocalDate.now();
     }
 
     /** Date constructor for any date. */
@@ -69,7 +66,6 @@ public class Date {
                 this.date.getFirstInt(),
                 this.date.getSecondInt(),
                 this.date.getThirdInt());
-        currentDate = LocalDate.now();
     }
 
     /** Date getter for the date. */
@@ -107,14 +103,15 @@ public class Date {
         return Month.of(date.getSecondInt()).getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
-    /** Date dateOfNow method prints the date of now. */
-    public String dateOfNow() {
+    /** Date dateOfNow static method prints the date of now. */
+    public static String dateOfNow() {
+        LocalDate cd = LocalDate.now();
         return String.format(
                 "%s %d %s %d",
-                currentDate.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
-                currentDate.getDayOfMonth(),
-                currentDate.getMonth().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
-                currentDate.getYear());
+                cd.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
+                cd.getDayOfMonth(),
+                cd.getMonth().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
+                cd.getYear());
     }
 
     /**
