@@ -33,14 +33,6 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class Date {
-    /**
-     * DAYS_IN_MONTH static variable shows how many days in each month of the
-     * year.
-     */
-    public static final int[] DAYS_IN_MONTH = {
-        31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-    };
-
     /* private instance variables */
     private Trio date;
     private LocalDate localDate;
