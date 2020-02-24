@@ -15,6 +15,7 @@
  *
  * <p>Public methods:
  * +setDate(date:Trio):void
+ * +setLocalDate(date:Trio):void
  * +getDate():Trio
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
@@ -40,7 +41,7 @@ public class Date {
     /** Date default constructor of Unix epoch. */
     public Date() {
         date = new Trio(1970, 1, 1);
-        localDate = LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
+        setLocalDate();
     }
 
     /** Date constructor for any date. */
@@ -54,10 +55,12 @@ public class Date {
         this.date.setFirst(date.getFirstInt());
         this.date.setSecond(date.getSecondInt());
         this.date.setThird(date.getThirdInt());
-        localDate = LocalDate.of(
-                this.date.getFirstInt(),
-                this.date.getSecondInt(),
-                this.date.getThirdInt());
+        setLocalDate();
+    }
+
+    /** Date setter for the date of LocalDate. */
+    public void setLocalDate() {
+        localDate = LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
     }
 
     /** Date getter for the date. */
