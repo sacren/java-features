@@ -7,7 +7,6 @@
  *
  * <p>Private instance variable:
  * -date:Trio
- * -localDate:LocalDate
  *
  * <p>Constructor:
  * +Date()
@@ -15,7 +14,6 @@
  *
  * <p>Public methods:
  * +setDate(date:Trio):void
- * +setLocalDate(date:Trio):void
  * +getDate():Trio
  * +fullDayOfWeek(dow:DayOfWeek):String
  * +shortDayOfWeek(dow:DayOfWeek):String
@@ -36,12 +34,10 @@ import java.util.Locale;
 public class Date {
     /* private instance variables */
     private Trio date;
-    private LocalDate localDate;
 
     /** Date default constructor of Unix epoch. */
     public Date() {
         date = new Trio(1970, 1, 1);
-        setLocalDate();
     }
 
     /** Date constructor for any date. */
@@ -52,15 +48,11 @@ public class Date {
 
     /** Date setter for the date. */
     public void setDate(Trio date) {
+        /* first check if date object has valid values */
+        LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
         this.date.setFirst(date.getFirstInt());
         this.date.setSecond(date.getSecondInt());
         this.date.setThird(date.getThirdInt());
-        setLocalDate();
-    }
-
-    /** Date setter for the date of LocalDate. */
-    public void setLocalDate() {
-        localDate = LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt());
     }
 
     /** Date getter for the date. */
@@ -70,32 +62,41 @@ public class Date {
 
     /** Date fullDayOfWeek method prints the full name of DayOfWeek. */
     public String fullDayOfWeek() {
-        return localDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault());
+        return LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt())
+            .getDayOfWeek()
+            .getDisplayName(TextStyle.FULL, Locale.getDefault());
     }
 
     /** Date shortDayOfWeek method prints the short name of DayOfWeek. */
     public String shortDayOfWeek() {
-        return localDate.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault());
+        return LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt())
+            .getDayOfWeek()
+            .getDisplayName(TextStyle.SHORT, Locale.getDefault());
     }
 
     /** Date narrowDayOfWeek method prints the narrow name of DayOfWeek. */
     public String narrowDayOfWeek() {
-        return localDate.getDayOfWeek().getDisplayName(TextStyle.NARROW, Locale.getDefault());
+        return LocalDate.of(date.getFirstInt(), date.getSecondInt(), date.getThirdInt())
+            .getDayOfWeek()
+            .getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
     /** Date fullMonthName method prints the full name of the month. */
     public String fullMonthName() {
-        return Month.of(date.getSecondInt()).getDisplayName(TextStyle.FULL, Locale.getDefault());
+        return Month.of(date.getSecondInt())
+            .getDisplayName(TextStyle.FULL, Locale.getDefault());
     }
 
     /** Date shortMonthName method prints the short name of the month. */
     public String shortMonthName() {
-        return Month.of(date.getSecondInt()).getDisplayName(TextStyle.SHORT, Locale.getDefault());
+        return Month.of(date.getSecondInt())
+            .getDisplayName(TextStyle.SHORT, Locale.getDefault());
     }
 
     /** Date narrowMonthName method prints the narrow name of the month. */
     public String narrowMonthName() {
-        return Month.of(date.getSecondInt()).getDisplayName(TextStyle.NARROW, Locale.getDefault());
+        return Month.of(date.getSecondInt())
+            .getDisplayName(TextStyle.NARROW, Locale.getDefault());
     }
 
     /** Date dateOfNow static method prints the date of now. */
