@@ -22,6 +22,7 @@
  * +shortMonthName(month:Month):String
  * +narrowMonthName(month:Month):String
  * +dateOfNow():String
+ * +nextMonday():String
  * +toString():String
  */
 import java.time.DayOfWeek;
@@ -29,6 +30,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.Year;
 import java.time.format.TextStyle;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Locale;
 
 public class Date {
@@ -108,6 +110,17 @@ public class Date {
                 cd.getDayOfMonth(),
                 cd.getMonth().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
                 cd.getYear());
+    }
+
+    /** Date nextMonday static method prints the date of next Wednesday. */
+    public static String nextMonday() {
+        LocalDate nm = LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.MONDAY));
+        return String.format(
+                "%s %d %s %d",
+                nm.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
+                nm.getDayOfMonth(),
+                nm.getMonth().getDisplayName(TextStyle.SHORT, Locale.getDefault()),
+                nm.getYear());
     }
 
     /**

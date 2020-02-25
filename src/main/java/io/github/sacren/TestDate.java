@@ -27,5 +27,9 @@ public class TestDate {
         System.out.println("=== Current date ===");
         System.out.println();
         System.out.println(Date.dateOfNow());
+        System.out.println();
+        System.out.println("=== Next Monday ===");
+        System.out.println();
+        System.out.println(Date.nextMonday());
     }
 }
