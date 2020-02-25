@@ -5,10 +5,8 @@ public class TestAuthor {
     /** Test driver for Author. */
     public static void main(String[] args) {
         /* Author class */
-        String name = "Dennis Ritchie";
-        String email = "dmr@bell-labs.com";
-        Gender gender = new Gender('M');
-        Author author = new Author(name, email, gender);
+        Author origin = new Author("Dennis Ritchie", "dmr@bell-labs.com", new Gender('M'));
+        Author author = new Author("Dennis Ritchie", "dmr@bell-labs.com", new Gender('M'));
         System.out.println();
         System.out.println("=== Author class ===");
         System.out.println();
@@ -30,9 +28,9 @@ public class TestAuthor {
         System.out.println();
         System.out.println(author);
         /* restore Author instance private data */
-        author.setName(name);
-        author.setEmail(email);
-        author.setGender(gender);
+        author.setName(origin.getName());
+        author.setEmail(origin.getEmail());
+        author.setGender(origin.getGender());
         System.out.println();
         System.out.println("=== After restoring Author instance private data ===");
         System.out.println();
