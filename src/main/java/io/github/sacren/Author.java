@@ -14,6 +14,7 @@
  * +setName(name:String):void
  * +setEmail(email:String):void
  * +setGender():void
+ * +setGender(gender:char):void
  * +setGender(gender:Gender):void
  * +getName():String
  * +getEmail():String
@@ -52,6 +53,11 @@ public class Author {
     /** Author setter for author gender. */
     public void setGender() {
         this.gender = new Gender();
+    }
+
+    /** Author setter for gender by char. */
+    public void setGender(char gender) {
+        this.gender = new Gender(gender);
     }
 
     /** Author setter for author gender. */
