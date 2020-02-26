@@ -18,6 +18,7 @@
  * +getName():String
  * +getEmail():String
  * +getGender():Gender
+ * +clone():Author
  * +toString():String
  */
 public class Author {
@@ -71,6 +72,11 @@ public class Author {
     /** Author getter for author gender. */
     public Gender getGender() {
         return gender;
+    }
+
+    /** Author clone method for a copy of Author object. */
+    public Author clone() {
+        return new Author(name, email, gender);
     }
 
     /** Author instance formatted string. */

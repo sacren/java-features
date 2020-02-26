@@ -6,7 +6,7 @@ public class TestAuthor {
     public static void main(String[] args) {
         /* Author class */
         Author origin = new Author("Dennis Ritchie", "dmr@bell-labs.com", new Gender('M'));
-        Author author = new Author("Dennis Ritchie", "dmr@bell-labs.com", new Gender('M'));
+        Author author = origin.clone();
         System.out.println();
         System.out.println("=== Author class ===");
         System.out.println();
